@@ -15,6 +15,8 @@ import {
   Phone,
   Mail,
   MapPin,
+  Sparkles,
+  Layers,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -184,6 +186,98 @@ export default function Home() {
                 </span>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* AC Cleaning Packages */}
+      <section className="py-20 md:py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="text-center">
+            <p className="text-sm font-semibold uppercase tracking-widest text-primary">
+              AC Cleaning Packages
+            </p>
+            <h2 className="mt-3 font-heading text-4xl font-bold md:text-5xl">
+              Professional AC cleaning that protects your investment
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-text-muted">
+              Scheduled cleaning maintains efficiency, extends equipment life,
+              and ensures indoor air quality. Choose the package that fits your
+              system.
+            </p>
+          </div>
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                icon: Wind,
+                line1: "Premium AC",
+                line2: "Duct Cleaning",
+                description:
+                  "Complete duct system cleaning including supply and return grills, drain pipe flushing, deep coil cleaning, and full disinfection. Service completion report included.",
+              },
+              {
+                icon: Sparkles,
+                line1: "Full AC",
+                line2: "Cleaning",
+                description:
+                  "Comprehensive system clean covering grills, ducts, coils, fan motor, blower, and cavity. Ideal for routine maintenance of split and ducted systems.",
+              },
+              {
+                icon: Snowflake,
+                line1: "Split AC",
+                line2: "Cleaning",
+                description:
+                  "Targeted cleaning for split unit systems. Filter cleaning, coil treatment, drain line flush, and performance verification. Quick turnaround, minimal disruption.",
+              },
+              {
+                icon: Layers,
+                line1: "AC Coil",
+                line2: "Cleaning",
+                description:
+                  "Precision coil cleaning to restore heat transfer efficiency. Includes evaporator and condenser coils, fin straightening where needed, and post-clean performance check.",
+              },
+            ].map((pkg) => (
+              <div
+                key={pkg.line1}
+                className="flex flex-col rounded-lg border border-border bg-white p-8 transition-all hover:-translate-y-1 hover:shadow-lg"
+              >
+                <pkg.icon className="h-14 w-14 text-primary" strokeWidth={1.5} />
+                <h3 className="mt-5 font-heading text-xl font-bold leading-tight">
+                  {pkg.line1}
+                  <br />
+                  {pkg.line2}
+                </h3>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-text-muted">
+                  {pkg.description}
+                </p>
+                <Link
+                  href="/quote"
+                  className="mt-6 block rounded-md border border-border py-3 text-center text-sm font-medium text-text hover:border-primary hover:text-primary transition-colors"
+                >
+                  Request Quote
+                </Link>
+              </div>
+            ))}
+          </div>
+          <p className="mt-10 text-center text-sm text-text-muted">
+            All packages include professional disinfection and a detailed
+            service report. Available for residential villas, apartments,
+            commercial buildings, and facilities.
+          </p>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
+            <Link
+              href="/quote"
+              className="rounded-md bg-primary px-8 py-4 font-medium text-white hover:bg-primary-dark transition-colors"
+            >
+              Request Free Inspection
+            </Link>
+            <a
+              href="tel:+971553633139"
+              className="flex items-center gap-2 text-sm font-medium text-text-muted hover:text-primary transition-colors"
+            >
+              <Phone className="h-4 w-4" />
+              +971 55 363 3139
+            </a>
           </div>
         </div>
       </section>
