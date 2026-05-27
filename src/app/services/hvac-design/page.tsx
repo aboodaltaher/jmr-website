@@ -19,6 +19,7 @@ export default function HvacDesign() {
   return (
     <ServiceDetailLayout
       title="HVAC Design & Consultancy"
+      heroImage="https://images.unsplash.com/photo-1542621334-a254cf47733d?auto=format&fit=crop&w=1600&q=80"
       intro="Heat load calculations, system design, equipment selection, and full engineering documentation — from concept through construction."
       overview={
         <>

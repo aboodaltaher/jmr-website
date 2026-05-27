@@ -11,6 +11,7 @@ export default function CoilCleaning() {
   return (
     <AcCleaningLayout
       title="AC Coil Cleaning"
+      heroImage="https://images.unsplash.com/photo-1700124113583-81aa99ea2aa2?auto=format&fit=crop&w=1600&q=80"
       intro="Precision coil cleaning to restore heat transfer efficiency. Specifically targets the coils that do the cooling — the most impactful single-component service for system performance."
       included={[
         "Evaporator coil cleaning and treatment",

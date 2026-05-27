@@ -11,6 +11,7 @@ export default function SplitAcCleaning() {
   return (
     <AcCleaningLayout
       title="Split AC Cleaning"
+      heroImage="https://images.unsplash.com/photo-1726614846573-c1ac2e6161d1?auto=format&fit=crop&w=1600&q=80"
       intro="Targeted cleaning service for split AC units. Quick turnaround, minimal disruption, and verified performance after cleaning."
       included={[
         "Indoor unit panel and filter cleaning",

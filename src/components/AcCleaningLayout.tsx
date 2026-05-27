@@ -1,9 +1,11 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Check, Phone } from "lucide-react";
 
 interface AcCleaningLayoutProps {
   title: string;
   intro: string;
+  heroImage?: string;
   included: string[];
   whoItsFor: string[];
 }
@@ -18,6 +20,7 @@ const steps = [
 export function AcCleaningLayout({
   title,
   intro,
+  heroImage,
   included,
   whoItsFor,
 }: AcCleaningLayoutProps) {
@@ -59,6 +62,19 @@ export function AcCleaningLayout({
           </div>
         </div>
       </section>
+
+      {heroImage && (
+        <div className="relative mx-auto max-w-7xl px-6 -mt-1">
+          <div className="relative aspect-[21/9] overflow-hidden rounded-lg">
+            <Image
+              src={heroImage}
+              alt={title}
+              fill
+              className="object-cover"
+            />
+          </div>
+        </div>
+      )}
 
       {/* What's Included */}
       <section className="py-12 md:py-16">

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 
@@ -108,10 +109,18 @@ export default function Contact() {
       <section className="bg-bg-soft py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
           <h2 className="font-heading text-3xl font-bold">Visit us</h2>
-          <div className="mt-6 flex h-80 items-center justify-center rounded-lg border border-border bg-border/30">
-            <p className="text-text-muted">
-              Map placeholder — Al Hind Tower, Office 1611, Dubai, UAE
-            </p>
+          <div className="relative mt-6 h-80 overflow-hidden rounded-lg">
+            <Image
+              src="https://images.unsplash.com/photo-1745750434535-5943ef2fd31a?auto=format&fit=crop&w=1600&q=80"
+              alt="Dubai skyline"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/50 to-transparent p-6">
+              <p className="text-sm font-medium text-white">
+                Al Hind Tower, Office 1611, Dubai, UAE
+              </p>
+            </div>
           </div>
         </div>
       </section>

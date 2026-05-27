@@ -11,6 +11,7 @@ export default function PremiumDuctCleaning() {
   return (
     <AcCleaningLayout
       title="Premium AC Duct Cleaning"
+      heroImage="https://images.unsplash.com/photo-1574334292321-4844f63aefef?auto=format&fit=crop&w=1600&q=80"
       intro="The most thorough cleaning package available. Complete duct system service for villas, offices, and commercial spaces where indoor air quality matters."
       included={[
         "Complete plastic covering and area protection",

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Check, type LucideIcon } from "lucide-react";
 
@@ -10,6 +11,7 @@ interface Capability {
 interface ServiceDetailLayoutProps {
   title: string;
   intro: string;
+  heroImage?: string;
   overview: React.ReactNode;
   whenYouNeedIt: string[];
   whatWeDo: Capability[];
@@ -19,6 +21,7 @@ interface ServiceDetailLayoutProps {
 export function ServiceDetailLayout({
   title,
   intro,
+  heroImage,
   overview,
   whenYouNeedIt,
   whatWeDo,
@@ -54,6 +57,19 @@ export function ServiceDetailLayout({
           </Link>
         </div>
       </section>
+
+      {heroImage && (
+        <div className="relative mx-auto max-w-7xl px-6 -mt-1">
+          <div className="relative aspect-[21/9] overflow-hidden rounded-lg">
+            <Image
+              src={heroImage}
+              alt={title}
+              fill
+              className="object-cover"
+            />
+          </div>
+        </div>
+      )}
 
       {/* Overview */}
       <section className="py-16 md:py-20">

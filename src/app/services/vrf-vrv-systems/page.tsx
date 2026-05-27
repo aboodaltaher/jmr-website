@@ -19,6 +19,7 @@ export default function VrfVrvSystems() {
   return (
     <ServiceDetailLayout
       title="VRF / VRV Systems"
+      heroImage="https://images.unsplash.com/photo-1575806980027-9e8310a6e4ab?auto=format&fit=crop&w=1600&q=80"
       intro="Multi-zone climate control with variable refrigerant flow technology — engineered for Dubai's extreme cooling demands."
       overview={
         <>

@@ -11,6 +11,7 @@ export default function FullAcCleaning() {
   return (
     <AcCleaningLayout
       title="Full AC Cleaning"
+      heroImage="https://images.unsplash.com/photo-1718203862467-c33159fdc504?auto=format&fit=crop&w=1600&q=80"
       intro="Comprehensive AC system cleaning covering all critical components. Ideal for scheduled annual maintenance of split, ducted, and concealed systems."
       included={[
         "Basic plastic covering and area protection",

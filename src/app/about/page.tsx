@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   Award,
@@ -105,8 +106,13 @@ export default function About() {
                 </p>
               </div>
             </div>
-            <div className="flex items-center justify-center rounded-lg bg-border/30 lg:min-h-[400px]">
-              <p className="text-text-muted">Team photo placeholder</p>
+            <div className="relative overflow-hidden rounded-lg lg:min-h-[400px]">
+              <Image
+                src="https://images.unsplash.com/photo-1745750434535-5943ef2fd31a?auto=format&fit=crop&w=1200&q=80"
+                alt="Dubai skyline with modern architecture"
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
         </div>

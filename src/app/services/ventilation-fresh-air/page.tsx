@@ -19,6 +19,7 @@ export default function VentilationFreshAir() {
   return (
     <ServiceDetailLayout
       title="Ventilation & Fresh Air"
+      heroImage="https://images.unsplash.com/photo-1614447413576-b346c641c128?auto=format&fit=crop&w=1600&q=80"
       intro="Mechanical ventilation, fresh air handling, and exhaust systems engineered for Dubai's climate and indoor air quality requirements."
       overview={
         <>

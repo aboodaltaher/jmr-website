@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   Gauge,
@@ -30,6 +31,7 @@ const services = [
     icon: Gauge,
     name: "VRF / VRV Systems",
     href: "/services/vrf-vrv-systems",
+    image: "https://images.unsplash.com/photo-1575806980027-9e8310a6e4ab?auto=format&fit=crop&w=800&q=80",
     description:
       "Multi-zone climate control with variable refrigerant flow technology for maximum efficiency.",
   },
@@ -37,6 +39,7 @@ const services = [
     icon: Snowflake,
     name: "Chillers",
     href: "/services/chillers",
+    image: "https://images.unsplash.com/photo-1615309662243-70f6df917b59?auto=format&fit=crop&w=800&q=80",
     description:
       "Air-cooled and water-cooled chiller systems sized and installed for commercial and large-scale residential projects.",
   },
@@ -44,6 +47,7 @@ const services = [
     icon: Thermometer,
     name: "DX Units",
     href: "/services/dx-units",
+    image: "https://images.unsplash.com/photo-1726614846573-c1ac2e6161d1?auto=format&fit=crop&w=800&q=80",
     description:
       "Direct expansion split and packaged units for targeted cooling in offices, retail, and server rooms.",
   },
@@ -51,6 +55,7 @@ const services = [
     icon: Wind,
     name: "Ventilation & Fresh Air",
     href: "/services/ventilation-fresh-air",
+    image: "https://images.unsplash.com/photo-1614447413576-b346c641c128?auto=format&fit=crop&w=800&q=80",
     description:
       "Mechanical ventilation and fresh air systems designed to meet Dubai Municipality air quality standards.",
   },
@@ -58,6 +63,7 @@ const services = [
     icon: Settings,
     name: "HVAC Design & Consultancy",
     href: "/services/hvac-design",
+    image: "https://images.unsplash.com/photo-1542621334-a254cf47733d?auto=format&fit=crop&w=800&q=80",
     description:
       "Heat load calculations, duct sizing, equipment selection, and full MEP coordination.",
   },
@@ -65,6 +71,7 @@ const services = [
     icon: ClipboardCheck,
     name: "Testing & Commissioning",
     href: "/services/testing-commissioning",
+    image: "https://images.unsplash.com/photo-1583954964358-1bd7215b6f7a?auto=format&fit=crop&w=800&q=80",
     description:
       "System verification, airflow balancing, and performance testing against design specifications.",
   },
@@ -72,6 +79,7 @@ const services = [
     icon: Wrench,
     name: "Maintenance",
     href: "/services/maintenance",
+    image: "https://images.unsplash.com/photo-1700124113583-81aa99ea2aa2?auto=format&fit=crop&w=800&q=80",
     description:
       "Preventive and corrective maintenance contracts to keep systems running at peak performance.",
   },
@@ -108,12 +116,20 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="flex min-h-[80vh] items-center bg-gradient-to-b from-white to-bg-soft">
-        <div className="mx-auto max-w-7xl px-6 py-24">
-          <h1 className="max-w-4xl font-heading text-5xl font-bold leading-tight md:text-7xl">
+      <section className="relative flex min-h-[80vh] items-center">
+        <Image
+          src="https://images.unsplash.com/photo-1771902985060-6133bb4b2eb6?auto=format&fit=crop&w=2000&q=80"
+          alt="HVAC rooftop systems on a commercial building"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative mx-auto max-w-7xl px-6 py-24">
+          <h1 className="max-w-4xl font-heading text-5xl font-bold leading-tight text-white md:text-7xl">
             Advanced HVAC Solutions for Dubai&apos;s Most Demanding Projects
           </h1>
-          <p className="mt-6 max-w-2xl text-xl text-text-muted">
+          <p className="mt-6 max-w-2xl text-xl text-white/80">
             Design, installation, commissioning, and maintenance of VRF, chiller,
             and ventilation systems — from concept to long-term performance.
           </p>
@@ -126,12 +142,12 @@ export default function Home() {
             </Link>
             <Link
               href="/services"
-              className="rounded-md border border-border px-8 py-4 font-medium text-text hover:border-primary hover:text-primary transition-colors"
+              className="rounded-md border border-white/30 px-8 py-4 font-medium text-white hover:border-white hover:bg-white/10 transition-colors"
             >
               Explore Services
             </Link>
           </div>
-          <p className="mt-8 text-sm text-text-muted">
+          <p className="mt-8 text-sm text-white/60">
             Established 2022 · 30+ Projects · 3 Emirates · Dubai, UAE
           </p>
         </div>
@@ -140,18 +156,28 @@ export default function Home() {
       {/* AC Cleaning Packages */}
       <section className="py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="text-center">
-            <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-              AC Cleaning Services
-            </p>
-            <h2 className="mt-3 font-heading text-4xl font-bold md:text-5xl">
-              Professional AC cleaning that protects your investment
-            </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-text-muted">
-              Scheduled cleaning maintains efficiency, extends equipment life,
-              and ensures indoor air quality. Choose the package that fits your
-              system.
-            </p>
+          <div className="grid items-center gap-10 lg:grid-cols-5">
+            <div className="lg:col-span-3">
+              <p className="text-sm font-semibold uppercase tracking-widest text-primary">
+                AC Cleaning Services
+              </p>
+              <h2 className="mt-3 font-heading text-4xl font-bold md:text-5xl">
+                Professional AC cleaning that protects your investment
+              </h2>
+              <p className="mt-4 max-w-2xl text-lg text-text-muted">
+                Scheduled cleaning maintains efficiency, extends equipment life,
+                and ensures indoor air quality. Choose the package that fits your
+                system.
+              </p>
+            </div>
+            <div className="relative hidden aspect-[4/3] overflow-hidden rounded-lg lg:col-span-2 lg:block">
+              <Image
+                src="https://images.unsplash.com/photo-1718203862467-c33159fdc504?auto=format&fit=crop&w=800&q=80"
+                alt="Wall-mounted air conditioning unit"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
@@ -251,18 +277,28 @@ export default function Home() {
               <Link
                 key={service.href}
                 href={service.href}
-                className="group rounded-lg border border-border bg-white p-8 transition-all hover:-translate-y-1 hover:shadow-lg"
+                className="group overflow-hidden rounded-lg border border-border bg-white transition-all hover:-translate-y-1 hover:shadow-lg"
               >
-                <service.icon className="h-8 w-8 text-primary" strokeWidth={1.5} />
-                <h3 className="mt-4 font-heading text-xl font-semibold">
-                  {service.name}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-text-muted">
-                  {service.description}
-                </p>
-                <span className="mt-4 inline-block text-sm font-medium text-primary">
-                  Learn more &rarr;
-                </span>
+                <div className="relative aspect-[16/9]">
+                  <Image
+                    src={service.image}
+                    alt={service.name}
+                    fill
+                    className="object-cover transition-transform group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-6">
+                  <service.icon className="h-7 w-7 text-primary" strokeWidth={1.5} />
+                  <h3 className="mt-3 font-heading text-xl font-semibold">
+                    {service.name}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-text-muted">
+                    {service.description}
+                  </p>
+                  <span className="mt-3 inline-block text-sm font-medium text-primary">
+                    Learn more &rarr;
+                  </span>
+                </div>
               </Link>
             ))}
           </div>
@@ -278,18 +314,28 @@ export default function Home() {
           <h2 className="mt-3 max-w-3xl font-heading text-4xl font-bold md:text-5xl">
             Engineering-first. From load calculations to long-term performance.
           </h2>
-          <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {reasons.map((reason) => (
-              <div key={reason.name}>
-                <reason.icon className="h-8 w-8 text-primary" strokeWidth={1.5} />
-                <h3 className="mt-4 font-heading text-lg font-semibold">
-                  {reason.name}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-text-muted">
-                  {reason.description}
-                </p>
-              </div>
-            ))}
+          <div className="mt-14 grid gap-12 lg:grid-cols-5">
+            <div className="grid gap-8 sm:grid-cols-2 lg:col-span-3">
+              {reasons.map((reason) => (
+                <div key={reason.name}>
+                  <reason.icon className="h-8 w-8 text-primary" strokeWidth={1.5} />
+                  <h3 className="mt-4 font-heading text-lg font-semibold">
+                    {reason.name}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-text-muted">
+                    {reason.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <div className="relative hidden overflow-hidden rounded-lg lg:col-span-2 lg:block">
+              <Image
+                src="https://images.unsplash.com/photo-1704022632400-79aab2ddb9f6?auto=format&fit=crop&w=1200&q=80"
+                alt="Modern building with HVAC ventilation systems"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
