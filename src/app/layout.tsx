@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Inter, Saira_Condensed } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
@@ -10,15 +10,20 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+const saira = Saira_Condensed({
+  variable: "--font-saira",
+  weight: ["500", "600", "700"],
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "JMR Technical Services LLC",
+  title: "AGEC — HVAC, MEP & Maintenance Contracting | Dubai, UAE",
   description:
-    "Dubai-based HVAC contracting company specializing in design, installation, testing & commissioning, and maintenance of advanced air conditioning systems.",
+    "AGEC (Altaher Ghabboun Engineering Contracting) designs, installs, and maintains HVAC and MEP systems across the UAE. VRF, chillers, ventilation, AMC. Dubai-based. Engineered to perform.",
+  openGraph: {
+    title: "AGEC — Engineered to Perform",
+    description: "HVAC · MEP · Maintenance contracting across the UAE.",
+  },
 };
 
 export default function RootLayout({
@@ -27,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
+    <html lang="en" className={`${inter.variable} ${saira.variable}`}>
       <body className="min-h-screen flex flex-col antialiased">
         <Header />
         <main className="flex-1">{children}</main>

@@ -10,7 +10,7 @@ import {
 import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
 
 export const metadata: Metadata = {
-  title: "VRF / VRV Systems | JMR Technical Services",
+  title: "VRF / VRV Systems | AGEC",
   description:
     "VRF and VRV system design, installation, and commissioning in Dubai. Multi-zone climate control for villas, offices, and commercial buildings from certified engineers.",
 };
@@ -20,7 +20,7 @@ export default function VrfVrvSystems() {
     <ServiceDetailLayout
       title="VRF / VRV Systems"
       heroImage="/projects/daikin-vrv-x-business-bay-dubai-rooftop-installation.jpg"
-      heroImageAlt="Daikin VRV-X variable refrigerant volume system installation on rooftop in Business Bay Dubai by JMR Technical Services"
+      heroImageAlt="Daikin VRV-X variable refrigerant volume system installation on rooftop in Business Bay Dubai by AGEC"
       intro="Multi-zone climate control with variable refrigerant flow technology — engineered for Dubai's extreme cooling demands."
       overview={
         <>
@@ -41,7 +41,7 @@ export default function VrfVrvSystems() {
             outdoor unit.
           </p>
           <p>
-            JMR designs and installs VRF systems from major manufacturers
+            AGECdesigns and installs VRF systems from major manufacturers
             including Daikin, Mitsubishi Electric, and Carrier. We handle the
             full engineering scope: refrigerant piping layout, branch selector
             sizing, control system programming, and final commissioning with
@@ -95,7 +95,7 @@ export default function VrfVrvSystems() {
           icon: Shield,
           name: "Warranty & Support",
           description:
-            "Manufacturer-backed warranties with JMR as the certified installation partner on record. AMC options available from day one.",
+            "Manufacturer-backed warranties with AGECas the certified installation partner on record. AMC options available from day one.",
         },
       ]}
       whyJmr={[

@@ -4,9 +4,9 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact | JMR Technical Services",
+  title: "Contact | AGEC",
   description:
-    "Get in touch with JMR Technical Services in Dubai. Call, email, or send us a message about your HVAC project.",
+    "Get in touch with AGEC in Dubai. Call, email, or send us a message about your HVAC project.",
 };
 
 export default function Contact() {

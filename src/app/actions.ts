@@ -5,7 +5,7 @@ import { z } from "zod";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const CONTACT_EMAIL = process.env.CONTACT_EMAIL ?? "";
-const FROM = "JMR Website <onboarding@resend.dev>";
+const FROM = "AGEC Website <onboarding@resend.dev>";
 
 function timestamp() {
   return new Date().toLocaleString("en-AE", { timeZone: "Asia/Dubai" });

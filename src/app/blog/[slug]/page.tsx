@@ -108,7 +108,7 @@ export async function generateMetadata({
 
   const url = `${SITE_URL}/blog/${slug}`;
   return {
-    title: `${post.title} | JMR Technical Services`,
+    title: `${post.title} | AGEC`,
     description: post.description,
     alternates: { canonical: url },
     openGraph: {
@@ -140,15 +140,15 @@ export default async function ArticlePage({
     image: `${SITE_URL}${post.image}`,
     author: {
       "@type": "Organization",
-      name: "JMR Technical Services",
+      name: "Altaher Ghabboun Engineering Contracting (AGEC)",
       url: SITE_URL,
     },
     publisher: {
       "@type": "Organization",
-      name: "JMR Technical Services",
+      name: "Altaher Ghabboun Engineering Contracting (AGEC)",
       logo: {
         "@type": "ImageObject",
-        url: `${SITE_URL}/logo.png`,
+        url: `${SITE_URL}/agec-logo.png`,
       },
     },
   };

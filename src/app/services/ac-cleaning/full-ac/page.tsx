@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { AcCleaningLayout } from "@/components/AcCleaningLayout";
 
 export const metadata: Metadata = {
-  title: "Full AC Cleaning | JMR Technical Services",
+  title: "Full AC Cleaning | AGEC",
   description:
     "Comprehensive AC system cleaning in Dubai covering grills, ducts, coils, fan motor, blower, and cavity. Ideal for annual maintenance of split and ducted systems.",
 };

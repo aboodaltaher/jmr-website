@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { Logo } from "@/components/Logo";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -14,18 +14,8 @@ export function Header() {
   return (
     <header className="border-b border-border">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
-        <Link href="/" className="flex items-center gap-3">
-          <Image
-            src="/logo.png"
-            alt="JMR Technical Services"
-            width={72}
-            height={72}
-          />
-          <div className="hidden font-heading font-bold uppercase leading-tight tracking-wider text-text md:block">
-            <span className="text-xl">JMR</span>
-            <br />
-            <span className="text-xs">Technical Services</span>
-          </div>
+        <Link href="/" aria-label="AGEC — home">
+          <Logo />
         </Link>
         <nav className="flex items-center gap-8">
           {navLinks.map((link) => (

@@ -10,7 +10,7 @@ import {
 import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
 
 export const metadata: Metadata = {
-  title: "Ventilation & Fresh Air Systems | JMR Technical Services",
+  title: "Ventilation & Fresh Air Systems | AGEC",
   description:
     "Mechanical ventilation, fresh air handling units, and exhaust systems in Dubai. Designed and balanced to meet indoor air quality standards and municipality codes.",
 };
@@ -20,7 +20,7 @@ export default function VentilationFreshAir() {
     <ServiceDetailLayout
       title="Ventilation & Fresh Air"
       heroImage="/projects/insulated-rooftop-ductwork-hvac-dubai.jpg"
-      heroImageAlt="Insulated rooftop ductwork installation for fresh air ventilation system in Dubai by JMR Technical Services"
+      heroImageAlt="Insulated rooftop ductwork installation for fresh air ventilation system in Dubai by AGEC"
       intro="Mechanical ventilation, fresh air handling, and exhaust systems engineered for Dubai's climate and indoor air quality requirements."
       overview={
         <>
@@ -42,7 +42,7 @@ export default function VentilationFreshAir() {
             for delivering ventilation air at acceptable conditions.
           </p>
           <p>
-            JMR designs and installs complete ventilation systems: fresh air
+            AGECdesigns and installs complete ventilation systems: fresh air
             supply, general exhaust, kitchen exhaust, toilet exhaust, parking
             garage ventilation, and smoke management systems. We size ductwork
             for proper velocity and pressure drop, select fans for the calculated

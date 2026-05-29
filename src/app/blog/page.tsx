@@ -4,9 +4,9 @@ import Link from "next/link";
 import { getAllPosts, formatDate } from "@/lib/blog";
 
 export const metadata: Metadata = {
-  title: "Insights & Engineering Guides | JMR Technical Services",
+  title: "Insights & Engineering Guides | AGEC",
   description:
-    "HVAC engineering guides, system comparisons, and practical advice from JMR Technical Services — based on real project experience across Dubai, Sharjah, and Abu Dhabi.",
+    "HVAC engineering guides, system comparisons, and practical advice from AGEC — based on real project experience across Dubai, Sharjah, and Abu Dhabi.",
 };
 
 export default function BlogIndex() {

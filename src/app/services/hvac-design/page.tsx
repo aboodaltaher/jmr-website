@@ -10,7 +10,7 @@ import {
 import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
 
 export const metadata: Metadata = {
-  title: "HVAC Design & Consultancy | JMR Technical Services",
+  title: "HVAC Design & Consultancy | AGEC",
   description:
     "HVAC system design, heat load calculations, duct sizing, and MEP coordination in Dubai. Engineering documentation from concept through construction.",
 };
@@ -20,7 +20,7 @@ export default function HvacDesign() {
     <ServiceDetailLayout
       title="HVAC Design & Consultancy"
       heroImage="/projects/multiple-ahu-installation-hvac-design-dubai.jpg"
-      heroImageAlt="Multiple air handling unit installation showing HVAC design and engineering scale at Dubai commercial project by JMR Technical Services"
+      heroImageAlt="Multiple air handling unit installation showing HVAC design and engineering scale at Dubai commercial project by AGEC"
       intro="Heat load calculations, system design, equipment selection, and full engineering documentation — from concept through construction."
       overview={
         <>
@@ -32,7 +32,7 @@ export default function HvacDesign() {
             costs, occupant comfort, and equipment lifespan.
           </p>
           <p>
-            JMR provides complete HVAC design services: heat load calculations
+            AGECprovides complete HVAC design services: heat load calculations
             using industry-standard software, system type selection, equipment
             specification, duct and piping layout, controls design, and
             construction documentation. We work on projects ranging from single

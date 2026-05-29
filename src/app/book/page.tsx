@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { BookForm } from "@/components/BookForm";
 
 export const metadata: Metadata = {
-  title: "Book a Service | JMR Technical Services",
+  title: "Book a Service | AGEC",
   description:
-    "Book HVAC maintenance, repairs, AMC, or emergency service in Dubai. JMR Technical Services — qualified technicians, priority response.",
+    "Book HVAC maintenance, repairs, AMC, or emergency service in Dubai. AGEC — qualified technicians, priority response.",
 };
 
 export default function Book() {

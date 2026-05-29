@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Services | JMR Technical Services",
+  title: "Services | AGEC",
   description:
     "End-to-end HVAC services in Dubai: VRF/VRV systems, chillers, DX units, ventilation, HVAC design, testing & commissioning, and maintenance contracts.",
 };
@@ -90,7 +90,7 @@ export default function Services() {
           </h1>
           <p className="mt-6 max-w-3xl text-xl text-text-muted">
             From heat load calculations and design through installation,
-            commissioning, and long-term maintenance — JMR delivers complete
+            commissioning, and long-term maintenance — AGECdelivers complete
             HVAC solutions.
           </p>
         </div>

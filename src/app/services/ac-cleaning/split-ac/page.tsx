@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { AcCleaningLayout } from "@/components/AcCleaningLayout";
 
 export const metadata: Metadata = {
-  title: "Split AC Cleaning | JMR Technical Services",
+  title: "Split AC Cleaning | AGEC",
   description:
     "Split AC cleaning service in Dubai — filter cleaning, coil treatment, drain line flush, condenser cleaning, and performance verification. Quick turnaround.",
 };

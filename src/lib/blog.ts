@@ -63,7 +63,7 @@ function parsePost(slug: string): Post {
     title: extractTitle(content),
     excerpt: generateExcerpt(content),
     date: String(data.date ?? ""),
-    author: String(data.author ?? "JMR Technical Services Team"),
+    author: String(data.author ?? "AGEC Team"),
     readingTime: String(data.readingTime ?? ""),
     image: String(data.image ?? ""),
     description: String(data.description ?? generateExcerpt(content)),

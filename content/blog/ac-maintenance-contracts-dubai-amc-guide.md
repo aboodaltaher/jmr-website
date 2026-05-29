@@ -2,7 +2,7 @@
 title: "AC Maintenance Contracts in Dubai: Why Reactive Maintenance Costs You More"
 description: "Why an HVAC AMC in Dubai saves money long-term. Real costs of skipped maintenance, what should be included in a proper AMC contract, and how to choose the right one for your villa or commercial building in the UAE."
 date: "2026-05-29"
-author: "JMR Technical Services Team"
+author: "AGEC Team"
 readingTime: "7 min"
 image: "/projects/trane-outdoor-units-rooftop-array-dubai.jpg"
 ---
@@ -101,7 +101,7 @@ Every visit should produce a written report showing what was checked, what was f
 
 ## How to Choose the Right AMC Provider
 
-Whether you choose JMR Technical Services or another contractor, here's what to verify before signing any AMC in Dubai:
+Whether you choose AGEC or another contractor, here's what to verify before signing any AMC in Dubai:
 
 **Engineering credentials.** Is the provider a licensed HVAC contractor with qualified engineers on staff, or just a maintenance company subcontracting the technical work to whoever is cheapest? Ask to see the trade license and the engineers' qualifications.
 
@@ -129,9 +129,9 @@ If you currently don't have an AMC, or you have one but you're not seeing servic
 
 ---
 
-## How JMR Approaches AMC Contracts
+## How AGEC Approaches AMC Contracts
 
-JMR Technical Services provides AMC contracts across Dubai, Sharjah, and Abu Dhabi for both residential villas and commercial buildings — from single-family homes to large compounds and multi-tenant commercial properties.
+AGEC provides AMC contracts across Dubai, Sharjah, and Abu Dhabi for both residential villas and commercial buildings — from single-family homes to large compounds and multi-tenant commercial properties.
 
 Our approach focuses on three principles:
 

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ProjectGrid } from "@/components/ProjectGrid";
 
 export const metadata: Metadata = {
-  title: "Projects | JMR Technical Services",
+  title: "Projects | AGEC",
   description:
     "30+ HVAC projects across Dubai, Sharjah, and Abu Dhabi — residential villas, commercial buildings, data centers, and cultural facilities.",
 };

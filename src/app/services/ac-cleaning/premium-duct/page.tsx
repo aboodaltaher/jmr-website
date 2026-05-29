@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { AcCleaningLayout } from "@/components/AcCleaningLayout";
 
 export const metadata: Metadata = {
-  title: "Premium AC Duct Cleaning | JMR Technical Services",
+  title: "Premium AC Duct Cleaning | AGEC",
   description:
     "Complete duct system cleaning in Dubai — supply and return grills, drain pipe flushing, deep coil cleaning, and full disinfection. Service report included.",
 };

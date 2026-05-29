@@ -1,6 +1,6 @@
 const PHONE = "971553633139";
 const MESSAGE =
-  "Hi JMR Technical Services, I'd like to know more about your HVAC services.";
+  "Hi AGEC, I'd like to know more about your HVAC services.";
 
 const whatsappUrl = `https://wa.me/${PHONE}?text=${encodeURIComponent(MESSAGE)}`;
 

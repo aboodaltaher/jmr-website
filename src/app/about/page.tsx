@@ -9,9 +9,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About | JMR Technical Services",
+  title: "About | AGEC",
   description:
-    "Founded in Dubai in 2022, JMR Technical Services is an HVAC contracting company delivering installation, maintenance, and commissioning across the UAE. 30+ projects delivered.",
+    "Founded in Dubai in 2022, Altaher Ghabboun Engineering Contracting (AGEC) is an HVAC, MEP & maintenance contractor delivering installation, commissioning, and maintenance across the UAE. 30+ projects delivered.",
 };
 
 const values = [
@@ -59,16 +59,16 @@ export default function About() {
       <section className="bg-bg-soft py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-            About JMR
+            About AGEC
           </p>
           <h1 className="mt-3 max-w-4xl font-heading text-5xl font-bold md:text-6xl">
             Solutions at Your Fingertips
           </h1>
           <p className="mt-6 max-w-3xl text-xl text-text-muted">
-            Founded in Dubai in 2022 by Mr. Mohannad Ghaboun, JMR Technical
-            Services is an HVAC contracting company delivering expert
-            installation, maintenance, and testing &amp; commissioning across
-            the UAE.
+            Founded in Dubai in 2022 by Mr. Mohannad Ghaboun, Altaher Ghabboun
+            Engineering Contracting (AGEC) is an HVAC contracting company
+            delivering expert installation, maintenance, and testing &amp;
+            commissioning across the UAE.
           </p>
         </div>
       </section>
@@ -83,11 +83,11 @@ export default function About() {
               </h2>
               <div className="mt-6 space-y-4 leading-relaxed text-text-muted">
                 <p>
-                  JMR Technical Services was founded in 2022 with a focused
-                  mission: deliver HVAC solutions that perform exactly as
-                  designed. From day one, our approach has been engineering-first
-                  — heat load calculations, system design, and commissioning
-                  handled by qualified engineers, not just installers.
+                  AGEC was founded in 2022 with a focused mission: deliver HVAC
+                  solutions that perform exactly as designed. From day one, our
+                  approach has been engineering-first — heat load calculations,
+                  system design, and commissioning handled by qualified
+                  engineers, not just installers.
                 </p>
                 <p>
                   Today we operate across three Emirates — Dubai, Sharjah, and

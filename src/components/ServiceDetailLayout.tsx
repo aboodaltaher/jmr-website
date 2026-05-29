@@ -106,7 +106,7 @@ export function ServiceDetailLayout({
       <section className="py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
           <h2 className="font-heading text-3xl font-bold md:text-4xl">
-            What JMR provides
+            What AGEC provides
           </h2>
           <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {whatWeDo.map((cap) => (
@@ -127,11 +127,11 @@ export function ServiceDetailLayout({
         </div>
       </section>
 
-      {/* Why JMR */}
+      {/* Why AGEC */}
       <section className="bg-bg-soft py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
           <h2 className="font-heading text-3xl font-bold md:text-4xl">
-            Why JMR for {title}
+            Why AGEC for {title}
           </h2>
           <ul className="mt-6 max-w-3xl space-y-4">
             {whyJmr.map((reason) => (

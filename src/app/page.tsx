@@ -21,9 +21,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "JMR Technical Services — Advanced HVAC Solutions in Dubai",
+  title: "AGEC — HVAC, MEP & Maintenance Contractor in Dubai",
   description:
-    "Design, installation, commissioning, and maintenance of VRF, chiller, and ventilation systems in Dubai. Serving residential, commercial & villa projects.",
+    "Design, installation, commissioning, and maintenance of HVAC, MEP, and building systems in Dubai. Serving residential, commercial & villa projects. Engineered to Perform.",
 };
 
 const services = [
@@ -32,7 +32,7 @@ const services = [
     name: "VRF / VRV Systems",
     href: "/services/vrf-vrv-systems",
     image: "/projects/daikin-vrv-x-business-bay-dubai-rooftop-installation.jpg",
-    alt: "Daikin VRV-X variable refrigerant volume system installation in Dubai by JMR Technical Services",
+    alt: "Daikin VRV-X variable refrigerant volume system installation in Dubai by AGEC",
     description:
       "Multi-zone climate control with variable refrigerant flow technology for maximum efficiency.",
   },
@@ -41,7 +41,7 @@ const services = [
     name: "Chillers",
     href: "/services/chillers",
     image: "/projects/trane-outdoor-units-rooftop-array-dubai.jpg",
-    alt: "Trane outdoor condensing unit array installation in Dubai by JMR Technical Services",
+    alt: "Trane outdoor condensing unit array installation in Dubai by AGEC",
     description:
       "Air-cooled and water-cooled chiller systems sized and installed for commercial and large-scale residential projects.",
   },
@@ -50,7 +50,7 @@ const services = [
     name: "DX Units",
     href: "/services/dx-units",
     image: "/projects/indoor-ahu-installation-refrigerant-piping-dubai.jpg",
-    alt: "Indoor air handling unit installation in Dubai by JMR Technical Services",
+    alt: "Indoor air handling unit installation in Dubai by AGEC",
     description:
       "Direct expansion split and packaged units for targeted cooling in offices, retail, and server rooms.",
   },
@@ -59,7 +59,7 @@ const services = [
     name: "Ventilation & Fresh Air",
     href: "/services/ventilation-fresh-air",
     image: "/projects/insulated-rooftop-ductwork-hvac-dubai.jpg",
-    alt: "Insulated rooftop ductwork installation for fresh air ventilation in Dubai by JMR Technical Services",
+    alt: "Insulated rooftop ductwork installation for fresh air ventilation in Dubai by AGEC",
     description:
       "Mechanical ventilation and fresh air systems designed to meet Dubai Municipality air quality standards.",
   },
@@ -68,7 +68,7 @@ const services = [
     name: "HVAC Design & Consultancy",
     href: "/services/hvac-design",
     image: "/projects/multiple-ahu-installation-hvac-design-dubai.jpg",
-    alt: "HVAC design and engineering scale at Dubai commercial project by JMR Technical Services",
+    alt: "HVAC design and engineering scale at Dubai commercial project by AGEC",
     description:
       "Heat load calculations, duct sizing, equipment selection, and full MEP coordination.",
   },
@@ -77,7 +77,7 @@ const services = [
     name: "Testing & Commissioning",
     href: "/services/testing-commissioning",
     image: "/projects/jmr-technician-tab-commissioning-airflow-balometer-dubai.jpg",
-    alt: "JMR Technical Services technician performing TAB testing and commissioning in Dubai",
+    alt: "AGEC technician performing TAB testing and commissioning in Dubai",
     description:
       "System verification, airflow balancing, and performance testing against design specifications.",
   },
@@ -86,7 +86,7 @@ const services = [
     name: "Maintenance",
     href: "/services/maintenance",
     image: "/projects/jmr-maintenance-service-dubai.jpg",
-    alt: "JMR Technical Services HVAC maintenance in Dubai",
+    alt: "AGEC HVAC maintenance in Dubai",
     description:
       "Preventive and corrective maintenance contracts to keep systems running at peak performance.",
   },
@@ -126,7 +126,7 @@ export default function Home() {
       <section className="relative flex min-h-[80vh] items-center">
         <Image
           src="/projects/daikin-vrv-x-business-bay-dubai-rooftop-installation.jpg"
-          alt="Daikin VRV-X variable refrigerant volume system installation on rooftop in Business Bay Dubai by JMR Technical Services"
+          alt="Daikin VRV-X variable refrigerant volume system installation on rooftop in Business Bay Dubai by AGEC"
           fill
           className="object-cover"
           priority
@@ -312,11 +312,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why JMR */}
+      {/* Why AGEC */}
       <section className="bg-bg-soft py-20 md:py-24">
         <div className="mx-auto max-w-7xl px-6">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-            Why JMR
+            Why AGEC
           </p>
           <h2 className="mt-3 max-w-3xl font-heading text-4xl font-bold md:text-5xl">
             Engineering-first. From load calculations to long-term performance.

@@ -10,7 +10,7 @@ import {
 import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
 
 export const metadata: Metadata = {
-  title: "Chiller Systems | JMR Technical Services",
+  title: "Chiller Systems | AGEC",
   description:
     "Air-cooled and water-cooled chiller installation, piping design, and commissioning in Dubai. Complete chiller plant engineering for commercial and industrial buildings.",
 };
@@ -20,7 +20,7 @@ export default function Chillers() {
     <ServiceDetailLayout
       title="Chiller Systems"
       heroImage="/projects/trane-outdoor-units-rooftop-array-dubai.jpg"
-      heroImageAlt="Trane outdoor condensing unit array installation on commercial building rooftop in Dubai by JMR Technical Services"
+      heroImageAlt="Trane outdoor condensing unit array installation on commercial building rooftop in Dubai by AGEC"
       intro="Air-cooled and water-cooled chiller plants for commercial and industrial cooling — designed, installed, and commissioned to specification."
       overview={
         <>
@@ -34,7 +34,7 @@ export default function Chillers() {
           </p>
           <p>
             In Dubai, air-cooled chillers must perform reliably at ambient
-            temperatures exceeding 50°C. JMR factors in altitude, humidity,
+            temperatures exceeding 50°C. AGECfactors in altitude, humidity,
             fouling allowances, and part-load performance when selecting
             equipment. For water-cooled systems, we coordinate cooling tower
             sizing, condenser water treatment, and pump head calculations to

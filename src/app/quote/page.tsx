@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { QuoteForm } from "@/components/QuoteForm";
 
 export const metadata: Metadata = {
-  title: "Request a Quote | JMR Technical Services",
+  title: "Request a Quote | AGEC",
   description:
-    "Get a free HVAC quotation from JMR Technical Services in Dubai. VRF systems, chillers, DX units, ventilation, design, and maintenance — most quotes returned within 48 hours.",
+    "Get a free HVAC quotation from AGEC in Dubai. VRF systems, chillers, DX units, ventilation, design, and maintenance — most quotes returned within 48 hours.",
 };
 
 export default function Quote() {

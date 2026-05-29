@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { AcCleaningLayout } from "@/components/AcCleaningLayout";
 
 export const metadata: Metadata = {
-  title: "AC Coil Cleaning | JMR Technical Services",
+  title: "AC Coil Cleaning | AGEC",
   description:
     "Precision AC coil cleaning in Dubai — evaporator and condenser coils, fin straightening, disinfection, and pre/post-clean temperature measurements.",
 };

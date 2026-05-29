@@ -1,9 +1,9 @@
 ---
 date: "2026-05-29"
-author: "JMR Technical Services Team"
+author: "AGEC Team"
 readingTime: "8 min read"
 image: "/projects/daikin-vrv-x-business-bay-dubai-rooftop-installation.jpg"
-description: "Honest engineering comparison of VRF and chiller systems for Dubai villas — installed cost, performance, maintenance reality, and recommendations by villa size. Based on JMR's field experience across 30+ projects."
+description: "Honest engineering comparison of VRF and chiller systems for Dubai villas — installed cost, performance, maintenance reality, and recommendations by villa size. Based on AGEC's field experience across 30+ projects."
 ---
 
 # VRF vs Chiller Systems for Dubai Villas: Which Is Right for You?
@@ -55,7 +55,7 @@ In Dubai villas we typically work with **Trane**, **York**, and **Carrier** chil
 
 ## Cost comparison: VRF vs Chiller for a Dubai villa
 
-Honest pricing is hard to give because every villa has different requirements. But based on JMR's actual project records across 30+ installations, here are realistic ranges for **complete supply and installation** (equipment + piping + electrical + commissioning) as of 2026:
+Honest pricing is hard to give because every villa has different requirements. But based on AGEC's actual project records across 30+ installations, here are realistic ranges for **complete supply and installation** (equipment + piping + electrical + commissioning) as of 2026:
 
 ### For a typical 250 m² G+1 villa (~12-ton cooling load):
 
@@ -114,7 +114,7 @@ Both systems can cool a Dubai villa effectively when properly designed. The diff
 
 ## Maintenance reality: what most articles don't tell you
 
-The internet is full of glossy "VRF vs chiller" comparisons that ignore the day-to-day reality. Here's what JMR sees on actual maintenance contracts:
+The internet is full of glossy "VRF vs chiller" comparisons that ignore the day-to-day reality. Here's what AGEC sees on actual maintenance contracts:
 
 **VRF systems:**
 - Filter cleaning every 3 months per indoor unit
@@ -153,7 +153,7 @@ Multiple buildings, combined 40+ ton load, complex zoning. **Chiller plant.** A 
 
 ### Scenario 4: 18-villa community development in Sharjah
 
-Multiple identical villas on a shared plot, developer build. **Could go either way.** Individual VRF per villa gives each owner independent control and billing. Central chiller plant with chilled water distributed to each villa gives the developer lower upfront cost per villa but requires an HOA structure for shared utility billing. JMR has done it both ways depending on the developer's preference.
+Multiple identical villas on a shared plot, developer build. **Could go either way.** Individual VRF per villa gives each owner independent control and billing. Central chiller plant with chilled water distributed to each villa gives the developer lower upfront cost per villa but requires an HOA structure for shared utility billing. AGEC has done it both ways depending on the developer's preference.
 
 ---
 
@@ -169,7 +169,7 @@ The key word is "properly designed." A poorly sized VRF system will fail in Duba
 
 ---
 
-## How JMR approaches this for clients
+## How AGEC approaches this for clients
 
 When a client comes to us for a new villa HVAC system, our process is:
 
@@ -193,4 +193,4 @@ If you're planning a villa build or major HVAC replacement and want a real engin
 
 ---
 
-*JMR Technical Services LLC is a Dubai-based HVAC contractor specializing in design, installation, testing & commissioning, and maintenance of advanced air conditioning systems across the UAE.*
+*Altaher Ghabboun Engineering Contracting (AGEC) is a Dubai-based HVAC contractor specializing in design, installation, testing & commissioning, and maintenance of advanced air conditioning systems across the UAE.*

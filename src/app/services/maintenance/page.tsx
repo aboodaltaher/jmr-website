@@ -10,7 +10,7 @@ import {
 import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
 
 export const metadata: Metadata = {
-  title: "Maintenance & AMC | JMR Technical Services",
+  title: "Maintenance & AMC | AGEC",
   description:
     "HVAC maintenance contracts and emergency servicing in Dubai. Preventive maintenance, reactive repairs, and annual AMC programs for residential and commercial systems.",
 };
@@ -20,7 +20,7 @@ export default function Maintenance() {
     <ServiceDetailLayout
       title="Maintenance & AMC"
       heroImage="/projects/jmr-maintenance-service-dubai.jpg"
-      heroImageAlt="JMR Technical Services HVAC maintenance work at Dubai project"
+      heroImageAlt="AGEC HVAC maintenance work at Dubai project"
       intro="Preventive maintenance contracts, reactive servicing, and emergency callouts — keeping HVAC systems running at peak performance year-round."
       overview={
         <>
@@ -34,7 +34,7 @@ export default function Maintenance() {
             mechanical systems.
           </p>
           <p>
-            JMR offers Annual Maintenance Contracts (AMC) for all HVAC system
+            AGECoffers Annual Maintenance Contracts (AMC) for all HVAC system
             types: split units, VRF systems, chillers, air handling units, fan
             coil units, and ventilation equipment. Our AMC programs include
             scheduled preventive visits, priority emergency response, and

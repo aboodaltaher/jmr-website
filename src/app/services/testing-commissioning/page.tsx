@@ -10,7 +10,7 @@ import {
 import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
 
 export const metadata: Metadata = {
-  title: "Testing & Commissioning | JMR Technical Services",
+  title: "Testing & Commissioning | AGEC",
   description:
     "Independent HVAC testing, air balancing, water balancing, and commissioning services in Dubai. Every system verified against design specifications before handover.",
 };
@@ -20,7 +20,7 @@ export default function TestingCommissioning() {
     <ServiceDetailLayout
       title="Testing & Commissioning"
       heroImage="/projects/jmr-technician-tab-commissioning-airflow-balometer-dubai.jpg"
-      heroImageAlt="JMR Technical Services technician performing TAB testing and commissioning with airflow balometer at commercial project in Dubai"
+      heroImageAlt="AGEC technician performing TAB testing and commissioning with airflow balometer at commercial project in Dubai"
       intro="Independent verification that every HVAC system performs to specification — airflow, water flow, controls, and safety systems tested and documented."
       overview={
         <>
@@ -33,7 +33,7 @@ export default function TestingCommissioning() {
             controls, and safety interlocks that have never been tested.
           </p>
           <p>
-            JMR provides systematic T&amp;C services covering air-side systems,
+            AGECprovides systematic T&amp;C services covering air-side systems,
             water-side systems, controls and automation, and refrigeration
             circuits. We use calibrated instruments — anemometers, pitot tubes,
             ultrasonic flow meters, digital manometers, and precision temperature

@@ -10,7 +10,7 @@ import {
 import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
 
 export const metadata: Metadata = {
-  title: "DX Units & Split Systems | JMR Technical Services",
+  title: "DX Units & Split Systems | AGEC",
   description:
     "Direct expansion AC installation in Dubai — wall-mount splits, ducted splits, cassettes, and concealed units. Properly sized and installed for residential and commercial spaces.",
 };
@@ -20,7 +20,7 @@ export default function DxUnits() {
     <ServiceDetailLayout
       title="DX Units & Split Systems"
       heroImage="/projects/indoor-ahu-installation-refrigerant-piping-dubai.jpg"
-      heroImageAlt="Indoor air handling unit installation with insulated refrigerant piping at Dubai commercial HVAC project by JMR Technical Services"
+      heroImageAlt="Indoor air handling unit installation with insulated refrigerant piping at Dubai commercial HVAC project by AGEC"
       intro="Direct expansion cooling systems — wall-mount splits, ducted splits, cassettes, and concealed units — properly sized and installed for Dubai's cooling demands."
       overview={
         <>
@@ -36,7 +36,7 @@ export default function DxUnits() {
             problematic one is proper sizing and installation practice. In
             Dubai&apos;s climate, undersized equipment runs continuously without
             reaching setpoint. Oversized equipment short-cycles, causing humidity
-            problems and premature compressor wear. JMR performs room-by-room
+            problems and premature compressor wear. AGECperforms room-by-room
             heat load calculations accounting for glazing, orientation, occupancy,
             and equipment heat gains to select the correct capacity for each
             space.

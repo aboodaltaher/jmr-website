@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { Logo } from "@/components/Logo";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -15,16 +15,11 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-12">
         <div className="flex flex-col gap-8 md:flex-row md:justify-between">
           <div>
-            <Link href="/">
-              <Image
-                src="/logo.png"
-                alt="JMR Technical Services"
-                width={44}
-                height={44}
-              />
+            <Link href="/" aria-label="AGEC — home">
+              <Logo />
             </Link>
             <p className="mt-2 text-sm text-text-muted">
-              JMR Technical Services LLC
+              Altaher Ghabboun Engineering Contracting (AGEC)
             </p>
             <div className="mt-4 space-y-1 text-sm text-text-muted">
               <p>+971 55 363 3139</p>
@@ -62,7 +57,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-8 border-t border-border pt-6 text-center text-xs text-text-muted">
-          &copy; {new Date().getFullYear()} JMR Technical Services LLC. All rights reserved.
+          &copy; {new Date().getFullYear()} Altaher Ghabboun Engineering Contracting (AGEC). All rights reserved.
         </div>
       </div>
     </footer>
