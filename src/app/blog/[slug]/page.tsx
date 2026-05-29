@@ -7,7 +7,7 @@ import remarkGfm from "remark-gfm";
 import { Phone } from "lucide-react";
 import { getAllPosts, getPostBySlug, formatDate } from "@/lib/blog";
 
-const SITE_URL = "https://jmrtechnical.com";
+const SITE_URL = "https://agec.ae";
 
 const relatedReading = [
   {

@@ -21,7 +21,7 @@ function wrap(heading: string, rows: string) {
     <div style="font-family:sans-serif;max-width:600px;margin:0 auto">
       <h2 style="color:#1A1A1A;border-bottom:2px solid #FF6B1A;padding-bottom:8px">${heading}</h2>
       <table style="width:100%;border-collapse:collapse;font-size:14px;color:#1A1A1A">${rows}</table>
-      <p style="margin-top:24px;font-size:12px;color:#6B7280">Submitted ${timestamp()} via jmrtechnical.com contact form</p>
+      <p style="margin-top:24px;font-size:12px;color:#6B7280">Submitted ${timestamp()} via agec.ae contact form</p>
     </div>`;
 }
 

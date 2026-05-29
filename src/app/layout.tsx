@@ -17,10 +17,19 @@ const saira = Saira_Condensed({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://agec.ae"),
   title: "AGEC — HVAC, MEP & Maintenance Contracting | Dubai, UAE",
   description:
     "AGEC (Altaher Ghabboun Engineering Contracting) designs, installs, and maintains HVAC and MEP systems across the UAE. VRF, chillers, ventilation, AMC. Dubai-based. Engineered to perform.",
   openGraph: {
+    title: "AGEC — Engineered to Perform",
+    description: "HVAC · MEP · Maintenance contracting across the UAE.",
+    url: "https://agec.ae",
+    siteName: "AGEC",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
     title: "AGEC — Engineered to Perform",
     description: "HVAC · MEP · Maintenance contracting across the UAE.",
   },
