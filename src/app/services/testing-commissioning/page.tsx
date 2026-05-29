@@ -19,7 +19,8 @@ export default function TestingCommissioning() {
   return (
     <ServiceDetailLayout
       title="Testing & Commissioning"
-      heroImage="https://images.unsplash.com/photo-1583954964358-1bd7215b6f7a?auto=format&fit=crop&w=1600&q=80"
+      heroImage="/projects/trane-hvac-controls-commissioning-dubai.jpg"
+      heroImageAlt="Trane HVAC control panel commissioning at 24 degrees Celsius set point on Dubai project site by JMR Technical Services TAB engineers"
       intro="Independent verification that every HVAC system performs to specification — airflow, water flow, controls, and safety systems tested and documented."
       overview={
         <>

@@ -19,7 +19,8 @@ export default function VentilationFreshAir() {
   return (
     <ServiceDetailLayout
       title="Ventilation & Fresh Air"
-      heroImage="https://images.unsplash.com/photo-1614447413576-b346c641c128?auto=format&fit=crop&w=1600&q=80"
+      heroImage="/projects/insulated-rooftop-ductwork-hvac-dubai.jpg"
+      heroImageAlt="Insulated rooftop ductwork installation for fresh air ventilation system in Dubai by JMR Technical Services"
       intro="Mechanical ventilation, fresh air handling, and exhaust systems engineered for Dubai's climate and indoor air quality requirements."
       overview={
         <>

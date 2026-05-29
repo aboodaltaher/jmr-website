@@ -12,6 +12,7 @@ interface ServiceDetailLayoutProps {
   title: string;
   intro: string;
   heroImage?: string;
+  heroImageAlt?: string;
   overview: React.ReactNode;
   whenYouNeedIt: string[];
   whatWeDo: Capability[];
@@ -22,6 +23,7 @@ export function ServiceDetailLayout({
   title,
   intro,
   heroImage,
+  heroImageAlt,
   overview,
   whenYouNeedIt,
   whatWeDo,
@@ -60,10 +62,10 @@ export function ServiceDetailLayout({
 
       {heroImage && (
         <div className="relative mx-auto max-w-7xl px-6 -mt-1">
-          <div className="relative aspect-[21/9] overflow-hidden rounded-lg">
+          <div className="relative aspect-[21/9] overflow-hidden rounded-xl">
             <Image
               src={heroImage}
-              alt={title}
+              alt={heroImageAlt ?? title}
               fill
               className="object-cover"
             />

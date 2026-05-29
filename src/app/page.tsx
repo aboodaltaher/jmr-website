@@ -118,13 +118,13 @@ export default function Home() {
       {/* Hero */}
       <section className="relative flex min-h-[80vh] items-center">
         <Image
-          src="https://images.unsplash.com/photo-1771902985060-6133bb4b2eb6?auto=format&fit=crop&w=2000&q=80"
-          alt="HVAC rooftop systems on a commercial building"
+          src="/projects/daikin-vrv-x-business-bay-dubai-rooftop-installation.jpg"
+          alt="Daikin VRV-X variable refrigerant volume system installation on rooftop in Business Bay Dubai by JMR Technical Services"
           fill
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/65 to-black/45" />
         <div className="relative mx-auto max-w-7xl px-6 py-24">
           <h1 className="max-w-4xl font-heading text-5xl font-bold leading-tight text-white md:text-7xl">
             Advanced HVAC Solutions for Dubai&apos;s Most Demanding Projects

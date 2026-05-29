@@ -19,7 +19,8 @@ export default function Chillers() {
   return (
     <ServiceDetailLayout
       title="Chiller Systems"
-      heroImage="https://images.unsplash.com/photo-1615309662243-70f6df917b59?auto=format&fit=crop&w=1600&q=80"
+      heroImage="/projects/trane-outdoor-units-rooftop-array-dubai.jpg"
+      heroImageAlt="Trane outdoor condensing unit array installation on commercial building rooftop in Dubai by JMR Technical Services"
       intro="Air-cooled and water-cooled chiller plants for commercial and industrial cooling — designed, installed, and commissioned to specification."
       overview={
         <>
