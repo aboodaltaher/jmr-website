@@ -31,7 +31,8 @@ const services = [
     icon: Gauge,
     name: "VRF / VRV Systems",
     href: "/services/vrf-vrv-systems",
-    image: "https://images.unsplash.com/photo-1575806980027-9e8310a6e4ab?auto=format&fit=crop&w=800&q=80",
+    image: "/projects/daikin-vrv-x-business-bay-dubai-rooftop-installation.jpg",
+    alt: "Daikin VRV-X variable refrigerant volume system installation in Dubai by JMR Technical Services",
     description:
       "Multi-zone climate control with variable refrigerant flow technology for maximum efficiency.",
   },
@@ -39,7 +40,8 @@ const services = [
     icon: Snowflake,
     name: "Chillers",
     href: "/services/chillers",
-    image: "https://images.unsplash.com/photo-1615309662243-70f6df917b59?auto=format&fit=crop&w=800&q=80",
+    image: "/projects/trane-outdoor-units-rooftop-array-dubai.jpg",
+    alt: "Trane outdoor condensing unit array installation in Dubai by JMR Technical Services",
     description:
       "Air-cooled and water-cooled chiller systems sized and installed for commercial and large-scale residential projects.",
   },
@@ -47,7 +49,8 @@ const services = [
     icon: Thermometer,
     name: "DX Units",
     href: "/services/dx-units",
-    image: "https://images.unsplash.com/photo-1726614846573-c1ac2e6161d1?auto=format&fit=crop&w=800&q=80",
+    image: "/projects/indoor-ahu-installation-refrigerant-piping-dubai.jpg",
+    alt: "Indoor air handling unit installation in Dubai by JMR Technical Services",
     description:
       "Direct expansion split and packaged units for targeted cooling in offices, retail, and server rooms.",
   },
@@ -55,7 +58,8 @@ const services = [
     icon: Wind,
     name: "Ventilation & Fresh Air",
     href: "/services/ventilation-fresh-air",
-    image: "https://images.unsplash.com/photo-1614447413576-b346c641c128?auto=format&fit=crop&w=800&q=80",
+    image: "/projects/insulated-rooftop-ductwork-hvac-dubai.jpg",
+    alt: "Insulated rooftop ductwork installation for fresh air ventilation in Dubai by JMR Technical Services",
     description:
       "Mechanical ventilation and fresh air systems designed to meet Dubai Municipality air quality standards.",
   },
@@ -63,7 +67,8 @@ const services = [
     icon: Settings,
     name: "HVAC Design & Consultancy",
     href: "/services/hvac-design",
-    image: "https://images.unsplash.com/photo-1542621334-a254cf47733d?auto=format&fit=crop&w=800&q=80",
+    image: "/projects/multiple-ahu-installation-hvac-design-dubai.jpg",
+    alt: "HVAC design and engineering scale at Dubai commercial project by JMR Technical Services",
     description:
       "Heat load calculations, duct sizing, equipment selection, and full MEP coordination.",
   },
@@ -71,7 +76,8 @@ const services = [
     icon: ClipboardCheck,
     name: "Testing & Commissioning",
     href: "/services/testing-commissioning",
-    image: "https://images.unsplash.com/photo-1583954964358-1bd7215b6f7a?auto=format&fit=crop&w=800&q=80",
+    image: "/projects/jmr-technician-tab-commissioning-airflow-balometer-dubai.jpg",
+    alt: "JMR Technical Services technician performing TAB testing and commissioning in Dubai",
     description:
       "System verification, airflow balancing, and performance testing against design specifications.",
   },
@@ -79,7 +85,8 @@ const services = [
     icon: Wrench,
     name: "Maintenance",
     href: "/services/maintenance",
-    image: "https://images.unsplash.com/photo-1700124113583-81aa99ea2aa2?auto=format&fit=crop&w=800&q=80",
+    image: "/projects/trane-packaged-unit-rooftop-dubai.jpg",
+    alt: "Trane rooftop packaged HVAC unit maintained by JMR Technical Services in Dubai",
     description:
       "Preventive and corrective maintenance contracts to keep systems running at peak performance.",
   },
@@ -282,7 +289,7 @@ export default function Home() {
                 <div className="relative aspect-[16/9]">
                   <Image
                     src={service.image}
-                    alt={service.name}
+                    alt={service.alt}
                     fill
                     className="object-cover transition-transform group-hover:scale-105"
                   />
