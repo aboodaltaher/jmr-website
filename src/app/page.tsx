@@ -40,8 +40,8 @@ const services = [
     icon: Snowflake,
     name: "Chillers",
     href: "/services/chillers",
-    image: "/projects/trane-outdoor-units-rooftop-array-dubai.jpg",
-    alt: "Trane outdoor condensing unit array installation in Dubai by AGEC",
+    image: "/projects/chiller-installation-dubai-agec.jpg",
+    alt: "Chiller plant installation by AGEC for commercial project in Dubai",
     description:
       "Air-cooled and water-cooled chiller systems sized and installed for commercial and large-scale residential projects.",
   },
@@ -58,8 +58,8 @@ const services = [
     icon: Wind,
     name: "Ventilation & Fresh Air",
     href: "/services/ventilation-fresh-air",
-    image: "/projects/insulated-rooftop-ductwork-hvac-dubai.jpg",
-    alt: "Insulated rooftop ductwork installation for fresh air ventilation in Dubai by AGEC",
+    image: "/projects/fresh-air-handling-unit-fahu-dubai-agec.jpg",
+    alt: "Fresh Air Handling Unit (FAHU) installation by AGEC in Dubai commercial project",
     description:
       "Mechanical ventilation and fresh air systems designed to meet Dubai Municipality air quality standards.",
   },

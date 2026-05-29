@@ -19,8 +19,8 @@ export default function Chillers() {
   return (
     <ServiceDetailLayout
       title="Chiller Systems"
-      heroImage="/projects/trane-outdoor-units-rooftop-array-dubai.jpg"
-      heroImageAlt="Trane outdoor condensing unit array installation on commercial building rooftop in Dubai by AGEC"
+      heroImage="/projects/chiller-installation-dubai-agec.jpg"
+      heroImageAlt="Chiller plant installation by AGEC for commercial project in Dubai"
       intro="Air-cooled and water-cooled chiller plants for commercial and industrial cooling — designed, installed, and commissioned to specification."
       overview={
         <>

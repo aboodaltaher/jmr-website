@@ -19,8 +19,8 @@ export default function VentilationFreshAir() {
   return (
     <ServiceDetailLayout
       title="Ventilation & Fresh Air"
-      heroImage="/projects/insulated-rooftop-ductwork-hvac-dubai.jpg"
-      heroImageAlt="Insulated rooftop ductwork installation for fresh air ventilation system in Dubai by AGEC"
+      heroImage="/projects/fresh-air-handling-unit-fahu-dubai-agec.jpg"
+      heroImageAlt="Fresh Air Handling Unit (FAHU) installation by AGEC in Dubai commercial project"
       intro="Mechanical ventilation, fresh air handling, and exhaust systems engineered for Dubai's climate and indoor air quality requirements."
       overview={
         <>
