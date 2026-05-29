@@ -19,8 +19,8 @@ export default function VrfVrvSystems() {
   return (
     <ServiceDetailLayout
       title="VRF / VRV Systems"
-      heroImage="/projects/indoor-ahu-installation-refrigerant-piping-dubai.jpg"
-      heroImageAlt="Indoor air handling unit installation with insulated refrigerant piping at Dubai commercial HVAC project by JMR Technical Services"
+      heroImage="/projects/daikin-vrv-x-business-bay-dubai-rooftop-installation.jpg"
+      heroImageAlt="Daikin VRV-X variable refrigerant volume system installation on rooftop in Business Bay Dubai by JMR Technical Services"
       intro="Multi-zone climate control with variable refrigerant flow technology — engineered for Dubai's extreme cooling demands."
       overview={
         <>

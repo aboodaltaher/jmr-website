@@ -19,7 +19,8 @@ export default function DxUnits() {
   return (
     <ServiceDetailLayout
       title="DX Units & Split Systems"
-      heroImage="https://images.unsplash.com/photo-1726614846573-c1ac2e6161d1?auto=format&fit=crop&w=1600&q=80"
+      heroImage="/projects/indoor-ahu-installation-refrigerant-piping-dubai.jpg"
+      heroImageAlt="Indoor air handling unit installation with insulated refrigerant piping at Dubai commercial HVAC project by JMR Technical Services"
       intro="Direct expansion cooling systems — wall-mount splits, ducted splits, cassettes, and concealed units — properly sized and installed for Dubai's cooling demands."
       overview={
         <>
