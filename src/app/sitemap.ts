@@ -1,7 +1,14 @@
 import type { MetadataRoute } from "next";
+import { getAllPosts } from "@/lib/blog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://jmrtechnical.com";
+
+  const blogPosts: MetadataRoute.Sitemap = getAllPosts().map((post) => ({
+    url: `${base}/blog/${post.slug}`,
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
 
   return [
     { url: base, changeFrequency: "monthly", priority: 1 },
@@ -19,6 +26,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/services/ac-cleaning/split-ac`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/services/ac-cleaning/coil-cleaning`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/projects`, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/blog`, changeFrequency: "weekly", priority: 0.8 },
+    ...blogPosts,
     { url: `${base}/quote`, changeFrequency: "yearly", priority: 0.9 },
     { url: `${base}/book`, changeFrequency: "yearly", priority: 0.8 },
     { url: `${base}/contact`, changeFrequency: "yearly", priority: 0.8 },
