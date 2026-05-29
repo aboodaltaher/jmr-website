@@ -19,8 +19,8 @@ export default function Maintenance() {
   return (
     <ServiceDetailLayout
       title="Maintenance & AMC"
-      heroImage="/projects/trane-packaged-unit-rooftop-dubai.jpg"
-      heroImageAlt="Trane rooftop packaged HVAC unit serviced and maintained by JMR Technical Services in Dubai"
+      heroImage="/projects/jmr-maintenance-service-dubai.jpg"
+      heroImageAlt="JMR Technical Services HVAC maintenance work at Dubai project"
       intro="Preventive maintenance contracts, reactive servicing, and emergency callouts — keeping HVAC systems running at peak performance year-round."
       overview={
         <>

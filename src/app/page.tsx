@@ -85,8 +85,8 @@ const services = [
     icon: Wrench,
     name: "Maintenance",
     href: "/services/maintenance",
-    image: "/projects/trane-packaged-unit-rooftop-dubai.jpg",
-    alt: "Trane rooftop packaged HVAC unit maintained by JMR Technical Services in Dubai",
+    image: "/projects/jmr-maintenance-service-dubai.jpg",
+    alt: "JMR Technical Services HVAC maintenance in Dubai",
     description:
       "Preventive and corrective maintenance contracts to keep systems running at peak performance.",
   },
