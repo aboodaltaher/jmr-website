@@ -122,6 +122,54 @@ const reasons = [
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HVACBusiness",
+            "@id": "https://agec.ae/#business",
+            name: "AGEC",
+            alternateName: "JMR Technical Services",
+            description:
+              "Dubai-based HVAC contractor providing design, installation, testing & commissioning, and maintenance for VRF, VRV, chillers, ducted splits, DX units, and ventilation systems across Dubai and Sharjah.",
+            url: "https://agec.ae",
+            logo: "https://agec.ae/agec-logo.png",
+            image: "https://agec.ae/agec-logo.png",
+            telephone: "+971553633139",
+            email: "a.altaher@agec.ae",
+            priceRange: "$$",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress:
+                "Alhamra Building, BNKS Vision Business Center, Umm Hurair Road",
+              addressLocality: "Al Karama",
+              addressRegion: "Dubai",
+              addressCountry: "AE",
+            },
+            areaServed: [
+              { "@type": "City", name: "Dubai" },
+              { "@type": "City", name: "Sharjah" },
+            ],
+            openingHoursSpecification: [
+              {
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday",
+                ],
+                opens: "08:00",
+                closes: "22:00",
+              },
+            ],
+            sameAs: [],
+          }),
+        }}
+      />
       {/* Hero */}
       <section className="relative flex min-h-[80vh] items-center">
         <Image
