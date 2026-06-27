@@ -150,67 +150,10 @@ If your summer bills don't add up, we'll find out why — system check, heat loa
 - [AC Maintenance Contracts in Dubai: Why Reactive Maintenance Costs You More →](https://agec.ae/blog/ac-maintenance-contracts-dubai-amc-guide)
 - [HVAC Design & Consultancy →](https://agec.ae/services/hvac-design)
 - [VRF / VRV Systems →](https://agec.ae/services/vrf-vrv-systems)
-- [Maintenance & AMC →](https://agec.ae/services/[MAINTENANCE SLUG])
+- [Maintenance & AMC →](/services/ac-cleaning/full-ac)
 
 ---
 
 *Altaher Ghabboun Engineering Contracting (AGEC) is a Dubai-based HVAC contractor specializing in design, installation, testing & commissioning, and maintenance of advanced air conditioning systems across the UAE.*
 
 
-<!--
-================================================================
-FAQPage JSON-LD — paste into the page <head> or via your schema component.
-RULE: the text here must match the visible FAQ section above word-for-word.
-Validate in Google's Rich Results Test before deploy (aim for 0 errors).
-Add a separate BlogPosting schema too if the VRF post doesn't already have one.
-================================================================
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What temperature should I set my AC to in Dubai to save money?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "24°C is the sweet spot for most people — comfortable, and efficient enough that going lower mainly adds cost. Every degree below that raises consumption by roughly 5%, and the effect is larger in peak summer because the system fights a bigger gap against the outdoor heat. Nudge up to 25–26°C overnight and when you're out, but don't switch the system off entirely during a heatwave."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does servicing my AC really lower my DEWA bill?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, and it's usually the best-value thing you can do. Dirty filters, fouled coils, and a dust-caked condenser can quietly cost you 15–20% in efficiency. In Dubai's dust that happens fast. Regular cleaning recovers that efficiency, and the saving typically outweighs the cost of the service over a summer."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is district cooling (Empower) cheaper than a split or VRF system?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Not necessarily — it's billed differently. District cooling splits your bill into a consumption charge for what you use and a fixed capacity charge (around AED 750 per refrigeration ton per year) that you pay whether you use the AC or not. So part of your cooling cost is fixed and can't be reduced by using less. A DEWA-metered split or VRF system has no fixed capacity charge, but you pay for the electricity directly on the slab tariff. Which works out cheaper depends on the property, the capacity allocated, and how you use it."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Will a new inverter AC actually pay for itself?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Often, yes — if you're replacing fixed-speed units that are 10+ years old. Modern inverter systems commonly use 30–50% less energy for the same cooling, and on a high-summer-bill villa that can recover the upgrade cost in around two cooling seasons, with better comfort in the meantime. On newer or already-inverter equipment, the payback is much longer and maintenance is the smarter spend."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why is my AC bill higher than my neighbour's identical apartment?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Usually one of a few things: a lower thermostat setting, a poorly maintained or fouled unit, leaking or uninsulated ductwork, more sun exposure on your side of the building, or air leaks around doors and windows. Same floor plan doesn't mean same system condition or same habits — and small differences compound across a long Dubai summer."
-      }
-    }
-  ]
-}
-</script>
-================================================================
--->
