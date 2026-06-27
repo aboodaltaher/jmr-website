@@ -1,25 +1,11 @@
-<!--
-================================================================
-POST METADATA (for Claude Code to map into the existing frontmatter)
-================================================================
-slug:               why-ac-bill-so-high-dubai
-title (H1):         Why Your AC Bill Is So High in Dubai — and What Actually Lowers It
-title tag (<head>): Why Is Your AC Bill So High in Dubai? | AGEC   (49 chars)
-meta description:   Your AC drives 60–70% of a Dubai summer bill. An HVAC engineer breaks down the real reasons it runs high — sizing, maintenance, district cooling charges — and what actually lowers it.  (181 chars — trim to ~155 if your template is strict; shorter version below)
-meta description (short, 152): An HVAC engineer's breakdown of why your AC bill is so high in Dubai — sizing, maintenance, and district cooling charges — and what actually lowers it.
-author:             AGEC Team
-date:               2026-06-27   (set to publish date)
-reading time:       ~9 min
-canonical:          https://agec.ae/blog/why-ac-bill-so-high-dubai
-og:image:           reuse an existing /projects image for now (e.g. an FCU or maintenance shot); TODO swap for a thermostat / DEWA-bill image
-primary keyword:    why is my AC bill so high in Dubai
-secondary keywords: high DEWA bill summer, district cooling charges Dubai, reduce AC bill Dubai, AC setpoint Dubai
-================================================================
-PLACEHOLDERS TO FILL BEFORE PUBLISH:
-  [REAL CASE] — replace with one true before/after from your records. This single line does more than any stat.
-  [MAINTENANCE SLUG] — confirm your AMC/maintenance service URL and wire the links.
-================================================================
--->
+---
+date: "2026-06-27"
+author: "AGEC Team"
+readingTime: "9 min read"
+image: "/projects/jmr-maintenance-service-dubai.jpg"
+description: "An HVAC engineer's breakdown of why your AC bill is so high in Dubai — sizing, maintenance, and district cooling charges — and what actually lowers it."
+titleTag: "Why Is Your AC Bill So High in Dubai? | AGEC"
+---
 
 # Why Your AC Bill Is So High in Dubai — and What Actually Lowers It
 
