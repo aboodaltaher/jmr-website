@@ -20,6 +20,7 @@ import {
   Phone,
   MessageCircle,
   Check,
+  Cpu,
   type LucideIcon,
 } from "lucide-react";
 
@@ -249,6 +250,7 @@ const faqs: { q: string; a: string }[] = [
   { q: "Is the Google Nest Thermostat compatible with my AC in Dubai?", a: "Most Dubai homes use 24V ducted or ducted-split HVAC systems, which are compatible with Google Nest. Compatibility ultimately depends on your existing wiring and control system, so we provide a free compatibility check before installation and advise on any wiring modifications, such as adding a C-wire." },
   { q: "Is ecobee compatible with Daikin systems?", a: "ecobee works with most conventional and heat-pump 24V systems, including many Daikin ducted and ducted-split units. Some inverter or proprietary Daikin controllers require an interface module. Our free assessment confirms compatibility for your exact model." },
   { q: "Can you install a C-wire if my system doesn't have one?", a: "Yes — C-wire (common wire) installation is one of our core services. If your thermostat needs continuous power, our licensed technicians run a proper C-wire or fit a compatible power extender kit safely and cleanly." },
+  { q: "What if my AC isn't compatible or runs on 220V?", a: "No problem — even if your system doesn't use standard 24V control, including 220V/240V split and inverter units, we have a solution. Our engineers fit a safe interface module that lets your Google Nest or ecobee control the AC without modifying or damaging the machine, and without depending on or cutting into its internal PCB control board. Your unit keeps working exactly as the manufacturer designed it, with smart control simply added on top." },
   { q: "How much does smart thermostat installation cost in Dubai?", a: "Standard installation is affordably priced and quoted upfront after your free compatibility check. Final cost depends on your HVAC type, whether a C-wire or wiring modification is needed, and the number of zones. You always receive a transparent, no-obligation quote before any work begins." },
   { q: "Can I control the thermostat from my phone?", a: "Yes. Both Google Nest and ecobee offer full mobile app control over Wi-Fi, so you can adjust temperature, set schedules and monitor energy use from anywhere in the world." },
   { q: "Does it work with Amazon Alexa?", a: "ecobee thermostats work with Amazon Alexa — and ecobee Premium has Alexa built in. Google Nest works with Google Assistant and also supports Alexa voice commands for temperature control." },
@@ -527,6 +529,27 @@ export default function SmartThermostatPage() {
               </div>
             ))}
           </div>
+
+          {/* Not natively compatible? We still have a solution */}
+          <div className="mt-8 flex items-start gap-4 rounded-xl border border-white/10 bg-white/5 p-7">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/15">
+              <Cpu className="h-6 w-6 text-primary" strokeWidth={1.75} />
+            </div>
+            <div>
+              <h3 className="font-heading text-xl font-semibold text-white">
+                Not natively compatible? We still have a solution.
+              </h3>
+              <p className="mt-2 text-white/75">
+                Even if your AC doesn&apos;t use standard 24V control — including{" "}
+                <strong className="text-white">220V / 240V split and inverter systems</strong> — our engineers
+                can still make it smart. We fit a dedicated, safe interface module that lets your Google Nest or
+                ecobee operate the unit <strong className="text-white">without modifying or damaging your machine</strong>,
+                and <strong className="text-white">without depending on or cutting into its internal PCB control board</strong>.
+                Your AC keeps running exactly as the manufacturer intended — it simply gains smart control on top.
+              </p>
+            </div>
+          </div>
+
           <div className="mt-10 flex flex-wrap items-center justify-between gap-5 rounded-xl border border-primary/40 bg-primary/10 p-7">
             <p className="max-w-2xl text-white/85">
               <strong className="text-white">Compatibility depends on your existing wiring and HVAC control system</strong> —
