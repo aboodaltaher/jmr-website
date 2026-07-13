@@ -8,6 +8,7 @@ import {
   ClipboardCheck,
   Gauge,
   Wrench,
+  Cpu,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -37,6 +38,13 @@ const services = [
     href: "/services/dx-units",
     description:
       "Direct Expansion systems including split units, ducted splits, cassettes, and concealed units for residential and small commercial applications. Reliable cooling solutions, properly sized and installed.",
+  },
+  {
+    icon: Cpu,
+    name: "Smart Thermostat Installation",
+    href: "/smart-thermostat-installation-dubai",
+    description:
+      "Authorized supply and professional installation of Google Nest and ecobee smart thermostats across the UAE — with free compatibility check, C-wire installation, and smart-home setup for villas, apartments, offices and shops.",
   },
   {
     icon: Fan,

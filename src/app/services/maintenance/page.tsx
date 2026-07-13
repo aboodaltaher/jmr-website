@@ -8,6 +8,7 @@ import {
   Shield,
 } from "lucide-react";
 import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Maintenance & AMC | AGEC",
@@ -50,6 +51,17 @@ export default function Maintenance() {
             before/after conditions, work performed, parts used, and
             recommendations — giving facility managers a complete maintenance
             history for each piece of equipment.
+          </p>
+          <p>
+            Maintaining split or ducted units? It&apos;s the ideal moment to add
+            a{" "}
+            <Link
+              href="/smart-thermostat-installation-dubai"
+              className="text-primary underline underline-offset-2 hover:text-primary-dark"
+            >
+              smart thermostat such as Google Nest or ecobee
+            </Link>{" "}
+            for lower running costs, scheduling and full app control.
           </p>
         </>
       }
