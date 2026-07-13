@@ -24,7 +24,7 @@ export function Footer() {
             <div className="mt-4 space-y-1 text-sm text-text-muted">
               <p>+971 55 363 3139</p>
               <p>sales@jmrtechnical.com</p>
-              <p>Al Hind Tower, Office 1611, Dubai, UAE</p>
+              <p>Alhamra Building, BNKS Vision Business Center, Umm Hurair Road, Al Karama, Dubai, UAE</p>
             </div>
             <p className="mt-4 text-xs text-text-muted">
               24/7 Emergency Support · +971 55 363 3139

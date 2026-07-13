@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 
@@ -76,7 +75,7 @@ export default function Contact() {
                     <div>
                       <p className="text-sm font-medium">Location</p>
                       <p className="text-sm text-text-muted">
-                        Al Hind Tower, Office 1611, Dubai, UAE
+                        Alhamra Building, BNKS Vision Business Center, Umm Hurair Road, Al Karama, Dubai, UAE
                       </p>
                     </div>
                   </div>
@@ -109,19 +108,27 @@ export default function Contact() {
       <section className="bg-bg-soft py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
           <h2 className="font-heading text-3xl font-bold">Visit us</h2>
-          <div className="relative mt-6 h-80 overflow-hidden rounded-lg">
-            <Image
-              src="https://images.unsplash.com/photo-1745750434535-5943ef2fd31a?auto=format&fit=crop&w=1600&q=80"
-              alt="Dubai skyline"
-              fill
-              className="object-cover"
+          <div className="mt-6 overflow-hidden rounded-lg border border-border">
+            <iframe
+              title="AGEC (JMR Technical Services) location on Google Maps"
+              src="https://www.google.com/maps?q=JMR+Technical+Services,+Al+Karama,+Dubai&z=16&output=embed"
+              className="h-80 w-full border-0"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
             />
-            <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/50 to-transparent p-6">
-              <p className="text-sm font-medium text-white">
-                Al Hind Tower, Office 1611, Dubai, UAE
-              </p>
-            </div>
           </div>
+          <p className="mt-3 text-sm text-text-muted">
+            Alhamra Building, BNKS Vision Business Center, Umm Hurair Road, Al Karama, Dubai, UAE ·{" "}
+            <a
+              href="https://maps.app.goo.gl/fPKs5SXmDeK9Co4VA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-primary hover:underline"
+            >
+              Open in Google Maps →
+            </a>
+          </p>
         </div>
       </section>
     </>

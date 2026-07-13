@@ -147,6 +147,12 @@ export default function Home() {
               addressRegion: "Dubai",
               addressCountry: "AE",
             },
+            geo: {
+              "@type": "GeoCoordinates",
+              latitude: 25.2445449,
+              longitude: 55.3112435,
+            },
+            hasMap: "https://maps.app.goo.gl/fPKs5SXmDeK9Co4VA",
             areaServed: [
               { "@type": "City", name: "Dubai" },
               { "@type": "City", name: "Sharjah" },
