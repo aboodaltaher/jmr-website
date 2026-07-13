@@ -8,6 +8,7 @@ import {
   Shield,
 } from "lucide-react";
 import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "DX Units & Split Systems | AGEC",
@@ -48,6 +49,17 @@ export default function DxUnits() {
             We follow manufacturer installation standards on every project —
             whether it&apos;s a single split unit in a studio apartment or a
             multi-unit ducted system across a full villa.
+          </p>
+          <p>
+            Upgrading the controls too? Most of these split and ducted systems
+            can be paired with a{" "}
+            <Link
+              href="/smart-thermostat-installation-dubai"
+              className="text-primary underline underline-offset-2 hover:text-primary-dark"
+            >
+              smart thermostat such as Google Nest or ecobee
+            </Link>{" "}
+            for app control, scheduling and lower DEWA bills.
           </p>
         </>
       }

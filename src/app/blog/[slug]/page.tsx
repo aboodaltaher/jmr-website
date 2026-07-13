@@ -11,6 +11,11 @@ const SITE_URL = "https://agec.ae";
 
 const relatedReading = [
   {
+    href: "/smart-thermostat-installation-dubai",
+    title: "Smart Thermostat Installation",
+    description: "Supply & professional installation of Google Nest and ecobee across the UAE.",
+  },
+  {
     href: "/services/vrf-vrv-systems",
     title: "VRF / VRV Systems",
     description: "Multi-zone climate control for villas and commercial buildings.",
