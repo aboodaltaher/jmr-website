@@ -9,6 +9,7 @@ import {
   Gauge,
   Wrench,
   Cpu,
+  Settings,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -68,11 +69,18 @@ const services = [
       "Independent testing, balancing, and commissioning services. Airflow measurement, water flow balancing, controls verification, and full T&C reports — every system handed over against specification.",
   },
   {
+    icon: Settings,
+    name: "AC Maintenance & Repair",
+    href: "/ac-maintenance-dubai",
+    description:
+      "AC servicing, repair, coil & duct cleaning, gas top-up and emergency callouts for villas, apartments and businesses across Dubai and the UAE. Same-day and 24/7 emergency service.",
+  },
+  {
     icon: Wrench,
-    name: "Maintenance",
+    name: "Annual Maintenance Contracts (AMC)",
     href: "/services/maintenance",
     description:
-      "Annual maintenance contracts (AMC), reactive servicing, and emergency callouts. Scheduled preventive maintenance extends equipment life and protects warranties. Available for residential and commercial clients.",
+      "Fixed-price annual maintenance contracts (AMC), reactive servicing, and emergency callouts. Scheduled preventive maintenance extends equipment life and protects warranties — residential and commercial.",
   },
 ];
 

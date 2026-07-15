@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/about`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/services`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/smart-thermostat-installation-dubai`, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/ac-maintenance-dubai`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/services/vrf-vrv-systems`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/services/chillers`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/services/dx-units`, changeFrequency: "monthly", priority: 0.7 },
