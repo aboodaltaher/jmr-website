@@ -203,10 +203,10 @@ export default function AcMaintenancePage() {
               ))}
             </div>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10">
+          <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/10">
             <Image
-              src="/projects/jmr-maintenance-service-dubai.jpg"
-              alt="AGEC technician carrying out AC maintenance on an HVAC system in Dubai"
+              src="/images/ac-maintenance-duct-cleaning-dubai.jpg"
+              alt="AGEC technician performing AC duct cleaning in a Dubai apartment"
               fill
               priority
               className="object-cover"
