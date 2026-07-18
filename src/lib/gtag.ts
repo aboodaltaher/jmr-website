@@ -13,7 +13,7 @@ export const GA_ADS_ID = "AW-18332305339";
  * so nothing bogus is sent to Google.
  */
 export const CONVERSIONS = {
-  whatsapp: "AW-18332305339/REPLACE_WHATSAPP_LABEL",
+  whatsapp: "AW-18332305339/Ta8NCPesz9IcELuPw6VE",
   call: "AW-18332305339/REPLACE_CALL_LABEL",
   form: "AW-18332305339/REPLACE_FORM_LABEL",
 } as const;
