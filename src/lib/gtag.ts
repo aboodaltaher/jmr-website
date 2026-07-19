@@ -14,7 +14,7 @@ export const GA_ADS_ID = "AW-18332305339";
  */
 export const CONVERSIONS = {
   whatsapp: "AW-18332305339/Ta8NCPesz9IcELuPw6VE",
-  call: "AW-18332305339/REPLACE_CALL_LABEL",
+  call: "AW-18332305339/jMslCPeI_dIcELuPw6VE",
   form: "AW-18332305339/REPLACE_FORM_LABEL",
 } as const;
 
