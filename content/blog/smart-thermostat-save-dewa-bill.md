@@ -47,4 +47,4 @@ For most villas and larger apartments in Dubai, the device plus professional ins
 
 A smart thermostat only saves money if it's **configured correctly for your system and climate**. Wrong wiring, a missing C-wire, or default settings tuned for a cold country all leave savings on the table. Our engineers set up the schedules, geofencing and eco modes properly for UAE cooling loads — that's the difference between a gadget and a genuine saving.
 
-> **Want to start cutting your bill?** Book a free compatibility check on our [smart thermostat installation page](/smart-thermostat-installation-dubai), or WhatsApp us on **+971 55 363 3139**.
+> **Want to start cutting your bill?** Book a free compatibility check on our [smart thermostat installation page](/smart-thermostat-installation-dubai), or WhatsApp us on **+971 58 557 5987**.

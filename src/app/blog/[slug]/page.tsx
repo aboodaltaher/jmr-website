@@ -235,11 +235,11 @@ export default async function ArticlePage({
                 Get a Quote
               </Link>
               <a
-                href="tel:+971553633139"
+                href="tel:+971585575987"
                 className="flex items-center gap-2 text-sm font-medium text-text-muted hover:text-primary transition-colors"
               >
                 <Phone className="h-4 w-4" />
-                +971 55 363 3139
+                +971 58 557 5987
               </a>
             </div>
           </div>

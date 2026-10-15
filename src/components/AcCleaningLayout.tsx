@@ -53,11 +53,11 @@ export function AcCleaningLayout({
               Request a Quote
             </Link>
             <a
-              href="tel:+971553633139"
+              href="tel:+971585575987"
               className="flex items-center gap-2 text-sm font-medium text-text-muted hover:text-primary transition-colors"
             >
               <Phone className="h-4 w-4" />
-              Or call +971 55 363 3139
+              Or call +971 58 557 5987
             </a>
           </div>
         </div>
@@ -148,11 +148,11 @@ export function AcCleaningLayout({
           </Link>
           <div className="mt-4">
             <a
-              href="tel:+971553633139"
+              href="tel:+971585575987"
               className="inline-flex items-center gap-2 text-sm font-medium text-white/80 hover:text-white transition-colors"
             >
               <Phone className="h-4 w-4" />
-              Or call +971 55 363 3139
+              Or call +971 58 557 5987
             </a>
           </div>
         </div>

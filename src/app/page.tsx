@@ -136,7 +136,7 @@ export default function Home() {
             url: "https://agec.ae",
             logo: "https://agec.ae/agec-logo.png",
             image: "https://agec.ae/agec-logo.png",
-            telephone: "+971553633139",
+            telephone: "+971585575987",
             email: "a.altaher@agec.ae",
             priceRange: "$$",
             address: {
@@ -462,10 +462,10 @@ export default function Home() {
               <div>
                 <p className="font-heading font-semibold">Phone</p>
                 <a
-                  href="tel:+971553633139"
+                  href="tel:+971585575987"
                   className="text-text-muted hover:text-primary transition-colors"
                 >
-                  +971 55 363 3139
+                  +971 58 557 5987
                 </a>
               </div>
             </div>
@@ -474,10 +474,10 @@ export default function Home() {
               <div>
                 <p className="font-heading font-semibold">Email</p>
                 <a
-                  href="mailto:sales@jmrtechnical.com"
+                  href="mailto:m.ghabboun@agec.ae"
                   className="text-text-muted hover:text-primary transition-colors"
                 >
-                  sales@jmrtechnical.com
+                  m.ghabboun@agec.ae
                 </a>
               </div>
             </div>

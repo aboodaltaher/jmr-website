@@ -47,4 +47,4 @@ Either way, our licensed technicians do it **safely and tidily**, and test the w
 
 If your AC isn't a standard 24V system at all — for example a **220V/240V split or inverter unit** — the C-wire question changes, and we use a different, safe interface approach instead. We cover that in our [AC compatibility guide](/blog/smart-thermostat-ac-compatibility-uae): even non-compatible systems can be made smart without touching the machine's internal board.
 
-> **Not sure about your wiring?** Book a free compatibility check on our [smart thermostat installation page](/smart-thermostat-installation-dubai), or WhatsApp **+971 55 363 3139** — we'll confirm exactly what your system needs.
+> **Not sure about your wiring?** Book a free compatibility check on our [smart thermostat installation page](/smart-thermostat-installation-dubai), or WhatsApp **+971 58 557 5987** — we'll confirm exactly what your system needs.

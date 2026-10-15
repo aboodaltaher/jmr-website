@@ -22,15 +22,15 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
-const PHONE = "+971553633139";
-const PHONE_DISPLAY = "+971 55 363 3139";
-const WA = "https://wa.me/971553633139";
+const PHONE = "+971585575987";
+const PHONE_DISPLAY = "+971 58 557 5987";
+const WA = "https://wa.me/971585575987";
 const CANONICAL = "/ac-maintenance-dubai";
 
 export const metadata: Metadata = {
   title: "AC Maintenance Dubai | AC Servicing, Repair & AMC | AGEC",
   description:
-    "Professional AC maintenance in Dubai & the UAE — servicing, repair, coil & duct cleaning, gas top-up, and annual maintenance contracts (AMC). Licensed HVAC engineers, same-day & emergency service. Call +971 55 363 3139.",
+    "Professional AC maintenance in Dubai & the UAE — servicing, repair, coil & duct cleaning, gas top-up, and annual maintenance contracts (AMC). Licensed HVAC engineers, same-day & emergency service. Call +971 58 557 5987.",
   alternates: { canonical: CANONICAL },
   openGraph: {
     title: "AC Maintenance Dubai | AC Servicing, Repair & AMC | AGEC",

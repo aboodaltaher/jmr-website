@@ -161,10 +161,10 @@ export function ServiceDetailLayout({
           </Link>
           <div className="mt-4">
             <a
-              href="tel:+971553633139"
+              href="tel:+971585575987"
               className="text-sm font-medium text-white/80 hover:text-white transition-colors"
             >
-              Or call +971 55 363 3139
+              Or call +971 58 557 5987
             </a>
           </div>
         </div>

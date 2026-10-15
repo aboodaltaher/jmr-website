@@ -24,12 +24,12 @@ export function Footer() {
               Altaher Ghabboun Engineering Contracting (AGEC)
             </p>
             <div className="mt-4 space-y-1 text-sm text-text-muted">
-              <p>+971 55 363 3139</p>
-              <p>sales@jmrtechnical.com</p>
+              <p>+971 58 557 5987</p>
+              <p>m.ghabboun@agec.ae</p>
               <p>Alhamra Building, BNKS Vision Business Center, Umm Hurair Road, Al Karama, Dubai, UAE</p>
             </div>
             <p className="mt-4 text-xs text-text-muted">
-              24/7 Emergency Support · +971 55 363 3139
+              24/7 Emergency Support · +971 58 557 5987
             </p>
           </div>
           <nav className="flex flex-col gap-2">

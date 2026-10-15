@@ -60,4 +60,4 @@ In a climate where AC runs most of the year, both thermostats deliver real savin
 
 Still unsure? That's what our **free compatibility check** is for — we review your AC and home and recommend the best fit, with no obligation.
 
-> **Ready to upgrade?** See all the models and book a free assessment on our [smart thermostat installation page](/smart-thermostat-installation-dubai), or call **+971 55 363 3139**.
+> **Ready to upgrade?** See all the models and book a free assessment on our [smart thermostat installation page](/smart-thermostat-installation-dubai), or call **+971 58 557 5987**.

@@ -45,10 +45,10 @@ export default function Contact() {
                     <div>
                       <p className="text-sm font-medium">Phone</p>
                       <a
-                        href="tel:+971553633139"
+                        href="tel:+971585575987"
                         className="text-sm text-text-muted hover:text-primary transition-colors"
                       >
-                        +971 55 363 3139
+                        +971 58 557 5987
                       </a>
                     </div>
                   </div>
@@ -60,10 +60,10 @@ export default function Contact() {
                     <div>
                       <p className="text-sm font-medium">Email</p>
                       <a
-                        href="mailto:sales@jmrtechnical.com"
+                        href="mailto:m.ghabboun@agec.ae"
                         className="text-sm text-text-muted hover:text-primary transition-colors"
                       >
-                        sales@jmrtechnical.com
+                        m.ghabboun@agec.ae
                       </a>
                     </div>
                   </div>

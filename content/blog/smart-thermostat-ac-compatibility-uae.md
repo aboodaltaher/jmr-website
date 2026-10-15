@@ -45,4 +45,4 @@ For advanced VRF/VRV and chiller systems, we assess the controller and recommend
 
 You don't need to diagnose any of this yourself. Before we recommend anything, we carry out a **free compatibility assessment** — we check your wiring, control system and AC type, confirm exactly what's needed, and give you a transparent quote. No obligation, no pressure.
 
-> **Not sure if your AC is smart-ready?** Book a free compatibility check on our [smart thermostat installation page](/smart-thermostat-installation-dubai), or call **+971 55 363 3139** — tell us your AC brand and property type and we'll advise.
+> **Not sure if your AC is smart-ready?** Book a free compatibility check on our [smart thermostat installation page](/smart-thermostat-installation-dubai), or call **+971 58 557 5987** — tell us your AC brand and property type and we'll advise.

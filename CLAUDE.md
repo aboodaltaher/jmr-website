@@ -121,8 +121,8 @@ Lead generation. Visitors should be able to (1) request a quotation, (2) book a 
 14. Contact — /contact
 
 ## Contact Details
-- Phone: +971 55 363 3139
-- Email: sales@jmrtechnical.com
+- Phone: +971 58 557 5987
+- Email: m.ghabboun@agec.ae
 - Location: Dubai, UAE
 
 ## Content Tone
