@@ -492,7 +492,7 @@ export default function Home() {
           <div className="mt-10 text-center">
             <p className="font-heading text-lg font-semibold">Prefer to talk?</p>
             <p className="mt-1 text-sm text-text-muted">
-              Call us during business hours, Sun–Thu 8am–6pm GST.
+              Call or WhatsApp anytime, 24/7. Dubai response within 2 hours.
             </p>
           </div>
         </div>

@@ -85,10 +85,10 @@ export default function Contact() {
                       strokeWidth={1.5}
                     />
                     <div>
-                      <p className="text-sm font-medium">Business Hours</p>
+                      <p className="text-sm font-medium">Availability</p>
                       <p className="text-sm text-text-muted">
-                        Sun–Thu 8am–6pm GST · 24/7 Emergency Support
-                        Available
+                        Call or WhatsApp anytime, 24/7. Dubai response within 2
+                        hours.
                       </p>
                     </div>
                   </div>
