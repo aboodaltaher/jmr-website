@@ -13,6 +13,7 @@ export interface PostMeta {
   readingTime: string;
   image: string;
   description: string;
+  titleTag: string;
 }
 
 export interface Post extends PostMeta {
@@ -67,6 +68,7 @@ function parsePost(slug: string): Post {
     readingTime: String(data.readingTime ?? ""),
     image: String(data.image ?? ""),
     description: String(data.description ?? generateExcerpt(content)),
+    titleTag: String(data.titleTag ?? ""),
     content: stripTitle(content),
   };
 }

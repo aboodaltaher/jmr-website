@@ -32,6 +32,42 @@ const relatedReading = [
   },
 ];
 
+// FAQ content for posts that have an FAQ section, keyed by slug. Used to emit
+// FAQPage JSON-LD. Mirrors the visible "Frequently asked questions" section in
+// the post body.
+const faqBySlug: Record<string, { question: string; answer: string }[]> = {
+  "why-ac-bill-so-high-dubai": [
+    {
+      question:
+        "What temperature should I set my AC to in Dubai to save money?",
+      answer:
+        "24°C is the sweet spot for most people — comfortable, and efficient enough that going lower mainly adds cost. Every degree below that raises consumption by roughly 5%, and the effect is larger in peak summer because the system fights a bigger gap against the outdoor heat. Nudge up to 25–26°C overnight and when you're out, but don't switch the system off entirely during a heatwave.",
+    },
+    {
+      question: "Does servicing my AC really lower my DEWA bill?",
+      answer:
+        "Yes, and it's usually the best-value thing you can do. Dirty filters, fouled coils, and a dust-caked condenser can quietly cost you 15–20% in efficiency. In Dubai's dust that happens fast. Regular cleaning recovers that efficiency, and the saving typically outweighs the cost of the service over a summer.",
+    },
+    {
+      question:
+        "Is district cooling (Empower) cheaper than a split or VRF system?",
+      answer:
+        "Not necessarily — it's billed differently. District cooling splits your bill into a consumption charge for what you use and a fixed capacity charge (around AED 750 per refrigeration ton per year) that you pay whether you use the AC or not. So part of your cooling cost is fixed and can't be reduced by using less. A DEWA-metered split or VRF system has no fixed capacity charge, but you pay for the electricity directly on the slab tariff. Which works out cheaper depends on the property, the capacity allocated, and how you use it.",
+    },
+    {
+      question: "Will a new inverter AC actually pay for itself?",
+      answer:
+        "Often, yes — if you're replacing fixed-speed units that are 10+ years old. Modern inverter systems commonly use 30–50% less energy for the same cooling, and on a high-summer-bill villa that can recover the upgrade cost in around two cooling seasons, with better comfort in the meantime. On newer or already-inverter equipment, the payback is much longer and maintenance is the smarter spend.",
+    },
+    {
+      question:
+        "Why is my AC bill higher than my neighbour's identical apartment?",
+      answer:
+        "Usually one of a few things: a lower thermostat setting, a poorly maintained or fouled unit, leaking or uninsulated ductwork, more sun exposure on your side of the building, or air leaks around doors and windows. Same floor plan doesn't mean same system condition or same habits — and small differences compound across a long Dubai summer.",
+    },
+  ],
+};
+
 const markdownComponents: Components = {
   h2: ({ children }) => (
     <h2 className="mt-12 font-heading text-3xl font-bold">{children}</h2>
@@ -113,7 +149,7 @@ export async function generateMetadata({
 
   const url = `${SITE_URL}/blog/${slug}`;
   return {
-    title: `${post.title} | AGEC`,
+    title: post.titleTag || `${post.title} | AGEC`,
     description: post.description,
     alternates: { canonical: url },
     openGraph: {
@@ -158,12 +194,64 @@ export default async function ArticlePage({
     },
   };
 
+  const blogPostingLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${SITE_URL}/blog/${slug}`,
+    },
+    headline: post.title,
+    description: post.description,
+    datePublished: post.date,
+    image: `${SITE_URL}${post.image}`,
+    author: {
+      "@type": "Organization",
+      name: "Altaher Ghabboun Engineering Contracting (AGEC)",
+      url: SITE_URL,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Altaher Ghabboun Engineering Contracting (AGEC)",
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/agec-logo.png`,
+      },
+    },
+  };
+
+  const faq = faqBySlug[slug];
+  const faqLd = faq
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faq.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+          },
+        })),
+      }
+    : null;
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingLd) }}
+      />
+      {faqLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+        />
+      )}
 
       {/* Breadcrumb */}
       <div className="bg-bg-soft">
