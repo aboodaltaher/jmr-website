@@ -6,7 +6,9 @@ const navLinks = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/ac-maintenance-dubai", label: "AC Maintenance" },
+  { href: "/ac-amc-dubai", label: "AC AMC" },
   { href: "/smart-thermostat-installation-dubai", label: "Smart Thermostats" },
+  { href: "/air-balancing-airflow-testing-dubai", label: "Air Balancing" },
   { href: "/projects", label: "Projects" },
   { href: "/contact", label: "Contact" },
 ];

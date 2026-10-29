@@ -6,6 +6,7 @@ interface Capability {
   icon: LucideIcon;
   name: string;
   description: string;
+  href?: string;
 }
 
 interface ServiceDetailLayoutProps {
@@ -121,6 +122,14 @@ export function ServiceDetailLayout({
                 <p className="mt-2 text-sm leading-relaxed text-text-muted">
                   {cap.description}
                 </p>
+                {cap.href && (
+                  <Link
+                    href={cap.href}
+                    className="mt-2 inline-block text-sm font-medium text-primary hover:underline"
+                  >
+                    Learn more &rarr;
+                  </Link>
+                )}
               </div>
             ))}
           </div>

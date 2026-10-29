@@ -16,6 +16,10 @@ const WHATSAPP_MESSAGES: Record<string, string> = {
     "Hi AGEC, we need HVAC maintenance for a [site type] in [area]. Can we arrange a survey?",
   "/services/testing-commissioning":
     "Hi AGEC, we need airflow testing/balancing for [building]. Issue: [symptom].",
+  "/ac-amc-dubai":
+    "Hi AGEC, I'd like an AMC quote for a [size] villa in [area] with [number] units.",
+  "/air-balancing-airflow-testing-dubai":
+    "Hi AGEC, we need airflow testing/balancing for [building]. Issue: [symptom].",
 };
 
 export function whatsappMessageFor(pathname: string): string {

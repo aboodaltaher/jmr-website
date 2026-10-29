@@ -10,7 +10,9 @@ const navLinks = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/ac-maintenance-dubai", label: "AC Maintenance" },
+  { href: "/ac-amc-dubai", label: "AC AMC" },
   { href: "/smart-thermostat-installation-dubai", label: "Smart Thermostats" },
+  { href: "/air-balancing-airflow-testing-dubai", label: "Air Balancing" },
   { href: "/projects", label: "Projects" },
   { href: "/blog", label: "Insights" },
   { href: "/contact", label: "Contact" },
@@ -27,7 +29,7 @@ export function Header() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-6 lg:flex">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -48,7 +50,7 @@ export function Header() {
         {/* Mobile menu toggle */}
         <button
           type="button"
-          className="-mr-2 flex items-center justify-center p-2 text-text md:hidden"
+          className="-mr-2 flex items-center justify-center p-2 text-text lg:hidden"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((prev) => !prev)}
@@ -59,7 +61,7 @@ export function Header() {
 
       {/* Mobile nav */}
       {open && (
-        <nav className="border-t border-border md:hidden">
+        <nav className="border-t border-border lg:hidden">
           <div className="mx-auto flex max-w-7xl flex-col px-6 py-3">
             {navLinks.map((link) => (
               <Link

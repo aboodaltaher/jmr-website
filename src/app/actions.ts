@@ -161,3 +161,92 @@ export async function submitBooking(data: Record<string, unknown>) {
 
   return { success: true };
 }
+
+// ── AMC Enquiry ──
+
+const amcSchema = z.object({
+  name: z.string().min(1),
+  phone: z.string().min(1),
+  propertyType: z.string().min(1),
+  location: z.string().min(1),
+  units: z.string().min(1),
+  currentContractor: z.string().optional(),
+  notes: z.string().optional(),
+});
+
+export async function submitAmcRequest(data: Record<string, unknown>) {
+  const parsed = amcSchema.safeParse(data);
+  if (!parsed.success) return { success: false, error: "Invalid form data" };
+  const d = parsed.data;
+
+  const html = wrap(
+    "AMC Enquiry",
+    row("Name", d.name) +
+      row("Phone", d.phone) +
+      row("Property Type", d.propertyType) +
+      row("Area / Emirate", d.location) +
+      row("Number of AC units", d.units) +
+      row("Current contractor", d.currentContractor) +
+      row("Notes", d.notes),
+  );
+
+  try {
+    await resend.emails.send({
+      from: FROM,
+      to: CONTACT_EMAIL,
+      subject: `AMC Enquiry - ${d.name}`,
+      html,
+    });
+  } catch (err) {
+    console.error("Failed to send AMC email:", err);
+  }
+
+  return { success: true };
+}
+
+// ── Air Balancing / Technical Assessment ──
+
+const balancingSchema = z.object({
+  name: z.string().min(1),
+  company: z.string().min(1),
+  phone: z.string().min(1),
+  email: z.string().email(),
+  buildingType: z.string().min(1),
+  location: z.string().min(1),
+  symptom: z.string().min(1),
+  drawings: z.string().min(1),
+  notes: z.string().optional(),
+});
+
+export async function submitBalancingRequest(data: Record<string, unknown>) {
+  const parsed = balancingSchema.safeParse(data);
+  if (!parsed.success) return { success: false, error: "Invalid form data" };
+  const d = parsed.data;
+
+  const html = wrap(
+    "Technical Assessment Request (Air Balancing)",
+    row("Name", d.name) +
+      row("Company", d.company) +
+      row("Phone", d.phone) +
+      row("Email", d.email) +
+      row("Building type", d.buildingType) +
+      row("Location / Emirate", d.location) +
+      row("Symptom", d.symptom) +
+      row("Drawings available?", d.drawings) +
+      row("Notes", d.notes),
+  );
+
+  try {
+    await resend.emails.send({
+      from: FROM,
+      to: CONTACT_EMAIL,
+      subject: `Technical Assessment Request - ${d.name}`,
+      replyTo: d.email,
+      html,
+    });
+  } catch (err) {
+    console.error("Failed to send balancing email:", err);
+  }
+
+  return { success: true };
+}
