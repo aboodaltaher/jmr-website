@@ -2,9 +2,10 @@ import fs from "fs";
 import path from "path";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Check, Phone, MessageCircle, Download } from "lucide-react";
+import { Check, Phone, MessageCircle } from "lucide-react";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { BalancingForm } from "@/components/BalancingForm";
+import { SampleReportButton } from "@/components/SampleReportButton";
 import { PHONE, whatsappUrl } from "@/lib/contact";
 
 const SITE_URL = "https://agec.ae";
@@ -13,12 +14,12 @@ const ROUTE = "/air-balancing-airflow-testing-dubai";
 export const metadata: Metadata = {
   title: "Air Balancing Dubai | HVAC Airflow Testing | AGEC",
   description:
-    "Measured HVAC air balancing and airflow testing in Dubai and the UAE, with calibrated instruments and signed reports. Request a technical assessment.",
+    "Measured HVAC air balancing and airflow testing in Dubai and the UAE, with documented measurements and signed reports. Request a technical assessment.",
   alternates: { canonical: ROUTE },
   openGraph: {
     title: "Air Balancing Dubai | HVAC Airflow Testing | AGEC",
     description:
-      "Measured HVAC air balancing and airflow testing in Dubai and the UAE, with calibrated instruments and signed reports. Request a technical assessment.",
+      "Measured HVAC air balancing and airflow testing in Dubai and the UAE, with documented measurements and signed reports. Request a technical assessment.",
     url: `${SITE_URL}${ROUTE}`,
     siteName: "AGEC",
     type: "website",
@@ -27,10 +28,10 @@ export const metadata: Metadata = {
 
 // Owner-supplied values. Empty values are hidden on the live page.
 const balancingConfig = {
-  // TODO: owner to supply instrument names and models. Empty = hide the line.
-  instruments: "",
+  instruments:
+    "Airflow capture hood (flow hood), digital manometer, anemometer and tachometer",
   standards: "ASHRAE, SMACNA and CIBSE guidance",
-  // TODO: owner to supply a redacted sample report PDF at the path below.
+  // TODO: commit the redacted sample report PDF to public/sample-air-balancing-report.pdf — the section renders automatically once the file exists in the repo.
   sampleReportPath: "/sample-air-balancing-report.pdf",
 };
 
@@ -330,14 +331,7 @@ export default function AirBalancingPage() {
             <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">
               See what you get
             </h2>
-            <a
-              href={balancingConfig.sampleReportPath}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-2 rounded-md bg-primary px-7 py-4 font-semibold text-white hover:bg-primary-dark transition-colors"
-            >
-              <Download className="h-4 w-4" /> Download a sample report (PDF)
-            </a>
+            <SampleReportButton href={balancingConfig.sampleReportPath} />
           </div>
         </section>
       )}
