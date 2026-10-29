@@ -31,7 +31,6 @@ const balancingConfig = {
   instruments:
     "Airflow capture hood (flow hood), digital manometer, anemometer and tachometer",
   standards: "ASHRAE, SMACNA and CIBSE guidance",
-  // TODO: commit the redacted sample report PDF to public/sample-air-balancing-report.pdf — the section renders automatically once the file exists in the repo.
   sampleReportPath: "/sample-air-balancing-report.pdf",
 };
 
