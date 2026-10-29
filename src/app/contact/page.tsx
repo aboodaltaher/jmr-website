@@ -1,11 +1,21 @@
 import type { Metadata } from "next";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
+import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 
 export const metadata: Metadata = {
   title: "Contact | AGEC",
   description:
     "Get in touch with AGEC in Dubai. Call, email, or send us a message about your HVAC project.",
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact | AGEC",
+    description:
+      "Get in touch with AGEC in Dubai. Call, email, or send us a message about your HVAC project.",
+    url: "https://agec.ae/contact",
+    siteName: "AGEC",
+    type: "website",
+  },
 };
 
 export default function Contact() {
@@ -99,6 +109,9 @@ export default function Contact() {
             {/* Form */}
             <div className="lg:col-span-3">
               <ContactForm />
+              <div className="mt-6">
+                <GoogleReviewsBadge className="text-text-muted" />
+              </div>
             </div>
           </div>
         </div>
@@ -109,9 +122,10 @@ export default function Contact() {
         <div className="mx-auto max-w-7xl px-6">
           <h2 className="font-heading text-3xl font-bold">Visit us</h2>
           <div className="mt-6 overflow-hidden rounded-lg border border-border">
+            {/* TODO: replace with the exact Google Business Profile embed URL once the profile name is updated */}
             <iframe
-              title="AGEC (JMR Technical Services) location on Google Maps"
-              src="https://www.google.com/maps?q=JMR+Technical+Services,+Al+Karama,+Dubai&z=16&output=embed"
+              title="AGEC Technical Services location on Google Maps"
+              src="https://www.google.com/maps?q=AGEC+Technical+Services,+Al+Karama,+Dubai&z=16&output=embed"
               className="h-80 w-full border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

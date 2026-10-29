@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import {
   Gauge,
   Snowflake,
@@ -21,9 +22,18 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "AGEC — HVAC, MEP & Maintenance Contractor in Dubai",
+  title: "HVAC Contractor & AC Maintenance Dubai | AGEC",
   description:
-    "Design, installation, commissioning, and maintenance of HVAC, MEP, and building systems in Dubai. Serving residential, commercial & villa projects. Engineered to Perform.",
+    "Engineer-led HVAC installation, AC maintenance, AMC, air balancing and commissioning across the UAE. Call +971 58 557 5987.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "HVAC Contractor & AC Maintenance Dubai | AGEC",
+    description:
+      "Engineer-led HVAC installation, AC maintenance, AMC, air balancing and commissioning across the UAE. Call +971 58 557 5987.",
+    url: "https://agec.ae/",
+    siteName: "AGEC",
+    type: "website",
+  },
 };
 
 const services = [
@@ -76,7 +86,7 @@ const services = [
     icon: ClipboardCheck,
     name: "Testing & Commissioning",
     href: "/services/testing-commissioning",
-    image: "/projects/jmr-technician-tab-commissioning-airflow-balometer-dubai.jpg",
+    image: "/projects/agec-technician-tab-commissioning-airflow-balometer-dubai.jpg",
     alt: "AGEC technician performing TAB testing and commissioning in Dubai",
     description:
       "System verification, airflow balancing, and performance testing against design specifications.",
@@ -85,7 +95,7 @@ const services = [
     icon: Wrench,
     name: "Maintenance",
     href: "/services/maintenance",
-    image: "/projects/jmr-maintenance-service-dubai.jpg",
+    image: "/projects/agec-maintenance-service-dubai.jpg",
     alt: "AGEC HVAC maintenance in Dubai",
     description:
       "Preventive and corrective maintenance contracts to keep systems running at peak performance.",
@@ -130,9 +140,9 @@ export default function Home() {
             "@type": "HVACBusiness",
             "@id": "https://agec.ae/#business",
             name: "AGEC",
-            alternateName: "JMR Technical Services",
+            alternateName: "AGEC Technical Services",
             description:
-              "Dubai-based HVAC contractor providing design, installation, testing & commissioning, and maintenance for VRF, VRV, chillers, ducted splits, DX units, and ventilation systems across Dubai and Sharjah.",
+              "Dubai-based HVAC contractor providing design, installation, testing & commissioning, and maintenance for VRF, VRV, chillers, ducted splits, DX units, and ventilation systems across all seven emirates of the UAE.",
             url: "https://agec.ae",
             logo: "https://agec.ae/agec-logo.png",
             image: "https://agec.ae/agec-logo.png",
@@ -155,7 +165,12 @@ export default function Home() {
             hasMap: "https://maps.app.goo.gl/fPKs5SXmDeK9Co4VA",
             areaServed: [
               { "@type": "City", name: "Dubai" },
+              { "@type": "City", name: "Abu Dhabi" },
               { "@type": "City", name: "Sharjah" },
+              { "@type": "City", name: "Ajman" },
+              { "@type": "City", name: "Umm Al Quwain" },
+              { "@type": "City", name: "Ras Al Khaimah" },
+              { "@type": "City", name: "Fujairah" },
             ],
             openingHoursSpecification: [
               {
@@ -210,8 +225,11 @@ export default function Home() {
             </Link>
           </div>
           <p className="mt-8 text-sm text-white/60">
-            Established 2022 · 30+ Projects · 3 Emirates · Dubai, UAE
+            Established 2022 · 30+ Projects · All 7 Emirates · Dubai, UAE
           </p>
+          <div className="mt-4">
+            <GoogleReviewsBadge className="text-white/90" />
+          </div>
         </div>
       </section>
 

@@ -7,6 +7,15 @@ export const metadata: Metadata = {
   title: "Insights & Engineering Guides | AGEC",
   description:
     "HVAC engineering guides, system comparisons, and practical advice from AGEC — based on real project experience across Dubai, Sharjah, and Abu Dhabi.",
+  alternates: { canonical: "/blog" },
+  openGraph: {
+    title: "Insights & Engineering Guides | AGEC",
+    description:
+      "HVAC engineering guides, system comparisons, and practical advice from AGEC — based on real project experience across Dubai, Sharjah, and Abu Dhabi.",
+    url: "https://agec.ae/blog",
+    siteName: "AGEC",
+    type: "website",
+  },
 };
 
 export default function BlogIndex() {

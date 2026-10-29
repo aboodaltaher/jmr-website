@@ -1,10 +1,20 @@
 import type { Metadata } from "next";
 import { QuoteForm } from "@/components/QuoteForm";
+import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 
 export const metadata: Metadata = {
   title: "Request a Quote | AGEC",
   description:
     "Get a free HVAC quotation from AGEC in Dubai. VRF systems, chillers, DX units, ventilation, design, and maintenance — most quotes returned within 48 hours.",
+  alternates: { canonical: "/quote" },
+  openGraph: {
+    title: "Request a Quote | AGEC",
+    description:
+      "Get a free HVAC quotation from AGEC in Dubai. VRF systems, chillers, DX units, ventilation, design, and maintenance — most quotes returned within 48 hours.",
+    url: "https://agec.ae/quote",
+    siteName: "AGEC",
+    type: "website",
+  },
 };
 
 export default function Quote() {
@@ -30,6 +40,9 @@ export default function Quote() {
       <section className="py-16 md:py-20">
         <div className="mx-auto max-w-3xl px-6">
           <QuoteForm />
+          <div className="mt-8 text-center">
+            <GoogleReviewsBadge className="text-text-muted" />
+          </div>
         </div>
       </section>
     </>

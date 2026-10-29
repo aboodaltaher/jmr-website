@@ -40,3 +40,16 @@ export function trackConversion(
   if (typeof window.gtag !== "function") return;
   window.gtag("event", "conversion", { send_to: sendTo, ...params });
 }
+
+/**
+ * Push a custom event to the GTM / GA4 dataLayer.
+ * No-ops on the server; safe when no tag manager is loaded.
+ */
+export function pushDataLayer(
+  event: string,
+  params: Record<string, unknown> = {},
+): void {
+  if (typeof window === "undefined") return;
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ event, ...params });
+}

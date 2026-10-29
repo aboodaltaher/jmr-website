@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { CONVERSIONS, trackConversion } from "@/lib/gtag";
+import { CONVERSIONS, trackConversion, pushDataLayer } from "@/lib/gtag";
 
 /**
  * Global click listener that fires Google Ads conversions for
@@ -19,12 +19,16 @@ export function ConversionTracking() {
 
       if (href.startsWith("tel:")) {
         trackConversion(CONVERSIONS.call);
+        pushDataLayer("click_phone", { page_path: window.location.pathname });
       } else if (
         href.includes("wa.me") ||
         href.includes("api.whatsapp.com") ||
         href.includes("whatsapp.com/send")
       ) {
         trackConversion(CONVERSIONS.whatsapp);
+        pushDataLayer("click_whatsapp", {
+          page_path: window.location.pathname,
+        });
       }
     };
 

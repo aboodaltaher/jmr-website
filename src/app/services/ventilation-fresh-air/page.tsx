@@ -13,6 +13,15 @@ export const metadata: Metadata = {
   title: "Ventilation & Fresh Air Systems | AGEC",
   description:
     "Mechanical ventilation, fresh air handling units, and exhaust systems in Dubai. Designed and balanced to meet indoor air quality standards and municipality codes.",
+  alternates: { canonical: "/services/ventilation-fresh-air" },
+  openGraph: {
+    title: "Ventilation & Fresh Air Systems | AGEC",
+    description:
+      "Mechanical ventilation, fresh air handling units, and exhaust systems in Dubai. Designed and balanced to meet indoor air quality standards and municipality codes.",
+    url: "https://agec.ae/services/ventilation-fresh-air",
+    siteName: "AGEC",
+    type: "website",
+  },
 };
 
 export default function VentilationFreshAir() {
@@ -98,7 +107,7 @@ export default function VentilationFreshAir() {
             "Heat recovery wheel and plate heat exchanger systems that pre-cool incoming fresh air using exhaust air — reducing cooling energy by up to 40%.",
         },
       ]}
-      whyJmr={[
+      whyAgec={[
         "Ventilation designs based on calculated outdoor air requirements, not arbitrary air change rates",
         "30+ HVAC projects across the UAE — restaurants, gyms, data centers, and commercial buildings",
         "ASHRAE 111 and SMACNA compliant ductwork installation and air balancing practices",

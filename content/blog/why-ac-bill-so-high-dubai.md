@@ -2,7 +2,7 @@
 date: "2026-06-27"
 author: "AGEC Team"
 readingTime: "9 min read"
-image: "/projects/jmr-maintenance-service-dubai.jpg"
+image: "/projects/agec-maintenance-service-dubai.jpg"
 description: "An HVAC engineer's breakdown of why your AC bill is so high in Dubai — sizing, maintenance, and district cooling charges — and what actually lowers it."
 titleTag: "Why Is Your AC Bill So High in Dubai? | AGEC"
 ---

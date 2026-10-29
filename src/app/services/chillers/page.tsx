@@ -13,6 +13,15 @@ export const metadata: Metadata = {
   title: "Chiller Systems | AGEC",
   description:
     "Air-cooled and water-cooled chiller installation, piping design, and commissioning in Dubai. Complete chiller plant engineering for commercial and industrial buildings.",
+  alternates: { canonical: "/services/chillers" },
+  openGraph: {
+    title: "Chiller Systems | AGEC",
+    description:
+      "Air-cooled and water-cooled chiller installation, piping design, and commissioning in Dubai. Complete chiller plant engineering for commercial and industrial buildings.",
+    url: "https://agec.ae/services/chillers",
+    siteName: "AGEC",
+    type: "website",
+  },
 };
 
 export default function Chillers() {
@@ -98,7 +107,7 @@ export default function Chillers() {
             "Scheduled maintenance programs including refrigerant analysis, oil sampling, condenser and evaporator tube cleaning, and filter replacement.",
         },
       ]}
-      whyJmr={[
+      whyAgec={[
         "Chiller selection based on actual Dubai operating conditions — peak ambient, altitude correction, and realistic part-load profiles",
         "30+ HVAC projects across the UAE including commercial buildings and data centers",
         "ASHRAE 111 and SMACNA compliant commissioning with calibrated instruments and documented results",

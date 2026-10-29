@@ -16,7 +16,7 @@ interface ServiceDetailLayoutProps {
   overview: React.ReactNode;
   whenYouNeedIt: string[];
   whatWeDo: Capability[];
-  whyJmr: string[];
+  whyAgec: string[];
 }
 
 export function ServiceDetailLayout({
@@ -27,7 +27,7 @@ export function ServiceDetailLayout({
   overview,
   whenYouNeedIt,
   whatWeDo,
-  whyJmr,
+  whyAgec,
 }: ServiceDetailLayoutProps) {
   return (
     <>
@@ -134,7 +134,7 @@ export function ServiceDetailLayout({
             Why AGEC for {title}
           </h2>
           <ul className="mt-6 max-w-3xl space-y-4">
-            {whyJmr.map((reason) => (
+            {whyAgec.map((reason) => (
               <li key={reason} className="flex gap-3">
                 <Check
                   className="mt-0.5 h-5 w-5 shrink-0 text-primary"

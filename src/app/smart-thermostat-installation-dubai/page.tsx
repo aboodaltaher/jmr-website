@@ -28,7 +28,9 @@ import {
 
 const PHONE = "+971585575987";
 const PHONE_DISPLAY = "+971 58 557 5987";
-const WA = "https://wa.me/971585575987";
+const WA = `https://wa.me/971585575987?text=${encodeURIComponent(
+  "Hi AGEC, can you check if a Nest/ecobee works with my [brand] AC in [area]?",
+)}`;
 const CANONICAL = "/smart-thermostat-installation-dubai";
 
 export const metadata: Metadata = {
@@ -248,10 +250,11 @@ const benefits: { icon: LucideIcon; title: string; desc: string }[] = [
 
 const areas = ["Dubai", "Abu Dhabi", "Sharjah", "Ajman", "Ras Al Khaimah", "Umm Al Quwain", "Fujairah"];
 
-// Real reviews from the verified Google Business Profile (JMR Technical Services, 5.0 / 17).
+// Real reviews from the verified Google Business Profile (AGEC Technical Services, 5.0 / 27).
 const GOOGLE_REVIEWS_URL = "https://maps.app.goo.gl/fPKs5SXmDeK9Co4VA";
+// TODO: confirm rating still 5.0 with 27 reviews
 const GOOGLE_RATING = "5.0";
-const GOOGLE_REVIEW_COUNT = 17;
+const GOOGLE_REVIEW_COUNT = 27;
 
 const reviews = [
   {

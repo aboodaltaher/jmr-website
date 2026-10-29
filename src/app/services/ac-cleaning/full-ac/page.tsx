@@ -5,6 +5,15 @@ export const metadata: Metadata = {
   title: "Full AC Cleaning | AGEC",
   description:
     "Comprehensive AC system cleaning in Dubai covering grills, ducts, coils, fan motor, blower, and cavity. Ideal for annual maintenance of split and ducted systems.",
+  alternates: { canonical: "/services/ac-cleaning/full-ac" },
+  openGraph: {
+    title: "Full AC Cleaning | AGEC",
+    description:
+      "Comprehensive AC system cleaning in Dubai covering grills, ducts, coils, fan motor, blower, and cavity. Ideal for annual maintenance of split and ducted systems.",
+    url: "https://agec.ae/services/ac-cleaning/full-ac",
+    siteName: "AGEC",
+    type: "website",
+  },
 };
 
 export default function FullAcCleaning() {

@@ -13,6 +13,15 @@ export const metadata: Metadata = {
   title: "HVAC Design & Consultancy | AGEC",
   description:
     "HVAC system design, heat load calculations, duct sizing, and MEP coordination in Dubai. Engineering documentation from concept through construction.",
+  alternates: { canonical: "/services/hvac-design" },
+  openGraph: {
+    title: "HVAC Design & Consultancy | AGEC",
+    description:
+      "HVAC system design, heat load calculations, duct sizing, and MEP coordination in Dubai. Engineering documentation from concept through construction.",
+    url: "https://agec.ae/services/hvac-design",
+    siteName: "AGEC",
+    type: "website",
+  },
 };
 
 export default function HvacDesign() {
@@ -96,7 +105,7 @@ export default function HvacDesign() {
             "Verification against ASHRAE standards, Dubai Municipality requirements, and Green Building regulations including Al Sa'fat compliance where required.",
         },
       ]}
-      whyJmr={[
+      whyAgec={[
         "Design based on calculated loads with documented assumptions — 30+ projects designed and delivered across the UAE",
         "Engineers who also install and commission systems, bringing practical construction knowledge into the design phase",
         "ASHRAE 111, SMACNA, and CIBSE compliant design documentation",

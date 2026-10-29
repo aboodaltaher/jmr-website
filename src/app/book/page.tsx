@@ -1,10 +1,20 @@
 import type { Metadata } from "next";
 import { BookForm } from "@/components/BookForm";
+import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 
 export const metadata: Metadata = {
   title: "Book a Service | AGEC",
   description:
     "Book HVAC maintenance, repairs, AMC, or emergency service in Dubai. AGEC — qualified technicians, priority response.",
+  alternates: { canonical: "/book" },
+  openGraph: {
+    title: "Book a Service | AGEC",
+    description:
+      "Book HVAC maintenance, repairs, AMC, or emergency service in Dubai. AGEC — qualified technicians, priority response.",
+    url: "https://agec.ae/book",
+    siteName: "AGEC",
+    type: "website",
+  },
 };
 
 export default function Book() {
@@ -29,6 +39,9 @@ export default function Book() {
       <section className="py-16 md:py-20">
         <div className="mx-auto max-w-3xl px-6">
           <BookForm />
+          <div className="mt-8 text-center">
+            <GoogleReviewsBadge className="text-text-muted" />
+          </div>
         </div>
       </section>
     </>

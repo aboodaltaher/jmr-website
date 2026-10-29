@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   title: "Projects | AGEC",
   description:
     "30+ HVAC projects across Dubai, Sharjah, and Abu Dhabi — residential villas, commercial buildings, data centers, and cultural facilities.",
+  alternates: { canonical: "/projects" },
+  openGraph: {
+    title: "Projects | AGEC",
+    description:
+      "30+ HVAC projects across Dubai, Sharjah, and Abu Dhabi — residential villas, commercial buildings, data centers, and cultural facilities.",
+    url: "https://agec.ae/projects",
+    siteName: "AGEC",
+    type: "website",
+  },
 };
 
 export default function Projects() {

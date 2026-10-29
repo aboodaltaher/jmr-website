@@ -4,6 +4,8 @@ import { Inter, Saira_Condensed } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { StickyContactBar } from "@/components/StickyContactBar";
+import { Analytics, GtmNoScript } from "@/components/Analytics";
 import { ConversionTracking } from "@/components/ConversionTracking";
 import { GA_ADS_ID } from "@/lib/gtag";
 import "./globals.css";
@@ -45,7 +47,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${saira.variable}`}>
-      <body className="min-h-screen flex flex-col antialiased">
+      <body className="min-h-screen flex flex-col antialiased pb-16 md:pb-0">
+        <GtmNoScript />
         {/* Google tag (gtag.js) — Google Ads */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ADS_ID}`}
@@ -57,10 +60,12 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', '${GA_ADS_ID}');`}
         </Script>
+        <Analytics />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
         <WhatsAppButton />
+        <StickyContactBar />
         <ConversionTracking />
       </body>
     </html>

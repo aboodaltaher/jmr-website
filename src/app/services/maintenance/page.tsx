@@ -11,16 +11,25 @@ import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Maintenance & AMC | AGEC",
+  title: "HVAC Maintenance & AMC for Commercial Buildings | AGEC",
   description:
-    "HVAC maintenance contracts and emergency servicing in Dubai. Preventive maintenance, reactive repairs, and annual AMC programs for residential and commercial systems.",
+    "Preventive and corrective HVAC maintenance for VRF, chillers and AHUs. Documented visits and priority response.",
+  alternates: { canonical: "/services/maintenance" },
+  openGraph: {
+    title: "HVAC Maintenance & AMC for Commercial Buildings | AGEC",
+    description:
+      "Preventive and corrective HVAC maintenance for VRF, chillers and AHUs. Documented visits and priority response.",
+    url: "https://agec.ae/services/maintenance",
+    siteName: "AGEC",
+    type: "website",
+  },
 };
 
 export default function Maintenance() {
   return (
     <ServiceDetailLayout
       title="Maintenance & AMC"
-      heroImage="/projects/jmr-maintenance-service-dubai.jpg"
+      heroImage="/projects/agec-maintenance-service-dubai.jpg"
       heroImageAlt="AGEC HVAC maintenance work at Dubai project"
       intro="Preventive maintenance contracts, reactive servicing, and emergency callouts — keeping HVAC systems running at peak performance year-round."
       overview={
@@ -111,7 +120,7 @@ export default function Maintenance() {
             "Maintenance performed to manufacturer standards, maintaining equipment warranties. Documentation formatted for warranty claims when needed.",
         },
       ]}
-      whyJmr={[
+      whyAgec={[
         "Technicians trained on VRF, chiller, and DX systems — 30+ HVAC projects maintained across the UAE",
         "ASHRAE 111 and SMACNA compliant maintenance practices with OEM-approved procedures",
         "Transparent pricing with no hidden charges — AMC scope clearly defined, reactive work quoted before proceeding",

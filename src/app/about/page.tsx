@@ -12,6 +12,15 @@ export const metadata: Metadata = {
   title: "About | AGEC",
   description:
     "Founded in Dubai in 2022, Altaher Ghabboun Engineering Contracting (AGEC) is an HVAC, MEP & maintenance contractor delivering installation, commissioning, and maintenance across the UAE. 30+ projects delivered.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About | AGEC",
+    description:
+      "Founded in Dubai in 2022, Altaher Ghabboun Engineering Contracting (AGEC) is an HVAC, MEP & maintenance contractor delivering installation, commissioning, and maintenance across the UAE. 30+ projects delivered.",
+    url: "https://agec.ae/about",
+    siteName: "AGEC",
+    type: "website",
+  },
 };
 
 const values = [
@@ -31,7 +40,7 @@ const values = [
     icon: PhoneCall,
     name: "24/7 Support",
     description:
-      "Emergency breakdown support across Dubai, Sharjah, and Abu Dhabi.",
+      "Emergency breakdown support across all seven emirates of the UAE.",
   },
   {
     icon: TrendingUp,
@@ -65,7 +74,7 @@ export default function About() {
             Solutions at Your Fingertips
           </h1>
           <p className="mt-6 max-w-3xl text-xl text-text-muted">
-            Founded in Dubai in 2022 by Mr. Mohannad Ghaboun, Altaher Ghabboun
+            Founded in Dubai in 2022 by Mr. Mohannad Ghabboun, Altaher Ghabboun
             Engineering Contracting (AGEC) is an HVAC contracting company
             delivering expert installation, maintenance, and testing &amp;
             commissioning across the UAE.
@@ -90,8 +99,8 @@ export default function About() {
                   engineers, not just installers.
                 </p>
                 <p>
-                  Today we operate across three Emirates — Dubai, Sharjah, and
-                  Abu Dhabi — with a portfolio of 30+ completed projects ranging
+                  Today we operate across all seven Emirates of the UAE — with a
+                  portfolio of 30+ completed projects ranging
                   from residential villas to data centers, commercial buildings,
                   and cultural facilities. Our largest single project has handled
                   a 240-ton cooling capacity, and our largest contract value to
@@ -180,6 +189,7 @@ export default function About() {
           </Link>
         </div>
       </section>
+      {/* TODO: add trade licence number */}
     </>
   );
 }

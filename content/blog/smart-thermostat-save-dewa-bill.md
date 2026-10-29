@@ -2,7 +2,7 @@
 date: "2026-07-11"
 author: "AGEC Team"
 readingTime: "7 min read"
-image: "/projects/jmr-maintenance-service-dubai.jpg"
+image: "/projects/agec-maintenance-service-dubai.jpg"
 description: "How much can a Google Nest or ecobee smart thermostat really save on your DEWA bill in Dubai? Realistic savings, how it works, and how fast it pays for itself."
 titleTag: "Do Smart Thermostats Save Money in Dubai? | AGEC"
 ---

@@ -11,7 +11,7 @@ export function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Contact us on WhatsApp"
-      className="group fixed bottom-4 right-4 z-50 flex h-[56px] w-[56px] items-center justify-center rounded-full focus:outline-none focus-visible:ring-4 focus-visible:ring-[#25D366]/50 md:bottom-6 md:right-6 md:h-[60px] md:w-[60px]"
+      className="group fixed bottom-4 right-4 z-50 hidden h-[56px] w-[56px] items-center justify-center rounded-full focus:outline-none focus-visible:ring-4 focus-visible:ring-[#25D366]/50 md:bottom-6 md:right-6 md:flex md:h-[60px] md:w-[60px]"
     >
       <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#25D366] opacity-30 motion-reduce:animate-none motion-reduce:hidden" />
       <span className="relative flex h-full w-full items-center justify-center rounded-full bg-[#25D366] shadow-lg transition-all duration-300 group-hover:scale-105 group-hover:bg-[#1FAD52]">

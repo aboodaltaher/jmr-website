@@ -1,6 +1,6 @@
-# JMR Technical Services — Website
+# AGEC Technical Services — Website
 
-Corporate website for JMR Technical Services LLC, a Dubai-based HVAC contracting company specializing in design, installation, testing & commissioning, and maintenance of air conditioning systems across the UAE.
+Corporate website for AGEC Technical Services (Altaher Ghabboun Engineering Contracting), a Dubai-based HVAC contracting company specializing in design, installation, testing & commissioning, and maintenance of air conditioning systems across the UAE.
 
 ## Tech Stack
 

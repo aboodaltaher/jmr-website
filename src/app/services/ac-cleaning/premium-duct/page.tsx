@@ -5,6 +5,15 @@ export const metadata: Metadata = {
   title: "Premium AC Duct Cleaning | AGEC",
   description:
     "Complete duct system cleaning in Dubai — supply and return grills, drain pipe flushing, deep coil cleaning, and full disinfection. Service report included.",
+  alternates: { canonical: "/services/ac-cleaning/premium-duct" },
+  openGraph: {
+    title: "Premium AC Duct Cleaning | AGEC",
+    description:
+      "Complete duct system cleaning in Dubai — supply and return grills, drain pipe flushing, deep coil cleaning, and full disinfection. Service report included.",
+    url: "https://agec.ae/services/ac-cleaning/premium-duct",
+    siteName: "AGEC",
+    type: "website",
+  },
 };
 
 export default function PremiumDuctCleaning() {

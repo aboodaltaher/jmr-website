@@ -13,9 +13,18 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Services | AGEC",
+  title: "HVAC Services Dubai & UAE | AGEC",
   description:
-    "End-to-end HVAC services in Dubai: VRF/VRV systems, chillers, DX units, ventilation, HVAC design, testing & commissioning, and maintenance contracts.",
+    "HVAC design, installation, testing and commissioning, and maintenance for villas, offices and commercial buildings across the UAE.",
+  alternates: { canonical: "/services" },
+  openGraph: {
+    title: "HVAC Services Dubai & UAE | AGEC",
+    description:
+      "HVAC design, installation, testing and commissioning, and maintenance for villas, offices and commercial buildings across the UAE.",
+    url: "https://agec.ae/services",
+    siteName: "AGEC",
+    type: "website",
+  },
 };
 
 const services = [

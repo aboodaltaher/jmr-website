@@ -10,16 +10,25 @@ import {
 import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
 
 export const metadata: Metadata = {
-  title: "Testing & Commissioning | AGEC",
+  title: "HVAC Testing & Commissioning Dubai | AGEC",
   description:
-    "Independent HVAC testing, air balancing, water balancing, and commissioning services in Dubai. Every system verified against design specifications before handover.",
+    "Independent testing, commissioning and air balancing to design values with documented reports.",
+  alternates: { canonical: "/services/testing-commissioning" },
+  openGraph: {
+    title: "HVAC Testing & Commissioning Dubai | AGEC",
+    description:
+      "Independent testing, commissioning and air balancing to design values with documented reports.",
+    url: "https://agec.ae/services/testing-commissioning",
+    siteName: "AGEC",
+    type: "website",
+  },
 };
 
 export default function TestingCommissioning() {
   return (
     <ServiceDetailLayout
       title="Testing & Commissioning"
-      heroImage="/projects/jmr-technician-tab-commissioning-airflow-balometer-dubai.jpg"
+      heroImage="/projects/agec-technician-tab-commissioning-airflow-balometer-dubai.jpg"
       heroImageAlt="AGEC technician performing TAB testing and commissioning with airflow balometer at commercial project in Dubai"
       intro="Independent verification that every HVAC system performs to specification — airflow, water flow, controls, and safety systems tested and documented."
       overview={
@@ -96,7 +105,7 @@ export default function TestingCommissioning() {
             "Structured documentation of all measurements, test results, deficiency logs, and final sign-off records for consultant and owner handover.",
         },
       ]}
-      whyJmr={[
+      whyAgec={[
         "Commissioning engineers with calibrated, traceable instruments — 30+ projects commissioned across the UAE",
         "ASHRAE 111, SMACNA, and CIBSE compliant methodology with systematic documentation",
         "Independent verification: we report what we measure, whether it passes or not, giving owners and consultants confidence in the handover",

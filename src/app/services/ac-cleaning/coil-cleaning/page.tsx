@@ -5,6 +5,15 @@ export const metadata: Metadata = {
   title: "AC Coil Cleaning | AGEC",
   description:
     "Precision AC coil cleaning in Dubai — evaporator and condenser coils, fin straightening, disinfection, and pre/post-clean temperature measurements.",
+  alternates: { canonical: "/services/ac-cleaning/coil-cleaning" },
+  openGraph: {
+    title: "AC Coil Cleaning | AGEC",
+    description:
+      "Precision AC coil cleaning in Dubai — evaporator and condenser coils, fin straightening, disinfection, and pre/post-clean temperature measurements.",
+    url: "https://agec.ae/services/ac-cleaning/coil-cleaning",
+    siteName: "AGEC",
+    type: "website",
+  },
 };
 
 export default function CoilCleaning() {

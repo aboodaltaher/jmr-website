@@ -65,10 +65,10 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 **These guidelines are working if:** fewer unnecessary changes in diffs, fewer rewrites due to overcomplication, and clarifying questions come before implementation rather than after mistakes.
 ---
 
-# JMR Technical Services — Project Context
+# AGEC Technical Services — Project Context
 
 ## About the Company
-JMR Technical Services LLC is a Dubai-based HVAC contracting company specializing in design, installation, testing & commissioning, and maintenance of advanced air conditioning systems. Serves residential, commercial, and villa projects. Core expertise: VRF/VRV systems, chillers, DX units, ventilation, fresh air systems, HVAC design, heat load calculations, duct sizing, system balancing, performance testing, technical consultancy.
+AGEC Technical Services (Altaher Ghabboun Engineering Contracting) is a Dubai-based HVAC contracting company specializing in design, installation, testing & commissioning, and maintenance of advanced air conditioning systems. Serves residential, commercial, and villa projects. Core expertise: VRF/VRV systems, chillers, DX units, ventilation, fresh air systems, HVAC design, heat load calculations, duct sizing, system balancing, performance testing, technical consultancy.
 
 ## Site Goal
 Lead generation. Visitors should be able to (1) request a quotation, (2) book a service, (3) contact the team. Every page must have at least one clear conversion CTA.
@@ -83,7 +83,7 @@ Lead generation. Visitors should be able to (1) request a quotation, (2) book a 
 - Server actions for form submissions (no separate API needed initially)
 
 ## Brand
-- Company name: JMR Technical Services LLC (placeholder — may change)
+- Company name: AGEC Technical Services (Altaher Ghabboun Engineering Contracting)
 - Vibe: Bold, modern, tech-forward. Confident but not aggressive. Professional engineering credibility, not warm-and-fuzzy.
 - Reference: thehealthyhome.me — clean, service-focused, trust-heavy
 
@@ -128,7 +128,7 @@ Lead generation. Visitors should be able to (1) request a quotation, (2) book a 
 ## Content Tone
 - Direct, technical, confident. Engineers, not marketers.
 - Use specifics over adjectives.
-- Every service page should answer: What is it? When do you need it? Why JMR? What's the process?
+- Every service page should answer: What is it? When do you need it? Why AGEC? What's the process?
 
 ## Component Architecture
 - Server components by default; client components only when needed (forms, interactive UI)
@@ -139,7 +139,7 @@ Lead generation. Visitors should be able to (1) request a quotation, (2) book a 
 ## Images
 - All images via next/image
 - Placeholder images: use unsplash for now (HVAC, air conditioning, ducts, cooling towers)
-- Logo: placeholder text logo "JMR" until real logo dropped in public/logo.svg
+- Logo: AGEC logo at public/agec-logo.png
 
 ## SEO Basics
 - Each page has proper metadata export (title, description)

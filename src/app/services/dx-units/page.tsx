@@ -14,6 +14,15 @@ export const metadata: Metadata = {
   title: "DX Units & Split Systems | AGEC",
   description:
     "Direct expansion AC installation in Dubai — wall-mount splits, ducted splits, cassettes, and concealed units. Properly sized and installed for residential and commercial spaces.",
+  alternates: { canonical: "/services/dx-units" },
+  openGraph: {
+    title: "DX Units & Split Systems | AGEC",
+    description:
+      "Direct expansion AC installation in Dubai — wall-mount splits, ducted splits, cassettes, and concealed units. Properly sized and installed for residential and commercial spaces.",
+    url: "https://agec.ae/services/dx-units",
+    siteName: "AGEC",
+    type: "website",
+  },
 };
 
 export default function DxUnits() {
@@ -108,7 +117,7 @@ export default function DxUnits() {
             "Proper manufacturer warranty registration as an authorized installer. Extended warranty options available on select equipment.",
         },
       ]}
-      whyJmr={[
+      whyAgec={[
         "Every unit sized from calculated heat loads — up to 240 TR single-project capacity across our DX portfolio",
         "30+ HVAC projects delivered across the UAE, from studio apartments to multi-villa communities",
         "ASHRAE 111 and SMACNA compliant installation practices with full commissioning documentation",

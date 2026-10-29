@@ -13,6 +13,15 @@ export const metadata: Metadata = {
   title: "VRF / VRV Systems | AGEC",
   description:
     "VRF and VRV system design, installation, and commissioning in Dubai. Multi-zone climate control for villas, offices, and commercial buildings from certified engineers.",
+  alternates: { canonical: "/services/vrf-vrv-systems" },
+  openGraph: {
+    title: "VRF / VRV Systems | AGEC",
+    description:
+      "VRF and VRV system design, installation, and commissioning in Dubai. Multi-zone climate control for villas, offices, and commercial buildings from certified engineers.",
+    url: "https://agec.ae/services/vrf-vrv-systems",
+    siteName: "AGEC",
+    type: "website",
+  },
 };
 
 export default function VrfVrvSystems() {
@@ -98,7 +107,7 @@ export default function VrfVrvSystems() {
             "Manufacturer-backed warranties with AGECas the certified installation partner on record. AMC options available from day one.",
         },
       ]}
-      whyJmr={[
+      whyAgec={[
         "Factory-trained engineers certified by Daikin, Mitsubishi Electric, and Carrier — up to 240 TR single-project capacity",
         "30+ HVAC projects delivered across Dubai, Sharjah, and Abu Dhabi",
         "ASHRAE 111 and SMACNA compliant installation and commissioning practices",

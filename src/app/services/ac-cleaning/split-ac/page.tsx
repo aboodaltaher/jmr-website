@@ -5,6 +5,15 @@ export const metadata: Metadata = {
   title: "Split AC Cleaning | AGEC",
   description:
     "Split AC cleaning service in Dubai — filter cleaning, coil treatment, drain line flush, condenser cleaning, and performance verification. Quick turnaround.",
+  alternates: { canonical: "/services/ac-cleaning/split-ac" },
+  openGraph: {
+    title: "Split AC Cleaning | AGEC",
+    description:
+      "Split AC cleaning service in Dubai — filter cleaning, coil treatment, drain line flush, condenser cleaning, and performance verification. Quick turnaround.",
+    url: "https://agec.ae/services/ac-cleaning/split-ac",
+    siteName: "AGEC",
+    type: "website",
+  },
 };
 
 export default function SplitAcCleaning() {
