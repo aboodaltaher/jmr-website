@@ -374,6 +374,15 @@ export default function AcMaintenancePage() {
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             {areas.map((a) => (<span key={a} className="rounded-full border border-border bg-bg-soft px-6 py-3 font-semibold text-text">{a}</span>))}
           </div>
+          <p className="mt-8 text-sm text-text-muted">
+            Related reading:{" "}
+            <Link
+              href="/blog/ac-coil-cleaning-and-amc-dubai"
+              className="font-medium text-primary hover:underline"
+            >
+              AC coil cleaning and AMC in Dubai: why both matter
+            </Link>
+          </p>
         </div>
       </section>
 

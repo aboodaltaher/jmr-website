@@ -440,6 +440,15 @@ export default function AcAmcPage() {
               </details>
             ))}
           </div>
+          <p className="mt-8 text-sm text-text-muted">
+            Related reading:{" "}
+            <Link
+              href="/blog/ac-coil-cleaning-and-amc-dubai"
+              className="font-medium text-primary hover:underline"
+            >
+              AC coil cleaning and AMC in Dubai: why both matter
+            </Link>
+          </p>
         </div>
       </section>
 

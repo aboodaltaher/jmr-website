@@ -4,8 +4,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import ReactMarkdown, { type Components } from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { Phone } from "lucide-react";
+import { Phone, MessageCircle } from "lucide-react";
 import { getAllPosts, getPostBySlug, formatDate } from "@/lib/blog";
+import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 
 const SITE_URL = "https://agec.ae";
 
@@ -36,6 +37,37 @@ const relatedReading = [
 // FAQPage JSON-LD. Mirrors the visible "Frequently asked questions" section in
 // the post body.
 const faqBySlug: Record<string, { question: string; answer: string }[]> = {
+  "ac-coil-cleaning-and-amc-dubai": [
+    {
+      question: "How often should AC coils be cleaned in Dubai?",
+      answer:
+        "At least every 3 months for units in regular use. Dusty areas and heavy-use sites may need it more often.",
+    },
+    {
+      question: "Can I clean the coils myself?",
+      answer:
+        "You can wash the filters yourself. Coil cleaning needs the unit opened, the right cleaner and care not to bend the fins or wet the electrical parts, so we recommend an engineer does it.",
+    },
+    {
+      question: "Is coil cleaning the same as AC service?",
+      answer:
+        "No. Coil cleaning is one part of a full service. A full service also covers drains, refrigerant pressure, electrical checks and a performance test.",
+    },
+    {
+      question: "Does coil cleaning reduce my electricity bill?",
+      answer:
+        "A clean coil lets the system cool with less effort, which usually lowers energy use. The size of the saving depends on how dirty the system was and how the AC is used.",
+    },
+    {
+      question: "Is an AMC worth it for a single villa?",
+      answer:
+        "If you have several units and want them checked on a schedule before summer, an AMC is usually easier and more predictable than calling for repairs one at a time.",
+    },
+    {
+      question: "Do you cover my emirate?",
+      answer: "We serve all 7 emirates. Call or WhatsApp +971 58 557 5987.",
+    },
+  ],
   "why-ac-bill-so-high-dubai": [
     {
       question:
@@ -66,6 +98,20 @@ const faqBySlug: Record<string, { question: string; answer: string }[]> = {
         "Usually one of a few things: a lower thermostat setting, a poorly maintained or fouled unit, leaking or uninsulated ductwork, more sun exposure on your side of the building, or air leaks around doors and windows. Same floor plan doesn't mean same system condition or same habits — and small differences compound across a long Dubai summer.",
     },
   ],
+};
+
+// Per-slug closing CTA override. Posts without an entry keep the default box.
+const ctaBySlug: Record<
+  string,
+  { heading: string; text: string; quoteHref: string; whatsappText: string }
+> = {
+  "ac-coil-cleaning-and-amc-dubai": {
+    heading: "Get your AC checked before the next heatwave",
+    text: "Tell us how many units you have and where they are. An AGEC engineer will send a written proposal.",
+    quoteHref: "/ac-amc-dubai#amc-form",
+    whatsappText:
+      "Hi AGEC, I'd like to know about AC coil cleaning and an AMC for [number] units in [area].",
+  },
 };
 
 const markdownComponents: Components = {
@@ -221,6 +267,7 @@ export default async function ArticlePage({
   };
 
   const faq = faqBySlug[slug];
+  const cta = ctaBySlug[slug];
   const faqLd = faq
     ? {
         "@context": "https://schema.org",
@@ -307,30 +354,68 @@ export default async function ArticlePage({
       {/* CTA Box */}
       <section className="pb-16">
         <div className="mx-auto max-w-3xl px-6">
-          <div className="rounded-xl border border-border bg-bg-soft p-8 text-center">
-            <h2 className="font-heading text-2xl font-bold">
-              Planning a villa HVAC system?
-            </h2>
-            <p className="mx-auto mt-3 max-w-xl text-text-muted">
-              Get a real engineering opinion — heat load calculations, system
-              comparison, and an honest recommendation for your villa.
-            </p>
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
-              <Link
-                href="/quote"
-                className="rounded-md bg-primary px-8 py-4 font-medium text-white hover:bg-primary-dark transition-colors"
-              >
-                Get a Quote
-              </Link>
-              <a
-                href="tel:+971585575987"
-                className="flex items-center gap-2 text-sm font-medium text-text-muted hover:text-primary transition-colors"
-              >
-                <Phone className="h-4 w-4" />
-                +971 58 557 5987
-              </a>
+          {cta ? (
+            <div className="rounded-xl border border-border bg-bg-soft p-8 text-center">
+              <h2 className="font-heading text-2xl font-bold">{cta.heading}</h2>
+              <p className="mx-auto mt-3 max-w-xl text-text-muted">{cta.text}</p>
+              <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+                <Link
+                  href={cta.quoteHref}
+                  className="rounded-md bg-primary px-7 py-4 font-semibold text-white hover:bg-primary-dark transition-colors"
+                >
+                  Get My AMC Quote
+                </Link>
+                <a
+                  href={`https://wa.me/971585575987?text=${encodeURIComponent(
+                    cta.whatsappText,
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-md bg-[#25D366] px-7 py-4 font-semibold text-[#062e14] hover:bg-[#1fad52] transition-colors"
+                >
+                  <MessageCircle className="h-4 w-4" /> WhatsApp an Engineer
+                </a>
+                <a
+                  href="tel:+971585575987"
+                  className="inline-flex items-center gap-2 rounded-md border border-border px-7 py-4 font-semibold text-text hover:border-primary hover:text-primary transition-colors"
+                >
+                  <Phone className="h-4 w-4" /> Call Now
+                </a>
+              </div>
+              <div className="mt-6 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm text-text-muted">
+                <GoogleReviewsBadge className="text-text" />
+                <span className="text-border">|</span>
+                <span>Serving all 7 emirates</span>
+                <span className="text-border">|</span>
+                <span>24/7 call or WhatsApp</span>
+              </div>
             </div>
-          </div>
+          ) : (
+            <div className="rounded-xl border border-border bg-bg-soft p-8 text-center">
+              <h2 className="font-heading text-2xl font-bold">
+                Planning a villa HVAC system?
+              </h2>
+              <p className="mx-auto mt-3 max-w-xl text-text-muted">
+                Get a real engineering opinion — heat load calculations, system
+                comparison, and an honest recommendation for your villa.
+              </p>
+              <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
+                <Link
+                  href="/quote"
+                  className="rounded-md bg-primary px-8 py-4 font-medium text-white hover:bg-primary-dark transition-colors"
+                >
+                  Get a Quote
+                </Link>
+                <a
+                  href="tel:+971585575987"
+                  className="flex items-center gap-2 text-sm font-medium text-text-muted hover:text-primary transition-colors"
+                >
+                  <Phone className="h-4 w-4" />
+                  +971 58 557 5987
+                </a>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
