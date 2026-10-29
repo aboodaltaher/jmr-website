@@ -42,7 +42,7 @@ export default function TestingCommissioning() {
             controls, and safety interlocks that have never been tested.
           </p>
           <p>
-            AGECprovides systematic T&amp;C services covering air-side systems,
+            AGEC provides systematic T&amp;C services covering air-side systems,
             water-side systems, controls and automation, and refrigeration
             circuits. We use calibrated instruments — anemometers, pitot tubes,
             ultrasonic flow meters, digital manometers, and precision temperature
