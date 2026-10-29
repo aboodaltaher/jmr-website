@@ -44,7 +44,7 @@ export default function Maintenance() {
             mechanical systems.
           </p>
           <p>
-            AGECoffers Annual Maintenance Contracts (AMC) for all HVAC system
+            AGEC offers Annual Maintenance Contracts (AMC) for all HVAC system
             types: split units, VRF systems, chillers, air handling units, fan
             coil units, and ventilation equipment. Our AMC programs include
             scheduled preventive visits, priority emergency response, and
