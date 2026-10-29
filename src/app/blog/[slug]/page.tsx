@@ -199,7 +199,7 @@ export async function generateMetadata({
     description: post.description,
     alternates: { canonical: url },
     openGraph: {
-      title: post.title,
+      title: post.titleTag || `${post.title} | AGEC`,
       description: post.description,
       url,
       type: "article",
@@ -224,10 +224,11 @@ export default async function ArticlePage({
     headline: post.title,
     description: post.description,
     datePublished: post.date,
+    dateModified: post.date,
     image: `${SITE_URL}${post.image}`,
     author: {
       "@type": "Organization",
-      name: "Altaher Ghabboun Engineering Contracting (AGEC)",
+      name: post.author,
       url: SITE_URL,
     },
     publisher: {
@@ -250,10 +251,11 @@ export default async function ArticlePage({
     headline: post.title,
     description: post.description,
     datePublished: post.date,
+    dateModified: post.date,
     image: `${SITE_URL}${post.image}`,
     author: {
       "@type": "Organization",
-      name: "Altaher Ghabboun Engineering Contracting (AGEC)",
+      name: post.author,
       url: SITE_URL,
     },
     publisher: {

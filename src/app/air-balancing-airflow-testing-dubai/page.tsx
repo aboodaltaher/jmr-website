@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Check, Phone, MessageCircle } from "lucide-react";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
@@ -199,6 +200,19 @@ export default function AirBalancingPage() {
           </div>
         </div>
       </section>
+
+      {/* Hero image */}
+      <div className="mx-auto max-w-7xl px-6 pt-12 md:pt-16">
+        <div className="relative aspect-[21/9] overflow-hidden rounded-xl">
+          <Image
+            src="/projects/agec-technician-tab-commissioning-airflow-balometer-dubai.jpg"
+            alt="AGEC technician measuring diffuser airflow with a capture hood (flow hood) during air balancing at a Dubai office"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+      </div>
 
       {/* SIGNS */}
       <section className="py-16 md:py-20">
