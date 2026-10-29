@@ -26,9 +26,8 @@ export const metadata: Metadata = {
 // Owner-supplied values. Empty values are hidden on the live page (never shown
 // as [BRACKETS]). Fill these in to reveal the matching lines/rows.
 const amcConfig = {
-  // TODO: owner to confirm scheduled visits per year (AC Maintenance page
-  // recommends service every 3–4 months). Empty = hide the count.
-  visitsPerYear: "",
+  visitsPerYear:
+    "2, 4 or 6 per year depending on your plan (we recommend 4, every 3 months)",
   included: [
     "Scheduled visits",
     "Filter and coil cleaning",
@@ -38,25 +37,49 @@ const amcConfig = {
     "Performance test",
     "Written service report after every visit",
   ],
-  // TODO: owner to confirm exclusions (parts, refrigerant top-ups, compressor
-  // replacement, access issues). Empty = show only the "quoted in writing" line.
-  excluded: [] as string[],
-  // TODO: owner to supply plan tiers + values. Empty = show the "tailored" note.
-  plans: [] as {
-    name: string;
-    visits: string;
-    response: string;
-    partsDiscount: string;
-    reports: string;
-  }[],
-  // TODO: owner to supply a "from" price in AED. Empty = hide the price line.
-  fromPrice: "",
-  // TODO: owner to confirm whether the 15-minute reply promise is true.
-  responsePromise: false,
-  // TODO: owner to confirm whether spare parts and gas are included (FAQ 3).
-  partsAndGasAnswer: "",
-  // TODO: owner to confirm cancellation / scope-change terms (FAQ 5).
-  cancellationTerms: "",
+  excluded: [
+    "Spare parts and components",
+    "Refrigerant top-ups and gas refills",
+    "Compressor and other major component replacement",
+    "Repairs caused by misuse, damage or work by other contractors",
+    "Faults that cannot be reached or tested because of access issues (blocked units, locked roofs or ceilings)",
+    "Duct cleaning (quoted separately)",
+  ],
+  plans: [
+    {
+      name: "Basic",
+      visits: "2",
+      price: "AED 250",
+      response: "Response within 48 hours",
+      partsDiscount: "5%",
+      reports: "Yes",
+      popular: false,
+    },
+    {
+      name: "Standard",
+      visits: "4",
+      price: "AED 320",
+      response: "Response within 24 hours",
+      partsDiscount: "10%",
+      reports: "Yes",
+      popular: true,
+    },
+    {
+      name: "Premium",
+      visits: "6",
+      price: "AED 400",
+      response: "Same-day priority response",
+      partsDiscount: "15%",
+      reports: "Yes",
+      popular: false,
+    },
+  ],
+  fromPrice: "250 per machine per visit",
+  responsePromise: true,
+  partsAndGasAnswer:
+    "Routine servicing is included in your visit price. Spare parts and refrigerant top-ups are not included, but we quote them in writing before any work starts, and AMC customers get a discount on parts according to their plan.",
+  cancellationTerms:
+    "Contracts run for 12 months. You can add or remove units in writing at any time, and either side can end the contract with 30 days' written notice. Visits already completed are charged at the plan rate.",
 };
 
 const eyebrow = "text-sm font-semibold uppercase tracking-widest text-primary";
@@ -226,7 +249,7 @@ export default function AcAmcPage() {
             {amcConfig.included.map((item) => {
               const label =
                 item === "Scheduled visits" && amcConfig.visitsPerYear
-                  ? `Scheduled visits (${amcConfig.visitsPerYear} per year)`
+                  ? `Scheduled visits — ${amcConfig.visitsPerYear}`
                   : item;
               return (
                 <li
@@ -270,61 +293,79 @@ export default function AcAmcPage() {
           <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">
             AMC plans
           </h2>
+          {amcConfig.fromPrice && (
+            <p className="mt-4 font-heading text-xl font-bold">
+              From AED {amcConfig.fromPrice}
+            </p>
+          )}
           {amcConfig.plans.length === 0 ? (
             <p className="mt-6 text-lg text-text-muted">
               Plans are tailored to your property. Tell us the number of units
               and we will send a written proposal.
             </p>
           ) : (
-            <div className="mt-8 overflow-x-auto">
-              <table className="w-full border-collapse text-sm">
-                <thead className="bg-primary text-left text-white">
-                  <tr>
-                    <th className="border border-border px-4 py-3 font-semibold">
-                      Plan
-                    </th>
-                    <th className="border border-border px-4 py-3 font-semibold">
-                      Visits per year
-                    </th>
-                    <th className="border border-border px-4 py-3 font-semibold">
-                      Priority response
-                    </th>
-                    <th className="border border-border px-4 py-3 font-semibold">
-                      Parts discount
-                    </th>
-                    <th className="border border-border px-4 py-3 font-semibold">
-                      Written reports
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="[&>tr:nth-child(even)]:bg-white">
-                  {amcConfig.plans.map((p) => (
-                    <tr key={p.name}>
-                      <td className="border border-border px-4 py-3 font-semibold">
-                        {p.name}
-                      </td>
-                      <td className="border border-border px-4 py-3">
-                        {p.visits}
-                      </td>
-                      <td className="border border-border px-4 py-3">
-                        {p.response}
-                      </td>
-                      <td className="border border-border px-4 py-3">
-                        {p.partsDiscount}
-                      </td>
-                      <td className="border border-border px-4 py-3">
-                        {p.reports}
-                      </td>
+            <>
+              <div className="mt-8 overflow-x-auto">
+                <table className="w-full border-collapse text-sm">
+                  <thead className="bg-primary text-left text-white">
+                    <tr>
+                      <th className="border border-border px-4 py-3 font-semibold">
+                        Plan
+                      </th>
+                      <th className="border border-border px-4 py-3 font-semibold">
+                        Visits per year
+                      </th>
+                      <th className="border border-border px-4 py-3 font-semibold">
+                        Price per machine per visit
+                      </th>
+                      <th className="border border-border px-4 py-3 font-semibold">
+                        Priority response time
+                      </th>
+                      <th className="border border-border px-4 py-3 font-semibold">
+                        Discount on spare parts
+                      </th>
+                      <th className="border border-border px-4 py-3 font-semibold">
+                        Written report after every visit
+                      </th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          )}
-          {amcConfig.fromPrice && (
-            <p className="mt-4 font-heading text-lg font-bold">
-              from AED {amcConfig.fromPrice}
-            </p>
+                  </thead>
+                  <tbody className="[&>tr:nth-child(even)]:bg-white">
+                    {amcConfig.plans.map((p) => (
+                      <tr key={p.name}>
+                        <td className="border border-border px-4 py-3 font-semibold">
+                          {p.name}
+                          {p.popular && (
+                            <span className="ml-2 inline-block rounded-full bg-primary px-2 py-0.5 text-xs font-semibold text-white">
+                              Most popular
+                            </span>
+                          )}
+                        </td>
+                        <td className="border border-border px-4 py-3">
+                          {p.visits}
+                        </td>
+                        <td className="border border-border px-4 py-3">
+                          {p.price}
+                        </td>
+                        <td className="border border-border px-4 py-3">
+                          {p.response}
+                        </td>
+                        <td className="border border-border px-4 py-3">
+                          {p.partsDiscount}
+                        </td>
+                        <td className="border border-border px-4 py-3">
+                          {p.reports}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="mt-4 text-sm text-text-muted">
+                Prices are in AED per machine per visit and exclude 5% VAT. Final
+                price depends on the number and type of units and is confirmed in
+                your written proposal.
+              </p>
+            </>
           )}
         </div>
       </section>

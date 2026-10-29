@@ -319,6 +319,14 @@ export default function Home() {
             completion report. Available for residential villas, apartments,
             commercial buildings, and facilities.
           </p>
+          <p className="mt-4 text-center text-sm">
+            <Link
+              href="/ac-amc-dubai"
+              className="font-medium text-primary hover:underline"
+            >
+              AC annual maintenance from AED 250 per machine per visit.
+            </Link>
+          </p>
         </div>
       </section>
 

@@ -29,7 +29,6 @@ export const metadata: Metadata = {
 const balancingConfig = {
   // TODO: owner to supply instrument names and models. Empty = hide the line.
   instruments: "",
-  // TODO: confirm standards before publishing.
   standards: "ASHRAE, SMACNA and CIBSE guidance",
   // TODO: owner to supply a redacted sample report PDF at the path below.
   sampleReportPath: "/sample-air-balancing-report.pdf",
@@ -283,7 +282,6 @@ export default function AirBalancingPage() {
           <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">
             Standards we work to
           </h2>
-          {/* TODO: confirm standards before publishing */}
           <p className="mt-5 text-lg leading-relaxed text-text-muted">
             We work to {balancingConfig.standards}.
           </p>

@@ -72,6 +72,14 @@ export default function Maintenance() {
             </Link>{" "}
             for lower running costs, scheduling and full app control.
           </p>
+          <p>
+            <Link
+              href="/ac-amc-dubai"
+              className="text-primary underline underline-offset-2 hover:text-primary-dark"
+            >
+              AC annual maintenance from AED 250 per machine per visit.
+            </Link>
+          </p>
         </>
       }
       whenYouNeedIt={[

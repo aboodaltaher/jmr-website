@@ -186,8 +186,7 @@ export function AmcForm({
       </button>
       {responsePromise && (
         <p className="text-center text-sm text-text-muted">
-          We reply during working hours within 15 minutes. Written quote within
-          24 hours.
+          We reply on call and WhatsApp 24/7. Written quote within 24 hours.
         </p>
       )}
     </form>
