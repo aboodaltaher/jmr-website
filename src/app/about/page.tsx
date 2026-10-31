@@ -123,8 +123,8 @@ export default function About() {
             </div>
             <div className="relative overflow-hidden rounded-lg lg:min-h-[400px]">
               <Image
-                src="https://images.unsplash.com/photo-1745750434535-5943ef2fd31a?auto=format&fit=crop&w=1200&q=80"
-                alt="Dubai skyline with modern architecture"
+                src="/photos/agec-ac-vent-cleaning-villa-dubai.jpg"
+                alt="AGEC technician cleaning air conditioning ventilation in a Dubai villa"
                 fill
                 className="object-cover"
               />

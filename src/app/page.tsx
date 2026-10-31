@@ -253,8 +253,8 @@ export default function Home() {
             </div>
             <div className="relative hidden aspect-[4/3] overflow-hidden rounded-lg lg:col-span-2 lg:block">
               <Image
-                src="https://images.unsplash.com/photo-1718203862467-c33159fdc504?auto=format&fit=crop&w=800&q=80"
-                alt="Wall-mounted air conditioning unit"
+                src="/photos/agec-ac-grille-cleaning-dubai.jpg"
+                alt="AGEC technician cleaning an air conditioning return-air grille in Dubai"
                 fill
                 className="object-cover"
               />
