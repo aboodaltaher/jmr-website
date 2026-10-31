@@ -27,6 +27,7 @@ export const metadata: Metadata = {
 export default function VrfVrvSystems() {
   return (
     <ServiceDetailLayout
+      slug="services/vrf-vrv-systems"
       title="VRF / VRV Systems"
       heroImage="/projects/daikin-vrv-x-business-bay-dubai-rooftop-installation.jpg"
       heroImageAlt="Daikin VRV-X variable refrigerant volume system installation on rooftop in Business Bay Dubai by AGEC"

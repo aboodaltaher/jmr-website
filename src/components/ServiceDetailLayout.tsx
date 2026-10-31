@@ -24,6 +24,8 @@ interface ServiceDetailLayoutProps {
   whatWeDo: Capability[];
   whyAgec: string[];
   faq?: FaqItem[];
+  /** Path after the domain, e.g. "services/chillers" — enables Service + BreadcrumbList schema. */
+  slug?: string;
 }
 
 export function ServiceDetailLayout({
@@ -36,6 +38,7 @@ export function ServiceDetailLayout({
   whatWeDo,
   whyAgec,
   faq,
+  slug,
 }: ServiceDetailLayoutProps) {
   const faqSchema =
     faq && faq.length > 0
@@ -50,12 +53,63 @@ export function ServiceDetailLayout({
         }
       : null;
 
+  const url = slug ? `https://agec.ae/${slug}` : null;
+
+  const serviceSchema = url
+    ? {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        name: title,
+        description: intro,
+        serviceType: title,
+        url,
+        areaServed: { "@type": "Country", name: "United Arab Emirates" },
+        provider: {
+          "@type": "HVACBusiness",
+          name: "AGEC Technical Services",
+          telephone: "+971585575987",
+          email: "a.altaher@agec.ae",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Al Quoz Industrial Area 1",
+            addressLocality: "Dubai",
+            addressCountry: "AE",
+          },
+          url: "https://agec.ae",
+        },
+      }
+    : null;
+
+  const breadcrumbSchema = url
+    ? {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://agec.ae/" },
+          { "@type": "ListItem", position: 2, name: "Services", item: "https://agec.ae/services/" },
+          { "@type": "ListItem", position: 3, name: title, item: url },
+        ],
+      }
+    : null;
+
   return (
     <>
       {faqSchema && (
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+      {serviceSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        />
+      )}
+      {breadcrumbSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
         />
       )}
       {/* Page Header */}

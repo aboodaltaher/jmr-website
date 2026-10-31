@@ -28,6 +28,7 @@ export const metadata: Metadata = {
 export default function DxUnits() {
   return (
     <ServiceDetailLayout
+      slug="services/dx-units"
       title="DX Units & Split Systems"
       heroImage="/projects/indoor-ahu-installation-refrigerant-piping-dubai.jpg"
       heroImageAlt="Indoor air handling unit installation with insulated refrigerant piping at Dubai commercial HVAC project by AGEC"

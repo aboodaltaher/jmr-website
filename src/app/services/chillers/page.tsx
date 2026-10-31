@@ -27,6 +27,7 @@ export const metadata: Metadata = {
 export default function Chillers() {
   return (
     <ServiceDetailLayout
+      slug="services/chillers"
       title="Chiller Systems"
       heroImage="/projects/chiller-installation-dubai-agec.jpg"
       heroImageAlt="Chiller plant installation by AGEC for commercial project in Dubai"

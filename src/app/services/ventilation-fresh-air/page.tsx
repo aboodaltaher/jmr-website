@@ -27,6 +27,7 @@ export const metadata: Metadata = {
 export default function VentilationFreshAir() {
   return (
     <ServiceDetailLayout
+      slug="services/ventilation-fresh-air"
       title="Fresh Air Ventilation & CO₂ Testing"
       heroImage="/projects/fresh-air-handling-unit-fahu-dubai-agec.jpg"
       heroImageAlt="Fresh Air Handling Unit (FAHU) installation by AGEC in Dubai commercial project"
