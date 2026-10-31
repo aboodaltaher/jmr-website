@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
+  GOOGLE_RATING,
+  GOOGLE_REVIEW_COUNT,
+  GOOGLE_REVIEWS_URL,
+} from "@/lib/reviews";
+import {
   ShieldCheck,
   BadgeCheck,
   Clock,
@@ -109,11 +114,7 @@ const faqs: { q: string; a: string }[] = [
   { q: "While you're here, can you also upgrade my thermostat?", a: "Yes — many customers add a smart thermostat during a service visit. See our smart thermostat installation page for Google Nest and ecobee options." },
 ];
 
-/* Real reviews from the verified Google Business Profile (AGEC Technical Services, 5.0 / 27). */
-const GOOGLE_REVIEWS_URL = "https://maps.app.goo.gl/fPKs5SXmDeK9Co4VA";
-// TODO: confirm rating still 5.0 with 27 reviews
-const GOOGLE_RATING = "5.0";
-const GOOGLE_REVIEW_COUNT = 27;
+/* Real reviews from the verified Google Business Profile (AGEC Technical Services). */
 const reviews = [
   { name: "Malek Boos", role: "Google review · translated from Arabic", initials: "MB", text: "Honestly, incredible service and truly professional work — and above all, they are honest and conscientious. From the very first visit they solved a problem I had struggled with for a long time, after bad experiences with other companies. I recommend anyone who needs anything AC-related to deal with them. Five stars isn't enough — you deserve 100." },
   { name: "Mays Masri", role: "Google review · translated from Arabic", initials: "MM", text: "I'm really happy with what they did, and their price is excellent. They installed a split unit at my home even though the wiring wasn't right — they sorted it out with an excellent electrician, left the whole house clean, and paid attention to the smallest details. Thank you." },

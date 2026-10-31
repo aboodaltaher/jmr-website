@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
+  GOOGLE_RATING,
+  GOOGLE_REVIEW_COUNT,
+  GOOGLE_REVIEWS_URL,
+} from "@/lib/reviews";
+import {
   ShieldCheck,
   BadgeCheck,
   Zap,
@@ -248,11 +253,7 @@ const benefits: { icon: LucideIcon; title: string; desc: string }[] = [
 
 const areas = ["Dubai", "Abu Dhabi", "Sharjah", "Ajman", "Ras Al Khaimah", "Umm Al Quwain", "Fujairah"];
 
-// Real reviews from the verified Google Business Profile (AGEC Technical Services, 5.0 / 27).
-const GOOGLE_REVIEWS_URL = "https://maps.app.goo.gl/fPKs5SXmDeK9Co4VA";
-// TODO: confirm rating still 5.0 with 27 reviews
-const GOOGLE_RATING = "5.0";
-const GOOGLE_REVIEW_COUNT = 27;
+// Real reviews from the verified Google Business Profile (AGEC Technical Services).
 
 const reviews = [
   {
