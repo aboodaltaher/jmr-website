@@ -98,7 +98,7 @@ const areas = ["Dubai", "Abu Dhabi", "Sharjah", "Ajman", "Ras Al Khaimah", "Umm 
 
 const faqs: { q: string; a: string }[] = [
   { q: "How often should I service my AC in Dubai?", a: "Because AC runs almost year-round in the UAE, we recommend servicing every 3–4 months (3–4 times a year), or at minimum before and during the summer peak. Homes with heavy use, pets or dust exposure benefit from more frequent visits. An AMC schedules this automatically." },
-  { q: "How much does AC maintenance cost in Dubai?", a: "It depends on the number and type of units and whether it's a one-off service or an annual contract. We quote a transparent fixed price upfront after understanding your system — with no hidden charges. AMC plans reduce the per-visit cost." },
+  { q: "How much does AC maintenance cost in Dubai?", a: "A one-off service starts from AED 350 per machine, with a minimum of 3 units. The exact cost depends on the number and type of units and whether it's a one-off service or an annual contract. We confirm a transparent fixed price upfront after understanding your system — with no hidden charges. AMC plans reduce the per-visit cost." },
   { q: "Do you service all AC brands?", a: "Yes. We service every major brand and system type — split, ducted, cassette, VRF/VRV, chillers and package units — including Daikin, O General, Carrier, Gree, Midea, LG, Mitsubishi, Trane and more." },
   { q: "Do you offer same-day or emergency AC repair?", a: "Yes. We provide same-day service where possible and 24/7 emergency breakdown support across Dubai and the UAE — important when your AC fails during peak summer." },
   { q: "What is included in an AC service?", a: "A standard service typically includes cleaning filters and coils, clearing the drainage line, checking refrigerant pressure, inspecting electrical connections and controls, and testing cooling performance — followed by a service report." },
@@ -193,6 +193,10 @@ export default function AcMaintenancePage() {
               Keep your air conditioning cooling properly and running efficiently with professional AC
               maintenance from licensed HVAC engineers. Servicing, repairs, coil &amp; duct cleaning, gas
               top-ups and annual maintenance contracts — for villas, apartments and businesses across the UAE.
+            </p>
+            <p className="mt-5 inline-flex flex-wrap items-baseline gap-2 rounded-lg bg-white/10 px-4 py-2.5 text-base font-semibold text-white">
+              One-off service from AED 350 per machine
+              <span className="text-sm font-normal text-white/70">· minimum 3 units</span>
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/book" className="rounded-md bg-primary px-7 py-4 font-semibold text-white hover:bg-primary-dark transition-colors">Book AC Service</Link>
