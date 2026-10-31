@@ -29,19 +29,17 @@ import {
 const PHONE = "+971585575987";
 const PHONE_DISPLAY = "+971 58 557 5987";
 const WA = `https://wa.me/971585575987?text=${encodeURIComponent(
-  "Hi AGEC, can you check if a Nest/ecobee works with my [brand] AC in [area]?",
+  "Hi AGEC, can you check if a Nest or ecobee works with my AC? Brand and model: ",
 )}`;
 const CANONICAL = "/smart-thermostat-installation-dubai";
 
 export const metadata: Metadata = {
-  title:
-    "Smart Thermostat Installation Dubai | Google Nest & ecobee Installer UAE | AGEC",
+  title: "Smart Thermostat Installation Dubai | Nest & ecobee | AGEC",
   description:
-    "Authorized supplier & professional installer of Google Nest & ecobee smart thermostats in Dubai & the UAE. Free compatibility check, C-wire installation, same-day service. Call +971 58 557 5987.",
+    "Nest and ecobee smart thermostat installation in Dubai and the UAE. Free compatibility check and C-wire installation. Call +971 58 557 5987.",
   alternates: { canonical: CANONICAL },
   openGraph: {
-    title:
-      "Smart Thermostat Installation Dubai | Google Nest & ecobee Installer UAE",
+    title: "Smart Thermostat Installation Dubai | Nest & ecobee | AGEC",
     description:
       "Authorized supplier & professional installer of Google Nest & ecobee smart thermostats across Dubai & the UAE. Free compatibility check & expert C-wire installation.",
     url: "https://agec.ae/smart-thermostat-installation-dubai",

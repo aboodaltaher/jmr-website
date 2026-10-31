@@ -11,10 +11,10 @@ import { CONVERSIONS, trackConversion, pushDataLayer } from "@/lib/gtag";
 const schema = z.object({
   name: z.string().min(1, "Full name is required"),
   phone: z.string().min(1, "Phone number is required"),
-  email: z.string().min(1, "Email is required").email("Please enter a valid email"),
+  email: z.string().email("Please enter a valid email").optional().or(z.literal("")),
   address: z.string().min(1, "Address is required"),
   serviceType: z.string().min(1, "Please select a service type"),
-  equipmentType: z.string().min(1, "Please select equipment type"),
+  equipmentType: z.string().optional(),
   description: z.string().min(1, "Please describe the issue"),
   preferredDate: z.string().optional(),
   preferredTime: z.string().optional(),
@@ -127,7 +127,7 @@ export function BookForm() {
               htmlFor="email"
               className="block text-sm font-medium mb-1.5"
             >
-              Email <span className="text-red-500">*</span>
+              Email (optional)
             </label>
             <input
               id="email"
@@ -206,7 +206,7 @@ export function BookForm() {
               htmlFor="equipmentType"
               className="block text-sm font-medium mb-1.5"
             >
-              Equipment type <span className="text-red-500">*</span>
+              Equipment type (optional)
             </label>
             <select
               id="equipmentType"

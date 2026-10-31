@@ -110,7 +110,7 @@ const ctaBySlug: Record<
     text: "Tell us how many units you have and where they are. An AGEC engineer will send a written proposal.",
     quoteHref: "/ac-amc-dubai#amc-form",
     whatsappText:
-      "Hi AGEC, I'd like to know about AC coil cleaning and an AMC for [number] units in [area].",
+      "Hi AGEC, I'd like an AMC quote. Number of AC units and area: ",
   },
 };
 

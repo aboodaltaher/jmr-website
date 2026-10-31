@@ -77,7 +77,7 @@ const quoteSchema = z.object({
   projectSize: z.string().optional(),
   timeline: z.string().min(1),
   budget: z.string().optional(),
-  details: z.string().min(1),
+  details: z.string().optional(),
 });
 
 export async function submitQuoteRequest(data: Record<string, unknown>) {
@@ -120,10 +120,10 @@ export async function submitQuoteRequest(data: Record<string, unknown>) {
 const bookSchema = z.object({
   name: z.string().min(1),
   phone: z.string().min(1),
-  email: z.string().email(),
+  email: z.string().email().optional().or(z.literal("")),
   address: z.string().min(1),
   serviceType: z.string().min(1),
-  equipmentType: z.string().min(1),
+  equipmentType: z.string().optional(),
   description: z.string().min(1),
   preferredDate: z.string().optional(),
   preferredTime: z.string().optional(),
@@ -152,7 +152,7 @@ export async function submitBooking(data: Record<string, unknown>) {
       from: FROM,
       to: CONTACT_EMAIL,
       subject: `Service Booking Request - ${d.name}`,
-      replyTo: d.email,
+      replyTo: d.email || undefined,
       html,
     });
   } catch (err) {
