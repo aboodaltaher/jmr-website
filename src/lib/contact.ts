@@ -8,6 +8,8 @@ const WA_NUMBER = "971585575987";
 // Page-specific WhatsApp prefilled text, keyed by route. Falls back to default.
 const WHATSAPP_MESSAGES: Record<string, string> = {
   default: "Hi AGEC, I'd like to speak to an engineer about my AC / HVAC.",
+  "/ac-repair-dubai":
+    "Hi AGEC, my AC is not cooling. Villa or apartment? Area? ",
   "/ac-maintenance-dubai":
     "Hi AGEC, I'd like to book an AC service. Number of units and area: ",
   "/smart-thermostat-installation-dubai":

@@ -206,6 +206,15 @@ export default function AcMaintenancePage() {
                 </span>
               ))}
             </div>
+            <p className="mt-6 text-sm text-white/70">
+              AC not cooling or leaking right now?{" "}
+              <Link
+                href="/ac-repair-dubai"
+                className="font-semibold text-primary hover:underline"
+              >
+                See AC Repair in Dubai →
+              </Link>
+            </p>
           </div>
           <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/10">
             <Image

@@ -250,3 +250,39 @@ export async function submitBalancingRequest(data: Record<string, unknown>) {
 
   return { success: true };
 }
+
+// ── Urgent AC Repair ──
+
+const repairSchema = z.object({
+  name: z.string().min(1),
+  phone: z.string().min(1),
+  area: z.string().min(1),
+  issue: z.string().min(1),
+});
+
+export async function submitRepairRequest(data: Record<string, unknown>) {
+  const parsed = repairSchema.safeParse(data);
+  if (!parsed.success) return { success: false, error: "Invalid form data" };
+  const d = parsed.data;
+
+  const html = wrap(
+    "Urgent AC Repair Request",
+    row("Name", d.name) +
+      row("Phone", d.phone) +
+      row("Area", d.area) +
+      row("Issue", d.issue),
+  );
+
+  try {
+    await resend.emails.send({
+      from: FROM,
+      to: CONTACT_EMAIL,
+      subject: `Urgent AC Repair - ${d.name}`,
+      html,
+    });
+  } catch (err) {
+    console.error("Failed to send repair email:", err);
+  }
+
+  return { success: true };
+}
