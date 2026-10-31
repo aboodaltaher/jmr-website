@@ -273,7 +273,7 @@ export default function Home() {
                 icon: Wind,
                 line1: "Premium AC",
                 line2: "Duct Cleaning",
-                href: "/services/ac-cleaning/premium-duct",
+                href: "/ac-duct-cleaning-dubai",
                 description:
                   "Complete duct system cleaning including supply and return grills, drain pipe flushing, deep coil cleaning, and full disinfection.",
               },
@@ -281,7 +281,7 @@ export default function Home() {
                 icon: Sparkles,
                 line1: "Full AC",
                 line2: "Cleaning",
-                href: "/services/ac-cleaning/full-ac",
+                href: "/ac-duct-cleaning-dubai",
                 description:
                   "Comprehensive system clean covering grills, ducts, coils, fan motor, blower, and cavity area.",
               },
@@ -289,7 +289,7 @@ export default function Home() {
                 icon: Snowflake,
                 line1: "Split AC",
                 line2: "Cleaning",
-                href: "/services/ac-cleaning/split-ac",
+                href: "/ac-duct-cleaning-dubai",
                 description:
                   "Targeted cleaning for split unit systems. Filter cleaning, coil treatment, and performance verification.",
               },
@@ -297,13 +297,13 @@ export default function Home() {
                 icon: Layers,
                 line1: "AC Coil",
                 line2: "Cleaning",
-                href: "/services/ac-cleaning/coil-cleaning",
+                href: "/ac-duct-cleaning-dubai",
                 description:
                   "Precision coil cleaning to restore heat transfer efficiency and improve cooling performance.",
               },
             ].map((pkg) => (
               <Link
-                key={pkg.href}
+                key={pkg.line1}
                 href={pkg.href}
                 className="flex flex-col rounded-lg border border-border bg-white p-8 transition-all hover:-translate-y-1 hover:shadow-lg"
               >
@@ -591,7 +591,7 @@ export default function Home() {
           <div className="mt-10 text-center">
             <p className="font-heading text-lg font-semibold">Prefer to talk?</p>
             <p className="mt-1 text-sm text-text-muted">
-              Call or WhatsApp anytime, 24/7. Dubai response within 2 hours.
+              Call or WhatsApp anytime, 24/7. We respond within 1 hour.
             </p>
           </div>
         </div>

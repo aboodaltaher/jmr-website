@@ -14,6 +14,7 @@ const serviceLinks = [
   { href: "/services", label: "All Services" },
   { href: "/ac-maintenance-dubai", label: "AC Maintenance" },
   { href: "/ac-repair-dubai", label: "AC Repair" },
+  { href: "/ac-duct-cleaning-dubai", label: "AC Duct Cleaning" },
   { href: "/ac-amc-dubai", label: "AC AMC" },
   { href: "/air-balancing-airflow-testing-dubai", label: "Air Balancing" },
   { href: "/smart-thermostat-installation-dubai", label: "Smart Thermostats" },

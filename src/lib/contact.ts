@@ -12,6 +12,8 @@ const WHATSAPP_MESSAGES: Record<string, string> = {
     "Hi AGEC, my AC is not cooling. Villa or apartment? Area? ",
   "/ac-maintenance-dubai":
     "Hi AGEC, I'd like to book an AC service. Number of units and area: ",
+  "/ac-duct-cleaning-dubai":
+    "Hi AGEC, I'd like a duct cleaning quote. Property type, number of units and area: ",
   "/smart-thermostat-installation-dubai":
     "Hi AGEC, can you check if a Nest or ecobee works with my AC? Brand and model: ",
   "/services/maintenance":
