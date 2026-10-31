@@ -9,6 +9,11 @@ interface Capability {
   href?: string;
 }
 
+interface FaqItem {
+  q: string;
+  a: string;
+}
+
 interface ServiceDetailLayoutProps {
   title: string;
   intro: string;
@@ -18,6 +23,7 @@ interface ServiceDetailLayoutProps {
   whenYouNeedIt: string[];
   whatWeDo: Capability[];
   whyAgec: string[];
+  faq?: FaqItem[];
 }
 
 export function ServiceDetailLayout({
@@ -29,9 +35,29 @@ export function ServiceDetailLayout({
   whenYouNeedIt,
   whatWeDo,
   whyAgec,
+  faq,
 }: ServiceDetailLayoutProps) {
+  const faqSchema =
+    faq && faq.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faq.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        }
+      : null;
+
   return (
     <>
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       {/* Page Header */}
       <section className="bg-bg-soft py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
@@ -155,6 +181,29 @@ export function ServiceDetailLayout({
           </ul>
         </div>
       </section>
+
+      {/* FAQ */}
+      {faq && faq.length > 0 && (
+        <section className="py-16 md:py-20">
+          <div className="mx-auto max-w-3xl px-6">
+            <h2 className="font-heading text-3xl font-bold md:text-4xl">
+              Frequently asked questions
+            </h2>
+            <div className="mt-8 space-y-6">
+              {faq.map((item) => (
+                <div key={item.q}>
+                  <h3 className="font-heading text-lg font-semibold">
+                    {item.q}
+                  </h3>
+                  <p className="mt-2 leading-relaxed text-text-muted">
+                    {item.a}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* CTA Band */}
       <section className="bg-primary py-16 md:py-20">
