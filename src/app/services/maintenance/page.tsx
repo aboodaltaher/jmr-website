@@ -28,6 +28,7 @@ export const metadata: Metadata = {
 export default function Maintenance() {
   return (
     <ServiceDetailLayout
+      slug="services/maintenance"
       title="Maintenance & AMC"
       heroImage="/projects/agec-maintenance-service-dubai.jpg"
       heroImageAlt="AGEC HVAC maintenance work at Dubai project"

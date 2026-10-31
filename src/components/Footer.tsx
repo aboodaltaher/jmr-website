@@ -6,6 +6,7 @@ const navLinks = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/ac-maintenance-dubai", label: "AC Maintenance" },
+  { href: "/ac-repair-dubai", label: "AC Repair" },
   { href: "/ac-amc-dubai", label: "AC AMC" },
   { href: "/smart-thermostat-installation-dubai", label: "Smart Thermostats" },
   { href: "/air-balancing-airflow-testing-dubai", label: "Air Balancing" },
@@ -27,11 +28,14 @@ export function Footer() {
             </p>
             <div className="mt-4 space-y-1 text-sm text-text-muted">
               <p>+971 58 557 5987</p>
-              <p>m.ghabboun@agec.ae</p>
-              <p>Alhamra Building, BNKS Vision Business Center, Umm Hurair Road, Al Karama, Dubai, UAE</p>
+              <p>a.altaher@agec.ae</p>
+              <p>Al Quoz Industrial Area 1, Dubai, UAE</p>
             </div>
             <p className="mt-4 text-xs text-text-muted">
               24/7 Emergency Support · +971 58 557 5987
+            </p>
+            <p className="mt-1 text-xs text-text-muted">
+              AGEC Technical Services L.L.C. · Dubai Commercial Licence No. 1221573
             </p>
           </div>
           <nav className="flex flex-col gap-2">

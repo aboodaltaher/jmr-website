@@ -107,18 +107,24 @@ export default function About() {
                   date is 8.75 million AED.
                 </p>
                 <p>
-                  We are an authorized HVAC contractor compliant with Dubai
-                  Municipality, DEWA, ASHRAE 111, SMACNA, and CIBSE standards.
+                  We work to recognised HVAC engineering standards, including
+                  ASHRAE 111, SMACNA and CIBSE.
                   Whether the project is a single villa or a multi-site rollout,
                   our commitment is the same: precision, timeliness, and systems
                   that work for the long term.
+                </p>
+                <p>
+                  AGEC Technical Services L.L.C. holds Dubai Commercial Licence
+                  No. 1221573, issued by the Dubai Department of Economy and
+                  Tourism, covering air-conditioning, ventilation and air
+                  filtration systems installation and maintenance.
                 </p>
               </div>
             </div>
             <div className="relative overflow-hidden rounded-lg lg:min-h-[400px]">
               <Image
-                src="https://images.unsplash.com/photo-1745750434535-5943ef2fd31a?auto=format&fit=crop&w=1200&q=80"
-                alt="Dubai skyline with modern architecture"
+                src="/photos/agec-ac-vent-cleaning-villa-dubai.jpg"
+                alt="AGEC technician cleaning air conditioning ventilation in a Dubai villa"
                 fill
                 className="object-cover"
               />

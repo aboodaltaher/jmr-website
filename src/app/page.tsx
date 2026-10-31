@@ -19,7 +19,14 @@ import {
   MapPin,
   Sparkles,
   Layers,
+  Star,
 } from "lucide-react";
+import {
+  GOOGLE_RATING,
+  GOOGLE_REVIEW_COUNT,
+  GOOGLE_REVIEWS_URL,
+  GOOGLE_REVIEWS,
+} from "@/lib/reviews";
 
 export const metadata: Metadata = {
   title: "HVAC Contractor & AC Maintenance Dubai | AGEC",
@@ -151,16 +158,11 @@ export default function Home() {
             priceRange: "$$",
             address: {
               "@type": "PostalAddress",
-              streetAddress:
-                "Alhamra Building, BNKS Vision Business Center, Umm Hurair Road",
-              addressLocality: "Al Karama",
+              // TODO(owner): add the exact building/unit from the trade licence.
+              streetAddress: "Al Quoz Industrial Area 1",
+              addressLocality: "Dubai",
               addressRegion: "Dubai",
               addressCountry: "AE",
-            },
-            geo: {
-              "@type": "GeoCoordinates",
-              latitude: 25.2445449,
-              longitude: 55.3112435,
             },
             hasMap: "https://maps.app.goo.gl/fPKs5SXmDeK9Co4VA",
             areaServed: [
@@ -204,24 +206,30 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/65 to-black/45" />
         <div className="relative mx-auto max-w-7xl px-6 py-24">
           <h1 className="max-w-4xl font-heading text-5xl font-bold leading-tight text-white md:text-7xl">
-            Advanced HVAC Solutions for Dubai&apos;s Most Demanding Projects
+            HVAC Contractor and AC Maintenance in Dubai
           </h1>
           <p className="mt-6 max-w-2xl text-xl text-white/80">
-            Design, installation, commissioning, and maintenance of VRF, chiller,
-            and ventilation systems — from concept to long-term performance.
+            Engineer-led installation, maintenance contracts and airflow testing
+            for villas, offices and buildings across the UAE.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
-              href="/quote"
+              href="/book"
               className="rounded-md bg-primary px-8 py-4 font-medium text-white hover:bg-primary-dark transition-colors"
             >
-              Get a Quote
+              Book AC Service
             </Link>
             <Link
-              href="/services"
+              href="/ac-amc-dubai#amc-form"
               className="rounded-md border border-white/30 px-8 py-4 font-medium text-white hover:border-white hover:bg-white/10 transition-colors"
             >
-              Explore Services
+              Get AMC Quote
+            </Link>
+            <Link
+              href="/quote"
+              className="rounded-md border border-white/30 px-8 py-4 font-medium text-white hover:border-white hover:bg-white/10 transition-colors"
+            >
+              Request a Project Quote
             </Link>
           </div>
           <p className="mt-8 text-sm text-white/60">
@@ -252,8 +260,8 @@ export default function Home() {
             </div>
             <div className="relative hidden aspect-[4/3] overflow-hidden rounded-lg lg:col-span-2 lg:block">
               <Image
-                src="https://images.unsplash.com/photo-1718203862467-c33159fdc504?auto=format&fit=crop&w=800&q=80"
-                alt="Wall-mounted air conditioning unit"
+                src="/photos/agec-ac-grille-cleaning-dubai.jpg"
+                alt="AGEC technician cleaning an air conditioning return-air grille in Dubai"
                 fill
                 className="object-cover"
               />
@@ -337,7 +345,7 @@ export default function Home() {
             {[
               { value: "30+", label: "Projects Delivered" },
               { value: "240 TR", label: "Max Single Project" },
-              { value: "3", label: "Emirates Served" },
+              { value: "7", label: "Emirates Served" },
               { value: "2022", label: "Established" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
@@ -432,14 +440,14 @@ export default function Home() {
       <section className="bg-bg-soft py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-6 text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-            Compliance &amp; Standards
+            Engineering Standards
           </p>
           <h2 className="mx-auto mt-3 max-w-3xl font-heading text-3xl font-bold">
-            Authorized HVAC contractor, compliant with regional and
-            international standards
+            We design, install and commission to recognised HVAC engineering
+            standards
           </h2>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            {["ASHRAE 111", "SMACNA", "CIBSE", "Dubai Municipality", "DEWA"].map(
+            {["ASHRAE 111", "SMACNA", "CIBSE"].map(
               (badge) => (
                 <span
                   key={badge}
@@ -450,6 +458,70 @@ export default function Home() {
               ),
             )}
           </div>
+        </div>
+      </section>
+
+      {/* Reviews */}
+      <section className="py-16 md:py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="text-sm font-semibold uppercase tracking-widest text-primary">
+              Customer Reviews
+            </p>
+            <h2 className="mt-3 font-heading text-3xl font-bold md:text-5xl">
+              Rated {GOOGLE_RATING}★ by Dubai clients
+            </h2>
+            <a
+              href={GOOGLE_REVIEWS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-5 inline-flex items-center gap-2 rounded-full border border-border bg-bg-soft px-5 py-2.5 text-sm font-semibold text-text shadow-sm transition-colors hover:border-primary"
+            >
+              <span className="flex gap-0.5 text-primary">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="h-4 w-4 fill-current" />
+                ))}
+              </span>
+              {GOOGLE_RATING} · {GOOGLE_REVIEW_COUNT} verified Google reviews
+            </a>
+          </div>
+          <div className="mt-12 grid gap-7 md:grid-cols-3">
+            {GOOGLE_REVIEWS.map((r) => (
+              <figure
+                key={r.name}
+                className="flex flex-col rounded-xl border border-border bg-bg-soft p-7"
+              >
+                <div className="flex gap-0.5 text-primary">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-current" />
+                  ))}
+                </div>
+                <blockquote className="mt-4 flex-1 text-text">
+                  {r.text}
+                </blockquote>
+                <figcaption className="mt-5 flex items-center gap-3">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#13212E] font-heading font-bold text-white">
+                    {r.initials}
+                  </span>
+                  <span>
+                    <b className="block text-sm">{r.name}</b>
+                    <span className="text-xs text-text-muted">{r.role}</span>
+                  </span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+          <p className="mt-8 text-center text-sm text-text-muted">
+            Genuine reviews from our verified Google Business Profile.{" "}
+            <a
+              href={GOOGLE_REVIEWS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-primary hover:underline"
+            >
+              Read all {GOOGLE_REVIEW_COUNT} on Google →
+            </a>
+          </p>
         </div>
       </section>
 
@@ -501,10 +573,10 @@ export default function Home() {
               <div>
                 <p className="font-heading font-semibold">Email</p>
                 <a
-                  href="mailto:m.ghabboun@agec.ae"
+                  href="mailto:a.altaher@agec.ae"
                   className="text-text-muted hover:text-primary transition-colors"
                 >
-                  m.ghabboun@agec.ae
+                  a.altaher@agec.ae
                 </a>
               </div>
             </div>

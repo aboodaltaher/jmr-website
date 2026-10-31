@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
+  GOOGLE_RATING,
+  GOOGLE_REVIEW_COUNT,
+  GOOGLE_REVIEWS_URL,
+  GOOGLE_REVIEWS,
+} from "@/lib/reviews";
+import {
   ShieldCheck,
   BadgeCheck,
   Clock,
@@ -25,14 +31,14 @@ import {
 const PHONE = "+971585575987";
 const PHONE_DISPLAY = "+971 58 557 5987";
 const WA = `https://wa.me/971585575987?text=${encodeURIComponent(
-  "Hi AGEC, I'd like to book AC maintenance for [number] units in [area].",
+  "Hi AGEC, I'd like to book an AC service. Number of units and area: ",
 )}`;
 const CANONICAL = "/ac-maintenance-dubai";
 
 export const metadata: Metadata = {
   title: "AC Maintenance Dubai | AC Servicing, Repair & AMC | AGEC",
   description:
-    "Professional AC maintenance in Dubai & the UAE — servicing, repair, coil & duct cleaning, gas top-up, and annual maintenance contracts (AMC). Licensed HVAC engineers, same-day & emergency service. Call +971 58 557 5987.",
+    "AC maintenance in Dubai by HVAC engineers: servicing, repair, coil and duct cleaning, gas top-up and AMC plans. Call +971 58 557 5987.",
   alternates: { canonical: CANONICAL },
   openGraph: {
     title: "AC Maintenance Dubai | AC Servicing, Repair & AMC | AGEC",
@@ -47,15 +53,15 @@ export const metadata: Metadata = {
 /* ------------------------------ CONTENT ------------------------------ */
 
 const trustBadges = [
-  "Licensed & Insured HVAC Engineers",
+  "Licensed HVAC Engineers",
   "All AC Brands Serviced",
   "Same-Day & Emergency Service",
-  "Transparent Fixed Pricing",
+  "Transparent Pricing",
   "Documented Service Reports",
 ];
 
 const whyCards: { icon: LucideIcon; title: string; desc: string }[] = [
-  { icon: ShieldCheck, title: "Licensed HVAC Engineers", desc: "Real, trained, insured technicians working to ASHRAE and Dubai Municipality standards — not unqualified handymen." },
+  { icon: ShieldCheck, title: "Licensed HVAC Engineers", desc: "Real, trained technicians working to ASHRAE and Dubai Municipality standards — not unqualified handymen." },
   { icon: BadgeCheck, title: "Every AC Brand & Type", desc: "Split, ducted, cassette, VRF/VRV, chillers and package units — Daikin, O General, Carrier, Gree, Midea, LG and more." },
   { icon: Clock, title: "Same-Day & 24/7 Emergency", desc: "Fast response across Dubai and the UAE, with emergency breakdown support when your AC fails in peak summer." },
   { icon: FileText, title: "Documented Reports", desc: "Every visit is logged with before/after condition, work performed and parts used — a full maintenance history for your records." },
@@ -93,7 +99,7 @@ const areas = ["Dubai", "Abu Dhabi", "Sharjah", "Ajman", "Ras Al Khaimah", "Umm 
 
 const faqs: { q: string; a: string }[] = [
   { q: "How often should I service my AC in Dubai?", a: "Because AC runs almost year-round in the UAE, we recommend servicing every 3–4 months (3–4 times a year), or at minimum before and during the summer peak. Homes with heavy use, pets or dust exposure benefit from more frequent visits. An AMC schedules this automatically." },
-  { q: "How much does AC maintenance cost in Dubai?", a: "It depends on the number and type of units and whether it's a one-off service or an annual contract. We quote a transparent fixed price upfront after understanding your system — with no hidden charges. AMC plans reduce the per-visit cost." },
+  { q: "How much does AC maintenance cost in Dubai?", a: "A one-off service starts from AED 350 per machine, with a minimum of 3 units. The exact cost depends on the number and type of units and whether it's a one-off service or an annual contract. We confirm a transparent fixed price upfront after understanding your system — with no hidden charges. AMC plans reduce the per-visit cost." },
   { q: "Do you service all AC brands?", a: "Yes. We service every major brand and system type — split, ducted, cassette, VRF/VRV, chillers and package units — including Daikin, O General, Carrier, Gree, Midea, LG, Mitsubishi, Trane and more." },
   { q: "Do you offer same-day or emergency AC repair?", a: "Yes. We provide same-day service where possible and 24/7 emergency breakdown support across Dubai and the UAE — important when your AC fails during peak summer." },
   { q: "What is included in an AC service?", a: "A standard service typically includes cleaning filters and coils, clearing the drainage line, checking refrigerant pressure, inspecting electrical connections and controls, and testing cooling performance — followed by a service report." },
@@ -103,22 +109,13 @@ const faqs: { q: string; a: string }[] = [
   { q: "Can regular maintenance lower my electricity bill?", a: "Yes. A clean, well-charged, properly running AC uses noticeably less energy than a neglected one — efficiency can drop 20–30% within two years without maintenance, and that shows up on your DEWA bill." },
   { q: "Do you maintain AC for villas and apartments?", a: "Both. We handle single apartments, large villas, and everything in between — as one-off services or annual contracts." },
   { q: "Do you handle commercial AC maintenance?", a: "Yes. We provide AMC and reactive maintenance for offices, shops, restaurants, hotels and buildings — including chillers, AHUs, FCUs and VRF systems, with 24/7 response options." },
-  { q: "Are your technicians licensed and insured?", a: "Yes. AGEC is a licensed engineering contracting company and our technicians are trained and insured, working to ASHRAE and Dubai Municipality standards." },
+  { q: "Are your technicians qualified?", a: "Yes. AGEC is a licensed engineering contracting company and our technicians are trained, working to ASHRAE and Dubai Municipality standards." },
   { q: "Which areas do you cover?", a: "We serve all seven emirates: Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Umm Al Quwain and Fujairah." },
   { q: "Can you take over maintenance from my previous contractor?", a: "Yes. We can take over an existing system with a full audit and baseline report, so you have a clear record and a fresh maintenance schedule." },
   { q: "While you're here, can you also upgrade my thermostat?", a: "Yes — many customers add a smart thermostat during a service visit. See our smart thermostat installation page for Google Nest and ecobee options." },
 ];
 
-/* Real reviews from the verified Google Business Profile (AGEC Technical Services, 5.0 / 27). */
-const GOOGLE_REVIEWS_URL = "https://maps.app.goo.gl/fPKs5SXmDeK9Co4VA";
-// TODO: confirm rating still 5.0 with 27 reviews
-const GOOGLE_RATING = "5.0";
-const GOOGLE_REVIEW_COUNT = 27;
-const reviews = [
-  { name: "Malek Boos", role: "Google review · translated from Arabic", initials: "MB", text: "Honestly, incredible service and truly professional work — and above all, they are honest and conscientious. From the very first visit they solved a problem I had struggled with for a long time, after bad experiences with other companies. I recommend anyone who needs anything AC-related to deal with them. Five stars isn't enough — you deserve 100." },
-  { name: "Mays Masri", role: "Google review · translated from Arabic", initials: "MM", text: "I'm really happy with what they did, and their price is excellent. They installed a split unit at my home even though the wiring wasn't right — they sorted it out with an excellent electrician, left the whole house clean, and paid attention to the smallest details. Thank you." },
-  { name: "Tareq Almasri", role: "Local Guide · Google review · translated from Arabic", initials: "TA", text: "I searched a long time to find work and cleanliness like this. Even the clean-up after they finished made me certain they deserve five stars — from management to staff. Thank you for the service, the kind treatment, and the honesty." },
-];
+const reviews = GOOGLE_REVIEWS;
 
 /* ------------------------------ JSON-LD ------------------------------ */
 
@@ -193,6 +190,10 @@ export default function AcMaintenancePage() {
               maintenance from licensed HVAC engineers. Servicing, repairs, coil &amp; duct cleaning, gas
               top-ups and annual maintenance contracts — for villas, apartments and businesses across the UAE.
             </p>
+            <p className="mt-5 inline-flex flex-wrap items-baseline gap-2 rounded-lg bg-white/10 px-4 py-2.5 text-base font-semibold text-white">
+              One-off service from AED 350 per machine
+              <span className="text-sm font-normal text-white/70">· minimum 3 units</span>
+            </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/book" className="rounded-md bg-primary px-7 py-4 font-semibold text-white hover:bg-primary-dark transition-colors">Book AC Service</Link>
               <a href={WA} className="rounded-md bg-[#25D366] px-7 py-4 font-semibold text-[#062e14] hover:bg-[#1fad52] transition-colors">WhatsApp Us</a>
@@ -205,6 +206,15 @@ export default function AcMaintenancePage() {
                 </span>
               ))}
             </div>
+            <p className="mt-6 text-sm text-white/70">
+              AC not cooling or leaking right now?{" "}
+              <Link
+                href="/ac-repair-dubai"
+                className="font-semibold text-primary hover:underline"
+              >
+                See AC Repair in Dubai →
+              </Link>
+            </p>
           </div>
           <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/10">
             <Image

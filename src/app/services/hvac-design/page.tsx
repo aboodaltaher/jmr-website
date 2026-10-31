@@ -27,6 +27,7 @@ export const metadata: Metadata = {
 export default function HvacDesign() {
   return (
     <ServiceDetailLayout
+      slug="services/hvac-design"
       title="HVAC Design & Consultancy"
       heroImage="/projects/multiple-ahu-installation-hvac-design-dubai.jpg"
       heroImageAlt="Multiple air handling unit installation showing HVAC design and engineering scale at Dubai commercial project by AGEC"

@@ -9,6 +9,11 @@ interface Capability {
   href?: string;
 }
 
+interface FaqItem {
+  q: string;
+  a: string;
+}
+
 interface ServiceDetailLayoutProps {
   title: string;
   intro: string;
@@ -18,6 +23,9 @@ interface ServiceDetailLayoutProps {
   whenYouNeedIt: string[];
   whatWeDo: Capability[];
   whyAgec: string[];
+  faq?: FaqItem[];
+  /** Path after the domain, e.g. "services/chillers" — enables Service + BreadcrumbList schema. */
+  slug?: string;
 }
 
 export function ServiceDetailLayout({
@@ -29,9 +37,81 @@ export function ServiceDetailLayout({
   whenYouNeedIt,
   whatWeDo,
   whyAgec,
+  faq,
+  slug,
 }: ServiceDetailLayoutProps) {
+  const faqSchema =
+    faq && faq.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faq.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: { "@type": "Answer", text: item.a },
+          })),
+        }
+      : null;
+
+  const url = slug ? `https://agec.ae/${slug}` : null;
+
+  const serviceSchema = url
+    ? {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        name: title,
+        description: intro,
+        serviceType: title,
+        url,
+        areaServed: { "@type": "Country", name: "United Arab Emirates" },
+        provider: {
+          "@type": "HVACBusiness",
+          name: "AGEC Technical Services",
+          telephone: "+971585575987",
+          email: "a.altaher@agec.ae",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Al Quoz Industrial Area 1",
+            addressLocality: "Dubai",
+            addressCountry: "AE",
+          },
+          url: "https://agec.ae",
+        },
+      }
+    : null;
+
+  const breadcrumbSchema = url
+    ? {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://agec.ae/" },
+          { "@type": "ListItem", position: 2, name: "Services", item: "https://agec.ae/services/" },
+          { "@type": "ListItem", position: 3, name: title, item: url },
+        ],
+      }
+    : null;
+
   return (
     <>
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+      {serviceSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        />
+      )}
+      {breadcrumbSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
+      )}
       {/* Page Header */}
       <section className="bg-bg-soft py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
@@ -155,6 +235,29 @@ export function ServiceDetailLayout({
           </ul>
         </div>
       </section>
+
+      {/* FAQ */}
+      {faq && faq.length > 0 && (
+        <section className="py-16 md:py-20">
+          <div className="mx-auto max-w-3xl px-6">
+            <h2 className="font-heading text-3xl font-bold md:text-4xl">
+              Frequently asked questions
+            </h2>
+            <div className="mt-8 space-y-6">
+              {faq.map((item) => (
+                <div key={item.q}>
+                  <h3 className="font-heading text-lg font-semibold">
+                    {item.q}
+                  </h3>
+                  <p className="mt-2 leading-relaxed text-text-muted">
+                    {item.a}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* CTA Band */}
       <section className="bg-primary py-16 md:py-20">

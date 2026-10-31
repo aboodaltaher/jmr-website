@@ -27,6 +27,7 @@ export const metadata: Metadata = {
 export default function TestingCommissioning() {
   return (
     <ServiceDetailLayout
+      slug="services/testing-commissioning"
       title="Testing & Commissioning"
       heroImage="/projects/agec-technician-tab-commissioning-airflow-balometer-dubai.jpg"
       heroImageAlt="AGEC technician performing TAB testing and commissioning with airflow balometer at commercial project in Dubai"

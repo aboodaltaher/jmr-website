@@ -77,7 +77,7 @@ const quoteSchema = z.object({
   projectSize: z.string().optional(),
   timeline: z.string().min(1),
   budget: z.string().optional(),
-  details: z.string().min(1),
+  details: z.string().optional(),
 });
 
 export async function submitQuoteRequest(data: Record<string, unknown>) {
@@ -120,10 +120,10 @@ export async function submitQuoteRequest(data: Record<string, unknown>) {
 const bookSchema = z.object({
   name: z.string().min(1),
   phone: z.string().min(1),
-  email: z.string().email(),
+  email: z.string().email().optional().or(z.literal("")),
   address: z.string().min(1),
   serviceType: z.string().min(1),
-  equipmentType: z.string().min(1),
+  equipmentType: z.string().optional(),
   description: z.string().min(1),
   preferredDate: z.string().optional(),
   preferredTime: z.string().optional(),
@@ -152,7 +152,7 @@ export async function submitBooking(data: Record<string, unknown>) {
       from: FROM,
       to: CONTACT_EMAIL,
       subject: `Service Booking Request - ${d.name}`,
-      replyTo: d.email,
+      replyTo: d.email || undefined,
       html,
     });
   } catch (err) {
@@ -246,6 +246,42 @@ export async function submitBalancingRequest(data: Record<string, unknown>) {
     });
   } catch (err) {
     console.error("Failed to send balancing email:", err);
+  }
+
+  return { success: true };
+}
+
+// ── Urgent AC Repair ──
+
+const repairSchema = z.object({
+  name: z.string().min(1),
+  phone: z.string().min(1),
+  area: z.string().min(1),
+  issue: z.string().min(1),
+});
+
+export async function submitRepairRequest(data: Record<string, unknown>) {
+  const parsed = repairSchema.safeParse(data);
+  if (!parsed.success) return { success: false, error: "Invalid form data" };
+  const d = parsed.data;
+
+  const html = wrap(
+    "Urgent AC Repair Request",
+    row("Name", d.name) +
+      row("Phone", d.phone) +
+      row("Area", d.area) +
+      row("Issue", d.issue),
+  );
+
+  try {
+    await resend.emails.send({
+      from: FROM,
+      to: CONTACT_EMAIL,
+      subject: `Urgent AC Repair - ${d.name}`,
+      html,
+    });
+  } catch (err) {
+    console.error("Failed to send repair email:", err);
   }
 
   return { success: true };

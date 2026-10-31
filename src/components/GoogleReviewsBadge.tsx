@@ -1,8 +1,7 @@
 import { Star } from "lucide-react";
+import { GOOGLE_REVIEW_COUNT, GOOGLE_REVIEWS_URL } from "@/lib/reviews";
 
-const GOOGLE_REVIEWS_URL = "https://maps.app.goo.gl/fPKs5SXmDeK9Co4VA";
-
-/** "Rated on Google — 27 reviews" linking to the AGEC Google Business Profile. */
+/** "Rated on Google — N reviews" linking to the AGEC Google Business Profile. */
 export function GoogleReviewsBadge({ className = "" }: { className?: string }) {
   return (
     <a
@@ -12,7 +11,7 @@ export function GoogleReviewsBadge({ className = "" }: { className?: string }) {
       className={`inline-flex items-center gap-1.5 text-sm font-medium hover:underline ${className}`}
     >
       <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
-      Rated on Google — 27 reviews
+      Rated on Google — {GOOGLE_REVIEW_COUNT} reviews
     </a>
   );
 }

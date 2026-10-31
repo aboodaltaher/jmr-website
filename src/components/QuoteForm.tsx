@@ -19,7 +19,7 @@ const schema = z.object({
   projectSize: z.string().optional(),
   timeline: z.string().min(1, "Please select a timeline"),
   budget: z.string().optional(),
-  details: z.string().min(1, "Please describe your project"),
+  details: z.string().optional(),
 });
 
 type FormData = z.infer<typeof schema>;
@@ -347,7 +347,7 @@ export function QuoteForm() {
             htmlFor="details"
             className="block text-sm font-medium mb-1.5"
           >
-            Additional details <span className="text-red-500">*</span>
+            Additional details (optional)
           </label>
           <textarea
             id="details"
