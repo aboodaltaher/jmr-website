@@ -97,8 +97,8 @@ export default function Contact() {
                     <div>
                       <p className="text-sm font-medium">Availability</p>
                       <p className="text-sm text-text-muted">
-                        Call or WhatsApp anytime, 24/7. Dubai response within 2
-                        hours.
+                        Call or WhatsApp anytime, 24/7. We respond within 1
+                        hour.
                       </p>
                     </div>
                   </div>

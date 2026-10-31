@@ -8,11 +8,6 @@ import { PHONE, whatsappUrl } from "@/lib/contact";
 const SITE_URL = "https://agec.ae";
 const ROUTE = "/ac-repair-dubai";
 
-// TODO(owner): supply the callout fee and typical repair ranges to fill the
-// Pricing section, the real response time for the "How fast can you come?" FAQ,
-// and confirm whether a same-day visit can be offered (then add "Same-Day" to
-// the title and a "Call Now — Same-Day Visit" button, per the audit).
-
 export const metadata: Metadata = {
   title: "AC Repair Dubai | AC Technicians | AGEC",
   description:
@@ -60,8 +55,7 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: "How fast can you come?",
-    // TODO(owner): replace with the real response time you can honour.
-    a: "Call or WhatsApp us with your area and the problem, and we will tell you the earliest we can reach you.",
+    a: "We respond within an hour, any time of day. Call or WhatsApp us with your area and the problem, and we will confirm the soonest we can reach you.",
   },
   {
     q: "Do you repair split, ducted and VRF?",
@@ -154,7 +148,7 @@ export default function AcRepairPage() {
           }}
         />
         <div className="relative mx-auto max-w-7xl px-6 py-16 md:py-24">
-          <p className={eyebrow}>Dubai &amp; UAE · All 7 Emirates</p>
+          <p className={eyebrow}>Dubai &amp; UAE · All 7 Emirates · Response within 1 hour</p>
           <h1 className="mt-4 max-w-3xl font-heading text-4xl font-bold leading-[1.05] md:text-6xl">
             AC Repair in Dubai: Diagnosed by an Engineer, Quoted Before We Start
           </h1>
@@ -259,10 +253,10 @@ export default function AcRepairPage() {
           <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">
             Prices
           </h2>
-          {/* TODO(owner): add the callout fee and typical repair ranges here once confirmed. */}
           <p className="mt-5 text-lg leading-relaxed text-text-muted">
-            We quote every repair in writing before we start, so you approve the
-            price before any work begins.
+            The price depends on the fault, so we diagnose first, then quote the
+            repair in writing before any work begins — you approve the cost
+            before we start, with no obligation.
           </p>
         </div>
       </section>

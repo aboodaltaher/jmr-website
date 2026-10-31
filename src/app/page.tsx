@@ -591,7 +591,7 @@ export default function Home() {
           <div className="mt-10 text-center">
             <p className="font-heading text-lg font-semibold">Prefer to talk?</p>
             <p className="mt-1 text-sm text-text-muted">
-              Call or WhatsApp anytime, 24/7. Dubai response within 2 hours.
+              Call or WhatsApp anytime, 24/7. We respond within 1 hour.
             </p>
           </div>
         </div>
