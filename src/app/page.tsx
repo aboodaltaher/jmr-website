@@ -337,7 +337,7 @@ export default function Home() {
             {[
               { value: "30+", label: "Projects Delivered" },
               { value: "240 TR", label: "Max Single Project" },
-              { value: "3", label: "Emirates Served" },
+              { value: "7", label: "Emirates Served" },
               { value: "2022", label: "Established" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
