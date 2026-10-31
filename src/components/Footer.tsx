@@ -33,6 +33,9 @@ export function Footer() {
             <p className="mt-4 text-xs text-text-muted">
               24/7 Emergency Support · +971 58 557 5987
             </p>
+            <p className="mt-1 text-xs text-text-muted">
+              AGEC Technical Services L.L.C. · Dubai Commercial Licence No. 1221573
+            </p>
           </div>
           <nav className="flex flex-col gap-2">
             {navLinks.map((link) => (

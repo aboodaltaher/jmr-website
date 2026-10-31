@@ -204,24 +204,30 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/65 to-black/45" />
         <div className="relative mx-auto max-w-7xl px-6 py-24">
           <h1 className="max-w-4xl font-heading text-5xl font-bold leading-tight text-white md:text-7xl">
-            Advanced HVAC Solutions for Dubai&apos;s Most Demanding Projects
+            HVAC Contractor and AC Maintenance in Dubai
           </h1>
           <p className="mt-6 max-w-2xl text-xl text-white/80">
-            Design, installation, commissioning, and maintenance of VRF, chiller,
-            and ventilation systems — from concept to long-term performance.
+            Engineer-led installation, maintenance contracts and airflow testing
+            for villas, offices and buildings across the UAE.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
-              href="/quote"
+              href="/book"
               className="rounded-md bg-primary px-8 py-4 font-medium text-white hover:bg-primary-dark transition-colors"
             >
-              Get a Quote
+              Book AC Service
             </Link>
             <Link
-              href="/services"
+              href="/ac-amc-dubai#amc-form"
               className="rounded-md border border-white/30 px-8 py-4 font-medium text-white hover:border-white hover:bg-white/10 transition-colors"
             >
-              Explore Services
+              Get AMC Quote
+            </Link>
+            <Link
+              href="/quote"
+              className="rounded-md border border-white/30 px-8 py-4 font-medium text-white hover:border-white hover:bg-white/10 transition-colors"
+            >
+              Request a Project Quote
             </Link>
           </div>
           <p className="mt-8 text-sm text-white/60">
