@@ -433,14 +433,14 @@ export default function Home() {
       <section className="bg-bg-soft py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-6 text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-            Compliance &amp; Standards
+            Engineering Standards
           </p>
           <h2 className="mx-auto mt-3 max-w-3xl font-heading text-3xl font-bold">
-            Authorized HVAC contractor, compliant with regional and
-            international standards
+            We design, install and commission to recognised HVAC engineering
+            standards
           </h2>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            {["ASHRAE 111", "SMACNA", "CIBSE", "Dubai Municipality", "DEWA"].map(
+            {["ASHRAE 111", "SMACNA", "CIBSE"].map(
               (badge) => (
                 <span
                   key={badge}

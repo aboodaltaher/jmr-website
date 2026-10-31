@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Smart Thermostat Installation Dubai | Nest & ecobee | AGEC",
     description:
-      "Authorized supplier & professional installer of Google Nest & ecobee smart thermostats across Dubai & the UAE. Free compatibility check & expert C-wire installation.",
+      "Supplier & professional installer of Google Nest & ecobee smart thermostats across Dubai & the UAE. Free compatibility check & expert C-wire installation.",
     url: "https://agec.ae/smart-thermostat-installation-dubai",
     siteName: "AGEC",
     type: "website",
@@ -56,8 +56,8 @@ export const metadata: Metadata = {
 /* ----------------------------- CONTENT DATA ----------------------------- */
 
 const trustBadges = [
-  "Authorized Nest & ecobee Installer",
-  "Licensed & Insured HVAC Engineers",
+  "Nest & ecobee Installation",
+  "Licensed HVAC Engineers",
   "Free Compatibility Check",
   "Same-Day Service Available",
   "Workmanship Guarantee",
@@ -67,7 +67,7 @@ const whyCards: { icon: LucideIcon; title: string; desc: string }[] = [
   {
     icon: ShieldCheck,
     title: "Licensed HVAC Engineers",
-    desc: "Installations by trained, insured technicians following ASHRAE and Dubai Municipality standards — not general handymen.",
+    desc: "Installations by trained technicians following ASHRAE and Dubai Municipality standards — not general handymen.",
   },
   {
     icon: BadgeCheck,
@@ -289,7 +289,7 @@ const faqs: { q: string; a: string }[] = [
   { q: "Is a smart thermostat suitable for villas?", a: "Absolutely. Villas often have multiple AC zones, making smart thermostats ideal for room-by-room scheduling and major savings. We handle multi-zone villa installations across Dubai and the UAE." },
   { q: "Is a smart thermostat suitable for apartments?", a: "Yes. Whether your apartment has a ducted fan-coil unit or a split system, we can assess compatibility and install a Nest or ecobee cleanly, including any required C-wire or interface." },
   { q: "Do you offer same-day installation in Dubai?", a: "In most cases, yes. For standard, compatible systems within Dubai we offer same-day or next-day installation. Message us on WhatsApp for current availability." },
-  { q: "Are your technicians licensed and insured?", a: "Yes. AGEC is a licensed engineering contracting company, and installations are carried out by trained, insured HVAC technicians following ASHRAE and Dubai Municipality standards." },
+  { q: "Are your technicians qualified?", a: "Yes. AGEC is a licensed engineering contracting company, and installations are carried out by trained HVAC technicians following ASHRAE and Dubai Municipality standards." },
   { q: "What warranty do I get?", a: "You receive the full manufacturer warranty on your Google Nest or ecobee device (typically 1–3 years depending on model) plus our workmanship guarantee on the installation." },
   { q: "Which is better — Google Nest or ecobee?", a: "Both are excellent. Nest offers AI auto-scheduling and a premium minimalist design; ecobee Premium adds built-in Alexa, a room sensor and air-quality monitoring. We recommend the best fit after reviewing your home and HVAC setup." },
   { q: "Can you install thermostats in offices, shops and restaurants?", a: "Yes. We handle both residential and commercial installations — offices, shops, restaurants and hotels — including multi-unit and multi-zone rollouts with documentation." },
@@ -300,7 +300,7 @@ const faqs: { q: string; a: string }[] = [
   { q: "Can it work with my existing Wi-Fi?", a: "Yes. Nest and ecobee connect to standard home Wi-Fi (2.4GHz networks supported). We handle the full connection and account setup during installation." },
   { q: "What happens if the internet goes down?", a: "Your thermostat keeps controlling your AC locally using its stored schedule — you simply lose remote/app control until the connection returns. Comfort is never interrupted." },
   { q: "Is the Google Nest 4th Generation available in the UAE?", a: "Yes. We supply the genuine Google Nest Thermostat (4th Generation) in the UAE with full warranty and professional installation." },
-  { q: "Do you supply the thermostat, or do I buy it myself?", a: "We're an authorized supplier — you can buy the device and installation together as a complete package, with genuine, warrantied hardware. We can also install a unit you already own." },
+  { q: "Do you supply the thermostat, or do I buy it myself?", a: "We supply genuine units — you can buy the device and installation together as a complete package, with warrantied hardware. We can also install a unit you already own." },
   { q: "Can I upgrade from an old or basic thermostat?", a: "Yes. Thermostat upgrades are a specialty. We safely remove your old unit, handle any wiring changes and install your new smart thermostat." },
   { q: "Does it work with a chiller or VRF/VRV system?", a: "Many chiller fan-coil and VRF/VRV systems can be integrated using the correct interface or thermostat type. As an HVAC/MEP contractor, we assess these advanced systems and recommend a compatible solution." },
   { q: "Can I set different temperatures for different rooms?", a: "Yes — with ecobee SmartSensors or multiple thermostats, you can balance and schedule temperatures room by room. Ideal for large villas." },
@@ -389,7 +389,7 @@ export default function SmartThermostatPage() {
               <span className="text-primary">Google Nest &amp; ecobee</span> Experts
             </h1>
             <p className="mt-6 max-w-xl text-lg text-white/70">
-              Authorized supplier and professional installer of Google Nest and ecobee smart
+              Supplier and professional installer of Google Nest and ecobee smart
               thermostats across Dubai and the UAE. Cut your DEWA cooling bill, control your AC
               from your phone, and let licensed HVAC engineers handle everything — including
               C-wire installation and a <strong className="text-white">free compatibility check</strong>.

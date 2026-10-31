@@ -107,8 +107,8 @@ export default function About() {
                   date is 8.75 million AED.
                 </p>
                 <p>
-                  We are an authorized HVAC contractor compliant with Dubai
-                  Municipality, DEWA, ASHRAE 111, SMACNA, and CIBSE standards.
+                  We work to recognised HVAC engineering standards, including
+                  ASHRAE 111, SMACNA and CIBSE.
                   Whether the project is a single villa or a multi-site rollout,
                   our commitment is the same: precision, timeliness, and systems
                   that work for the long term.

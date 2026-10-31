@@ -114,7 +114,7 @@ export default function DxUnits() {
           icon: Shield,
           name: "Warranty Registration",
           description:
-            "Proper manufacturer warranty registration as an authorized installer. Extended warranty options available on select equipment.",
+            "Proper manufacturer warranty registration on every install. Extended warranty options available on select equipment.",
         },
       ]}
       whyAgec={[
