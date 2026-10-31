@@ -434,8 +434,8 @@ export default function SmartThermostatPage() {
             </div>
             <div className="mt-4 flex justify-between gap-3 border-t border-white/10 pt-5 text-center">
               <div className="flex-1">
-                <b className="block font-heading text-2xl text-white">‑23%</b>
-                <span className="text-xs uppercase tracking-wide text-white/50">Cooling Bill</span>
+                <b className="block font-heading text-2xl text-white">up to 23%</b>
+                <span className="text-xs uppercase tracking-wide text-white/50">Cooling Saving</span>
               </div>
               <div className="flex-1">
                 <b className="block font-heading text-2xl text-white">&lt;90min</b>
@@ -783,8 +783,8 @@ export default function SmartThermostatPage() {
             Ready to Make Your AC Smart?
           </h2>
           <p className="mt-5 text-lg text-white/85">
-            Join hundreds of UAE homes and businesses saving energy with professionally installed
-            Google Nest and ecobee thermostats.
+            Cut your cooling bill with professionally installed Google Nest and
+            ecobee thermostats, set up for UAE homes and businesses.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <a href={`tel:${PHONE}`} className="rounded-md bg-white px-7 py-4 font-semibold text-primary hover:bg-white/90 transition-colors">
