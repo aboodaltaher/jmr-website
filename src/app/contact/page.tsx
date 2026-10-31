@@ -70,10 +70,10 @@ export default function Contact() {
                     <div>
                       <p className="text-sm font-medium">Email</p>
                       <a
-                        href="mailto:m.ghabboun@agec.ae"
+                        href="mailto:a.altaher@agec.ae"
                         className="text-sm text-text-muted hover:text-primary transition-colors"
                       >
-                        m.ghabboun@agec.ae
+                        a.altaher@agec.ae
                       </a>
                     </div>
                   </div>
@@ -85,7 +85,7 @@ export default function Contact() {
                     <div>
                       <p className="text-sm font-medium">Location</p>
                       <p className="text-sm text-text-muted">
-                        Alhamra Building, BNKS Vision Business Center, Umm Hurair Road, Al Karama, Dubai, UAE
+                        Al Quoz Industrial Area 1, Dubai, UAE
                       </p>
                     </div>
                   </div>
@@ -125,7 +125,7 @@ export default function Contact() {
             {/* TODO: replace with the exact Google Business Profile embed URL once the profile name is updated */}
             <iframe
               title="AGEC Technical Services location on Google Maps"
-              src="https://www.google.com/maps?q=AGEC+Technical+Services,+Al+Karama,+Dubai&z=16&output=embed"
+              src="https://www.google.com/maps?q=AGEC+Technical+Services,+Al+Quoz+Industrial+Area+1,+Dubai&z=16&output=embed"
               className="h-80 w-full border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
@@ -133,7 +133,7 @@ export default function Contact() {
             />
           </div>
           <p className="mt-3 text-sm text-text-muted">
-            Alhamra Building, BNKS Vision Business Center, Umm Hurair Road, Al Karama, Dubai, UAE ·{" "}
+            Al Quoz Industrial Area 1, Dubai, UAE ·{" "}
             <a
               href="https://maps.app.goo.gl/fPKs5SXmDeK9Co4VA"
               target="_blank"

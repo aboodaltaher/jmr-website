@@ -307,7 +307,7 @@ const faqs: { q: string; a: string }[] = [
   { q: "Do you provide after-sales support?", a: "Absolutely. We offer ongoing after-sales support, troubleshooting and configuration help — plus emergency assistance if you need it." },
   { q: "Can you install multiple thermostats in one visit?", a: "Yes. Multi-unit installations for large villas, offices and commercial sites are handled efficiently, often in a single scheduled visit." },
   { q: "Will a smart thermostat void my AC warranty?", a: "No. A correctly installed smart thermostat is a control upgrade and does not affect your AC's warranty. Our professional installation ensures everything is done to standard." },
-  { q: "How do I book a free compatibility check?", a: "Simply call or WhatsApp us at +971 58 557 5987, or email m.ghabboun@agec.ae. Tell us your property type and AC system, and we'll arrange your free assessment." },
+  { q: "How do I book a free compatibility check?", a: "Simply call or WhatsApp us at +971 58 557 5987, or email a.altaher@agec.ae. Tell us your property type and AC system, and we'll arrange your free assessment." },
   { q: "Do you offer emergency or urgent support?", a: "Yes. As an established HVAC contractor we provide fast-response and emergency support across Dubai and the UAE — contact us and we'll prioritize urgent cases." },
 ];
 

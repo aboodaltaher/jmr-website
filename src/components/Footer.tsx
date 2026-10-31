@@ -28,8 +28,8 @@ export function Footer() {
             </p>
             <div className="mt-4 space-y-1 text-sm text-text-muted">
               <p>+971 58 557 5987</p>
-              <p>m.ghabboun@agec.ae</p>
-              <p>Alhamra Building, BNKS Vision Business Center, Umm Hurair Road, Al Karama, Dubai, UAE</p>
+              <p>a.altaher@agec.ae</p>
+              <p>Al Quoz Industrial Area 1, Dubai, UAE</p>
             </div>
             <p className="mt-4 text-xs text-text-muted">
               24/7 Emergency Support · +971 58 557 5987

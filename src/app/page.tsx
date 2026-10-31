@@ -151,16 +151,11 @@ export default function Home() {
             priceRange: "$$",
             address: {
               "@type": "PostalAddress",
-              streetAddress:
-                "Alhamra Building, BNKS Vision Business Center, Umm Hurair Road",
-              addressLocality: "Al Karama",
+              // TODO(owner): add the exact building/unit from the trade licence.
+              streetAddress: "Al Quoz Industrial Area 1",
+              addressLocality: "Dubai",
               addressRegion: "Dubai",
               addressCountry: "AE",
-            },
-            geo: {
-              "@type": "GeoCoordinates",
-              latitude: 25.2445449,
-              longitude: 55.3112435,
             },
             hasMap: "https://maps.app.goo.gl/fPKs5SXmDeK9Co4VA",
             areaServed: [
@@ -507,10 +502,10 @@ export default function Home() {
               <div>
                 <p className="font-heading font-semibold">Email</p>
                 <a
-                  href="mailto:m.ghabboun@agec.ae"
+                  href="mailto:a.altaher@agec.ae"
                   className="text-text-muted hover:text-primary transition-colors"
                 >
-                  m.ghabboun@agec.ae
+                  a.altaher@agec.ae
                 </a>
               </div>
             </div>
