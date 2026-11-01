@@ -1,6 +1,8 @@
-import { GOOGLE_REVIEWS_URL } from "@/lib/reviews";
-
 const SITE_URL = "https://agec.ae";
+
+// Owner-provided public profiles for sameAs / hasMap.
+const GBP_URL = "https://maps.app.goo.gl/NymgUk6cDcj8PRSL6";
+const INSTAGRAM_URL = "https://www.instagram.com/agec_contracting";
 
 /**
  * Site-wide Organization + LocalBusiness (HVACBusiness / GeneralContractor)
@@ -20,8 +22,8 @@ const schema = {
       logo: { "@type": "ImageObject", url: `${SITE_URL}/agec-logo.png` },
       email: "a.altaher@agec.ae",
       telephone: "+971585575987",
-      // sameAs: Google Business Profile. TODO(owner): add Instagram/LinkedIn if any.
-      sameAs: [GOOGLE_REVIEWS_URL],
+      // Google Business Profile + Instagram. TODO(owner): add LinkedIn if any.
+      sameAs: [GBP_URL, INSTAGRAM_URL],
     },
     {
       "@type": ["HVACBusiness", "GeneralContractor"],
@@ -46,7 +48,7 @@ const schema = {
         addressCountry: "AE",
       },
       // TODO(owner): add geo { latitude, longitude } once the exact location is confirmed.
-      hasMap: GOOGLE_REVIEWS_URL,
+      hasMap: GBP_URL,
       areaServed: [
         { "@type": "City", name: "Dubai" },
         { "@type": "City", name: "Abu Dhabi" },
@@ -74,7 +76,7 @@ const schema = {
           closes: "23:59",
         },
       ],
-      sameAs: [GOOGLE_REVIEWS_URL],
+      sameAs: [GBP_URL, INSTAGRAM_URL],
     },
   ],
 };
