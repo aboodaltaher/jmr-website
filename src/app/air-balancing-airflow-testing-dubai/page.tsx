@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Check, Phone, MessageCircle } from "lucide-react";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { BalancingForm } from "@/components/BalancingForm";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { SampleReportButton } from "@/components/SampleReportButton";
 import { PHONE, whatsappUrl } from "@/lib/contact";
 
@@ -149,6 +150,11 @@ export default function AirBalancingPage() {
       </nav>
 
       {/* HERO */}
+      <div className="border-b border-border bg-bg-soft">
+        <div className="mx-auto max-w-7xl px-6 py-3">
+          <Breadcrumbs items={[{ name: "Air Balancing" }]} />
+        </div>
+      </div>
       <section className="relative overflow-hidden bg-[#13212E] text-white">
         <div
           className="pointer-events-none absolute inset-0"

@@ -1,0 +1,242 @@
+{
+  "lh": {
+    "/": {
+      "perf": 84,
+      "a11y": 100,
+      "bp": 96,
+      "seo": 100,
+      "lcp": "3.5 s",
+      "cls": "0",
+      "tbt": "290 ms"
+    },
+    "/ac-maintenance-dubai": {
+      "perf": 97,
+      "a11y": 100,
+      "bp": 96,
+      "seo": 100,
+      "lcp": "0.9 s",
+      "cls": "0",
+      "tbt": "190 ms"
+    },
+    "/ac-repair-dubai": {
+      "perf": 98,
+      "a11y": 100,
+      "bp": 96,
+      "seo": 100,
+      "lcp": "0.8 s",
+      "cls": "0",
+      "tbt": "160 ms"
+    },
+    "/ac-amc-dubai": {
+      "perf": 95,
+      "a11y": 100,
+      "bp": 96,
+      "seo": 100,
+      "lcp": "0.9 s",
+      "cls": "0",
+      "tbt": "260 ms"
+    },
+    "/services/maintenance": {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 96,
+      "seo": 100,
+      "lcp": "0.9 s",
+      "cls": "0",
+      "tbt": "80 ms"
+    },
+    "/services/vrf-vrv-systems": {
+      "perf": 93,
+      "a11y": 100,
+      "bp": 96,
+      "seo": 100,
+      "lcp": "3.2 s",
+      "cls": "0",
+      "tbt": "70 ms"
+    },
+    "/smart-thermostat-installation-dubai": {
+      "perf": 98,
+      "a11y": 100,
+      "bp": 96,
+      "seo": 100,
+      "lcp": "0.9 s",
+      "cls": "0",
+      "tbt": "180 ms"
+    },
+    "/air-balancing-airflow-testing-dubai": {
+      "perf": 99,
+      "a11y": 100,
+      "bp": 96,
+      "seo": 100,
+      "lcp": "0.9 s",
+      "cls": "0",
+      "tbt": "100 ms"
+    },
+    "/ac-duct-cleaning-dubai": {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 96,
+      "seo": 100,
+      "lcp": "0.9 s",
+      "cls": "0",
+      "tbt": "80 ms"
+    },
+    "/projects": {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 96,
+      "seo": 100,
+      "lcp": "0.8 s",
+      "cls": "0",
+      "tbt": "50 ms"
+    },
+    "/about": {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 96,
+      "seo": 100,
+      "lcp": "0.8 s",
+      "cls": "0",
+      "tbt": "80 ms"
+    },
+    "/contact": {
+      "perf": 97,
+      "a11y": 100,
+      "bp": 96,
+      "seo": 100,
+      "lcp": "0.8 s",
+      "cls": "0",
+      "tbt": "210 ms"
+    },
+    "/quote": {
+      "perf": 96,
+      "a11y": 100,
+      "bp": 96,
+      "seo": 100,
+      "lcp": "0.8 s",
+      "cls": "0",
+      "tbt": "210 ms"
+    }
+  },
+  "meta": {
+    "/": {
+      "title": "HVAC Contractor & AC Maintenance Dubai | AGEC",
+      "titleLen": 45,
+      "desc": "Engineer-led HVAC installation, AC maintenance, AMC, air balancing and commissioning across the UAE. Call +971 58 557 5987.",
+      "descLen": 123,
+      "canonical": "https://agec.ae",
+      "ogImg": "https://agec.ae/og-image.png"
+    },
+    "/ac-maintenance-dubai": {
+      "title": "AC Maintenance Dubai | AC Servicing, Repair & AMC | AGEC",
+      "titleLen": 56,
+      "desc": "AC maintenance in Dubai by HVAC engineers: servicing, repair, coil and duct cleaning, gas top-up and AMC plans. Call +971 58 557 5987.",
+      "descLen": 134,
+      "canonical": "https://agec.ae/ac-maintenance-dubai",
+      "ogImg": "https://agec.ae/og-image.png"
+    },
+    "/ac-repair-dubai": {
+      "title": "AC Repair Dubai | AC Technicians | AGEC",
+      "titleLen": 39,
+      "desc": "AC not cooling, leaking or tripping? AGEC engineers find the root cause, quote in writing first and report every repair. Call or WhatsApp.",
+      "descLen": 138,
+      "canonical": "https://agec.ae/ac-repair-dubai",
+      "ogImg": "https://agec.ae/og-image.png"
+    },
+    "/ac-amc-dubai": {
+      "title": "AC AMC Dubai | Annual Maintenance Contracts | AGEC",
+      "titleLen": 50,
+      "desc": "AC annual maintenance contracts for Dubai and UAE villas, apartments and offices: scheduled visits, written reports, priority repairs. Get an AMC quote.",
+      "descLen": 152,
+      "canonical": "https://agec.ae/ac-amc-dubai",
+      "ogImg": "https://agec.ae/og-image.png"
+    },
+    "/services/maintenance": {
+      "title": "Commercial HVAC Maintenance Dubai | AMC | AGEC",
+      "titleLen": 46,
+      "desc": "Chillers, AHUs, FCUs and VRF maintained under one contract, with logged visits and reports for facility managers. Request a site survey.",
+      "descLen": 136,
+      "canonical": "https://agec.ae/services/maintenance",
+      "ogImg": "https://agec.ae/og-image.png"
+    },
+    "/services/vrf-vrv-systems": {
+      "title": "VRF & VRV Systems Dubai | AGEC",
+      "titleLen": 30,
+      "desc": "VRF and VRV system design, installation and commissioning in Dubai — multi-zone climate control for villas, offices and commercial buildings.",
+      "descLen": 141,
+      "canonical": "https://agec.ae/services/vrf-vrv-systems",
+      "ogImg": "https://agec.ae/og-image.png"
+    },
+    "/smart-thermostat-installation-dubai": {
+      "title": "Nest & ecobee Thermostat Installation Dubai | AGEC",
+      "titleLen": 50,
+      "desc": "Nest and ecobee smart thermostat installation in Dubai and the UAE. Free compatibility check and C-wire installation. Call +971 58 557 5987.",
+      "descLen": 140,
+      "canonical": "https://agec.ae/smart-thermostat-installation-dubai",
+      "ogImg": "https://agec.ae/og-image.png"
+    },
+    "/air-balancing-airflow-testing-dubai": {
+      "title": "Air Balancing Dubai | HVAC Airflow Testing | AGEC",
+      "titleLen": 49,
+      "desc": "Measured HVAC air balancing and airflow testing in Dubai and the UAE, with documented measurements and signed reports. Request a technical assessment.",
+      "descLen": 150,
+      "canonical": "https://agec.ae/air-balancing-airflow-testing-dubai",
+      "ogImg": "https://agec.ae/og-image.png"
+    },
+    "/ac-duct-cleaning-dubai": {
+      "title": "AC Duct Cleaning Dubai | Villas & Offices | AGEC",
+      "titleLen": 48,
+      "desc": "Full duct, coil and drain cleaning with disinfection and a written completion report. Villas, apartments and offices. Request a quote.",
+      "descLen": 134,
+      "canonical": "https://agec.ae/ac-duct-cleaning-dubai",
+      "ogImg": "https://agec.ae/og-image.png"
+    },
+    "/projects": {
+      "title": "HVAC Projects in Dubai & the UAE | AGEC",
+      "titleLen": 39,
+      "desc": "30+ HVAC projects across Dubai, Sharjah, and Abu Dhabi — residential villas, commercial buildings, data centers, and cultural facilities.",
+      "descLen": 137,
+      "canonical": "https://agec.ae/projects",
+      "ogImg": "https://agec.ae/og-image.png"
+    },
+    "/about": {
+      "title": "About AGEC | HVAC Contractor in Dubai",
+      "titleLen": 37,
+      "desc": "AGEC (Altaher Ghabboun Engineering Contracting) is a Dubai HVAC, MEP and maintenance contractor — 30+ projects delivered across the UAE since 2022.",
+      "descLen": 147,
+      "canonical": "https://agec.ae/about",
+      "ogImg": "https://agec.ae/og-image.png"
+    },
+    "/contact": {
+      "title": "Contact AGEC | HVAC Services in Dubai",
+      "titleLen": 37,
+      "desc": "Contact AGEC for HVAC services in Dubai — call or WhatsApp +971 58 557 5987, or send a message about AC maintenance, repair, AMC or a new project.",
+      "descLen": 146,
+      "canonical": "https://agec.ae/contact",
+      "ogImg": "https://agec.ae/og-image.png"
+    },
+    "/quote": {
+      "title": "Get a Quote or Book a Service in Dubai | AGEC",
+      "titleLen": 45,
+      "desc": "Request an HVAC quote or book AC service, repair or maintenance in Dubai. One short form — we reply on call and WhatsApp 24/7, across all 7 emirates.",
+      "descLen": 149,
+      "canonical": "https://agec.ae/quote",
+      "ogImg": "https://agec.ae/og-image.png"
+    }
+  },
+  "axe": {
+    "/": [],
+    "/ac-maintenance-dubai": [],
+    "/ac-repair-dubai": [],
+    "/ac-amc-dubai": [],
+    "/services/maintenance": [],
+    "/services/vrf-vrv-systems": [],
+    "/smart-thermostat-installation-dubai": [],
+    "/air-balancing-airflow-testing-dubai": [],
+    "/ac-duct-cleaning-dubai": [],
+    "/projects": [],
+    "/about": [],
+    "/contact": [],
+    "/quote": []
+  }
+}

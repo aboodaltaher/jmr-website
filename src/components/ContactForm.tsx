@@ -7,11 +7,12 @@ import { z } from "zod";
 import { Check } from "lucide-react";
 import { submitContactForm } from "@/app/actions";
 import { trackFormSubmit } from "@/lib/gtag";
+import { FormAssurance } from "@/components/FormAssurance";
 
 const schema = z.object({
   name: z.string().min(1, "Name is required"),
   email: z.string().min(1, "Email is required").email("Please enter a valid email"),
-  phone: z.string().optional(),
+  phone: z.string().min(1, "Phone number is required"),
   subject: z.string().min(1, "Subject is required"),
   message: z.string().min(1, "Message is required"),
 });
@@ -60,6 +61,7 @@ export function ContactForm() {
         <input
           id="name"
           type="text"
+          autoComplete="name"
           {...register("name")}
           className={inputClass(!!errors.name)}
         />
@@ -75,6 +77,7 @@ export function ContactForm() {
         <input
           id="email"
           type="email"
+          autoComplete="email"
           {...register("email")}
           className={inputClass(!!errors.email)}
         />
@@ -85,14 +88,18 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="phone" className="block text-sm font-medium mb-1.5">
-          Phone
+          Phone <span className="text-red-500">*</span>
         </label>
         <input
           id="phone"
           type="tel"
+          autoComplete="tel"
           {...register("phone")}
-          className={inputClass(false)}
+          className={inputClass(!!errors.phone)}
         />
+        {errors.phone && (
+          <p className="mt-1 text-sm text-red-600">{errors.phone.message}</p>
+        )}
       </div>
 
       <div>
@@ -132,6 +139,7 @@ export function ContactForm() {
       >
         {isSubmitting ? "Sending..." : "Send Message"}
       </button>
+      <FormAssurance />
     </form>
   );
 }

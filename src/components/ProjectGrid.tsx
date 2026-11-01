@@ -29,6 +29,8 @@ const projects = [
     location: "Dubai, UAE",
   },
   {
+    // TODO(owner): confirm the 140-ton figure for this villa — unusually large
+    // for a single residence; verify against the project record.
     name: "B+G+1+R Villa, Al Barsha",
     category: "Residential",
     description: "HVAC Installation, 140 Ton DX System",
@@ -78,7 +80,11 @@ const projects = [
   },
 ];
 
-const categories = ["All", "Residential", "Commercial", "Data Center", "Industrial"];
+// TODO(owner): several entries below have no cooling capacity listed (18 Villas,
+// MBZ-AI Server Room, Pure Gym, AVE Restaurant, Zain Data Center, Cultural
+// Center). Supply the TR/ton figures and we'll add them to the descriptions.
+// "Industrial" was removed — no project currently falls in that category.
+const categories = ["All", "Residential", "Commercial", "Data Center"];
 
 export function ProjectGrid() {
   const [active, setActive] = useState("All");
@@ -121,9 +127,8 @@ export function ProjectGrid() {
                 key={project.name}
                 className="overflow-hidden rounded-lg border border-border bg-white"
               >
-                <div className="flex aspect-[4/3] items-center justify-center bg-border/30">
-                  <p className="text-sm text-text-muted">Project photo</p>
-                </div>
+                {/* TODO(owner): add real project photos. Empty placeholder
+                    boxes are intentionally hidden until photos are supplied. */}
                 <div className="p-6">
                   <span className="text-xs font-semibold uppercase tracking-wider text-primary">
                     {project.category}

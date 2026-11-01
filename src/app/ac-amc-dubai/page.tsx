@@ -4,6 +4,7 @@ import { Check, Phone, MessageCircle } from "lucide-react";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { AmcForm } from "@/components/AmcForm";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { PHONE, whatsappUrl } from "@/lib/contact";
 
 const SITE_URL = "https://agec.ae";
@@ -188,6 +189,11 @@ export default function AcAmcPage() {
       </nav>
 
       {/* HERO */}
+      <div className="border-b border-border bg-bg-soft">
+        <div className="mx-auto max-w-7xl px-6 py-3">
+          <Breadcrumbs items={[{ name: "AC AMC" }]} />
+        </div>
+      </div>
       <section className="relative overflow-hidden bg-[#13212E] text-white">
         <div
           className="pointer-events-none absolute inset-0"
@@ -384,6 +390,14 @@ export default function AcAmcPage() {
                 Prices are in AED per machine per visit and exclude 5% VAT. Final
                 price depends on the number and type of units and is confirmed in
                 your written proposal.
+              </p>
+              <p className="mt-3 text-sm text-text-muted">
+                The <strong>Basic</strong> plan&apos;s 2 visits suit low-use or
+                single-split homes; for year-round villa and office use we
+                recommend 4 visits a year — roughly one every 3 months. AMC visits
+                are AED 250–400 per machine depending on plan, which is below our
+                one-off service rate of AED 350 per machine (minimum 3 units),
+                because the visits are scheduled for the year.
               </p>
             </>
           )}

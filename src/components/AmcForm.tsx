@@ -7,13 +7,15 @@ import { z } from "zod";
 import { Check, MessageCircle } from "lucide-react";
 import { submitAmcRequest } from "@/app/actions";
 import { trackFormSubmit } from "@/lib/gtag";
+import { FormAssurance } from "@/components/FormAssurance";
 
 const schema = z.object({
   name: z.string().min(1, "Full name is required"),
   phone: z.string().min(1, "Phone number is required"),
   propertyType: z.string().min(1, "Please select a property type"),
-  location: z.string().min(1, "Area / emirate is required"),
-  units: z.string().min(1, "Number of AC units is required"),
+  email: z.string().email("Please enter a valid email").optional().or(z.literal("")),
+  location: z.string().optional(),
+  units: z.string().optional(),
   currentContractor: z.string().optional(),
   notes: z.string().optional(),
 });
@@ -79,6 +81,7 @@ export function AmcForm({
           <input
             id="amc-name"
             type="text"
+            autoComplete="name"
             {...register("name")}
             className={inputClass(!!errors.name)}
           />
@@ -93,11 +96,27 @@ export function AmcForm({
           <input
             id="amc-phone"
             type="tel"
+            autoComplete="tel"
             {...register("phone")}
             className={inputClass(!!errors.phone)}
           />
           {errors.phone && (
             <p className="mt-1 text-sm text-red-600">{errors.phone.message}</p>
+          )}
+        </div>
+        <div>
+          <label htmlFor="amc-email" className="mb-1.5 block text-sm font-medium">
+            Email <span className="text-text-muted">(optional)</span>
+          </label>
+          <input
+            id="amc-email"
+            type="email"
+            autoComplete="email"
+            {...register("email")}
+            className={inputClass(!!errors.email)}
+          />
+          {errors.email && (
+            <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
           )}
         </div>
         <div>
@@ -124,22 +143,20 @@ export function AmcForm({
         </div>
         <div>
           <label htmlFor="amc-location" className="mb-1.5 block text-sm font-medium">
-            Area / emirate <span className="text-red-500">*</span>
+            Area / emirate <span className="text-text-muted">(optional)</span>
           </label>
           <input
             id="amc-location"
             type="text"
+            autoComplete="address-level2"
             placeholder="e.g. Al Barsha, Dubai"
             {...register("location")}
             className={inputClass(!!errors.location)}
           />
-          {errors.location && (
-            <p className="mt-1 text-sm text-red-600">{errors.location.message}</p>
-          )}
         </div>
         <div>
           <label htmlFor="amc-units" className="mb-1.5 block text-sm font-medium">
-            Number of AC units <span className="text-red-500">*</span>
+            Number of AC units <span className="text-text-muted">(optional)</span>
           </label>
           <input
             id="amc-units"
@@ -148,9 +165,6 @@ export function AmcForm({
             {...register("units")}
             className={inputClass(!!errors.units)}
           />
-          {errors.units && (
-            <p className="mt-1 text-sm text-red-600">{errors.units.message}</p>
-          )}
         </div>
         <div>
           <label htmlFor="amc-contractor" className="mb-1.5 block text-sm font-medium">
@@ -181,13 +195,14 @@ export function AmcForm({
         disabled={isSubmitting}
         className="w-full rounded-md bg-primary px-8 py-4 font-medium text-white hover:bg-primary-dark transition-colors disabled:opacity-50"
       >
-        {isSubmitting ? "Submitting..." : "Get My AMC Quote"}
+        {isSubmitting ? "Submitting..." : "Get a Quote"}
       </button>
       {responsePromise && (
         <p className="text-center text-sm text-text-muted">
-          We reply on call and WhatsApp 24/7. Written quote within 24 hours.
+          Written quote within 24 hours.
         </p>
       )}
+      <FormAssurance />
     </form>
   );
 }

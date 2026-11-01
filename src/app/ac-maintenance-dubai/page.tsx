@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { InlineLeadForm } from "@/components/InlineLeadForm";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import {
   GOOGLE_RATING,
   GOOGLE_REVIEW_COUNT,
@@ -185,6 +187,11 @@ export default function AcMaintenancePage() {
       </nav>
 
       {/* HERO */}
+      <div className="border-b border-border bg-bg-soft">
+        <div className="mx-auto max-w-7xl px-6 py-3">
+          <Breadcrumbs items={[{ name: "AC Maintenance" }]} />
+        </div>
+      </div>
       <section className="relative overflow-hidden bg-[#13212E] text-white">
         <div className="pointer-events-none absolute inset-0" style={{ background: "radial-gradient(1100px 560px at 82% -10%, rgba(212,118,46,.32), transparent)" }} />
         <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 py-16 md:py-24 lg:grid-cols-[1.1fr_.9fr]">
@@ -401,6 +408,31 @@ export default function AcMaintenancePage() {
               AC coil cleaning and AMC in Dubai: why both matter
             </Link>
           </p>
+        </div>
+      </section>
+
+      {/* Inline quick quote */}
+      <section className="bg-bg-soft py-16 md:py-20">
+        <div className="mx-auto max-w-3xl px-6">
+          <h2 className="text-center font-heading text-3xl font-bold md:text-4xl">
+            Book AC maintenance in Dubai
+          </h2>
+          <p className="mt-3 text-center text-text-muted">
+            Send your details and we&apos;ll come back with a price. We reply on
+            call and WhatsApp, 24/7. Managing a building or portfolio? See our{" "}
+            <Link href="/services/maintenance" className="font-medium text-primary hover:underline">
+              commercial HVAC maintenance &amp; AMC
+            </Link>{" "}
+            service.
+          </p>
+          <div className="mt-8 rounded-xl border border-border bg-white p-6 md:p-8">
+            <InlineLeadForm
+              requestType="AC service, repair or maintenance"
+              whatsappPath="/ac-maintenance-dubai"
+              detailsLabel="Units and area (optional)"
+              detailsPlaceholder="e.g. 4 split units in a villa in Al Barsha."
+            />
+          </div>
         </div>
       </section>
 

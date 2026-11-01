@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import Link from "next/link";
 import { ProjectGrid } from "@/components/ProjectGrid";
 
 export const metadata: Metadata = {
   title: "HVAC Projects in Dubai & the UAE | AGEC",
   description:
-    "30+ HVAC projects across Dubai, Sharjah, and Abu Dhabi — residential villas, commercial buildings, data centers, and cultural facilities.",
+    "HVAC projects across Dubai, Sharjah, Ajman and Abu Dhabi — residential villas, commercial buildings, data centres and cultural facilities.",
   alternates: { canonical: "/projects" },
   openGraph: {
     images: ["/og-image.png"],
     title: "HVAC Projects in Dubai & the UAE | AGEC",
     description:
-      "30+ HVAC projects across Dubai, Sharjah, and Abu Dhabi — residential villas, commercial buildings, data centers, and cultural facilities.",
+      "HVAC projects across Dubai, Sharjah, Ajman and Abu Dhabi — residential villas, commercial buildings, data centres and cultural facilities.",
     url: "https://agec.ae/projects",
     siteName: "AGEC",
     type: "website",
@@ -31,6 +32,7 @@ export default function Projects() {
       {/* Page Header */}
       <section className="bg-bg-soft py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
+          <Breadcrumbs items={[{ name: "Projects" }]} className="mb-6" />
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">
             Our Work
           </p>
@@ -38,8 +40,8 @@ export default function Projects() {
             Projects across Dubai and the UAE
           </h1>
           <p className="mt-6 max-w-3xl text-xl text-text-muted">
-            A selection of recent HVAC installations and design projects.
-            Detailed case studies coming soon.
+            A selection of recent HVAC installations and design projects across
+            the UAE. Detailed case studies coming soon.
           </p>
         </div>
       </section>

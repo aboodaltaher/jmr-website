@@ -123,7 +123,7 @@ export default function Services() {
           </h1>
           <p className="mt-6 max-w-3xl text-xl text-text-muted">
             From heat load calculations and design through installation,
-            commissioning, and long-term maintenance — AGECdelivers complete
+            commissioning, and long-term maintenance — AGEC delivers complete
             HVAC solutions.
           </p>
         </div>

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { InlineLeadForm } from "@/components/InlineLeadForm";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import {
   GOOGLE_RATING,
   GOOGLE_REVIEW_COUNT,
@@ -131,7 +133,7 @@ const products: Product[] = [
       { label: "Key Features", value: "AI auto-scheduling, Home/Away routines, Soli presence sensing, remote sensor support, quick-schedule presets." },
       { label: "Benefits", value: "Hands-off comfort, lower DEWA bills, no manual programming, whole-family control." },
       { label: "Ideal For", value: "Villas, apartments & smart homes wanting a premium, automatic experience." },
-      { label: "Energy Savings", value: "Up to ~15–20% off cooling energy with Eco temperatures & scheduling." },
+      { label: "Energy Savings", value: "Lower cooling energy from Eco temperatures & scheduling (actual savings depend on usage)." },
       { label: "Smart Home", value: "Google Home native; supports Matter & leading smart-home platforms." },
       { label: "Voice", value: "Google Assistant + Amazon Alexa." },
       { label: "App", value: "Google Home app (iOS & Android) — remote control, schedules, energy reports." },
@@ -282,7 +284,7 @@ const faqs: { q: string; a: string }[] = [
   { q: "What if my AC isn't compatible or runs on 220V?", a: "No problem — even if your system doesn't use standard 24V control, including 220V/240V split and inverter units, we have a solution. Our engineers fit a safe interface module that lets your Google Nest or ecobee control the AC without modifying or damaging the machine, and without depending on or cutting into its internal PCB control board. Your unit keeps working exactly as the manufacturer designed it, with smart control simply added on top." },
   { q: "Can you install a C-wire if my system doesn't have one?", a: "Yes — C-wire (common wire) installation is one of our core services. If your thermostat needs continuous power, our licensed technicians run a proper C-wire or fit a compatible power extender kit safely and cleanly." },
   { q: "How much does smart thermostat installation cost in Dubai?", a: "Standard installation is quoted upfront after your free compatibility check. Final cost depends on your HVAC type, whether a C-wire or wiring modification is needed, and the number of zones. You always receive a transparent, no-obligation quote before any work begins." },
-  { q: "Can a smart thermostat really save electricity in the UAE?", a: "Yes. With scheduling, geofencing, AI learning and eco modes, smart thermostats typically cut cooling energy by 10–23% — significant given the UAE's long, hot cooling season and DEWA tariffs." },
+  { q: "Can a smart thermostat really save electricity in the UAE?", a: "Yes. Scheduling, geofencing, AI learning and eco modes all cut wasted cooling — ecobee reports up to ~26% annual HVAC savings with its eco+ features. Actual savings depend on your home, usage and settings, but the potential is significant given the UAE's long, hot cooling season and DEWA tariffs." },
   { q: "Which is better — Google Nest or ecobee?", a: "Both are excellent. Nest offers AI auto-scheduling and a premium minimalist design; ecobee Premium adds built-in Alexa, a room sensor and air-quality monitoring. We recommend the best fit after reviewing your home and HVAC setup." },
   { q: "Do you offer same-day installation in Dubai?", a: "In most cases, yes. For standard, compatible systems within Dubai we offer same-day or next-day installation. Message us on WhatsApp for current availability." },
   { q: "What warranty do I get?", a: "You receive the full manufacturer warranty on your Google Nest or ecobee device (typically 1–3 years depending on model) plus our workmanship guarantee on the installation." },
@@ -359,6 +361,11 @@ export default function SmartThermostatPage() {
       </nav>
 
       {/* HERO */}
+      <div className="border-b border-border bg-bg-soft">
+        <div className="mx-auto max-w-7xl px-6 py-3">
+          <Breadcrumbs items={[{ name: "Smart Thermostats" }]} />
+        </div>
+      </div>
       <section className="relative overflow-hidden bg-[#13212E] text-white">
         <div
           className="pointer-events-none absolute inset-0"
@@ -417,8 +424,8 @@ export default function SmartThermostatPage() {
             </div>
             <div className="mt-4 flex justify-between gap-3 border-t border-white/10 pt-5 text-center">
               <div className="flex-1">
-                <b className="block font-heading text-2xl text-white">up to 23%</b>
-                <span className="text-xs uppercase tracking-wide text-white/50">Cooling Saving</span>
+                <b className="block font-heading text-2xl text-white">up to 26%</b>
+                <span className="text-xs uppercase tracking-wide text-white/50">HVAC Saving*</span>
               </div>
               <div className="flex-1">
                 <b className="block font-heading text-2xl text-white">&lt;90min</b>
@@ -528,11 +535,12 @@ export default function SmartThermostatPage() {
           <div className="mx-auto max-w-3xl text-center">
             <p className={eyebrowDark}>HVAC Compatibility</p>
             <h2 className="mt-3 font-heading text-3xl font-bold text-white md:text-5xl">
-              Compatible With Every Major HVAC Brand in the UAE
+              Compatible With Most HVAC Systems in the UAE
             </h2>
             <p className="mt-5 text-lg text-white/70">
               Nest and ecobee work with the vast majority of ducted, ducted-split and conventional
-              24V systems used across the Emirates.
+              24V systems used across the Emirates. For 220/240V units we fit a safe interface
+              module, so there&apos;s a solution for almost any setup.
             </p>
           </div>
           <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
@@ -606,13 +614,17 @@ export default function SmartThermostatPage() {
       {/* SAVINGS BAND */}
       <section className="bg-primary py-14 text-white">
         <div className="mx-auto grid max-w-7xl gap-8 px-6 text-center sm:grid-cols-4">
-          {[["10–23%", "Cooling energy saved"], ["<90 min", "Standard install time"], ["7", "Emirates covered"], ["1–3 yr", "Manufacturer warranty"]].map(([n, l]) => (
+          {[["up to 26%", "HVAC energy saved*"], ["<90 min", "Standard install time"], ["7", "Emirates covered"], ["1–3 yr", "Manufacturer warranty"]].map(([n, l]) => (
             <div key={l}>
               <b className="block font-heading text-4xl font-bold">{n}</b>
               <span className="text-white">{l}</span>
             </div>
           ))}
         </div>
+        <p className="mx-auto mt-6 max-w-3xl px-6 text-center text-xs text-white">
+          *Manufacturer-reported figure (ecobee, eco+ features). Actual savings
+          depend on your home, usage and settings.
+        </p>
       </section>
 
       {/* BENEFITS */}
@@ -755,6 +767,27 @@ export default function SmartThermostatPage() {
             {areas.map((a) => (
               <span key={a} className="rounded-full border border-border bg-white px-6 py-3 font-semibold text-text shadow-sm">{a}</span>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Inline quick quote */}
+      <section className="bg-bg-soft py-16 md:py-20">
+        <div className="mx-auto max-w-3xl px-6">
+          <h2 className="text-center font-heading text-3xl font-bold md:text-4xl">
+            Book a free compatibility check
+          </h2>
+          <p className="mt-3 text-center text-text-muted">
+            Tell us your AC brand and we&apos;ll confirm whether Nest or ecobee
+            fits — no obligation.
+          </p>
+          <div className="mt-8 rounded-xl border border-border bg-white p-6 md:p-8">
+            <InlineLeadForm
+              requestType="Smart thermostat installation"
+              whatsappPath="/smart-thermostat-installation-dubai"
+              detailsLabel="AC brand / model and area (optional)"
+              detailsPlaceholder="e.g. Daikin ducted split, villa in Arabian Ranches."
+            />
           </div>
         </div>
       </section>

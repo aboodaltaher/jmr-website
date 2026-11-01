@@ -302,7 +302,7 @@ export default function Home() {
           <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
             {[
               { value: "30+", label: "Projects Delivered" },
-              { value: "240 TR", label: "Max Single Project" },
+              { value: "224 TR", label: "Max Single Project" },
               { value: "7", label: "Emirates Served" },
               { value: "2022", label: "Established" },
             ].map((stat) => (
@@ -491,7 +491,7 @@ export default function Home() {
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-lg text-white">
             Get a free quotation from our engineering team. Most quotes returned
-            within 48 hours.
+            within 24 hours.
           </p>
           <Link
             href="/quote"

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { InlineLeadForm } from "@/components/InlineLeadForm";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import {
   Check,
   Phone,
@@ -150,6 +152,11 @@ export default function Maintenance() {
       </nav>
 
       {/* HERO */}
+      <div className="border-b border-border bg-bg-soft">
+        <div className="mx-auto max-w-7xl px-6 py-3">
+          <Breadcrumbs items={[{ name: "Services", href: "/services" }, { name: "Maintenance" }]} />
+        </div>
+      </div>
       <section className="relative overflow-hidden bg-[#13212E] text-white">
         <div
           className="pointer-events-none absolute inset-0"
@@ -300,6 +307,31 @@ export default function Maintenance() {
           </div>
           <div className="mt-10">
             <GoogleReviewsBadge className="text-text-muted" />
+          </div>
+        </div>
+      </section>
+
+      {/* Inline quick quote */}
+      <section className="bg-bg-soft py-16 md:py-20">
+        <div className="mx-auto max-w-3xl px-6">
+          <h2 className="text-center font-heading text-3xl font-bold md:text-4xl">
+            Request a maintenance proposal
+          </h2>
+          <p className="mt-3 text-center text-text-muted">
+            Tell us about your building and we&apos;ll prepare an AMC or
+            maintenance proposal. For homes and villas, see our{" "}
+            <Link href="/ac-maintenance-dubai" className="font-medium text-primary hover:underline">
+              residential AC maintenance
+            </Link>{" "}
+            service.
+          </p>
+          <div className="mt-8 rounded-xl border border-border bg-white p-6 md:p-8">
+            <InlineLeadForm
+              requestType="Commercial HVAC maintenance / AMC"
+              whatsappPath="/services/maintenance"
+              detailsLabel="Building type, units and location (optional)"
+              detailsPlaceholder="e.g. 12-floor office tower, Business Bay, chilled-water system."
+            />
           </div>
         </div>
       </section>
