@@ -54,7 +54,7 @@ export function Footer() {
             <div className="mt-4 space-y-1 text-sm text-text-muted">
               <p>+971 58 557 5987</p>
               <p>a.altaher@agec.ae</p>
-              <p>Al Quoz Industrial Area 1, Dubai, UAE</p>
+              <p>AlMasraf Building, Sheikh Zayed Road, Dubai, UAE</p>
             </div>
             <p className="mt-4 text-xs text-text-muted">
               24/7 Emergency Support · +971 58 557 5987

@@ -108,7 +108,7 @@ export function ArabicChrome({ children }: { children: React.ReactNode }) {
           <div className="mt-4 space-y-1 text-sm text-text-muted" dir="ltr">
             <p>{PHONE_DISPLAY}</p>
             <p>a.altaher@agec.ae</p>
-            <p>Al Quoz Industrial Area 1, Dubai, UAE</p>
+            <p>AlMasraf Building, Sheikh Zayed Road, Dubai, UAE</p>
           </div>
           <p className="mt-4 text-xs text-text-muted">
             متاحون على الهاتف والواتساب على مدار الساعة — نرد خلال ساعة واحدة.
