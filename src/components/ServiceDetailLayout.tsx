@@ -136,7 +136,7 @@ export function ServiceDetailLayout({
             href="/quote"
             className="mt-8 inline-block rounded-md bg-primary px-8 py-4 font-medium text-white hover:bg-primary-dark transition-colors"
           >
-            Request a Quote
+            Get a Quote
           </Link>
         </div>
       </section>

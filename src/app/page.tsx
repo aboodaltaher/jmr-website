@@ -20,7 +20,9 @@ import {
   Sparkles,
   Layers,
   Star,
+  MessageCircle,
 } from "lucide-react";
+import { PHONE, PHONE_DISPLAY, whatsappUrl } from "@/lib/contact";
 import {
   GOOGLE_RATING,
   GOOGLE_REVIEW_COUNT,
@@ -168,23 +170,25 @@ export default function Home() {
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
-              href="/book"
+              href="/quote"
               className="rounded-md bg-primary px-8 py-4 font-medium text-white hover:bg-primary-dark transition-colors"
             >
-              Book AC Service
+              Get a Quote
             </Link>
-            <Link
-              href="/ac-amc-dubai#amc-form"
-              className="rounded-md border border-white/30 px-8 py-4 font-medium text-white hover:border-white hover:bg-white/10 transition-colors"
+            <a
+              href={`tel:${PHONE}`}
+              className="inline-flex items-center gap-2 rounded-md border border-white/30 px-8 py-4 font-medium text-white hover:border-white hover:bg-white/10 transition-colors"
             >
-              Get AMC Quote
-            </Link>
-            <Link
-              href="/quote"
-              className="rounded-md border border-white/30 px-8 py-4 font-medium text-white hover:border-white hover:bg-white/10 transition-colors"
+              <Phone className="h-4 w-4" /> Call Now
+            </a>
+            <a
+              href={whatsappUrl("/")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-md bg-[#25D366] px-8 py-4 font-medium text-[#062e14] hover:bg-[#1fad52] transition-colors"
             >
-              Request a Project Quote
-            </Link>
+              <MessageCircle className="h-4 w-4" /> WhatsApp
+            </a>
           </div>
           <p className="mt-8 text-sm text-white/60">
             Established 2022 · 30+ Projects · All 7 Emirates · Dubai, UAE
@@ -496,12 +500,12 @@ export default function Home() {
             Get a Quote
           </Link>
           <div className="mt-4">
-            <Link
-              href="/book"
+            <a
+              href={`tel:${PHONE}`}
               className="text-sm font-medium text-white hover:underline transition-colors"
             >
-              Or book a service &rarr;
-            </Link>
+              Or call {PHONE_DISPLAY} &rarr;
+            </a>
           </div>
         </div>
       </section>

@@ -203,7 +203,7 @@ export default function AcMaintenancePage() {
               <span className="text-sm font-normal text-white/70">· minimum 3 units</span>
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/book" className="rounded-md bg-primary px-7 py-4 font-semibold text-white hover:bg-primary-dark transition-colors">Book AC Service</Link>
+              <Link href="/quote" className="rounded-md bg-primary px-7 py-4 font-semibold text-white hover:bg-primary-dark transition-colors">Get a Quote</Link>
               <a href={WA} className="rounded-md bg-[#25D366] px-7 py-4 font-semibold text-[#062e14] hover:bg-[#1fad52] transition-colors">WhatsApp Us</a>
               <a href={`tel:${PHONE}`} className="rounded-md border border-white/30 px-7 py-4 font-semibold text-white hover:bg-white/10 transition-colors">Call Now</a>
             </div>
@@ -412,7 +412,7 @@ export default function AcMaintenancePage() {
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <a href={`tel:${PHONE}`} className="inline-flex items-center gap-2 rounded-md bg-white px-7 py-4 font-semibold text-primary hover:bg-white/90 transition-colors"><Phone className="h-4 w-4" /> Call {PHONE_DISPLAY}</a>
             <a href={WA} className="inline-flex items-center gap-2 rounded-md bg-[#13212E] px-7 py-4 font-semibold text-white hover:bg-[#0f1a24] transition-colors"><MessageCircle className="h-4 w-4" /> WhatsApp Us</a>
-            <Link href="/book" className="rounded-md border border-white/60 px-7 py-4 font-semibold text-white hover:bg-white/10 transition-colors">Book Online</Link>
+            <Link href="/quote" className="rounded-md border border-white/60 px-7 py-4 font-semibold text-white hover:bg-white/10 transition-colors">Get a Quote</Link>
           </div>
         </div>
       </section>

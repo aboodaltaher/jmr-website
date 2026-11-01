@@ -100,12 +100,12 @@ export function Footer() {
             >
               Get a Quote
             </Link>
-            <Link
-              href="/book"
+            <a
+              href="tel:+971585575987"
               className="rounded-md border border-text-muted/30 bg-white px-5 py-2.5 text-center text-sm font-medium text-text hover:border-primary hover:text-primary transition-colors"
             >
-              Book a Service
-            </Link>
+              Call Us
+            </a>
           </div>
         </div>
         <div className="mt-8 border-t border-border pt-6 text-center text-xs text-text-muted">
