@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Check, MessageCircle } from "lucide-react";
 import { submitBalancingRequest } from "@/app/actions";
-import { CONVERSIONS, trackConversion, pushDataLayer } from "@/lib/gtag";
+import { trackFormSubmit } from "@/lib/gtag";
 
 const schema = z.object({
   name: z.string().min(1, "Full name is required"),
@@ -37,8 +37,7 @@ export function BalancingForm({ whatsappHref }: { whatsappHref: string }) {
     const result = await submitBalancingRequest(data);
     if (result.success) {
       setSubmitted(true);
-      trackConversion(CONVERSIONS.form);
-      pushDataLayer("submit_balancing_form");
+      trackFormSubmit("balancing");
     }
   };
 

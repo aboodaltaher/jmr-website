@@ -19,7 +19,7 @@ export function ConversionTracking() {
 
       if (href.startsWith("tel:")) {
         trackConversion(CONVERSIONS.call);
-        pushDataLayer("click_phone", { page_path: window.location.pathname });
+        pushDataLayer("click_call", { page_path: window.location.pathname });
       } else if (
         href.includes("wa.me") ||
         href.includes("api.whatsapp.com") ||
@@ -29,6 +29,8 @@ export function ConversionTracking() {
         pushDataLayer("click_whatsapp", {
           page_path: window.location.pathname,
         });
+      } else if (href.startsWith("mailto:")) {
+        pushDataLayer("click_email", { page_path: window.location.pathname });
       }
     };
 
