@@ -33,5 +33,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/quote`, changeFrequency: "yearly", priority: 0.9 },
     { url: `${base}/book`, changeFrequency: "yearly", priority: 0.8 },
     { url: `${base}/contact`, changeFrequency: "yearly", priority: 0.8 },
+    // Arabic (/ar) subtree
+    { url: `${base}/ar`, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/ar/ac-repair-dubai`, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/ar/ac-amc-dubai`, changeFrequency: "monthly", priority: 0.7 },
   ];
 }

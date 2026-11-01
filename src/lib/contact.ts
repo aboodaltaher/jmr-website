@@ -24,6 +24,12 @@ const WHATSAPP_MESSAGES: Record<string, string> = {
     "Hi AGEC, I'd like an AMC quote. Number of AC units and area: ",
   "/air-balancing-airflow-testing-dubai":
     "Hi AGEC, we need airflow testing. Building type and problem: ",
+  // Arabic prefilled messages for the /ar subtree.
+  "/ar": "مرحباً AGEC، أريد التحدث مع مهندس بخصوص المكيف.",
+  "/ar/ac-repair-dubai":
+    "مرحباً AGEC، مكيّفي لا يبرّد. المنطقة ونوع العقار؟ ",
+  "/ar/ac-amc-dubai":
+    "مرحباً AGEC، أريد عرض سعر لعقد صيانة سنوي. عدد الوحدات والمنطقة؟ ",
 };
 
 export function whatsappMessageFor(pathname: string): string {

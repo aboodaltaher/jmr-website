@@ -12,7 +12,14 @@ export const metadata: Metadata = {
   title: "AC AMC Dubai | Annual Maintenance Contracts | AGEC",
   description:
     "AC annual maintenance contracts for Dubai and UAE villas, apartments and offices: scheduled visits, written reports, priority repairs. Get an AMC quote.",
-  alternates: { canonical: ROUTE },
+  alternates: {
+    canonical: ROUTE,
+    languages: {
+      en: `${SITE_URL}${ROUTE}`,
+      ar: `${SITE_URL}/ar/ac-amc-dubai`,
+      "x-default": `${SITE_URL}${ROUTE}`,
+    },
+  },
   openGraph: {
     title: "AC AMC Dubai | Annual Maintenance Contracts | AGEC",
     description:

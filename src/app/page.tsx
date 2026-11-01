@@ -32,7 +32,14 @@ export const metadata: Metadata = {
   title: "HVAC Contractor & AC Maintenance Dubai | AGEC",
   description:
     "Engineer-led HVAC installation, AC maintenance, AMC, air balancing and commissioning across the UAE. Call +971 58 557 5987.",
-  alternates: { canonical: "/" },
+  alternates: {
+    canonical: "/",
+    languages: {
+      en: "https://agec.ae/",
+      ar: "https://agec.ae/ar",
+      "x-default": "https://agec.ae/",
+    },
+  },
   openGraph: {
     title: "HVAC Contractor & AC Maintenance Dubai | AGEC",
     description:
