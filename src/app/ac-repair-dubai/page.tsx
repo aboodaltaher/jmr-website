@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
+    images: ["/og-image.png"],
     title: "AC Repair Dubai | AC Technicians | AGEC",
     description:
       "AC not cooling, leaking or tripping? AGEC engineers find the root cause, quote in writing first and report every repair. Call or WhatsApp.",
@@ -96,7 +97,7 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
+    { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}` },
     {
       "@type": "ListItem",
       position: 2,

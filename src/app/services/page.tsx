@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import Link from "next/link";
 import {
   Wind,
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
     "HVAC design, installation, testing and commissioning, and maintenance for villas, offices and commercial buildings across the UAE.",
   alternates: { canonical: "/services" },
   openGraph: {
+    images: ["/og-image.png"],
     title: "HVAC Services Dubai & UAE | AGEC",
     description:
       "HVAC design, installation, testing and commissioning, and maintenance for villas, offices and commercial buildings across the UAE.",
@@ -104,6 +106,12 @@ const steps = [
 export default function Services() {
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", path: "" },
+          { name: "Services", path: "/services" },
+        ]}
+      />
       {/* Page Header */}
       <section className="bg-bg-soft py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6">

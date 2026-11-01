@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { QuoteForm } from "@/components/QuoteForm";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 
 export const metadata: Metadata = {
-  title: "Request a Quote | AGEC",
+  title: "Request an HVAC Quote in Dubai | AGEC",
   description:
     "Get a free HVAC quotation from AGEC in Dubai. VRF systems, chillers, DX units, ventilation, design, and maintenance — most quotes returned within 48 hours.",
   alternates: { canonical: "/quote" },
   openGraph: {
-    title: "Request a Quote | AGEC",
+    images: ["/og-image.png"],
+    title: "Request an HVAC Quote in Dubai | AGEC",
     description:
       "Get a free HVAC quotation from AGEC in Dubai. VRF systems, chillers, DX units, ventilation, design, and maintenance — most quotes returned within 48 hours.",
     url: "https://agec.ae/quote",
@@ -20,6 +22,12 @@ export const metadata: Metadata = {
 export default function Quote() {
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", path: "" },
+          { name: "Request a Quote", path: "/quote" },
+        ]}
+      />
       {/* Header */}
       <section className="bg-bg-soft py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-6">

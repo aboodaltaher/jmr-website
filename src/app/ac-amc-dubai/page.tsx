@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Check, Phone, MessageCircle } from "lucide-react";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { AmcForm } from "@/components/AmcForm";
+import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { PHONE, whatsappUrl } from "@/lib/contact";
 
 const SITE_URL = "https://agec.ae";
@@ -21,6 +22,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
+    images: ["/og-image.png"],
     title: "AC AMC Dubai | Annual Maintenance Contracts | AGEC",
     description:
       "AC annual maintenance contracts for Dubai and UAE villas, apartments and offices: scheduled visits, written reports, priority repairs. Get an AMC quote.",
@@ -159,6 +161,12 @@ export default function AcAmcPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", path: "" },
+          { name: "AC AMC Dubai", path: "/ac-amc-dubai" },
+        ]}
       />
 
       {/* Breadcrumb */}

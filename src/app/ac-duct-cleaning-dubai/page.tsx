@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
+    images: ["/og-image.png"],
     title: "AC Duct Cleaning Dubai | Villas & Offices | AGEC",
     description:
       "Full duct, coil and drain cleaning with disinfection and a written completion report. Villas, apartments and offices. Request a quote.",
@@ -156,8 +157,8 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
-    { "@type": "ListItem", position: 2, name: "AC Duct Cleaning Dubai", item: `${SITE_URL}${ROUTE}/` },
+    { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}` },
+    { "@type": "ListItem", position: 2, name: "AC Duct Cleaning Dubai", item: `${SITE_URL}${ROUTE}` },
   ],
 };
 

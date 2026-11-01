@@ -1,16 +1,18 @@
 import type { Metadata } from "next";
+import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { BookForm } from "@/components/BookForm";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 
 export const metadata: Metadata = {
-  title: "Book a Service | AGEC",
+  title: "Book an AC or HVAC Service in Dubai | AGEC",
   description:
-    "Book HVAC maintenance, repairs, AMC, or emergency service in Dubai. AGEC — qualified technicians, priority response.",
+    "Book HVAC maintenance, AC repair, AMC or emergency service in Dubai with AGEC — qualified technicians, transparent pricing and priority response.",
   alternates: { canonical: "/book" },
   openGraph: {
-    title: "Book a Service | AGEC",
+    images: ["/og-image.png"],
+    title: "Book an AC or HVAC Service in Dubai | AGEC",
     description:
-      "Book HVAC maintenance, repairs, AMC, or emergency service in Dubai. AGEC — qualified technicians, priority response.",
+      "Book HVAC maintenance, AC repair, AMC or emergency service in Dubai with AGEC — qualified technicians, transparent pricing and priority response.",
     url: "https://agec.ae/book",
     siteName: "AGEC",
     type: "website",
@@ -20,6 +22,12 @@ export const metadata: Metadata = {
 export default function Book() {
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", path: "" },
+          { name: "Book a Service", path: "/book" },
+        ]}
+      />
       {/* Header */}
       <section className="bg-bg-soft py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-6">

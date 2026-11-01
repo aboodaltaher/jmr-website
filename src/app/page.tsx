@@ -41,6 +41,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
+    images: ["/og-image.png"],
     title: "HVAC Contractor & AC Maintenance Dubai | AGEC",
     description:
       "Engineer-led HVAC installation, AC maintenance, AMC, air balancing and commissioning across the UAE. Call +971 58 557 5987.",
@@ -146,61 +147,6 @@ const reasons = [
 export default function Home() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "HVACBusiness",
-            "@id": "https://agec.ae/#business",
-            name: "AGEC",
-            alternateName: "AGEC Technical Services",
-            description:
-              "Dubai-based HVAC contractor providing design, installation, testing & commissioning, and maintenance for VRF, VRV, chillers, ducted splits, DX units, and ventilation systems across all seven emirates of the UAE.",
-            url: "https://agec.ae",
-            logo: "https://agec.ae/agec-logo.png",
-            image: "https://agec.ae/agec-logo.png",
-            telephone: "+971585575987",
-            email: "a.altaher@agec.ae",
-            priceRange: "$$",
-            address: {
-              "@type": "PostalAddress",
-              // TODO(owner): add the exact building/unit from the trade licence.
-              streetAddress: "Al Quoz Industrial Area 1",
-              addressLocality: "Dubai",
-              addressRegion: "Dubai",
-              addressCountry: "AE",
-            },
-            hasMap: "https://maps.app.goo.gl/fPKs5SXmDeK9Co4VA",
-            areaServed: [
-              { "@type": "City", name: "Dubai" },
-              { "@type": "City", name: "Abu Dhabi" },
-              { "@type": "City", name: "Sharjah" },
-              { "@type": "City", name: "Ajman" },
-              { "@type": "City", name: "Umm Al Quwain" },
-              { "@type": "City", name: "Ras Al Khaimah" },
-              { "@type": "City", name: "Fujairah" },
-            ],
-            openingHoursSpecification: [
-              {
-                "@type": "OpeningHoursSpecification",
-                dayOfWeek: [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday",
-                  "Saturday",
-                  "Sunday",
-                ],
-                opens: "00:00",
-                closes: "23:59",
-              },
-            ],
-            sameAs: [],
-          }),
-        }}
-      />
       {/* Hero */}
       <section className="relative flex min-h-[80vh] items-center">
         <Image

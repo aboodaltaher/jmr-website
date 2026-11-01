@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
+    images: ["/og-image.png"],
     title: "صيانة مكيفات في دبي | AGEC",
     description:
       "خدمة وإصلاح وتنظيف وعقود صيانة سنوية. خدمة لمرة واحدة من 350 درهماً للوحدة.",

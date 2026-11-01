@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     "Measured HVAC air balancing and airflow testing in Dubai and the UAE, with documented measurements and signed reports. Request a technical assessment.",
   alternates: { canonical: ROUTE },
   openGraph: {
+    images: ["/og-image.png"],
     title: "Air Balancing Dubai | HVAC Airflow Testing | AGEC",
     description:
       "Measured HVAC air balancing and airflow testing in Dubai and the UAE, with documented measurements and signed reports. Request a technical assessment.",

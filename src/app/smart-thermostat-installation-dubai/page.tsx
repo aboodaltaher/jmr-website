@@ -39,12 +39,13 @@ const WA = `https://wa.me/971585575987?text=${encodeURIComponent(
 const CANONICAL = "/smart-thermostat-installation-dubai";
 
 export const metadata: Metadata = {
-  title: "Smart Thermostat Installation Dubai | Nest & ecobee | AGEC",
+  title: "Nest & ecobee Thermostat Installation Dubai | AGEC",
   description:
     "Nest and ecobee smart thermostat installation in Dubai and the UAE. Free compatibility check and C-wire installation. Call +971 58 557 5987.",
   alternates: { canonical: CANONICAL },
   openGraph: {
-    title: "Smart Thermostat Installation Dubai | Nest & ecobee | AGEC",
+    images: ["/og-image.png"],
+    title: "Nest & ecobee Thermostat Installation Dubai | AGEC",
     description:
       "Supplier & professional installer of Google Nest & ecobee smart thermostats across Dubai & the UAE. Free compatibility check & expert C-wire installation.",
     url: "https://agec.ae/smart-thermostat-installation-dubai",
@@ -325,9 +326,9 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://agec.ae/" },
-    { "@type": "ListItem", position: 2, name: "Services", item: "https://agec.ae/services/" },
-    { "@type": "ListItem", position: 3, name: "Smart Thermostat Installation Dubai", item: "https://agec.ae/smart-thermostat-installation-dubai/" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://agec.ae" },
+    { "@type": "ListItem", position: 2, name: "Services", item: "https://agec.ae/services" },
+    { "@type": "ListItem", position: 3, name: "Smart Thermostat Installation Dubai", item: "https://agec.ae/smart-thermostat-installation-dubai" },
   ],
 };
 
