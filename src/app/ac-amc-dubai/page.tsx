@@ -320,7 +320,12 @@ export default function AcAmcPage() {
             </p>
           ) : (
             <>
-              <div className="mt-8 overflow-x-auto">
+              <div
+                className="mt-8 overflow-x-auto"
+                tabIndex={0}
+                role="region"
+                aria-label="Maintenance plan comparison"
+              >
                 <table className="w-full border-collapse text-sm">
                   <thead className="bg-primary text-left text-white">
                     <tr>

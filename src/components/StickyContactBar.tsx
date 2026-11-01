@@ -13,7 +13,10 @@ export function StickyContactBar() {
   const wa = whatsappUrl(pathname);
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-40 flex border-t border-border bg-white md:hidden">
+    <nav
+      aria-label="Quick contact"
+      className="fixed inset-x-0 bottom-0 z-40 flex border-t border-border bg-white md:hidden"
+    >
       <a
         href={`tel:${PHONE}`}
         aria-label="Call AGEC"
@@ -27,11 +30,11 @@ export function StickyContactBar() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Contact AGEC on WhatsApp"
-        className="flex flex-1 items-center justify-center gap-2 border-l border-border bg-[#25D366] py-3.5 text-sm font-semibold text-white"
+        className="flex flex-1 items-center justify-center gap-2 border-l border-border bg-[#25D366] py-3.5 text-sm font-semibold text-[#062e14]"
       >
         <MessageCircle className="h-5 w-5" />
         WhatsApp
       </a>
-    </div>
+    </nav>
   );
 }

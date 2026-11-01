@@ -114,6 +114,7 @@ export function ProjectGrid() {
       {/* Grid */}
       <section className="pb-20 md:pb-24">
         <div className="mx-auto max-w-7xl px-6">
+          <h2 className="sr-only">Project list</h2>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {filtered.map((project) => (
               <div

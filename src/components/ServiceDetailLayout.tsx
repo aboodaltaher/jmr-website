@@ -115,7 +115,7 @@ export function ServiceDetailLayout({
       {/* Page Header */}
       <section className="bg-bg-soft py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <nav className="mb-6 text-sm text-text-muted">
+          <nav aria-label="Breadcrumb" className="mb-6 text-sm text-text-muted">
             <Link
               href="/services"
               className="hover:text-primary transition-colors"

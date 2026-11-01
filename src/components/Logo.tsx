@@ -2,7 +2,7 @@ export function Logo({ variant = "light" }: { variant?: "dark" | "light" }) {
   const mark = "#D4762E";
   const word = variant === "dark" ? "#F5F6F7" : "#13212E";
   const rule = variant === "dark" ? "#8A929A66" : "#E2E1DC";
-  const desc = variant === "dark" ? "#8A929A" : "#8A929A";
+  const desc = variant === "dark" ? "#A7AEB5" : "#5B6775";
   return (
     <div className="inline-flex flex-col items-center">
       <div className="flex items-center gap-4">
