@@ -39,7 +39,14 @@ export const metadata: Metadata = {
   title: "AC Maintenance Dubai | AC Servicing, Repair & AMC | AGEC",
   description:
     "AC maintenance in Dubai by HVAC engineers: servicing, repair, coil and duct cleaning, gas top-up and AMC plans. Call +971 58 557 5987.",
-  alternates: { canonical: CANONICAL },
+  alternates: {
+    canonical: CANONICAL,
+    languages: {
+      en: `https://agec.ae${CANONICAL}`,
+      ar: "https://agec.ae/ar/ac-maintenance-dubai",
+      "x-default": `https://agec.ae${CANONICAL}`,
+    },
+  },
   openGraph: {
     title: "AC Maintenance Dubai | AC Servicing, Repair & AMC | AGEC",
     description:

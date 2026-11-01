@@ -12,7 +12,14 @@ export const metadata: Metadata = {
   title: "AC Duct Cleaning Dubai | Villas & Offices | AGEC",
   description:
     "Full duct, coil and drain cleaning with disinfection and a written completion report. Villas, apartments and offices. Request a quote.",
-  alternates: { canonical: ROUTE },
+  alternates: {
+    canonical: ROUTE,
+    languages: {
+      en: `${SITE_URL}${ROUTE}`,
+      ar: `${SITE_URL}/ar/ac-duct-cleaning-dubai`,
+      "x-default": `${SITE_URL}${ROUTE}`,
+    },
+  },
   openGraph: {
     title: "AC Duct Cleaning Dubai | Villas & Offices | AGEC",
     description:
