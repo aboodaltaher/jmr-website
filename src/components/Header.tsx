@@ -41,7 +41,7 @@ export function Header() {
   return (
     <header className="border-b border-border">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
-        <Link href="/" aria-label="AGEC — home" onClick={closeAll}>
+        <Link href="/" onClick={closeAll}>
           <Logo />
         </Link>
 

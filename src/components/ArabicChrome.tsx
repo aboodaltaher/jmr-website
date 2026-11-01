@@ -135,7 +135,7 @@ export function ArabicChrome({ children }: { children: React.ReactNode }) {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="تواصل مع AGEC على واتساب"
-          className="flex flex-1 items-center justify-center gap-2 border-r border-border bg-[#25D366] py-3.5 text-sm font-semibold text-white"
+          className="flex flex-1 items-center justify-center gap-2 border-r border-border bg-[#25D366] py-3.5 text-sm font-semibold text-[#062e14]"
         >
           <MessageCircle className="h-5 w-5" />
           واتساب

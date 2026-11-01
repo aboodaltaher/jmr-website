@@ -44,7 +44,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-12">
         <div className="flex flex-col gap-8 md:flex-row md:justify-between">
           <div>
-            <Link href="/" aria-label="AGEC — home">
+            <Link href="/">
               <Logo />
             </Link>
             <p className="mt-2 text-sm text-text-muted">
@@ -100,12 +100,12 @@ export function Footer() {
             >
               Get a Quote
             </Link>
-            <Link
-              href="/book"
+            <a
+              href="tel:+971585575987"
               className="rounded-md border border-text-muted/30 bg-white px-5 py-2.5 text-center text-sm font-medium text-text hover:border-primary hover:text-primary transition-colors"
             >
-              Book a Service
-            </Link>
+              Call Us
+            </a>
           </div>
         </div>
         <div className="mt-8 border-t border-border pt-6 text-center text-xs text-text-muted">

@@ -335,6 +335,8 @@ const breadcrumbSchema = {
 /* ------------------------------- HELPERS ------------------------------- */
 
 const eyebrow = "text-sm font-semibold uppercase tracking-widest text-primary";
+// Same eyebrow for dark (navy) sections — lighter orange to pass contrast.
+const eyebrowDark = "text-sm font-semibold uppercase tracking-widest text-primary-light";
 
 /* -------------------------------- PAGE -------------------------------- */
 
@@ -376,7 +378,7 @@ export default function SmartThermostatPage() {
               C-wire installation and a <strong className="text-white">free compatibility check</strong>.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/book" className="rounded-md bg-primary px-7 py-4 font-semibold text-white hover:bg-primary-dark transition-colors">
+              <Link href="/quote" className="rounded-md bg-primary px-7 py-4 font-semibold text-white hover:bg-primary-dark transition-colors">
                 Book Free Compatibility Check
               </Link>
               <a href={WA} className="rounded-md bg-[#25D366] px-7 py-4 font-semibold text-[#062e14] hover:bg-[#1fad52] transition-colors">
@@ -524,7 +526,7 @@ export default function SmartThermostatPage() {
       <section id="compatibility" className="bg-[#13212E] py-16 text-white md:py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-3xl text-center">
-            <p className={eyebrow}>HVAC Compatibility</p>
+            <p className={eyebrowDark}>HVAC Compatibility</p>
             <h2 className="mt-3 font-heading text-3xl font-bold text-white md:text-5xl">
               Compatible With Every Major HVAC Brand in the UAE
             </h2>
@@ -568,7 +570,7 @@ export default function SmartThermostatPage() {
               interface, and some systems require a C-wire (which we install). That&apos;s why we start
               with a <strong className="text-white">free compatibility assessment</strong>.
             </p>
-            <Link href="/book" className="rounded-md bg-primary px-7 py-4 font-semibold text-white hover:bg-primary-dark transition-colors">
+            <Link href="/quote" className="rounded-md bg-primary px-7 py-4 font-semibold text-white hover:bg-primary-dark transition-colors">
               Check My System — Free
             </Link>
           </div>
@@ -607,7 +609,7 @@ export default function SmartThermostatPage() {
           {[["10–23%", "Cooling energy saved"], ["<90 min", "Standard install time"], ["7", "Emirates covered"], ["1–3 yr", "Manufacturer warranty"]].map(([n, l]) => (
             <div key={l}>
               <b className="block font-heading text-4xl font-bold">{n}</b>
-              <span className="text-white/85">{l}</span>
+              <span className="text-white">{l}</span>
             </div>
           ))}
         </div>
@@ -700,7 +702,7 @@ export default function SmartThermostatPage() {
       {/* MID CTA */}
       <section className="bg-[#13212E] py-16 text-center text-white md:py-20">
         <div className="mx-auto max-w-3xl px-6">
-          <p className={eyebrow}>Free · No Obligation</p>
+          <p className={eyebrowDark}>Free · No Obligation</p>
           <h2 className="mt-3 font-heading text-3xl font-bold text-white md:text-4xl">
             Book Your Free Compatibility Check Today
           </h2>
@@ -763,7 +765,7 @@ export default function SmartThermostatPage() {
           <h2 className="font-heading text-3xl font-bold text-white md:text-4xl">
             Ready to Make Your AC Smart?
           </h2>
-          <p className="mt-5 text-lg text-white/85">
+          <p className="mt-5 text-lg text-white">
             Cut your cooling bill with professionally installed Google Nest and
             ecobee thermostats, set up for UAE homes and businesses.
           </p>
@@ -774,7 +776,7 @@ export default function SmartThermostatPage() {
             <a href={WA} className="rounded-md bg-[#13212E] px-7 py-4 font-semibold text-white hover:bg-[#0f1a24] transition-colors">
               WhatsApp Us
             </a>
-            <Link href="/book" className="rounded-md border border-white/60 px-7 py-4 font-semibold text-white hover:bg-white/10 transition-colors">
+            <Link href="/quote" className="rounded-md border border-white/60 px-7 py-4 font-semibold text-white hover:bg-white/10 transition-colors">
               Book Free Check
             </Link>
           </div>

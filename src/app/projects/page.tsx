@@ -52,7 +52,7 @@ export default function Projects() {
           <h2 className="font-heading text-4xl font-bold text-white">
             Have a project in mind?
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-lg text-white/80">
+          <p className="mx-auto mt-4 max-w-xl text-lg text-white">
             Tell us about your requirements and get a quotation from our
             engineering team.
           </p>

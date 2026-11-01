@@ -1,18 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  --color-primary: #D4762E;
-  --color-primary-dark: #B5601F;
+  --color-primary: #A8571A;
+  --color-primary-dark: #8A4715;
+  /* Lighter orange for accent text on dark (navy) surfaces, where the dark
+     primary would fail contrast. Use text-primary-light on dark backgrounds. */
+  --color-primary-light: #E8995A;
   --color-bg: #F5F6F7;
   --color-bg-soft: #FFFFFF;
   --color-text: #13212E;
-  --color-text-muted: #8A929A;
+  --color-text-muted: #5B6775;
   --color-border: #E2E1DC;
 }
 
 @theme inline {
   --color-primary: var(--color-primary);
   --color-primary-dark: var(--color-primary-dark);
+  --color-primary-light: var(--color-primary-light);
   --color-bg: var(--color-bg);
   --color-bg-soft: var(--color-bg-soft);
   --color-text: var(--color-text);

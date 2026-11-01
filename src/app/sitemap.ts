@@ -32,7 +32,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/projects`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/blog`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${base}/quote`, changeFrequency: "yearly", priority: 0.9 },
-    { url: `${base}/book`, changeFrequency: "yearly", priority: 0.8 },
     { url: `${base}/contact`, changeFrequency: "yearly", priority: 0.8 },
     // Arabic (/ar) subtree
     { url: `${base}/ar`, changeFrequency: "monthly", priority: 0.7 },

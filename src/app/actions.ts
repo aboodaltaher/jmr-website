@@ -25,6 +25,47 @@ function wrap(heading: string, rows: string) {
     </div>`;
 }
 
+// ── Unified Request (quote / service booking) ──
+
+const requestSchema = z.object({
+  requestType: z.string().min(1),
+  name: z.string().min(1),
+  phone: z.string().min(1),
+  email: z.string().email().optional().or(z.literal("")),
+  location: z.string().optional(),
+  details: z.string().min(1),
+});
+
+export async function submitRequest(data: Record<string, unknown>) {
+  const parsed = requestSchema.safeParse(data);
+  if (!parsed.success) return { success: false, error: "Invalid form data" };
+  const d = parsed.data;
+
+  const html = wrap(
+    "Website Request",
+    row("Request type", d.requestType) +
+      row("Name", d.name) +
+      row("Phone", d.phone) +
+      row("Email", d.email) +
+      row("Emirate / area", d.location) +
+      row("Details", d.details),
+  );
+
+  try {
+    await resend.emails.send({
+      from: FROM,
+      to: CONTACT_EMAIL,
+      subject: `Website Request (${d.requestType}) - ${d.name}`,
+      replyTo: d.email || undefined,
+      html,
+    });
+  } catch (err) {
+    console.error("Failed to send request email:", err);
+  }
+
+  return { success: true };
+}
+
 // ── Contact Form ──
 
 const contactSchema = z.object({

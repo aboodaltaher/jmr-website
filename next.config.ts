@@ -14,6 +14,8 @@ const nextConfig: NextConfig = {
       { source: "/services/ac-cleaning/full-ac", destination: "/ac-duct-cleaning-dubai", permanent: true },
       { source: "/services/ac-cleaning/split-ac", destination: "/ac-duct-cleaning-dubai", permanent: true },
       { source: "/services/ac-cleaning/coil-cleaning", destination: "/ac-duct-cleaning-dubai", permanent: true },
+      // Merged the service-booking flow into the single request form at /quote.
+      { source: "/book", destination: "/quote", permanent: true },
     ];
   },
 };

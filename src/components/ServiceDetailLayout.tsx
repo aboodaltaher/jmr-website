@@ -115,7 +115,7 @@ export function ServiceDetailLayout({
       {/* Page Header */}
       <section className="bg-bg-soft py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <nav className="mb-6 text-sm text-text-muted">
+          <nav aria-label="Breadcrumb" className="mb-6 text-sm text-text-muted">
             <Link
               href="/services"
               className="hover:text-primary transition-colors"
@@ -136,7 +136,7 @@ export function ServiceDetailLayout({
             href="/quote"
             className="mt-8 inline-block rounded-md bg-primary px-8 py-4 font-medium text-white hover:bg-primary-dark transition-colors"
           >
-            Request a Quote
+            Get a Quote
           </Link>
         </div>
       </section>
@@ -274,7 +274,7 @@ export function ServiceDetailLayout({
           <div className="mt-4">
             <a
               href="tel:+971585575987"
-              className="text-sm font-medium text-white/80 hover:text-white transition-colors"
+              className="text-sm font-medium text-white hover:underline transition-colors"
             >
               Or call +971 58 557 5987
             </a>
