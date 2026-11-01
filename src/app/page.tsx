@@ -4,6 +4,7 @@ import Link from "next/link";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { CallOrWhatsApp } from "@/components/CallOrWhatsApp";
 import { EmergencyStrip } from "@/components/EmergencyStrip";
+import { ServiceAreas } from "@/components/ServiceAreas";
 import {
   Gauge,
   Snowflake,
@@ -475,8 +476,20 @@ export default function Home() {
               Read all {GOOGLE_REVIEW_COUNT} on Google →
             </a>
           </p>
+          <div className="mt-6 text-center">
+            <a
+              href={GOOGLE_REVIEWS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-md border border-border bg-white px-6 py-3 text-sm font-semibold text-text hover:border-primary hover:text-primary transition-colors"
+            >
+              Leave a review
+            </a>
+          </div>
         </div>
       </section>
+
+      <ServiceAreas />
 
       {/* CTA Band */}
       <section className="bg-primary py-16 md:py-20">

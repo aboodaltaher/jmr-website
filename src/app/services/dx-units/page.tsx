@@ -13,7 +13,7 @@ import Link from "next/link";
 export const metadata = buildMetadata({
   title: "DX Units & Split Systems | AGEC",
   description:
-    "Direct expansion AC installation in Dubai — wall-mount splits, ducted splits, cassettes, and concealed units. Properly sized and installed for residential and commercial spaces.",
+    "DX and split AC installation in Dubai — wall-mount, ducted, cassette and concealed units, sized from heat loads for homes and commercial spaces.",
   path: "/services/dx-units",
 });
 

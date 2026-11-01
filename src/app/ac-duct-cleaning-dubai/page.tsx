@@ -1,6 +1,7 @@
 import { buildMetadata } from "@/lib/metadata";
 import Image from "next/image";
 import Link from "next/link";
+import { RelatedServices } from "@/components/RelatedServices";
 import { InlineLeadForm } from "@/components/InlineLeadForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { DeepCleanVideo } from "@/components/DeepCleanVideo";
@@ -398,6 +399,8 @@ export default function AcDuctCleaningPage() {
           </div>
         </div>
       </section>
+
+      <RelatedServices currentPath="/ac-duct-cleaning-dubai" />
 
       {/* CTA BAND */}
       <section className="bg-primary py-16 md:py-20">

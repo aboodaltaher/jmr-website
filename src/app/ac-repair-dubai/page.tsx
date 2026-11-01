@@ -1,5 +1,6 @@
 import { buildMetadata } from "@/lib/metadata";
 import Link from "next/link";
+import { RelatedServices } from "@/components/RelatedServices";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Check, Phone, MessageCircle } from "lucide-react";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
@@ -362,6 +363,8 @@ export default function AcRepairPage() {
           </div>
         </div>
       </section>
+
+      <RelatedServices currentPath="/ac-repair-dubai" />
 
       {/* CTA */}
       <section className="bg-primary py-14">
