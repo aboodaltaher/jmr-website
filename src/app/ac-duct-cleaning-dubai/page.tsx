@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { InlineLeadForm } from "@/components/InlineLeadForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { DeepCleanVideo } from "@/components/DeepCleanVideo";
 import { Check, Phone, MessageCircle, Wind, AlertCircle } from "lucide-react";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { PHONE, whatsappUrl } from "@/lib/contact";
@@ -230,6 +231,47 @@ export default function AcDuctCleaningPage() {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      {/* VIDEO */}
+      <section className="py-16 md:py-20">
+        <div className="mx-auto max-w-4xl px-6 text-center">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "VideoObject",
+                name: "AC Deep Cleaning in Dubai: What We Found Inside the Unit",
+                uploadDate: "2026-11-01",
+                duration: "PT27S",
+                thumbnailUrl: "https://i.ytimg.com/vi/iKbH5yohkNw/hqdefault.jpg",
+                embedUrl: "https://www.youtube-nocookie.com/embed/iKbH5yohkNw",
+                contentUrl: "https://www.youtube.com/shorts/iKbH5yohkNw",
+              }),
+            }}
+          />
+          <h2 className="font-heading text-3xl font-bold md:text-4xl">
+            See a real AC deep clean
+          </h2>
+          <p className="mx-auto mt-3 max-w-xl text-text-muted">
+            A clogged mesh filter and coil build-up, cleaned at ceiling level.
+          </p>
+          <p className="mx-auto mt-1 max-w-xl text-text-muted">
+            The work is done from the ceiling with floors protected throughout.
+          </p>
+          <div className="mt-8">
+            <DeepCleanVideo />
+          </div>
+          <div className="mt-8">
+            <Link
+              href="/quote"
+              className="inline-flex items-center justify-center rounded-md bg-primary px-8 py-4 font-medium text-white hover:bg-primary-dark transition-colors"
+            >
+              Need your AC checked? Get a quote
+            </Link>
+          </div>
         </div>
       </section>
 
