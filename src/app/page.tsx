@@ -25,12 +25,8 @@ import {
   Star,
 } from "lucide-react";
 import { PHONE, PHONE_DISPLAY } from "@/lib/contact";
-import {
-  GOOGLE_RATING,
-  GOOGLE_REVIEW_COUNT,
-  GOOGLE_REVIEWS_URL,
-  GOOGLE_REVIEWS,
-} from "@/lib/reviews";
+import { GOOGLE_REVIEWS_URL, GOOGLE_REVIEWS } from "@/lib/reviews";
+import { getGoogleReviewStats } from "@/lib/google-reviews";
 
 export const metadata = buildMetadata({
   title: "HVAC Contractor & AC Maintenance Dubai | AGEC",
@@ -137,7 +133,9 @@ const reasons = [
   },
 ];
 
-export default function Home() {
+export default async function Home() {
+  const { rating: GOOGLE_RATING, count: GOOGLE_REVIEW_COUNT } =
+    await getGoogleReviewStats();
   return (
     <>
       <EmergencyStrip />
