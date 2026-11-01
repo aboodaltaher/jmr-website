@@ -31,13 +31,10 @@ export const GOOGLE_RATING = "5.0";
 export const GOOGLE_REVIEW_COUNT = 27;
 export const GOOGLE_REVIEWS_URL = "https://maps.app.goo.gl/fPKs5SXmDeK9Co4VA";
 
-// --- Quote turnaround (reconciled: site previously said both 24h and 48h) ---
-// TODO(owner): confirm the written-quote SLA you can reliably hit.
+// --- Quote turnaround (reconciled from the old 24h/48h mix; confirmed 24h) ---
 export const QUOTE_TURNAROUND = "within 24 hours";
 
 // --- Response / privacy copy shown under lead forms (audit item 2) ---
-// TODO(owner): confirm a response-time commitment if you want a firmer promise
-// than the 24/7 call & WhatsApp line below.
 export const FORM_RESPONSE_NOTE = "We reply on call and WhatsApp, 24/7.";
 export const FORM_PRIVACY_NOTE =
   "Your details are only used to respond to your enquiry — never shared or sold.";

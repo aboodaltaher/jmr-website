@@ -269,8 +269,6 @@ export default function AcDuctCleaningPage() {
           <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">
             Choose the clean that fits your system
           </h2>
-          {/* TODO(owner): if you want a visible price anchor on this page, supply
-              a typical "from" figure per unit / per apartment and we'll add it. */}
           <p className="mt-4 max-w-2xl text-text-muted">
             Every package includes professional disinfection and a written completion report.
             Pricing depends on the number of units and the system, so we quote after we know
