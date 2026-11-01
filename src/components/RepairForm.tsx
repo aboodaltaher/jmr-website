@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Check, Phone, MessageCircle } from "lucide-react";
 import { submitRepairRequest } from "@/app/actions";
-import { CONVERSIONS, trackConversion, pushDataLayer } from "@/lib/gtag";
+import { trackFormSubmit } from "@/lib/gtag";
 import { PHONE } from "@/lib/contact";
 
 const schema = z.object({
@@ -33,8 +33,7 @@ export function RepairForm({ whatsappHref }: { whatsappHref: string }) {
     const result = await submitRepairRequest(data);
     if (result.success) {
       setSubmitted(true);
-      trackConversion(CONVERSIONS.form);
-      pushDataLayer("submit_repair_form");
+      trackFormSubmit("repair");
     }
   };
 

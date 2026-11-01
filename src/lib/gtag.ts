@@ -53,3 +53,18 @@ export function pushDataLayer(
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({ event, ...params });
 }
+
+/**
+ * Fire a successful form submission (the "thank-you" moment): the Google Ads
+ * form conversion plus a GA4/GTM `form_submit_<type>` dataLayer event.
+ * Call only after the server action reports success.
+ */
+export function trackFormSubmit(
+  formType: "quote" | "book" | "amc" | "balancing" | "repair" | "contact",
+): void {
+  trackConversion(CONVERSIONS.form);
+  pushDataLayer(`form_submit_${formType}`, {
+    form_type: formType,
+    page_path: typeof window !== "undefined" ? window.location.pathname : "",
+  });
+}

@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Check } from "lucide-react";
 import { submitContactForm } from "@/app/actions";
-import { CONVERSIONS, trackConversion } from "@/lib/gtag";
+import { trackFormSubmit } from "@/lib/gtag";
 
 const schema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -33,7 +33,7 @@ export function ContactForm() {
     const result = await submitContactForm(data);
     if (result.success) {
       setSubmitted(true);
-      trackConversion(CONVERSIONS.form);
+      trackFormSubmit("contact");
     }
   };
 

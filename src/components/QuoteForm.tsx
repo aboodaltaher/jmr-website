@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Check } from "lucide-react";
 import { submitQuoteRequest } from "@/app/actions";
-import { CONVERSIONS, trackConversion, pushDataLayer } from "@/lib/gtag";
+import { trackFormSubmit } from "@/lib/gtag";
 
 const schema = z.object({
   name: z.string().min(1, "Full name is required"),
@@ -92,8 +92,7 @@ export function QuoteForm() {
     const result = await submitQuoteRequest(data);
     if (result.success) {
       setSubmitted(true);
-      trackConversion(CONVERSIONS.form);
-      pushDataLayer("submit_quote_form");
+      trackFormSubmit("quote");
     }
   };
 

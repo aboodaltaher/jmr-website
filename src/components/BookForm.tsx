@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Check } from "lucide-react";
 import { submitBooking } from "@/app/actions";
-import { CONVERSIONS, trackConversion, pushDataLayer } from "@/lib/gtag";
+import { trackFormSubmit } from "@/lib/gtag";
 
 const schema = z.object({
   name: z.string().min(1, "Full name is required"),
@@ -55,8 +55,7 @@ export function BookForm() {
     const result = await submitBooking(data);
     if (result.success) {
       setSubmitted(true);
-      trackConversion(CONVERSIONS.form);
-      pushDataLayer("submit_booking_form");
+      trackFormSubmit("book");
     }
   };
 
