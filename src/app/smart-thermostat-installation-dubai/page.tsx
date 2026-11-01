@@ -4,11 +4,8 @@ import Link from "next/link";
 import { RelatedServices } from "@/components/RelatedServices";
 import { InlineLeadForm } from "@/components/InlineLeadForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import {
-  GOOGLE_RATING,
-  GOOGLE_REVIEW_COUNT,
-  GOOGLE_REVIEWS_URL,
-} from "@/lib/reviews";
+import { GOOGLE_REVIEWS_URL } from "@/lib/reviews";
+import { getGoogleReviewStats } from "@/lib/google-reviews";
 import {
   ShieldCheck,
   BadgeCheck,
@@ -336,7 +333,9 @@ const eyebrowDark = "text-sm font-semibold uppercase tracking-widest text-primar
 
 /* -------------------------------- PAGE -------------------------------- */
 
-export default function SmartThermostatPage() {
+export default async function SmartThermostatPage() {
+  const { rating: GOOGLE_RATING, count: GOOGLE_REVIEW_COUNT } =
+    await getGoogleReviewStats();
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />

@@ -5,6 +5,11 @@ Measurement is wired and env-driven — just add the IDs:
 - `NEXT_PUBLIC_GA_ID` — GA4 Measurement ID (`G-XXXXXXXXXX`).
 - `NEXT_PUBLIC_GTM_ID` — Google Tag Manager container (`GTM-XXXXXXX`).
 - Google Ads tag `AW-18332305339` is already in the layout.
+- **Live Google review count/rating** (auto-updating): set
+  `GOOGLE_PLACES_API_KEY` (a Google Cloud key with **Places API (New)** enabled)
+  and `GOOGLE_PLACE_ID` (AGEC's Business Profile Place ID). The site then pulls
+  the real rating + review count from Google, cached for a day, and falls back
+  to the number in `src/lib/company.ts` if the key is missing or the call fails.
 - Search Console verification: add the `google-site-verification` meta or use
   the DNS/GA4 method (**TODO(owner):** supply the verification token if you want
   the meta-tag method and I'll add it to the root layout).

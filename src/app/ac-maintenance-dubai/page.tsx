@@ -4,12 +4,8 @@ import Link from "next/link";
 import { RelatedServices } from "@/components/RelatedServices";
 import { InlineLeadForm } from "@/components/InlineLeadForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import {
-  GOOGLE_RATING,
-  GOOGLE_REVIEW_COUNT,
-  GOOGLE_REVIEWS_URL,
-  GOOGLE_REVIEWS,
-} from "@/lib/reviews";
+import { GOOGLE_REVIEWS_URL, GOOGLE_REVIEWS } from "@/lib/reviews";
+import { getGoogleReviewStats } from "@/lib/google-reviews";
 import {
   ShieldCheck,
   BadgeCheck,
@@ -160,7 +156,9 @@ const eyebrow = "text-sm font-semibold uppercase tracking-widest text-primary";
 
 /* -------------------------------- PAGE -------------------------------- */
 
-export default function AcMaintenancePage() {
+export default async function AcMaintenancePage() {
+  const { rating: GOOGLE_RATING, count: GOOGLE_REVIEW_COUNT } =
+    await getGoogleReviewStats();
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
