@@ -245,6 +245,8 @@ export default function AcDuctCleaningPage() {
                 "@context": "https://schema.org",
                 "@type": "VideoObject",
                 name: "AC Deep Cleaning in Dubai: What We Found Inside the Unit",
+                description:
+                  "A real AC deep clean in Dubai — a clogged mesh filter and coil build-up cleaned at ceiling level, with floors protected throughout.",
                 uploadDate: "2026-11-01",
                 duration: "PT27S",
                 thumbnailUrl: "https://i.ytimg.com/vi/iKbH5yohkNw/hqdefault.jpg",
