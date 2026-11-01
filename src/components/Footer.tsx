@@ -1,5 +1,28 @@
 import Link from "next/link";
+import { MapPin } from "lucide-react";
 import { Logo } from "@/components/Logo";
+
+function InstagramIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.75}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <rect x="2" y="2" width="20" height="20" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+const INSTAGRAM_URL = "https://www.instagram.com/agec_contracting";
+const GBP_URL = "https://maps.app.goo.gl/NymgUk6cDcj8PRSL6";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -38,6 +61,26 @@ export function Footer() {
             <p className="mt-1 text-xs text-text-muted">
               AGEC Technical Services L.L.C. · Dubai Commercial Licence No. 1221573
             </p>
+            <div className="mt-4 flex items-center gap-4">
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="AGEC on Instagram"
+                className="text-text-muted hover:text-primary transition-colors"
+              >
+                <InstagramIcon className="h-5 w-5" />
+              </a>
+              <a
+                href={GBP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="AGEC on Google Maps"
+                className="text-text-muted hover:text-primary transition-colors"
+              >
+                <MapPin className="h-5 w-5" strokeWidth={1.75} />
+              </a>
+            </div>
           </div>
           <nav className="flex flex-col gap-2">
             {navLinks.map((link) => (
