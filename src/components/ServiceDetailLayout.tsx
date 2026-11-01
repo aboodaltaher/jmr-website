@@ -26,6 +26,8 @@ interface ServiceDetailLayoutProps {
   faq?: FaqItem[];
   /** Path after the domain, e.g. "services/chillers" — enables Service + BreadcrumbList schema. */
   slug?: string;
+  /** Optional inline lead form rendered just above the closing CTA band. */
+  leadForm?: React.ReactNode;
 }
 
 export function ServiceDetailLayout({
@@ -39,6 +41,7 @@ export function ServiceDetailLayout({
   whyAgec,
   faq,
   slug,
+  leadForm,
 }: ServiceDetailLayoutProps) {
   const faqSchema =
     faq && faq.length > 0
@@ -254,6 +257,23 @@ export function ServiceDetailLayout({
                   </p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Inline quick quote */}
+      {leadForm && (
+        <section className="bg-bg-soft py-16 md:py-20">
+          <div className="mx-auto max-w-3xl px-6">
+            <h2 className="text-center font-heading text-3xl font-bold md:text-4xl">
+              Get a quote for {title}
+            </h2>
+            <p className="mt-3 text-center text-text-muted">
+              Send your details and our engineering team will come back to you.
+            </p>
+            <div className="mt-8 rounded-xl border border-border bg-white p-6 md:p-8">
+              {leadForm}
             </div>
           </div>
         </section>

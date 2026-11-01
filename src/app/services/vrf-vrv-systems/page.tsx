@@ -8,6 +8,7 @@ import {
   Shield,
 } from "lucide-react";
 import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
+import { InlineLeadForm } from "@/components/InlineLeadForm";
 
 export const metadata: Metadata = {
   title: "VRF & VRV Systems Dubai | AGEC",
@@ -29,6 +30,14 @@ export default function VrfVrvSystems() {
   return (
     <ServiceDetailLayout
       slug="services/vrf-vrv-systems"
+      leadForm={
+        <InlineLeadForm
+          requestType="VRF / VRV system quote"
+          whatsappPath="/services/vrf-vrv-systems"
+          detailsLabel="Project details (optional)"
+          detailsPlaceholder="e.g. new villa fit-out, 6 zones, Dubai Hills — need design + supply + install."
+        />
+      }
       title="VRF / VRV Systems"
       heroImage="/projects/daikin-vrv-x-business-bay-dubai-rooftop-installation.jpg"
       heroImageAlt="Daikin VRV-X variable refrigerant volume system installation on rooftop in Business Bay Dubai by AGEC"
@@ -52,7 +61,7 @@ export default function VrfVrvSystems() {
             outdoor unit.
           </p>
           <p>
-            AGECdesigns and installs VRF systems from major manufacturers
+            AGEC designs and installs VRF systems from major manufacturers
             including Daikin, Mitsubishi Electric, and Carrier. We handle the
             full engineering scope: refrigerant piping layout, branch selector
             sizing, control system programming, and final commissioning with
@@ -106,11 +115,11 @@ export default function VrfVrvSystems() {
           icon: Shield,
           name: "Warranty & Support",
           description:
-            "Manufacturer-backed warranties with AGECas the certified installation partner on record. AMC options available from day one.",
+            "Manufacturer-backed warranties with AGEC as the installation partner on record. AMC options available from day one.",
         },
       ]}
       whyAgec={[
-        "Factory-trained engineers certified by Daikin, Mitsubishi Electric, and Carrier — up to 240 TR single-project capacity",
+        "Engineers experienced with Daikin, Mitsubishi Electric and Carrier VRF/VRV — up to 224 TR single-project capacity delivered",
         "30+ HVAC projects delivered across Dubai, Sharjah, and Abu Dhabi",
         "ASHRAE 111 and SMACNA compliant installation and commissioning practices",
         "Proper refrigerant piping: nitrogen-purged brazing, standing vacuum tests, and electronic leak detection on every joint",

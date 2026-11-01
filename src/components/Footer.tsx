@@ -35,6 +35,7 @@ const navLinks = [
   { href: "/smart-thermostat-installation-dubai", label: "Smart Thermostats" },
   { href: "/air-balancing-airflow-testing-dubai", label: "Air Balancing" },
   { href: "/projects", label: "Projects" },
+  { href: "/blog", label: "Insights" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -82,12 +83,12 @@ export function Footer() {
               </a>
             </div>
           </div>
-          <nav className="flex flex-col gap-2">
+          <nav className="flex flex-col gap-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm text-text-muted hover:text-text transition-colors"
+                className="inline-flex min-h-[32px] items-center text-sm text-text-muted hover:text-text transition-colors"
               >
                 {link.label}
               </Link>

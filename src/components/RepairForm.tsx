@@ -8,6 +8,7 @@ import { Check, Phone, MessageCircle } from "lucide-react";
 import { submitRepairRequest } from "@/app/actions";
 import { trackFormSubmit } from "@/lib/gtag";
 import { PHONE } from "@/lib/contact";
+import { FormAssurance } from "@/components/FormAssurance";
 
 const schema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -80,6 +81,7 @@ export function RepairForm({ whatsappHref }: { whatsappHref: string }) {
           <input
             id="rep-name"
             type="text"
+            autoComplete="name"
             {...register("name")}
             className={inputClass(!!errors.name)}
           />
@@ -94,6 +96,7 @@ export function RepairForm({ whatsappHref }: { whatsappHref: string }) {
           <input
             id="rep-phone"
             type="tel"
+            autoComplete="tel"
             {...register("phone")}
             className={inputClass(!!errors.phone)}
           />
@@ -140,6 +143,7 @@ export function RepairForm({ whatsappHref }: { whatsappHref: string }) {
       >
         {isSubmitting ? "Sending..." : "Request a Repair Visit"}
       </button>
+      <FormAssurance />
     </form>
   );
 }

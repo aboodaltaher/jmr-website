@@ -1,7 +1,8 @@
 // Central contact details and page-specific WhatsApp prefilled messages.
+// Canonical company facts live in ./company; phone is re-exported here so
+// existing `@/lib/contact` imports keep working.
 
-export const PHONE = "+971585575987";
-export const PHONE_DISPLAY = "+971 58 557 5987";
+export { PHONE, PHONE_DISPLAY } from "./company";
 
 const WA_NUMBER = "971585575987";
 

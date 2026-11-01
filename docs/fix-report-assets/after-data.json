@@ -1,0 +1,275 @@
+{
+  "lh": {
+    "/": {
+      "perf": 96,
+      "a11y": 100,
+      "bp": 96,
+      "seo": 100,
+      "lcp": "2.6 s",
+      "cls": "0"
+    },
+    "/ac-maintenance-dubai": {
+      "perf": 92,
+      "a11y": 100,
+      "bp": 96,
+      "seo": 100,
+      "lcp": "0.9 s",
+      "cls": "0"
+    },
+    "/ac-repair-dubai": {
+      "perf": 98,
+      "a11y": 100,
+      "bp": 96,
+      "seo": 100,
+      "lcp": "0.9 s",
+      "cls": "0"
+    },
+    "/ac-amc-dubai": {
+      "perf": 100,
+      "a11y": 100,
+      "bp": 96,
+      "seo": 100,
+      "lcp": "0.9 s",
+      "cls": "0"
+    },
+    "/services/maintenance": {
+      "perf": 99,
+      "a11y": 100,
+      "bp": 96,
+      "seo": 100,
+      "lcp": "0.9 s",
+      "cls": "0"
+    },
+    "/services/vrf-vrv-systems": {
+      "perf": 91,
+      "a11y": 100,
+      "bp": 96,
+      "seo": 100,
+      "lcp": "3.3 s",
+      "cls": "0"
+    },
+    "/smart-thermostat-installation-dubai": {
+      "perf": 95,
+      "a11y": 96,
+      "bp": 96,
+      "seo": 100,
+      "lcp": "0.9 s",
+      "cls": "0"
+    },
+    "/air-balancing-airflow-testing-dubai": {
+      "perf": 93,
+      "a11y": 100,
+      "bp": 96,
+      "seo": 100,
+      "lcp": "0.9 s",
+      "cls": "0"
+    },
+    "/ac-duct-cleaning-dubai": {
+      "perf": 98,
+      "a11y": 100,
+      "bp": 96,
+      "seo": 100,
+      "lcp": "0.9 s",
+      "cls": "0"
+    },
+    "/projects": {
+      "perf": 99,
+      "a11y": 100,
+      "bp": 96,
+      "seo": 100,
+      "lcp": "0.8 s",
+      "cls": "0"
+    },
+    "/about": {
+      "perf": 99,
+      "a11y": 100,
+      "bp": 96,
+      "seo": 100,
+      "lcp": "0.8 s",
+      "cls": "0"
+    },
+    "/contact": {
+      "perf": 99,
+      "a11y": 100,
+      "bp": 96,
+      "seo": 100,
+      "lcp": "0.8 s",
+      "cls": "0"
+    },
+    "/quote": {
+      "perf": 98,
+      "a11y": 100,
+      "bp": 96,
+      "seo": 100,
+      "lcp": "0.8 s",
+      "cls": "0"
+    }
+  },
+  "meta": {
+    "/": {
+      "title": "HVAC Contractor & AC Maintenance Dubai | AGEC",
+      "titleLen": 45,
+      "descLen": 123,
+      "canonical": "https://agec.ae"
+    },
+    "/ac-maintenance-dubai": {
+      "title": "AC Maintenance Dubai | AC Servicing, Repair & AMC | AGEC",
+      "titleLen": 56,
+      "descLen": 134,
+      "canonical": "https://agec.ae/ac-maintenance-dubai"
+    },
+    "/ac-repair-dubai": {
+      "title": "AC Repair Dubai | AC Technicians | AGEC",
+      "titleLen": 39,
+      "descLen": 138,
+      "canonical": "https://agec.ae/ac-repair-dubai"
+    },
+    "/ac-amc-dubai": {
+      "title": "AC AMC Dubai | Annual Maintenance Contracts | AGEC",
+      "titleLen": 50,
+      "descLen": 152,
+      "canonical": "https://agec.ae/ac-amc-dubai"
+    },
+    "/services/maintenance": {
+      "title": "Commercial HVAC Maintenance Dubai | AMC | AGEC",
+      "titleLen": 46,
+      "descLen": 136,
+      "canonical": "https://agec.ae/services/maintenance"
+    },
+    "/services/vrf-vrv-systems": {
+      "title": "VRF & VRV Systems Dubai | AGEC",
+      "titleLen": 30,
+      "descLen": 141,
+      "canonical": "https://agec.ae/services/vrf-vrv-systems"
+    },
+    "/smart-thermostat-installation-dubai": {
+      "title": "Nest & ecobee Thermostat Installation Dubai | AGEC",
+      "titleLen": 50,
+      "descLen": 140,
+      "canonical": "https://agec.ae/smart-thermostat-installation-dubai"
+    },
+    "/air-balancing-airflow-testing-dubai": {
+      "title": "Air Balancing Dubai | HVAC Airflow Testing | AGEC",
+      "titleLen": 49,
+      "descLen": 150,
+      "canonical": "https://agec.ae/air-balancing-airflow-testing-dubai"
+    },
+    "/ac-duct-cleaning-dubai": {
+      "title": "AC Duct Cleaning Dubai | Villas & Offices | AGEC",
+      "titleLen": 48,
+      "descLen": 134,
+      "canonical": "https://agec.ae/ac-duct-cleaning-dubai"
+    },
+    "/projects": {
+      "title": "HVAC Projects in Dubai & the UAE | AGEC",
+      "titleLen": 39,
+      "descLen": 138,
+      "canonical": "https://agec.ae/projects"
+    },
+    "/about": {
+      "title": "About AGEC | HVAC Contractor in Dubai",
+      "titleLen": 37,
+      "descLen": 147,
+      "canonical": "https://agec.ae/about"
+    },
+    "/contact": {
+      "title": "Contact AGEC | HVAC Services in Dubai",
+      "titleLen": 37,
+      "descLen": 146,
+      "canonical": "https://agec.ae/contact"
+    },
+    "/quote": {
+      "title": "Get a Quote or Book a Service in Dubai | AGEC",
+      "titleLen": 45,
+      "descLen": 149,
+      "canonical": "https://agec.ae/quote"
+    }
+  },
+  "axe": {
+    "/": [],
+    "/ac-maintenance-dubai": [],
+    "/ac-repair-dubai": [],
+    "/ac-amc-dubai": [],
+    "/services/maintenance": [],
+    "/services/vrf-vrv-systems": [],
+    "/smart-thermostat-installation-dubai": [
+      {
+        "id": "color-contrast",
+        "nodes": 1
+      }
+    ],
+    "/air-balancing-airflow-testing-dubai": [],
+    "/ac-duct-cleaning-dubai": [],
+    "/projects": [],
+    "/about": [],
+    "/contact": [],
+    "/quote": []
+  },
+  "hscroll": {
+    "/": {
+      "320": "ok",
+      "375": "ok",
+      "430": "ok"
+    },
+    "/ac-maintenance-dubai": {
+      "320": "ok",
+      "375": "ok",
+      "430": "ok"
+    },
+    "/ac-repair-dubai": {
+      "320": "ok",
+      "375": "ok",
+      "430": "ok"
+    },
+    "/ac-amc-dubai": {
+      "320": "ok",
+      "375": "ok",
+      "430": "ok"
+    },
+    "/services/maintenance": {
+      "320": "ok",
+      "375": "ok",
+      "430": "ok"
+    },
+    "/services/vrf-vrv-systems": {
+      "320": "ok",
+      "375": "ok",
+      "430": "ok"
+    },
+    "/smart-thermostat-installation-dubai": {
+      "320": "ok",
+      "375": "ok",
+      "430": "ok"
+    },
+    "/air-balancing-airflow-testing-dubai": {
+      "320": "ok",
+      "375": "ok",
+      "430": "ok"
+    },
+    "/ac-duct-cleaning-dubai": {
+      "320": "ok",
+      "375": "ok",
+      "430": "ok"
+    },
+    "/projects": {
+      "320": "ok",
+      "375": "ok",
+      "430": "ok"
+    },
+    "/about": {
+      "320": "ok",
+      "375": "ok",
+      "430": "ok"
+    },
+    "/contact": {
+      "320": "ok",
+      "375": "ok",
+      "430": "ok"
+    },
+    "/quote": {
+      "320": "ok",
+      "375": "ok",
+      "430": "ok"
+    }
+  }
+}

@@ -45,7 +45,7 @@ export default function Chillers() {
           </p>
           <p>
             In Dubai, air-cooled chillers must perform reliably at ambient
-            temperatures exceeding 50°C. AGECfactors in altitude, humidity,
+            temperatures exceeding 50°C. AGEC factors in altitude, humidity,
             fouling allowances, and part-load performance when selecting
             equipment. For water-cooled systems, we coordinate cooling tower
             sizing, condenser water treatment, and pump head calculations to

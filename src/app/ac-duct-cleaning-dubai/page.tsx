@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { InlineLeadForm } from "@/components/InlineLeadForm";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Check, Phone, MessageCircle, Wind, AlertCircle } from "lucide-react";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { PHONE, whatsappUrl } from "@/lib/contact";
@@ -181,6 +183,11 @@ export default function AcDuctCleaningPage() {
       </nav>
 
       {/* HERO */}
+      <div className="border-b border-border bg-bg-soft">
+        <div className="mx-auto max-w-7xl px-6 py-3">
+          <Breadcrumbs items={[{ name: "AC Duct Cleaning" }]} />
+        </div>
+      </div>
       <section className="relative overflow-hidden bg-[#13212E] text-white">
         <div
           className="pointer-events-none absolute inset-0"
@@ -262,6 +269,8 @@ export default function AcDuctCleaningPage() {
           <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">
             Choose the clean that fits your system
           </h2>
+          {/* TODO(owner): if you want a visible price anchor on this page, supply
+              a typical "from" figure per unit / per apartment and we'll add it. */}
           <p className="mt-4 max-w-2xl text-text-muted">
             Every package includes professional disinfection and a written completion report.
             Pricing depends on the number of units and the system, so we quote after we know
@@ -337,6 +346,26 @@ export default function AcDuctCleaningPage() {
           </div>
           <div className="mt-10">
             <GoogleReviewsBadge className="text-text-muted" />
+          </div>
+        </div>
+      </section>
+
+      {/* Inline quick quote */}
+      <section className="bg-bg-soft py-16 md:py-20">
+        <div className="mx-auto max-w-3xl px-6">
+          <h2 className="text-center font-heading text-3xl font-bold md:text-4xl">
+            Get a duct cleaning quote
+          </h2>
+          <p className="mt-3 text-center text-text-muted">
+            Tell us about your property and we&apos;ll come back with a price.
+          </p>
+          <div className="mt-8 rounded-xl border border-border bg-white p-6 md:p-8">
+            <InlineLeadForm
+              requestType="AC duct cleaning"
+              whatsappPath="/ac-duct-cleaning-dubai"
+              detailsLabel="Property type, units and area (optional)"
+              detailsPlaceholder="e.g. 3-bed villa, 4 AC units, Jumeirah."
+            />
           </div>
         </div>
       </section>

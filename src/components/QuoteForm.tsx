@@ -8,8 +8,10 @@ import { Check, Phone, MessageCircle } from "lucide-react";
 import { submitRequest } from "@/app/actions";
 import { trackFormSubmit } from "@/lib/gtag";
 import { PHONE, PHONE_DISPLAY, whatsappUrl } from "@/lib/contact";
+import { FormAssurance } from "@/components/FormAssurance";
 
 const requestTypes = [
+  "Emergency — AC down now",
   "AC service, repair or maintenance",
   "New installation or project quote",
   "Other enquiry",
@@ -31,7 +33,7 @@ const schema = z.object({
   phone: z.string().min(1, "Phone number is required"),
   email: z.string().email("Please enter a valid email").optional().or(z.literal("")),
   location: z.string().optional(),
-  details: z.string().min(1, "Please tell us what you need"),
+  details: z.string().optional(),
 });
 
 type FormData = z.infer<typeof schema>;
@@ -121,21 +123,21 @@ export function QuoteForm() {
           <label htmlFor="q-name" className="block text-sm font-medium mb-1.5">
             Full name <span className="text-red-500">*</span>
           </label>
-          <input id="q-name" type="text" {...register("name")} className={inputClass(!!errors.name)} />
+          <input id="q-name" type="text" autoComplete="name" {...register("name")} className={inputClass(!!errors.name)} />
           {errors.name && <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>}
         </div>
         <div>
           <label htmlFor="q-phone" className="block text-sm font-medium mb-1.5">
             Phone <span className="text-red-500">*</span>
           </label>
-          <input id="q-phone" type="tel" {...register("phone")} className={inputClass(!!errors.phone)} />
+          <input id="q-phone" type="tel" autoComplete="tel" {...register("phone")} className={inputClass(!!errors.phone)} />
           {errors.phone && <p className="mt-1 text-sm text-red-600">{errors.phone.message}</p>}
         </div>
         <div>
           <label htmlFor="q-email" className="block text-sm font-medium mb-1.5">
             Email <span className="text-text-muted">(optional)</span>
           </label>
-          <input id="q-email" type="email" {...register("email")} className={inputClass(!!errors.email)} />
+          <input id="q-email" type="email" autoComplete="email" {...register("email")} className={inputClass(!!errors.email)} />
           {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>}
         </div>
         <div>
@@ -153,7 +155,7 @@ export function QuoteForm() {
 
       <div>
         <label htmlFor="q-details" className="block text-sm font-medium mb-1.5">
-          Tell us what you need <span className="text-red-500">*</span>
+          Tell us what you need <span className="text-text-muted">(optional)</span>
         </label>
         <textarea
           id="q-details"
@@ -172,9 +174,7 @@ export function QuoteForm() {
       >
         {isSubmitting ? "Submitting..." : "Get a Quote"}
       </button>
-      <p className="text-center text-xs text-text-muted">
-        We reply on call and WhatsApp 24/7.
-      </p>
+      <FormAssurance />
     </form>
   );
 }

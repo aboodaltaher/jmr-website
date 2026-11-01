@@ -7,16 +7,17 @@ import { z } from "zod";
 import { Check, MessageCircle } from "lucide-react";
 import { submitBalancingRequest } from "@/app/actions";
 import { trackFormSubmit } from "@/lib/gtag";
+import { FormAssurance } from "@/components/FormAssurance";
 
 const schema = z.object({
   name: z.string().min(1, "Full name is required"),
-  company: z.string().min(1, "Company is required"),
   phone: z.string().min(1, "Phone number is required"),
-  email: z.string().min(1, "Email is required").email("Please enter a valid email"),
   buildingType: z.string().min(1, "Please select a building type"),
-  location: z.string().min(1, "Location / emirate is required"),
   symptom: z.string().min(1, "Please describe the symptom"),
-  drawings: z.string().min(1, "Please select an option"),
+  company: z.string().optional(),
+  email: z.string().email("Please enter a valid email").optional().or(z.literal("")),
+  location: z.string().optional(),
+  drawings: z.string().optional(),
   notes: z.string().optional(),
 });
 
@@ -75,6 +76,7 @@ export function BalancingForm({ whatsappHref }: { whatsappHref: string }) {
           <input
             id="bal-name"
             type="text"
+            autoComplete="name"
             {...register("name")}
             className={inputClass(!!errors.name)}
           />
@@ -84,17 +86,15 @@ export function BalancingForm({ whatsappHref }: { whatsappHref: string }) {
         </div>
         <div>
           <label htmlFor="bal-company" className="mb-1.5 block text-sm font-medium">
-            Company <span className="text-red-500">*</span>
+            Company <span className="text-text-muted">(optional)</span>
           </label>
           <input
             id="bal-company"
             type="text"
+            autoComplete="organization"
             {...register("company")}
             className={inputClass(!!errors.company)}
           />
-          {errors.company && (
-            <p className="mt-1 text-sm text-red-600">{errors.company.message}</p>
-          )}
         </div>
         <div>
           <label htmlFor="bal-phone" className="mb-1.5 block text-sm font-medium">
@@ -103,6 +103,7 @@ export function BalancingForm({ whatsappHref }: { whatsappHref: string }) {
           <input
             id="bal-phone"
             type="tel"
+            autoComplete="tel"
             {...register("phone")}
             className={inputClass(!!errors.phone)}
           />
@@ -112,11 +113,12 @@ export function BalancingForm({ whatsappHref }: { whatsappHref: string }) {
         </div>
         <div>
           <label htmlFor="bal-email" className="mb-1.5 block text-sm font-medium">
-            Email <span className="text-red-500">*</span>
+            Email <span className="text-text-muted">(optional)</span>
           </label>
           <input
             id="bal-email"
             type="email"
+            autoComplete="email"
             {...register("email")}
             className={inputClass(!!errors.email)}
           />
@@ -156,22 +158,20 @@ export function BalancingForm({ whatsappHref }: { whatsappHref: string }) {
         </div>
         <div>
           <label htmlFor="bal-location" className="mb-1.5 block text-sm font-medium">
-            Location / emirate <span className="text-red-500">*</span>
+            Location / emirate <span className="text-text-muted">(optional)</span>
           </label>
           <input
             id="bal-location"
             type="text"
+            autoComplete="address-level2"
             placeholder="e.g. Business Bay, Dubai"
             {...register("location")}
             className={inputClass(!!errors.location)}
           />
-          {errors.location && (
-            <p className="mt-1 text-sm text-red-600">{errors.location.message}</p>
-          )}
         </div>
         <div>
           <label htmlFor="bal-drawings" className="mb-1.5 block text-sm font-medium">
-            Drawings available? <span className="text-red-500">*</span>
+            Drawings available? <span className="text-text-muted">(optional)</span>
           </label>
           <select
             id="bal-drawings"
@@ -185,9 +185,6 @@ export function BalancingForm({ whatsappHref }: { whatsappHref: string }) {
               </option>
             ))}
           </select>
-          {errors.drawings && (
-            <p className="mt-1 text-sm text-red-600">{errors.drawings.message}</p>
-          )}
         </div>
       </div>
       <div>
@@ -222,11 +219,12 @@ export function BalancingForm({ whatsappHref }: { whatsappHref: string }) {
         disabled={isSubmitting}
         className="w-full rounded-md bg-primary px-8 py-4 font-medium text-white hover:bg-primary-dark transition-colors disabled:opacity-50"
       >
-        {isSubmitting ? "Submitting..." : "Request a Technical Assessment"}
+        {isSubmitting ? "Submitting..." : "Get a Quote"}
       </button>
       <p className="text-center text-sm text-text-muted">
         An engineer replies with next steps.
       </p>
+      <FormAssurance />
     </form>
   );
 }

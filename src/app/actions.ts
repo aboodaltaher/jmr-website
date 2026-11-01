@@ -33,7 +33,7 @@ const requestSchema = z.object({
   phone: z.string().min(1),
   email: z.string().email().optional().or(z.literal("")),
   location: z.string().optional(),
-  details: z.string().min(1),
+  details: z.string().optional(),
 });
 
 export async function submitRequest(data: Record<string, unknown>) {
@@ -71,7 +71,7 @@ export async function submitRequest(data: Record<string, unknown>) {
 const contactSchema = z.object({
   name: z.string().min(1),
   email: z.string().email(),
-  phone: z.string().optional(),
+  phone: z.string().min(1),
   subject: z.string().min(1),
   message: z.string().min(1),
 });
@@ -209,8 +209,9 @@ const amcSchema = z.object({
   name: z.string().min(1),
   phone: z.string().min(1),
   propertyType: z.string().min(1),
-  location: z.string().min(1),
-  units: z.string().min(1),
+  email: z.string().email().optional().or(z.literal("")),
+  location: z.string().optional(),
+  units: z.string().optional(),
   currentContractor: z.string().optional(),
   notes: z.string().optional(),
 });
@@ -224,6 +225,7 @@ export async function submitAmcRequest(data: Record<string, unknown>) {
     "AMC Enquiry",
     row("Name", d.name) +
       row("Phone", d.phone) +
+      row("Email", d.email) +
       row("Property Type", d.propertyType) +
       row("Area / Emirate", d.location) +
       row("Number of AC units", d.units) +
@@ -236,6 +238,7 @@ export async function submitAmcRequest(data: Record<string, unknown>) {
       from: FROM,
       to: CONTACT_EMAIL,
       subject: `AMC Enquiry - ${d.name}`,
+      replyTo: d.email || undefined,
       html,
     });
   } catch (err) {
@@ -249,13 +252,13 @@ export async function submitAmcRequest(data: Record<string, unknown>) {
 
 const balancingSchema = z.object({
   name: z.string().min(1),
-  company: z.string().min(1),
   phone: z.string().min(1),
-  email: z.string().email(),
   buildingType: z.string().min(1),
-  location: z.string().min(1),
   symptom: z.string().min(1),
-  drawings: z.string().min(1),
+  company: z.string().optional(),
+  email: z.string().email().optional().or(z.literal("")),
+  location: z.string().optional(),
+  drawings: z.string().optional(),
   notes: z.string().optional(),
 });
 
@@ -282,7 +285,7 @@ export async function submitBalancingRequest(data: Record<string, unknown>) {
       from: FROM,
       to: CONTACT_EMAIL,
       subject: `Technical Assessment Request - ${d.name}`,
-      replyTo: d.email,
+      replyTo: d.email || undefined,
       html,
     });
   } catch (err) {

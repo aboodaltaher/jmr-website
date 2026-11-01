@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { FOUNDER } from "@/lib/company";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -75,14 +77,15 @@ export default function About() {
       {/* Header */}
       <section className="bg-bg-soft py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
+          <Breadcrumbs items={[{ name: "About" }]} className="mb-6" />
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">
             About AGEC
           </p>
           <h1 className="mt-3 max-w-4xl font-heading text-5xl font-bold md:text-6xl">
-            Solutions at Your Fingertips
+            Engineering-led HVAC contracting in Dubai
           </h1>
           <p className="mt-6 max-w-3xl text-xl text-text-muted">
-            Founded in Dubai in 2022 by Mr. Mohannad Ghabboun, Altaher Ghabboun
+            Founded in Dubai in 2022 by {FOUNDER}, Altaher Ghabboun
             Engineering Contracting (AGEC) is an HVAC contracting company
             delivering expert installation, maintenance, and testing &amp;
             commissioning across the UAE.
@@ -111,7 +114,7 @@ export default function About() {
                   portfolio of 30+ completed projects ranging
                   from residential villas to data centers, commercial buildings,
                   and cultural facilities. Our largest single project has handled
-                  a 240-ton cooling capacity, and our largest contract value to
+                  a 224-ton cooling capacity, and our largest contract value to
                   date is 8.75 million AED.
                 </p>
                 <p>
@@ -186,6 +189,24 @@ export default function About() {
           >
             View all services &rarr;
           </Link>
+        </div>
+      </section>
+
+      {/* Engineer / team profile */}
+      {/* TODO(owner): supply the lead engineer's name, qualifications (e.g. BEng,
+          years of UAE HVAC experience, professional memberships) and a real
+          headshot, then replace this placeholder with the real profile. */}
+      <section className="py-16 md:py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <h2 className="font-heading text-3xl font-bold md:text-4xl">
+            The engineers behind the work
+          </h2>
+          <p className="mt-6 max-w-3xl leading-relaxed text-text-muted">
+            AGEC is led by {FOUNDER}, who founded the company in 2022. Our design
+            and commissioning work is carried out by qualified HVAC engineers with
+            UAE field experience across villas, commercial buildings and data
+            centres. Detailed engineer profiles are being prepared.
+          </p>
         </div>
       </section>
 

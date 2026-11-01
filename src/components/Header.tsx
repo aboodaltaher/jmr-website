@@ -59,16 +59,14 @@ export function Header() {
             onMouseEnter={() => setServicesOpen(true)}
             onMouseLeave={() => setServicesOpen(false)}
           >
-            <button
-              type="button"
+            <Link
+              href="/services"
               className={`flex items-center gap-1 ${linkClass}`}
-              aria-haspopup="true"
-              aria-expanded={servicesOpen}
-              onClick={() => setServicesOpen((v) => !v)}
+              onClick={closeAll}
             >
               Services
-              <ChevronDown className="h-4 w-4" />
-            </button>
+              <ChevronDown className="h-4 w-4" aria-hidden="true" />
+            </Link>
             {servicesOpen && (
               <div className="absolute left-0 top-full z-50 min-w-[220px] rounded-md border border-border bg-white py-2 shadow-lg">
                 {serviceLinks.map((link) => (
@@ -130,9 +128,13 @@ export function Header() {
               </Link>
             ))}
 
-            <p className="mt-2 pb-1 pt-2 text-xs font-semibold uppercase tracking-widest text-primary">
+            <Link
+              href="/services"
+              onClick={closeAll}
+              className="mt-2 pb-1 pt-2 text-xs font-semibold uppercase tracking-widest text-primary"
+            >
               Services
-            </p>
+            </Link>
             {serviceLinks.map((link) => (
               <Link
                 key={link.href}

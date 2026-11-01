@@ -43,7 +43,7 @@ export default function HvacDesign() {
             costs, occupant comfort, and equipment lifespan.
           </p>
           <p>
-            AGECprovides complete HVAC design services: heat load calculations
+            AGEC provides complete HVAC design services: heat load calculations
             using industry-standard software, system type selection, equipment
             specification, duct and piping layout, controls design, and
             construction documentation. We work on projects ranging from single

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Check, Phone, MessageCircle } from "lucide-react";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { RepairForm } from "@/components/RepairForm";
@@ -43,6 +44,8 @@ const faults = [
 
 const steps = [
   "We inspect and measure the system to find the root cause.",
+  // TODO(owner): if you want a visible price anchor, supply a typical call-out /
+  // diagnostic fee (e.g. "From AED X per visit") and we'll surface it here.
   "We tell you the price in writing before any work starts.",
   "We carry out the repair.",
   "We send a short report with what we measured.",
@@ -147,6 +150,11 @@ export default function AcRepairPage() {
       </nav>
 
       {/* HERO */}
+      <div className="border-b border-border bg-bg-soft">
+        <div className="mx-auto max-w-7xl px-6 py-3">
+          <Breadcrumbs items={[{ name: "AC Repair" }]} />
+        </div>
+      </div>
       <section className="relative overflow-hidden bg-[#13212E] text-white">
         <div
           className="pointer-events-none absolute inset-0"

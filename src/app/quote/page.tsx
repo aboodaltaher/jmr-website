@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
+import { Phone } from "lucide-react";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { QuoteForm } from "@/components/QuoteForm";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
+import { PHONE, PHONE_DISPLAY } from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "Get a Quote or Book a Service in Dubai | AGEC",
@@ -28,9 +31,25 @@ export default function Quote() {
           { name: "Get a Quote", path: "/quote" },
         ]}
       />
+      {/* Emergency banner */}
+      <div className="bg-text text-white">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-6 py-3 sm:flex-row">
+          <p className="text-sm font-semibold">
+            AC down right now? Don&apos;t wait on the form — call us.
+          </p>
+          <a
+            href={`tel:${PHONE}`}
+            className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark transition-colors"
+          >
+            <Phone className="h-4 w-4" /> Emergency? Call {PHONE_DISPLAY}
+          </a>
+        </div>
+      </div>
+
       {/* Header */}
       <section className="bg-bg-soft py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-6">
+          <Breadcrumbs items={[{ name: "Get a Quote" }]} className="mb-6" />
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">
             Get a Quote
           </p>
