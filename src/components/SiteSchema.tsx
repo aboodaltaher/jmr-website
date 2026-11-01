@@ -7,8 +7,8 @@ const INSTAGRAM_URL = "https://www.instagram.com/agec_contracting";
 /**
  * Site-wide Organization + LocalBusiness (HVACBusiness / GeneralContractor)
  * JSON-LD, rendered once in the root layout so it appears on every page.
- * NAP uses the confirmed public details; geo coordinates are left as a
- * TODO(owner) until the exact licensed location is supplied.
+ * NAP (name, address, phone) and geo coordinates are the confirmed public
+ * details from the Google Business Profile.
  */
 const schema = {
   "@context": "https://schema.org",
@@ -41,8 +41,7 @@ const schema = {
       parentOrganization: { "@id": `${SITE_URL}/#organization` },
       address: {
         "@type": "PostalAddress",
-        // TODO(owner): add the exact building/unit from the trade licence.
-        streetAddress: "Al Quoz Industrial Area 1",
+        streetAddress: "AlMasraf Building, Sheikh Zayed Road",
         addressLocality: "Dubai",
         addressRegion: "Dubai",
         addressCountry: "AE",

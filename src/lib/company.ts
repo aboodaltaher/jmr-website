@@ -11,9 +11,8 @@ export const PHONE_DISPLAY = "+971 58 557 5987";
 // m.ghabboun@agec.ae — a.altaher@agec.ae is the single public address.
 export const EMAIL = "a.altaher@agec.ae";
 
-// Address follows the trade licence.
-// TODO(owner): confirm exact building / unit number on the DET trade licence.
-export const ADDRESS_LINE = "Al Quoz Industrial Area 1";
+// Address (from the Google Business Profile listing).
+export const ADDRESS_LINE = "AlMasraf Building, Sheikh Zayed Road";
 export const ADDRESS_CITY = "Dubai";
 export const ADDRESS_COUNTRY = "UAE";
 export const ADDRESS_FULL = `${ADDRESS_LINE}, ${ADDRESS_CITY}, ${ADDRESS_COUNTRY}`;

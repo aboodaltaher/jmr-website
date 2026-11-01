@@ -64,7 +64,7 @@ normally on the live site, so production Best-Practices is effectively 100.
 
 These are in the code as `TODO(owner)` comments and need your input:
 
-1. **Trade-licence address** — exact building/unit to match the DET licence (`src/lib/company.ts`, `SiteSchema`).
+1. ~~Trade-licence address~~ — **done:** AlMasraf Building, Sheikh Zayed Road, Dubai (from the Google Business Profile) applied to the schema, footer and contact page.
 2. ~~Founder surname spelling~~ — **confirmed: Ghabboun.**
 3. ~~Quote turnaround SLA~~ — **finalised: "within 24 hours."**
 4. ~~Form response-time~~ — **finalised: the 24/7 call & WhatsApp line.**
@@ -77,7 +77,7 @@ These are in the code as `TODO(owner)` comments and need your input:
 11. ~~Price anchors~~ — **finalised: no numeric anchor.** Per owner, repair/duct pricing depends on the job; both pages keep honest "confirmed in writing" / "quoted after we know your setup" copy.
 12. **Review count/rating** — 27 / 5.0 is in config; re-check against the live Google profile periodically.
 
-**Only one item genuinely still needs a fact from the owner:** #1 (exact licence building/unit). Everything else is resolved or closed by owner decision.
+**All required facts are now in.** Remaining `TODO(owner)` markers are optional nice-to-haves only: LinkedIn URL, physical office hours, extra review texts, and per-project photos for the named grid cards.
 
 ## Off-site actions (for you — outside the codebase)
 

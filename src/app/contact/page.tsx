@@ -95,7 +95,7 @@ export default function Contact() {
                     <div>
                       <p className="text-sm font-medium">Location</p>
                       <p className="text-sm text-text-muted">
-                        Al Quoz Industrial Area 1, Dubai, UAE
+                        AlMasraf Building, Sheikh Zayed Road, Dubai, UAE
                       </p>
                     </div>
                   </div>
@@ -143,7 +143,7 @@ export default function Contact() {
             />
           </div>
           <p className="mt-3 text-sm text-text-muted">
-            Al Quoz Industrial Area 1, Dubai, UAE ·{" "}
+            AlMasraf Building, Sheikh Zayed Road, Dubai, UAE ·{" "}
             <a
               href="https://maps.app.goo.gl/fPKs5SXmDeK9Co4VA"
               target="_blank"

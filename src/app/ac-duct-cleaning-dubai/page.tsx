@@ -137,7 +137,7 @@ const serviceSchema = {
     email: "a.altaher@agec.ae",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Al Quoz Industrial Area 1",
+      streetAddress: "AlMasraf Building, Sheikh Zayed Road",
       addressLocality: "Dubai",
       addressCountry: "AE",
     },
