@@ -72,8 +72,8 @@ These are in the code as `TODO(owner)` comments and need your input:
 6. ~~Total projects delivered~~ — **confirmed: 32.**
 7. **Projects without capacity** — 18 Villas, MBZ-AI Server Room, Pure Gym, AVE Restaurant, Zain Data Center, Cultural Center. Supply TR/ton figures.
 8. ~~140-ton Al Barsha villa~~ — **confirmed: 140-ton single villa.**
-9. **Real project photos** — needed to un-hide the project cards' image area.
-10. **Engineer profiles** — names, qualifications, headshots for the About page.
+9. **Real project photos** — _partially done:_ 4 real photos added as a "Recent work" gallery on /projects. Per-project photos for the named grid cards are still welcome.
+10. ~~Engineer profile~~ — **done:** Mohannad Ghabboun profile + headshot on /about (10+ yrs, DM-approved engineer, Expo 2020 Parcels HVAC lead).
 11. **Price anchors** — optional "from" figures for /ac-repair-dubai (call-out/diagnostic fee) and /ac-duct-cleaning-dubai.
 12. **Review count/rating** — 27 / 5.0 is in config; re-check against the live Google profile periodically.
 

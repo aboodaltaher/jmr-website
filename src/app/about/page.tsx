@@ -193,20 +193,57 @@ export default function About() {
       </section>
 
       {/* Engineer / team profile */}
-      {/* TODO(owner): supply the lead engineer's name, qualifications (e.g. BEng,
-          years of UAE HVAC experience, professional memberships) and a real
-          headshot, then replace this placeholder with the real profile. */}
       <section className="py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
           <h2 className="font-heading text-3xl font-bold md:text-4xl">
-            The engineers behind the work
+            The engineer behind the work
           </h2>
-          <p className="mt-6 max-w-3xl leading-relaxed text-text-muted">
-            AGEC is led by {FOUNDER}, who founded the company in 2022. Our design
-            and commissioning work is carried out by qualified HVAC engineers with
-            UAE field experience across villas, commercial buildings and data
-            centres. Detailed engineer profiles are being prepared.
-          </p>
+          <div className="mt-10 grid items-start gap-10 lg:grid-cols-[320px_1fr]">
+            <div className="relative mx-auto w-full max-w-[320px] overflow-hidden rounded-xl bg-bg-soft">
+              <Image
+                src="/team/mohannad-ghabboun-agec.jpg"
+                alt="Mohannad Ghabboun, Founder and Lead HVAC Engineer at AGEC"
+                width={800}
+                height={1120}
+                className="h-auto w-full object-cover"
+                sizes="(max-width: 1024px) 320px, 320px"
+              />
+            </div>
+            <div>
+              <h3 className="font-heading text-2xl font-bold">{FOUNDER}</h3>
+              <p className="mt-1 font-medium text-primary">
+                Founder &amp; Lead HVAC Engineer · Dubai Municipality approved engineer
+              </p>
+              <div className="mt-5 space-y-4 leading-relaxed text-text-muted">
+                <p>
+                  {FOUNDER} founded AGEC in 2022 and leads its engineering. He
+                  brings more than 10 years of HVAC experience in the UAE, across
+                  design, installation, testing and commissioning for villas,
+                  commercial buildings and critical facilities.
+                </p>
+                <p>
+                  He led HVAC works on the Parcels at Expo 2020 Dubai — one of the
+                  region&apos;s largest and most demanding developments — managing
+                  installation and commissioning to programme and specification. As
+                  a Dubai Municipality approved engineer, he signs off AGEC&apos;s
+                  work to UAE engineering standards.
+                </p>
+              </div>
+              <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+                {[
+                  "10+ years UAE HVAC experience",
+                  "Dubai Municipality approved engineer",
+                  "HVAC lead — Expo 2020 Dubai (the Parcels)",
+                  "Heat load, VRF/VRV, chillers & TAB specialist",
+                ].map((item) => (
+                  <li key={item} className="flex gap-2 text-sm text-text">
+                    <Award className="mt-0.5 h-5 w-5 shrink-0 text-primary" strokeWidth={1.75} />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
