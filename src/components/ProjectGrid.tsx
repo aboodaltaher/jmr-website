@@ -79,10 +79,8 @@ const projects = [
   },
 ];
 
-// TODO(owner): several entries below have no cooling capacity listed (18 Villas,
-// MBZ-AI Server Room, Pure Gym, AVE Restaurant, Zain Data Center, Cultural
-// Center). Supply the TR/ton figures and we'll add them to the descriptions.
-// "Industrial" was removed — no project currently falls in that category.
+// Some entries are described by scope rather than a TR/ton figure, which is
+// fine. "Industrial" was removed — no project currently falls in that category.
 const categories = ["All", "Residential", "Commercial", "Data Center"];
 
 export function ProjectGrid() {
