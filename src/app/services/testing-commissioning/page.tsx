@@ -12,7 +12,7 @@ import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
 export const metadata = buildMetadata({
   title: "HVAC Testing & Commissioning Dubai | AGEC",
   description:
-    "Independent testing, commissioning and air balancing to design values with documented reports.",
+    "Independent HVAC testing, commissioning and air balancing in Dubai — systems proven to design values with documented, signed handover reports.",
   path: "/services/testing-commissioning",
 });
 

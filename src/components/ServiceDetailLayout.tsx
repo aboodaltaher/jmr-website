@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Check, type LucideIcon } from "lucide-react";
+import { RelatedServices } from "@/components/RelatedServices";
 
 interface Capability {
   icon: LucideIcon;
@@ -261,6 +262,8 @@ export function ServiceDetailLayout({
           </div>
         </section>
       )}
+
+      <RelatedServices currentPath={url ? `/${slug}` : undefined} />
 
       {/* Inline quick quote */}
       {leadForm && (

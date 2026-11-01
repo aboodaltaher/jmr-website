@@ -1,6 +1,7 @@
 import { buildMetadata } from "@/lib/metadata";
 import Image from "next/image";
 import Link from "next/link";
+import { RelatedServices } from "@/components/RelatedServices";
 import { InlineLeadForm } from "@/components/InlineLeadForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import {
@@ -784,6 +785,8 @@ export default function SmartThermostatPage() {
           </div>
         </div>
       </section>
+
+      <RelatedServices currentPath="/smart-thermostat-installation-dubai" />
 
       {/* FINAL CTA */}
       <section className="bg-primary py-16 text-center text-white md:py-20">

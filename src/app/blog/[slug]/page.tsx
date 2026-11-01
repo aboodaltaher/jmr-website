@@ -7,6 +7,7 @@ import remarkGfm from "remark-gfm";
 import { Phone, MessageCircle } from "lucide-react";
 import { getAllSlugs, getPostBySlug, formatDate } from "@/lib/blog";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
+import { RelatedServices } from "@/components/RelatedServices";
 
 const SITE_URL = "https://agec.ae";
 
@@ -446,6 +447,8 @@ export default async function ArticlePage({
           )}
         </div>
       </section>
+
+      <RelatedServices limit={3} heading="Explore our HVAC services" />
 
       {/* Related Reading */}
       <section className="border-t border-border py-16 md:py-20">

@@ -12,7 +12,7 @@ import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
 export const metadata = buildMetadata({
   title: "Chiller Systems | AGEC",
   description:
-    "Air-cooled and water-cooled chiller installation, piping design, and commissioning in Dubai. Complete chiller plant engineering for commercial and industrial buildings.",
+    "Air-cooled and water-cooled chiller installation, piping design and commissioning in Dubai — chiller-plant engineering for commercial and industrial buildings.",
   path: "/services/chillers",
 });
 

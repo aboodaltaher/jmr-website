@@ -65,6 +65,34 @@ export default function About() {
           { name: "About", path: "/about" },
         ]}
       />
+      {/* Founder — Person schema, matching the visible profile below. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: FOUNDER,
+            jobTitle: "Founder & Lead HVAC Engineer",
+            worksFor: {
+              "@type": "Organization",
+              name: "AGEC Technical Services",
+              url: "https://agec.ae",
+            },
+            image: "https://agec.ae/team/mohannad-ghabboun-agec.jpg",
+            url: "https://agec.ae/about",
+            description:
+              "Founder and Lead HVAC Engineer at AGEC. Dubai Municipality approved engineer with more than 10 years of UAE HVAC experience; led HVAC works on the Parcels at Expo 2020 Dubai.",
+            knowsAbout: [
+              "HVAC design",
+              "VRF/VRV systems",
+              "Chillers",
+              "Testing, Adjusting & Balancing",
+              "AC maintenance",
+            ],
+          }),
+        }}
+      />
       {/* Header */}
       <section className="bg-bg-soft py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6">

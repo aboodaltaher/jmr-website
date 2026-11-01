@@ -1,6 +1,7 @@
 import { buildMetadata } from "@/lib/metadata";
 import Image from "next/image";
 import Link from "next/link";
+import { RelatedServices } from "@/components/RelatedServices";
 import { InlineLeadForm } from "@/components/InlineLeadForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import {
@@ -326,6 +327,8 @@ export default function Maintenance() {
           </div>
         </div>
       </section>
+
+      <RelatedServices currentPath="/services/maintenance" />
 
       {/* CTA BAND */}
       <section className="bg-primary py-16 md:py-20">

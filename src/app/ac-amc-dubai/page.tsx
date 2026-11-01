@@ -1,5 +1,6 @@
 import { buildMetadata } from "@/lib/metadata";
 import Link from "next/link";
+import { RelatedServices } from "@/components/RelatedServices";
 import { Check, Phone, MessageCircle } from "lucide-react";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { AmcForm } from "@/components/AmcForm";
@@ -547,6 +548,8 @@ export default function AcAmcPage() {
           </div>
         </div>
       </section>
+
+      <RelatedServices currentPath="/ac-amc-dubai" />
 
       {/* CTA */}
       <section className="bg-primary py-14">

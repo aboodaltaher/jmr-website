@@ -123,10 +123,10 @@ export default function Contact() {
         <div className="mx-auto max-w-7xl px-6">
           <h2 className="font-heading text-3xl font-bold">Visit us</h2>
           <div className="mt-6 overflow-hidden rounded-lg border border-border">
-            {/* TODO: replace with the exact Google Business Profile embed URL once the profile name is updated */}
+            {/* Pinned to AGEC's confirmed coordinates (matches the LocalBusiness schema). */}
             <iframe
               title="AGEC Technical Services location on Google Maps"
-              src="https://www.google.com/maps?q=AGEC+Technical+Services,+Al+Quoz+Industrial+Area+1,+Dubai&z=16&output=embed"
+              src="https://www.google.com/maps?q=25.1431543,55.2210657&z=16&output=embed"
               className="h-80 w-full border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
@@ -136,7 +136,7 @@ export default function Contact() {
           <p className="mt-3 text-sm text-text-muted">
             AlMasraf Building, Sheikh Zayed Road, Dubai, UAE ·{" "}
             <a
-              href="https://maps.app.goo.gl/fPKs5SXmDeK9Co4VA"
+              href="https://maps.app.goo.gl/NymgUk6cDcj8PRSL6"
               target="_blank"
               rel="noopener noreferrer"
               className="font-semibold text-primary hover:underline"

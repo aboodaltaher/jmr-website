@@ -1,6 +1,7 @@
 import { buildMetadata } from "@/lib/metadata";
 import Image from "next/image";
 import Link from "next/link";
+import { RelatedServices } from "@/components/RelatedServices";
 import { InlineLeadForm } from "@/components/InlineLeadForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Check, Phone, MessageCircle, Wind, AlertCircle } from "lucide-react";
@@ -356,6 +357,8 @@ export default function AcDuctCleaningPage() {
           </div>
         </div>
       </section>
+
+      <RelatedServices currentPath="/ac-duct-cleaning-dubai" />
 
       {/* CTA BAND */}
       <section className="bg-primary py-16 md:py-20">

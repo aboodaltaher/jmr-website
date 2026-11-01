@@ -3,6 +3,7 @@ import path from "path";
 import { buildMetadata } from "@/lib/metadata";
 import Image from "next/image";
 import Link from "next/link";
+import { RelatedServices } from "@/components/RelatedServices";
 import { Check, Phone, MessageCircle } from "lucide-react";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { BalancingForm } from "@/components/BalancingForm";
@@ -421,6 +422,8 @@ export default function AirBalancingPage() {
           </div>
         </div>
       </section>
+
+      <RelatedServices currentPath="/air-balancing-airflow-testing-dubai" />
 
       {/* CTA */}
       <section className="bg-primary py-14">
