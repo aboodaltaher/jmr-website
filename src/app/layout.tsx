@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Inter, Saira_Condensed } from "next/font/google";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { WhatsAppButton } from "@/components/WhatsAppButton";
-import { StickyContactBar } from "@/components/StickyContactBar";
+import { Inter, Saira_Condensed, Cairo } from "next/font/google";
+import { SiteFrame } from "@/components/SiteFrame";
 import { Analytics, GtmNoScript } from "@/components/Analytics";
 import { ConversionTracking } from "@/components/ConversionTracking";
 import { GA_ADS_ID } from "@/lib/gtag";
@@ -19,6 +16,11 @@ const saira = Saira_Condensed({
   variable: "--font-saira",
   weight: ["500", "600", "700"],
   subsets: ["latin"],
+});
+
+const cairo = Cairo({
+  variable: "--font-arabic",
+  subsets: ["arabic"],
 });
 
 export const metadata: Metadata = {
@@ -46,7 +48,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${saira.variable}`}>
+    <html
+      lang="en"
+      className={`${inter.variable} ${saira.variable} ${cairo.variable}`}
+    >
       <body className="min-h-screen flex flex-col antialiased pb-16 md:pb-0">
         <GtmNoScript />
         {/* Google tag (gtag.js) — Google Ads */}
@@ -61,11 +66,7 @@ gtag('js', new Date());
 gtag('config', '${GA_ADS_ID}');`}
         </Script>
         <Analytics />
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <WhatsAppButton />
-        <StickyContactBar />
+        <SiteFrame>{children}</SiteFrame>
         <ConversionTracking />
       </body>
     </html>

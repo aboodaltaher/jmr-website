@@ -12,7 +12,14 @@ export const metadata: Metadata = {
   title: "AC Repair Dubai | AC Technicians | AGEC",
   description:
     "AC not cooling, leaking or tripping? AGEC engineers find the root cause, quote in writing first and report every repair. Call or WhatsApp.",
-  alternates: { canonical: ROUTE },
+  alternates: {
+    canonical: ROUTE,
+    languages: {
+      en: `${SITE_URL}${ROUTE}`,
+      ar: `${SITE_URL}/ar/ac-repair-dubai`,
+      "x-default": `${SITE_URL}${ROUTE}`,
+    },
+  },
   openGraph: {
     title: "AC Repair Dubai | AC Technicians | AGEC",
     description:

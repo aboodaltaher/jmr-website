@@ -91,6 +91,10 @@ export function Header() {
             </Link>
           ))}
 
+          <Link href="/ar" lang="ar" className={`${linkClass} font-semibold`}>
+            العربية
+          </Link>
+
           <Link
             href="/quote"
             className="rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark transition-colors"
@@ -151,6 +155,15 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
+
+            <Link
+              href="/ar"
+              lang="ar"
+              onClick={closeAll}
+              className="py-2.5 text-base font-semibold text-primary hover:underline"
+            >
+              العربية
+            </Link>
 
             <Link
               href="/quote"
