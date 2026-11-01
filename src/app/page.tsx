@@ -153,6 +153,7 @@ export default function Home() {
           src="/projects/daikin-vrv-x-business-bay-dubai-rooftop-installation.jpg"
           alt="Daikin VRV-X variable refrigerant volume system installation on rooftop in Business Bay Dubai by AGEC"
           fill
+          sizes="100vw"
           className="object-cover"
           priority
         />
