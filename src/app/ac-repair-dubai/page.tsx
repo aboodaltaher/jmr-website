@@ -44,8 +44,6 @@ const faults = [
 
 const steps = [
   "We inspect and measure the system to find the root cause.",
-  // TODO(owner): if you want a visible price anchor, supply a typical call-out /
-  // diagnostic fee (e.g. "From AED X per visit") and we'll surface it here.
   "We tell you the price in writing before any work starts.",
   "We carry out the repair.",
   "We send a short report with what we measured.",

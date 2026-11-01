@@ -66,16 +66,18 @@ These are in the code as `TODO(owner)` comments and need your input:
 
 1. **Trade-licence address** — exact building/unit to match the DET licence (`src/lib/company.ts`, `SiteSchema`).
 2. ~~Founder surname spelling~~ — **confirmed: Ghabboun.**
-3. **Quote turnaround SLA** — set to "within 24 hours"; confirm you can hit it (or change it).
-4. **Form response-time** — currently the 24/7 call & WhatsApp line; supply a firmer SLA if you want one.
+3. ~~Quote turnaround SLA~~ — **finalised: "within 24 hours."**
+4. ~~Form response-time~~ — **finalised: the 24/7 call & WhatsApp line.**
 5. ~~Largest project capacity~~ — **confirmed: 240 TR.**
 6. ~~Total projects delivered~~ — **confirmed: 32.**
-7. **Projects without capacity** — 18 Villas, MBZ-AI Server Room, Pure Gym, AVE Restaurant, Zain Data Center, Cultural Center. Supply TR/ton figures.
+7. **Projects without capacity** — 18 Villas, MBZ-AI Server Room, Pure Gym, AVE Restaurant, Zain Data Center, Cultural Center. Supply TR/ton figures (needs owner data).
 8. ~~140-ton Al Barsha villa~~ — **confirmed: 140-ton single villa.**
 9. **Real project photos** — _partially done:_ 4 real photos added as a "Recent work" gallery on /projects. Per-project photos for the named grid cards are still welcome.
 10. ~~Engineer profile~~ — **done:** Mohannad Ghabboun profile + headshot on /about (10+ yrs, DM-approved engineer, Expo 2020 Parcels HVAC lead).
-11. **Price anchors** — optional "from" figures for /ac-repair-dubai (call-out/diagnostic fee) and /ac-duct-cleaning-dubai.
+11. ~~Price anchors~~ — **finalised: no numeric anchor.** Per owner, repair/duct pricing depends on the job; both pages keep honest "confirmed in writing" / "quoted after we know your setup" copy.
 12. **Review count/rating** — 27 / 5.0 is in config; re-check against the live Google profile periodically.
+
+**Only two items genuinely still need a fact from the owner:** #1 (exact licence building/unit) and #7 (capacities for 6 projects). Everything else is resolved.
 
 ## Off-site actions (for you — outside the codebase)
 
