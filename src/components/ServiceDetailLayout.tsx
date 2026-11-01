@@ -274,7 +274,7 @@ export function ServiceDetailLayout({
           <div className="mt-4">
             <a
               href="tel:+971585575987"
-              className="text-sm font-medium text-white/80 hover:text-white transition-colors"
+              className="text-sm font-medium text-white hover:underline transition-colors"
             >
               Or call +971 58 557 5987
             </a>

@@ -1,5 +1,5 @@
 export function Logo({ variant = "light" }: { variant?: "dark" | "light" }) {
-  const mark = "#D4762E";
+  const mark = "#A8571A";
   const word = variant === "dark" ? "#F5F6F7" : "#13212E";
   const rule = variant === "dark" ? "#8A929A66" : "#E2E1DC";
   const desc = variant === "dark" ? "#A7AEB5" : "#5B6775";

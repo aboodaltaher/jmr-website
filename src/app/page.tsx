@@ -485,7 +485,7 @@ export default function Home() {
           <h2 className="font-heading text-4xl font-bold text-white">
             Ready to start your project?
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-lg text-white/80">
+          <p className="mx-auto mt-4 max-w-xl text-lg text-white">
             Get a free quotation from our engineering team. Most quotes returned
             within 48 hours.
           </p>
@@ -498,7 +498,7 @@ export default function Home() {
           <div className="mt-4">
             <Link
               href="/book"
-              className="text-sm font-medium text-white/80 hover:text-white transition-colors"
+              className="text-sm font-medium text-white hover:underline transition-colors"
             >
               Or book a service &rarr;
             </Link>

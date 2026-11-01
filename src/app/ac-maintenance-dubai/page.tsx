@@ -408,7 +408,7 @@ export default function AcMaintenancePage() {
       <section className="bg-primary py-16 text-center text-white md:py-20">
         <div className="mx-auto max-w-3xl px-6">
           <h2 className="font-heading text-3xl font-bold text-white md:text-4xl">Book Your AC Service Today</h2>
-          <p className="mt-5 text-lg text-white/85">Keep your AC cooling and your bills down. Same-day and emergency service available across Dubai and the UAE.</p>
+          <p className="mt-5 text-lg text-white">Keep your AC cooling and your bills down. Same-day and emergency service available across Dubai and the UAE.</p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <a href={`tel:${PHONE}`} className="inline-flex items-center gap-2 rounded-md bg-white px-7 py-4 font-semibold text-primary hover:bg-white/90 transition-colors"><Phone className="h-4 w-4" /> Call {PHONE_DISPLAY}</a>
             <a href={WA} className="inline-flex items-center gap-2 rounded-md bg-[#13212E] px-7 py-4 font-semibold text-white hover:bg-[#0f1a24] transition-colors"><MessageCircle className="h-4 w-4" /> WhatsApp Us</a>

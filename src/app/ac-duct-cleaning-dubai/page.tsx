@@ -355,7 +355,7 @@ export default function AcDuctCleaningPage() {
               <MessageCircle className="h-4 w-4" /> WhatsApp Photos of Your Vents
             </a>
           </div>
-          <p className="mt-4 text-sm text-white/80">
+          <p className="mt-4 text-sm text-white">
             Or call{" "}
             <a href={`tel:${PHONE}`} className="font-semibold text-white hover:underline">
               +971 58 557 5987
