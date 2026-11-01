@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
 import Image from "next/image";
 import Link from "next/link";
 import { InlineLeadForm } from "@/components/InlineLeadForm";
@@ -10,28 +10,17 @@ import { PHONE, whatsappUrl } from "@/lib/contact";
 const SITE_URL = "https://agec.ae";
 const ROUTE = "/ac-duct-cleaning-dubai";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "AC Duct Cleaning Dubai | Villas & Offices | AGEC",
   description:
     "Full duct, coil and drain cleaning with disinfection and a written completion report. Villas, apartments and offices. Request a quote.",
-  alternates: {
-    canonical: ROUTE,
-    languages: {
-      en: `${SITE_URL}${ROUTE}`,
-      ar: `${SITE_URL}/ar/ac-duct-cleaning-dubai`,
-      "x-default": `${SITE_URL}${ROUTE}`,
-    },
+  path: ROUTE,
+  languages: {
+    en: `${SITE_URL}${ROUTE}`,
+    ar: `${SITE_URL}/ar/ac-duct-cleaning-dubai`,
+    "x-default": `${SITE_URL}${ROUTE}`,
   },
-  openGraph: {
-    images: ["/og-image.png"],
-    title: "AC Duct Cleaning Dubai | Villas & Offices | AGEC",
-    description:
-      "Full duct, coil and drain cleaning with disinfection and a written completion report. Villas, apartments and offices. Request a quote.",
-    url: `${SITE_URL}${ROUTE}`,
-    siteName: "AGEC",
-    type: "website",
-  },
-};
+});
 
 const eyebrow = "text-sm font-semibold uppercase tracking-widest text-primary";
 

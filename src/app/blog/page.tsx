@@ -1,24 +1,15 @@
-import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
 import Image from "next/image";
 import Link from "next/link";
 import { getAllPosts, formatDate } from "@/lib/blog";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "Insights & Engineering Guides | AGEC",
   description:
     "HVAC engineering guides, system comparisons, and practical advice from AGEC — based on real project experience across Dubai, Sharjah, and Abu Dhabi.",
-  alternates: { canonical: "/blog" },
-  openGraph: {
-    images: ["/og-image.png"],
-    title: "Insights & Engineering Guides | AGEC",
-    description:
-      "HVAC engineering guides, system comparisons, and practical advice from AGEC — based on real project experience across Dubai, Sharjah, and Abu Dhabi.",
-    url: "https://agec.ae/blog",
-    siteName: "AGEC",
-    type: "website",
-  },
-};
+  path: "/blog",
+});
 
 export default function BlogIndex() {
   const posts = getAllPosts();

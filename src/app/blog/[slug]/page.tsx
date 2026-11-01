@@ -205,9 +205,17 @@ export async function generateMetadata({
       title: post.titleTag || `${post.title} | AGEC`,
       description: post.description,
       url,
+      siteName: "AGEC",
+      locale: "en_AE",
       type: "article",
       publishedTime: post.date,
       images: [{ url: `${SITE_URL}${post.image}` }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.titleTag || `${post.title} | AGEC`,
+      description: post.description,
+      images: [`${SITE_URL}${post.image}`],
     },
   };
 }

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
 import {
   PenLine,
   Droplets,
@@ -9,21 +9,12 @@ import {
 } from "lucide-react";
 import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "Chiller Systems | AGEC",
   description:
     "Air-cooled and water-cooled chiller installation, piping design, and commissioning in Dubai. Complete chiller plant engineering for commercial and industrial buildings.",
-  alternates: { canonical: "/services/chillers" },
-  openGraph: {
-    images: ["/og-image.png"],
-    title: "Chiller Systems | AGEC",
-    description:
-      "Air-cooled and water-cooled chiller installation, piping design, and commissioning in Dubai. Complete chiller plant engineering for commercial and industrial buildings.",
-    url: "https://agec.ae/services/chillers",
-    siteName: "AGEC",
-    type: "website",
-  },
-};
+  path: "/services/chillers",
+});
 
 export default function Chillers() {
   return (

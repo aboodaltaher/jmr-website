@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
 import {
   Calculator,
   PenLine,
@@ -9,21 +9,12 @@ import {
 } from "lucide-react";
 import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "HVAC Design & Consultancy | AGEC",
   description:
     "HVAC system design, heat load calculations, duct sizing, and MEP coordination in Dubai. Engineering documentation from concept through construction.",
-  alternates: { canonical: "/services/hvac-design" },
-  openGraph: {
-    images: ["/og-image.png"],
-    title: "HVAC Design & Consultancy | AGEC",
-    description:
-      "HVAC system design, heat load calculations, duct sizing, and MEP coordination in Dubai. Engineering documentation from concept through construction.",
-    url: "https://agec.ae/services/hvac-design",
-    siteName: "AGEC",
-    type: "website",
-  },
-};
+  path: "/services/hvac-design",
+});
 
 export default function HvacDesign() {
   return (

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { Check, Phone, MessageCircle } from "lucide-react";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
@@ -10,28 +10,17 @@ import { PHONE, whatsappUrl } from "@/lib/contact";
 const SITE_URL = "https://agec.ae";
 const ROUTE = "/ac-amc-dubai";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "AC AMC Dubai | Annual Maintenance Contracts | AGEC",
   description:
     "AC annual maintenance contracts for Dubai and UAE villas, apartments and offices: scheduled visits, written reports, priority repairs. Get an AMC quote.",
-  alternates: {
-    canonical: ROUTE,
-    languages: {
-      en: `${SITE_URL}${ROUTE}`,
-      ar: `${SITE_URL}/ar/ac-amc-dubai`,
-      "x-default": `${SITE_URL}${ROUTE}`,
-    },
+  path: ROUTE,
+  languages: {
+    en: `${SITE_URL}${ROUTE}`,
+    ar: `${SITE_URL}/ar/ac-amc-dubai`,
+    "x-default": `${SITE_URL}${ROUTE}`,
   },
-  openGraph: {
-    images: ["/og-image.png"],
-    title: "AC AMC Dubai | Annual Maintenance Contracts | AGEC",
-    description:
-      "AC annual maintenance contracts for Dubai and UAE villas, apartments and offices: scheduled visits, written reports, priority repairs. Get an AMC quote.",
-    url: `${SITE_URL}${ROUTE}`,
-    siteName: "AGEC",
-    type: "website",
-  },
-};
+});
 
 // Owner-supplied values. Empty values are hidden on the live page (never shown
 // as [BRACKETS]). Fill these in to reveal the matching lines/rows.

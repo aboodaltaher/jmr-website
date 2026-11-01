@@ -1,32 +1,25 @@
-import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
 import { Phone, MessageCircle, Check } from "lucide-react";
 import { PHONE, PHONE_DISPLAY, whatsappUrl } from "@/lib/contact";
 
 const SITE_URL = "https://agec.ae";
 const ROUTE = "/ar/ac-repair-dubai";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "إصلاح مكيفات في دبي | فنيّو تكييف | AGEC",
   description:
     "المكيف لا يبرّد أو يسرّب أو يفصل الكهرباء؟ مهندسو AGEC يحدّدون السبب الجذري، ويعطونك السعر كتابةً قبل البدء. اتصل أو راسلنا على واتساب.",
-  alternates: {
-    canonical: ROUTE,
-    languages: {
-      en: `${SITE_URL}/ac-repair-dubai`,
-      ar: `${SITE_URL}${ROUTE}`,
-      "x-default": `${SITE_URL}/ac-repair-dubai`,
-    },
+  path: ROUTE,
+  locale: "ar_AE",
+  ogTitle: "إصلاح مكيفات في دبي | AGEC",
+  ogDescription:
+    "تشخيص هندسي للعطل، وسعر كتابي قبل البدء، وتقرير بعد الإصلاح. استجابة خلال ساعة.",
+  languages: {
+    en: `${SITE_URL}/ac-repair-dubai`,
+    ar: `${SITE_URL}${ROUTE}`,
+    "x-default": `${SITE_URL}/ac-repair-dubai`,
   },
-  openGraph: {
-    images: ["/og-image.png"],
-    title: "إصلاح مكيفات في دبي | AGEC",
-    description:
-      "تشخيص هندسي للعطل، وسعر كتابي قبل البدء، وتقرير بعد الإصلاح. استجابة خلال ساعة.",
-    url: `${SITE_URL}${ROUTE}`,
-    siteName: "AGEC",
-    type: "website",
-  },
-};
+});
 
 const eyebrow = "text-sm font-semibold tracking-widest text-primary";
 

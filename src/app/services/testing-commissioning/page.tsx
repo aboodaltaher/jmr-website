@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
 import {
   Gauge,
   Droplets,
@@ -9,21 +9,12 @@ import {
 } from "lucide-react";
 import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "HVAC Testing & Commissioning Dubai | AGEC",
   description:
     "Independent testing, commissioning and air balancing to design values with documented reports.",
-  alternates: { canonical: "/services/testing-commissioning" },
-  openGraph: {
-    images: ["/og-image.png"],
-    title: "HVAC Testing & Commissioning Dubai | AGEC",
-    description:
-      "Independent testing, commissioning and air balancing to design values with documented reports.",
-    url: "https://agec.ae/services/testing-commissioning",
-    siteName: "AGEC",
-    type: "website",
-  },
-};
+  path: "/services/testing-commissioning",
+});
 
 export default function TestingCommissioning() {
   return (

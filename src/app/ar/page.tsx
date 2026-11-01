@@ -1,28 +1,21 @@
-import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { Phone, MessageCircle, Clock, ShieldCheck, MapPin, Award, Wrench, CalendarCheck } from "lucide-react";
 import { PHONE, PHONE_DISPLAY, whatsappUrl } from "@/lib/contact";
 
 const SITE_URL = "https://agec.ae";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "تكييف وتهوية في دبي | تركيب وصيانة وإصلاح | AGEC",
   description:
     "AGEC للخدمات الفنية في دبي: تركيب وصيانة وإصلاح أنظمة التكييف والتهوية للفلل والشقق والمنشآت التجارية. استجابة خلال ساعة على مدار الساعة.",
-  alternates: {
-    canonical: "/ar",
-    languages: { en: `${SITE_URL}/`, ar: `${SITE_URL}/ar`, "x-default": `${SITE_URL}/` },
-  },
-  openGraph: {
-    images: ["/og-image.png"],
-    title: "تكييف وتهوية في دبي | AGEC",
-    description:
-      "تركيب وصيانة وإصلاح أنظمة التكييف في دبي والإمارات. استجابة خلال ساعة.",
-    url: `${SITE_URL}/ar`,
-    siteName: "AGEC",
-    type: "website",
-  },
-};
+  path: "/ar",
+  locale: "ar_AE",
+  ogTitle: "تكييف وتهوية في دبي | AGEC",
+  ogDescription:
+    "تركيب وصيانة وإصلاح أنظمة التكييف في دبي والإمارات. استجابة خلال ساعة.",
+  languages: { en: `${SITE_URL}/`, ar: `${SITE_URL}/ar`, "x-default": `${SITE_URL}/` },
+});
 
 const points = [
   { icon: Clock, title: "استجابة خلال ساعة", desc: "نرد على الاتصال والواتساب خلال ساعة، على مدار الساعة." },

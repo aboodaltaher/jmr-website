@@ -1,25 +1,16 @@
-import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "Contact AGEC | HVAC Services in Dubai",
   description:
     "Contact AGEC for HVAC services in Dubai — call or WhatsApp +971 58 557 5987, or send a message about AC maintenance, repair, AMC or a new project.",
-  alternates: { canonical: "/contact" },
-  openGraph: {
-    images: ["/og-image.png"],
-    title: "Contact AGEC | HVAC Services in Dubai",
-    description:
-      "Contact AGEC for HVAC services in Dubai — call or WhatsApp +971 58 557 5987, or send a message about AC maintenance, repair, AMC or a new project.",
-    url: "https://agec.ae/contact",
-    siteName: "AGEC",
-    type: "website",
-  },
-};
+  path: "/contact",
+});
 
 export default function Contact() {
   return (

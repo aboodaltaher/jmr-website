@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import Link from "next/link";
 import {
@@ -13,21 +13,12 @@ import {
   Settings,
 } from "lucide-react";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "HVAC Services Dubai & UAE | AGEC",
   description:
     "HVAC design, installation, testing and commissioning, and maintenance for villas, offices and commercial buildings across the UAE.",
-  alternates: { canonical: "/services" },
-  openGraph: {
-    images: ["/og-image.png"],
-    title: "HVAC Services Dubai & UAE | AGEC",
-    description:
-      "HVAC design, installation, testing and commissioning, and maintenance for villas, offices and commercial buildings across the UAE.",
-    url: "https://agec.ae/services",
-    siteName: "AGEC",
-    type: "website",
-  },
-};
+  path: "/services",
+});
 
 const services = [
   {

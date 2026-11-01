@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
 import Image from "next/image";
 import Link from "next/link";
 import { Check, Phone, MessageCircle } from "lucide-react";
@@ -13,21 +13,12 @@ import { PHONE, whatsappUrl } from "@/lib/contact";
 const SITE_URL = "https://agec.ae";
 const ROUTE = "/air-balancing-airflow-testing-dubai";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "Air Balancing Dubai | HVAC Airflow Testing | AGEC",
   description:
     "Measured HVAC air balancing and airflow testing in Dubai and the UAE, with documented measurements and signed reports. Request a technical assessment.",
-  alternates: { canonical: ROUTE },
-  openGraph: {
-    images: ["/og-image.png"],
-    title: "Air Balancing Dubai | HVAC Airflow Testing | AGEC",
-    description:
-      "Measured HVAC air balancing and airflow testing in Dubai and the UAE, with documented measurements and signed reports. Request a technical assessment.",
-    url: `${SITE_URL}${ROUTE}`,
-    siteName: "AGEC",
-    type: "website",
-  },
-};
+  path: ROUTE,
+});
 
 // Owner-supplied values. Empty values are hidden on the live page.
 const balancingConfig = {

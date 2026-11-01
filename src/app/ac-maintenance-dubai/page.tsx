@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
 import Image from "next/image";
 import Link from "next/link";
 import { InlineLeadForm } from "@/components/InlineLeadForm";
@@ -37,28 +37,19 @@ const WA = `https://wa.me/971585575987?text=${encodeURIComponent(
 )}`;
 const CANONICAL = "/ac-maintenance-dubai";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "AC Maintenance Dubai | AC Servicing, Repair & AMC | AGEC",
   description:
     "AC maintenance in Dubai by HVAC engineers: servicing, repair, coil and duct cleaning, gas top-up and AMC plans. Call +971 58 557 5987.",
-  alternates: {
-    canonical: CANONICAL,
-    languages: {
-      en: `https://agec.ae${CANONICAL}`,
-      ar: "https://agec.ae/ar/ac-maintenance-dubai",
-      "x-default": `https://agec.ae${CANONICAL}`,
-    },
+  ogDescription:
+    "Professional AC maintenance, servicing and repair in Dubai & the UAE by licensed HVAC engineers. Same-day & emergency service, AMC plans for villas, apartments and commercial buildings.",
+  path: CANONICAL,
+  languages: {
+    en: `https://agec.ae${CANONICAL}`,
+    ar: "https://agec.ae/ar/ac-maintenance-dubai",
+    "x-default": `https://agec.ae${CANONICAL}`,
   },
-  openGraph: {
-    images: ["/og-image.png"],
-    title: "AC Maintenance Dubai | AC Servicing, Repair & AMC | AGEC",
-    description:
-      "Professional AC maintenance, servicing and repair in Dubai & the UAE by licensed HVAC engineers. Same-day & emergency service, AMC plans for villas, apartments and commercial buildings.",
-    url: "https://agec.ae/ac-maintenance-dubai",
-    siteName: "AGEC",
-    type: "website",
-  },
-};
+});
 
 /* ------------------------------ CONTENT ------------------------------ */
 

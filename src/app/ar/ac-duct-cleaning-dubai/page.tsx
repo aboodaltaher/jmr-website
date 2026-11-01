@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
 import Image from "next/image";
 import { Phone, MessageCircle, Check, Wind, AlertCircle } from "lucide-react";
 import { PHONE, PHONE_DISPLAY, whatsappUrl } from "@/lib/contact";
@@ -6,28 +6,21 @@ import { PHONE, PHONE_DISPLAY, whatsappUrl } from "@/lib/contact";
 const SITE_URL = "https://agec.ae";
 const ROUTE = "/ar/ac-duct-cleaning-dubai";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "تنظيف مجاري التكييف في دبي | فلل ومكاتب | AGEC",
   description:
     "تنظيف كامل للمجاري والمبادلات والتصريف مع التعقيم وتقرير إنجاز مكتوب. فلل وشقق ومكاتب. اطلب عرض سعر.",
-  alternates: {
-    canonical: ROUTE,
-    languages: {
-      en: `${SITE_URL}/ac-duct-cleaning-dubai`,
-      ar: `${SITE_URL}${ROUTE}`,
-      "x-default": `${SITE_URL}/ac-duct-cleaning-dubai`,
-    },
+  path: ROUTE,
+  locale: "ar_AE",
+  ogTitle: "تنظيف مجاري التكييف في دبي | AGEC",
+  ogDescription:
+    "تنظيف كامل للمجاري والمبادلات والتصريف مع التعقيم وتقرير إنجاز مكتوب.",
+  languages: {
+    en: `${SITE_URL}/ac-duct-cleaning-dubai`,
+    ar: `${SITE_URL}${ROUTE}`,
+    "x-default": `${SITE_URL}/ac-duct-cleaning-dubai`,
   },
-  openGraph: {
-    images: ["/og-image.png"],
-    title: "تنظيف مجاري التكييف في دبي | AGEC",
-    description:
-      "تنظيف كامل للمجاري والمبادلات والتصريف مع التعقيم وتقرير إنجاز مكتوب.",
-    url: `${SITE_URL}${ROUTE}`,
-    siteName: "AGEC",
-    type: "website",
-  },
-};
+});
 
 const eyebrow = "text-sm font-semibold tracking-widest text-primary";
 
