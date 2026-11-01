@@ -65,13 +65,13 @@ normally on the live site, so production Best-Practices is effectively 100.
 These are in the code as `TODO(owner)` comments and need your input:
 
 1. **Trade-licence address** — exact building/unit to match the DET licence (`src/lib/company.ts`, `SiteSchema`).
-2. **Founder surname spelling** — brand uses "Ghabboun"; some docs show "Ghaboun". Confirm.
+2. ~~Founder surname spelling~~ — **confirmed: Ghabboun.**
 3. **Quote turnaround SLA** — set to "within 24 hours"; confirm you can hit it (or change it).
 4. **Form response-time** — currently the 24/7 call & WhatsApp line; supply a firmer SLA if you want one.
-5. **Largest project capacity** — set to 224 TR (the largest in the projects list). Confirm whether a 240 TR project exists.
-6. **Total projects delivered** — "30+" is the headline; confirm the real number (the page shows 12).
+5. ~~Largest project capacity~~ — **confirmed: 240 TR.**
+6. ~~Total projects delivered~~ — **confirmed: 32.**
 7. **Projects without capacity** — 18 Villas, MBZ-AI Server Room, Pure Gym, AVE Restaurant, Zain Data Center, Cultural Center. Supply TR/ton figures.
-8. **140-ton Al Barsha villa** — verify; unusually large for one residence.
+8. ~~140-ton Al Barsha villa~~ — **confirmed: 140-ton single villa.**
 9. **Real project photos** — needed to un-hide the project cards' image area.
 10. **Engineer profiles** — names, qualifications, headshots for the About page.
 11. **Price anchors** — optional "from" figures for /ac-repair-dubai (call-out/diagnostic fee) and /ac-duct-cleaning-dubai.

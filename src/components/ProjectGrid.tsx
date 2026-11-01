@@ -29,8 +29,7 @@ const projects = [
     location: "Dubai, UAE",
   },
   {
-    // TODO(owner): confirm the 140-ton figure for this villa — unusually large
-    // for a single residence; verify against the project record.
+    // Capacity confirmed by owner: 140-ton single villa.
     name: "B+G+1+R Villa, Al Barsha",
     category: "Residential",
     description: "HVAC Installation, 140 Ton DX System",

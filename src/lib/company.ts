@@ -22,8 +22,7 @@ export const COMPANY_LEGAL = "AGEC Technical Services L.L.C.";
 export const COMPANY_FULL = "Altaher Ghabboun Engineering Contracting (AGEC)";
 export const LICENCE_NO = "1221573";
 
-// Founder. TODO(owner): confirm surname spelling — the brand uses "Ghabboun",
-// some documents show "Ghaboun".
+// Founder (surname spelling confirmed by owner: "Ghabboun").
 export const FOUNDER = "Mohannad Ghabboun";
 
 // --- Google reviews (figures also surfaced via ./reviews) ---
@@ -44,11 +43,9 @@ export const FORM_PRIVACY_NOTE =
   "Your details are only used to respond to your enquiry — never shared or sold.";
 
 // --- Project figures ---
-// Largest single project by cooling capacity. The projects list shows a 224-ton
-// VRF job (Ajman) as the largest; the site previously also claimed 240 TR.
-// TODO(owner): confirm whether a larger (240 TR) project exists to cite.
-export const LARGEST_PROJECT_TR = 224;
+// Largest single project by cooling capacity (confirmed by owner: 240 TR).
+export const LARGEST_PROJECT_TR = 240;
 
-// TODO(owner): confirm the true total number of delivered projects. The site
-// shows a selection of 12; "30+" is used as the headline figure.
-export const PROJECTS_DELIVERED = "30+";
+// Total projects delivered since 2022 (confirmed by owner: 32). The projects
+// page shows a selection of 12.
+export const PROJECTS_DELIVERED = "32";

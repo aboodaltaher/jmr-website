@@ -111,7 +111,7 @@ export default function VentilationFreshAir() {
       ]}
       whyAgec={[
         "Ventilation designs based on calculated outdoor air requirements, not arbitrary air change rates",
-        "30+ HVAC projects across the UAE — restaurants, gyms, data centers, and commercial buildings",
+        "32 HVAC projects across the UAE — restaurants, gyms, data centers, and commercial buildings",
         "ASHRAE 111 and SMACNA compliant ductwork installation and air balancing practices",
         "Full compliance documentation for Dubai Municipality, civil defence, and consultant sign-off",
       ]}

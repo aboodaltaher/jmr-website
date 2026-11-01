@@ -119,8 +119,8 @@ export default function VrfVrvSystems() {
         },
       ]}
       whyAgec={[
-        "Engineers experienced with Daikin, Mitsubishi Electric and Carrier VRF/VRV — up to 224 TR single-project capacity delivered",
-        "30+ HVAC projects delivered across Dubai, Sharjah, and Abu Dhabi",
+        "Engineers experienced with Daikin, Mitsubishi Electric and Carrier VRF/VRV — up to 240 TR single-project capacity delivered",
+        "32 HVAC projects delivered across Dubai, Sharjah, and Abu Dhabi",
         "ASHRAE 111 and SMACNA compliant installation and commissioning practices",
         "Proper refrigerant piping: nitrogen-purged brazing, standing vacuum tests, and electronic leak detection on every joint",
       ]}
