@@ -47,7 +47,11 @@ const schema = {
         addressRegion: "Dubai",
         addressCountry: "AE",
       },
-      // TODO(owner): add geo { latitude, longitude } once the exact location is confirmed.
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 25.1431543,
+        longitude: 55.2210657,
+      },
       hasMap: GBP_URL,
       areaServed: [
         { "@type": "City", name: "Dubai" },
