@@ -106,8 +106,8 @@ Spec: titles ≤ 60 chars, descriptions 120–155, each with service + "Dubai" w
 - **C. Structured data:** site-wide Organization + LocalBusiness (HVACBusiness) with NAP, areaServed, openingHours, `sameAs` (GBP); add LocalBusiness to /contact; add BreadcrumbList to /about, /services, /projects, /contact, /blog, /ac-amc-dubai (and /quote, /book); normalise schema URLs to slash-less. Geo coords remain `TODO(owner)`.
 - **D. Crawl:** add `lastmod` to sitemap; keep self-referencing canonicals; resolve www vs non-www per owner.
 
-## Open question for owner
-- **Canonical host: `agec.ae` or `www.agec.ae`?** Everything currently uses non-www. Tell me which the production site serves as primary and I will make the whole site (metadataBase, canonicals, robots, sitemap, schema) match it.
+## Open question for owner — RESOLVED
+- **Canonical host:** owner confirmed production is **`https://agec.ae` (non-www)**. The whole site already uses non-www throughout (metadataBase, canonicals, robots, sitemap, schema), so no change was needed.
 
 ## TODO(owner) carried forward
 - Exact building/unit + **geo coordinates** for the Al Quoz address (for LocalBusiness `geo`).
