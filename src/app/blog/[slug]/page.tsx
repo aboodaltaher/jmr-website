@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import ReactMarkdown, { type Components } from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Phone, MessageCircle } from "lucide-react";
-import { getAllPosts, getPostBySlug, formatDate } from "@/lib/blog";
+import { getAllSlugs, getPostBySlug, formatDate } from "@/lib/blog";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 
 const SITE_URL = "https://agec.ae";
@@ -181,7 +181,9 @@ const markdownComponents: Components = {
 };
 
 export function generateStaticParams() {
-  return getAllPosts().map((post) => ({ slug: post.slug }));
+  // Include drafts so they build and are previewable by URL (they are noindex
+  // and excluded from the blog index and sitemap until published).
+  return getAllSlugs().map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -198,6 +200,7 @@ export async function generateMetadata({
     title: post.titleTag || `${post.title} | AGEC`,
     description: post.description,
     alternates: { canonical: url },
+    ...(post.draft ? { robots: { index: false, follow: false } } : {}),
     openGraph: {
       title: post.titleTag || `${post.title} | AGEC`,
       description: post.description,
@@ -224,7 +227,7 @@ export default async function ArticlePage({
     headline: post.title,
     description: post.description,
     datePublished: post.date,
-    dateModified: post.date,
+    dateModified: post.updated || post.date,
     image: `${SITE_URL}${post.image}`,
     author: {
       "@type": "Organization",
@@ -251,7 +254,7 @@ export default async function ArticlePage({
     headline: post.title,
     description: post.description,
     datePublished: post.date,
-    dateModified: post.date,
+    dateModified: post.updated || post.date,
     image: `${SITE_URL}${post.image}`,
     author: {
       "@type": "Organization",
@@ -319,6 +322,15 @@ export default async function ArticlePage({
         </div>
       </div>
 
+      {post.draft && (
+        <div className="bg-amber-100 text-amber-900">
+          <div className="mx-auto max-w-7xl px-6 py-3 text-sm font-semibold">
+            Draft — not published. This page is hidden from the blog index,
+            sitemap and search engines until published.
+          </div>
+        </div>
+      )}
+
       {/* Hero */}
       <section className="bg-bg-soft pb-12 pt-6">
         <div className="mx-auto max-w-7xl px-6">
@@ -331,6 +343,12 @@ export default async function ArticlePage({
             <span>{formatDate(post.date)}</span>
             <span>·</span>
             <span>{post.readingTime}</span>
+            {post.updated && (
+              <>
+                <span>·</span>
+                <span>Last updated {formatDate(post.updated)}</span>
+              </>
+            )}
           </div>
           <div className="relative mt-8 aspect-[21/9] overflow-hidden rounded-xl">
             <Image

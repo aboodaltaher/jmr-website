@@ -9,11 +9,13 @@ export interface PostMeta {
   title: string;
   excerpt: string;
   date: string;
+  updated: string;
   author: string;
   readingTime: string;
   image: string;
   description: string;
   titleTag: string;
+  draft: boolean;
 }
 
 export interface Post extends PostMeta {
@@ -64,11 +66,13 @@ function parsePost(slug: string): Post {
     title: extractTitle(content),
     excerpt: generateExcerpt(content),
     date: String(data.date ?? ""),
+    updated: String(data.updated ?? ""),
     author: String(data.author ?? "AGEC Team"),
     readingTime: String(data.readingTime ?? ""),
     image: String(data.image ?? ""),
     description: String(data.description ?? generateExcerpt(content)),
     titleTag: String(data.titleTag ?? ""),
+    draft: data.draft === true || data.status === "draft",
     content: stripTitle(content),
   };
 }
@@ -80,9 +84,11 @@ export function getAllSlugs(): string[] {
     .map((file) => file.replace(/\.md$/, ""));
 }
 
+/** Published posts only (drafts excluded) — for the index, sitemap and related lists. */
 export function getAllPosts(): PostMeta[] {
   return getAllSlugs()
     .map((slug) => parsePost(slug))
+    .filter((post) => !post.draft)
     .sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
