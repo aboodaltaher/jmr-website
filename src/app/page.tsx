@@ -191,7 +191,7 @@ export default function Home() {
             </a>
           </div>
           <p className="mt-8 text-sm text-white/60">
-            Established 2022 · 30+ Projects · All 7 Emirates · Dubai, UAE
+            Established 2022 · 32 Projects · All 7 Emirates · Dubai, UAE
           </p>
           <div className="mt-4">
             <GoogleReviewsBadge className="text-white/90" />
@@ -301,8 +301,8 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
             {[
-              { value: "30+", label: "Projects Delivered" },
-              { value: "224 TR", label: "Max Single Project" },
+              { value: "32", label: "Projects Delivered" },
+              { value: "240 TR", label: "Max Single Project" },
               { value: "7", label: "Emirates Served" },
               { value: "2022", label: "Established" },
             ].map((stat) => (

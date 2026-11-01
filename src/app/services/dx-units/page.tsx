@@ -120,8 +120,8 @@ export default function DxUnits() {
         },
       ]}
       whyAgec={[
-        "Every unit sized from calculated heat loads — up to 224 TR single-project capacity delivered across our portfolio",
-        "30+ HVAC projects delivered across the UAE, from studio apartments to multi-villa communities",
+        "Every unit sized from calculated heat loads — up to 240 TR single-project capacity delivered across our portfolio",
+        "32 HVAC projects delivered across the UAE, from studio apartments to multi-villa communities",
         "ASHRAE 111 and SMACNA compliant installation practices with full commissioning documentation",
         "Refrigerant piping to manufacturer standards: nitrogen-purged brazing, 500-micron vacuum hold test, and weighed charge",
       ]}

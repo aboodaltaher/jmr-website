@@ -14,13 +14,13 @@ import {
 export const metadata: Metadata = {
   title: "About AGEC | HVAC Contractor in Dubai",
   description:
-    "AGEC (Altaher Ghabboun Engineering Contracting) is a Dubai HVAC, MEP and maintenance contractor — 30+ projects delivered across the UAE since 2022.",
+    "AGEC (Altaher Ghabboun Engineering Contracting) is a Dubai HVAC, MEP and maintenance contractor — 32 projects delivered across the UAE since 2022.",
   alternates: { canonical: "/about" },
   openGraph: {
     images: ["/og-image.png"],
     title: "About AGEC | HVAC Contractor in Dubai",
     description:
-      "AGEC (Altaher Ghabboun Engineering Contracting) is a Dubai HVAC, MEP and maintenance contractor — 30+ projects delivered across the UAE since 2022.",
+      "AGEC (Altaher Ghabboun Engineering Contracting) is a Dubai HVAC, MEP and maintenance contractor — 32 projects delivered across the UAE since 2022.",
     url: "https://agec.ae/about",
     siteName: "AGEC",
     type: "website",
@@ -50,7 +50,7 @@ const values = [
     icon: TrendingUp,
     name: "Proven Record",
     description:
-      "30+ HVAC projects delivered, from villas to data centers and cultural facilities.",
+      "32 HVAC projects delivered, from villas to data centers and cultural facilities.",
   },
 ];
 
@@ -111,10 +111,10 @@ export default function About() {
                 </p>
                 <p>
                   Today we operate across all seven Emirates of the UAE — with a
-                  portfolio of 30+ completed projects ranging
+                  portfolio of 32 completed projects ranging
                   from residential villas to data centers, commercial buildings,
                   and cultural facilities. Our largest single project has handled
-                  a 224-ton cooling capacity, and our largest contract value to
+                  a 240-ton cooling capacity, and our largest contract value to
                   date is 8.75 million AED.
                 </p>
                 <p>
