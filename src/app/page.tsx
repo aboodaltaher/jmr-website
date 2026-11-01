@@ -1,7 +1,9 @@
-import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
 import Image from "next/image";
 import Link from "next/link";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
+import { CallOrWhatsApp } from "@/components/CallOrWhatsApp";
+import { EmergencyStrip } from "@/components/EmergencyStrip";
 import {
   Gauge,
   Snowflake,
@@ -20,9 +22,8 @@ import {
   Sparkles,
   Layers,
   Star,
-  MessageCircle,
 } from "lucide-react";
-import { PHONE, PHONE_DISPLAY, whatsappUrl } from "@/lib/contact";
+import { PHONE, PHONE_DISPLAY } from "@/lib/contact";
 import {
   GOOGLE_RATING,
   GOOGLE_REVIEW_COUNT,
@@ -30,28 +31,17 @@ import {
   GOOGLE_REVIEWS,
 } from "@/lib/reviews";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "HVAC Contractor & AC Maintenance Dubai | AGEC",
   description:
     "Engineer-led HVAC installation, AC maintenance, AMC, air balancing and commissioning across the UAE. Call +971 58 557 5987.",
-  alternates: {
-    canonical: "/",
-    languages: {
-      en: "https://agec.ae/",
-      ar: "https://agec.ae/ar",
-      "x-default": "https://agec.ae/",
-    },
+  path: "",
+  languages: {
+    en: "https://agec.ae/",
+    ar: "https://agec.ae/ar",
+    "x-default": "https://agec.ae/",
   },
-  openGraph: {
-    images: ["/og-image.png"],
-    title: "HVAC Contractor & AC Maintenance Dubai | AGEC",
-    description:
-      "Engineer-led HVAC installation, AC maintenance, AMC, air balancing and commissioning across the UAE. Call +971 58 557 5987.",
-    url: "https://agec.ae/",
-    siteName: "AGEC",
-    type: "website",
-  },
-};
+});
 
 const services = [
   {
@@ -149,6 +139,7 @@ const reasons = [
 export default function Home() {
   return (
     <>
+      <EmergencyStrip />
       {/* Hero */}
       <section className="relative flex min-h-[80vh] items-center">
         <Image
@@ -168,27 +159,31 @@ export default function Home() {
             Engineer-led installation, maintenance contracts and airflow testing
             for villas, offices and buildings across the UAE.
           </p>
-          <div className="mt-10 flex flex-wrap gap-4">
+          <div className="mt-10 flex flex-wrap items-center gap-4">
+            <CallOrWhatsApp
+              pathname="/"
+              triggerClassName="inline-flex items-center gap-2 rounded-md bg-primary px-8 py-4 font-medium text-white hover:bg-primary-dark transition-colors"
+            />
             <Link
               href="/quote"
-              className="rounded-md bg-primary px-8 py-4 font-medium text-white hover:bg-primary-dark transition-colors"
+              className="inline-flex items-center gap-2 rounded-md border border-white/40 bg-white/5 px-8 py-4 font-medium text-white hover:border-white hover:bg-white/10 transition-colors"
             >
-              Get a Quote
+              Get a quote
             </Link>
-            <a
-              href={`tel:${PHONE}`}
-              className="inline-flex items-center gap-2 rounded-md border border-white/30 px-8 py-4 font-medium text-white hover:border-white hover:bg-white/10 transition-colors"
+          </div>
+          <div className="mt-4 flex flex-wrap gap-x-6 gap-y-1 text-sm text-white/80">
+            <Link
+              href="/ac-amc-dubai#amc-form"
+              className="underline-offset-4 hover:text-white hover:underline"
             >
-              <Phone className="h-4 w-4" /> Call Now
-            </a>
-            <a
-              href={whatsappUrl("/")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-md bg-[#25D366] px-8 py-4 font-medium text-[#062e14] hover:bg-[#1fad52] transition-colors"
+              AMC plans
+            </Link>
+            <Link
+              href="/quote"
+              className="underline-offset-4 hover:text-white hover:underline"
             >
-              <MessageCircle className="h-4 w-4" /> WhatsApp
-            </a>
+              Project enquiries
+            </Link>
           </div>
           <p className="mt-8 text-sm text-white/60">
             Established 2022 · 32 Projects · All 7 Emirates · Dubai, UAE

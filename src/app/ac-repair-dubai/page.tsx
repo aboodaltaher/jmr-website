@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Check, Phone, MessageCircle } from "lucide-react";
@@ -9,28 +9,17 @@ import { PHONE, whatsappUrl } from "@/lib/contact";
 const SITE_URL = "https://agec.ae";
 const ROUTE = "/ac-repair-dubai";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "AC Repair Dubai | AC Technicians | AGEC",
   description:
     "AC not cooling, leaking or tripping? AGEC engineers find the root cause, quote in writing first and report every repair. Call or WhatsApp.",
-  alternates: {
-    canonical: ROUTE,
-    languages: {
-      en: `${SITE_URL}${ROUTE}`,
-      ar: `${SITE_URL}/ar/ac-repair-dubai`,
-      "x-default": `${SITE_URL}${ROUTE}`,
-    },
+  path: ROUTE,
+  languages: {
+    en: `${SITE_URL}${ROUTE}`,
+    ar: `${SITE_URL}/ar/ac-repair-dubai`,
+    "x-default": `${SITE_URL}${ROUTE}`,
   },
-  openGraph: {
-    images: ["/og-image.png"],
-    title: "AC Repair Dubai | AC Technicians | AGEC",
-    description:
-      "AC not cooling, leaking or tripping? AGEC engineers find the root cause, quote in writing first and report every repair. Call or WhatsApp.",
-    url: `${SITE_URL}${ROUTE}`,
-    siteName: "AGEC",
-    type: "website",
-  },
-};
+});
 
 const eyebrow = "text-sm font-semibold uppercase tracking-widest text-primary";
 

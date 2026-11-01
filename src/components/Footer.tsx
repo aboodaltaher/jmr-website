@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { MapPin } from "lucide-react";
 import { Logo } from "@/components/Logo";
+import { CallOrWhatsApp } from "@/components/CallOrWhatsApp";
 
 function InstagramIcon({ className }: { className?: string }) {
   return (
@@ -99,14 +100,12 @@ export function Footer() {
               href="/quote"
               className="rounded-md bg-primary px-5 py-2.5 text-center text-sm font-semibold text-white hover:bg-primary-dark transition-colors"
             >
-              Get a Quote
+              Get a quote
             </Link>
-            <a
-              href="tel:+971585575987"
-              className="rounded-md border border-text-muted/30 bg-white px-5 py-2.5 text-center text-sm font-medium text-text hover:border-primary hover:text-primary transition-colors"
-            >
-              Call Us
-            </a>
+            <CallOrWhatsApp
+              menuVertical="up"
+              triggerClassName="inline-flex w-full items-center justify-center gap-2 rounded-md border border-text-muted/30 bg-white px-5 py-2.5 text-sm font-medium text-text hover:border-primary hover:text-primary transition-colors"
+            />
           </div>
         </div>
         <div className="mt-8 border-t border-border pt-6 text-center text-xs text-text-muted">

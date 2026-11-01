@@ -1,32 +1,25 @@
-import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
 import { Phone, MessageCircle, Check } from "lucide-react";
 import { PHONE, PHONE_DISPLAY, whatsappUrl } from "@/lib/contact";
 
 const SITE_URL = "https://agec.ae";
 const ROUTE = "/ar/ac-amc-dubai";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "عقود صيانة المكيفات السنوية في دبي | AMC | AGEC",
   description:
     "عقود صيانة سنوية للمكيفات في دبي بزيارات مجدولة وتقارير موثّقة وأولوية في الاستجابة. تبدأ خدمة الوحدة من 350 درهماً. اطلب عرض سعر.",
-  alternates: {
-    canonical: ROUTE,
-    languages: {
-      en: `${SITE_URL}/ac-amc-dubai`,
-      ar: `${SITE_URL}${ROUTE}`,
-      "x-default": `${SITE_URL}/ac-amc-dubai`,
-    },
+  path: ROUTE,
+  locale: "ar_AE",
+  ogTitle: "عقود صيانة المكيفات السنوية في دبي | AGEC",
+  ogDescription:
+    "زيارات مجدولة، تقارير موثّقة، وأولوية في الاستجابة. تبدأ خدمة الوحدة من 350 درهماً.",
+  languages: {
+    en: `${SITE_URL}/ac-amc-dubai`,
+    ar: `${SITE_URL}${ROUTE}`,
+    "x-default": `${SITE_URL}/ac-amc-dubai`,
   },
-  openGraph: {
-    images: ["/og-image.png"],
-    title: "عقود صيانة المكيفات السنوية في دبي | AGEC",
-    description:
-      "زيارات مجدولة، تقارير موثّقة، وأولوية في الاستجابة. تبدأ خدمة الوحدة من 350 درهماً.",
-    url: `${SITE_URL}${ROUTE}`,
-    siteName: "AGEC",
-    type: "website",
-  },
-};
+});
 
 const eyebrow = "text-sm font-semibold tracking-widest text-primary";
 

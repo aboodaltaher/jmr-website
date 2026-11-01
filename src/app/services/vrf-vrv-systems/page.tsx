@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
 import {
   PenLine,
   Package,
@@ -10,21 +10,12 @@ import {
 import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
 import { InlineLeadForm } from "@/components/InlineLeadForm";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "VRF & VRV Systems Dubai | AGEC",
   description:
     "VRF and VRV system design, installation and commissioning in Dubai — multi-zone climate control for villas, offices and commercial buildings.",
-  alternates: { canonical: "/services/vrf-vrv-systems" },
-  openGraph: {
-    images: ["/og-image.png"],
-    title: "VRF & VRV Systems Dubai | AGEC",
-    description:
-      "VRF and VRV system design, installation and commissioning in Dubai — multi-zone climate control for villas, offices and commercial buildings.",
-    url: "https://agec.ae/services/vrf-vrv-systems",
-    siteName: "AGEC",
-    type: "website",
-  },
-};
+  path: "/services/vrf-vrv-systems",
+});
 
 export default function VrfVrvSystems() {
   return (

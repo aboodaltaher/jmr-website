@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import Image from "next/image";
@@ -32,21 +32,12 @@ const gallery = [
   },
 ];
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "HVAC Projects in Dubai & the UAE | AGEC",
   description:
     "HVAC projects across Dubai, Sharjah, Ajman and Abu Dhabi — residential villas, commercial buildings, data centres and cultural facilities.",
-  alternates: { canonical: "/projects" },
-  openGraph: {
-    images: ["/og-image.png"],
-    title: "HVAC Projects in Dubai & the UAE | AGEC",
-    description:
-      "HVAC projects across Dubai, Sharjah, Ajman and Abu Dhabi — residential villas, commercial buildings, data centres and cultural facilities.",
-    url: "https://agec.ae/projects",
-    siteName: "AGEC",
-    type: "website",
-  },
-};
+  path: "/projects",
+});
 
 export default function Projects() {
   return (

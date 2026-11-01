@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
 import {
   Ruler,
   Wrench,
@@ -10,21 +10,12 @@ import {
 import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "DX Units & Split Systems | AGEC",
   description:
     "Direct expansion AC installation in Dubai — wall-mount splits, ducted splits, cassettes, and concealed units. Properly sized and installed for residential and commercial spaces.",
-  alternates: { canonical: "/services/dx-units" },
-  openGraph: {
-    images: ["/og-image.png"],
-    title: "DX Units & Split Systems | AGEC",
-    description:
-      "Direct expansion AC installation in Dubai — wall-mount splits, ducted splits, cassettes, and concealed units. Properly sized and installed for residential and commercial spaces.",
-    url: "https://agec.ae/services/dx-units",
-    siteName: "AGEC",
-    type: "website",
-  },
-};
+  path: "/services/dx-units",
+});
 
 export default function DxUnits() {
   return (

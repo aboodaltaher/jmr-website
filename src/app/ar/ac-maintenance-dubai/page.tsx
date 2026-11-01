@@ -1,32 +1,25 @@
-import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
 import { Phone, MessageCircle, Check, ShieldCheck, BadgeCheck, Clock, FileText, Gauge, CalendarClock } from "lucide-react";
 import { PHONE, PHONE_DISPLAY, whatsappUrl } from "@/lib/contact";
 
 const SITE_URL = "https://agec.ae";
 const ROUTE = "/ar/ac-maintenance-dubai";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "صيانة مكيفات في دبي | خدمة وإصلاح وعقود | AGEC",
   description:
     "صيانة احترافية للمكيفات في دبي من مهندسين مرخّصين: خدمة، إصلاح، تنظيف، وعقود سنوية. خدمة لمرة واحدة من 350 درهماً للوحدة. استجابة خلال ساعة.",
-  alternates: {
-    canonical: ROUTE,
-    languages: {
-      en: `${SITE_URL}/ac-maintenance-dubai`,
-      ar: `${SITE_URL}${ROUTE}`,
-      "x-default": `${SITE_URL}/ac-maintenance-dubai`,
-    },
+  path: ROUTE,
+  locale: "ar_AE",
+  ogTitle: "صيانة مكيفات في دبي | AGEC",
+  ogDescription:
+    "خدمة وإصلاح وتنظيف وعقود صيانة سنوية. خدمة لمرة واحدة من 350 درهماً للوحدة.",
+  languages: {
+    en: `${SITE_URL}/ac-maintenance-dubai`,
+    ar: `${SITE_URL}${ROUTE}`,
+    "x-default": `${SITE_URL}/ac-maintenance-dubai`,
   },
-  openGraph: {
-    images: ["/og-image.png"],
-    title: "صيانة مكيفات في دبي | AGEC",
-    description:
-      "خدمة وإصلاح وتنظيف وعقود صيانة سنوية. خدمة لمرة واحدة من 350 درهماً للوحدة.",
-    url: `${SITE_URL}${ROUTE}`,
-    siteName: "AGEC",
-    type: "website",
-  },
-};
+});
 
 const eyebrow = "text-sm font-semibold tracking-widest text-primary";
 

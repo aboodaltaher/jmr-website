@@ -38,6 +38,9 @@ export const FORM_RESPONSE_NOTE = "We reply on call and WhatsApp, 24/7.";
 export const FORM_PRIVACY_NOTE =
   "Your details are only used to respond to your enquiry — never shared or sold.";
 
+// --- Emergency strip copy (shown on /, /quote and /book) ---
+export const EMERGENCY_PREFIX = "AC down right now? Call";
+
 // --- Project figures ---
 // Largest single project by cooling capacity (confirmed by owner: 240 TR).
 export const LARGEST_PROJECT_TR = 240;

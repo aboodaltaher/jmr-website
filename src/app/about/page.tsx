@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FOUNDER } from "@/lib/company";
@@ -11,21 +11,12 @@ import {
   TrendingUp,
 } from "lucide-react";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "About AGEC | HVAC Contractor in Dubai",
   description:
     "AGEC (Altaher Ghabboun Engineering Contracting) is a Dubai HVAC, MEP and maintenance contractor — 32 projects delivered across the UAE since 2022.",
-  alternates: { canonical: "/about" },
-  openGraph: {
-    images: ["/og-image.png"],
-    title: "About AGEC | HVAC Contractor in Dubai",
-    description:
-      "AGEC (Altaher Ghabboun Engineering Contracting) is a Dubai HVAC, MEP and maintenance contractor — 32 projects delivered across the UAE since 2022.",
-    url: "https://agec.ae/about",
-    siteName: "AGEC",
-    type: "website",
-  },
-};
+  path: "/about",
+});
 
 const values = [
   {

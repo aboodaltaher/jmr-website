@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
 import {
   PenLine,
   Fan,
@@ -9,21 +9,12 @@ import {
 } from "lucide-react";
 import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "Fresh Air Ventilation & CO2 Testing Dubai | AGEC",
   description:
     "High CO2, stuffy rooms or failed fresh-air checks? We measure airflow and outdoor-air quantity, find the cause and fix it. Request an assessment.",
-  alternates: { canonical: "/services/ventilation-fresh-air" },
-  openGraph: {
-    images: ["/og-image.png"],
-    title: "Fresh Air Ventilation & CO2 Testing Dubai | AGEC",
-    description:
-      "High CO2, stuffy rooms or failed fresh-air checks? We measure airflow and outdoor-air quantity, find the cause and fix it. Request an assessment.",
-    url: "https://agec.ae/services/ventilation-fresh-air",
-    siteName: "AGEC",
-    type: "website",
-  },
-};
+  path: "/services/ventilation-fresh-air",
+});
 
 export default function VentilationFreshAir() {
   return (

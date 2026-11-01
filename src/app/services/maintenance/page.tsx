@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
 import Image from "next/image";
 import Link from "next/link";
 import { InlineLeadForm } from "@/components/InlineLeadForm";
@@ -20,21 +20,12 @@ import { PHONE, whatsappUrl } from "@/lib/contact";
 const SITE_URL = "https://agec.ae";
 const ROUTE = "/services/maintenance";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "Commercial HVAC Maintenance Dubai | AMC | AGEC",
   description:
     "Chillers, AHUs, FCUs and VRF maintained under one contract, with logged visits and reports for facility managers. Request a site survey.",
-  alternates: { canonical: ROUTE },
-  openGraph: {
-    images: ["/og-image.png"],
-    title: "Commercial HVAC Maintenance Dubai | AMC | AGEC",
-    description:
-      "Chillers, AHUs, FCUs and VRF maintained under one contract, with logged visits and reports for facility managers. Request a site survey.",
-    url: `${SITE_URL}${ROUTE}`,
-    siteName: "AGEC",
-    type: "website",
-  },
-};
+  path: ROUTE,
+});
 
 const eyebrow = "text-sm font-semibold uppercase tracking-widest text-primary";
 

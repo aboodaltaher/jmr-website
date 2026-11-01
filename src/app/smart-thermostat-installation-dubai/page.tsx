@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
 import Image from "next/image";
 import Link from "next/link";
 import { InlineLeadForm } from "@/components/InlineLeadForm";
@@ -40,21 +40,14 @@ const WA = `https://wa.me/971585575987?text=${encodeURIComponent(
 )}`;
 const CANONICAL = "/smart-thermostat-installation-dubai";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "Nest & ecobee Thermostat Installation Dubai | AGEC",
   description:
     "Nest and ecobee smart thermostat installation in Dubai and the UAE. Free compatibility check and C-wire installation. Call +971 58 557 5987.",
-  alternates: { canonical: CANONICAL },
-  openGraph: {
-    images: ["/og-image.png"],
-    title: "Nest & ecobee Thermostat Installation Dubai | AGEC",
-    description:
-      "Supplier & professional installer of Google Nest & ecobee smart thermostats across Dubai & the UAE. Free compatibility check & expert C-wire installation.",
-    url: "https://agec.ae/smart-thermostat-installation-dubai",
-    siteName: "AGEC",
-    type: "website",
-  },
-};
+  ogDescription:
+    "Supplier & professional installer of Google Nest & ecobee smart thermostats across Dubai & the UAE. Free compatibility check & expert C-wire installation.",
+  path: CANONICAL,
+});
 
 /* ----------------------------- CONTENT DATA ----------------------------- */
 
