@@ -6,8 +6,6 @@ readingTime: "6 min read"
 image: "/projects/agec-technician-tab-commissioning-airflow-balometer-dubai.jpg"
 description: "What is air balancing, and when does a building need it? An engineer explains airflow testing and balancing in Dubai — the symptoms, the process, and the report you should get."
 titleTag: "What Is Air Balancing and When Do You Need It? | AGEC"
-draft: true
-status: draft
 ---
 
 # What Is Air Balancing — and When Does a Building Need It?

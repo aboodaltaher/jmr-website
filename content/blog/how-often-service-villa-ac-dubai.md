@@ -6,8 +6,6 @@ readingTime: "5 min read"
 image: "/projects/agec-maintenance-service-dubai.jpg"
 description: "How often should you service a villa AC in Dubai? An engineer explains the right frequency for the UAE climate, what happens if you skip it, and when an annual contract makes sense."
 titleTag: "How Often Should You Service Villa AC in Dubai? | AGEC"
-draft: true
-status: draft
 ---
 
 # How Often Should You Service Your Villa AC in Dubai?
