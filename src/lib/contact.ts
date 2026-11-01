@@ -30,6 +30,10 @@ const WHATSAPP_MESSAGES: Record<string, string> = {
     "مرحباً AGEC، مكيّفي لا يبرّد. المنطقة ونوع العقار؟ ",
   "/ar/ac-amc-dubai":
     "مرحباً AGEC، أريد عرض سعر لعقد صيانة سنوي. عدد الوحدات والمنطقة؟ ",
+  "/ar/ac-maintenance-dubai":
+    "مرحباً AGEC، أريد حجز خدمة صيانة للمكيف. عدد الوحدات والمنطقة؟ ",
+  "/ar/ac-duct-cleaning-dubai":
+    "مرحباً AGEC، أريد عرض سعر لتنظيف المجاري. نوع العقار وعدد الوحدات والمنطقة؟ ",
 };
 
 export function whatsappMessageFor(pathname: string): string {

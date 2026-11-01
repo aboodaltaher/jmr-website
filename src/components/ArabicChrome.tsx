@@ -9,8 +9,10 @@ import { PHONE, PHONE_DISPLAY, whatsappUrl } from "@/lib/contact";
 
 const navLinks = [
   { href: "/ar", label: "الرئيسية" },
+  { href: "/ar/ac-maintenance-dubai", label: "صيانة المكيفات" },
   { href: "/ar/ac-repair-dubai", label: "إصلاح المكيفات" },
-  { href: "/ar/ac-amc-dubai", label: "الصيانة والعقود" },
+  { href: "/ar/ac-duct-cleaning-dubai", label: "تنظيف المجاري" },
+  { href: "/ar/ac-amc-dubai", label: "عقود الصيانة" },
 ];
 
 /**

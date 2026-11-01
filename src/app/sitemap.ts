@@ -35,7 +35,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/contact`, changeFrequency: "yearly", priority: 0.8 },
     // Arabic (/ar) subtree
     { url: `${base}/ar`, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/ar/ac-maintenance-dubai`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/ar/ac-repair-dubai`, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/ar/ac-duct-cleaning-dubai`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/ar/ac-amc-dubai`, changeFrequency: "monthly", priority: 0.7 },
   ];
 }
