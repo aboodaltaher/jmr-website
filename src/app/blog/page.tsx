@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { getAllPosts, formatDate } from "@/lib/blog";
+import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Insights & Engineering Guides | AGEC",
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
     "HVAC engineering guides, system comparisons, and practical advice from AGEC — based on real project experience across Dubai, Sharjah, and Abu Dhabi.",
   alternates: { canonical: "/blog" },
   openGraph: {
+    images: ["/og-image.png"],
     title: "Insights & Engineering Guides | AGEC",
     description:
       "HVAC engineering guides, system comparisons, and practical advice from AGEC — based on real project experience across Dubai, Sharjah, and Abu Dhabi.",
@@ -21,8 +23,34 @@ export const metadata: Metadata = {
 export default function BlogIndex() {
   const posts = getAllPosts();
 
+  const blogSchema = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "@id": "https://agec.ae/blog",
+    name: "AGEC Insights & Engineering Guides",
+    url: "https://agec.ae/blog",
+    publisher: { "@id": "https://agec.ae/#organization" },
+    blogPost: posts.map((p) => ({
+      "@type": "BlogPosting",
+      headline: p.title,
+      url: `https://agec.ae/blog/${p.slug}`,
+      datePublished: p.date,
+      dateModified: p.updated || p.date,
+    })),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", path: "" },
+          { name: "Insights", path: "/blog" },
+        ]}
+      />
       {/* Header */}
       <section className="bg-bg-soft py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6">

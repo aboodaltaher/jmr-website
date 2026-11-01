@@ -19,6 +19,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
+    images: ["/og-image.png"],
     title: "تنظيف مجاري التكييف في دبي | AGEC",
     description:
       "تنظيف كامل للمجاري والمبادلات والتصريف مع التعقيم وتقرير إنجاز مكتوب.",

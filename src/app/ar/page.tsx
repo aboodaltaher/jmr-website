@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     languages: { en: `${SITE_URL}/`, ar: `${SITE_URL}/ar`, "x-default": `${SITE_URL}/` },
   },
   openGraph: {
+    images: ["/og-image.png"],
     title: "تكييف وتهوية في دبي | AGEC",
     description:
       "تركيب وصيانة وإصلاح أنظمة التكييف في دبي والإمارات. استجابة خلال ساعة.",

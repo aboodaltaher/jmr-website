@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "High CO2, stuffy rooms or failed fresh-air checks? We measure airflow and outdoor-air quantity, find the cause and fix it. Request an assessment.",
   alternates: { canonical: "/services/ventilation-fresh-air" },
   openGraph: {
+    images: ["/og-image.png"],
     title: "Fresh Air Ventilation & CO2 Testing Dubai | AGEC",
     description:
       "High CO2, stuffy rooms or failed fresh-air checks? We measure airflow and outdoor-air quantity, find the cause and fix it. Request an assessment.",

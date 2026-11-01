@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
+    images: ["/og-image.png"],
     title: "عقود صيانة المكيفات السنوية في دبي | AGEC",
     description:
       "زيارات مجدولة، تقارير موثّقة، وأولوية في الاستجابة. تبدأ خدمة الوحدة من 350 درهماً.",

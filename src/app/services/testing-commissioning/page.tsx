@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "Independent testing, commissioning and air balancing to design values with documented reports.",
   alternates: { canonical: "/services/testing-commissioning" },
   openGraph: {
+    images: ["/og-image.png"],
     title: "HVAC Testing & Commissioning Dubai | AGEC",
     description:
       "Independent testing, commissioning and air balancing to design values with documented reports.",

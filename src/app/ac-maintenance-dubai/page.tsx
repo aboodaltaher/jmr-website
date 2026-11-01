@@ -48,6 +48,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
+    images: ["/og-image.png"],
     title: "AC Maintenance Dubai | AC Servicing, Repair & AMC | AGEC",
     description:
       "Professional AC maintenance, servicing and repair in Dubai & the UAE by licensed HVAC engineers. Same-day & emergency service, AMC plans for villas, apartments and commercial buildings.",
@@ -155,9 +156,9 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://agec.ae/" },
-    { "@type": "ListItem", position: 2, name: "Services", item: "https://agec.ae/services/" },
-    { "@type": "ListItem", position: 3, name: "AC Maintenance Dubai", item: "https://agec.ae/ac-maintenance-dubai/" },
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://agec.ae" },
+    { "@type": "ListItem", position: 2, name: "Services", item: "https://agec.ae/services" },
+    { "@type": "ListItem", position: 3, name: "AC Maintenance Dubai", item: "https://agec.ae/ac-maintenance-dubai" },
   ],
 };
 

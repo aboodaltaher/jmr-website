@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Inter, Saira_Condensed, Cairo } from "next/font/google";
 import { SiteFrame } from "@/components/SiteFrame";
+import { SiteSchema } from "@/components/SiteSchema";
 import { Analytics, GtmNoScript } from "@/components/Analytics";
 import { ConversionTracking } from "@/components/ConversionTracking";
 import { GA_ADS_ID } from "@/lib/gtag";
@@ -29,16 +30,21 @@ export const metadata: Metadata = {
   description:
     "AGEC (Altaher Ghabboun Engineering Contracting) designs, installs, and maintains HVAC and MEP systems across the UAE. VRF, chillers, ventilation, AMC. Dubai-based. Engineered to perform.",
   openGraph: {
-    title: "AGEC — Engineered to Perform",
-    description: "HVAC · MEP · Maintenance contracting across the UAE.",
+    title: "AGEC — HVAC, MEP & Maintenance Contracting | Dubai, UAE",
+    description:
+      "Engineer-led HVAC design, installation, AC maintenance and AMC across Dubai and the UAE.",
     url: "https://agec.ae",
     siteName: "AGEC",
+    locale: "en_AE",
     type: "website",
+    images: ["/og-image.png"],
   },
+  // No title/description here, so each page's own title/description flow into
+  // the Twitter card. Pages don't override `twitter`, so this image applies
+  // site-wide. Per-page og:image is set on each page's own openGraph.
   twitter: {
     card: "summary_large_image",
-    title: "AGEC — Engineered to Perform",
-    description: "HVAC · MEP · Maintenance contracting across the UAE.",
+    images: ["/og-image.png"],
   },
 };
 
@@ -54,6 +60,7 @@ export default function RootLayout({
     >
       <body className="min-h-screen flex flex-col antialiased pb-16 md:pb-0">
         <GtmNoScript />
+        <SiteSchema />
         {/* Google tag (gtag.js) — Google Ads */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ADS_ID}`}

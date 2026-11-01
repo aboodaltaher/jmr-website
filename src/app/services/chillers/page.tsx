@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "Air-cooled and water-cooled chiller installation, piping design, and commissioning in Dubai. Complete chiller plant engineering for commercial and industrial buildings.",
   alternates: { canonical: "/services/chillers" },
   openGraph: {
+    images: ["/og-image.png"],
     title: "Chiller Systems | AGEC",
     description:
       "Air-cooled and water-cooled chiller installation, piping design, and commissioning in Dubai. Complete chiller plant engineering for commercial and industrial buildings.",

@@ -24,6 +24,7 @@ export const metadata: Metadata = {
     "Chillers, AHUs, FCUs and VRF maintained under one contract, with logged visits and reports for facility managers. Request a site survey.",
   alternates: { canonical: ROUTE },
   openGraph: {
+    images: ["/og-image.png"],
     title: "Commercial HVAC Maintenance Dubai | AMC | AGEC",
     description:
       "Chillers, AHUs, FCUs and VRF maintained under one contract, with logged visits and reports for facility managers. Request a site survey.",
@@ -122,9 +123,9 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
-    { "@type": "ListItem", position: 2, name: "Services", item: `${SITE_URL}/services/` },
-    { "@type": "ListItem", position: 3, name: "Commercial HVAC Maintenance", item: `${SITE_URL}${ROUTE}/` },
+    { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}` },
+    { "@type": "ListItem", position: 2, name: "Services", item: `${SITE_URL}/services` },
+    { "@type": "ListItem", position: 3, name: "Commercial HVAC Maintenance", item: `${SITE_URL}${ROUTE}` },
   ],
 };
 

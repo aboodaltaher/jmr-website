@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "HVAC system design, heat load calculations, duct sizing, and MEP coordination in Dubai. Engineering documentation from concept through construction.",
   alternates: { canonical: "/services/hvac-design" },
   openGraph: {
+    images: ["/og-image.png"],
     title: "HVAC Design & Consultancy | AGEC",
     description:
       "HVAC system design, heat load calculations, duct sizing, and MEP coordination in Dubai. Engineering documentation from concept through construction.",

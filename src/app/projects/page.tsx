@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import Link from "next/link";
 import { ProjectGrid } from "@/components/ProjectGrid";
 
 export const metadata: Metadata = {
-  title: "Projects | AGEC",
+  title: "HVAC Projects in Dubai & the UAE | AGEC",
   description:
     "30+ HVAC projects across Dubai, Sharjah, and Abu Dhabi — residential villas, commercial buildings, data centers, and cultural facilities.",
   alternates: { canonical: "/projects" },
   openGraph: {
-    title: "Projects | AGEC",
+    images: ["/og-image.png"],
+    title: "HVAC Projects in Dubai & the UAE | AGEC",
     description:
       "30+ HVAC projects across Dubai, Sharjah, and Abu Dhabi — residential villas, commercial buildings, data centers, and cultural facilities.",
     url: "https://agec.ae/projects",
@@ -20,6 +22,12 @@ export const metadata: Metadata = {
 export default function Projects() {
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", path: "" },
+          { name: "Projects", path: "/projects" },
+        ]}
+      />
       {/* Page Header */}
       <section className="bg-bg-soft py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6">

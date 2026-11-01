@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     "Direct expansion AC installation in Dubai — wall-mount splits, ducted splits, cassettes, and concealed units. Properly sized and installed for residential and commercial spaces.",
   alternates: { canonical: "/services/dx-units" },
   openGraph: {
+    images: ["/og-image.png"],
     title: "DX Units & Split Systems | AGEC",
     description:
       "Direct expansion AC installation in Dubai — wall-mount splits, ducted splits, cassettes, and concealed units. Properly sized and installed for residential and commercial spaces.",

@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
+import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 
 export const metadata: Metadata = {
-  title: "Contact | AGEC",
+  title: "Contact AGEC | HVAC Services in Dubai",
   description:
-    "Get in touch with AGEC in Dubai. Call, email, or send us a message about your HVAC project.",
+    "Contact AGEC for HVAC services in Dubai — call or WhatsApp +971 58 557 5987, or send a message about AC maintenance, repair, AMC or a new project.",
   alternates: { canonical: "/contact" },
   openGraph: {
-    title: "Contact | AGEC",
+    images: ["/og-image.png"],
+    title: "Contact AGEC | HVAC Services in Dubai",
     description:
-      "Get in touch with AGEC in Dubai. Call, email, or send us a message about your HVAC project.",
+      "Contact AGEC for HVAC services in Dubai — call or WhatsApp +971 58 557 5987, or send a message about AC maintenance, repair, AMC or a new project.",
     url: "https://agec.ae/contact",
     siteName: "AGEC",
     type: "website",
@@ -21,6 +23,12 @@ export const metadata: Metadata = {
 export default function Contact() {
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", path: "" },
+          { name: "Contact", path: "/contact" },
+        ]}
+      />
       {/* Header */}
       <section className="bg-bg-soft py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-6">

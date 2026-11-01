@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -9,14 +10,15 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About | AGEC",
+  title: "About AGEC | HVAC Contractor in Dubai",
   description:
-    "Founded in Dubai in 2022, Altaher Ghabboun Engineering Contracting (AGEC) is an HVAC, MEP & maintenance contractor delivering installation, commissioning, and maintenance across the UAE. 30+ projects delivered.",
+    "AGEC (Altaher Ghabboun Engineering Contracting) is a Dubai HVAC, MEP and maintenance contractor — 30+ projects delivered across the UAE since 2022.",
   alternates: { canonical: "/about" },
   openGraph: {
-    title: "About | AGEC",
+    images: ["/og-image.png"],
+    title: "About AGEC | HVAC Contractor in Dubai",
     description:
-      "Founded in Dubai in 2022, Altaher Ghabboun Engineering Contracting (AGEC) is an HVAC, MEP & maintenance contractor delivering installation, commissioning, and maintenance across the UAE. 30+ projects delivered.",
+      "AGEC (Altaher Ghabboun Engineering Contracting) is a Dubai HVAC, MEP and maintenance contractor — 30+ projects delivered across the UAE since 2022.",
     url: "https://agec.ae/about",
     siteName: "AGEC",
     type: "website",
@@ -64,6 +66,12 @@ const capabilities = [
 export default function About() {
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", path: "" },
+          { name: "About", path: "/about" },
+        ]}
+      />
       {/* Header */}
       <section className="bg-bg-soft py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
