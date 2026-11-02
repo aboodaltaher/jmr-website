@@ -68,7 +68,7 @@ const services = [
     name: "Testing & Commissioning",
     href: "/services/testing-commissioning",
     description:
-      "Independent testing, balancing, and commissioning services. Airflow measurement, water flow balancing, controls verification, and full T&C reports — every system handed over against specification.",
+      "Documented testing, balancing, and commissioning services. Airflow measurement, water flow balancing, controls verification, and full T&C reports — every system handed over against specification.",
   },
   {
     icon: Settings,

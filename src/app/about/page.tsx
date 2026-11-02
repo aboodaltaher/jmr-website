@@ -29,7 +29,7 @@ const values = [
     icon: ShieldCheck,
     name: "OEM Compliance",
     description:
-      "Genuine spare parts and approved maintenance procedures. AHRI-certified equipment with proper warranties.",
+      "Genuine spare parts and approved maintenance procedures. Manufacturer-rated equipment with proper warranties.",
   },
   {
     icon: PhoneCall,

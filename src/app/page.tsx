@@ -132,11 +132,11 @@ const reasons = [
     icon: ShieldCheck,
     name: "Quality Equipment Partners",
     description:
-      "Approved brands, AHRI-certified equipment, and proper warranties on every system we install.",
+      "Approved brands, manufacturer-rated equipment, and proper warranties on every system we install.",
   },
   {
     icon: Target,
-    name: "Performance Guaranteed",
+    name: "Performance Verified",
     description:
       "Every system tested and commissioned against specification. We don't leave until it's working as designed.",
   },
