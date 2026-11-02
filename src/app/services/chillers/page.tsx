@@ -1,4 +1,5 @@
 import { buildMetadata } from "@/lib/metadata";
+import { PROJECTS_DELIVERED } from "@/lib/company";
 import {
   PenLine,
   Droplets,
@@ -102,7 +103,7 @@ export default function Chillers() {
       ]}
       whyAgec={[
         "Chiller selection based on actual Dubai operating conditions — peak ambient, altitude correction, and realistic part-load profiles",
-        "32 HVAC projects across the UAE including commercial buildings and data centers",
+        `${PROJECTS_DELIVERED} HVAC projects across the UAE including commercial buildings and data centers`,
         "ASHRAE 111 and SMACNA compliant commissioning with calibrated instruments and documented results",
         "Ongoing AMC programs with quarterly inspections, performance trending, and 24/7 emergency response",
       ]}
