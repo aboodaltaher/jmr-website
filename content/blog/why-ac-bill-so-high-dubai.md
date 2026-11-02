@@ -46,7 +46,7 @@ Undersizing is the opposite failure: the system runs flat-out for hours and neve
 
 This is the cheapest problem to fix and the one we see most. A clogged filter or a dust-caked coil forces the system to work harder to move the same air and reject the same heat — and in Dubai's dust, coils foul fast. A neglected system can run **15–20% less efficiently** for months before anyone notices, because it's still cooling, just expensively. The outdoor condenser is the worst offender: caked in fine desert dust, it can't dump heat properly, so the compressor runs longer and hotter for every degree of cooling.
 
-The fix is unglamorous and it works: filters cleaned regularly through the cooling season, coils cleaned annually (more often here), and the condenser kept clear. This is exactly what an annual maintenance contract is for — and the maths is in your favour, because the efficiency you recover usually exceeds the cost of the service. [REAL CASE: insert one true example — e.g. "On a 4-bed villa in Mirdif, a coil clean and filter overhaul cut the August DEWA bill from AED X to AED Y."]
+The fix is unglamorous and it works: filters cleaned regularly through the cooling season, coils cleaned annually (more often here), and the condenser kept clear. This is exactly what an annual maintenance contract is for — and the maths is in your favour, because the efficiency you recover usually exceeds the cost of the service.
 
 ### 3. Old, non-inverter equipment
 
@@ -150,7 +150,7 @@ If your summer bills don't add up, we'll find out why — system check, heat loa
 - [AC Maintenance Contracts in Dubai: Why Reactive Maintenance Costs You More →](https://agec.ae/blog/ac-maintenance-contracts-dubai-amc-guide)
 - [HVAC Design & Consultancy →](https://agec.ae/services/hvac-design)
 - [VRF / VRV Systems →](https://agec.ae/services/vrf-vrv-systems)
-- [Maintenance & AMC →](/services/ac-cleaning/full-ac)
+- [Maintenance & AMC →](https://agec.ae/services/maintenance)
 
 ---
 
