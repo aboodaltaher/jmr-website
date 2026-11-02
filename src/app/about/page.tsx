@@ -130,7 +130,7 @@ export default function About() {
                 </p>
                 <p>
                   Today we operate across all seven Emirates of the UAE — with a
-                  portfolio of 32 completed projects ranging
+                  portfolio of {PROJECTS_DELIVERED} completed projects ranging
                   from residential villas to data centers, commercial buildings,
                   and cultural facilities. Our largest single project has handled
                   a 240-ton cooling capacity, and our largest contract value to
