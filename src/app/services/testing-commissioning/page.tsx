@@ -1,4 +1,5 @@
 import { buildMetadata } from "@/lib/metadata";
+import { PROJECTS_DELIVERED } from "@/lib/company";
 import {
   Gauge,
   Droplets,
@@ -100,7 +101,7 @@ export default function TestingCommissioning() {
         },
       ]}
       whyAgec={[
-        "Commissioning engineers with calibrated, traceable instruments — 32 projects commissioned across the UAE",
+        `Commissioning engineers with calibrated, traceable instruments — ${PROJECTS_DELIVERED} projects commissioned across the UAE`,
         "ASHRAE 111, SMACNA, and CIBSE compliant methodology with systematic documentation",
         "Independent verification: we report what we measure, whether it passes or not, giving owners and consultants confidence in the handover",
         "Practical problem-solving when systems don't meet spec — root cause identification, not just deficiency logging",

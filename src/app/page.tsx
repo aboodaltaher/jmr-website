@@ -25,6 +25,7 @@ import {
   Star,
 } from "lucide-react";
 import { PHONE, PHONE_DISPLAY } from "@/lib/contact";
+import { PROJECTS_DELIVERED } from "@/lib/company";
 import { GOOGLE_REVIEWS_URL, GOOGLE_REVIEWS } from "@/lib/reviews";
 import { getGoogleReviewStats } from "@/lib/google-reviews";
 
@@ -185,7 +186,7 @@ export default async function Home() {
             </Link>
           </div>
           <p className="mt-8 text-sm text-white/60">
-            Established 2022 · 32 Projects · All 7 Emirates · Dubai, UAE
+            Established 2022 · {PROJECTS_DELIVERED} Projects · All 7 Emirates · Dubai, UAE
           </p>
           <div className="mt-4">
             <GoogleReviewsBadge className="text-white/90" />
@@ -295,7 +296,7 @@ export default async function Home() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
             {[
-              { value: "32", label: "Projects Delivered" },
+              { value: PROJECTS_DELIVERED, label: "Projects Delivered" },
               { value: "240 TR", label: "Max Single Project" },
               { value: "7", label: "Emirates Served" },
               { value: "2022", label: "Established" },

@@ -1,7 +1,7 @@
 import { buildMetadata } from "@/lib/metadata";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { FOUNDER } from "@/lib/company";
+import { FOUNDER, PROJECTS_DELIVERED } from "@/lib/company";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -14,7 +14,7 @@ import {
 export const metadata = buildMetadata({
   title: "About AGEC | HVAC Contractor in Dubai",
   description:
-    "AGEC (Altaher Ghabboun Engineering Contracting) is a Dubai HVAC, MEP and maintenance contractor — 32 projects delivered across the UAE since 2022.",
+    `AGEC (Altaher Ghabboun Engineering Contracting) is a Dubai HVAC, MEP and maintenance contractor — ${PROJECTS_DELIVERED} projects delivered across the UAE since 2022.`,
   path: "/about",
 });
 
@@ -41,7 +41,7 @@ const values = [
     icon: TrendingUp,
     name: "Proven Record",
     description:
-      "32 HVAC projects delivered, from villas to data centers and cultural facilities.",
+      `${PROJECTS_DELIVERED} HVAC projects delivered, from villas to data centers and cultural facilities.`,
   },
 ];
 

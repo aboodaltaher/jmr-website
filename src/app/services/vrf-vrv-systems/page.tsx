@@ -1,4 +1,5 @@
 import { buildMetadata } from "@/lib/metadata";
+import { PROJECTS_DELIVERED } from "@/lib/company";
 import {
   PenLine,
   Package,
@@ -111,7 +112,7 @@ export default function VrfVrvSystems() {
       ]}
       whyAgec={[
         "Engineers experienced with Daikin, Mitsubishi Electric and Carrier VRF/VRV — up to 240 TR single-project capacity delivered",
-        "32 HVAC projects delivered across Dubai, Sharjah, and Abu Dhabi",
+        `${PROJECTS_DELIVERED} HVAC projects delivered across Dubai, Sharjah, and Abu Dhabi`,
         "ASHRAE 111 and SMACNA compliant installation and commissioning practices",
         "Proper refrigerant piping: nitrogen-purged brazing, standing vacuum tests, and electronic leak detection on every joint",
       ]}

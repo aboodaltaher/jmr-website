@@ -1,4 +1,5 @@
 import { buildMetadata } from "@/lib/metadata";
+import { PROJECTS_DELIVERED } from "@/lib/company";
 import {
   Calculator,
   PenLine,
@@ -99,7 +100,7 @@ export default function HvacDesign() {
         },
       ]}
       whyAgec={[
-        "Design based on calculated loads with documented assumptions — 32 projects designed and delivered across the UAE",
+        `Design based on calculated loads with documented assumptions — ${PROJECTS_DELIVERED} projects designed and delivered across the UAE`,
         "Engineers who also install and commission systems, bringing practical construction knowledge into the design phase",
         "ASHRAE 111, SMACNA, and CIBSE compliant design documentation",
         "Design packages formatted for consultant approval, Dubai Municipality submission, and contractor tendering",
