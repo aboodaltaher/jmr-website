@@ -29,6 +29,13 @@ import { PROJECTS_DELIVERED } from "@/lib/company";
 import { GOOGLE_REVIEWS_URL, GOOGLE_REVIEWS } from "@/lib/reviews";
 import { getGoogleReviewStats } from "@/lib/google-reviews";
 
+// Image for the "Why AGEC" panel. Swap it by replacing the file at
+// public/why-agec.jpg, or point this at another path under /public.
+// TODO(owner): this is a placeholder (a real AGEC commissioning photo).
+// Replace with your preferred image — recommended ~1200×1500px (portrait),
+// JPG or WebP, compressed. The panel is a tall column cropped to fill.
+const WHY_AGEC_IMAGE = "/why-agec.jpg";
+
 export const metadata = buildMetadata({
   title: "HVAC Contractor & AC Maintenance Dubai | AGEC",
   description:
@@ -380,8 +387,8 @@ export default async function Home() {
             </div>
             <div className="relative hidden overflow-hidden rounded-lg lg:col-span-2 lg:block">
               <Image
-                src="https://images.unsplash.com/photo-1704022632400-79aab2ddb9f6?auto=format&fit=crop&w=1200&q=80"
-                alt="Modern building with HVAC ventilation systems"
+                src={WHY_AGEC_IMAGE}
+                alt="AGEC engineer commissioning an HVAC system with an airflow balometer in Dubai"
                 fill
                 className="object-cover"
               />
