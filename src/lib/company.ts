@@ -11,7 +11,12 @@ export const PHONE_DISPLAY = "+971 58 557 5987";
 // m.ghabboun@agec.ae — a.altaher@agec.ae is the single public address.
 export const EMAIL = "a.altaher@agec.ae";
 
+// WhatsApp (digits only, no +). The wa.me link logic lives in ./contact.
+export const WHATSAPP = "971585575987";
+
 // Address (from the Google Business Profile listing).
+// TODO(owner): confirm this matches the DET trade licence before relying on it
+// for schema / local SEO — currently taken from the Google Business Profile.
 export const ADDRESS_LINE = "AlMasraf Building, Sheikh Zayed Road";
 export const ADDRESS_CITY = "Dubai";
 export const ADDRESS_COUNTRY = "UAE";
@@ -48,3 +53,23 @@ export const LARGEST_PROJECT_TR = 240;
 // Total projects delivered since 2022 (confirmed by owner: 32). The projects
 // page shows a selection of 12.
 export const PROJECTS_DELIVERED = "32";
+
+// --- Coverage ---
+// Emirates we provide service across (all seven).
+export const EMIRATES_SERVED = [
+  "Dubai",
+  "Abu Dhabi",
+  "Sharjah",
+  "Ajman",
+  "Umm Al Quwain",
+  "Ras Al Khaimah",
+  "Fujairah",
+] as const;
+
+// Emirates where AGEC has actually delivered projects (from the projects list).
+export const EMIRATES_WITH_PROJECTS = [
+  "Dubai",
+  "Sharjah",
+  "Ajman",
+  "Abu Dhabi",
+] as const;
