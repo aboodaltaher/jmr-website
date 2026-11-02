@@ -5,9 +5,12 @@ import { notFound } from "next/navigation";
 import ReactMarkdown, { type Components } from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Phone, MessageCircle } from "lucide-react";
-import { getAllSlugs, getPostBySlug, formatDate } from "@/lib/blog";
+import { getAllSlugs, getPostBySlug } from "@/lib/blog";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { RelatedServices } from "@/components/RelatedServices";
+import { AuthorByline } from "@/components/AuthorByline";
+import { AuthorBox } from "@/components/AuthorBox";
+import { FOUNDER } from "@/lib/company";
 
 const SITE_URL = "https://agec.ae";
 
@@ -239,9 +242,9 @@ export default async function ArticlePage({
     dateModified: post.updated || post.date,
     image: `${SITE_URL}${post.image}`,
     author: {
-      "@type": "Organization",
-      name: post.author,
-      url: SITE_URL,
+      "@type": "Person",
+      name: FOUNDER,
+      url: `${SITE_URL}/about`,
     },
     publisher: {
       "@type": "Organization",
@@ -266,9 +269,9 @@ export default async function ArticlePage({
     dateModified: post.updated || post.date,
     image: `${SITE_URL}${post.image}`,
     author: {
-      "@type": "Organization",
-      name: post.author,
-      url: SITE_URL,
+      "@type": "Person",
+      name: FOUNDER,
+      url: `${SITE_URL}/about`,
     },
     publisher: {
       "@type": "Organization",
@@ -346,19 +349,13 @@ export default async function ArticlePage({
           <h1 className="max-w-4xl font-heading text-4xl font-bold leading-tight md:text-5xl">
             {post.title}
           </h1>
-          <div className="mt-4 flex flex-wrap items-center gap-2 text-sm text-text-muted">
-            <span>By the {post.author}</span>
-            <span>·</span>
-            <span>{formatDate(post.date)}</span>
-            <span>·</span>
-            <span>{post.readingTime}</span>
-            {post.updated && (
-              <>
-                <span>·</span>
-                <span>Last updated {formatDate(post.updated)}</span>
-              </>
-            )}
-          </div>
+          <AuthorByline
+            date={post.date}
+            readingTime={post.readingTime}
+            updated={post.updated}
+            showTitle
+            className="mt-4 text-sm"
+          />
           <div className="relative mt-8 aspect-[21/9] overflow-hidden rounded-xl">
             <Image
               src={post.image}
@@ -379,6 +376,11 @@ export default async function ArticlePage({
           </ReactMarkdown>
         </div>
       </article>
+
+      {/* Author box */}
+      <section className="pb-4">
+        <AuthorBox />
+      </section>
 
       {/* CTA Box */}
       <section className="pb-16">

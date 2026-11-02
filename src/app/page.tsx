@@ -25,8 +25,16 @@ import {
   Star,
 } from "lucide-react";
 import { PHONE, PHONE_DISPLAY } from "@/lib/contact";
+import { PROJECTS_DELIVERED } from "@/lib/company";
 import { GOOGLE_REVIEWS_URL, GOOGLE_REVIEWS } from "@/lib/reviews";
 import { getGoogleReviewStats } from "@/lib/google-reviews";
+
+// Image for the "Why AGEC" panel. Swap it by replacing the file at
+// public/why-agec.jpg, or point this at another path under /public.
+// TODO(owner): this is a placeholder (a real AGEC commissioning photo).
+// Replace with your preferred image — recommended ~1200×1500px (portrait),
+// JPG or WebP, compressed. The panel is a tall column cropped to fill.
+const WHY_AGEC_IMAGE = "/why-agec.jpg";
 
 export const metadata = buildMetadata({
   title: "HVAC Contractor & AC Maintenance Dubai | AGEC",
@@ -40,7 +48,44 @@ export const metadata = buildMetadata({
   },
 });
 
+// Order: maintenance-led first, installation (VRF/Chillers/DX) last. (Audit task 9)
 const services = [
+  {
+    icon: Wrench,
+    name: "Maintenance",
+    href: "/services/maintenance",
+    image: "/projects/agec-maintenance-service-dubai.jpg",
+    alt: "AGEC HVAC maintenance in Dubai",
+    description:
+      "Preventive and corrective maintenance contracts to keep systems running at peak performance.",
+  },
+  {
+    icon: Wind,
+    name: "Ventilation & Fresh Air",
+    href: "/services/ventilation-fresh-air",
+    image: "/projects/fresh-air-handling-unit-fahu-dubai-agec.jpg",
+    alt: "Fresh Air Handling Unit (FAHU) installation by AGEC in Dubai commercial project",
+    description:
+      "Mechanical ventilation and fresh air systems designed to meet Dubai Municipality air quality standards.",
+  },
+  {
+    icon: ClipboardCheck,
+    name: "Testing & Commissioning",
+    href: "/services/testing-commissioning",
+    image: "/projects/agec-technician-tab-commissioning-airflow-balometer-dubai.jpg",
+    alt: "AGEC technician performing TAB testing and commissioning in Dubai",
+    description:
+      "System verification, airflow balancing, and performance testing against design specifications.",
+  },
+  {
+    icon: Settings,
+    name: "HVAC Design & Consultancy",
+    href: "/services/hvac-design",
+    image: "/projects/multiple-ahu-installation-hvac-design-dubai.jpg",
+    alt: "HVAC design and engineering scale at Dubai commercial project by AGEC",
+    description:
+      "Heat load calculations, duct sizing, equipment selection, and full MEP coordination.",
+  },
   {
     icon: Gauge,
     name: "VRF / VRV Systems",
@@ -68,42 +113,6 @@ const services = [
     description:
       "Direct expansion split and packaged units for targeted cooling in offices, retail, and server rooms.",
   },
-  {
-    icon: Wind,
-    name: "Ventilation & Fresh Air",
-    href: "/services/ventilation-fresh-air",
-    image: "/projects/fresh-air-handling-unit-fahu-dubai-agec.jpg",
-    alt: "Fresh Air Handling Unit (FAHU) installation by AGEC in Dubai commercial project",
-    description:
-      "Mechanical ventilation and fresh air systems designed to meet Dubai Municipality air quality standards.",
-  },
-  {
-    icon: Settings,
-    name: "HVAC Design & Consultancy",
-    href: "/services/hvac-design",
-    image: "/projects/multiple-ahu-installation-hvac-design-dubai.jpg",
-    alt: "HVAC design and engineering scale at Dubai commercial project by AGEC",
-    description:
-      "Heat load calculations, duct sizing, equipment selection, and full MEP coordination.",
-  },
-  {
-    icon: ClipboardCheck,
-    name: "Testing & Commissioning",
-    href: "/services/testing-commissioning",
-    image: "/projects/agec-technician-tab-commissioning-airflow-balometer-dubai.jpg",
-    alt: "AGEC technician performing TAB testing and commissioning in Dubai",
-    description:
-      "System verification, airflow balancing, and performance testing against design specifications.",
-  },
-  {
-    icon: Wrench,
-    name: "Maintenance",
-    href: "/services/maintenance",
-    image: "/projects/agec-maintenance-service-dubai.jpg",
-    alt: "AGEC HVAC maintenance in Dubai",
-    description:
-      "Preventive and corrective maintenance contracts to keep systems running at peak performance.",
-  },
 ];
 
 const reasons = [
@@ -123,11 +132,11 @@ const reasons = [
     icon: ShieldCheck,
     name: "Quality Equipment Partners",
     description:
-      "Approved brands, AHRI-certified equipment, and proper warranties on every system we install.",
+      "Approved brands, manufacturer-rated equipment, and proper warranties on every system we install.",
   },
   {
     icon: Target,
-    name: "Performance Guaranteed",
+    name: "Performance Verified",
     description:
       "Every system tested and commissioned against specification. We don't leave until it's working as designed.",
   },
@@ -185,7 +194,7 @@ export default async function Home() {
             </Link>
           </div>
           <p className="mt-8 text-sm text-white/60">
-            Established 2022 · 32 Projects · All 7 Emirates · Dubai, UAE
+            Established 2022 · {PROJECTS_DELIVERED} Projects · Service across the UAE · Dubai, UAE
           </p>
           <div className="mt-4">
             <GoogleReviewsBadge className="text-white/90" />
@@ -295,7 +304,7 @@ export default async function Home() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
             {[
-              { value: "32", label: "Projects Delivered" },
+              { value: PROJECTS_DELIVERED, label: "Projects Delivered" },
               { value: "240 TR", label: "Max Single Project" },
               { value: "7", label: "Emirates Served" },
               { value: "2022", label: "Established" },
@@ -378,8 +387,8 @@ export default async function Home() {
             </div>
             <div className="relative hidden overflow-hidden rounded-lg lg:col-span-2 lg:block">
               <Image
-                src="https://images.unsplash.com/photo-1704022632400-79aab2ddb9f6?auto=format&fit=crop&w=1200&q=80"
-                alt="Modern building with HVAC ventilation systems"
+                src={WHY_AGEC_IMAGE}
+                alt="AGEC engineer commissioning an HVAC system with an airflow balometer in Dubai"
                 fill
                 className="object-cover"
               />

@@ -1,8 +1,9 @@
 import { buildMetadata } from "@/lib/metadata";
 import Image from "next/image";
 import Link from "next/link";
-import { getAllPosts, formatDate } from "@/lib/blog";
+import { getAllPosts } from "@/lib/blog";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
+import { AuthorByline } from "@/components/AuthorByline";
 
 export const metadata = buildMetadata({
   title: "Insights & Engineering Guides | AGEC",
@@ -84,11 +85,11 @@ export default function BlogIndex() {
                   <p className="mt-3 text-sm leading-relaxed text-text-muted">
                     {post.excerpt}
                   </p>
-                  <div className="mt-4 flex items-center gap-2 text-xs text-text-muted">
-                    <span>{formatDate(post.date)}</span>
-                    <span>·</span>
-                    <span>{post.readingTime}</span>
-                  </div>
+                  <AuthorByline
+                    date={post.date}
+                    readingTime={post.readingTime}
+                    className="mt-4 text-xs"
+                  />
                 </div>
               </Link>
             ))}

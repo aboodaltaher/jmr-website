@@ -1,4 +1,5 @@
 import { buildMetadata } from "@/lib/metadata";
+import { PROJECTS_DELIVERED } from "@/lib/company";
 import {
   Ruler,
   Wrench,
@@ -112,7 +113,7 @@ export default function DxUnits() {
       ]}
       whyAgec={[
         "Every unit sized from calculated heat loads — up to 240 TR single-project capacity delivered across our portfolio",
-        "32 HVAC projects delivered across the UAE, from studio apartments to multi-villa communities",
+        `${PROJECTS_DELIVERED} HVAC projects delivered across the UAE, from studio apartments to multi-villa communities`,
         "ASHRAE 111 and SMACNA compliant installation practices with full commissioning documentation",
         "Refrigerant piping to manufacturer standards: nitrogen-purged brazing, 500-micron vacuum hold test, and weighed charge",
       ]}

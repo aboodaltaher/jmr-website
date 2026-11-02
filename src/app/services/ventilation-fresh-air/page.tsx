@@ -1,4 +1,5 @@
 import { buildMetadata } from "@/lib/metadata";
+import { PROJECTS_DELIVERED } from "@/lib/company";
 import {
   PenLine,
   Fan,
@@ -102,7 +103,7 @@ export default function VentilationFreshAir() {
       ]}
       whyAgec={[
         "Ventilation designs based on calculated outdoor air requirements, not arbitrary air change rates",
-        "32 HVAC projects across the UAE — restaurants, gyms, data centers, and commercial buildings",
+        `${PROJECTS_DELIVERED} HVAC projects across the UAE — restaurants, gyms, data centers, and commercial buildings`,
         "ASHRAE 111 and SMACNA compliant ductwork installation and air balancing practices",
         "Full compliance documentation for Dubai Municipality, civil defence, and consultant sign-off",
       ]}

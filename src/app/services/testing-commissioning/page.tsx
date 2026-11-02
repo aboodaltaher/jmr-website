@@ -1,4 +1,5 @@
 import { buildMetadata } from "@/lib/metadata";
+import { PROJECTS_DELIVERED } from "@/lib/company";
 import {
   Gauge,
   Droplets,
@@ -12,7 +13,7 @@ import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
 export const metadata = buildMetadata({
   title: "HVAC Testing & Commissioning Dubai | AGEC",
   description:
-    "Independent HVAC testing, commissioning and air balancing in Dubai — systems proven to design values with documented, signed handover reports.",
+    "HVAC testing, commissioning and air balancing in Dubai — systems proven to design values with documented, signed handover reports.",
   path: "/services/testing-commissioning",
 });
 
@@ -23,7 +24,7 @@ export default function TestingCommissioning() {
       title="Testing & Commissioning"
       heroImage="/projects/agec-technician-tab-commissioning-airflow-balometer-dubai.jpg"
       heroImageAlt="AGEC technician performing TAB testing and commissioning with airflow balometer at commercial project in Dubai"
-      intro="Independent verification that every HVAC system performs to specification — airflow, water flow, controls, and safety systems tested and documented."
+      intro="Documented verification that every HVAC system performs to specification — airflow, water flow, controls, and safety systems tested and documented."
       overview={
         <>
           <p>
@@ -100,9 +101,9 @@ export default function TestingCommissioning() {
         },
       ]}
       whyAgec={[
-        "Commissioning engineers with calibrated, traceable instruments — 32 projects commissioned across the UAE",
+        `Commissioning engineers with calibrated, traceable instruments — ${PROJECTS_DELIVERED} projects commissioned across the UAE`,
         "ASHRAE 111, SMACNA, and CIBSE compliant methodology with systematic documentation",
-        "Independent verification: we report what we measure, whether it passes or not, giving owners and consultants confidence in the handover",
+        "Documented verification: we report what we measure, whether it passes or not, giving owners and consultants confidence in the handover",
         "Practical problem-solving when systems don't meet spec — root cause identification, not just deficiency logging",
       ]}
     />
