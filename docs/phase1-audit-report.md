@@ -2,7 +2,23 @@
 
 Branch: `phase1-audit-fixes` (local commits only — **not pushed**, per instruction).
 Date: 2026-11-02.
-Verification: `tsc --noEmit` ✓ · `eslint` ✓ (0 errors) · `next build` ✓.
+Verification: `tsc --noEmit` ✓ · `eslint` ✓ (0 errors) · `next build` ✓ (46/46 pages).
+
+### Update — owner decisions applied (2026-11-02)
+
+1. **Address:** confirmed `AlMasraf Building, Sheikh Zayed Road` — TODO removed.
+2. **Review count:** auto-updates via Places API — no change needed.
+3. **Photos:** owner owns all site photos — no change needed.
+4. **Blog schema author:** now a `Person` (Mohannad Ghabboun → `/about`), matching
+   the visible byline.
+5. **Author box:** added at the foot of every post (photo + title + bio).
+6. **Claims (Task 8):** all three softened — "Performance Guaranteed" → "Performance
+   Verified"; "AHRI-certified" → "manufacturer-rated"; "independent" dropped for
+   AGEC's own T&C work (kept only for verifying systems installed by others).
+7. **Emirates wording (Task 7):** applied — hero + About prose reworded to
+   "service across the UAE" with projects named in Dubai, Sharjah, Ajman, Abu Dhabi.
+
+The sections below are the original pre-decision analysis, kept for reference.
 
 ---
 
