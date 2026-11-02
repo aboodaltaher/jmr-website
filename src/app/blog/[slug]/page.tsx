@@ -9,6 +9,8 @@ import { getAllSlugs, getPostBySlug } from "@/lib/blog";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { RelatedServices } from "@/components/RelatedServices";
 import { AuthorByline } from "@/components/AuthorByline";
+import { AuthorBox } from "@/components/AuthorBox";
+import { FOUNDER } from "@/lib/company";
 
 const SITE_URL = "https://agec.ae";
 
@@ -240,9 +242,9 @@ export default async function ArticlePage({
     dateModified: post.updated || post.date,
     image: `${SITE_URL}${post.image}`,
     author: {
-      "@type": "Organization",
-      name: post.author,
-      url: SITE_URL,
+      "@type": "Person",
+      name: FOUNDER,
+      url: `${SITE_URL}/about`,
     },
     publisher: {
       "@type": "Organization",
@@ -267,9 +269,9 @@ export default async function ArticlePage({
     dateModified: post.updated || post.date,
     image: `${SITE_URL}${post.image}`,
     author: {
-      "@type": "Organization",
-      name: post.author,
-      url: SITE_URL,
+      "@type": "Person",
+      name: FOUNDER,
+      url: `${SITE_URL}/about`,
     },
     publisher: {
       "@type": "Organization",
@@ -374,6 +376,11 @@ export default async function ArticlePage({
           </ReactMarkdown>
         </div>
       </article>
+
+      {/* Author box */}
+      <section className="pb-4">
+        <AuthorBox />
+      </section>
 
       {/* CTA Box */}
       <section className="pb-16">

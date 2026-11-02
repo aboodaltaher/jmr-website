@@ -129,10 +129,11 @@ export default function About() {
                   engineers, not just installers.
                 </p>
                 <p>
-                  Today we operate across all seven Emirates of the UAE — with a
-                  portfolio of {PROJECTS_DELIVERED} completed projects ranging
-                  from residential villas to data centers, commercial buildings,
-                  and cultural facilities. Our largest single project has handled
+                  We work with clients across the UAE, with a portfolio of{" "}
+                  {PROJECTS_DELIVERED} completed projects — in Dubai, Sharjah,
+                  Ajman and Abu Dhabi — ranging from residential villas to data
+                  centers, commercial buildings, and cultural facilities. Our
+                  largest single project has handled
                   a 240-ton cooling capacity, and our largest contract value to
                   date is 8.75 million AED.
                 </p>

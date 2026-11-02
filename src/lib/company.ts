@@ -14,9 +14,7 @@ export const EMAIL = "a.altaher@agec.ae";
 // WhatsApp (digits only, no +). The wa.me link logic lives in ./contact.
 export const WHATSAPP = "971585575987";
 
-// Address (from the Google Business Profile listing).
-// TODO(owner): confirm this matches the DET trade licence before relying on it
-// for schema / local SEO — currently taken from the Google Business Profile.
+// Address — AlMasraf Building, Sheikh Zayed Road (owner-confirmed).
 export const ADDRESS_LINE = "AlMasraf Building, Sheikh Zayed Road";
 export const ADDRESS_CITY = "Dubai";
 export const ADDRESS_COUNTRY = "UAE";

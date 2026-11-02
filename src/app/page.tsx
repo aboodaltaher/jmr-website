@@ -194,7 +194,7 @@ export default async function Home() {
             </Link>
           </div>
           <p className="mt-8 text-sm text-white/60">
-            Established 2022 · {PROJECTS_DELIVERED} Projects · All 7 Emirates · Dubai, UAE
+            Established 2022 · {PROJECTS_DELIVERED} Projects · Service across the UAE · Dubai, UAE
           </p>
           <div className="mt-4">
             <GoogleReviewsBadge className="text-white/90" />

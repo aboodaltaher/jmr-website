@@ -3,9 +3,7 @@ import { formatDate } from "@/lib/blog";
 
 // Visible author byline for blog posts and the blog index (audit task 10).
 // The author name comes from the company SSOT (FOUNDER); the title matches
-// the engineer profile on /about.
-// TODO(owner): confirm the author title below, and add a short (2–3 sentence)
-// author bio if you want a fuller author box under each post.
+// the engineer profile on /about and the AuthorBox shown under each post.
 const AUTHOR_TITLE = "Founder & Lead HVAC Engineer";
 
 export function AuthorByline({
