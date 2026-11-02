@@ -26,6 +26,16 @@ const serviceLinks = [
   { href: "/services/testing-commissioning", label: "Testing & Commissioning" },
 ];
 
+// Dedicated Maintenance nav item (audit task 9). Points at the existing
+// maintenance pages — a subset of serviceLinks, surfaced on its own.
+const maintenanceLinks = [
+  { href: "/ac-maintenance-dubai", label: "AC Maintenance" },
+  { href: "/ac-amc-dubai", label: "AC AMC" },
+  { href: "/ac-repair-dubai", label: "AC Repair" },
+  { href: "/ac-duct-cleaning-dubai", label: "AC Duct Cleaning" },
+  { href: "/services/maintenance", label: "Commercial Maintenance & AMC" },
+];
+
 const tailLinks = [
   { href: "/projects", label: "Projects" },
   { href: "/blog", label: "Insights" },
@@ -35,10 +45,12 @@ const tailLinks = [
 export function Header() {
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [maintenanceOpen, setMaintenanceOpen] = useState(false);
 
   const closeAll = () => {
     setOpen(false);
     setServicesOpen(false);
+    setMaintenanceOpen(false);
   };
 
   const linkClass =
@@ -95,6 +107,57 @@ export function Header() {
                 className="absolute left-0 top-full z-50 mt-1 min-w-[240px] rounded-md border border-border bg-white py-2 shadow-lg"
               >
                 {serviceLinks.map((link) => (
+                  <li role="none" key={link.href}>
+                    <Link
+                      role="menuitem"
+                      href={link.href}
+                      onClick={closeAll}
+                      className="block px-4 py-2 text-sm font-medium text-text-muted hover:bg-bg-soft hover:text-text focus:bg-bg-soft focus:outline-none transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+
+          {/* Maintenance: dedicated dropdown (audit task 9) */}
+          <div
+            className="relative"
+            onMouseEnter={() => setMaintenanceOpen(true)}
+            onMouseLeave={() => setMaintenanceOpen(false)}
+            onKeyDown={(e) => {
+              if (e.key === "Escape") setMaintenanceOpen(false);
+            }}
+          >
+            <span className="flex items-center gap-0.5">
+              <Link href="/ac-maintenance-dubai" className={linkClass} onClick={closeAll}>
+                Maintenance
+              </Link>
+              <button
+                type="button"
+                aria-label={maintenanceOpen ? "Close maintenance menu" : "Open maintenance menu"}
+                aria-haspopup="menu"
+                aria-expanded={maintenanceOpen}
+                aria-controls="maintenance-menu"
+                onClick={() => setMaintenanceOpen((v) => !v)}
+                className="flex items-center justify-center p-1 text-text-muted hover:text-text"
+              >
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform ${maintenanceOpen ? "rotate-180" : ""}`}
+                  aria-hidden="true"
+                />
+              </button>
+            </span>
+            {maintenanceOpen && (
+              <ul
+                id="maintenance-menu"
+                role="menu"
+                aria-label="Maintenance"
+                className="absolute left-0 top-full z-50 mt-1 min-w-[240px] rounded-md border border-border bg-white py-2 shadow-lg"
+              >
+                {maintenanceLinks.map((link) => (
                   <li role="none" key={link.href}>
                     <Link
                       role="menuitem"
@@ -168,6 +231,24 @@ export function Header() {
               Services
             </Link>
             {serviceLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={closeAll}
+                className="py-2.5 pl-3 text-base font-medium text-text-muted hover:text-text transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+
+            <Link
+              href="/ac-maintenance-dubai"
+              onClick={closeAll}
+              className="mt-2 pb-1 pt-2 text-xs font-semibold uppercase tracking-widest text-primary"
+            >
+              Maintenance
+            </Link>
+            {maintenanceLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
