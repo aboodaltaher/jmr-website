@@ -41,7 +41,44 @@ export const metadata = buildMetadata({
   },
 });
 
+// Order: maintenance-led first, installation (VRF/Chillers/DX) last. (Audit task 9)
 const services = [
+  {
+    icon: Wrench,
+    name: "Maintenance",
+    href: "/services/maintenance",
+    image: "/projects/agec-maintenance-service-dubai.jpg",
+    alt: "AGEC HVAC maintenance in Dubai",
+    description:
+      "Preventive and corrective maintenance contracts to keep systems running at peak performance.",
+  },
+  {
+    icon: Wind,
+    name: "Ventilation & Fresh Air",
+    href: "/services/ventilation-fresh-air",
+    image: "/projects/fresh-air-handling-unit-fahu-dubai-agec.jpg",
+    alt: "Fresh Air Handling Unit (FAHU) installation by AGEC in Dubai commercial project",
+    description:
+      "Mechanical ventilation and fresh air systems designed to meet Dubai Municipality air quality standards.",
+  },
+  {
+    icon: ClipboardCheck,
+    name: "Testing & Commissioning",
+    href: "/services/testing-commissioning",
+    image: "/projects/agec-technician-tab-commissioning-airflow-balometer-dubai.jpg",
+    alt: "AGEC technician performing TAB testing and commissioning in Dubai",
+    description:
+      "System verification, airflow balancing, and performance testing against design specifications.",
+  },
+  {
+    icon: Settings,
+    name: "HVAC Design & Consultancy",
+    href: "/services/hvac-design",
+    image: "/projects/multiple-ahu-installation-hvac-design-dubai.jpg",
+    alt: "HVAC design and engineering scale at Dubai commercial project by AGEC",
+    description:
+      "Heat load calculations, duct sizing, equipment selection, and full MEP coordination.",
+  },
   {
     icon: Gauge,
     name: "VRF / VRV Systems",
@@ -68,42 +105,6 @@ const services = [
     alt: "Indoor air handling unit installation in Dubai by AGEC",
     description:
       "Direct expansion split and packaged units for targeted cooling in offices, retail, and server rooms.",
-  },
-  {
-    icon: Wind,
-    name: "Ventilation & Fresh Air",
-    href: "/services/ventilation-fresh-air",
-    image: "/projects/fresh-air-handling-unit-fahu-dubai-agec.jpg",
-    alt: "Fresh Air Handling Unit (FAHU) installation by AGEC in Dubai commercial project",
-    description:
-      "Mechanical ventilation and fresh air systems designed to meet Dubai Municipality air quality standards.",
-  },
-  {
-    icon: Settings,
-    name: "HVAC Design & Consultancy",
-    href: "/services/hvac-design",
-    image: "/projects/multiple-ahu-installation-hvac-design-dubai.jpg",
-    alt: "HVAC design and engineering scale at Dubai commercial project by AGEC",
-    description:
-      "Heat load calculations, duct sizing, equipment selection, and full MEP coordination.",
-  },
-  {
-    icon: ClipboardCheck,
-    name: "Testing & Commissioning",
-    href: "/services/testing-commissioning",
-    image: "/projects/agec-technician-tab-commissioning-airflow-balometer-dubai.jpg",
-    alt: "AGEC technician performing TAB testing and commissioning in Dubai",
-    description:
-      "System verification, airflow balancing, and performance testing against design specifications.",
-  },
-  {
-    icon: Wrench,
-    name: "Maintenance",
-    href: "/services/maintenance",
-    image: "/projects/agec-maintenance-service-dubai.jpg",
-    alt: "AGEC HVAC maintenance in Dubai",
-    description:
-      "Preventive and corrective maintenance contracts to keep systems running at peak performance.",
   },
 ];
 
