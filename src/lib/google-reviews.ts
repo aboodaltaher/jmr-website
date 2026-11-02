@@ -31,9 +31,12 @@ export async function getGoogleReviewStats(): Promise<ReviewStats> {
 
   try {
     const res = await fetch(
-      `https://places.googleapis.com/v1/places/${encodeURIComponent(placeId)}?fields=rating,userRatingCount`,
+      `https://places.googleapis.com/v1/places/${encodeURIComponent(placeId)}`,
       {
-        headers: { "X-Goog-Api-Key": key },
+        headers: {
+          "X-Goog-Api-Key": key,
+          "X-Goog-FieldMask": "rating,userRatingCount",
+        },
         // Refresh once a day; cached across requests so we never hammer the API.
         next: { revalidate: 86400 },
       },
