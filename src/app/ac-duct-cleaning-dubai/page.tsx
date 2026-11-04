@@ -48,6 +48,7 @@ const signs = [
 
 const packages = [
   {
+    id: "premium-duct-cleaning",
     name: "Premium Duct Cleaning",
     for: "The complete package — full duct system for villas and offices",
     includes: [
@@ -59,6 +60,7 @@ const packages = [
     ],
   },
   {
+    id: "full-ac-cleaning",
     name: "Full AC Cleaning",
     for: "Scheduled annual clean for split, ducted and concealed systems",
     includes: [
@@ -70,6 +72,7 @@ const packages = [
     ],
   },
   {
+    id: "split-ac-cleaning",
     name: "Split AC Cleaning",
     for: "Targeted clean for wall-mounted split units",
     includes: [
@@ -81,6 +84,7 @@ const packages = [
     ],
   },
   {
+    id: "coil-cleaning",
     name: "Coil Cleaning",
     for: "The single most impactful clean for cooling performance",
     includes: [
@@ -310,7 +314,7 @@ export default function AcDuctCleaningPage() {
           </p>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {packages.map((pkg) => (
-              <div key={pkg.name} className="flex flex-col rounded-xl border border-border bg-white p-7">
+              <div key={pkg.name} id={pkg.id} className="flex scroll-mt-24 flex-col rounded-xl border border-border bg-white p-7">
                 <Wind className="h-9 w-9 text-primary" strokeWidth={1.5} />
                 <h3 className="mt-4 font-heading text-lg font-bold">{pkg.name}</h3>
                 <p className="mt-1 text-sm text-text-muted">{pkg.for}</p>
