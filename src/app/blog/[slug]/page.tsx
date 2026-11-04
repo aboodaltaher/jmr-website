@@ -11,6 +11,7 @@ import { RelatedServices } from "@/components/RelatedServices";
 import { AuthorByline } from "@/components/AuthorByline";
 import { AuthorBox } from "@/components/AuthorBox";
 import { FOUNDER } from "@/lib/company";
+import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 
 const SITE_URL = "https://agec.ae";
 
@@ -302,6 +303,13 @@ export default async function ArticlePage({
 
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", path: "" },
+          { name: "Insights", path: "/blog" },
+          { name: post.title, path: `/blog/${slug}` },
+        ]}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

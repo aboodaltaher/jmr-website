@@ -8,6 +8,7 @@ import { Check, Phone, MessageCircle } from "lucide-react";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { BalancingForm } from "@/components/BalancingForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { SampleReportButton } from "@/components/SampleReportButton";
 import { PHONE, whatsappUrl } from "@/lib/contact";
 
@@ -114,6 +115,13 @@ export default function AirBalancingPage() {
 
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", path: "" },
+          { name: "Services", path: "/services" },
+          { name: "Air Balancing & Airflow Testing", path: ROUTE },
+        ]}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
