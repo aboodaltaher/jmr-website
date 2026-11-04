@@ -1,6 +1,7 @@
 import { buildMetadata } from "@/lib/metadata";
 import { Phone, MessageCircle, Check, ShieldCheck, BadgeCheck, Clock, FileText, Gauge, CalendarClock } from "lucide-react";
 import { PHONE, PHONE_DISPLAY, whatsappUrl } from "@/lib/contact";
+import { EMAIL, ADDRESS_LINE, ADDRESS_CITY } from "@/lib/company";
 
 const SITE_URL = "https://agec.ae";
 const ROUTE = "/ar/ac-maintenance-dubai";
@@ -80,11 +81,11 @@ const serviceSchema = {
     "@type": "HVACBusiness",
     name: "AGEC Technical Services",
     telephone: PHONE,
-    email: "a.altaher@agec.ae",
+    email: EMAIL,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "AlMasraf Building, Sheikh Zayed Road",
-      addressLocality: "Dubai",
+      streetAddress: ADDRESS_LINE,
+      addressLocality: ADDRESS_CITY,
       addressCountry: "AE",
     },
     url: SITE_URL,
