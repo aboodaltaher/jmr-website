@@ -11,6 +11,9 @@ import {
   Wrench,
   Cpu,
   Settings,
+  Hammer,
+  Scale,
+  Calendar,
 } from "lucide-react";
 
 export const metadata = buildMetadata({
@@ -29,11 +32,25 @@ const services = [
       "Variable Refrigerant Flow systems for buildings requiring zoned cooling, energy efficiency, and quiet operation. We design, install, and commission VRF systems from leading manufacturers for villas, offices, and mid-rise buildings.",
   },
   {
+    icon: Hammer,
+    name: "HVAC Installation",
+    href: "/services/hvac-installation-dubai",
+    description:
+      "Complete air-conditioning installation for new builds and fit-outs — ductwork, refrigerant and chilled-water piping, equipment set, controls and commissioning, handed over with test sheets and as-built information.",
+  },
+  {
     icon: Snowflake,
     name: "Chillers",
     href: "/services/chillers",
     description:
       "Air-cooled and water-cooled chiller systems for commercial buildings, hotels, and industrial facilities. Complete piping design, pump selection, and chilled water system commissioning.",
+  },
+  {
+    icon: Calendar,
+    name: "Chiller Maintenance",
+    href: "/services/chiller-maintenance-dubai",
+    description:
+      "Planned maintenance for air- and water-cooled chiller plant — scheduled servicing, tube cleaning, refrigerant and performance checks, water treatment and logged reports under an AMC.",
   },
   {
     icon: Thermometer,
@@ -69,6 +86,13 @@ const services = [
     href: "/services/testing-commissioning",
     description:
       "Documented testing, balancing, and commissioning services. Airflow measurement, water flow balancing, controls verification, and full T&C reports — every system handed over against specification.",
+  },
+  {
+    icon: Scale,
+    name: "Testing, Adjusting & Balancing (TAB)",
+    href: "/services/tab-testing-adjusting-balancing-dubai",
+    description:
+      "Measured airflow and water flow set to design values across air and water systems, with a documented, signed balancing report for consultant and landlord sign-off.",
   },
   {
     icon: Settings,

@@ -2,14 +2,17 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 const ALL_SERVICES = [
+  { href: "/services/hvac-installation-dubai", label: "HVAC Installation", desc: "New builds & fit-outs, design to handover" },
   { href: "/ac-maintenance-dubai", label: "AC Maintenance", desc: "Servicing, repair & AMC for homes" },
   { href: "/ac-repair-dubai", label: "AC Repair", desc: "Root-cause diagnosis, fixed in writing" },
   { href: "/ac-amc-dubai", label: "AC AMC", desc: "Annual maintenance contracts" },
   { href: "/ac-duct-cleaning-dubai", label: "AC Duct Cleaning", desc: "Ducts, coils & drains with disinfection" },
   { href: "/air-balancing-airflow-testing-dubai", label: "Air Balancing", desc: "Measured airflow testing & reports" },
+  { href: "/services/tab-testing-adjusting-balancing-dubai", label: "TAB Balancing", desc: "Air & water set to design, reported" },
   { href: "/smart-thermostat-installation-dubai", label: "Smart Thermostats", desc: "Nest & ecobee installation" },
   { href: "/services/vrf-vrv-systems", label: "VRF / VRV Systems", desc: "Multi-zone design & commissioning" },
   { href: "/services/maintenance", label: "Commercial Maintenance", desc: "Chillers, AHUs & FCUs under one AMC" },
+  { href: "/services/chiller-maintenance-dubai", label: "Chiller Maintenance", desc: "Planned servicing for chiller plant" },
   { href: "/services/ventilation-fresh-air", label: "Ventilation & Fresh Air", desc: "Airflow & CO₂ testing" },
   { href: "/services/hvac-design", label: "HVAC Design", desc: "Heat loads, duct sizing & MEP" },
   { href: "/services/testing-commissioning", label: "Testing & Commissioning", desc: "TAB to design values" },

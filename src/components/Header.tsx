@@ -13,6 +13,7 @@ const mainLinks = [
 
 const serviceLinks = [
   { href: "/services", label: "All Services" },
+  { href: "/services/hvac-installation-dubai", label: "HVAC Installation" },
   { href: "/ac-maintenance-dubai", label: "AC Maintenance" },
   { href: "/ac-repair-dubai", label: "AC Repair" },
   { href: "/ac-amc-dubai", label: "AC AMC" },
@@ -21,9 +22,11 @@ const serviceLinks = [
   { href: "/smart-thermostat-installation-dubai", label: "Smart Thermostats" },
   { href: "/services/vrf-vrv-systems", label: "VRF / VRV Systems" },
   { href: "/services/maintenance", label: "Commercial Maintenance & AMC" },
+  { href: "/services/chiller-maintenance-dubai", label: "Chiller Maintenance" },
   { href: "/services/ventilation-fresh-air", label: "Ventilation & Fresh Air" },
   { href: "/services/hvac-design", label: "HVAC Design" },
   { href: "/services/testing-commissioning", label: "Testing & Commissioning" },
+  { href: "/services/tab-testing-adjusting-balancing-dubai", label: "TAB (Balancing)" },
 ];
 
 // Dedicated Maintenance nav item (audit task 9). Points at the existing
@@ -34,6 +37,7 @@ const maintenanceLinks = [
   { href: "/ac-repair-dubai", label: "AC Repair" },
   { href: "/ac-duct-cleaning-dubai", label: "AC Duct Cleaning" },
   { href: "/services/maintenance", label: "Commercial Maintenance & AMC" },
+  { href: "/services/chiller-maintenance-dubai", label: "Chiller Maintenance" },
 ];
 
 const tailLinks = [
