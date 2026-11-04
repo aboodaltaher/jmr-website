@@ -52,6 +52,12 @@ export const LARGEST_PROJECT_TR = 240;
 // page shows a selection of 12.
 export const PROJECTS_DELIVERED = "32";
 
+// --- Smart thermostat energy-saving figure (single source, audit task 4) ---
+// Manufacturer-reported (ecobee eco+). The thermostat page footnotes this and
+// notes actual savings depend on home, usage and settings.
+// TODO(owner): keep the manufacturer citation; adjust the figure only with a source.
+export const THERMOSTAT_SAVINGS = "up to 26%";
+
 // --- Coverage ---
 // Emirates we provide service across (all seven).
 export const EMIRATES_SERVED = [

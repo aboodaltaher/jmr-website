@@ -6,6 +6,7 @@ import { InlineLeadForm } from "@/components/InlineLeadForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { GOOGLE_REVIEWS_URL } from "@/lib/reviews";
 import { getGoogleReviewStats } from "@/lib/google-reviews";
+import { THERMOSTAT_SAVINGS } from "@/lib/company";
 import {
   ShieldCheck,
   BadgeCheck,
@@ -41,7 +42,7 @@ const CANONICAL = "/smart-thermostat-installation-dubai";
 export const metadata = buildMetadata({
   title: "Nest & ecobee Thermostat Installation Dubai | AGEC",
   description:
-    "Nest and ecobee smart thermostat installation in Dubai and the UAE. Free compatibility check and C-wire installation. Call +971 58 557 5987.",
+    "Google Nest and ecobee smart thermostat installation in Dubai and the UAE. Free compatibility check and C-wire installation by licensed HVAC engineers.",
   ogDescription:
     "Supplier & professional installer of Google Nest & ecobee smart thermostats across Dubai & the UAE. Free compatibility check & expert C-wire installation.",
   path: CANONICAL,
@@ -417,7 +418,7 @@ export default async function SmartThermostatPage() {
             </div>
             <div className="mt-4 flex justify-between gap-3 border-t border-white/10 pt-5 text-center">
               <div className="flex-1">
-                <b className="block font-heading text-2xl text-white">up to 26%</b>
+                <b className="block font-heading text-2xl text-white">{THERMOSTAT_SAVINGS}</b>
                 <span className="text-xs uppercase tracking-wide text-white/50">HVAC Saving*</span>
               </div>
               <div className="flex-1">
@@ -607,7 +608,7 @@ export default async function SmartThermostatPage() {
       {/* SAVINGS BAND */}
       <section className="bg-primary py-14 text-white">
         <div className="mx-auto grid max-w-7xl gap-8 px-6 text-center sm:grid-cols-4">
-          {[["up to 26%", "HVAC energy saved*"], ["<90 min", "Standard install time"], ["UAE", "Coverage"], ["1–3 yr", "Manufacturer warranty"]].map(([n, l]) => (
+          {[[THERMOSTAT_SAVINGS, "HVAC energy saved*"], ["<90 min", "Standard install time"], ["UAE", "Coverage"], ["1–3 yr", "Manufacturer warranty"]].map(([n, l]) => (
             <div key={l}>
               <b className="block font-heading text-4xl font-bold">{n}</b>
               <span className="text-white">{l}</span>
