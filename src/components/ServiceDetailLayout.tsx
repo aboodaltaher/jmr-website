@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Check, type LucideIcon } from "lucide-react";
 import { RelatedServices } from "@/components/RelatedServices";
+import { AREA_SERVED_SCHEMA } from "@/lib/company";
 
 interface Capability {
   icon: LucideIcon;
@@ -67,7 +68,7 @@ export function ServiceDetailLayout({
         description: intro,
         serviceType: title,
         url,
-        areaServed: { "@type": "Country", name: "United Arab Emirates" },
+        areaServed: AREA_SERVED_SCHEMA,
         provider: {
           "@type": "HVACBusiness",
           name: "AGEC Technical Services",

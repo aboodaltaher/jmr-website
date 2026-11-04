@@ -4,6 +4,7 @@ import {
   PHONE,
   ADDRESS_LINE,
   ADDRESS_CITY,
+  AREA_SERVED_SCHEMA,
 } from "@/lib/company";
 
 const SITE_URL = "https://agec.ae";
@@ -60,15 +61,7 @@ const schema = {
         longitude: 55.2210657,
       },
       hasMap: GBP_URL,
-      areaServed: [
-        { "@type": "City", name: "Dubai" },
-        { "@type": "City", name: "Abu Dhabi" },
-        { "@type": "City", name: "Sharjah" },
-        { "@type": "City", name: "Ajman" },
-        { "@type": "City", name: "Umm Al Quwain" },
-        { "@type": "City", name: "Ras Al Khaimah" },
-        { "@type": "City", name: "Fujairah" },
-      ],
+      areaServed: AREA_SERVED_SCHEMA,
       // Reflects the site's advertised 24/7 call & WhatsApp availability.
       // TODO(owner): confirm physical office hours if different from phone availability.
       openingHoursSpecification: [
