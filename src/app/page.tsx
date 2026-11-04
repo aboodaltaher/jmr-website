@@ -25,7 +25,7 @@ import {
   Star,
 } from "lucide-react";
 import { PHONE, PHONE_DISPLAY } from "@/lib/contact";
-import { PROJECTS_DELIVERED } from "@/lib/company";
+import { PROJECTS_DELIVERED, EMIRATES_WITH_PROJECTS } from "@/lib/company";
 import { GOOGLE_REVIEWS_URL, GOOGLE_REVIEWS } from "@/lib/reviews";
 import { getGoogleReviewStats } from "@/lib/google-reviews";
 
@@ -306,7 +306,7 @@ export default async function Home() {
             {[
               { value: PROJECTS_DELIVERED, label: "Projects Delivered" },
               { value: "240 TR", label: "Max Single Project" },
-              { value: "7", label: "Emirates Served" },
+              { value: String(EMIRATES_WITH_PROJECTS.length), label: "Emirates with projects" },
               { value: "2022", label: "Established" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">

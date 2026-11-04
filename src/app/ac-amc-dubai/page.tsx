@@ -106,7 +106,7 @@ const faqs: { q: string; a: string }[] = [
     : []),
   {
     q: "Do you cover my emirate?",
-    a: "We serve all 7 emirates. Call or WhatsApp +971 58 557 5987.",
+    a: "We've delivered projects in Dubai, Sharjah, Ajman and Abu Dhabi, and are available across the UAE. Call or WhatsApp +971 58 557 5987.",
   },
 ];
 
@@ -193,7 +193,7 @@ export default function AcAmcPage() {
           }}
         />
         <div className="relative mx-auto max-w-7xl px-6 py-16 md:py-24">
-          <p className={eyebrow}>Dubai &amp; UAE · All 7 Emirates</p>
+          <p className={eyebrow}>Dubai &amp; the UAE</p>
           <h1 className="mt-4 max-w-3xl font-heading text-4xl font-bold leading-[1.05] md:text-6xl">
             AC Annual Maintenance Contracts in Dubai
           </h1>
@@ -227,7 +227,7 @@ export default function AcAmcPage() {
           <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-white/80">
             <GoogleReviewsBadge className="text-white/90" />
             <span className="text-white/30">|</span>
-            <span>Serving all 7 emirates</span>
+            <span>Available across the UAE</span>
             <span className="text-white/30">|</span>
             <span>24/7 call or WhatsApp</span>
           </div>

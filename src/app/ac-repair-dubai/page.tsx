@@ -58,7 +58,7 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: "Do you repair split, ducted and VRF?",
-    a: "Yes — split, ducted and VRF/VRV systems from all major brands, across all 7 emirates of the UAE.",
+    a: "Yes — split, ducted and VRF/VRV systems from all major brands, across the UAE.",
   },
 ];
 
@@ -152,7 +152,7 @@ export default function AcRepairPage() {
           }}
         />
         <div className="relative mx-auto max-w-7xl px-6 py-16 md:py-24">
-          <p className={eyebrow}>Dubai &amp; UAE · All 7 Emirates · Response within 1 hour</p>
+          <p className={eyebrow}>Dubai &amp; the UAE · Response within 1 hour</p>
           <h1 className="mt-4 max-w-3xl font-heading text-4xl font-bold leading-[1.05] md:text-6xl">
             AC Repair in Dubai: Diagnosed by an Engineer, Quoted Before We Start
           </h1>
@@ -186,7 +186,7 @@ export default function AcRepairPage() {
           <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-white/80">
             <GoogleReviewsBadge className="text-white/90" />
             <span className="text-white/30">|</span>
-            <span>Serving all 7 emirates</span>
+            <span>Available across the UAE</span>
             <span className="text-white/30">|</span>
             <span>Call or WhatsApp</span>
           </div>
@@ -274,7 +274,7 @@ export default function AcRepairPage() {
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-text-muted">
             We repair split, ducted and VRF/VRV systems from all major brands,
-            across all 7 emirates of the UAE.
+            across the UAE.
           </p>
         </div>
       </section>

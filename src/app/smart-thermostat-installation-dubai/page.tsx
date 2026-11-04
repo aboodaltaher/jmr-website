@@ -76,7 +76,7 @@ const whyCards: { icon: LucideIcon; title: string; desc: string }[] = [
   {
     icon: Clock,
     title: "Same-Day & UAE-Wide",
-    desc: "Fast response across all seven emirates, with same-day installation available for standard, compatible systems in Dubai.",
+    desc: "Fast response across the UAE, with same-day installation available for standard, compatible systems in Dubai.",
   },
   {
     icon: BarChart3,
@@ -425,8 +425,8 @@ export default async function SmartThermostatPage() {
                 <span className="text-xs uppercase tracking-wide text-white/50">Install Time</span>
               </div>
               <div className="flex-1">
-                <b className="block font-heading text-2xl text-white">7</b>
-                <span className="text-xs uppercase tracking-wide text-white/50">Emirates</span>
+                <b className="block font-heading text-2xl text-white">UAE</b>
+                <span className="text-xs uppercase tracking-wide text-white/50">Coverage</span>
               </div>
             </div>
           </div>
@@ -607,7 +607,7 @@ export default async function SmartThermostatPage() {
       {/* SAVINGS BAND */}
       <section className="bg-primary py-14 text-white">
         <div className="mx-auto grid max-w-7xl gap-8 px-6 text-center sm:grid-cols-4">
-          {[["up to 26%", "HVAC energy saved*"], ["<90 min", "Standard install time"], ["7", "Emirates covered"], ["1–3 yr", "Manufacturer warranty"]].map(([n, l]) => (
+          {[["up to 26%", "HVAC energy saved*"], ["<90 min", "Standard install time"], ["UAE", "Coverage"], ["1–3 yr", "Manufacturer warranty"]].map(([n, l]) => (
             <div key={l}>
               <b className="block font-heading text-4xl font-bold">{n}</b>
               <span className="text-white">{l}</span>

@@ -37,7 +37,7 @@ export function ServiceAreas() {
           HVAC services across the UAE
         </h2>
         <p className="mt-4 max-w-2xl text-text-muted">
-          We work across all seven emirates. These are the areas where we have
+          We work across the UAE. These are the areas where we have
           delivered or actively serve — see the full list on our{" "}
           <Link href="/projects" className="font-medium text-primary hover:underline">
             projects page

@@ -71,3 +71,14 @@ export const EMIRATES_WITH_PROJECTS = [
   "Ajman",
   "Abu Dhabi",
 ] as const;
+
+// Human-readable "Dubai, Sharjah, Ajman and Abu Dhabi" from the list above.
+export const EMIRATES_WITH_PROJECTS_LABEL = EMIRATES_WITH_PROJECTS.slice(0, -1)
+  .join(", ")
+  .concat(" and ", EMIRATES_WITH_PROJECTS[EMIRATES_WITH_PROJECTS.length - 1]);
+
+// Honest coverage wording: name the emirates with delivered projects, and make
+// clear the company is available UAE-wide. Use these instead of "all 7 emirates"
+// so the copy doesn't imply projects delivered in every emirate. (Audit task 3.)
+export const COVERAGE_SENTENCE = `Projects in ${EMIRATES_WITH_PROJECTS_LABEL}. Available across the UAE.`;
+export const COVERAGE_SHORT = "Available across the UAE";

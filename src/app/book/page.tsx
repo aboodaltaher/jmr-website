@@ -6,7 +6,7 @@ import { QuoteContent } from "@/components/QuoteContent";
 export const metadata = buildMetadata({
   title: "Get a Quote or Book a Service in Dubai | AGEC",
   description:
-    "Request an HVAC quote or book AC service, repair or maintenance in Dubai. One short form — we reply on call and WhatsApp 24/7, across all 7 emirates.",
+    "Request an HVAC quote or book AC service, repair or maintenance in Dubai. One short form — we reply on call and WhatsApp 24/7, available across the UAE.",
   path: "/quote",
 });
 

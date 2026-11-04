@@ -31,7 +31,7 @@ const schema = {
       name: "AGEC",
       alternateName: "AGEC Technical Services",
       description:
-        "Dubai-based HVAC contractor providing design, installation, testing & commissioning, and maintenance for VRF, VRV, chillers, ducted splits, DX units, and ventilation systems across all seven emirates of the UAE.",
+        "Dubai-based HVAC contractor providing design, installation, testing & commissioning, and maintenance for VRF, VRV, chillers, ducted splits, DX units, and ventilation systems across the UAE.",
       url: SITE_URL,
       logo: `${SITE_URL}/agec-logo.png`,
       image: `${SITE_URL}/agec-logo.png`,

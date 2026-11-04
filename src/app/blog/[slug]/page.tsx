@@ -69,7 +69,7 @@ const faqBySlug: Record<string, { question: string; answer: string }[]> = {
     },
     {
       question: "Do you cover my emirate?",
-      answer: "We serve all 7 emirates. Call or WhatsApp +971 58 557 5987.",
+      answer: "We've delivered projects in Dubai, Sharjah, Ajman and Abu Dhabi, and are available across the UAE. Call or WhatsApp +971 58 557 5987.",
     },
   ],
   "why-ac-bill-so-high-dubai": [
@@ -416,7 +416,7 @@ export default async function ArticlePage({
               <div className="mt-6 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm text-text-muted">
                 <GoogleReviewsBadge className="text-text" />
                 <span className="text-border">|</span>
-                <span>Serving all 7 emirates</span>
+                <span>Available across the UAE</span>
                 <span className="text-border">|</span>
                 <span>24/7 call or WhatsApp</span>
               </div>
