@@ -279,8 +279,12 @@ export default async function AcMaintenancePage() {
             ))}
           </div>
           <p className="mt-8 text-center text-text-muted">
-            Looking for a yearly contract? Explore our{" "}
-            <Link href="/services/maintenance" className="font-semibold text-primary hover:underline">HVAC maintenance &amp; AMC plans</Link>, or add a{" "}
+            Need a specific fix? See our dedicated{" "}
+            <Link href="/ac-repair-dubai" className="font-semibold text-primary hover:underline">AC repair in Dubai</Link>{" "}
+            page. For yearly cover, compare our{" "}
+            <Link href="/ac-amc-dubai" className="font-semibold text-primary hover:underline">AC annual maintenance contracts</Link>{" "}
+            or{" "}
+            <Link href="/services/maintenance" className="font-semibold text-primary hover:underline">commercial HVAC maintenance &amp; AMC plans</Link>, or add a{" "}
             <Link href="/smart-thermostat-installation-dubai" className="font-semibold text-primary hover:underline">smart thermostat</Link> during your visit.
           </p>
         </div>
