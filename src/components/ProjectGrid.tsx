@@ -1,83 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { MapPin } from "lucide-react";
-
-const projects = [
-  {
-    name: "B+G+1+R Basil Mall",
-    category: "Commercial",
-    description: "HVAC Installation & Commissioning, 224 Ton VRF System",
-    location: "Ajman, UAE",
-  },
-  {
-    name: "Private G+4 Building",
-    category: "Residential",
-    description: "HVAC Full Installation, 148 Ton DX System",
-    location: "Dubai, UAE",
-  },
-  {
-    name: "Double Twin Villa G+1",
-    category: "Residential",
-    description: "HVAC Installation & Commissioning, 60 Ton DX System",
-    location: "Sharjah, UAE",
-  },
-  {
-    name: "G+1+R Villa",
-    category: "Residential",
-    description: "HVAC Installation & Commissioning, 45 Ton DX System",
-    location: "Dubai, UAE",
-  },
-  {
-    // Capacity confirmed by owner: 140-ton single villa.
-    name: "B+G+1+R Villa, Al Barsha",
-    category: "Residential",
-    description: "HVAC Installation, 140 Ton DX System",
-    location: "Dubai, UAE",
-  },
-  {
-    name: "18 Villas Community Project",
-    category: "Residential",
-    description: "Full HVAC works across 18 G+1 villas",
-    location: "Al Rgebah / Al Seyouh",
-  },
-  {
-    name: "B+G+1 Private Villa",
-    category: "Residential",
-    description: "Premium HVAC system, flagship residential project",
-    location: "Sharjah, UAE",
-  },
-  {
-    name: "MBZ-AI Server Room",
-    category: "Data Center",
-    description: "Precision cooling for AI server infrastructure",
-    location: "Masdar City, Abu Dhabi",
-  },
-  {
-    name: "Pure Gym",
-    category: "Commercial",
-    description: "HVAC installation and ventilation system",
-    location: "Al Barsha, Dubai",
-  },
-  {
-    name: "AVE Restaurant",
-    category: "Commercial",
-    description: "Kitchen ventilation and dining area cooling",
-    location: "Business Bay, Dubai",
-  },
-  {
-    name: "Zain Solution Data Center",
-    category: "Data Center",
-    description: "Precision cooling and ventilation",
-    location: "Musaffah, Abu Dhabi",
-  },
-  {
-    name: "Cultural Center",
-    category: "Commercial",
-    description: "HVAC works for public cultural facility",
-    location: "Al Barsha, Dubai",
-  },
-];
+import { projects } from "@/data/projects";
 
 // Some entries are described by scope rather than a TR/ton figure, which is
 // fine. "Industrial" was removed — no project currently falls in that category.
@@ -119,13 +45,10 @@ export function ProjectGrid() {
         <div className="mx-auto max-w-7xl px-6">
           <h2 className="sr-only">Project list</h2>
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {filtered.map((project) => (
-              <div
-                key={project.name}
-                className="overflow-hidden rounded-lg border border-border bg-white"
-              >
-                {/* TODO(owner): add real project photos. Empty placeholder
-                    boxes are intentionally hidden until photos are supplied. */}
+            {filtered.map((project) => {
+              // Published projects link to their case study; draft entries
+              // (awaiting owner detail) render as a non-linked card.
+              const body = (
                 <div className="p-6">
                   <span className="text-xs font-semibold uppercase tracking-wider text-primary">
                     {project.category}
@@ -134,15 +57,36 @@ export function ProjectGrid() {
                     {project.name}
                   </h3>
                   <p className="mt-1 text-sm text-text-muted">
-                    {project.description}
+                    {project.systemSummary}
                   </p>
                   <div className="mt-3 flex items-center gap-1.5 text-xs text-text-muted">
                     <MapPin className="h-3.5 w-3.5" />
-                    {project.location}
+                    {project.location.label}
                   </div>
+                  {!project.draft && (
+                    <span className="mt-4 inline-block text-sm font-medium text-primary">
+                      View case study &rarr;
+                    </span>
+                  )}
                 </div>
-              </div>
-            ))}
+              );
+              return project.draft ? (
+                <div
+                  key={project.slug}
+                  className="overflow-hidden rounded-lg border border-border bg-white"
+                >
+                  {body}
+                </div>
+              ) : (
+                <Link
+                  key={project.slug}
+                  href={`/projects/${project.slug}`}
+                  className="group overflow-hidden rounded-lg border border-border bg-white transition-all hover:-translate-y-1 hover:shadow-lg"
+                >
+                  {body}
+                </Link>
+              );
+            })}
           </div>
           {filtered.length === 0 && (
             <p className="py-12 text-center text-text-muted">

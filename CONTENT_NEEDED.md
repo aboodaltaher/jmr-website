@@ -30,3 +30,35 @@ equipment brands, client names, numbers or dates. Optional to supply later:
   renders). Recommended landscape ~1600×900, JPG/WebP, of real AGEC work.
 - If you want brand/standard names on these pages (e.g. specific manufacturers or
   ASHRAE/SMACNA), confirm which are accurate and may be stated.
+
+## Case studies (Task 4)
+A case-study system is built at `/projects/[slug]`, driven by `src/data/projects.ts`.
+All 12 projects are entered using only facts already on the site (name, category,
+system/capacity line, location). **Every project is `draft: true`** — no case-study
+page renders and none is in the sitemap — because the site does not publish a
+challenge / solution / result narrative, photos, dates or client permission for any
+of them. To publish a project, supply the items below and set its `draft` to `false`.
+
+For **each** project, please provide:
+- **Scope of work** — the actual tasks delivered (bulleted).
+- **System type / capacity** — confirm the TR/ton and system (VRF, DX, chiller, etc.).
+- **Challenge** — what made the job non-trivial.
+- **Solution** — what AGEC did about it.
+- **Result** — one honest outcome line (no invented numbers).
+- **Dates** — start/completion (optional but useful).
+- **Client permission** — confirmation we may name the client/building, or keep it generic.
+- **Photos** — real images (with permission); recommended landscape ~1600×900.
+
+Projects awaiting the above (slug — current published summary):
+- `basil-mall-ajman` — B+G+1+R Basil Mall · 224 Ton VRF · Ajman
+- `private-g4-building-dubai` — Private G+4 Building · 148 Ton DX · Dubai
+- `double-twin-villa-sharjah` — Double Twin Villa G+1 · 60 Ton DX · Sharjah
+- `g1r-villa-dubai` — G+1+R Villa · 45 Ton DX · Dubai
+- `villa-al-barsha-dubai` — B+G+1+R Villa · 140 Ton DX · Al Barsha, Dubai
+- `18-villas-community` — 18 Villas Community · full HVAC · Al Rgebah / Al Seyouh (confirm emirate)
+- `private-villa-sharjah-flagship` — B+G+1 Private Villa · flagship residential · Sharjah
+- `mbz-ai-server-room-abu-dhabi` — MBZ-AI Server Room · precision cooling · Masdar City, Abu Dhabi
+- `pure-gym-al-barsha` — Pure Gym · HVAC + ventilation · Al Barsha, Dubai
+- `ave-restaurant-business-bay` — AVE Restaurant · kitchen ventilation + cooling · Business Bay, Dubai
+- `zain-solution-data-center-abu-dhabi` — Zain Solution Data Center · precision cooling · Musaffah, Abu Dhabi
+- `cultural-center-al-barsha` — Cultural Center · HVAC works · Al Barsha, Dubai

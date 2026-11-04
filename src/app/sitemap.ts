@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllPosts } from "@/lib/blog";
+import { publishedProjects } from "@/data/projects";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://agec.ae";
@@ -8,6 +9,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const blogPosts: MetadataRoute.Sitemap = getAllPosts().map((post) => ({
     url: `${base}/blog/${post.slug}`,
     lastModified: new Date(post.updated || post.date || now),
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+
+  // Only non-draft case studies are listed; drafts stay out until published.
+  const caseStudies: MetadataRoute.Sitemap = publishedProjects.map((p) => ({
+    url: `${base}/projects/${p.slug}`,
+    lastModified: now,
     changeFrequency: "monthly",
     priority: 0.6,
   }));
@@ -49,5 +58,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: now,
   }));
 
-  return [...staticPages, ...blogPosts];
+  return [...staticPages, ...caseStudies, ...blogPosts];
 }
