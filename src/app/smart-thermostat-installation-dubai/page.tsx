@@ -780,6 +780,7 @@ export default async function SmartThermostatPage() {
               whatsappPath="/smart-thermostat-installation-dubai"
               detailsLabel="AC brand / model and area (optional)"
               detailsPlaceholder="e.g. Daikin ducted split, villa in Arabian Ranches."
+              formName="thermostat"
             />
           </div>
         </div>

@@ -1,13 +1,11 @@
 "use client";
 
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { Check, Phone, MessageCircle } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { submitRequest } from "@/app/actions";
 import { trackFormSubmit } from "@/lib/gtag";
-import { PHONE, PHONE_DISPLAY, whatsappUrl } from "@/lib/contact";
 import { FormAssurance } from "@/components/FormAssurance";
 
 const requestTypes = [
@@ -42,7 +40,7 @@ const inputClass = (hasError: boolean) =>
   `w-full rounded-md border ${hasError ? "border-red-500" : "border-border"} bg-white px-4 py-3 text-sm transition-colors focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary`;
 
 export function QuoteForm() {
-  const [submitted, setSubmitted] = useState(false);
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -52,43 +50,10 @@ export function QuoteForm() {
   const onSubmit = async (data: FormData) => {
     const result = await submitRequest(data);
     if (result.success) {
-      setSubmitted(true);
       trackFormSubmit("quote");
+      router.push("/quote/thank-you");
     }
   };
-
-  if (submitted) {
-    return (
-      <div className="rounded-lg border border-border bg-bg-soft p-10 text-center">
-        <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
-          <Check className="h-8 w-8 text-primary" />
-        </div>
-        <h2 className="mt-4 font-heading text-2xl font-bold">
-          Thanks — your request is in
-        </h2>
-        <p className="mt-2 text-text-muted">
-          We&apos;ll be in touch shortly. For the fastest response, call or
-          WhatsApp us now.
-        </p>
-        <div className="mt-6 flex flex-wrap justify-center gap-3">
-          <a
-            href={`tel:${PHONE}`}
-            className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-primary-dark transition-colors"
-          >
-            <Phone className="h-4 w-4" /> {PHONE_DISPLAY}
-          </a>
-          <a
-            href={whatsappUrl("/quote")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-md bg-[#25D366] px-6 py-3 text-sm font-semibold text-[#062e14] hover:bg-[#1fad52] transition-colors"
-          >
-            <MessageCircle className="h-4 w-4" /> WhatsApp
-          </a>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
