@@ -35,7 +35,7 @@ const values = [
     icon: PhoneCall,
     name: "24/7 Support",
     description:
-      "Emergency breakdown support across all seven emirates of the UAE.",
+      "Emergency breakdown support across the UAE.",
   },
   {
     icon: TrendingUp,

@@ -8,6 +8,7 @@ import { Check, Phone, MessageCircle } from "lucide-react";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { BalancingForm } from "@/components/BalancingForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { SampleReportButton } from "@/components/SampleReportButton";
 import { PHONE, whatsappUrl } from "@/lib/contact";
 
@@ -59,7 +60,7 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: "Do you cover my emirate?",
-    a: "We serve all 7 emirates. Call or WhatsApp +971 58 557 5987.",
+    a: "We've delivered projects in Dubai, Sharjah, Ajman and Abu Dhabi, and are available across the UAE. Call or WhatsApp +971 58 557 5987.",
   },
 ];
 
@@ -114,6 +115,13 @@ export default function AirBalancingPage() {
 
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", path: "" },
+          { name: "Services", path: "/services" },
+          { name: "Air Balancing & Airflow Testing", path: ROUTE },
+        ]}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
@@ -193,7 +201,7 @@ export default function AirBalancingPage() {
           <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-white/80">
             <GoogleReviewsBadge className="text-white/90" />
             <span className="text-white/30">|</span>
-            <span>Serving all 7 emirates</span>
+            <span>Available across the UAE</span>
             <span className="text-white/30">|</span>
             <span>24/7 call or WhatsApp</span>
           </div>

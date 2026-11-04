@@ -52,6 +52,12 @@ export const LARGEST_PROJECT_TR = 240;
 // page shows a selection of 12.
 export const PROJECTS_DELIVERED = "32";
 
+// --- Smart thermostat energy-saving figure (single source, audit task 4) ---
+// Manufacturer-reported (ecobee eco+). The thermostat page footnotes this and
+// notes actual savings depend on home, usage and settings.
+// TODO(owner): keep the manufacturer citation; adjust the figure only with a source.
+export const THERMOSTAT_SAVINGS = "up to 26%";
+
 // --- Coverage ---
 // Emirates we provide service across (all seven).
 export const EMIRATES_SERVED = [
@@ -71,3 +77,14 @@ export const EMIRATES_WITH_PROJECTS = [
   "Ajman",
   "Abu Dhabi",
 ] as const;
+
+// Human-readable "Dubai, Sharjah, Ajman and Abu Dhabi" from the list above.
+export const EMIRATES_WITH_PROJECTS_LABEL = EMIRATES_WITH_PROJECTS.slice(0, -1)
+  .join(", ")
+  .concat(" and ", EMIRATES_WITH_PROJECTS[EMIRATES_WITH_PROJECTS.length - 1]);
+
+// Honest coverage wording: name the emirates with delivered projects, and make
+// clear the company is available UAE-wide. Use these instead of "all 7 emirates"
+// so the copy doesn't imply projects delivered in every emirate. (Audit task 3.)
+export const COVERAGE_SENTENCE = `Projects in ${EMIRATES_WITH_PROJECTS_LABEL}. Available across the UAE.`;
+export const COVERAGE_SHORT = "Available across the UAE";

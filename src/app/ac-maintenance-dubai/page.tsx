@@ -108,7 +108,7 @@ const faqs: { q: string; a: string }[] = [
   { q: "Do you maintain AC for villas and apartments?", a: "Both. We handle single apartments, large villas, and everything in between — as one-off services or annual contracts." },
   { q: "Do you handle commercial AC maintenance?", a: "Yes. We provide AMC and reactive maintenance for offices, shops, restaurants, hotels and buildings — including chillers, AHUs, FCUs and VRF systems, with 24/7 response options." },
   { q: "Are your technicians qualified?", a: "Yes. AGEC is a licensed engineering contracting company and our technicians are trained, working to ASHRAE and Dubai Municipality standards." },
-  { q: "Which areas do you cover?", a: "We serve all seven emirates: Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Umm Al Quwain and Fujairah." },
+  { q: "Which areas do you cover?", a: "We've delivered projects in Dubai, Sharjah, Ajman and Abu Dhabi, and are available for AC maintenance across the UAE." },
   { q: "Can you take over maintenance from my previous contractor?", a: "Yes. We can take over an existing system with a full audit and baseline report, so you have a clear record and a fresh maintenance schedule." },
   { q: "While you're here, can you also upgrade my thermostat?", a: "Yes — many customers add a smart thermostat during a service visit. See our smart thermostat installation page for Google Nest and ecobee options." },
 ];
@@ -279,8 +279,12 @@ export default async function AcMaintenancePage() {
             ))}
           </div>
           <p className="mt-8 text-center text-text-muted">
-            Looking for a yearly contract? Explore our{" "}
-            <Link href="/services/maintenance" className="font-semibold text-primary hover:underline">HVAC maintenance &amp; AMC plans</Link>, or add a{" "}
+            Need a specific fix? See our dedicated{" "}
+            <Link href="/ac-repair-dubai" className="font-semibold text-primary hover:underline">AC repair in Dubai</Link>{" "}
+            page. For yearly cover, compare our{" "}
+            <Link href="/ac-amc-dubai" className="font-semibold text-primary hover:underline">AC annual maintenance contracts</Link>{" "}
+            or{" "}
+            <Link href="/services/maintenance" className="font-semibold text-primary hover:underline">commercial HVAC maintenance &amp; AMC plans</Link>, or add a{" "}
             <Link href="/smart-thermostat-installation-dubai" className="font-semibold text-primary hover:underline">smart thermostat</Link> during your visit.
           </p>
         </div>

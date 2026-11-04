@@ -1,3 +1,11 @@
+import {
+  COMPANY_FULL,
+  EMAIL,
+  PHONE,
+  ADDRESS_LINE,
+  ADDRESS_CITY,
+} from "@/lib/company";
+
 const SITE_URL = "https://agec.ae";
 
 // Owner-provided public profiles for sameAs / hasMap.
@@ -16,12 +24,12 @@ const schema = {
     {
       "@type": "Organization",
       "@id": `${SITE_URL}/#organization`,
-      name: "Altaher Ghabboun Engineering Contracting (AGEC)",
+      name: COMPANY_FULL,
       alternateName: "AGEC Technical Services",
       url: SITE_URL,
       logo: { "@type": "ImageObject", url: `${SITE_URL}/agec-logo.png` },
-      email: "a.altaher@agec.ae",
-      telephone: "+971585575987",
+      email: EMAIL,
+      telephone: PHONE,
       // Google Business Profile + Instagram. TODO(owner): add LinkedIn if any.
       sameAs: [GBP_URL, INSTAGRAM_URL],
     },
@@ -31,18 +39,18 @@ const schema = {
       name: "AGEC",
       alternateName: "AGEC Technical Services",
       description:
-        "Dubai-based HVAC contractor providing design, installation, testing & commissioning, and maintenance for VRF, VRV, chillers, ducted splits, DX units, and ventilation systems across all seven emirates of the UAE.",
+        "Dubai-based HVAC contractor providing design, installation, testing & commissioning, and maintenance for VRF, VRV, chillers, ducted splits, DX units, and ventilation systems across the UAE.",
       url: SITE_URL,
       logo: `${SITE_URL}/agec-logo.png`,
       image: `${SITE_URL}/agec-logo.png`,
-      telephone: "+971585575987",
-      email: "a.altaher@agec.ae",
+      telephone: PHONE,
+      email: EMAIL,
       priceRange: "$$",
       parentOrganization: { "@id": `${SITE_URL}/#organization` },
       address: {
         "@type": "PostalAddress",
-        streetAddress: "AlMasraf Building, Sheikh Zayed Road",
-        addressLocality: "Dubai",
+        streetAddress: ADDRESS_LINE,
+        addressLocality: ADDRESS_CITY,
         addressRegion: "Dubai",
         addressCountry: "AE",
       },

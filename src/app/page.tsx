@@ -25,7 +25,7 @@ import {
   Star,
 } from "lucide-react";
 import { PHONE, PHONE_DISPLAY } from "@/lib/contact";
-import { PROJECTS_DELIVERED } from "@/lib/company";
+import { PROJECTS_DELIVERED, EMIRATES_WITH_PROJECTS } from "@/lib/company";
 import { GOOGLE_REVIEWS_URL, GOOGLE_REVIEWS } from "@/lib/reviews";
 import { getGoogleReviewStats } from "@/lib/google-reviews";
 
@@ -234,7 +234,7 @@ export default async function Home() {
                 icon: Wind,
                 line1: "Premium AC",
                 line2: "Duct Cleaning",
-                href: "/ac-duct-cleaning-dubai",
+                href: "/ac-duct-cleaning-dubai#premium-duct-cleaning",
                 description:
                   "Complete duct system cleaning including supply and return grills, drain pipe flushing, deep coil cleaning, and full disinfection.",
               },
@@ -242,7 +242,7 @@ export default async function Home() {
                 icon: Sparkles,
                 line1: "Full AC",
                 line2: "Cleaning",
-                href: "/ac-duct-cleaning-dubai",
+                href: "/ac-duct-cleaning-dubai#full-ac-cleaning",
                 description:
                   "Comprehensive system clean covering grills, ducts, coils, fan motor, blower, and cavity area.",
               },
@@ -250,7 +250,7 @@ export default async function Home() {
                 icon: Snowflake,
                 line1: "Split AC",
                 line2: "Cleaning",
-                href: "/ac-duct-cleaning-dubai",
+                href: "/ac-duct-cleaning-dubai#split-ac-cleaning",
                 description:
                   "Targeted cleaning for split unit systems. Filter cleaning, coil treatment, and performance verification.",
               },
@@ -258,7 +258,7 @@ export default async function Home() {
                 icon: Layers,
                 line1: "AC Coil",
                 line2: "Cleaning",
-                href: "/ac-duct-cleaning-dubai",
+                href: "/ac-duct-cleaning-dubai#coil-cleaning",
                 description:
                   "Precision coil cleaning to restore heat transfer efficiency and improve cooling performance.",
               },
@@ -306,7 +306,7 @@ export default async function Home() {
             {[
               { value: PROJECTS_DELIVERED, label: "Projects Delivered" },
               { value: "240 TR", label: "Max Single Project" },
-              { value: "7", label: "Emirates Served" },
+              { value: String(EMIRATES_WITH_PROJECTS.length), label: "Emirates with projects" },
               { value: "2022", label: "Established" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">

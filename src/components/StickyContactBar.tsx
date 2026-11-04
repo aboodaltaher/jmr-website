@@ -1,8 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Phone, MessageCircle } from "lucide-react";
+import { Phone, MessageCircle, FileText } from "lucide-react";
 import { PHONE, PHONE_DISPLAY, whatsappUrl } from "@/lib/contact";
 
 /**
@@ -59,6 +60,14 @@ export function StickyContactBar() {
         <MessageCircle className="h-5 w-5 shrink-0" aria-hidden="true" />
         WhatsApp
       </a>
+      <Link
+        href="/quote"
+        aria-label="Get a quote from AGEC"
+        className="flex min-h-[48px] flex-1 items-center justify-center gap-2 border-l border-border bg-primary px-2 py-3 text-sm font-semibold text-white"
+      >
+        <FileText className="h-5 w-5 shrink-0" aria-hidden="true" />
+        Get a quote
+      </Link>
     </nav>
   );
 }

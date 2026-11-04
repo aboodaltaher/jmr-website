@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Check, Phone, MessageCircle } from "lucide-react";
 import { submitRequest } from "@/app/actions";
-import { trackFormSubmit } from "@/lib/gtag";
+import { trackFormSubmit, type FormName } from "@/lib/gtag";
 import { PHONE, PHONE_DISPLAY, whatsappUrl } from "@/lib/contact";
 import { FormAssurance } from "@/components/FormAssurance";
 
@@ -31,11 +31,14 @@ export function InlineLeadForm({
   whatsappPath = "/",
   detailsLabel = "What do you need? (optional)",
   detailsPlaceholder = "A few words about your AC / HVAC and your area.",
+  formName = "quote",
 }: {
   requestType: string;
   whatsappPath?: string;
   detailsLabel?: string;
   detailsPlaceholder?: string;
+  /** form_name reported to the dataLayer on success (audit task 9). */
+  formName?: FormName;
 }) {
   const [submitted, setSubmitted] = useState(false);
   const {
@@ -48,7 +51,7 @@ export function InlineLeadForm({
     const result = await submitRequest({ ...data, requestType });
     if (result.success) {
       setSubmitted(true);
-      trackFormSubmit("quote");
+      trackFormSubmit(formName);
     }
   };
 

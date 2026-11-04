@@ -1,6 +1,7 @@
 import { buildMetadata } from "@/lib/metadata";
 import { Phone, MessageCircle, Check } from "lucide-react";
 import { PHONE, PHONE_DISPLAY, whatsappUrl } from "@/lib/contact";
+import { EMAIL, ADDRESS_LINE, ADDRESS_CITY } from "@/lib/company";
 
 const SITE_URL = "https://agec.ae";
 const ROUTE = "/ar/ac-amc-dubai";
@@ -56,7 +57,7 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: "هل تغطّون إمارتي؟",
-    a: "نخدم الإمارات السبع. اتصل أو راسلنا على واتساب على الرقم +971 58 557 5987.",
+    a: "نفّذنا مشاريع في دبي والشارقة وعجمان وأبوظبي، ونخدم جميع أنحاء الإمارات. اتصل أو راسلنا على واتساب على الرقم +971 58 557 5987.",
   },
 ];
 
@@ -73,11 +74,11 @@ const serviceSchema = {
     "@type": "HVACBusiness",
     name: "AGEC Technical Services",
     telephone: PHONE,
-    email: "a.altaher@agec.ae",
+    email: EMAIL,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "AlMasraf Building, Sheikh Zayed Road",
-      addressLocality: "Dubai",
+      streetAddress: ADDRESS_LINE,
+      addressLocality: ADDRESS_CITY,
       addressCountry: "AE",
     },
     url: SITE_URL,
