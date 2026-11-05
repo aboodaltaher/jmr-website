@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { CONVERSIONS, trackConversion, pushDataLayer } from "@/lib/gtag";
+import { CONVERSIONS, trackConversion, pushDataLayer, gaEvent } from "@/lib/gtag";
 
 /**
  * Global click listener that fires Google Ads conversions for
@@ -20,6 +20,8 @@ export function ConversionTracking() {
       if (href.startsWith("tel:")) {
         trackConversion(CONVERSIONS.call);
         pushDataLayer("click_call", { page_path: window.location.pathname });
+        // GA4 event (no personal data — only the page path, not the number).
+        gaEvent("call_click", { page_path: window.location.pathname });
       } else if (
         href.includes("wa.me") ||
         href.includes("api.whatsapp.com") ||
@@ -29,6 +31,8 @@ export function ConversionTracking() {
         pushDataLayer("click_whatsapp", {
           page_path: window.location.pathname,
         });
+        // GA4 event (no personal data — only the page path).
+        gaEvent("whatsapp_click", { page_path: window.location.pathname });
       } else if (href.startsWith("mailto:")) {
         pushDataLayer("click_email", { page_path: window.location.pathname });
       }
