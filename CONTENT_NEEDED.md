@@ -1,82 +1,69 @@
-# Content needed from the owner
+# CONTENT_NEEDED.md: facts AGEC must supply before publishing
 
-Items below are placeholders or open questions. Nothing here is published as real
-copy — draft case studies do not render until facts are supplied.
+Rule: nothing here may be invented. Items are marked ✅ (owner-confirmed, applied),
+⬜ (still needed). Fill in the ⬜ "Answer:" lines and hand the file back.
 
-## Coverage / emirates (Task 2)
-- The **VRF page** previously named only "Dubai, Sharjah and Abu Dhabi" (3), while
-  **About** and **Projects** name "Dubai, Sharjah, Ajman and Abu Dhabi" (4), and the
-  projects list includes a real Ajman project (Basil Mall). I reconciled the coverage
-  wording to the **4 emirates** on that evidence and updated the VRF page to match.
-  **Please confirm the delivered-emirates list is exactly: Dubai, Sharjah, Ajman, Abu Dhabi.**
-- The Arabic coverage sentence (`COVERAGE_SENTENCE_AR` in `src/lib/company.ts`) and the
-  Arabic edits on `/ar` and `/ar/ac-repair-dubai` **need a native Arabic review**.
+## A. Company and legal
+- ✅ Relationship between the trading name and the licensed entity.
+  Answer: **AGEC is the trading name of AGEC Technical Services L.L.C.** (confirmed).
+- ✅ Keep showing "Altaher Ghabboun Engineering Contracting" in footer and schema.
+  Answer: **Yes** (confirmed). *(Correct spelling kept: Ghabboun.)*
+- ✅ Dubai Commercial Licence No. 1221573 is current; expiry not shown.
+  Answer: **Current; do not show expiry** (confirmed).
+- ✅ Duct-cleaning approval (Dubai Municipality). Answer: **None** — no approval
+  claim will be shown.
+- ✅ Any other approvals / memberships / certifications. Answer: **None** — the site
+  makes no certification claims.
+  - ⬜ One existing person-credential to double-check: /about describes the founder
+    as a "Dubai Municipality approved engineer" (an individual professional status,
+    not a company certificate). Confirm this is still accurate, or we'll soften it.
+    Answer:
 
-## Arabic review (general)
-- New/changed Arabic strings flagged for native-speaker review:
-  - `src/lib/company.ts` → `COVERAGE_SENTENCE_AR`
-  - `src/app/ar/page.tsx` → coverage card title + description
-  - `src/app/ar/ac-repair-dubai/page.tsx` → repair-coverage FAQ answer + hero eyebrow
+## B. Coverage
+- ✅ Emirates with delivered projects: **Dubai, Sharjah, Ajman, Abu Dhabi** (confirmed).
+- ⬜ Emirates served on request (Ras Al Khaimah, Umm Al Quwain, Fujairah?). Current
+  copy just says "available across the UAE"; name specific ones only if you want them
+  listed. Answer:
+- ✅ Approved wording: "Delivered in Dubai, Sharjah, Ajman and Abu Dhabi; available
+  across the UAE." Answer: **Confirmed.**
 
-## New service pages (Task 3)
-Slugs chosen (SEO-style, matching the top-level `-dubai` pattern; new routes, no redirects needed):
-- `/services/hvac-installation-dubai`
-- `/services/tab-testing-adjusting-balancing-dubai`
-- `/services/chiller-maintenance-dubai`
+## C. Reviews and proof
+- ✅ Google review count/rating. Answer: **Live via Google (auto-updates); 5.0 / 32
+  is the current fallback.**
+- ✅ Arabic home "more than 30 projects" → now reads **"32 projects"** to match.
+  (Flagged for Arabic review in G.)
 
-Copy is written in general terms with no invented certifications, standards claims,
-equipment brands, client names, numbers or dates. Optional to supply later:
-- A hero image for each of the 3 pages (currently none is set, so no placeholder
-  renders). Recommended landscape ~1600×900, JPG/WebP, of real AGEC work.
-- If you want brand/standard names on these pages (e.g. specific manufacturers or
-  ASHRAE/SMACNA), confirm which are accurate and may be stated.
+## D. New service pages (installation, TAB, chiller maintenance)
+Owner: "we do everything — prepare a nice one." The three pages are written in
+**general, non-invented** terms (what the service is, when it's needed, process,
+deliverables, who it suits, 5 FAQs each). No specific certifications, standards or
+equipment brands are claimed (none supplied). Optional to strengthen later:
+- ⬜ Specific standards/methods you truly follow (named only if accurate). Answer:
+- ⬜ Specific systems/sizes, named building types, or price guidance to add. Answer:
+- ⬜ Photos you own and may publish (hero image per page). Answer:
 
-## Case studies (Task 4)
-A case-study system is built at `/projects/[slug]`, driven by `src/data/projects.ts`.
-All 12 projects are entered using only facts already on the site (name, category,
-system/capacity line, location). **Every project is `draft: true`** — no case-study
-page renders and none is in the sitemap — because the site does not publish a
-challenge / solution / result narrative, photos, dates or client permission for any
-of them. To publish a project, supply the items below and set its `draft` to `false`.
+## E. Case studies (12 listed on /projects)
+- ✅ Client permission: **granted.** Photos: **to be uploaded later.**
+- ⬜ **Still required before any project can be published** (cannot be invented):
+  per project — scope of work, challenge, solution, result, system type/capacity,
+  year, and area/emirate where missing. Send any number; each complete one gets
+  published and flipped out of `draft`. Specifically still missing:
+  - Capacity figure for: `pure-gym-al-barsha`, `ave-restaurant-business-bay`,
+    `zain-solution-data-center-abu-dhabi`, `cultural-center-al-barsha`,
+    `private-villa-sharjah-flagship`.
+  - Emirate for `18-villas-community` (Al Rgebah / Al Seyouh).
 
-For **each** project, please provide:
-- **Scope of work** — the actual tasks delivered (bulleted).
-- **System type / capacity** — confirm the TR/ton and system (VRF, DX, chiller, etc.).
-- **Challenge** — what made the job non-trivial.
-- **Solution** — what AGEC did about it.
-- **Result** — one honest outcome line (no invented numbers).
-- **Dates** — start/completion (optional but useful).
-- **Client permission** — confirmation we may name the client/building, or keep it generic.
-- **Photos** — real images (with permission); recommended landscape ~1600×900.
+Category labels on /projects:
+- ✅ "AVE Restaurant" — **Commercial** (already correct).
+- ✅ "Cultural Center" — **Commercial** (owner-confirmed).
 
-Projects awaiting the above (slug — current published summary):
-- `basil-mall-ajman` — B+G+1+R Basil Mall · 224 Ton VRF · Ajman
-- `private-g4-building-dubai` — Private G+4 Building · 148 Ton DX · Dubai
-- `double-twin-villa-sharjah` — Double Twin Villa G+1 · 60 Ton DX · Sharjah
-- `g1r-villa-dubai` — G+1+R Villa · 45 Ton DX · Dubai
-- `villa-al-barsha-dubai` — B+G+1+R Villa · 140 Ton DX · Al Barsha, Dubai
-- `18-villas-community` — 18 Villas Community · full HVAC · Al Rgebah / Al Seyouh (confirm emirate)
-- `private-villa-sharjah-flagship` — B+G+1 Private Villa · flagship residential · Sharjah
-- `mbz-ai-server-room-abu-dhabi` — MBZ-AI Server Room · precision cooling · Masdar City, Abu Dhabi
-- `pure-gym-al-barsha` — Pure Gym · HVAC + ventilation · Al Barsha, Dubai
-- `ave-restaurant-business-bay` — AVE Restaurant · kitchen ventilation + cooling · Business Bay, Dubai
-- `zain-solution-data-center-abu-dhabi` — Zain Solution Data Center · precision cooling · Musaffah, Abu Dhabi
-- `cultural-center-al-barsha` — Cultural Center · HVAC works · Al Barsha, Dubai
+## F. Contact and location
+- ✅ Contact details (AlMasraf Building, Sheikh Zayed Road, Dubai; +971 58 557 5987;
+  a.altaher@agec.ae): **confirmed.**
+- ✅ Google Business Profile shows the same name, address and phone: **Yes.**
+- ✅ Opening hours: **24/7**, emergency service real (schema + copy reflect this).
 
-## Company name relationship (Task 4)
-- /about now states: "AGEC is the trading name of AGEC Technical Services L.L.C.,
-  the licensed company behind this website." This neutral wording was written
-  because the exact relationship is not otherwise stated on the site.
-  **Please confirm this is accurate** (e.g. trading name vs branch vs d/b/a), and
-  whether any other legal entity is involved.
-
-## Project categories (Task 6)
-Reviewed all 12 category tags in `src/data/projects.ts` against each entry's scope.
-All are correct from the scope text — Residential 6, Commercial 4, Data Center 2
-(totals match the filter tabs). AVE Restaurant is correctly **Commercial** (a
-restaurant), not Data Center. One judgment call:
-- **Cultural Center** is tagged **Commercial**. A public cultural facility is really
-  institutional; among the three tabs (Residential / Commercial / Data Center),
-  Commercial is the closest fit, so it was left as-is. **Confirm** this is right, or
-  tell us if you'd prefer a different tab (and whether to add an "Institutional/Public"
-  category).
+## G. Arabic review
+- ⬜ A native Arabic speaker should review every Arabic string (home hero, the "32
+  projects" line, coverage wording, company-name paragraph, new service pages).
+  Answer:
