@@ -69,3 +69,14 @@ Projects awaiting the above (slug — current published summary):
   because the exact relationship is not otherwise stated on the site.
   **Please confirm this is accurate** (e.g. trading name vs branch vs d/b/a), and
   whether any other legal entity is involved.
+
+## Project categories (Task 6)
+Reviewed all 12 category tags in `src/data/projects.ts` against each entry's scope.
+All are correct from the scope text — Residential 6, Commercial 4, Data Center 2
+(totals match the filter tabs). AVE Restaurant is correctly **Commercial** (a
+restaurant), not Data Center. One judgment call:
+- **Cultural Center** is tagged **Commercial**. A public cultural facility is really
+  institutional; among the three tabs (Residential / Commercial / Data Center),
+  Commercial is the closest fit, so it was left as-is. **Confirm** this is right, or
+  tell us if you'd prefer a different tab (and whether to add an "Institutional/Public"
+  category).
