@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { Check, Phone, MessageCircle } from "lucide-react";
+import { Check, Phone, MessageCircle, Star, ExternalLink } from "lucide-react";
 import { buildMetadata } from "@/lib/metadata";
 import { PHONE, PHONE_DISPLAY } from "@/lib/contact";
 import { whatsappUrl } from "@/lib/contact";
+import { GOOGLE_REVIEWS_URL } from "@/lib/company";
 
 export const metadata = buildMetadata({
   title: "Thank You | Request Received | AGEC",
@@ -41,6 +42,22 @@ export default function QuoteThankYou() {
             className="inline-flex items-center gap-2 rounded-md bg-[#25D366] px-6 py-3 text-sm font-semibold text-[#062e14] hover:bg-[#1fad52] transition-colors"
           >
             <MessageCircle className="h-4 w-4" /> WhatsApp
+          </a>
+        </div>
+        <div className="mt-10 border-t border-border pt-8">
+          <p className="text-sm text-text-muted">
+            Already worked with us? A quick Google review helps other Dubai
+            homeowners and businesses find AGEC.
+          </p>
+          <a
+            href={GOOGLE_REVIEWS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-flex items-center gap-2 rounded-md border border-border bg-white px-6 py-3 text-sm font-semibold text-text hover:border-primary transition-colors"
+          >
+            <Star className="h-4 w-4 text-primary fill-current" aria-hidden="true" />
+            Leave a review on Google
+            <ExternalLink className="h-3.5 w-3.5 text-text-muted" aria-hidden="true" />
           </a>
         </div>
         <p className="mt-8 text-sm text-text-muted">

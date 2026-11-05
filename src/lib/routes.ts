@@ -43,6 +43,10 @@ export const staticRoutes: RouteEntry[] = [
   { path: "/services/hvac-design", changeFrequency: "monthly", priority: 0.7 },
   { path: "/services/testing-commissioning", changeFrequency: "monthly", priority: 0.7 },
   { path: "/services/maintenance", changeFrequency: "monthly", priority: 0.7 },
+  // Location / emirate landing pages
+  { path: "/hvac-contractor-sharjah", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/hvac-contractor-ajman", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/hvac-contractor-abu-dhabi", changeFrequency: "monthly", priority: 0.8 },
   // Index & conversion pages
   { path: "/projects", changeFrequency: "monthly", priority: 0.8 },
   { path: "/blog", changeFrequency: "weekly", priority: 0.8 },
