@@ -42,8 +42,8 @@ export const metadata = buildMetadata({
     "Professional AC maintenance, servicing and repair in Dubai & the UAE by licensed HVAC engineers. Same-day & emergency service, AMC plans for villas, apartments and commercial buildings.",
   path: CANONICAL,
   languages: {
-    en: `https://agec.ae${CANONICAL}`,
-    ar: "https://agec.ae/ar/ac-maintenance-dubai",
+    "en-AE": `https://agec.ae${CANONICAL}`,
+    "ar-AE": "https://agec.ae/ar/ac-maintenance-dubai",
     "x-default": `https://agec.ae${CANONICAL}`,
   },
 });

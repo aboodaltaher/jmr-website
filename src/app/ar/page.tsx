@@ -14,7 +14,7 @@ export const metadata = buildMetadata({
   ogTitle: "تكييف وتهوية في دبي | AGEC",
   ogDescription:
     "تركيب وصيانة وإصلاح أنظمة التكييف في دبي والإمارات. استجابة خلال ساعة.",
-  languages: { en: `${SITE_URL}/`, ar: `${SITE_URL}/ar`, "x-default": `${SITE_URL}/` },
+  languages: { "en-AE": `${SITE_URL}/`, "ar-AE": `${SITE_URL}/ar`, "x-default": `${SITE_URL}/` },
 });
 
 const points = [

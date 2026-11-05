@@ -18,8 +18,8 @@ export const metadata = buildMetadata({
     "Full duct, coil and drain cleaning with disinfection and a written completion report. Villas, apartments and offices. Request a quote.",
   path: ROUTE,
   languages: {
-    en: `${SITE_URL}${ROUTE}`,
-    ar: `${SITE_URL}/ar/ac-duct-cleaning-dubai`,
+    "en-AE": `${SITE_URL}${ROUTE}`,
+    "ar-AE": `${SITE_URL}/ar/ac-duct-cleaning-dubai`,
     "x-default": `${SITE_URL}${ROUTE}`,
   },
 });

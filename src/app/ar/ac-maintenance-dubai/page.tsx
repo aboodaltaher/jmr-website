@@ -16,8 +16,8 @@ export const metadata = buildMetadata({
   ogDescription:
     "خدمة وإصلاح وتنظيف وعقود صيانة سنوية. خدمة لمرة واحدة من 350 درهماً للوحدة.",
   languages: {
-    en: `${SITE_URL}/ac-maintenance-dubai`,
-    ar: `${SITE_URL}${ROUTE}`,
+    "en-AE": `${SITE_URL}/ac-maintenance-dubai`,
+    "ar-AE": `${SITE_URL}${ROUTE}`,
     "x-default": `${SITE_URL}/ac-maintenance-dubai`,
   },
 });

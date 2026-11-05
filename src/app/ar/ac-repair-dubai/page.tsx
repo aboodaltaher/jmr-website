@@ -16,8 +16,8 @@ export const metadata = buildMetadata({
   ogDescription:
     "تشخيص هندسي للعطل، وسعر كتابي قبل البدء، وتقرير بعد الإصلاح. استجابة خلال ساعة.",
   languages: {
-    en: `${SITE_URL}/ac-repair-dubai`,
-    ar: `${SITE_URL}${ROUTE}`,
+    "en-AE": `${SITE_URL}/ac-repair-dubai`,
+    "ar-AE": `${SITE_URL}${ROUTE}`,
     "x-default": `${SITE_URL}/ac-repair-dubai`,
   },
 });

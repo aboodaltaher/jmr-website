@@ -16,8 +16,8 @@ export const metadata = buildMetadata({
     "AC not cooling, leaking or tripping? AGEC engineers find the root cause, quote in writing first and report every repair. Call or WhatsApp.",
   path: ROUTE,
   languages: {
-    en: `${SITE_URL}${ROUTE}`,
-    ar: `${SITE_URL}/ar/ac-repair-dubai`,
+    "en-AE": `${SITE_URL}${ROUTE}`,
+    "ar-AE": `${SITE_URL}/ar/ac-repair-dubai`,
     "x-default": `${SITE_URL}${ROUTE}`,
   },
 });
