@@ -16,6 +16,8 @@ interface FaqItem {
   a: string;
 }
 
+type Lang = "en" | "ar";
+
 interface ServiceDetailLayoutProps {
   title: string;
   intro: string;
@@ -30,7 +32,60 @@ interface ServiceDetailLayoutProps {
   slug?: string;
   /** Optional inline lead form rendered just above the closing CTA band. */
   leadForm?: React.ReactNode;
+  /** Locale. "ar" localises the headings/CTA and points links at the /ar subtree. */
+  lang?: Lang;
 }
+
+// Localised chrome strings. {t} is replaced with the service title.
+const STRINGS: Record<Lang, {
+  servicesLabel: string;
+  servicesHref: string;
+  eyebrow: string;
+  whatIs: string;
+  whenHeading: string;
+  whatHeading: string;
+  whyHeading: string;
+  faqHeading: string;
+  getQuote: string;
+  quoteHref: string;
+  orCall: string;
+  ready: string;
+  leadHeading: string;
+  leadSub: string;
+}> = {
+  en: {
+    servicesLabel: "Services",
+    servicesHref: "/services",
+    eyebrow: "Service",
+    whatIs: "What is {t}?",
+    whenHeading: "When you need this service",
+    whatHeading: "What AGEC provides",
+    whyHeading: "Why AGEC for {t}",
+    faqHeading: "Frequently asked questions",
+    getQuote: "Get a Quote",
+    quoteHref: "/quote",
+    orCall: "Or call +971 58 557 5987",
+    ready: "Ready to discuss your {t} project?",
+    leadHeading: "Get a quote for {t}",
+    leadSub: "Send your details and our engineering team will come back to you.",
+  },
+  ar: {
+    servicesLabel: "الخدمات",
+    servicesHref: "/ar/services",
+    eyebrow: "خدمة",
+    whatIs: "ما هي {t}؟",
+    whenHeading: "متى تحتاج هذه الخدمة",
+    whatHeading: "ماذا تقدّم AGEC",
+    whyHeading: "لماذا AGEC لـ {t}",
+    faqHeading: "أسئلة شائعة",
+    getQuote: "احصل على عرض سعر",
+    quoteHref: "/ar/quote",
+    orCall: "أو اتصل على ‎+971 58 557 5987",
+    ready: "هل أنت مستعد لمناقشة مشروع {t}؟",
+    leadHeading: "احصل على عرض سعر لـ {t}",
+    leadSub: "أرسل تفاصيلك وسيعاود فريقنا الهندسي التواصل معك.",
+  },
+};
 
 export function ServiceDetailLayout({
   title,
@@ -44,12 +99,18 @@ export function ServiceDetailLayout({
   faq,
   slug,
   leadForm,
+  lang = "en",
 }: ServiceDetailLayoutProps) {
+  const s = STRINGS[lang];
+  const t = (str: string) => str.replace("{t}", title);
+  const url = slug ? `https://agec.ae/${slug}` : null;
+
   const faqSchema =
     faq && faq.length > 0
       ? {
           "@context": "https://schema.org",
           "@type": "FAQPage",
+          ...(lang === "ar" ? { inLanguage: "ar" } : {}),
           mainEntity: faq.map((item) => ({
             "@type": "Question",
             name: item.q,
@@ -57,8 +118,6 @@ export function ServiceDetailLayout({
           })),
         }
       : null;
-
-  const url = slug ? `https://agec.ae/${slug}` : null;
 
   const serviceSchema = url
     ? {
@@ -68,6 +127,7 @@ export function ServiceDetailLayout({
         description: intro,
         serviceType: title,
         url,
+        ...(lang === "ar" ? { inLanguage: "ar" } : {}),
         areaServed: AREA_SERVED_SCHEMA,
         provider: {
           "@type": "HVACBusiness",
@@ -90,8 +150,8 @@ export function ServiceDetailLayout({
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: "https://agec.ae" },
-          { "@type": "ListItem", position: 2, name: "Services", item: "https://agec.ae/services" },
+          { "@type": "ListItem", position: 1, name: lang === "ar" ? "الرئيسية" : "Home", item: lang === "ar" ? "https://agec.ae/ar" : "https://agec.ae" },
+          { "@type": "ListItem", position: 2, name: s.servicesLabel, item: `https://agec.ae${s.servicesHref}` },
           { "@type": "ListItem", position: 3, name: title, item: url },
         ],
       }
@@ -122,26 +182,26 @@ export function ServiceDetailLayout({
         <div className="mx-auto max-w-7xl px-6">
           <nav aria-label="Breadcrumb" className="mb-6 text-sm text-text-muted">
             <Link
-              href="/services"
+              href={s.servicesHref}
               className="hover:text-primary transition-colors"
             >
-              Services
+              {s.servicesLabel}
             </Link>
             <span className="mx-2">/</span>
             <span className="text-text">{title}</span>
           </nav>
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-            Service
+            {s.eyebrow}
           </p>
           <h1 className="mt-3 max-w-4xl font-heading text-5xl font-bold md:text-6xl">
             {title}
           </h1>
           <p className="mt-6 max-w-3xl text-xl text-text-muted">{intro}</p>
           <Link
-            href="/quote"
+            href={s.quoteHref}
             className="mt-8 inline-block rounded-md bg-primary px-8 py-4 font-medium text-white hover:bg-primary-dark transition-colors"
           >
-            Get a Quote
+            {s.getQuote}
           </Link>
         </div>
       </section>
@@ -153,6 +213,7 @@ export function ServiceDetailLayout({
               src={heroImage}
               alt={heroImageAlt ?? title}
               fill
+              sizes="(max-width: 1280px) 100vw, 1216px"
               className="object-cover"
             />
           </div>
@@ -163,7 +224,7 @@ export function ServiceDetailLayout({
       <section className="py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
           <h2 className="font-heading text-3xl font-bold md:text-4xl">
-            What is {title}?
+            {t(s.whatIs)}
           </h2>
           <div className="mt-6 max-w-3xl space-y-4 leading-relaxed text-text-muted">
             {overview}
@@ -175,7 +236,7 @@ export function ServiceDetailLayout({
       <section className="bg-bg-soft py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
           <h2 className="font-heading text-3xl font-bold md:text-4xl">
-            When you need this service
+            {s.whenHeading}
           </h2>
           <ul className="mt-6 max-w-3xl space-y-3">
             {whenYouNeedIt.map((item) => (
@@ -192,7 +253,7 @@ export function ServiceDetailLayout({
       <section className="py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
           <h2 className="font-heading text-3xl font-bold md:text-4xl">
-            What AGEC provides
+            {s.whatHeading}
           </h2>
           <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {whatWeDo.map((cap) => (
@@ -212,7 +273,7 @@ export function ServiceDetailLayout({
                     href={cap.href}
                     className="mt-2 inline-block text-sm font-medium text-primary hover:underline"
                   >
-                    Learn more &rarr;
+                    {lang === "ar" ? "اعرف المزيد ←" : "Learn more →"}
                   </Link>
                 )}
               </div>
@@ -225,7 +286,7 @@ export function ServiceDetailLayout({
       <section className="bg-bg-soft py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
           <h2 className="font-heading text-3xl font-bold md:text-4xl">
-            Why AGEC for {title}
+            {t(s.whyHeading)}
           </h2>
           <ul className="mt-6 max-w-3xl space-y-4">
             {whyAgec.map((reason) => (
@@ -246,7 +307,7 @@ export function ServiceDetailLayout({
         <section className="py-16 md:py-20">
           <div className="mx-auto max-w-3xl px-6">
             <h2 className="font-heading text-3xl font-bold md:text-4xl">
-              Frequently asked questions
+              {s.faqHeading}
             </h2>
             <div className="mt-8 space-y-6">
               {faq.map((item) => (
@@ -264,17 +325,20 @@ export function ServiceDetailLayout({
         </section>
       )}
 
-      <RelatedServices currentPath={url ? `/${slug}` : undefined} />
+      {/* Related services — English subtree only (links point at English pages). */}
+      {lang === "en" && (
+        <RelatedServices currentPath={url ? `/${slug}` : undefined} />
+      )}
 
       {/* Inline quick quote */}
       {leadForm && (
         <section className="bg-bg-soft py-16 md:py-20">
           <div className="mx-auto max-w-3xl px-6">
             <h2 className="text-center font-heading text-3xl font-bold md:text-4xl">
-              Get a quote for {title}
+              {t(s.leadHeading)}
             </h2>
             <p className="mt-3 text-center text-text-muted">
-              Send your details and our engineering team will come back to you.
+              {s.leadSub}
             </p>
             <div className="mt-8 rounded-xl border border-border bg-white p-6 md:p-8">
               {leadForm}
@@ -287,20 +351,21 @@ export function ServiceDetailLayout({
       <section className="bg-primary py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6 text-center">
           <h2 className="font-heading text-4xl font-bold text-white">
-            Ready to discuss your {title} project?
+            {t(s.ready)}
           </h2>
           <Link
-            href="/quote"
+            href={s.quoteHref}
             className="mt-8 inline-block rounded-md bg-white px-8 py-4 font-medium text-primary hover:bg-white/90 transition-colors"
           >
-            Get a Quote
+            {s.getQuote}
           </Link>
           <div className="mt-4">
             <a
               href="tel:+971585575987"
               className="text-sm font-medium text-white hover:underline transition-colors"
+              dir="ltr"
             >
-              Or call +971 58 557 5987
+              {s.orCall}
             </a>
           </div>
         </div>

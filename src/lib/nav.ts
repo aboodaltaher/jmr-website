@@ -54,6 +54,16 @@ export const LOCALE_PAIRS: { en: string; ar: string }[] = [
   { en: "/ac-repair-dubai", ar: "/ar/ac-repair-dubai" },
   { en: "/ac-duct-cleaning-dubai", ar: "/ar/ac-duct-cleaning-dubai" },
   { en: "/ac-amc-dubai", ar: "/ar/ac-amc-dubai" },
+  { en: "/services", ar: "/ar/services" },
+  { en: "/about", ar: "/ar/about" },
+  { en: "/quote", ar: "/ar/quote" },
+  { en: "/contact", ar: "/ar/contact" },
+  { en: "/services/hvac-installation-dubai", ar: "/ar/services/hvac-installation-dubai" },
+  { en: "/services/tab-testing-adjusting-balancing-dubai", ar: "/ar/services/tab-testing-adjusting-balancing-dubai" },
+  { en: "/services/chiller-maintenance-dubai", ar: "/ar/services/chiller-maintenance-dubai" },
+  { en: "/services/ventilation-fresh-air", ar: "/ar/services/ventilation-fresh-air" },
+  { en: "/smart-thermostat-installation-dubai", ar: "/ar/smart-thermostat-installation-dubai" },
+  { en: "/air-balancing-airflow-testing-dubai", ar: "/ar/air-balancing-airflow-testing-dubai" },
 ];
 
 /** Arabic counterpart of an English path, or /ar if none exists. */

@@ -47,6 +47,11 @@ export const FORM_RESPONSE_NOTE = "We reply on call and WhatsApp, 24/7.";
 export const FORM_PRIVACY_NOTE =
   "Your details are only used to respond to your enquiry — never shared or sold.";
 
+// Arabic form notes. TODO(owner): have a native Arabic speaker review.
+export const FORM_RESPONSE_NOTE_AR = "نرد عبر الهاتف والواتساب على مدار الساعة.";
+export const FORM_PRIVACY_NOTE_AR =
+  "تُستخدم بياناتك للرد على استفسارك فقط — لا تُشارك ولا تُباع أبداً.";
+
 // --- Emergency strip copy (shown on /, /quote and /book) ---
 export const EMERGENCY_PREFIX = "AC down right now? Call";
 
