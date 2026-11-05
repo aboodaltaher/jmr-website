@@ -9,6 +9,8 @@ export const metadata = buildMetadata({
   description:
     "Thanks — your request has reached AGEC. We'll be in touch shortly. For the fastest response, call or WhatsApp us now.",
   path: "/quote/thank-you",
+  // Confirmation page — useful to visitors, not to search. Keep it out of the index.
+  noindex: true,
 });
 
 export default function QuoteThankYou() {
