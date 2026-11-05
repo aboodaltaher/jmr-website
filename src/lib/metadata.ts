@@ -28,6 +28,8 @@ export interface PageMetadata {
   locale?: string;
   /** hreflang alternates, absolute URLs keyed by lang (e.g. { en, ar, "x-default" }). */
   languages?: Record<string, string>;
+  /** Mark the page noindex (e.g. thank-you / utility pages). Still followed. */
+  noindex?: boolean;
 }
 
 export function buildMetadata({
@@ -39,6 +41,7 @@ export function buildMetadata({
   image = DEFAULT_OG_IMAGE,
   locale = "en_AE",
   languages,
+  noindex = false,
 }: PageMetadata): Metadata {
   const url = path ? `${SITE_URL}${path}` : SITE_URL;
   const shareTitle = ogTitle ?? title;
@@ -47,6 +50,7 @@ export function buildMetadata({
   return {
     title,
     description,
+    ...(noindex ? { robots: { index: false, follow: true } } : {}),
     alternates: {
       canonical: url,
       ...(languages ? { languages } : {}),
