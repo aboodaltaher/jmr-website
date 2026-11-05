@@ -10,10 +10,13 @@ import { enEquivalentOf } from "@/lib/nav";
 
 const navLinks = [
   { href: "/ar", label: "الرئيسية" },
+  { href: "/ar/services", label: "الخدمات" },
   { href: "/ar/ac-maintenance-dubai", label: "صيانة المكيفات" },
   { href: "/ar/ac-repair-dubai", label: "إصلاح المكيفات" },
   { href: "/ar/ac-duct-cleaning-dubai", label: "تنظيف المجاري" },
   { href: "/ar/ac-amc-dubai", label: "عقود الصيانة" },
+  { href: "/ar/about", label: "من نحن" },
+  { href: "/ar/contact", label: "اتصل بنا" },
 ];
 
 /**
@@ -66,9 +69,15 @@ export function ArabicChrome({ children }: { children: React.ReactNode }) {
             >
               English
             </Link>
+            <Link
+              href="/ar/quote"
+              className="rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark transition-colors"
+            >
+              عرض سعر
+            </Link>
             <a
               href={`tel:${PHONE}`}
-              className="rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark transition-colors"
+              className="text-sm font-semibold text-text hover:text-primary transition-colors"
               dir="ltr"
             >
               {PHONE_DISPLAY}
