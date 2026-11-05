@@ -2,7 +2,16 @@ import Link from "next/link";
 import { MapPin } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { CallOrWhatsApp } from "@/components/CallOrWhatsApp";
-import { COMPANY_LEGAL, LICENCE_NO } from "@/lib/company";
+import {
+  COMPANY_FULL,
+  COMPANY_LEGAL,
+  LICENCE_NO,
+  PHONE_DISPLAY,
+  EMAIL,
+  ADDRESS_FULL,
+  INSTAGRAM_URL,
+  GBP_URL,
+} from "@/lib/company";
 
 function InstagramIcon({ className }: { className?: string }) {
   return (
@@ -23,9 +32,6 @@ function InstagramIcon({ className }: { className?: string }) {
   );
 }
 
-const INSTAGRAM_URL = "https://www.instagram.com/agec_contracting";
-const GBP_URL = "https://maps.app.goo.gl/NymgUk6cDcj8PRSL6";
-
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
@@ -39,6 +45,9 @@ const navLinks = [
   { href: "/services/tab-testing-adjusting-balancing-dubai", label: "TAB / Balancing" },
   { href: "/smart-thermostat-installation-dubai", label: "Smart Thermostats" },
   { href: "/air-balancing-airflow-testing-dubai", label: "Air Balancing" },
+  { href: "/hvac-contractor-sharjah", label: "HVAC Contractor Sharjah" },
+  { href: "/hvac-contractor-ajman", label: "HVAC Contractor Ajman" },
+  { href: "/hvac-contractor-abu-dhabi", label: "HVAC Contractor Abu Dhabi" },
   { href: "/projects", label: "Projects" },
   { href: "/blog", label: "Insights" },
   { href: "/contact", label: "Contact" },
@@ -54,15 +63,15 @@ export function Footer() {
               <Logo />
             </Link>
             <p className="mt-2 text-sm text-text-muted">
-              Altaher Ghabboun Engineering Contracting (AGEC)
+              {COMPANY_FULL}
             </p>
             <div className="mt-4 space-y-1 text-sm text-text-muted">
-              <p>+971 58 557 5987</p>
-              <p>a.altaher@agec.ae</p>
-              <p>AlMasraf Building, Sheikh Zayed Road, Dubai, UAE</p>
+              <p>{PHONE_DISPLAY}</p>
+              <p>{EMAIL}</p>
+              <p>{ADDRESS_FULL}</p>
             </div>
             <p className="mt-4 text-xs text-text-muted">
-              24/7 Emergency Support · +971 58 557 5987
+              24/7 Emergency Support · {PHONE_DISPLAY}
             </p>
             <p className="mt-1 text-xs text-text-muted">
               {COMPANY_LEGAL} · Dubai Commercial Licence No. {LICENCE_NO}
@@ -113,7 +122,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-8 border-t border-border pt-6 text-center text-xs text-text-muted">
-          &copy; {new Date().getFullYear()} Altaher Ghabboun Engineering Contracting (AGEC). All rights reserved.
+          &copy; {new Date().getFullYear()} {COMPANY_FULL}. All rights reserved.
         </div>
       </div>
     </footer>
