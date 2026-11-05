@@ -11,6 +11,13 @@ const enRoutes = [
   "/services/ventilation-fresh-air", "/services/hvac-design", "/services/testing-commissioning",
   "/services/maintenance", "/services/hvac-installation-dubai",
   "/services/tab-testing-adjusting-balancing-dubai", "/services/chiller-maintenance-dubai",
+  // Published case studies
+  "/projects/basil-mall-ajman", "/projects/private-g4-building-dubai",
+  "/projects/double-twin-villa-sharjah", "/projects/g1r-villa-dubai",
+  "/projects/villa-al-barsha-dubai", "/projects/18-villas-community",
+  "/projects/private-villa-sharjah-flagship", "/projects/mbz-ai-server-room-abu-dhabi",
+  "/projects/pure-gym-al-barsha", "/projects/ave-restaurant-business-bay",
+  "/projects/zain-solution-data-center-abu-dhabi", "/projects/cultural-center-al-barsha",
 ];
 const arRoutes = ["/ar", "/ar/ac-maintenance-dubai", "/ar/ac-repair-dubai", "/ar/ac-duct-cleaning-dubai", "/ar/ac-amc-dubai"];
 
