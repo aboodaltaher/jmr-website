@@ -37,3 +37,12 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading), sans-serif;
   line-height: 1.15;
 }
+
+/* Smooth in-page scrolling for anchor links (e.g. the home duct-cleaning cards
+   that jump to a package on /ac-duct-cleaning-dubai). Disabled when the viewer
+   prefers reduced motion. scroll-margin-top is set per target (scroll-mt-*). */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}

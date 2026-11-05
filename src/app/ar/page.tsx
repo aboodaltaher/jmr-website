@@ -14,13 +14,13 @@ export const metadata = buildMetadata({
   ogTitle: "تكييف وتهوية في دبي | AGEC",
   ogDescription:
     "تركيب وصيانة وإصلاح أنظمة التكييف في دبي والإمارات. استجابة خلال ساعة.",
-  languages: { en: `${SITE_URL}/`, ar: `${SITE_URL}/ar`, "x-default": `${SITE_URL}/` },
+  languages: { "en-AE": `${SITE_URL}/`, "ar-AE": `${SITE_URL}/ar`, "x-default": `${SITE_URL}/` },
 });
 
 const points = [
   { icon: Clock, title: "استجابة خلال ساعة", desc: "نرد على الاتصال والواتساب خلال ساعة، على مدار الساعة." },
   { icon: ShieldCheck, title: "شركة مرخّصة", desc: "فنيّون مدرّبون يعملون وفق معايير ASHRAE وبلدية دبي." },
-  { icon: MapPin, title: "جميع الإمارات السبع", desc: "نخدم دبي وأبوظبي والشارقة وبقية الإمارات." },
+  { icon: MapPin, title: "دبي والشارقة وعجمان وأبوظبي", desc: "نخدم دبي والشارقة وعجمان وأبوظبي، مع توفّر الخدمة في جميع أنحاء الإمارات عند الطلب." },
   { icon: Award, title: "أكثر من 30 مشروعاً", desc: "من الفلل السكنية إلى المباني التجارية ومراكز البيانات." },
 ];
 

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { MapPin } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { CallOrWhatsApp } from "@/components/CallOrWhatsApp";
+import { COMPANY_LEGAL, LICENCE_NO } from "@/lib/company";
 
 function InstagramIcon({ className }: { className?: string }) {
   return (
@@ -29,10 +30,13 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
+  { href: "/services/hvac-installation-dubai", label: "HVAC Installation" },
   { href: "/ac-maintenance-dubai", label: "AC Maintenance" },
   { href: "/ac-repair-dubai", label: "AC Repair" },
   { href: "/ac-duct-cleaning-dubai", label: "AC Duct Cleaning" },
   { href: "/ac-amc-dubai", label: "AC AMC" },
+  { href: "/services/chiller-maintenance-dubai", label: "Chiller Maintenance" },
+  { href: "/services/tab-testing-adjusting-balancing-dubai", label: "TAB / Balancing" },
   { href: "/smart-thermostat-installation-dubai", label: "Smart Thermostats" },
   { href: "/air-balancing-airflow-testing-dubai", label: "Air Balancing" },
   { href: "/projects", label: "Projects" },
@@ -61,7 +65,7 @@ export function Footer() {
               24/7 Emergency Support · +971 58 557 5987
             </p>
             <p className="mt-1 text-xs text-text-muted">
-              AGEC Technical Services L.L.C. · Dubai Commercial Licence No. 1221573
+              {COMPANY_LEGAL} · Dubai Commercial Licence No. {LICENCE_NO}
             </p>
             <div className="mt-4 flex items-center gap-4">
               <a

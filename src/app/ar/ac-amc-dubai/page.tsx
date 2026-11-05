@@ -16,8 +16,8 @@ export const metadata = buildMetadata({
   ogDescription:
     "زيارات مجدولة، تقارير موثّقة، وأولوية في الاستجابة. تبدأ خدمة الوحدة من 350 درهماً.",
   languages: {
-    en: `${SITE_URL}/ac-amc-dubai`,
-    ar: `${SITE_URL}${ROUTE}`,
+    "en-AE": `${SITE_URL}/ac-amc-dubai`,
+    "ar-AE": `${SITE_URL}${ROUTE}`,
     "x-default": `${SITE_URL}/ac-amc-dubai`,
   },
 });

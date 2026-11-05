@@ -17,8 +17,8 @@ export const metadata = buildMetadata({
   ogDescription:
     "تنظيف كامل للمجاري والمبادلات والتصريف مع التعقيم وتقرير إنجاز مكتوب.",
   languages: {
-    en: `${SITE_URL}/ac-duct-cleaning-dubai`,
-    ar: `${SITE_URL}${ROUTE}`,
+    "en-AE": `${SITE_URL}/ac-duct-cleaning-dubai`,
+    "ar-AE": `${SITE_URL}${ROUTE}`,
     "x-default": `${SITE_URL}/ac-duct-cleaning-dubai`,
   },
 });

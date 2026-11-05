@@ -86,5 +86,17 @@ export const EMIRATES_WITH_PROJECTS_LABEL = EMIRATES_WITH_PROJECTS.slice(0, -1)
 // Honest coverage wording: name the emirates with delivered projects, and make
 // clear the company is available UAE-wide. Use these instead of "all 7 emirates"
 // so the copy doesn't imply projects delivered in every emirate. (Audit task 3.)
-export const COVERAGE_SENTENCE = `Projects in ${EMIRATES_WITH_PROJECTS_LABEL}. Available across the UAE.`;
+export const COVERAGE_SENTENCE = `Serving ${EMIRATES_WITH_PROJECTS_LABEL}, with service available across the UAE on request.`;
 export const COVERAGE_SHORT = "Available across the UAE";
+
+// Arabic coverage wording. TODO(owner): have a native Arabic speaker review this
+// translation of COVERAGE_SENTENCE.
+export const COVERAGE_SENTENCE_AR =
+  "نخدم دبي والشارقة وعجمان وأبوظبي، مع توفّر الخدمة في جميع أنحاء الإمارات عند الطلب.";
+
+// Shared areaServed for LocalBusiness / Service JSON-LD: the emirates with
+// delivered projects, plus the country to reflect UAE-wide availability.
+export const AREA_SERVED_SCHEMA = [
+  ...EMIRATES_WITH_PROJECTS.map((name) => ({ "@type": "City", name })),
+  { "@type": "Country", name: "United Arab Emirates" },
+];

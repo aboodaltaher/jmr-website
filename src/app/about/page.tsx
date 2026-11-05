@@ -145,10 +145,11 @@ export default function About() {
                   that work for the long term.
                 </p>
                 <p>
-                  AGEC Technical Services L.L.C. holds Dubai Commercial Licence
-                  No. 1221573, issued by the Dubai Department of Economy and
-                  Tourism, covering air-conditioning, ventilation and air
-                  filtration systems installation and maintenance.
+                  AGEC is the trading name of AGEC Technical Services L.L.C., the
+                  licensed company behind this website. AGEC Technical Services
+                  L.L.C. holds Dubai Commercial Licence No. 1221573, issued by the
+                  Dubai Department of Economy and Tourism, covering air-conditioning,
+                  ventilation and air filtration systems installation and maintenance.
                 </p>
               </div>
             </div>

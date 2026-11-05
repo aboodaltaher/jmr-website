@@ -1,9 +1,11 @@
 import {
   COMPANY_FULL,
+  COMPANY_LEGAL,
   EMAIL,
   PHONE,
   ADDRESS_LINE,
   ADDRESS_CITY,
+  AREA_SERVED_SCHEMA,
 } from "@/lib/company";
 
 const SITE_URL = "https://agec.ae";
@@ -25,6 +27,7 @@ const schema = {
       "@type": "Organization",
       "@id": `${SITE_URL}/#organization`,
       name: COMPANY_FULL,
+      legalName: COMPANY_LEGAL,
       alternateName: "AGEC Technical Services",
       url: SITE_URL,
       logo: { "@type": "ImageObject", url: `${SITE_URL}/agec-logo.png` },
@@ -37,6 +40,7 @@ const schema = {
       "@type": ["HVACBusiness", "GeneralContractor"],
       "@id": `${SITE_URL}/#business`,
       name: "AGEC",
+      legalName: COMPANY_LEGAL,
       alternateName: "AGEC Technical Services",
       description:
         "Dubai-based HVAC contractor providing design, installation, testing & commissioning, and maintenance for VRF, VRV, chillers, ducted splits, DX units, and ventilation systems across the UAE.",
@@ -60,15 +64,7 @@ const schema = {
         longitude: 55.2210657,
       },
       hasMap: GBP_URL,
-      areaServed: [
-        { "@type": "City", name: "Dubai" },
-        { "@type": "City", name: "Abu Dhabi" },
-        { "@type": "City", name: "Sharjah" },
-        { "@type": "City", name: "Ajman" },
-        { "@type": "City", name: "Umm Al Quwain" },
-        { "@type": "City", name: "Ras Al Khaimah" },
-        { "@type": "City", name: "Fujairah" },
-      ],
+      areaServed: AREA_SERVED_SCHEMA,
       // Reflects the site's advertised 24/7 call & WhatsApp availability.
       // TODO(owner): confirm physical office hours if different from phone availability.
       openingHoursSpecification: [

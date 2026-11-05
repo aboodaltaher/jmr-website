@@ -17,8 +17,8 @@ export const metadata = buildMetadata({
     "AC annual maintenance contracts for Dubai and UAE villas, apartments and offices: scheduled visits, written reports, priority repairs. Get an AMC quote.",
   path: ROUTE,
   languages: {
-    en: `${SITE_URL}${ROUTE}`,
-    ar: `${SITE_URL}/ar/ac-amc-dubai`,
+    "en-AE": `${SITE_URL}${ROUTE}`,
+    "ar-AE": `${SITE_URL}/ar/ac-amc-dubai`,
     "x-default": `${SITE_URL}${ROUTE}`,
   },
 });

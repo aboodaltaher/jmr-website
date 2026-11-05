@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { Phone, MessageCircle } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { PHONE, PHONE_DISPLAY, whatsappUrl } from "@/lib/contact";
+import { enEquivalentOf } from "@/lib/nav";
 
 const navLinks = [
   { href: "/ar", label: "الرئيسية" },
@@ -22,6 +23,7 @@ const navLinks = [
 export function ArabicChrome({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const wa = whatsappUrl(pathname);
+  const enHref = enEquivalentOf(pathname);
 
   useEffect(() => {
     const el = document.documentElement;
@@ -59,7 +61,7 @@ export function ArabicChrome({ children }: { children: React.ReactNode }) {
               </Link>
             ))}
             <Link
-              href="/"
+              href={enHref}
               className="text-sm font-semibold text-primary hover:underline"
             >
               English
@@ -73,7 +75,7 @@ export function ArabicChrome({ children }: { children: React.ReactNode }) {
             </a>
           </nav>
           <Link
-            href="/"
+            href={enHref}
             className="text-sm font-semibold text-primary hover:underline md:hidden"
           >
             English

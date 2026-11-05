@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllPosts } from "@/lib/blog";
+import { publishedProjects } from "@/data/projects";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://agec.ae";
@@ -8,6 +9,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const blogPosts: MetadataRoute.Sitemap = getAllPosts().map((post) => ({
     url: `${base}/blog/${post.slug}`,
     lastModified: new Date(post.updated || post.date || now),
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+
+  // Only non-draft case studies are listed; drafts stay out until published.
+  const caseStudies: MetadataRoute.Sitemap = publishedProjects.map((p) => ({
+    url: `${base}/projects/${p.slug}`,
+    lastModified: now,
     changeFrequency: "monthly",
     priority: 0.6,
   }));
@@ -22,6 +31,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/ac-amc-dubai`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/ac-duct-cleaning-dubai`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/air-balancing-airflow-testing-dubai`, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/services/hvac-installation-dubai`, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/services/tab-testing-adjusting-balancing-dubai`, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/services/chiller-maintenance-dubai`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/services/vrf-vrv-systems`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/services/chillers`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/services/dx-units`, changeFrequency: "monthly", priority: 0.7 },
@@ -46,5 +58,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: now,
   }));
 
-  return [...staticPages, ...blogPosts];
+  return [...staticPages, ...caseStudies, ...blogPosts];
 }

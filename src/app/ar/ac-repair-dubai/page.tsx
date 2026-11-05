@@ -16,8 +16,8 @@ export const metadata = buildMetadata({
   ogDescription:
     "تشخيص هندسي للعطل، وسعر كتابي قبل البدء، وتقرير بعد الإصلاح. استجابة خلال ساعة.",
   languages: {
-    en: `${SITE_URL}/ac-repair-dubai`,
-    ar: `${SITE_URL}${ROUTE}`,
+    "en-AE": `${SITE_URL}/ac-repair-dubai`,
+    "ar-AE": `${SITE_URL}${ROUTE}`,
     "x-default": `${SITE_URL}/ac-repair-dubai`,
   },
 });
@@ -58,7 +58,7 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: "هل تصلحون المكيفات السبليت والمخفية و VRF؟",
-    a: "نعم — أنظمة السبليت والمخفية و VRF/VRV من جميع العلامات الكبرى، في الإمارات السبع جميعها.",
+    a: "نعم — أنظمة السبليت والمخفية و VRF/VRV من جميع العلامات الكبرى، في دبي والشارقة وعجمان وأبوظبي، مع خدمة في جميع أنحاء الإمارات عند الطلب.",
   },
 ];
 
@@ -112,7 +112,7 @@ export default function ArabicAcRepair() {
           style={{ background: "radial-gradient(1100px 560px at 18% -10%, rgba(212,118,46,.32), transparent)" }}
         />
         <div className="relative mx-auto max-w-7xl px-6 py-16 md:py-24">
-          <p className={eyebrow}>دبي والإمارات · الإمارات السبع · استجابة خلال ساعة</p>
+          <p className={eyebrow}>دبي والإمارات · استجابة خلال ساعة</p>
           <h1 className="mt-4 max-w-3xl font-heading text-4xl font-bold leading-[1.2] md:text-6xl">
             إصلاح مكيفات في دبي: تشخيص هندسي وسعر قبل البدء
           </h1>
