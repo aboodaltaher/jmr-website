@@ -65,8 +65,7 @@ const schema = {
       },
       hasMap: GBP_URL,
       areaServed: AREA_SERVED_SCHEMA,
-      // Reflects the site's advertised 24/7 call & WhatsApp availability.
-      // TODO(owner): confirm physical office hours if different from phone availability.
+      // 24/7 availability (owner-confirmed): call & WhatsApp any time.
       openingHoursSpecification: [
         {
           "@type": "OpeningHoursSpecification",
