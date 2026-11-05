@@ -1,5 +1,6 @@
 import {
   COMPANY_FULL,
+  COMPANY_LEGAL,
   EMAIL,
   PHONE,
   ADDRESS_LINE,
@@ -26,6 +27,7 @@ const schema = {
       "@type": "Organization",
       "@id": `${SITE_URL}/#organization`,
       name: COMPANY_FULL,
+      legalName: COMPANY_LEGAL,
       alternateName: "AGEC Technical Services",
       url: SITE_URL,
       logo: { "@type": "ImageObject", url: `${SITE_URL}/agec-logo.png` },
@@ -38,6 +40,7 @@ const schema = {
       "@type": ["HVACBusiness", "GeneralContractor"],
       "@id": `${SITE_URL}/#business`,
       name: "AGEC",
+      legalName: COMPANY_LEGAL,
       alternateName: "AGEC Technical Services",
       description:
         "Dubai-based HVAC contractor providing design, installation, testing & commissioning, and maintenance for VRF, VRV, chillers, ducted splits, DX units, and ventilation systems across the UAE.",

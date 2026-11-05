@@ -2,6 +2,7 @@ import Link from "next/link";
 import { MapPin } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { CallOrWhatsApp } from "@/components/CallOrWhatsApp";
+import { COMPANY_LEGAL, LICENCE_NO } from "@/lib/company";
 
 function InstagramIcon({ className }: { className?: string }) {
   return (
@@ -64,7 +65,7 @@ export function Footer() {
               24/7 Emergency Support · +971 58 557 5987
             </p>
             <p className="mt-1 text-xs text-text-muted">
-              AGEC Technical Services L.L.C. · Dubai Commercial Licence No. 1221573
+              {COMPANY_LEGAL} · Dubai Commercial Licence No. {LICENCE_NO}
             </p>
             <div className="mt-4 flex items-center gap-4">
               <a

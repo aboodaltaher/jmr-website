@@ -62,3 +62,10 @@ Projects awaiting the above (slug — current published summary):
 - `ave-restaurant-business-bay` — AVE Restaurant · kitchen ventilation + cooling · Business Bay, Dubai
 - `zain-solution-data-center-abu-dhabi` — Zain Solution Data Center · precision cooling · Musaffah, Abu Dhabi
 - `cultural-center-al-barsha` — Cultural Center · HVAC works · Al Barsha, Dubai
+
+## Company name relationship (Task 4)
+- /about now states: "AGEC is the trading name of AGEC Technical Services L.L.C.,
+  the licensed company behind this website." This neutral wording was written
+  because the exact relationship is not otherwise stated on the site.
+  **Please confirm this is accurate** (e.g. trading name vs branch vs d/b/a), and
+  whether any other legal entity is involved.
