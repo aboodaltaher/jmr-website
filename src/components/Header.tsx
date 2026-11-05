@@ -2,51 +2,23 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { CallOrWhatsApp } from "@/components/CallOrWhatsApp";
+import {
+  mainLinks,
+  serviceLinks,
+  maintenanceLinks,
+  tailLinks,
+  arEquivalentOf,
+} from "@/lib/nav";
 
-const mainLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-];
-
-const serviceLinks = [
-  { href: "/services", label: "All Services" },
-  { href: "/services/hvac-installation-dubai", label: "HVAC Installation" },
-  { href: "/ac-maintenance-dubai", label: "AC Maintenance" },
-  { href: "/ac-repair-dubai", label: "AC Repair" },
-  { href: "/ac-amc-dubai", label: "AC AMC" },
-  { href: "/ac-duct-cleaning-dubai", label: "AC Duct Cleaning" },
-  { href: "/air-balancing-airflow-testing-dubai", label: "Air Balancing" },
-  { href: "/smart-thermostat-installation-dubai", label: "Smart Thermostats" },
-  { href: "/services/vrf-vrv-systems", label: "VRF / VRV Systems" },
-  { href: "/services/maintenance", label: "Commercial Maintenance & AMC" },
-  { href: "/services/chiller-maintenance-dubai", label: "Chiller Maintenance" },
-  { href: "/services/ventilation-fresh-air", label: "Ventilation & Fresh Air" },
-  { href: "/services/hvac-design", label: "HVAC Design" },
-  { href: "/services/testing-commissioning", label: "Testing & Commissioning" },
-  { href: "/services/tab-testing-adjusting-balancing-dubai", label: "TAB (Balancing)" },
-];
-
-// Dedicated Maintenance nav item (audit task 9). Points at the existing
-// maintenance pages — a subset of serviceLinks, surfaced on its own.
-const maintenanceLinks = [
-  { href: "/ac-maintenance-dubai", label: "AC Maintenance" },
-  { href: "/ac-amc-dubai", label: "AC AMC" },
-  { href: "/ac-repair-dubai", label: "AC Repair" },
-  { href: "/ac-duct-cleaning-dubai", label: "AC Duct Cleaning" },
-  { href: "/services/maintenance", label: "Commercial Maintenance & AMC" },
-  { href: "/services/chiller-maintenance-dubai", label: "Chiller Maintenance" },
-];
-
-const tailLinks = [
-  { href: "/projects", label: "Projects" },
-  { href: "/blog", label: "Insights" },
-  { href: "/contact", label: "Contact" },
-];
+// (nav config lives in @/lib/nav so desktop + mobile share one source)
 
 export function Header() {
+  const pathname = usePathname();
+  const arHref = arEquivalentOf(pathname);
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [maintenanceOpen, setMaintenanceOpen] = useState(false);
@@ -183,7 +155,7 @@ export function Header() {
             </Link>
           ))}
 
-          <Link href="/ar" lang="ar" className={`${linkClass} font-semibold`}>
+          <Link href={arHref} lang="ar" className={`${linkClass} font-semibold`}>
             العربية
           </Link>
 
@@ -276,7 +248,7 @@ export function Header() {
             ))}
 
             <Link
-              href="/ar"
+              href={arHref}
               lang="ar"
               onClick={closeAll}
               className="py-2.5 text-base font-semibold text-primary hover:underline"
