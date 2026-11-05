@@ -23,9 +23,10 @@ import {
   Sparkles,
   Layers,
   Star,
+  Building2,
 } from "lucide-react";
 import { PHONE, PHONE_DISPLAY } from "@/lib/contact";
-import { PROJECTS_DELIVERED, EMIRATES_WITH_PROJECTS } from "@/lib/company";
+import { PROJECTS_DELIVERED, EMIRATES_WITH_PROJECTS, GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from "@/lib/company";
 import { GOOGLE_REVIEWS_URL, GOOGLE_REVIEWS } from "@/lib/reviews";
 import { getGoogleReviewStats } from "@/lib/google-reviews";
 
@@ -37,13 +38,13 @@ import { getGoogleReviewStats } from "@/lib/google-reviews";
 const WHY_AGEC_IMAGE = "/why-agec.jpg";
 
 export const metadata = buildMetadata({
-  title: "HVAC Contractor & AC Maintenance Dubai | AGEC",
+  title: "Engineer-Led HVAC Contractor in Dubai & the UAE | AGEC",
   description:
-    "Engineer-led HVAC installation, AC maintenance, AMC, air balancing and commissioning across the UAE. Call +971 58 557 5987.",
+    `Engineer-led HVAC contractor in Dubai — installation, maintenance, AMC, testing and commissioning. Licensed since 2022, ${GOOGLE_RATING}★ from ${GOOGLE_REVIEW_COUNT} Google reviews.`,
   path: "",
   languages: {
-    en: "https://agec.ae/",
-    ar: "https://agec.ae/ar",
+    "en-AE": "https://agec.ae/",
+    "ar-AE": "https://agec.ae/ar",
     "x-default": "https://agec.ae/",
   },
 });
@@ -198,6 +199,46 @@ export default async function Home() {
           </p>
           <div className="mt-4">
             <GoogleReviewsBadge className="text-white/90" />
+          </div>
+        </div>
+      </section>
+
+      {/* Audience entry points */}
+      <section className="py-14 md:py-16">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="grid gap-6 md:grid-cols-2">
+            <Link
+              href="/ac-maintenance-dubai"
+              className="group flex flex-col rounded-lg border border-border bg-white p-8 transition-all hover:-translate-y-1 hover:shadow-lg"
+            >
+              <Wrench className="h-10 w-10 text-primary" strokeWidth={1.5} />
+              <h2 className="mt-5 font-heading text-xl font-bold">
+                Homeowner or tenant
+              </h2>
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-text-muted">
+                AC service, repair and annual maintenance contracts (AMC) for
+                villas and apartments.
+              </p>
+              <span className="mt-5 text-sm font-medium text-primary">
+                AC maintenance &amp; repair &rarr;
+              </span>
+            </Link>
+            <Link
+              href="/services"
+              className="group flex flex-col rounded-lg border border-border bg-white p-8 transition-all hover:-translate-y-1 hover:shadow-lg"
+            >
+              <Building2 className="h-10 w-10 text-primary" strokeWidth={1.5} />
+              <h2 className="mt-5 font-heading text-xl font-bold">
+                Developer, consultant or facility manager
+              </h2>
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-text-muted">
+                HVAC installation, testing and commissioning, and building
+                maintenance contracts.
+              </p>
+              <span className="mt-5 text-sm font-medium text-primary">
+                HVAC services &amp; projects &rarr;
+              </span>
+            </Link>
           </div>
         </div>
       </section>
