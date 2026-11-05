@@ -82,7 +82,7 @@ export default function About() {
             image: "https://agec.ae/team/mohannad-ghabboun-agec.jpg",
             url: "https://agec.ae/about",
             description:
-              "Founder and Lead HVAC Engineer at AGEC. Dubai Municipality approved engineer with more than 10 years of UAE HVAC experience; led HVAC works on the Parcels at Expo 2020 Dubai.",
+              "Founder and Lead HVAC Engineer at AGEC with more than 10 years of UAE HVAC experience; led HVAC works on the Parcels at Expo 2020 Dubai.",
             knowsAbout: [
               "HVAC design",
               "VRF/VRV systems",
@@ -233,7 +233,7 @@ export default function About() {
             <div>
               <h3 className="font-heading text-2xl font-bold">{FOUNDER}</h3>
               <p className="mt-1 font-medium text-primary">
-                Founder &amp; Lead HVAC Engineer · Dubai Municipality approved engineer
+                Founder &amp; Lead HVAC Engineer
               </p>
               <div className="mt-5 space-y-4 leading-relaxed text-text-muted">
                 <p>
@@ -245,17 +245,17 @@ export default function About() {
                 <p>
                   He led HVAC works on the Parcels at Expo 2020 Dubai — one of the
                   region&apos;s largest and most demanding developments — managing
-                  installation and commissioning to programme and specification. As
-                  a Dubai Municipality approved engineer, he signs off AGEC&apos;s
-                  work to UAE engineering standards.
+                  installation and commissioning to programme and specification. He
+                  leads and signs off AGEC&apos;s HVAC engineering work to UAE
+                  engineering standards.
                 </p>
               </div>
               <ul className="mt-6 grid gap-3 sm:grid-cols-2">
                 {[
                   "10+ years UAE HVAC experience",
-                  "Dubai Municipality approved engineer",
                   "HVAC lead — Expo 2020 Dubai (the Parcels)",
                   "Heat load, VRF/VRV, chillers & TAB specialist",
+                  "Design, installation, testing & commissioning",
                 ].map((item) => (
                   <li key={item} className="flex gap-2 text-sm text-text">
                     <Award className="mt-0.5 h-5 w-5 shrink-0 text-primary" strokeWidth={1.75} />

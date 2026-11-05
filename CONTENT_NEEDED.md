@@ -14,10 +14,10 @@ Rule: nothing here may be invented. Items are marked ✅ (owner-confirmed, appli
   claim will be shown.
 - ✅ Any other approvals / memberships / certifications. Answer: **None** — the site
   makes no certification claims.
-  - ⬜ One existing person-credential to double-check: /about describes the founder
-    as a "Dubai Municipality approved engineer" (an individual professional status,
-    not a company certificate). Confirm this is still accurate, or we'll soften it.
-    Answer:
+  - ✅ Founder "Dubai Municipality approved engineer" claim. Answer: **Not approved**
+    — the claim has been **removed** from /about (title, bio, credentials list and the
+    Person JSON-LD). True statements kept (10+ yrs UAE HVAC, Expo 2020 Parcels lead).
+    Statements about working *to* Dubai Municipality codes/standards remain (accurate).
 
 ## B. Coverage
 - ✅ Emirates with delivered projects: **Dubai, Sharjah, Ajman, Abu Dhabi** (confirmed).
@@ -44,14 +44,18 @@ equipment brands are claimed (none supplied). Optional to strengthen later:
 
 ## E. Case studies (12 listed on /projects)
 - ✅ Client permission: **granted.** Photos: **to be uploaded later.**
-- ⬜ **Still required before any project can be published** (cannot be invented):
-  per project — scope of work, challenge, solution, result, system type/capacity,
-  year, and area/emirate where missing. Send any number; each complete one gets
-  published and flipped out of `draft`. Specifically still missing:
-  - Capacity figure for: `pure-gym-al-barsha`, `ave-restaurant-business-bay`,
-    `zain-solution-data-center-abu-dhabi`, `cultural-center-al-barsha`,
-    `private-villa-sharjah-flagship`.
-  - Emirate for `18-villas-community` (Al Rgebah / Al Seyouh).
+- ✅ **All 12 case studies are now published** (per owner direction) using the real
+  published facts (system type, capacity, location, category) plus a **general,
+  truthful overview and scope** for each. **No specifics were invented** — no dates,
+  metrics, named challenges or results.
+- ⬜ To make each one richer (optional, owner-supplied only — never invented):
+  - A real **challenge / solution / result** (2–3 sentences each).
+  - **Year completed.**
+  - **Capacity** for the 5 shown without one: `pure-gym-al-barsha`,
+    `ave-restaurant-business-bay`, `zain-solution-data-center-abu-dhabi`,
+    `cultural-center-al-barsha`, `private-villa-sharjah-flagship`.
+  - **Emirate** for `18-villas-community` (Al Rgebah / Al Seyouh).
+  - **Photos** (owned, with permission) — hero + gallery per project.
 
 Category labels on /projects:
 - ✅ "AVE Restaurant" — **Commercial** (already correct).
@@ -64,6 +68,7 @@ Category labels on /projects:
 - ✅ Opening hours: **24/7**, emergency service real (schema + copy reflect this).
 
 ## G. Arabic review
-- ⬜ A native Arabic speaker should review every Arabic string (home hero, the "32
-  projects" line, coverage wording, company-name paragraph, new service pages).
-  Answer:
+- ◼ Owner: no formal native reviewer (use online translation to spot-check). The
+  Arabic strings are standard Modern Standard Arabic and are in place; flag any
+  specific wording you want changed and we'll adjust. Strings to spot-check: home
+  hero, the "32 projects" line, coverage wording, company-name paragraph.

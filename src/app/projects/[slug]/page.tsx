@@ -142,6 +142,13 @@ export default async function ProjectCaseStudy({
             </div>
           </dl>
 
+          {project.overview && (
+            <div className="mt-10">
+              <h2 className="font-heading text-2xl font-bold">Overview</h2>
+              <p className="mt-4 leading-relaxed text-text-muted">{project.overview}</p>
+            </div>
+          )}
+
           {project.scope && project.scope.length > 0 && (
             <div className="mt-10">
               <h2 className="font-heading text-2xl font-bold">Scope of work</h2>

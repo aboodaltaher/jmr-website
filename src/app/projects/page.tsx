@@ -60,7 +60,7 @@ export default function Projects() {
           </h1>
           <p className="mt-6 max-w-3xl text-xl text-text-muted">
             A selection of recent HVAC installations and design projects across
-            the UAE. Detailed case studies coming soon.
+            the UAE. Select a project to read its case study.
           </p>
         </div>
       </section>
