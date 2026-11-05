@@ -5,7 +5,7 @@ import { SiteFrame } from "@/components/SiteFrame";
 import { SiteSchema } from "@/components/SiteSchema";
 import { Analytics, GtmNoScript } from "@/components/Analytics";
 import { ConversionTracking } from "@/components/ConversionTracking";
-import { GA_ADS_ID } from "@/lib/gtag";
+import { GA_ADS_ID, GA4_ID } from "@/lib/gtag";
 import "./globals.css";
 
 const inter = Inter({
@@ -61,7 +61,7 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col antialiased pb-16 md:pb-0">
         <GtmNoScript />
         <SiteSchema />
-        {/* Google tag (gtag.js) — Google Ads */}
+        {/* Google tag (gtag.js) — loaded once, shared by Google Ads + GA4 */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ADS_ID}`}
           strategy="afterInteractive"
@@ -70,7 +70,8 @@ export default function RootLayout({
           {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', '${GA_ADS_ID}');`}
+gtag('config', '${GA_ADS_ID}');
+gtag('config', '${GA4_ID}');`}
         </Script>
         <Analytics />
         <SiteFrame>{children}</SiteFrame>
