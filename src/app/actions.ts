@@ -70,9 +70,10 @@ export async function submitRequest(data: Record<string, unknown>) {
 
 const contactSchema = z.object({
   name: z.string().min(1),
-  email: z.string().email(),
+  // Email and subject are optional; phone is the required contact method.
+  email: z.string().email().optional().or(z.literal("")),
   phone: z.string().min(1),
-  subject: z.string().min(1),
+  subject: z.string().optional(),
   message: z.string().min(1),
 });
 
@@ -95,7 +96,7 @@ export async function submitContactForm(data: Record<string, unknown>) {
       from: FROM,
       to: CONTACT_EMAIL,
       subject: `New Contact Form Submission - ${name}`,
-      replyTo: email,
+      replyTo: email || undefined,
       html,
     });
   } catch (err) {

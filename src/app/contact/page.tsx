@@ -1,5 +1,6 @@
 import { buildMetadata } from "@/lib/metadata";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
+import { whatsappUrl } from "@/lib/contact";
 import { ContactForm } from "@/components/ContactForm";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -57,6 +58,23 @@ export default function Contact() {
                       <p className="text-sm font-medium">Phone</p>
                       <a
                         href="tel:+971585575987"
+                        className="text-sm text-text-muted hover:text-primary transition-colors"
+                      >
+                        +971 58 557 5987
+                      </a>
+                    </div>
+                  </div>
+                  <div className="flex gap-4">
+                    <MessageCircle
+                      className="mt-0.5 h-5 w-5 shrink-0 text-primary"
+                      strokeWidth={1.5}
+                    />
+                    <div>
+                      <p className="text-sm font-medium">WhatsApp</p>
+                      <a
+                        href={whatsappUrl("/contact")}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="text-sm text-text-muted hover:text-primary transition-colors"
                       >
                         +971 58 557 5987

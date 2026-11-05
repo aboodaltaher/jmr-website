@@ -11,9 +11,14 @@ import { FormAssurance } from "@/components/FormAssurance";
 
 const schema = z.object({
   name: z.string().min(1, "Name is required"),
-  email: z.string().min(1, "Email is required").email("Please enter a valid email"),
+  // Email is optional; if given it must be valid. Phone is the required contact.
+  email: z
+    .string()
+    .email("Please enter a valid email")
+    .optional()
+    .or(z.literal("")),
   phone: z.string().min(1, "Phone number is required"),
-  subject: z.string().min(1, "Subject is required"),
+  subject: z.string().optional(),
   message: z.string().min(1, "Message is required"),
 });
 
@@ -72,7 +77,7 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="email" className="block text-sm font-medium mb-1.5">
-          Email <span className="text-red-500">*</span>
+          Email <span className="text-text-muted">(optional)</span>
         </label>
         <input
           id="email"
@@ -104,7 +109,7 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="subject" className="block text-sm font-medium mb-1.5">
-          Subject <span className="text-red-500">*</span>
+          Subject <span className="text-text-muted">(optional)</span>
         </label>
         <input
           id="subject"
