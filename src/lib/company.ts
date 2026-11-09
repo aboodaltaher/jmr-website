@@ -48,9 +48,9 @@ export const EMERGENCY_PREFIX = "AC down right now? Call";
 // Largest single project by cooling capacity (confirmed by owner: 240 TR).
 export const LARGEST_PROJECT_TR = 240;
 
-// Total projects delivered since 2022 (confirmed by owner: 32). The projects
+// Total projects delivered since 2022 (confirmed by owner: 33). The projects
 // page shows a selection of 12.
-export const PROJECTS_DELIVERED = "32";
+export const PROJECTS_DELIVERED = "33";
 
 // --- Smart thermostat energy-saving figure (single source, audit task 4) ---
 // Manufacturer-reported (ecobee eco+). The thermostat page footnotes this and
