@@ -1,14 +1,11 @@
-// Suggested starting-price anchors for the smart-thermostat and AMC pages.
+// Starting-price anchors for the smart-thermostat pages.
 //
-// ⚠️  SUGGESTED FIGURES — NOT OWNER-CONFIRMED.
-// These were proposed as reasonable Dubai-market starting points so the new
-// pages don't ship with empty "[price]" placeholders. Confirm or overwrite
-// every value here before relying on it — changing a number in this one file
-// updates the visible page copy everywhere it's used. Prices are shown as
-// indicative "from AED …*" starting points (with a footnote), never as fixed
-// quotes, and are deliberately NOT emitted in Service JSON-LD offers until a
-// figure is confirmed. The one already-confirmed figure (AC servicing from
-// AED 350 per unit, min 3 units) stays in the page copy where it already lives.
+// Owner-accepted as indicative "from AED …" starting points. They're shown
+// with a footnote that the exact fixed price is confirmed after a free
+// compatibility check — never as fixed quotes — and are not emitted in Service
+// JSON-LD offers (Google is fine without a price). To change a figure, edit it
+// here once and it updates the visible page copy everywhere it's used. (AC
+// servicing "from AED 350/unit, min 3" stays in the maintenance page copy.)
 
 /** Install-only fitting of a smart thermostat you already own (from, AED). */
 export const PRICE_THERMOSTAT_INSTALL_FROM = "250";
