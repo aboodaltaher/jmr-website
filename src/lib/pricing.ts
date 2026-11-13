@@ -1,21 +1,28 @@
-// Starting-price anchors for the smart-thermostat pages.
+// Confirmed thermostat prices (owner-provided).
 //
-// Owner-accepted as indicative "from AED …" starting points. They're shown
-// with a footnote that the exact fixed price is confirmed after a free
-// compatibility check — never as fixed quotes — and are not emitted in Service
-// JSON-LD offers (Google is fine without a price). To change a figure, edit it
-// here once and it updates the visible page copy everywhere it's used. (AC
-// servicing "from AED 350/unit, min 3" stays in the maintenance page copy.)
+// Itemised: device supply + installation, with a drop-air adaptor added only
+// where a system (e.g. VRF/VRV) needs one. The "supply & install" bundles are
+// simply device + installation. Prices show as "from AED …" because the
+// adaptor and site specifics vary; the final price is confirmed after a free
+// compatibility check. Not emitted in Service JSON-LD offers (the "from" +
+// adaptor split makes a single structured price imprecise). Edit a figure here
+// and it updates the visible page copy everywhere it's used. (AC servicing
+// "from AED 350/unit, min 3" stays in the maintenance page copy.)
 
-/** Install-only fitting of a smart thermostat you already own (from, AED). */
-export const PRICE_THERMOSTAT_INSTALL_FROM = "250";
+/** Google Nest device, supply only (AED). */
+export const PRICE_NEST_SUPPLY = "850";
+/** ecobee device, supply only (AED). */
+export const PRICE_ECOBEE_SUPPLY = "720";
+/** Professional installation, per thermostat (AED). */
+export const PRICE_INSTALLATION = "300";
+/** Drop-air adaptor for VRF/VRV or where a thermostat can't directly control the unit (AED). */
+export const PRICE_DROP_AIR_ADAPTOR = "750";
 
-/** Supply + professional installation of a Google Nest thermostat (from, AED). */
-export const PRICE_NEST_SUPPLY_INSTALL_FROM = "1,250";
+/** Google Nest supply + installation (device + install) (AED). */
+export const PRICE_NEST_SUPPLY_INSTALL = "1,150";
+/** ecobee supply + installation (device + install) (AED). */
+export const PRICE_ECOBEE_SUPPLY_INSTALL = "1,020";
 
-/** Supply + professional installation of an ecobee thermostat (from, AED). */
-export const PRICE_ECOBEE_SUPPLY_INSTALL_FROM = "1,400";
-
-/** Footnote shown wherever a suggested price appears. */
+/** Footnote shown wherever a price appears. */
 export const PRICE_NOTE =
-  "Indicative starting price — your exact fixed quote is confirmed after a free compatibility check.";
+  "Final price is confirmed after a free compatibility check. A drop-air adaptor (AED 750) is added only where your system — e.g. VRF/VRV — needs one.";

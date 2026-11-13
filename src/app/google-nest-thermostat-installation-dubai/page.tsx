@@ -7,8 +7,10 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { GOOGLE_REVIEWS_URL } from "@/lib/reviews";
 import { getGoogleReviewStats } from "@/lib/google-reviews";
 import {
-  PRICE_THERMOSTAT_INSTALL_FROM,
-  PRICE_NEST_SUPPLY_INSTALL_FROM,
+  PRICE_NEST_SUPPLY,
+  PRICE_INSTALLATION,
+  PRICE_DROP_AIR_ADAPTOR,
+  PRICE_NEST_SUPPLY_INSTALL,
   PRICE_NOTE,
 } from "@/lib/pricing";
 import {
@@ -116,9 +118,9 @@ const reviews = [
 const faqs: { q: string; a: string }[] = [
   { q: "Is Google Nest available in the UAE?", a: "Yes — Google Nest is officially sold in the UAE. We install the model you already have, or supply a genuine unit for you as part of the job." },
   { q: "Will Nest work with my villa's AC?", a: "Usually yes. Most Dubai homes use 24V ducted or ducted-split systems, which Nest supports directly. For 220/240V split and inverter units we fit a safe interface module so Nest can control the AC without modifying or damaging it. We always confirm with a free compatibility check first." },
-  { q: "Does Nest work with VRF/VRV or chiller FCU systems?", a: "Often yes, with the right interface and controls. These systems vary, so we assess your specific setup before we promise anything — compatibility depends on your wiring and controls, not just the AC brand." },
+  { q: "Does Nest work with VRF/VRV or chiller FCU systems?", a: `Yes — Nest works with VRF/VRV systems using a drop-air adaptor, an interface we fit so the Nest can control the indoor unit (AED ${PRICE_DROP_AIR_ADAPTOR} where required). Chiller FCU and other setups vary, so we confirm your specific system with a free compatibility check first.` },
   { q: "What is a C-wire and do I need one?", a: "The C-wire (common wire) gives the thermostat constant power. If your system doesn't have one, our engineers run a proper C-wire or fit a compatible power/interface solution safely and cleanly, so your Nest stays powered and reliable." },
-  { q: "How much does Nest installation cost in Dubai?", a: `Install-only starts from AED ${PRICE_THERMOSTAT_INSTALL_FROM}, and supply + installation from AED ${PRICE_NEST_SUPPLY_INSTALL_FROM}. Your exact fixed price is confirmed after the free compatibility check — final cost depends on your system and whether a C-wire or interface is needed.` },
+  { q: "How much does Nest installation cost in Dubai?", a: `Installation is AED ${PRICE_INSTALLATION}; a genuine Nest supplied is AED ${PRICE_NEST_SUPPLY}, so supply + installation is from AED ${PRICE_NEST_SUPPLY_INSTALL}. A drop-air adaptor (AED ${PRICE_DROP_AIR_ADAPTOR}) is added only for VRF/VRV or where your system needs one. Your exact price is confirmed after the free compatibility check.` },
   { q: "Can you install a Nest I already bought?", a: "Yes — we offer install-only. We check compatibility, wire it correctly (C-wire where needed) and set up Google Home, so a device you sourced yourself is fitted to professional standard." },
   { q: "Will a Nest lower my DEWA bill?", a: "It can. Scheduling, geofencing and eco modes cut wasted cooling across the UAE's long cooling season. Actual savings depend on your home, usage and settings, but smart control is one of the fastest ways to reduce cooling waste." },
   { q: "How long does installation take, and what warranty do I get?", a: "A standard, compatible install is usually under 90 minutes. You get the full manufacturer warranty on the Nest device plus our workmanship guarantee on the installation." },
@@ -315,8 +317,10 @@ export default async function GoogleNestPage() {
             <strong className="text-white">220/240V split and inverter units</strong>, our engineers
             fit a safe interface module so Nest can control the AC{" "}
             <strong className="text-white">without modifying or damaging your unit</strong> and without
-            depending on its internal control board. We check{" "}
-            <strong className="text-white">split, ducted DX, VRF/VRV and chiller FCU</strong> setups
+            depending on its internal control board. For{" "}
+            <strong className="text-white">VRF/VRV systems</strong> we fit a{" "}
+            <strong className="text-white">drop-air adaptor</strong> so the Nest can control the
+            indoor unit. We check split, ducted DX, VRF/VRV and chiller FCU setups
             first — so there&apos;s a solution for almost any system. Compatibility depends on your
             wiring and controls, not just the AC brand, which is why we always start with a free assessment.
           </p>
@@ -371,21 +375,28 @@ export default async function GoogleNestPage() {
               Transparent, Fixed-Price Installation
             </h2>
           </div>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2">
-            <div className="rounded-xl border border-border bg-white p-7">
-              <h3 className="font-heading text-lg font-semibold">Install-only</h3>
-              <p className="mt-1 text-sm text-text-muted">We fit the Nest you already own.</p>
+          <div className="mt-10 grid gap-5 sm:grid-cols-3">
+            <div className="rounded-xl border border-primary/40 bg-white p-7 ring-1 ring-primary/20">
+              <h3 className="font-heading text-lg font-semibold">Supply &amp; install</h3>
+              <p className="mt-1 text-sm text-text-muted">Genuine Nest (AED {PRICE_NEST_SUPPLY}) + installation.</p>
               <p className="mt-4 font-heading text-3xl font-bold text-primary">
-                from AED {PRICE_THERMOSTAT_INSTALL_FROM}
+                from AED {PRICE_NEST_SUPPLY_INSTALL}
                 <span className="align-super text-base">*</span>
               </p>
             </div>
             <div className="rounded-xl border border-border bg-white p-7">
-              <h3 className="font-heading text-lg font-semibold">Supply &amp; install</h3>
-              <p className="mt-1 text-sm text-text-muted">Genuine Nest device + professional fitting.</p>
+              <h3 className="font-heading text-lg font-semibold">Installation only</h3>
+              <p className="mt-1 text-sm text-text-muted">We fit the Nest you already own.</p>
               <p className="mt-4 font-heading text-3xl font-bold text-primary">
-                from AED {PRICE_NEST_SUPPLY_INSTALL_FROM}
+                AED {PRICE_INSTALLATION}
                 <span className="align-super text-base">*</span>
+              </p>
+            </div>
+            <div className="rounded-xl border border-border bg-white p-7">
+              <h3 className="font-heading text-lg font-semibold">Drop-air adaptor</h3>
+              <p className="mt-1 text-sm text-text-muted">For VRF/VRV or where required.</p>
+              <p className="mt-4 font-heading text-3xl font-bold text-primary">
+                AED {PRICE_DROP_AIR_ADAPTOR}
               </p>
             </div>
           </div>
