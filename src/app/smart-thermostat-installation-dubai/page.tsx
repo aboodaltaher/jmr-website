@@ -472,6 +472,14 @@ export default async function SmartThermostatPage() {
             <p className="mt-5 text-lg text-text-muted">
               Every device includes professional installation, Wi-Fi setup, app configuration and hands-on training.
             </p>
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              <Link href="/google-nest-thermostat-installation-dubai" className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/5 px-5 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-primary/10">
+                Google Nest installation &rarr;
+              </Link>
+              <Link href="/ecobee-thermostat-installation-dubai" className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/5 px-5 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-primary/10">
+                ecobee installation &rarr;
+              </Link>
+            </div>
           </div>
           <div className="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-4">
             {products.map((p) => (

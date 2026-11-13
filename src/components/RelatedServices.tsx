@@ -10,6 +10,8 @@ const ALL_SERVICES = [
   { href: "/air-balancing-airflow-testing-dubai", label: "Air Balancing", desc: "Measured airflow testing & reports" },
   { href: "/services/tab-testing-adjusting-balancing-dubai", label: "TAB Balancing", desc: "Air & water set to design, reported" },
   { href: "/smart-thermostat-installation-dubai", label: "Smart Thermostats", desc: "Nest & ecobee installation" },
+  { href: "/google-nest-thermostat-installation-dubai", label: "Google Nest Installation", desc: "Supply & fit Google Nest thermostats" },
+  { href: "/ecobee-thermostat-installation-dubai", label: "ecobee Installation", desc: "Supply & fit ecobee thermostats" },
   { href: "/services/vrf-vrv-systems", label: "VRF / VRV Systems", desc: "Multi-zone design & commissioning" },
   { href: "/services/maintenance", label: "Commercial Maintenance", desc: "Chillers, AHUs & FCUs under one AMC" },
   { href: "/services/chiller-maintenance-dubai", label: "Chiller Maintenance", desc: "Planned servicing for chiller plant" },

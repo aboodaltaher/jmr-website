@@ -32,6 +32,8 @@ export const staticRoutes: RouteEntry[] = [
   { path: "/ac-duct-cleaning-dubai", changeFrequency: "monthly", priority: 0.9 },
   { path: "/air-balancing-airflow-testing-dubai", changeFrequency: "monthly", priority: 0.8 },
   { path: "/smart-thermostat-installation-dubai", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/google-nest-thermostat-installation-dubai", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/ecobee-thermostat-installation-dubai", changeFrequency: "monthly", priority: 0.7 },
   // Service detail pages
   { path: "/services/hvac-installation-dubai", changeFrequency: "monthly", priority: 0.8 },
   { path: "/services/tab-testing-adjusting-balancing-dubai", changeFrequency: "monthly", priority: 0.7 },
