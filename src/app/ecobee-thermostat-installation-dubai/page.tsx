@@ -7,8 +7,10 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { GOOGLE_REVIEWS_URL } from "@/lib/reviews";
 import { getGoogleReviewStats } from "@/lib/google-reviews";
 import {
-  PRICE_THERMOSTAT_INSTALL_FROM,
-  PRICE_ECOBEE_SUPPLY_INSTALL_FROM,
+  PRICE_ECOBEE_SUPPLY,
+  PRICE_INSTALLATION,
+  PRICE_DROP_AIR_ADAPTOR,
+  PRICE_ECOBEE_SUPPLY_INSTALL,
   PRICE_NOTE,
 } from "@/lib/pricing";
 import {
@@ -116,9 +118,9 @@ const faqs: { q: string; a: string }[] = [
   { q: "Do you supply and install ecobee in Dubai?", a: "Yes — we supply and professionally install ecobee smart thermostats, and we also offer install-only if you've already sourced your own unit. Either way, we start with a free compatibility check." },
   { q: "Is ecobee officially sold in the UAE?", a: "ecobee isn't as widely available through official UAE channels as Google Nest, so units here are typically imported. It's worth knowing before you buy, as regional warranty terms and app-account requirements can differ. We back every ecobee we supply with our workmanship guarantee, and manufacturer warranty applies where the unit you receive carries one." },
   { q: "Will ecobee work with my Dubai AC?", a: "Often yes. Most Dubai homes use 24V ducted systems, which ecobee supports. For 220/240V split and inverter units we fit a safe interface module so the ecobee controls the AC without modifying or damaging it. We confirm with a free compatibility check first." },
-  { q: "Does ecobee work with VRF/VRV or chiller FCU systems?", a: "Often yes, with the right interface and controls — these systems vary, so we assess your specific setup before promising anything." },
+  { q: "Does ecobee work with VRF/VRV or chiller FCU systems?", a: `Yes — for VRF/VRV we fit a drop-air adaptor so the ecobee can control the indoor unit (AED ${PRICE_DROP_AIR_ADAPTOR} where required). Chiller FCU and other setups vary, so we confirm your specific system with a free compatibility check first.` },
   { q: "Do I need a C-wire for ecobee?", a: "Sometimes. The C-wire gives the thermostat constant power; if your system doesn't have one, we install a proper C-wire or a safe power solution." },
-  { q: "How much does ecobee installation cost in Dubai?", a: `Install-only starts from AED ${PRICE_THERMOSTAT_INSTALL_FROM}, and supply + installation from AED ${PRICE_ECOBEE_SUPPLY_INSTALL_FROM} depending on the model you choose. Your exact fixed price is confirmed after the free compatibility check.` },
+  { q: "How much does ecobee installation cost in Dubai?", a: `Installation is AED ${PRICE_INSTALLATION}; an ecobee supplied is AED ${PRICE_ECOBEE_SUPPLY}, so supply + installation is from AED ${PRICE_ECOBEE_SUPPLY_INSTALL}. A drop-air adaptor (AED ${PRICE_DROP_AIR_ADAPTOR}) is added only for VRF/VRV or where your system needs one. Your exact price is confirmed after the free compatibility check.` },
   { q: "Should I choose ecobee or Google Nest?", a: "Both are excellent. ecobee Premium adds a room SmartSensor and built-in Alexa, which suits larger multi-room villas. For many UAE homes, Google Nest is simpler because it's officially available here — we'll advise honestly after seeing your setup. See our Google Nest installation page to compare." },
   { q: "Which areas do you cover?", a: "All of Dubai — including Dubai Hills, Arabian Ranches, Palm Jumeirah, JVC, Downtown, Business Bay, Al Barsha, Mirdif and Dubai Marina — plus Sharjah, Ajman and Abu Dhabi." },
 ];
@@ -321,7 +323,9 @@ export default async function EcobeePage() {
             We install ecobee on <strong className="text-white">split, ducted DX, VRF/VRV and
             chiller FCU</strong> systems. Most Dubai homes use 24V ducted systems (directly
             compatible); for <strong className="text-white">220/240V split and inverter</strong> units
-            we fit a safe interface module so the ecobee controls the AC without altering it.
+            we fit a safe interface module so the ecobee controls the AC without altering it. For{" "}
+            <strong className="text-white">VRF/VRV</strong> systems we fit a drop-air adaptor so the
+            ecobee can control the indoor unit.
             Compatibility depends on your wiring and controls — so we always start with a free check.
           </p>
         </div>
@@ -359,21 +363,28 @@ export default async function EcobeePage() {
               Transparent, Fixed-Price Installation
             </h2>
           </div>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2">
-            <div className="rounded-xl border border-border bg-white p-7">
-              <h3 className="font-heading text-lg font-semibold">Install-only</h3>
-              <p className="mt-1 text-sm text-text-muted">We fit the ecobee you already own.</p>
+          <div className="mt-10 grid gap-5 sm:grid-cols-3">
+            <div className="rounded-xl border border-primary/40 bg-white p-7 ring-1 ring-primary/20">
+              <h3 className="font-heading text-lg font-semibold">Supply &amp; install</h3>
+              <p className="mt-1 text-sm text-text-muted">ecobee (AED {PRICE_ECOBEE_SUPPLY}) + installation.</p>
               <p className="mt-4 font-heading text-3xl font-bold text-primary">
-                from AED {PRICE_THERMOSTAT_INSTALL_FROM}
+                from AED {PRICE_ECOBEE_SUPPLY_INSTALL}
                 <span className="align-super text-base">*</span>
               </p>
             </div>
             <div className="rounded-xl border border-border bg-white p-7">
-              <h3 className="font-heading text-lg font-semibold">Supply &amp; install</h3>
-              <p className="mt-1 text-sm text-text-muted">ecobee device + professional fitting.</p>
+              <h3 className="font-heading text-lg font-semibold">Installation only</h3>
+              <p className="mt-1 text-sm text-text-muted">We fit the ecobee you already own.</p>
               <p className="mt-4 font-heading text-3xl font-bold text-primary">
-                from AED {PRICE_ECOBEE_SUPPLY_INSTALL_FROM}
+                AED {PRICE_INSTALLATION}
                 <span className="align-super text-base">*</span>
+              </p>
+            </div>
+            <div className="rounded-xl border border-border bg-white p-7">
+              <h3 className="font-heading text-lg font-semibold">Drop-air adaptor</h3>
+              <p className="mt-1 text-sm text-text-muted">For VRF/VRV or where required.</p>
+              <p className="mt-4 font-heading text-3xl font-bold text-primary">
+                AED {PRICE_DROP_AIR_ADAPTOR}
               </p>
             </div>
           </div>
