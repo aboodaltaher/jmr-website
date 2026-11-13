@@ -2,6 +2,10 @@
 
 export const GA_ADS_ID = "AW-18332305339";
 
+// Google Analytics 4 measurement ID. Shares the single gtag.js instance that
+// the Ads tag already loads (configured alongside GA_ADS_ID in the root layout).
+export const GA4_ID = "G-H7HNVQGSYM";
+
 /**
  * Google Ads conversion "send_to" values.
  *
@@ -54,6 +58,20 @@ export function pushDataLayer(
   window.dataLayer.push({ event, ...params });
 }
 
+/**
+ * Send a GA4 event via the shared gtag.js instance (GA4_ID is configured in the
+ * root layout). No-ops on the server or when gtag isn't loaded. Pass only
+ * non-personal parameters — never names, phone numbers or email addresses.
+ */
+export function gaEvent(
+  name: string,
+  params: Record<string, unknown> = {},
+): void {
+  if (typeof window === "undefined") return;
+  if (typeof window.gtag !== "function") return;
+  window.gtag("event", name, params);
+}
+
 export type FormName =
   | "quote"
   | "repair"
@@ -70,6 +88,11 @@ export type FormName =
 export function trackFormSubmit(formName: FormName): void {
   trackConversion(CONVERSIONS.form);
   pushDataLayer("form_submit", {
+    form_name: formName,
+    page_path: typeof window !== "undefined" ? window.location.pathname : "",
+  });
+  // GA4 event (no personal data — only the form name and page path).
+  gaEvent("form_submit", {
     form_name: formName,
     page_path: typeof window !== "undefined" ? window.location.pathname : "",
   });
