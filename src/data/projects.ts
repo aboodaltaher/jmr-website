@@ -49,7 +49,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     slug: "vrf-villa-al-mamzar-dubai",
-    name: "Private Villa, Al Mamzar",
+    name: "B+G+1+R Villa, Al Mamzar",
     category: "Residential",
     systemSummary: "HVAC Installation & Commissioning, 109 Ton VRF System",
     location: { area: "Al Mamzar", emirate: "Dubai", label: "Al Mamzar, Dubai" },
@@ -57,7 +57,7 @@ export const projects: Project[] = [
     projectType: "Residential HVAC installation",
     systemType: "109 TR VRF",
     overview:
-      "HVAC installation and commissioning of a 109-ton VRF system for a private villa in Al Mamzar, Dubai. A VRF system suits a large multi-level villa, giving each room and floor independent, efficient temperature control from a shared system.",
+      "HVAC installation and commissioning of a 109-ton VRF system for a B+G+1+R private villa in Al Mamzar, Dubai. A VRF system suits a large multi-level villa, giving each room and floor independent, efficient temperature control from a shared system.",
     scope: [
       "VRF outdoor and indoor unit installation",
       "Refrigerant pipework and branch selectors",
@@ -68,7 +68,7 @@ export const projects: Project[] = [
       {
         src: "/projects/agec-vrf-villa-al-mamzar-dubai.jpg",
         alt: "Modern multi-level private villa in Al Mamzar, Dubai with a 109-ton VRF system installed by AGEC",
-        caption: "Private villa, Al Mamzar — 109 TR VRF installation & commissioning",
+        caption: "B+G+1+R villa, Al Mamzar — 109 TR VRF installation & commissioning",
       },
     ],
   },
