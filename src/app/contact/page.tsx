@@ -1,10 +1,18 @@
 import { buildMetadata } from "@/lib/metadata";
-import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, MessageCircle, Star, ExternalLink } from "lucide-react";
 import { whatsappUrl } from "@/lib/contact";
 import { ContactForm } from "@/components/ContactForm";
 import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
+import {
+  PHONE,
+  PHONE_DISPLAY,
+  EMAIL,
+  ADDRESS_FULL,
+  GBP_URL,
+  GOOGLE_REVIEWS_URL,
+} from "@/lib/company";
 
 export const metadata = buildMetadata({
   title: "Contact AGEC | HVAC Services in Dubai",
@@ -57,10 +65,10 @@ export default function Contact() {
                     <div>
                       <p className="text-sm font-medium">Phone</p>
                       <a
-                        href="tel:+971585575987"
+                        href={`tel:${PHONE}`}
                         className="text-sm text-text-muted hover:text-primary transition-colors"
                       >
-                        +971 58 557 5987
+                        {PHONE_DISPLAY}
                       </a>
                     </div>
                   </div>
@@ -77,7 +85,7 @@ export default function Contact() {
                         rel="noopener noreferrer"
                         className="text-sm text-text-muted hover:text-primary transition-colors"
                       >
-                        +971 58 557 5987
+                        {PHONE_DISPLAY}
                       </a>
                     </div>
                   </div>
@@ -89,10 +97,10 @@ export default function Contact() {
                     <div>
                       <p className="text-sm font-medium">Email</p>
                       <a
-                        href="mailto:a.altaher@agec.ae"
+                        href={`mailto:${EMAIL}`}
                         className="text-sm text-text-muted hover:text-primary transition-colors"
                       >
-                        a.altaher@agec.ae
+                        {EMAIL}
                       </a>
                     </div>
                   </div>
@@ -103,9 +111,7 @@ export default function Contact() {
                     />
                     <div>
                       <p className="text-sm font-medium">Location</p>
-                      <p className="text-sm text-text-muted">
-                        AlMasraf Building, Sheikh Zayed Road, Dubai, UAE
-                      </p>
+                      <p className="text-sm text-text-muted">{ADDRESS_FULL}</p>
                     </div>
                   </div>
                   <div className="flex gap-4">
@@ -128,8 +134,18 @@ export default function Contact() {
             {/* Form */}
             <div className="lg:col-span-3">
               <ContactForm />
-              <div className="mt-6">
+              <div className="mt-6 flex flex-wrap items-center gap-4">
                 <GoogleReviewsBadge className="text-text-muted" />
+                <a
+                  href={GOOGLE_REVIEWS_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-md border border-border bg-white px-4 py-2.5 text-sm font-semibold text-text hover:border-primary transition-colors"
+                >
+                  <Star className="h-4 w-4 text-primary fill-current" aria-hidden="true" />
+                  Leave a review
+                  <ExternalLink className="h-3.5 w-3.5 text-text-muted" aria-hidden="true" />
+                </a>
               </div>
             </div>
           </div>
@@ -152,9 +168,9 @@ export default function Contact() {
             />
           </div>
           <p className="mt-3 text-sm text-text-muted">
-            AlMasraf Building, Sheikh Zayed Road, Dubai, UAE ·{" "}
+            {ADDRESS_FULL} ·{" "}
             <a
-              href="https://maps.app.goo.gl/NymgUk6cDcj8PRSL6"
+              href={GBP_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="font-semibold text-primary hover:underline"

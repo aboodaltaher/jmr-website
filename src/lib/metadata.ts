@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { LOCALE_PAIRS } from "@/lib/nav";
 
 // Single shared metadata helper so every page emits consistent, page-specific
 // Open Graph + Twitter tags. og/twitter title and description default to the
@@ -28,6 +29,8 @@ export interface PageMetadata {
   locale?: string;
   /** hreflang alternates, absolute URLs keyed by lang (e.g. { en, ar, "x-default" }). */
   languages?: Record<string, string>;
+  /** Mark the page noindex (e.g. thank-you / utility pages). Still followed. */
+  noindex?: boolean;
 }
 
 export function buildMetadata({
@@ -39,17 +42,33 @@ export function buildMetadata({
   image = DEFAULT_OG_IMAGE,
   locale = "en_AE",
   languages,
+  noindex = false,
 }: PageMetadata): Metadata {
   const url = path ? `${SITE_URL}${path}` : SITE_URL;
   const shareTitle = ogTitle ?? title;
   const shareDescription = ogDescription ?? description;
 
+  // Reciprocal hreflang. If a page doesn't pass `languages` explicitly, derive
+  // it from LOCALE_PAIRS so every bilingual page (English or Arabic) gets
+  // en-AE / ar-AE / x-default automatically just by being in that one list.
+  const lookup = path || "/";
+  const pair = LOCALE_PAIRS.find((p) => p.en === lookup || p.ar === lookup);
+  const derived = pair
+    ? {
+        "en-AE": pair.en === "/" ? SITE_URL : `${SITE_URL}${pair.en}`,
+        "ar-AE": `${SITE_URL}${pair.ar}`,
+        "x-default": pair.en === "/" ? SITE_URL : `${SITE_URL}${pair.en}`,
+      }
+    : undefined;
+  const resolvedLanguages = languages ?? derived;
+
   return {
     title,
     description,
+    ...(noindex ? { robots: { index: false, follow: true } } : {}),
     alternates: {
       canonical: url,
-      ...(languages ? { languages } : {}),
+      ...(resolvedLanguages ? { languages: resolvedLanguages } : {}),
     },
     openGraph: {
       title: shareTitle,

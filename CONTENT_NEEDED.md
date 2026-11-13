@@ -67,6 +67,15 @@ Category labels on /projects:
 - ✅ Google Business Profile shows the same name, address and phone: **Yes.**
 - ✅ Opening hours: **24/7**, emergency service real (schema + copy reflect this).
 
+## H. Bilingual + local SEO (SEO/Arabic/local round)
+- ⬜ Arabic native review of all new Arabic pages. The full string list is in
+  `ARABIC_REVIEW.md`; send back any wording changes. (No native reviewer on file — G.)
+- ⬜ Location pages (`/hvac-contractor-sharjah` `/-ajman` `/-abu-dhabi`) describe only the
+  projects already on /projects. Optional, owner-supplied only (never invented): more
+  per-emirate project detail, and owned photos per emirate. Answer:
+- ⬜ Branded 1200×630 social share image (`/og-image.png`) if you want something richer
+  than the current card (carried over from earlier). Answer:
+
 ## G. Arabic review
 - ◼ Owner: no formal native reviewer (use online translation to spot-check). The
   Arabic strings are standard Modern Standard Arabic and are in place; flag any

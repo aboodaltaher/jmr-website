@@ -22,6 +22,9 @@ const saira = Saira_Condensed({
 const cairo = Cairo({
   variable: "--font-arabic",
   subsets: ["arabic"],
+  // Only the /ar subtree uses this font. Don't preload it on every (English)
+  // page — it still loads via CSS when the Arabic chrome renders.
+  preload: false,
 });
 
 export const metadata: Metadata = {

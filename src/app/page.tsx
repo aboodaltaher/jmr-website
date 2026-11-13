@@ -265,6 +265,8 @@ export default async function Home() {
                 src="/photos/agec-ac-grille-cleaning-dubai.jpg"
                 alt="AGEC technician cleaning an air conditioning return-air grille in Dubai"
                 fill
+                sizes="(min-width: 1024px) 40vw, 0px"
+                loading="lazy"
                 className="object-cover"
               />
             </div>
@@ -382,6 +384,8 @@ export default async function Home() {
                     src={service.image}
                     alt={service.alt}
                     fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    loading="lazy"
                     className="object-cover transition-transform group-hover:scale-105"
                   />
                 </div>
@@ -431,6 +435,8 @@ export default async function Home() {
                 src={WHY_AGEC_IMAGE}
                 alt="AGEC engineer commissioning an HVAC system with an airflow balometer in Dubai"
                 fill
+                sizes="(min-width: 1024px) 40vw, 0px"
+                loading="lazy"
                 className="object-cover"
               />
             </div>

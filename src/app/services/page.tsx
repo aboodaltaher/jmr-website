@@ -222,6 +222,37 @@ export default function Services() {
         </div>
       </section>
 
+      {/* Where we work */}
+      <section className="py-16 md:py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary">
+            Where we work
+          </p>
+          <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">
+            HVAC across Dubai and the UAE
+          </h2>
+          <p className="mt-4 max-w-2xl text-text-muted">
+            Based in Dubai and delivering across the Emirates. See the work and
+            services for each area:
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            {[
+              { href: "/hvac-contractor-sharjah", label: "HVAC Contractor in Sharjah" },
+              { href: "/hvac-contractor-ajman", label: "HVAC Contractor in Ajman" },
+              { href: "/hvac-contractor-abu-dhabi", label: "HVAC Contractor in Abu Dhabi" },
+            ].map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                className="rounded-full border border-border bg-white px-5 py-2.5 text-sm font-medium text-text hover:border-primary hover:text-primary transition-colors"
+              >
+                {l.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Band */}
       <section className="bg-primary py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6 text-center">

@@ -3,7 +3,7 @@ import { MapPin } from "lucide-react";
 
 // Real emirates served, with real projects from the projects list. No invented
 // locations — only areas where AGEC has delivered or actively serves.
-const AREAS = [
+const AREAS: { emirate: string; note: string; href?: string }[] = [
   {
     emirate: "Dubai",
     note: "Villas, offices, restaurants and gyms — Al Barsha, Business Bay, Al Quoz and across the city.",
@@ -11,14 +11,17 @@ const AREAS = [
   {
     emirate: "Sharjah",
     note: "Residential villa HVAC installation and commissioning, including twin-villa and private-villa projects.",
+    href: "/hvac-contractor-sharjah",
   },
   {
     emirate: "Ajman",
     note: "Commercial HVAC — including a 224-ton VRF installation at a mixed-use mall.",
+    href: "/hvac-contractor-ajman",
   },
   {
     emirate: "Abu Dhabi",
     note: "Precision cooling for data centres and server rooms — Masdar City and Musaffah.",
+    href: "/hvac-contractor-abu-dhabi",
   },
 ];
 
@@ -45,15 +48,35 @@ export function ServiceAreas() {
           .
         </p>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {AREAS.map((a) => (
-            <div key={a.emirate} className="rounded-xl border border-border bg-white p-5">
-              <div className="flex items-center gap-2">
-                <MapPin className="h-5 w-5 text-primary" aria-hidden="true" />
-                <h3 className="font-heading text-lg font-semibold">{a.emirate}</h3>
+          {AREAS.map((a) => {
+            const inner = (
+              <>
+                <div className="flex items-center gap-2">
+                  <MapPin className="h-5 w-5 text-primary" aria-hidden="true" />
+                  <h3 className="font-heading text-lg font-semibold">{a.emirate}</h3>
+                </div>
+                <p className="mt-2 text-sm text-text-muted">{a.note}</p>
+                {a.href && (
+                  <span className="mt-3 inline-block text-sm font-medium text-primary">
+                    HVAC in {a.emirate} →
+                  </span>
+                )}
+              </>
+            );
+            return a.href ? (
+              <Link
+                key={a.emirate}
+                href={a.href}
+                className="group rounded-xl border border-border bg-white p-5 transition-all hover:-translate-y-1 hover:border-primary hover:shadow-lg"
+              >
+                {inner}
+              </Link>
+            ) : (
+              <div key={a.emirate} className="rounded-xl border border-border bg-white p-5">
+                {inner}
               </div>
-              <p className="mt-2 text-sm text-text-muted">{a.note}</p>
-            </div>
-          ))}
+            );
+          })}
         </div>
         <p className="mt-6 text-sm text-text-muted">
           Not sure if we cover your area?{" "}

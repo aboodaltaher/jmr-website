@@ -33,6 +33,12 @@ export const GOOGLE_RATING = "5.0";
 export const GOOGLE_REVIEW_COUNT = 32;
 export const GOOGLE_REVIEWS_URL = "https://maps.app.goo.gl/fPKs5SXmDeK9Co4VA";
 
+// --- Public profiles (single source for sameAs / hasMap / footer links) ---
+// Google Business Profile and Instagram, previously duplicated in SiteSchema
+// and Footer. TODO(owner): add LinkedIn here if/when there is a company page.
+export const GBP_URL = "https://maps.app.goo.gl/NymgUk6cDcj8PRSL6";
+export const INSTAGRAM_URL = "https://www.instagram.com/agec_contracting";
+
 // --- Quote turnaround (reconciled from the old 24h/48h mix; confirmed 24h) ---
 export const QUOTE_TURNAROUND = "within 24 hours";
 
@@ -40,6 +46,11 @@ export const QUOTE_TURNAROUND = "within 24 hours";
 export const FORM_RESPONSE_NOTE = "We reply on call and WhatsApp, 24/7.";
 export const FORM_PRIVACY_NOTE =
   "Your details are only used to respond to your enquiry — never shared or sold.";
+
+// Arabic form notes. TODO(owner): have a native Arabic speaker review.
+export const FORM_RESPONSE_NOTE_AR = "نرد عبر الهاتف والواتساب على مدار الساعة.";
+export const FORM_PRIVACY_NOTE_AR =
+  "تُستخدم بياناتك للرد على استفسارك فقط — لا تُشارك ولا تُباع أبداً.";
 
 // --- Emergency strip copy (shown on /, /quote and /book) ---
 export const EMERGENCY_PREFIX = "AC down right now? Call";

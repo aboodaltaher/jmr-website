@@ -6,13 +6,13 @@ import {
   ADDRESS_LINE,
   ADDRESS_CITY,
   AREA_SERVED_SCHEMA,
+  GBP_URL,
+  INSTAGRAM_URL,
+  GOOGLE_RATING,
+  GOOGLE_REVIEW_COUNT,
 } from "@/lib/company";
 
 const SITE_URL = "https://agec.ae";
-
-// Owner-provided public profiles for sameAs / hasMap.
-const GBP_URL = "https://maps.app.goo.gl/NymgUk6cDcj8PRSL6";
-const INSTAGRAM_URL = "https://www.instagram.com/agec_contracting";
 
 /**
  * Site-wide Organization + LocalBusiness (HVACBusiness / GeneralContractor)
@@ -65,6 +65,16 @@ const schema = {
       },
       hasMap: GBP_URL,
       areaServed: AREA_SERVED_SCHEMA,
+      // Matches the rating/count shown on the site (GoogleReviewsBadge, reviews
+      // section). Sourced from the verified Google Business Profile; kept in the
+      // shared company constants so schema and visible copy never diverge.
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: GOOGLE_RATING,
+        reviewCount: GOOGLE_REVIEW_COUNT,
+        bestRating: "5",
+        worstRating: "1",
+      },
       // 24/7 availability (owner-confirmed): call & WhatsApp any time.
       openingHoursSpecification: [
         {

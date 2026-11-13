@@ -98,6 +98,50 @@ export default function Projects() {
         </div>
       </section>
 
+      {/* Dubai areas — real project neighbourhoods only (no thin per-area pages) */}
+      <section className="pb-16 md:pb-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <h2 className="font-heading text-2xl font-bold md:text-3xl">
+            Dubai areas we&apos;ve worked in
+          </h2>
+          <p className="mt-3 max-w-2xl text-text-muted">
+            A sample of Dubai neighbourhoods where we&apos;ve delivered projects.
+          </p>
+          <div className="mt-6 grid gap-6 sm:grid-cols-2">
+            <div className="rounded-xl border border-border p-6">
+              <h3 className="font-heading text-lg font-semibold">Al Barsha</h3>
+              <ul className="mt-3 space-y-2 text-sm">
+                <li>
+                  <Link href="/projects/villa-al-barsha-dubai" className="text-primary hover:underline">
+                    B+G+1+R Villa, Al Barsha — 140-ton DX
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/projects/pure-gym-al-barsha" className="text-primary hover:underline">
+                    Pure Gym, Al Barsha — HVAC & ventilation
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/projects/cultural-center-al-barsha" className="text-primary hover:underline">
+                    Cultural Center, Al Barsha — HVAC works
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div className="rounded-xl border border-border p-6">
+              <h3 className="font-heading text-lg font-semibold">Business Bay</h3>
+              <ul className="mt-3 space-y-2 text-sm">
+                <li>
+                  <Link href="/projects/ave-restaurant-business-bay" className="text-primary hover:underline">
+                    AVE Restaurant, Business Bay — kitchen ventilation & cooling
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Band */}
       <section className="bg-primary py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6 text-center">

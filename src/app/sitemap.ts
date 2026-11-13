@@ -1,62 +1,62 @@
 import type { MetadataRoute } from "next";
 import { getAllPosts } from "@/lib/blog";
 import { publishedProjects } from "@/data/projects";
+import { staticRoutes } from "@/lib/routes";
+import { LOCALE_PAIRS } from "@/lib/nav";
+
+const BASE = "https://agec.ae";
+
+// Reciprocal hreflang alternates for a bilingual path (en-AE + ar-AE), or
+// undefined for a page that exists in English only.
+function alternatesFor(path: string) {
+  const pair = LOCALE_PAIRS.find((p) => p.en === path || p.ar === path);
+  if (!pair) return undefined;
+  return {
+    languages: {
+      "en-AE": `${BASE}${pair.en === "/" ? "" : pair.en}` || BASE,
+      "ar-AE": `${BASE}${pair.ar}`,
+    },
+  };
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://agec.ae";
   const now = new Date();
 
+  // Static English pages, from the single route list.
+  const staticPages: MetadataRoute.Sitemap = staticRoutes.map((r) => ({
+    url: r.path === "/" ? BASE : `${BASE}${r.path}`,
+    lastModified: now,
+    changeFrequency: r.changeFrequency,
+    priority: r.priority,
+    alternates: alternatesFor(r.path),
+  }));
+
+  // Arabic pages — one per locale pair. Priority mirrors the English route.
+  const arabicPages: MetadataRoute.Sitemap = LOCALE_PAIRS.map((pair) => {
+    const en = staticRoutes.find((r) => r.path === pair.en);
+    return {
+      url: `${BASE}${pair.ar}`,
+      lastModified: now,
+      changeFrequency: en?.changeFrequency ?? "monthly",
+      priority: en ? Math.max(0.6, en.priority - 0.2) : 0.6,
+      alternates: alternatesFor(pair.ar),
+    };
+  });
+
+  // Dynamic pages — case studies (non-draft only) and blog posts.
+  const caseStudies: MetadataRoute.Sitemap = publishedProjects.map((p) => ({
+    url: `${BASE}/projects/${p.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+
   const blogPosts: MetadataRoute.Sitemap = getAllPosts().map((post) => ({
-    url: `${base}/blog/${post.slug}`,
+    url: `${BASE}/blog/${post.slug}`,
     lastModified: new Date(post.updated || post.date || now),
     changeFrequency: "monthly",
     priority: 0.6,
   }));
 
-  // Only non-draft case studies are listed; drafts stay out until published.
-  const caseStudies: MetadataRoute.Sitemap = publishedProjects.map((p) => ({
-    url: `${base}/projects/${p.slug}`,
-    lastModified: now,
-    changeFrequency: "monthly",
-    priority: 0.6,
-  }));
-
-  const staticEntries: MetadataRoute.Sitemap = [
-    { url: base, changeFrequency: "monthly", priority: 1 },
-    { url: `${base}/about`, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/services`, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/smart-thermostat-installation-dubai`, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/ac-maintenance-dubai`, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/ac-repair-dubai`, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/ac-amc-dubai`, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/ac-duct-cleaning-dubai`, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/air-balancing-airflow-testing-dubai`, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/services/hvac-installation-dubai`, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/services/tab-testing-adjusting-balancing-dubai`, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/services/chiller-maintenance-dubai`, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/services/vrf-vrv-systems`, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/services/chillers`, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/services/dx-units`, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/services/ventilation-fresh-air`, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/services/hvac-design`, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/services/testing-commissioning`, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/services/maintenance`, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/projects`, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/blog`, changeFrequency: "weekly", priority: 0.8 },
-    { url: `${base}/quote`, changeFrequency: "yearly", priority: 0.9 },
-    { url: `${base}/contact`, changeFrequency: "yearly", priority: 0.8 },
-    // Arabic (/ar) subtree
-    { url: `${base}/ar`, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/ar/ac-maintenance-dubai`, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/ar/ac-repair-dubai`, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/ar/ac-duct-cleaning-dubai`, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${base}/ar/ac-amc-dubai`, changeFrequency: "monthly", priority: 0.7 },
-  ];
-
-  const staticPages: MetadataRoute.Sitemap = staticEntries.map((entry) => ({
-    ...entry,
-    lastModified: now,
-  }));
-
-  return [...staticPages, ...caseStudies, ...blogPosts];
+  return [...staticPages, ...arabicPages, ...caseStudies, ...blogPosts];
 }
