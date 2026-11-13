@@ -37,8 +37,10 @@ export async function getGoogleReviewStats(): Promise<ReviewStats> {
           "X-Goog-Api-Key": key,
           "X-Goog-FieldMask": "rating,userRatingCount",
         },
-        // Refresh once a day; cached across requests so we never hammer the API.
-        next: { revalidate: 86400 },
+        // Refresh hourly; cached across requests so we never hammer the API
+        // (~24 calls/day, well within the free tier). New Google reviews then
+        // appear on the site within an hour automatically.
+        next: { revalidate: 3600 },
       },
     );
     if (!res.ok) return FALLBACK;
