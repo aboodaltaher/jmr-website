@@ -8,6 +8,15 @@ import { GOOGLE_REVIEWS_URL } from "@/lib/reviews";
 import { getGoogleReviewStats } from "@/lib/google-reviews";
 import { THERMOSTAT_SAVINGS } from "@/lib/company";
 import {
+  PRICE_NEST_SUPPLY,
+  PRICE_ECOBEE_SUPPLY,
+  PRICE_INSTALLATION,
+  PRICE_DROP_AIR_ADAPTOR,
+  PRICE_NEST_SUPPLY_INSTALL,
+  PRICE_ECOBEE_SUPPLY_INSTALL,
+  PRICE_NOTE,
+} from "@/lib/pricing";
+import {
   ShieldCheck,
   BadgeCheck,
   Zap,
@@ -527,6 +536,57 @@ export default async function SmartThermostatPage() {
                 </div>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PRICING */}
+      <section id="pricing" className="py-16 md:py-24">
+        <div className="mx-auto max-w-5xl px-6">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className={eyebrow}>Pricing</p>
+            <h2 className="mt-3 font-heading text-3xl font-bold md:text-5xl">
+              Transparent Smart Thermostat Pricing
+            </h2>
+            <p className="mt-5 text-lg text-text-muted">
+              Simple, itemised pricing — and the compatibility check is always free.
+            </p>
+          </div>
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="rounded-xl border border-primary/40 bg-bg-soft p-7 ring-1 ring-primary/20">
+              <h3 className="font-heading text-base font-semibold">Google Nest — supply &amp; install</h3>
+              <p className="mt-1 text-sm text-text-muted">Genuine Nest (AED {PRICE_NEST_SUPPLY}) + installation.</p>
+              <p className="mt-4 font-heading text-2xl font-bold text-primary">
+                from AED {PRICE_NEST_SUPPLY_INSTALL}<span className="align-super text-sm">*</span>
+              </p>
+            </div>
+            <div className="rounded-xl border border-border bg-bg-soft p-7">
+              <h3 className="font-heading text-base font-semibold">ecobee — supply &amp; install</h3>
+              <p className="mt-1 text-sm text-text-muted">ecobee (AED {PRICE_ECOBEE_SUPPLY}) + installation.</p>
+              <p className="mt-4 font-heading text-2xl font-bold text-primary">
+                from AED {PRICE_ECOBEE_SUPPLY_INSTALL}<span className="align-super text-sm">*</span>
+              </p>
+            </div>
+            <div className="rounded-xl border border-border bg-bg-soft p-7">
+              <h3 className="font-heading text-base font-semibold">Installation only</h3>
+              <p className="mt-1 text-sm text-text-muted">We fit a thermostat you already own.</p>
+              <p className="mt-4 font-heading text-2xl font-bold text-primary">
+                AED {PRICE_INSTALLATION}<span className="align-super text-sm">*</span>
+              </p>
+            </div>
+            <div className="rounded-xl border border-border bg-bg-soft p-7">
+              <h3 className="font-heading text-base font-semibold">Drop-air adaptor</h3>
+              <p className="mt-1 text-sm text-text-muted">For VRF/VRV or where required.</p>
+              <p className="mt-4 font-heading text-2xl font-bold text-primary">
+                AED {PRICE_DROP_AIR_ADAPTOR}
+              </p>
+            </div>
+          </div>
+          <p className="mt-6 text-center text-sm text-text-muted">*{PRICE_NOTE}</p>
+          <div className="mt-8 text-center">
+            <Link href="/quote" className="inline-block rounded-md bg-primary px-7 py-4 font-semibold text-white hover:bg-primary-dark transition-colors">
+              Get My Fixed Quote
+            </Link>
           </div>
         </div>
       </section>
