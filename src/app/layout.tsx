@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { Inter, Saira_Condensed, Cairo } from "next/font/google";
 import { SiteFrame } from "@/components/SiteFrame";
 import { SiteSchema } from "@/components/SiteSchema";
 import { Analytics, GtmNoScript } from "@/components/Analytics";
 import { ConversionTracking } from "@/components/ConversionTracking";
+import { GoogleTag } from "@/components/GoogleTag";
 import { GA_ADS_ID, GA4_ID } from "@/lib/gtag";
 import { business } from "@/data/business";
 import "./globals.css";
@@ -65,18 +65,19 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col antialiased pb-16 md:pb-0">
         <GtmNoScript />
         <SiteSchema />
-        {/* Google tag (gtag.js) — loaded once, shared by Google Ads + GA4 */}
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ADS_ID}`}
-          strategy="afterInteractive"
-        />
-        <Script id="gtag-init" strategy="afterInteractive">
-          {`window.dataLayer = window.dataLayer || [];
+        {/* Google tag: ONE gtag.js load serves Google Ads (AW-) and GA4 (G-). This inline snippet
+            runs immediately and only creates the queue and the config calls; the library itself is
+            loaded after hydration by <GoogleTag /> (see that file for why). */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', '${GA_ADS_ID}');
-gtag('config', '${GA4_ID}');`}
-        </Script>
+gtag('config', '${GA4_ID}');`,
+          }}
+        />
+        <GoogleTag />
         <Analytics />
         <SiteFrame>{children}</SiteFrame>
         <ConversionTracking />

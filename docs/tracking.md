@@ -1,7 +1,8 @@
 # Lead tracking: events, parameters and where they fire
 
 GA4 property `G-H7HNVQGSYM`, Google Ads `AW-18332305339`. All events go through the single gtag.js
-instance loaded in `src/app/layout.tsx` (and into the `dataLayer`, for GTM if it is ever enabled).
+instance: `src/app/layout.tsx` queues `config` for both IDs in an inline snippet and `src/components/GoogleTag.tsx`
+loads gtag.js once, right after hydration (events fired earlier are queued, not lost). Everything also goes into the `dataLayer`, for GTM if it is ever enabled.
 No new third-party scripts. No personal data is ever sent: never a name, phone number or email.
 
 Code: `src/lib/gtag.ts` (helpers) and `src/components/ConversionTracking.tsx` (click listener).
