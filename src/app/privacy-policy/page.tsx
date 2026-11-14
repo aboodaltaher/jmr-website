@@ -1,4 +1,5 @@
 import { buildMetadata } from "@/lib/metadata";
+import { LegalDraftBanner } from "@/components/LegalDraftBanner";
 import {
   COMPANY_LEGAL,
   EMAIL,
@@ -32,7 +33,8 @@ export default function PrivacyPolicyPage() {
   return (
     <article className="py-16 md:py-24">
       <div className="mx-auto max-w-3xl px-6">
-        <h1 className="font-heading text-4xl font-bold text-text md:text-5xl">
+        <LegalDraftBanner />
+        <h1 className="mt-6 font-heading text-4xl font-bold text-text md:text-5xl">
           Privacy Policy
         </h1>
         <p className="mt-4 text-sm text-text-muted">Last updated: {UPDATED}</p>
@@ -40,8 +42,9 @@ export default function PrivacyPolicyPage() {
         <p className="mt-6 text-text-muted">
           {COMPANY_LEGAL} (&ldquo;AGEC&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) operates the website
           at agec.ae. This policy explains what information we collect when you use the
-          site or contact us, how we use it, and the choices you have. We respect your
-          privacy and handle your information in line with applicable UAE data protection law.
+          site or contact us, how we use it, and the choices you have. We handle your
+          personal information in line with the UAE Personal Data Protection Law
+          (Federal Decree-Law No. 45 of 2021) and its implementing regulations.
         </p>
 
         <Section title="Information we collect">
@@ -75,7 +78,8 @@ export default function PrivacyPolicyPage() {
 
         <Section title="Cookies and analytics">
           <p>
-            We use Google Analytics and Google Ads to understand site usage and measure
+            We use Google Analytics 4 (measurement ID G-H7HNVQGSYM) and Google Ads
+            (conversion ID AW-18332305339) to understand site usage and measure
             advertising. These services may set cookies and collect usage data. You can
             control cookies through your browser settings, and you can opt out of Google
             Analytics using Google&rsquo;s{" "}

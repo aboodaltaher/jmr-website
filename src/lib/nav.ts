@@ -59,6 +59,8 @@ export const LOCALE_PAIRS: { en: string; ar: string }[] = [
   { en: "/services/chiller-maintenance-dubai", ar: "/ar/services/chiller-maintenance-dubai" },
   { en: "/services/ventilation-fresh-air", ar: "/ar/services/ventilation-fresh-air" },
   { en: "/smart-thermostat-installation-dubai", ar: "/ar/smart-thermostat-installation-dubai" },
+  { en: "/privacy-policy", ar: "/ar/privacy-policy" },
+  { en: "/terms", ar: "/ar/terms" },
 ];
 
 /** Arabic counterpart of an English path, or /ar if none exists. */

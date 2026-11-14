@@ -42,7 +42,17 @@ const nextConfig: NextConfig = {
       { source: `${source}/`, destination, statusCode: 301 as const },
     ]);
 
-    return [...acCleaning, ...merges];
+    // Short legal aliases → the canonical page names (EN + AR). /terms and
+    // /privacy-policy are the real routes; these catch the common short forms.
+    const legal = [
+      ["/privacy", "/privacy-policy"],
+      ["/ar/privacy", "/ar/privacy-policy"],
+    ].flatMap(([source, destination]) => [
+      { source, destination, statusCode: 301 as const },
+      { source: `${source}/`, destination, statusCode: 301 as const },
+    ]);
+
+    return [...acCleaning, ...merges, ...legal];
   },
 };
 

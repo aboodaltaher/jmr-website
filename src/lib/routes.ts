@@ -5,16 +5,19 @@
 //
 // hreflang pairing (which routes have an Arabic equivalent) lives in
 // LOCALE_PAIRS in ./nav, so the language switch and the sitemap agree.
-
-import type { MetadataRoute } from "next";
-
-type ChangeFreq = MetadataRoute.Sitemap[number]["changeFrequency"];
+//
+// `updatedAt` is the date the page's CONTENT last really changed (YYYY-MM-DD),
+// seeded from the git history of each page's file. It drives <lastmod> in the
+// sitemap. Bump it by hand (or via git date) when you change a page's content —
+// never to today's date for a page that didn't change, or Google learns to
+// ignore lastmod. changefreq/priority are deliberately omitted: Google ignores
+// both.
 
 export interface RouteEntry {
   /** Path after the domain, e.g. "/about". "/" is the home page. */
   path: string;
-  changeFrequency: ChangeFreq;
-  priority: number;
+  /** Content-last-changed date, YYYY-MM-DD. Feeds the sitemap's <lastmod>. */
+  updatedAt: string;
 }
 
 // Every indexable, static English page. Excludes:
@@ -22,33 +25,35 @@ export interface RouteEntry {
 //  - /quote/thank-you, /review → noindex utility pages
 //  - dynamic blog/project pages → appended from data in sitemap.ts
 export const staticRoutes: RouteEntry[] = [
-  { path: "/", changeFrequency: "monthly", priority: 1 },
-  { path: "/about", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/services", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/", updatedAt: "2026-11-14" },
+  { path: "/about", updatedAt: "2026-11-05" },
+  { path: "/services", updatedAt: "2026-11-14" },
   // Landing pages
-  { path: "/ac-maintenance-dubai", changeFrequency: "monthly", priority: 0.9 },
-  { path: "/ac-repair-dubai", changeFrequency: "monthly", priority: 0.9 },
-  { path: "/ac-amc-dubai", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/ac-duct-cleaning-dubai", changeFrequency: "monthly", priority: 0.9 },
-  { path: "/smart-thermostat-installation-dubai", changeFrequency: "monthly", priority: 0.9 },
-  { path: "/google-nest-thermostat-installation-dubai", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/ecobee-thermostat-installation-dubai", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/ac-maintenance-dubai", updatedAt: "2026-11-14" },
+  { path: "/ac-repair-dubai", updatedAt: "2026-11-14" },
+  { path: "/ac-amc-dubai", updatedAt: "2026-11-14" },
+  { path: "/ac-duct-cleaning-dubai", updatedAt: "2026-11-05" },
+  { path: "/smart-thermostat-installation-dubai", updatedAt: "2026-11-13" },
+  { path: "/google-nest-thermostat-installation-dubai", updatedAt: "2026-11-13" },
+  { path: "/ecobee-thermostat-installation-dubai", updatedAt: "2026-11-13" },
   // Service detail pages
-  { path: "/services/hvac-installation-dubai", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/services/tab-testing-adjusting-balancing-dubai", changeFrequency: "monthly", priority: 0.7 },
-  { path: "/services/chiller-maintenance-dubai", changeFrequency: "monthly", priority: 0.7 },
-  { path: "/services/vrf-vrv-systems", changeFrequency: "monthly", priority: 0.7 },
-  { path: "/services/dx-units", changeFrequency: "monthly", priority: 0.7 },
-  { path: "/services/ventilation-fresh-air", changeFrequency: "monthly", priority: 0.7 },
-  { path: "/services/hvac-design", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/services/hvac-installation-dubai", updatedAt: "2026-11-04" },
+  { path: "/services/tab-testing-adjusting-balancing-dubai", updatedAt: "2026-11-14" },
+  { path: "/services/chiller-maintenance-dubai", updatedAt: "2026-11-14" },
+  { path: "/services/vrf-vrv-systems", updatedAt: "2026-11-04" },
+  { path: "/services/dx-units", updatedAt: "2026-11-02" },
+  { path: "/services/ventilation-fresh-air", updatedAt: "2026-11-02" },
+  { path: "/services/hvac-design", updatedAt: "2026-11-02" },
   // Location / emirate landing pages
-  { path: "/hvac-contractor-sharjah", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/hvac-contractor-ajman", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/hvac-contractor-abu-dhabi", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/hvac-contractor-sharjah", updatedAt: "2026-11-13" },
+  { path: "/hvac-contractor-ajman", updatedAt: "2026-11-14" },
+  { path: "/hvac-contractor-abu-dhabi", updatedAt: "2026-11-14" },
   // Index & conversion pages
-  { path: "/projects", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/blog", changeFrequency: "weekly", priority: 0.8 },
-  { path: "/quote", changeFrequency: "yearly", priority: 0.9 },
-  { path: "/contact", changeFrequency: "yearly", priority: 0.8 },
-  { path: "/privacy-policy", changeFrequency: "yearly", priority: 0.2 },
+  { path: "/projects", updatedAt: "2026-11-13" },
+  { path: "/blog", updatedAt: "2026-11-02" },
+  { path: "/quote", updatedAt: "2026-11-05" },
+  { path: "/contact", updatedAt: "2026-11-13" },
+  // Legal
+  { path: "/privacy-policy", updatedAt: "2026-11-14" },
+  { path: "/terms", updatedAt: "2026-11-14" },
 ];

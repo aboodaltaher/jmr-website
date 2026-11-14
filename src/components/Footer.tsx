@@ -120,8 +120,17 @@ export function Footer() {
             />
           </div>
         </div>
-        <div className="mt-8 border-t border-border pt-6 text-center text-xs text-text-muted">
-          &copy; {new Date().getFullYear()} {COMPANY_FULL}. All rights reserved.
+        <div className="mt-8 flex flex-col items-center gap-2 border-t border-border pt-6 text-center text-xs text-text-muted">
+          <div className="flex items-center gap-3">
+            <Link href="/privacy-policy" className="hover:text-text transition-colors">
+              Privacy Policy
+            </Link>
+            <span aria-hidden="true">·</span>
+            <Link href="/terms" className="hover:text-text transition-colors">
+              Terms of Use
+            </Link>
+          </div>
+          <p>&copy; {new Date().getFullYear()} {COMPANY_FULL}. All rights reserved.</p>
         </div>
       </div>
     </footer>
