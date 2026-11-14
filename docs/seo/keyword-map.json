@@ -41,7 +41,8 @@
       "intent": "transactional",
       "priority": "Critical",
       "targetUrl": "/ac-amc-dubai",
-      "status": "exists"
+      "status": "exists",
+      "notes": "Owns contracts. Same page also owns 'hvac maintenance dubai' (see its entry); keep the AMC and commercial wording here, not on /ac-maintenance-dubai."
     },
     {
       "keyword": "hvac contractors dubai",
@@ -105,7 +106,8 @@
       "intent": "transactional",
       "priority": "High",
       "targetUrl": "/ac-maintenance-dubai",
-      "status": "exists"
+      "status": "exists",
+      "notes": "Owns homes and one-off service (villas, apartments). Do not use 'buildings', 'commercial' or 'hvac maintenance' in this page's title, H1, H2s or meta: those belong to /ac-amc-dubai. Link to /ac-amc-dubai#commercial-amc for building managers."
     },
     {
       "keyword": "ac repair dubai",
@@ -144,7 +146,7 @@
       "priority": "High",
       "targetUrl": "/ac-amc-dubai",
       "status": "exists",
-      "notes": "Targets the commercial section of /ac-amc-dubai, which also targets 'ac amc dubai'. Two keywords on one URL: watch for overlap."
+      "notes": "Owner of commercial/building maintenance keywords ('commercial hvac maintenance', 'ac maintenance for buildings dubai'). Lives in the 'Commercial & Building AMC (HVAC Maintenance)' section (#commercial-amc) of /ac-amc-dubai. Shares the URL with 'ac amc dubai'; do not target these terms on /ac-maintenance-dubai."
     },
     {
       "keyword": "ventilation dubai",

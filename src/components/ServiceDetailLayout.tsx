@@ -26,6 +26,8 @@ type Lang = "en" | "ar";
 
 interface ServiceDetailLayoutProps {
   title: string;
+  /** Page <h1> when it should read differently from `title` (which also feeds breadcrumbs, schema and headings). */
+  h1?: string;
   intro: string;
   heroImage?: string;
   heroImageAlt?: string;
@@ -108,6 +110,7 @@ const STRINGS: Record<Lang, {
 
 export function ServiceDetailLayout({
   title,
+  h1,
   intro,
   heroImage,
   heroImageAlt,
@@ -167,7 +170,7 @@ export function ServiceDetailLayout({
             {s.eyebrow}
           </p>
           <h1 className="mt-3 max-w-4xl font-heading text-5xl font-bold md:text-6xl">
-            {title}
+            {h1 ?? title}
           </h1>
           <p className="mt-6 max-w-3xl text-xl text-text-muted">{intro}</p>
           <Link

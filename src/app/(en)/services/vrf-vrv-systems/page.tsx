@@ -8,24 +8,35 @@ import {
   ClipboardCheck,
   Shield,
 } from "lucide-react";
+import Link from "next/link";
 import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
+import { getProjectBySlug } from "@/data/projects";
 
 export const metadata = buildMetadata({
-  title: "VRF & VRV Installation and Maintenance Dubai | AGEC",
+  title: "VRF Installation in Dubai | VRV Systems & Maintenance | AGEC",
   description:
-    "VRF and VRV system design, installation and commissioning in Dubai — multi-zone climate control for villas, offices and commercial buildings.",
+    "VRF installation in Dubai: design, installation and commissioning of VRF/VRV systems for villas, offices and buildings, plus VRF and FCU maintenance.",
   path: "/services/vrf-vrv-systems",
 });
 
+const linkClass = "text-primary underline underline-offset-2 hover:text-primary-dark";
+
 export default function VrfVrvSystems() {
+  // Case studies referenced in the maintenance section. Names come from the case-study data.
+  // TODO(owner): the 109 TR figure for the Al Mamzar villa is not confirmed, so no tonnage is
+  // shown for it here. Add it once you confirm.
+  const mamzar = getProjectBySlug("vrf-villa-al-mamzar-dubai");
+  const basil = getProjectBySlug("basil-mall-ajman");
+
   return (
     <ServiceDetailLayout
       slug="services/vrf-vrv-systems"
       ctaBar
       title="VRF / VRV Systems"
+      h1="VRF Installation in Dubai"
       heroImage="/projects/daikin-vrv-x-business-bay-dubai-rooftop-installation.jpg"
       heroImageAlt="Daikin VRV-X variable refrigerant volume system installation on rooftop in Business Bay Dubai by AGEC"
-      intro="Multi-zone climate control with variable refrigerant flow technology — engineered for Dubai's extreme cooling demands."
+      intro="VRF and VRV installation and maintenance — multi-zone climate control with variable refrigerant flow, engineered for Dubai's extreme cooling demands."
       overview={
         <>
           <p>
@@ -108,6 +119,61 @@ export default function VrfVrvSystems() {
         "ASHRAE 111 and SMACNA compliant installation and commissioning practices",
         "Proper refrigerant piping: nitrogen-purged brazing, standing vacuum tests, and electronic leak detection on every joint",
       ]}
+      extraSection={
+        <>
+          {/* VRF & FCU MAINTENANCE */}
+          <section id="vrf-fcu-maintenance" className="py-16 md:py-20">
+            <div className="mx-auto max-w-7xl px-6">
+              <h2 className="font-heading text-3xl font-bold md:text-4xl">
+                VRF &amp; FCU Maintenance
+              </h2>
+              <div className="mt-6 max-w-3xl space-y-4 leading-relaxed text-text-muted">
+                <p>
+                  VRF maintenance in Dubai is part of the same engineering team&apos;s
+                  scope. VRF/VRV systems, fan coil units (FCUs) and the rest of
+                  your HVAC plant can sit under one annual maintenance contract:
+                  scheduled visits covering filter and coil cleaning, drain
+                  flushing, refrigerant pressure checks, electrical and control
+                  checks and a performance test, with a written report after every
+                  visit.
+                </p>
+                <p>
+                  For offices, retail and whole buildings, see{" "}
+                  <Link href="/ac-amc-dubai#commercial-amc" className={linkClass}>
+                    commercial and building AMC (HVAC maintenance)
+                  </Link>
+                  .
+                </p>
+                {/* TODO(owner): a VRF-specific PPM checklist (outdoor unit, branch/BS boxes, controllers) and the FCU filter-cleaning frequency, if you want them listed. None is stated on the site, so none is shown. */}
+              </div>
+
+              <h3 className="mt-10 font-heading text-xl font-semibold">
+                VRF projects across the UAE
+              </h3>
+              <ul className="mt-4 max-w-3xl space-y-3 text-text-muted">
+                {mamzar && !mamzar.draft && (
+                  <li>
+                    <Link href={`/projects/${mamzar.slug}`} className={linkClass}>
+                      {mamzar.name}
+                    </Link>{" "}
+                    — a private villa in {mamzar.location.emirate}: HVAC
+                    installation and commissioning with a VRF system.
+                  </li>
+                )}
+                {basil && !basil.draft && (
+                  <li>
+                    <Link href={`/projects/${basil.slug}`} className={linkClass}>
+                      {basil.name}
+                    </Link>{" "}
+                    — a {basil.tonnage} VRF installation for a commercial mall in{" "}
+                    {basil.location.emirate}, UAE.
+                  </li>
+                )}
+              </ul>
+            </div>
+          </section>
+        </>
+      }
     />
   );
 }

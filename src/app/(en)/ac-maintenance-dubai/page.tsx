@@ -64,7 +64,7 @@ const whyCards: { icon: LucideIcon; title: string; desc: string }[] = [
   { icon: Clock, title: "Same-Day & 24/7 Emergency", desc: "Fast response across Dubai and the UAE, with emergency breakdown support when your AC fails in peak summer." },
   { icon: FileText, title: "Documented Reports", desc: "Every visit is logged with before/after condition, work performed and parts used — a full maintenance history for your records." },
   { icon: Gauge, title: "Efficiency-Focused", desc: "We don't just clean filters — we restore cooling performance and cut the energy waste that inflates your DEWA bill." },
-  { icon: CalendarClock, title: "Flexible AMC Plans", desc: "Annual Maintenance Contracts with scheduled visits and priority response for villas, apartments and commercial buildings." },
+  { icon: CalendarClock, title: "Flexible AMC Plans", desc: "Annual Maintenance Contracts with scheduled visits and priority response for villas and apartments. Managing a building? See commercial AMC." },
 ];
 
 const services: { icon: LucideIcon; title: string; desc: string }[] = [
@@ -267,7 +267,7 @@ export default async function AcMaintenancePage() {
             page. For yearly cover, compare our{" "}
             <Link href="/ac-amc-dubai" className="font-semibold text-primary hover:underline">AC annual maintenance contracts</Link>{" "}
             or{" "}
-            <Link href="/ac-amc-dubai" className="font-semibold text-primary hover:underline">commercial HVAC maintenance &amp; AMC plans</Link>, or add a{" "}
+            <Link href="/ac-amc-dubai#commercial-amc" className="font-semibold text-primary hover:underline">commercial HVAC maintenance &amp; AMC plans</Link>, or add a{" "}
             <Link href="/smart-thermostat-installation-dubai" className="font-semibold text-primary hover:underline">smart thermostat</Link> during your visit.
           </p>
         </div>
