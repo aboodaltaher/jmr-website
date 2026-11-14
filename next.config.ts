@@ -4,7 +4,13 @@ const nextConfig: NextConfig = {
   skipTrailingSlashRedirect: true,
   // Serve AVIF where the browser supports it (WebP otherwise).
   // 75 is the default; 60 is used by the homepage hero, which sits under a dark gradient.
-  images: { formats: ["image/avif", "image/webp"], qualities: [60, 75] },
+  images: {
+    formats: ["image/avif", "image/webp"],
+    qualities: [60, 75],
+    // Default is [640, 750, 828, 1080, 1200, 1920, 2048, 3840]. 1280 and 1440 added so a 1280-1440 px
+    // wide viewport gets a ~1440 px file instead of 1920; 2048 and 3840 dropped (sources are under 2000 px).
+    deviceSizes: [640, 750, 828, 1080, 1280, 1440, 1920],
+  },
   async headers() {
     // Security / best-practices hardening, applied to every response.
     const securityHeaders = [

@@ -12,6 +12,9 @@ import "./globals.css";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  // Body font. Not preloaded: the preload (48 KB) competes with the hero image.
+  // It still loads from CSS right away and swaps in (font-display: swap).
+  preload: false,
 });
 
 const saira = Saira_Condensed({
@@ -65,7 +68,7 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col antialiased pb-16 md:pb-0">
         <GtmNoScript />
         <SiteSchema />
-        {/* Google tag: ONE gtag.js load serves Google Ads (AW-) and GA4 (G-). This inline snippet
+        {/* Google tag: gtag.js is loaded ONCE (with the GA4 ID) and both Google Ads (AW-) and GA4 (G-) are configured from it. This inline snippet
             runs immediately and only creates the queue and the config calls; the library itself is
             loaded after hydration by <GoogleTag /> (see that file for why). */}
         <script
@@ -73,8 +76,8 @@ export default function RootLayout({
             __html: `window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', '${GA_ADS_ID}');
-gtag('config', '${GA4_ID}');`,
+gtag('config', '${GA4_ID}');
+gtag('config', '${GA_ADS_ID}');`,
           }}
         />
         <GoogleTag />

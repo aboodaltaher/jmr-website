@@ -3,8 +3,8 @@ import { waPageFor } from "@/lib/contact";
 
 export const GA_ADS_ID = "AW-18332305339";
 
-// Google Analytics 4 measurement ID. Shares the single gtag.js instance that
-// the Ads tag already loads (configured alongside GA_ADS_ID in the root layout).
+// Google Analytics 4 measurement ID. gtag.js is loaded once with this ID (GoogleTag.tsx);
+// the root layout then configures both this and GA_ADS_ID.
 export const GA4_ID = "G-H7HNVQGSYM";
 
 /**

@@ -1,12 +1,12 @@
 "use client";
 
 import { useEffect } from "react";
-import { GA_ADS_ID } from "@/lib/gtag";
+import { GA4_ID } from "@/lib/gtag";
 
 /**
  * Loads gtag.js ONCE, after the page has hydrated (the same moment next/script's
- * strategy="afterInteractive" uses). One load serves both tags: Google Ads (AW-…) and GA4 (G-…),
- * which are both configured by the inline snippet in the root layout.
+ * strategy="afterInteractive" uses). The tag is loaded with the GA4 ID (G-…); Google Ads (AW-…) and
+ * GA4 are both configured with gtag('config') by the inline snippet in the root layout.
  *
  * Why not <Script strategy="afterInteractive">? next/script also adds a
  * <link rel="preload" as="script"> for it in <head>, so the browser starts downloading gtag.js
@@ -22,7 +22,7 @@ export function GoogleTag() {
     const s = document.createElement("script");
     s.id = "gtag-js";
     s.async = true;
-    s.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ADS_ID}`;
+    s.src = `https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`;
     document.head.appendChild(s);
   }, []);
   return null;
