@@ -338,6 +338,7 @@ const allFaqs = [...faqs, ...nestFaqs, ...ecobeeFaqs];
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
+  name: "Smart Thermostat Installation in Dubai",
   serviceType: "Smart Thermostat Supply & Installation",
   provider: { "@id": "https://agec.ae/#business" },
   areaServed: areas,
