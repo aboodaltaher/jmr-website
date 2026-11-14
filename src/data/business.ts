@@ -73,11 +73,11 @@ export const business = {
     // Google Maps CID URL for the business profile (used for "View on Google
     // Maps", schema hasMap and sameAs).
     mapsView: "https://maps.google.com/?cid=14934329653680563760",
-    // TODO(owner): replace with the g.page review link
-    // (https://g.page/r/<id>/review). Interim value: current review link.
-    reviewLeave: "https://maps.app.goo.gl/fPKs5SXmDeK9Co4VA",
+    // Opens the Google review composer. Used by every "Leave a review" link and
+    // by the /review redirect (which the printed QR codes point at).
+    reviewLeave: "https://g.page/r/CTBmNs6xZUHPEBM/review",
     instagram: "https://www.instagram.com/agec_contracting",
-    // TODO(owner): fill any that exist. Empty ones are never output.
+    // None provided yet. Fill any that exist; empty ones are never output.
     linkedin: "",
     facebook: "",
     youtube: "",
