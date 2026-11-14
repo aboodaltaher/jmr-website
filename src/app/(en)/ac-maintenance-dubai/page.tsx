@@ -120,6 +120,7 @@ const reviews = GOOGLE_REVIEWS;
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
+  name: "AC Maintenance in Dubai",
   serviceType: "Air Conditioning Maintenance & Repair",
   provider: { "@id": "https://agec.ae/#business" },
   areaServed: areas,
