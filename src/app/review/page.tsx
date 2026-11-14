@@ -8,7 +8,7 @@ import { GOOGLE_REVIEWS_URL } from "@/lib/company";
 export const metadata: Metadata = {
   title: "Leave a Review | AGEC",
   description:
-    "Enjoyed AGEC's HVAC service? Scan the QR code or tap the button to leave us a review on Google.",
+    "Enjoyed AGEC's HVAC service in Dubai? Scan the QR code or tap the button to leave us a review on Google — it helps others find a reliable engineer.",
   alternates: { canonical: "/review" },
   robots: { index: false, follow: true },
 };

@@ -1,5 +1,6 @@
 import { buildMetadata } from "@/lib/metadata";
 import { LegalDraftBanner } from "@/components/LegalDraftBanner";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import {
   COMPANY_LEGAL,
   EMAIL,
@@ -33,6 +34,7 @@ export default function TermsPage() {
   return (
     <article className="py-16 md:py-24">
       <div className="mx-auto max-w-3xl px-6">
+        <Breadcrumbs items={[{ name: "Terms of Use", href: "/terms" }]} className="mb-6" />
         <LegalDraftBanner />
         <h1 className="mt-6 font-heading text-4xl font-bold text-text md:text-5xl">
           Terms of Use

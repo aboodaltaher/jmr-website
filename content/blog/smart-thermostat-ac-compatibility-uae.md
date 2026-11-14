@@ -3,7 +3,7 @@ date: "2026-07-09"
 author: "AGEC Team"
 readingTime: "7 min read"
 image: "/projects/indoor-ahu-installation-refrigerant-piping-dubai.jpg"
-description: "Does Google Nest or ecobee work with Daikin, O General, Carrier and other AC brands in the UAE? A clear compatibility guide covering 24V vs 220V and the C-wire question."
+description: "Will a smart thermostat work with your AC? Nest and ecobee with Daikin, O General and Carrier in the UAE: 24V vs 220V and the C-wire. Free check."
 titleTag: "Is My AC Compatible With a Smart Thermostat? UAE | AGEC"
 ---
 

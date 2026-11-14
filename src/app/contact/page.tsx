@@ -2,7 +2,6 @@ import { buildMetadata } from "@/lib/metadata";
 import { Phone, Mail, MapPin, Clock, MessageCircle, Star, ExternalLink } from "lucide-react";
 import { whatsappUrl } from "@/lib/contact";
 import { ContactForm } from "@/components/ContactForm";
-import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import {
@@ -24,16 +23,10 @@ export const metadata = buildMetadata({
 export default function Contact() {
   return (
     <>
-      <BreadcrumbSchema
-        items={[
-          { name: "Home", path: "" },
-          { name: "Contact", path: "/contact" },
-        ]}
-      />
       {/* Header */}
       <section className="bg-bg-soft py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-6">
-          <Breadcrumbs items={[{ name: "Contact" }]} className="mb-6" />
+          <Breadcrumbs items={[{ name: "Contact", href: "/contact" }]} className="mb-6" />
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">
             Contact
           </p>

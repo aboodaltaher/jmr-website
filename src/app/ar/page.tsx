@@ -11,9 +11,6 @@ export const metadata = buildMetadata({
     "AGEC للخدمات الفنية في دبي: تركيب وصيانة وإصلاح أنظمة التكييف والتهوية للفلل والشقق والمنشآت التجارية. استجابة خلال ساعة على مدار الساعة.",
   path: "/ar",
   locale: "ar_AE",
-  ogTitle: "تكييف وتهوية في دبي | AGEC",
-  ogDescription:
-    "تركيب وصيانة وإصلاح أنظمة التكييف في دبي والإمارات. استجابة خلال ساعة.",
   languages: { "en-AE": `${SITE_URL}/`, "ar-AE": `${SITE_URL}/ar`, "x-default": `${SITE_URL}/` },
 });
 

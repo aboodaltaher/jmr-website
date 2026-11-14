@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { RelatedServices } from "@/components/RelatedServices";
 import { InlineLeadForm } from "@/components/InlineLeadForm";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { BreadcrumbBand } from "@/components/Breadcrumbs";
 import { GOOGLE_REVIEWS_URL } from "@/lib/reviews";
 import { getGoogleReviewStats } from "@/lib/google-reviews";
 import { THERMOSTAT_SAVINGS } from "@/lib/company";
@@ -52,8 +52,6 @@ export const metadata = buildMetadata({
   title: "Nest & ecobee Thermostat Installation Dubai | AGEC",
   description:
     "Google Nest and ecobee smart thermostat installation in Dubai and the UAE. Free compatibility check and C-wire installation by licensed HVAC engineers.",
-  ogDescription:
-    "Supplier & professional installer of Google Nest & ecobee smart thermostats across Dubai & the UAE. Free compatibility check & expert C-wire installation.",
   path: CANONICAL,
 });
 
@@ -325,15 +323,6 @@ const faqSchema = {
   })),
 };
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://agec.ae" },
-    { "@type": "ListItem", position: 2, name: "Services", item: "https://agec.ae/services" },
-    { "@type": "ListItem", position: 3, name: "Smart Thermostat Installation Dubai", item: "https://agec.ae/smart-thermostat-installation-dubai" },
-  ],
-};
 
 /* ------------------------------- HELPERS ------------------------------- */
 
@@ -350,25 +339,16 @@ export default async function SmartThermostatPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
-      {/* Breadcrumb */}
-      <nav className="bg-bg-soft border-b border-border" aria-label="Breadcrumb">
-        <div className="mx-auto max-w-7xl px-6 py-3 text-sm text-text-muted">
-          <Link href="/" className="hover:text-primary transition-colors">Home</Link>
-          <span className="mx-2">/</span>
-          <Link href="/services" className="hover:text-primary transition-colors">Services</Link>
-          <span className="mx-2">/</span>
-          <span className="text-text">Smart Thermostat Installation Dubai</span>
-        </div>
-      </nav>
+      {/* Breadcrumb (single trail + BreadcrumbList JSON-LD) */}
+      <BreadcrumbBand
+        items={[
+          { name: "Services", href: "/services" },
+          { name: "Smart Thermostats", href: "/smart-thermostat-installation-dubai" },
+        ]}
+      />
 
       {/* HERO */}
-      <div className="border-b border-border bg-bg-soft">
-        <div className="mx-auto max-w-7xl px-6 py-3">
-          <Breadcrumbs items={[{ name: "Smart Thermostats" }]} />
-        </div>
-      </div>
       <section className="relative overflow-hidden bg-[#13212E] text-white">
         <div
           className="pointer-events-none absolute inset-0"

@@ -1,5 +1,4 @@
 import { buildMetadata } from "@/lib/metadata";
-import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import Image from "next/image";
 import Link from "next/link";
@@ -42,16 +41,10 @@ export const metadata = buildMetadata({
 export default function Projects() {
   return (
     <>
-      <BreadcrumbSchema
-        items={[
-          { name: "Home", path: "" },
-          { name: "Projects", path: "/projects" },
-        ]}
-      />
       {/* Page Header */}
       <section className="bg-bg-soft py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <Breadcrumbs items={[{ name: "Projects" }]} className="mb-6" />
+          <Breadcrumbs items={[{ name: "Projects", href: "/projects" }]} className="mb-6" />
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">
             Our Work
           </p>

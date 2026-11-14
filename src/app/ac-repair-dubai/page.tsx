@@ -1,7 +1,7 @@
 import { buildMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { RelatedServices } from "@/components/RelatedServices";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { BreadcrumbBand } from "@/components/Breadcrumbs";
 import { Check, Phone, MessageCircle } from "lucide-react";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { RepairForm } from "@/components/RepairForm";
@@ -11,7 +11,7 @@ const SITE_URL = "https://agec.ae";
 const ROUTE = "/ac-repair-dubai";
 
 export const metadata = buildMetadata({
-  title: "AC Repair Dubai | AC Technicians | AGEC",
+  title: "AC Repair Dubai — Same-Day Engineer Diagnosis | AGEC",
   description:
     "AC not cooling, leaking or tripping? AGEC engineers find the root cause, quote in writing first and report every repair. Call or WhatsApp.",
   path: ROUTE,
@@ -84,25 +84,6 @@ const faqSchema = {
   })),
 };
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}` },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Services",
-      item: `${SITE_URL}/services`,
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "AC Repair Dubai",
-      item: `${SITE_URL}${ROUTE}`,
-    },
-  ],
-};
 
 export default function AcRepairPage() {
   const waHref = whatsappUrl(ROUTE);
@@ -117,32 +98,16 @@ export default function AcRepairPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+
+      {/* Breadcrumb (single trail + BreadcrumbList JSON-LD) */}
+      <BreadcrumbBand
+        items={[
+          { name: "Services", href: "/services" },
+          { name: "AC Repair Dubai", href: "/ac-repair-dubai" },
+        ]}
       />
 
-      {/* Breadcrumb */}
-      <nav className="border-b border-border bg-bg-soft" aria-label="Breadcrumb">
-        <div className="mx-auto max-w-7xl px-6 py-3 text-sm text-text-muted">
-          <Link href="/" className="hover:text-primary transition-colors">
-            Home
-          </Link>
-          <span className="mx-2">/</span>
-          <Link href="/services" className="hover:text-primary transition-colors">
-            Services
-          </Link>
-          <span className="mx-2">/</span>
-          <span className="text-text">AC Repair Dubai</span>
-        </div>
-      </nav>
-
       {/* HERO */}
-      <div className="border-b border-border bg-bg-soft">
-        <div className="mx-auto max-w-7xl px-6 py-3">
-          <Breadcrumbs items={[{ name: "AC Repair" }]} />
-        </div>
-      </div>
       <section className="relative overflow-hidden bg-[#13212E] text-white">
         <div
           className="pointer-events-none absolute inset-0"

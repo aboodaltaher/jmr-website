@@ -4,7 +4,7 @@ updated: "2026-11-01"
 author: "AGEC Team"
 readingTime: "5 min read"
 image: "/photos/agec-ac-grille-cleaning-dubai.jpg"
-description: "AC maintenance and duct cleaning are not the same job. An engineer explains what each one does, when you need which, and why many Dubai homes need both — with no upselling."
+description: "AC maintenance vs duct cleaning in Dubai: what each one does, which you need and when you need both, with no upselling. Call or WhatsApp 24/7."
 titleTag: "AC Maintenance vs Duct Cleaning: Which Do You Need? | AGEC"
 ---
 

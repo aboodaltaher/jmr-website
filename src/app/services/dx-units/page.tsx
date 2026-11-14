@@ -12,7 +12,7 @@ import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
 import Link from "next/link";
 
 export const metadata = buildMetadata({
-  title: "DX Units & Split Systems | AGEC",
+  title: "DX Units & Ducted Split AC Installation Dubai | AGEC",
   description:
     "DX and split AC installation in Dubai — wall-mount, ducted, cassette and concealed units, sized from heat loads for homes and commercial spaces.",
   path: "/services/dx-units",

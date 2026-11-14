@@ -1,4 +1,5 @@
 import { buildMetadata } from "@/lib/metadata";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FOUNDER, PROJECTS_DELIVERED, LICENCE_NO } from "@/lib/company";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,7 +10,7 @@ import { Award, ShieldCheck, PhoneCall, TrendingUp } from "lucide-react";
 export const metadata = buildMetadata({
   title: "من نحن | AGEC مقاول تكييف في دبي",
   description:
-    `AGEC (التاهر غبون للمقاولات الهندسية) مقاول تكييف وكهروميكانيك وصيانة في دبي — ${PROJECTS_DELIVERED} مشروعاً عبر الإمارات منذ 2022.`,
+    `AGEC (التاهر غبون للمقاولات الهندسية) مقاول تكييف وكهروميكانيك وصيانة في دبي، أنجز ${PROJECTS_DELIVERED} مشروعاً عبر الإمارات منذ 2022. اطلب عرض سعر.`,
   path: "/ar/about",
   locale: "ar_AE",
 });
@@ -48,24 +49,16 @@ const personSchema = {
   knowsAbout: ["تصميم التكييف", "أنظمة VRF/VRV", "التشيلر", "الاختبار والضبط والموازنة", "صيانة المكيفات"],
 };
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "الرئيسية", item: "https://agec.ae/ar" },
-    { "@type": "ListItem", position: 2, name: "من نحن", item: "https://agec.ae/ar/about" },
-  ],
-};
 
 export default function ArabicAbout() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       {/* Header */}
       <section className="bg-bg-soft py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
+          <Breadcrumbs lang="ar" items={[{ name: "من نحن", href: "/ar/about" }]} className="mb-6" />
           <p className={eyebrow}>عن AGEC</p>
           <h1 className="mt-3 max-w-4xl font-heading text-5xl font-bold md:text-6xl">
             مقاولات تكييف يقودها المهندسون في دبي

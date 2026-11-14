@@ -1,4 +1,5 @@
 import { buildMetadata } from "@/lib/metadata";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Phone, Mail, MapPin, Clock, MessageCircle, Star, ExternalLink } from "lucide-react";
 import { whatsappUrl } from "@/lib/contact";
 import { ContactForm } from "@/components/ContactForm";
@@ -30,6 +31,7 @@ export default function ArabicContact() {
       {/* Header */}
       <section className="bg-bg-soft py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-6">
+          <Breadcrumbs lang="ar" items={[{ name: "اتصل بنا", href: "/ar/contact" }]} className="mb-6" />
           <p className={eyebrow}>اتصل بنا</p>
           <h1 className="mt-3 font-heading text-5xl font-bold md:text-6xl">تواصل معنا</h1>
           <p className="mt-4 max-w-2xl text-xl text-text-muted">أخبرنا عن مشروعك أو أرسل لنا سؤالاً.</p>

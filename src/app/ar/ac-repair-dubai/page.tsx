@@ -1,4 +1,5 @@
 import { buildMetadata } from "@/lib/metadata";
+import { BreadcrumbBand } from "@/components/Breadcrumbs";
 import { Phone, MessageCircle, Check } from "lucide-react";
 import { PHONE, PHONE_DISPLAY, whatsappUrl } from "@/lib/contact";
 import { EMAIL, ADDRESS_LINE, ADDRESS_CITY } from "@/lib/company";
@@ -12,9 +13,6 @@ export const metadata = buildMetadata({
     "المكيف لا يبرّد أو يسرّب أو يفصل الكهرباء؟ مهندسو AGEC يحدّدون السبب الجذري، ويعطونك السعر كتابةً قبل البدء. اتصل أو راسلنا على واتساب.",
   path: ROUTE,
   locale: "ar_AE",
-  ogTitle: "إصلاح مكيفات في دبي | AGEC",
-  ogDescription:
-    "تشخيص هندسي للعطل، وسعر كتابي قبل البدء، وتقرير بعد الإصلاح. استجابة خلال ساعة.",
   languages: {
     "en-AE": `${SITE_URL}/ac-repair-dubai`,
     "ar-AE": `${SITE_URL}${ROUTE}`,
@@ -104,6 +102,15 @@ export default function ArabicAcRepair() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+
+      {/* Breadcrumb (single trail + BreadcrumbList JSON-LD) */}
+      <BreadcrumbBand
+        lang="ar"
+        items={[
+          { name: "الخدمات", href: "/ar/services" },
+          { name: "إصلاح مكيفات في دبي", href: "/ar/ac-repair-dubai" },
+        ]}
+      />
 
       {/* HERO */}
       <section className="relative overflow-hidden bg-[#13212E] text-white">

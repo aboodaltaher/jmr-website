@@ -4,7 +4,7 @@ titleTag: "VRF vs Chiller Systems for Dubai Villas | AGEC"
 author: "AGEC Team"
 readingTime: "8 min read"
 image: "/projects/daikin-vrv-x-business-bay-dubai-rooftop-installation.jpg"
-description: "Honest engineering comparison of VRF and chiller systems for Dubai villas — installed cost, performance, maintenance reality, and recommendations by villa size. Based on AGEC's field experience across 30+ projects."
+description: "VRF vs chiller for Dubai villas: installed cost, performance and maintenance compared by villa size, from 30+ AGEC projects. Get a quote today."
 ---
 
 # VRF vs Chiller Systems for Dubai Villas: Which Is Right for You?

@@ -1,5 +1,5 @@
 import { buildMetadata } from "@/lib/metadata";
-import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import Link from "next/link";
 import {
   Wind,
@@ -105,15 +105,10 @@ const steps = [
 export default function Services() {
   return (
     <>
-      <BreadcrumbSchema
-        items={[
-          { name: "Home", path: "" },
-          { name: "Services", path: "/services" },
-        ]}
-      />
       {/* Page Header */}
       <section className="bg-bg-soft py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
+          <Breadcrumbs items={[{ name: "Services", href: "/services" }]} className="mb-6" />
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">
             Our Services
           </p>

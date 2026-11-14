@@ -12,7 +12,7 @@ import { InlineLeadForm } from "@/components/InlineLeadForm";
 import { ratingValue, reviewCount } from "@/lib/siteStats";
 
 export const metadata = buildMetadata({
-  title: "HVAC Installation in Dubai | Design to Handover | AGEC",
+  title: "HVAC & AC Installation Dubai — Design to Handover | AGEC",
   description:
     "HVAC installation in Dubai by engineers — ductwork, refrigerant piping, equipment set and commissioning, handed over with test sheets and as-built drawings.",
   path: "/services/hvac-installation-dubai",

@@ -9,7 +9,8 @@
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "seo-check": "node scripts/seo-check.ts",
-    "seo-check:legacy": "node scripts/seo-check.mjs"
+    "seo-check:legacy": "node scripts/seo-check.mjs",
+    "onpage-check": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/onpage-check.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.4.0",

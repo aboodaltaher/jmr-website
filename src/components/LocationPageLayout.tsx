@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { MapPin, Phone, Check } from "lucide-react";
-import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { PHONE, PHONE_DISPLAY } from "@/lib/contact";
 import { ADDRESS_FULL } from "@/lib/company";
@@ -76,17 +75,17 @@ export function LocationPageLayout({
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <BreadcrumbSchema
-        items={[
-          { name: "Home", path: "" },
-          { name: title, path: `/${slug}` },
-        ]}
-      />
 
       {/* Header */}
       <section className="bg-bg-soft py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <Breadcrumbs items={[{ name: `HVAC Contractor ${emirate}` }]} className="mb-6" />
+          <Breadcrumbs
+            className="mb-6"
+            items={[
+              { name: "Services", href: "/services" },
+              { name: `HVAC Contractor ${emirate}`, href: `/${slug}` },
+            ]}
+          />
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">
             HVAC Contractor · {emirate}
           </p>

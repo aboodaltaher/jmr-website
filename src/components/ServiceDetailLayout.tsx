@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Check, type LucideIcon } from "lucide-react";
 import { RelatedServices } from "@/components/RelatedServices";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { AREA_SERVED_SCHEMA } from "@/lib/company";
 import { getProjectBySlug } from "@/data/projects";
 
@@ -149,17 +150,6 @@ export function ServiceDetailLayout({
       }
     : null;
 
-  const breadcrumbSchema = url
-    ? {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: lang === "ar" ? "الرئيسية" : "Home", item: lang === "ar" ? "https://agec.ae/ar" : "https://agec.ae" },
-          { "@type": "ListItem", position: 2, name: s.servicesLabel, item: `https://agec.ae${s.servicesHref}` },
-          { "@type": "ListItem", position: 3, name: title, item: url },
-        ],
-      }
-    : null;
 
   return (
     <>
@@ -175,25 +165,19 @@ export function ServiceDetailLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
         />
       )}
-      {breadcrumbSchema && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-        />
-      )}
       {/* Page Header */}
       <section className="bg-bg-soft py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <nav aria-label="Breadcrumb" className="mb-6 text-sm text-text-muted">
-            <Link
-              href={s.servicesHref}
-              className="hover:text-primary transition-colors"
-            >
-              {s.servicesLabel}
-            </Link>
-            <span className="mx-2">/</span>
-            <span className="text-text">{title}</span>
-          </nav>
+          {slug && (
+            <Breadcrumbs
+              lang={lang}
+              className="mb-6"
+              items={[
+                { name: s.servicesLabel, href: s.servicesHref },
+                { name: title, href: `/${slug}` },
+              ]}
+            />
+          )}
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">
             {s.eyebrow}
           </p>

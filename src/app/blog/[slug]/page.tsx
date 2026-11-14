@@ -11,7 +11,7 @@ import { RelatedServices } from "@/components/RelatedServices";
 import { AuthorByline } from "@/components/AuthorByline";
 import { AuthorBox } from "@/components/AuthorBox";
 import { FOUNDER } from "@/lib/company";
-import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 const SITE_URL = "https://agec.ae";
 
@@ -294,13 +294,6 @@ export default async function ArticlePage({
 
   return (
     <>
-      <BreadcrumbSchema
-        items={[
-          { name: "Home", path: "" },
-          { name: "Insights", path: "/blog" },
-          { name: post.title, path: `/blog/${slug}` },
-        ]}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -319,17 +312,12 @@ export default async function ArticlePage({
       {/* Breadcrumb */}
       <div className="bg-bg-soft">
         <div className="mx-auto max-w-7xl px-6 pt-10">
-          <nav className="text-sm text-text-muted">
-            <Link href="/" className="hover:text-primary transition-colors">
-              Home
-            </Link>
-            <span className="mx-2">›</span>
-            <Link href="/blog" className="hover:text-primary transition-colors">
-              Blog
-            </Link>
-            <span className="mx-2">›</span>
-            <span className="text-text">{post.title}</span>
-          </nav>
+          <Breadcrumbs
+            items={[
+              { name: "Insights", href: "/blog" },
+              { name: post.title, href: `/blog/${slug}` },
+            ]}
+          />
         </div>
       </div>
 

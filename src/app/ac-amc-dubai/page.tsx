@@ -4,8 +4,7 @@ import { RelatedServices } from "@/components/RelatedServices";
 import { Check, Phone, MessageCircle } from "lucide-react";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { AmcForm } from "@/components/AmcForm";
-import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { BreadcrumbBand } from "@/components/Breadcrumbs";
 import { PHONE, whatsappUrl } from "@/lib/contact";
 
 const SITE_URL = "https://agec.ae";
@@ -164,37 +163,16 @@ export default function AcAmcPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <BreadcrumbSchema
+
+      {/* Breadcrumb (single trail + BreadcrumbList JSON-LD) */}
+      <BreadcrumbBand
         items={[
-          { name: "Home", path: "" },
-          { name: "AC AMC Dubai", path: "/ac-amc-dubai" },
+          { name: "Services", href: "/services" },
+          { name: "AC AMC Dubai", href: "/ac-amc-dubai" },
         ]}
       />
 
-      {/* Breadcrumb */}
-      <nav className="border-b border-border bg-bg-soft" aria-label="Breadcrumb">
-        <div className="mx-auto max-w-7xl px-6 py-3 text-sm text-text-muted">
-          <Link href="/" className="hover:text-primary transition-colors">
-            Home
-          </Link>
-          <span className="mx-2">/</span>
-          <Link
-            href="/ac-maintenance-dubai"
-            className="hover:text-primary transition-colors"
-          >
-            AC Maintenance
-          </Link>
-          <span className="mx-2">/</span>
-          <span className="text-text">AC AMC Dubai</span>
-        </div>
-      </nav>
-
       {/* HERO */}
-      <div className="border-b border-border bg-bg-soft">
-        <div className="mx-auto max-w-7xl px-6 py-3">
-          <Breadcrumbs items={[{ name: "AC AMC" }]} />
-        </div>
-      </div>
       <section className="relative overflow-hidden bg-[#13212E] text-white">
         <div
           className="pointer-events-none absolute inset-0"

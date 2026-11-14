@@ -1,5 +1,6 @@
 import { buildMetadata } from "@/lib/metadata";
 import { LegalDraftBanner } from "@/components/LegalDraftBanner";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import {
   COMPANY_LEGAL,
   EMAIL,
@@ -33,6 +34,7 @@ export default function ArabicPrivacyPolicyPage() {
   return (
     <article className="py-16 md:py-24">
       <div className="mx-auto max-w-3xl px-6">
+        <Breadcrumbs lang="ar" items={[{ name: "سياسة الخصوصية", href: "/ar/privacy-policy" }]} className="mb-6" />
         <LegalDraftBanner lang="ar" />
         <h1 className="mt-6 font-heading text-4xl font-bold text-text md:text-5xl">
           سياسة الخصوصية

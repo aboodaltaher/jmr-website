@@ -12,7 +12,7 @@ import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
 import { InlineLeadForm } from "@/components/InlineLeadForm";
 
 export const metadata = buildMetadata({
-  title: "VRF & VRV Systems Dubai | AGEC",
+  title: "VRF & VRV Installation and Maintenance Dubai | AGEC",
   description:
     "VRF and VRV system design, installation and commissioning in Dubai — multi-zone climate control for villas, offices and commercial buildings.",
   path: "/services/vrf-vrv-systems",

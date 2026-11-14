@@ -1,5 +1,6 @@
 import { buildMetadata } from "@/lib/metadata";
 import { LegalDraftBanner } from "@/components/LegalDraftBanner";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import {
   COMPANY_LEGAL,
   EMAIL,
@@ -13,7 +14,7 @@ import {
 export const metadata = buildMetadata({
   title: "شروط الاستخدام | AGEC",
   description:
-    "الشروط التي تسري عند استخدامك لموقع agec.ae وعند طلب عرض سعر أو حجز أو خدمة من AGEC Technical Services — بما في ذلك عروض الأسعار والملكية الفكرية والمسؤولية والقانون الحاكم.",
+    "شروط استخدام موقع agec.ae وطلب عرض سعر أو حجز خدمة من AGEC: عروض الأسعار، الملكية الفكرية، المسؤولية والقانون الحاكم في دبي.",
   path: "/ar/terms",
   locale: "ar_AE",
 });
@@ -33,6 +34,7 @@ export default function ArabicTermsPage() {
   return (
     <article className="py-16 md:py-24">
       <div className="mx-auto max-w-3xl px-6">
+        <Breadcrumbs lang="ar" items={[{ name: "شروط الاستخدام", href: "/ar/terms" }]} className="mb-6" />
         <LegalDraftBanner lang="ar" />
         <h1 className="mt-6 font-heading text-4xl font-bold text-text md:text-5xl">
           شروط الاستخدام

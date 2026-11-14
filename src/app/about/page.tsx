@@ -1,5 +1,4 @@
 import { buildMetadata } from "@/lib/metadata";
-import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FOUNDER, PROJECTS_DELIVERED } from "@/lib/company";
 import Image from "next/image";
@@ -59,12 +58,6 @@ const capabilities = [
 export default function About() {
   return (
     <>
-      <BreadcrumbSchema
-        items={[
-          { name: "Home", path: "" },
-          { name: "About", path: "/about" },
-        ]}
-      />
       {/* Founder — Person schema, matching the visible profile below. */}
       <script
         type="application/ld+json"
@@ -96,7 +89,7 @@ export default function About() {
       {/* Header */}
       <section className="bg-bg-soft py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <Breadcrumbs items={[{ name: "About" }]} className="mb-6" />
+          <Breadcrumbs items={[{ name: "About", href: "/about" }]} className="mb-6" />
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">
             About AGEC
           </p>

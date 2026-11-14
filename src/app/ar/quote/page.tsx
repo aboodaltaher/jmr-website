@@ -1,4 +1,5 @@
 import { buildMetadata } from "@/lib/metadata";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Phone } from "lucide-react";
 import { QuoteForm } from "@/components/QuoteForm";
 import { PHONE, PHONE_DISPLAY } from "@/lib/contact";
@@ -32,6 +33,7 @@ export default function ArabicQuote() {
       {/* Header */}
       <section className="bg-bg-soft py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-6">
+          <Breadcrumbs lang="ar" items={[{ name: "احصل على عرض سعر", href: "/ar/quote" }]} className="mb-6" />
           <p className={eyebrow}>احصل على عرض سعر</p>
           <h1 className="mt-3 font-heading text-5xl font-bold md:text-6xl">
             احصل على عرض سعر أو احجز خدمة

@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { RelatedServices } from "@/components/RelatedServices";
 import { InlineLeadForm } from "@/components/InlineLeadForm";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { BreadcrumbBand } from "@/components/Breadcrumbs";
 import { DeepCleanVideo } from "@/components/DeepCleanVideo";
 import { Check, Phone, MessageCircle, Wind, AlertCircle } from "lucide-react";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
@@ -150,14 +150,6 @@ const faqSchema = {
   })),
 };
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}` },
-    { "@type": "ListItem", position: 2, name: "AC Duct Cleaning Dubai", item: `${SITE_URL}${ROUTE}` },
-  ],
-};
 
 export default function AcDuctCleaningPage() {
   const waHref = whatsappUrl(ROUTE);
@@ -166,23 +158,16 @@ export default function AcDuctCleaningPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
-      {/* Breadcrumb */}
-      <nav className="bg-bg-soft border-b border-border" aria-label="Breadcrumb">
-        <div className="mx-auto max-w-7xl px-6 py-3 text-sm text-text-muted">
-          <Link href="/" className="hover:text-primary transition-colors">Home</Link>
-          <span className="mx-2">/</span>
-          <span className="text-text">AC Duct Cleaning Dubai</span>
-        </div>
-      </nav>
+      {/* Breadcrumb (single trail + BreadcrumbList JSON-LD) */}
+      <BreadcrumbBand
+        items={[
+          { name: "Services", href: "/services" },
+          { name: "AC Duct Cleaning Dubai", href: "/ac-duct-cleaning-dubai" },
+        ]}
+      />
 
       {/* HERO */}
-      <div className="border-b border-border bg-bg-soft">
-        <div className="mx-auto max-w-7xl px-6 py-3">
-          <Breadcrumbs items={[{ name: "AC Duct Cleaning" }]} />
-        </div>
-      </div>
       <section className="relative overflow-hidden bg-[#13212E] text-white">
         <div
           className="pointer-events-none absolute inset-0"
