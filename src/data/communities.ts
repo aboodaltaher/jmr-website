@@ -35,7 +35,6 @@ export interface Community {
   projectSlugs: string[];
   faqs: CommunityFaq[];
   /** WhatsApp pre-fill that names the area. */
-  whatsappText: string;
   /** Everything the owner must confirm before this page is published. */
   toConfirm: string[];
 }
@@ -120,8 +119,6 @@ const alBarsha: Community = {
       a: "From AED 350 per machine, with a minimum of three units. The exact cost depends on the number and type of units, and we confirm the price before we start.",
     },
   ],
-  whatsappText:
-    "Hi AGEC, I'd like to book AC maintenance in Al Barsha. Number of units and villa/apartment: ",
   toConfirm: [
     "Al Barsha: confirm the 'faults we see most often' list matches your own job records.",
   ],
@@ -195,8 +192,6 @@ const businessBay: Community = {
       a: "Yes. We audit the existing system, give you a baseline report, and set up a fresh maintenance schedule.",
     },
   ],
-  whatsappText:
-    "Hi AGEC, I'd like to book AC / FCU maintenance in Business Bay. Number of units and office or restaurant: ",
   toConfirm: [
     "Business Bay: confirm the 'faults we see' list and the tenant/building responsibility wording match how you actually work in these towers.",
   ],
@@ -273,8 +268,6 @@ const dubaiMarina: Community = {
       a: "It depends on your tenancy contract. Check it, or ask your landlord, before you book. Landlords and property managers can put several apartments under one contract with us.",
     },
   ],
-  whatsappText:
-    "Hi AGEC, I'd like to book AC / FCU maintenance in Dubai Marina. Tower name and number of units: ",
   toConfirm: [
     "Dubai Marina: number of jobs or buildings serviced.",
     "Dubai Marina: any project we may name, with the client's permission.",
@@ -354,8 +347,6 @@ const arabianRanches: Community = {
       a: "From AED 350 per machine, with a minimum of three units, which most villas exceed. The exact cost depends on the number and type of units, and we confirm it before we start.",
     },
   ],
-  whatsappText:
-    "Hi AGEC, I'd like AC maintenance (or an AMC) for a villa in Arabian Ranches. Number of units and community: ",
   toConfirm: [
     "Arabian Ranches: number of villas serviced or under contract.",
     "Arabian Ranches: any project we may name, with the owner's permission.",

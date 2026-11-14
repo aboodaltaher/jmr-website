@@ -1,4 +1,5 @@
 // Google Ads (gtag.js) configuration + conversion helpers.
+import { waPageFor } from "@/lib/contact";
 
 export const GA_ADS_ID = "AW-18332305339";
 
@@ -81,19 +82,64 @@ export type FormName =
   | "thermostat";
 
 /**
- * Fire a successful form submission (the "thank-you" moment): the Google Ads
- * form conversion plus a GA4/GTM `form_submit` dataLayer event carrying
- * `form_name`. Call only after the server action reports success.
+ * Lead events, in GA4 / dataLayer. Mark these as KEY EVENTS in GA4 (see docs/tracking.md):
+ *   click_whatsapp, click_call, form_submit_quote, form_submit_contact, form_submit_amc,
+ *   form_submit_inline.
+ * Every one carries { page_path, service, form_location }. No personal data is ever sent.
+ *
+ * The older events (call_click, whatsapp_click, form_submit with form_name) keep firing in
+ * parallel until OLD_EVENTS_RETIRE_ON, so existing GA4 reports keep working while the new
+ * names build history. Retire them then by deleting the lines marked LEGACY.
  */
-export function trackFormSubmit(formName: FormName): void {
+export const OLD_EVENTS_RETIRE_ON = "2027-01-15";
+
+export type FormKind = "quote" | "contact" | "amc" | "inline";
+
+export interface LeadParams {
+  page_path: string;
+  service: string;
+  form_location: string;
+}
+
+/** Common parameters: current path, the page's service name, and where on the page it happened. */
+export function leadParams(formLocation: string): LeadParams {
+  const path = typeof window !== "undefined" ? window.location.pathname : "";
+  return { page_path: path, service: waPageFor(path).name, form_location: formLocation };
+}
+
+/** Send one lead event to both GA4 (gtag) and the dataLayer (GTM), if present. */
+function fireLeadEvent(name: string, params: LeadParams): void {
+  pushDataLayer(name, { ...params });
+  gaEvent(name, { ...params });
+}
+
+/**
+ * Fire a click on a WhatsApp or call link. Ads conversions for these clicks are fired by the
+ * caller (ConversionTracking) exactly as before.
+ */
+export function trackContactClick(kind: "whatsapp" | "call", formLocation: string): void {
+  const params = leadParams(formLocation);
+  fireLeadEvent(kind === "whatsapp" ? "click_whatsapp" : "click_call", params);
+  // LEGACY (retire on OLD_EVENTS_RETIRE_ON): the GA4 names used before this release.
+  gaEvent(kind === "whatsapp" ? "whatsapp_click" : "call_click", { page_path: params.page_path });
+}
+
+/**
+ * Fire a successful form submission (the "thank-you" moment): the Google Ads form conversion
+ * (unchanged) plus the lead event for this form. Call only after the server action reports
+ * success.
+ *   kind          which GA4 event: quote | contact | amc | inline
+ *   formLocation  where the form sits: hero, mid_page, inline, quote_page, contact_page, ...
+ */
+export function trackFormSubmit(
+  formName: FormName,
+  kind: FormKind = "quote",
+  formLocation: string = "page",
+): void {
   trackConversion(CONVERSIONS.form);
-  pushDataLayer("form_submit", {
-    form_name: formName,
-    page_path: typeof window !== "undefined" ? window.location.pathname : "",
-  });
-  // GA4 event (no personal data — only the form name and page path).
-  gaEvent("form_submit", {
-    form_name: formName,
-    page_path: typeof window !== "undefined" ? window.location.pathname : "",
-  });
+  const params = leadParams(formLocation);
+  fireLeadEvent(`form_submit_${kind}`, params);
+  // LEGACY (retire on OLD_EVENTS_RETIRE_ON): the generic form_submit event with form_name.
+  pushDataLayer("form_submit", { form_name: formName, page_path: params.page_path });
+  gaEvent("form_submit", { form_name: formName, page_path: params.page_path });
 }

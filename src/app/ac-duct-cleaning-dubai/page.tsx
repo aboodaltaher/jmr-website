@@ -1,3 +1,4 @@
+import { MidPageCta } from "@/components/MidPageCta";
 import { buildMetadata } from "@/lib/metadata";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,6 +9,8 @@ import { DeepCleanVideo } from "@/components/DeepCleanVideo";
 import { Check, Phone, MessageCircle, Wind, AlertCircle } from "lucide-react";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { PHONE, whatsappUrl } from "@/lib/contact";
+import { PriceTable } from "@/components/PriceTable";
+import { prices, visibleRows, offersFor } from "@/data/prices";
 import { business } from "@/data/business";
 import { isPublished } from "@/data/new-pages";
 
@@ -127,6 +130,7 @@ const serviceSchema = {
   description:
     "Full duct, coil and drain cleaning with disinfection and a written completion report for villas, apartments and offices in Dubai.",
   url: `${SITE_URL}${ROUTE}`,
+  ...(offersFor(prices.ductCleaning).length ? { offers: offersFor(prices.ductCleaning) } : {}),
   areaServed: { "@type": "Country", name: "United Arab Emirates" },
   provider: {
     "@type": "HVACBusiness",
@@ -203,6 +207,7 @@ export default function AcDuctCleaningPage() {
               src="/photos/agec-ac-vent-cleaning-villa-dubai.jpg"
               alt="AGEC technician cleaning air conditioning ventilation in a Dubai villa"
               fill
+              sizes="(max-width: 1024px) 100vw, 600px"
               className="object-cover"
             />
           </div>
@@ -226,6 +231,9 @@ export default function AcDuctCleaningPage() {
           </ul>
         </div>
       </section>
+
+      {/* Mid-page lead block, directly after the first proof section */}
+      <MidPageCta service="AC duct cleaning" path="/ac-duct-cleaning-dubai" />
 
       {/* VIDEO */}
       <section className="py-16 md:py-20">
@@ -361,6 +369,17 @@ export default function AcDuctCleaningPage() {
           )}
         </div>
       </section>
+
+      {/* PRICES — rows appear only once their price is confirmed in src/data/prices.ts */}
+      {visibleRows(prices.ductCleaning).length > 0 && (
+        <section id="prices" className="bg-bg-soft py-16 md:py-20">
+          <div className="mx-auto max-w-4xl px-6">
+            <p className={eyebrow}>Pricing</p>
+            <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">Duct cleaning prices by property size</h2>
+            <PriceTable rows={prices.ductCleaning} caption="AC duct cleaning prices by property size" />
+          </div>
+        </section>
+      )}
 
       {/* FAQ */}
       <section className="py-16 md:py-20">

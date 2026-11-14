@@ -1,8 +1,11 @@
+import { Fragment } from "react";
 import Link from "next/link";
 import { MessageCircle, Phone } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { MidPageCta } from "@/components/MidPageCta";
 import { business } from "@/data/business";
-import { PHONE, PHONE_DISPLAY, WHATSAPP } from "@/lib/company";
+import { PHONE, PHONE_DISPLAY } from "@/lib/company";
+import { whatsappUrl } from "@/lib/contact";
 import { MARKER_SPLIT, resolveDraft } from "@/lib/draft";
 import type { LongService } from "@/data/long-services";
 
@@ -15,7 +18,7 @@ const UI = {
     quoteHref: "/quote",
     related: "Related services",
     faq: "Common questions",
-    draft: "DRAFT — not published. This page is noindex, out of the sitemap and not linked from anywhere until the open [TO CONFIRM] items are answered.",
+    draft: "DRAFT — not published. This page returns 404 on the live site until it is switched on (src/data/new-pages.ts). Local and preview builds show it for review.",
     reply: `We reply on call and WhatsApp, ${business.hours.short}.`,
   },
   ar: {
@@ -26,7 +29,7 @@ const UI = {
     quoteHref: "/ar/quote",
     related: "خدمات ذات صلة",
     faq: "أسئلة شائعة",
-    draft: "مسودة — غير منشورة. هذه الصفحة غير مفهرسة وخارج خريطة الموقع وغير مرتبطة من أي صفحة إلى أن تُحسم بنود [TO CONFIRM] المفتوحة.",
+    draft: "مسودة — غير منشورة. تعرض هذه الصفحة خطأ 404 على الموقع المباشر إلى أن يتم تفعيلها (src/data/new-pages.ts). تظهر في بيئتَي المعاينة والتطوير للمراجعة فقط.",
     reply: "نرد عبر الاتصال وواتساب.",
   },
 } as const;
@@ -83,8 +86,9 @@ export function LongServicePage({
     })),
     faqs: raw.faqs.filter((f) => keep(f.a)).map((f) => ({ ...f, a: resolveDraft(f.a) })),
   };
+  const ctaAfter = Math.max(0, c.sections.findIndex((s) => (s.bullets?.length ?? 0) > 0));
   const url = `${business.url}${path}`;
-  const wa = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(c.whatsappText)}`;
+  const wa = whatsappUrl(path);
 
   const serviceSchema = {
     "@context": "https://schema.org",
@@ -168,7 +172,8 @@ export function LongServicePage({
       </section>
 
       {c.sections.map((s, i) => (
-        <section key={s.h2} className={i % 2 === 0 ? "py-14 md:py-16" : "bg-bg-soft py-14 md:py-16"}>
+        <Fragment key={s.h2}>
+        <section className={i % 2 === 0 ? "py-14 md:py-16" : "bg-bg-soft py-14 md:py-16"}>
           <div className="mx-auto max-w-4xl px-6">
             <h2 className="font-heading text-3xl font-bold md:text-4xl">{s.h2}</h2>
             <div className="mt-5 space-y-4 leading-relaxed text-text-muted">
@@ -185,6 +190,9 @@ export function LongServicePage({
             </div>
           </div>
         </section>
+        {/* Mid-page lead block, directly after the first checklist section */}
+        {i === ctaAfter && <MidPageCta service={c.ctaService ?? c.serviceType} path={path} lang={lang} />}
+        </Fragment>
       ))}
 
       <section className="py-14 md:py-16">

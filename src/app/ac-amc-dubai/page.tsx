@@ -1,3 +1,4 @@
+import { MidPageCta } from "@/components/MidPageCta";
 import { buildMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { RelatedServices } from "@/components/RelatedServices";
@@ -6,6 +7,7 @@ import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { AmcForm } from "@/components/AmcForm";
 import { BreadcrumbBand } from "@/components/Breadcrumbs";
 import { PHONE, whatsappUrl } from "@/lib/contact";
+import { prices, visibleTiers, PRICE_FOOTNOTE, isConfirmed } from "@/data/prices";
 
 import { PHONE_DISPLAY } from "@/lib/company";
 const SITE_URL = "https://agec.ae";
@@ -45,36 +47,17 @@ const amcConfig = {
     "Faults that cannot be reached or tested because of access issues (blocked units, locked roofs or ceilings)",
     "Duct cleaning (quoted separately)",
   ],
-  plans: [
-    {
-      name: "Basic",
-      visits: "2",
-      price: "AED 250",
-      response: "Response within 48 hours",
-      partsDiscount: "5%",
-      reports: "Yes",
-      popular: false,
-    },
-    {
-      name: "Standard",
-      visits: "4",
-      price: "AED 320",
-      response: "Response within 24 hours",
-      partsDiscount: "10%",
-      reports: "Yes",
-      popular: true,
-    },
-    {
-      name: "Premium",
-      visits: "6",
-      price: "AED 400",
-      response: "Same-day priority response",
-      partsDiscount: "15%",
-      reports: "Yes",
-      popular: false,
-    },
-  ],
-  fromPrice: "250 per machine per visit",
+  // Prices live in src/data/prices.ts (the one price config).
+  plans: prices.amcPlans.map((p) => ({
+    name: p.name,
+    visits: p.visits,
+    price: `AED ${p.from}`,
+    response: p.response,
+    partsDiscount: p.partsDiscount,
+    reports: p.reports,
+    popular: p.popular,
+  })),
+  fromPrice: `${Math.min(...prices.amcPlans.map((p) => p.from))} per machine per visit`,
   responsePromise: true,
   partsAndGasAnswer:
     "Routine servicing is included in your visit price. Spare parts and refrigerant top-ups are not included, but we quote them in writing before any work starts, and AMC customers get a discount on parts according to their plan.",
@@ -110,7 +93,7 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: "How is commercial AMC priced?",
-    a: "Residential plans start from AED 250 per machine per visit. Commercial and building cover is quoted after a site survey, based on the number and type of units and the response level you need — scheduled visits are fixed, with parts and major works quoted in writing first.",
+    a: `Residential plans start from AED ${Math.min(...prices.amcPlans.map((p) => p.from))} per machine per visit. Commercial and building cover is quoted after a site survey, based on the number and type of units and the response level you need — scheduled visits are fixed, with parts and major works quoted in writing first.`,
   },
   {
     q: "Do you cover my emirate?",
@@ -130,6 +113,12 @@ const serviceSchema = {
     name: "AGEC Technical Services",
     url: SITE_URL,
   },
+  offers: prices.amcPlans.map((p) => ({
+    "@type": "Offer",
+    name: `${p.name} AMC plan (${p.visits} visits a year)`,
+    price: String(p.from),
+    priceCurrency: "AED",
+  })),
   areaServed: "United Arab Emirates",
 };
 
@@ -418,14 +407,49 @@ export default function AcAmcPage() {
                 The <strong>Basic</strong> plan&apos;s 2 visits suit low-use or
                 single-split homes; for year-round villa and office use we
                 recommend 4 visits a year — roughly one every 3 months. AMC visits
-                are AED 250–400 per machine depending on plan, which is below our
-                one-off service rate of AED 350 per machine (minimum 3 units),
+                are AED {Math.min(...prices.amcPlans.map((p) => p.from))}–{Math.max(...prices.amcPlans.map((p) => p.from))} per machine depending on plan, which is below our
+                one-off service rate of AED {prices.maintenance[0].from} per machine (minimum 3 units),
                 because the visits are scheduled for the year.
               </p>
             </>
           )}
+
+          {/* By property type — rows appear only once their price is confirmed in prices.ts */}
+          {visibleTiers().length > 0 && (
+            <div className="mt-12">
+              <h3 className="font-heading text-2xl font-bold">AMC by property type</h3>
+              <div className="mt-6 overflow-x-auto" tabIndex={0} role="region" aria-label="AMC comparison by property type">
+                <table className="w-full border-collapse text-sm">
+                  <thead className="bg-primary text-left text-white">
+                    <tr>
+                      <th scope="col" className="border border-border px-4 py-3 font-semibold">Property</th>
+                      <th scope="col" className="border border-border px-4 py-3 font-semibold">Visits a year</th>
+                      <th scope="col" className="border border-border px-4 py-3 font-semibold">Response time</th>
+                      <th scope="col" className="border border-border px-4 py-3 font-semibold">What is included</th>
+                      <th scope="col" className="border border-border px-4 py-3 font-semibold">From (AED)</th>
+                    </tr>
+                  </thead>
+                  <tbody className="bg-white">
+                    {visibleTiers().map((t) => (
+                      <tr key={t.id}>
+                        <th scope="row" className="border border-border px-4 py-3 text-left font-semibold">{t.label}</th>
+                        <td className="border border-border px-4 py-3">{t.visitsPerYear.startsWith("[") ? "—" : t.visitsPerYear}</td>
+                        <td className="border border-border px-4 py-3">{t.response.startsWith("[") ? "—" : t.response}</td>
+                        <td className="border border-border px-4 py-3">{t.includes.length ? t.includes.join(", ") : "—"}</td>
+                        <td className="border border-border px-4 py-3">{isConfirmed(t.from) ? `From AED ${t.from}` : "—"}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="mt-3 text-sm text-text-muted">{PRICE_FOOTNOTE}</p>
+            </div>
+          )}
         </div>
       </section>
+
+      {/* Mid-page lead block, directly after the first proof section */}
+      <MidPageCta service="AC annual maintenance contract" path="/ac-amc-dubai" />
 
       {/* HOW IT WORKS */}
       <section className="py-16 md:py-20">

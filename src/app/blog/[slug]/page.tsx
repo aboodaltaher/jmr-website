@@ -11,7 +11,8 @@ import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { RelatedServices } from "@/components/RelatedServices";
 import { AuthorByline } from "@/components/AuthorByline";
 import { AuthorBox } from "@/components/AuthorBox";
-import { FOUNDER, PHONE, PHONE_DISPLAY, WHATSAPP } from "@/lib/company";
+import { FOUNDER, PHONE, PHONE_DISPLAY } from "@/lib/company";
+import { whatsappUrl } from "@/lib/contact";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 
 const SITE_URL = business.url;
@@ -98,14 +99,12 @@ const faqBySlug: Record<string, { question: string; answer: string }[]> = {
 // Per-slug closing CTA override. Posts without an entry keep the default box.
 const ctaBySlug: Record<
   string,
-  { heading: string; text: string; quoteHref: string; whatsappText: string }
+  { heading: string; text: string; quoteHref: string }
 > = {
   "ac-coil-cleaning-and-amc-dubai": {
     heading: "Get your AC checked before the next heatwave",
     text: "Tell us how many units you have and where they are. An AGEC engineer will send a written proposal.",
     quoteHref: "/ac-amc-dubai#amc-form",
-    whatsappText:
-      "Hi AGEC, I'd like an AMC quote. Number of AC units and area: ",
   },
 };
 
@@ -349,6 +348,7 @@ export default async function ArticlePage({
               src={post.image}
               alt={post.title}
               fill
+              sizes="(max-width: 896px) 100vw, 896px"
               className="object-cover"
               priority
             />
@@ -385,9 +385,7 @@ export default async function ArticlePage({
                   Get My AMC Quote
                 </Link>
                 <a
-                  href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
-                    cta.whatsappText,
-                  )}`}
+                  href={whatsappUrl(`/blog/${slug}`)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-md bg-[#25D366] px-7 py-4 font-semibold text-[#062e14] hover:bg-[#1fad52] transition-colors"

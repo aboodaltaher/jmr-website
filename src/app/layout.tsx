@@ -16,7 +16,7 @@ const inter = Inter({
 
 const saira = Saira_Condensed({
   variable: "--font-saira",
-  weight: ["500", "600", "700"],
+  weight: ["600", "700"],
   subsets: ["latin"],
 });
 

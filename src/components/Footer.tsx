@@ -59,7 +59,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-12">
         <div className="flex flex-col gap-8 md:flex-row md:justify-between">
           <div>
-            <Link href="/">
+            <Link prefetch={false} href="/">
               <Logo />
             </Link>
             <p className="mt-2 text-sm text-text-muted">
@@ -99,7 +99,7 @@ export function Footer() {
           </div>
           <nav className="flex flex-col gap-1">
             {navLinks.map((link) => (
-              <Link
+              <Link prefetch={false}
                 key={link.href}
                 href={link.href}
                 className="inline-flex min-h-[32px] items-center text-sm text-text-muted hover:text-text transition-colors"
@@ -112,7 +112,7 @@ export function Footer() {
             <nav aria-label="Areas we cover" className="flex flex-col gap-1">
               <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-text">Areas</p>
               {publishedCommunities().map((a) => (
-                <Link
+                <Link prefetch={false}
                   key={a.slug}
                   href={communityPath(a.slug)}
                   className="inline-flex min-h-[32px] items-center text-sm text-text-muted hover:text-text transition-colors"
@@ -123,7 +123,7 @@ export function Footer() {
             </nav>
           )}
           <div className="flex flex-col gap-3">
-            <Link
+            <Link prefetch={false}
               href="/quote"
               className="rounded-md bg-primary px-5 py-2.5 text-center text-sm font-semibold text-white hover:bg-primary-dark transition-colors"
             >
@@ -137,11 +137,11 @@ export function Footer() {
         </div>
         <div className="mt-8 flex flex-col items-center gap-2 border-t border-border pt-6 text-center text-xs text-text-muted">
           <div className="flex items-center gap-3">
-            <Link href="/privacy-policy" className="hover:text-text transition-colors">
+            <Link prefetch={false} href="/privacy-policy" className="hover:text-text transition-colors">
               Privacy Policy
             </Link>
             <span aria-hidden="true">·</span>
-            <Link href="/terms" className="hover:text-text transition-colors">
+            <Link prefetch={false} href="/terms" className="hover:text-text transition-colors">
               Terms of Use
             </Link>
           </div>

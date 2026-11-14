@@ -2,12 +2,11 @@
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 import { Check, MessageCircle, Phone } from "lucide-react";
 import { submitRequest } from "@/app/actions";
-import { trackConversion, gaEvent, CONVERSIONS } from "@/lib/gtag";
+import { trackFormSubmit } from "@/lib/gtag";
 import { PHONE, PHONE_DISPLAY, whatsappUrl } from "@/lib/contact";
+import { type FormOf, defineSchema, resolver, required, optionalText, all, check } from "@/lib/form-schema";
 
 // Same enquiry types and emirates as the /quote form (English).
 const REQUEST_TYPES = [
@@ -21,16 +20,16 @@ const EMIRATES = ["Dubai", "Abu Dhabi", "Sharjah", "Ajman", "Ras Al Khaimah", "F
 // Accepts +971 5x, 971 5x, 05x or 5x (UAE mobile), ignoring spaces/dashes.
 const UAE_MOBILE = /^(?:\+?971|0)?5\d{8}$/;
 
-const schema = z.object({
-  requestType: z.string().min(1, "Please choose what you need"),
-  name: z.string().min(1, "Full name is required"),
-  phone: z
-    .string()
-    .min(1, "Phone number is required")
-    .refine((v) => UAE_MOBILE.test(v.replace(/[\s-]/g, "")), "Enter a valid UAE mobile, e.g. 05X XXX XXXX"),
-  location: z.string().optional(),
+const schema = defineSchema({
+  requestType: required("Please choose what you need"),
+  name: required("Full name is required"),
+  phone: all(
+    required("Phone number is required"),
+    check((v) => UAE_MOBILE.test(v.replace(/[\s-]/g, "")), "Enter a valid UAE mobile, e.g. 05X XXX XXXX"),
+  ),
+  location: optionalText(),
 });
-type FormData = z.infer<typeof schema>;
+type FormData = FormOf<typeof schema>;
 
 const field =
   "w-full rounded-md border bg-white px-4 py-3 text-sm transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/40";
@@ -42,7 +41,7 @@ export function HeroQuoteForm() {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
-  } = useForm<FormData>({ resolver: zodResolver(schema) });
+  } = useForm<FormData>({ resolver: resolver(schema) });
 
   const onSubmit = async (data: FormData) => {
     setFailed(false);
@@ -51,13 +50,9 @@ export function HeroQuoteForm() {
       details: "Sent from the homepage hero quick-quote form.",
     });
     if (result.success) {
-      // Fire the Google Ads conversion the same way the /quote page does…
-      trackConversion(CONVERSIONS.form);
-      // …plus the GA4 event for this form (no personal data).
-      gaEvent("form_submit_quote", {
-        form_location: "home_hero",
-        enquiry_type: data.requestType,
-      });
+      // Google Ads form conversion (unchanged) + GA4 form_submit_quote with
+      // { page_path, service, form_location: "home_hero" }.
+      trackFormSubmit("quote", "quote", "home_hero");
       setSubmitted(true);
     } else {
       setFailed(true);

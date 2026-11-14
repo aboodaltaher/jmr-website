@@ -34,14 +34,14 @@ export function Header() {
   return (
     <header className="relative border-b border-border">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
-        <Link href="/" onClick={closeAll}>
+        <Link prefetch={false} href="/" onClick={closeAll}>
           <Logo />
         </Link>
 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-5 lg:flex">
           {mainLinks.map((link) => (
-            <Link key={link.href} href={link.href} className={linkClass}>
+            <Link prefetch={false} key={link.href} href={link.href} className={linkClass}>
               {link.label}
             </Link>
           ))}
@@ -59,7 +59,7 @@ export function Header() {
             }}
           >
             <span className="flex items-center gap-0.5">
-              <Link href="/ac-maintenance-dubai" className={linkClass} onClick={closeAll}>
+              <Link prefetch={false} href="/ac-maintenance-dubai" className={linkClass} onClick={closeAll}>
                 Maintenance
               </Link>
               <button
@@ -86,7 +86,7 @@ export function Header() {
               >
                 {maintenanceLinks.map((link) => (
                   <li role="none" key={link.href}>
-                    <Link
+                    <Link prefetch={false}
                       role="menuitem"
                       href={link.href}
                       onClick={closeAll}
@@ -101,12 +101,12 @@ export function Header() {
           </div>
 
           {tailLinks.map((link) => (
-            <Link key={link.href} href={link.href} className={linkClass}>
+            <Link prefetch={false} key={link.href} href={link.href} className={linkClass}>
               {link.label}
             </Link>
           ))}
 
-          <Link href={arHref} lang="ar" className={`${linkClass} font-semibold`}>
+          <Link prefetch={false} href={arHref} lang="ar" className={`${linkClass} font-semibold`}>
             العربية
           </Link>
 
@@ -115,7 +115,7 @@ export function Header() {
             triggerClassName={`flex items-center gap-1.5 ${linkClass}`}
           />
 
-          <Link
+          <Link prefetch={false}
             href="/quote"
             className="rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark transition-colors"
           >
@@ -140,7 +140,7 @@ export function Header() {
         <nav className="border-t border-border lg:hidden">
           <div className="mx-auto flex max-w-7xl flex-col px-6 py-3">
             {mainLinks.map((link) => (
-              <Link
+              <Link prefetch={false}
                 key={link.href}
                 href={link.href}
                 onClick={closeAll}
@@ -153,7 +153,7 @@ export function Header() {
             <div className="mt-2 border-t border-border pt-1" />
             <ServicesMobileAccordion lang="en" onNavigate={closeAll} />
 
-            <Link
+            <Link prefetch={false}
               href="/ac-maintenance-dubai"
               onClick={closeAll}
               className="mt-2 pb-1 pt-2 text-xs font-semibold uppercase tracking-widest text-primary"
@@ -161,7 +161,7 @@ export function Header() {
               Maintenance
             </Link>
             {maintenanceLinks.map((link) => (
-              <Link
+              <Link prefetch={false}
                 key={link.href}
                 href={link.href}
                 onClick={closeAll}
@@ -173,7 +173,7 @@ export function Header() {
 
             <div className="mt-2 border-t border-border pt-2" />
             {tailLinks.map((link) => (
-              <Link
+              <Link prefetch={false}
                 key={link.href}
                 href={link.href}
                 onClick={closeAll}
@@ -183,7 +183,7 @@ export function Header() {
               </Link>
             ))}
 
-            <Link
+            <Link prefetch={false}
               href={arHref}
               lang="ar"
               onClick={closeAll}
@@ -196,7 +196,7 @@ export function Header() {
               <CallOrWhatsApp
                 triggerClassName="inline-flex w-full items-center justify-center gap-2 rounded-md border border-border px-5 py-3 text-sm font-semibold text-text"
               />
-              <Link
+              <Link prefetch={false}
                 href="/quote"
                 onClick={closeAll}
                 className="rounded-md bg-primary px-5 py-3 text-center text-sm font-semibold text-white hover:bg-primary-dark transition-colors"

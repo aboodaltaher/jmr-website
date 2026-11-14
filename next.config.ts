@@ -2,6 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   skipTrailingSlashRedirect: true,
+  // Serve AVIF where the browser supports it (WebP otherwise).
+  images: { formats: ["image/avif", "image/webp"] },
   async headers() {
     // Security / best-practices hardening, applied to every response.
     const securityHeaders = [

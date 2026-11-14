@@ -1,14 +1,24 @@
 "use client";
 
 import { useEffect } from "react";
-import { CONVERSIONS, trackConversion, pushDataLayer, gaEvent } from "@/lib/gtag";
+import { CONVERSIONS, trackConversion, pushDataLayer, trackContactClick } from "@/lib/gtag";
 
 /**
- * Global click listener that fires Google Ads conversions for
- * WhatsApp and phone-call link clicks anywhere on the site
- * (hero CTAs, floating WhatsApp button, footer, etc.) without
- * needing an onClick on every individual link.
+ * Global click listener for WhatsApp, phone-call and email links anywhere on the site.
+ *  - Google Ads conversions for call and WhatsApp clicks fire exactly as before.
+ *  - GA4 / dataLayer lead events click_call and click_whatsapp carry
+ *    { page_path, service, form_location } (see trackContactClick in lib/gtag.ts).
+ * form_location comes from the nearest [data-track-location] ancestor (sticky_bar,
+ * floating_button, mid_page, ...), else header / footer, else "page".
  */
+function locationOf(link: HTMLElement): string {
+  const tagged = link.closest("[data-track-location]");
+  if (tagged) return tagged.getAttribute("data-track-location") || "page";
+  if (link.closest("header")) return "header";
+  if (link.closest("footer")) return "footer";
+  return "page";
+}
+
 export function ConversionTracking() {
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
@@ -19,20 +29,14 @@ export function ConversionTracking() {
 
       if (href.startsWith("tel:")) {
         trackConversion(CONVERSIONS.call);
-        pushDataLayer("click_call", { page_path: window.location.pathname });
-        // GA4 event (no personal data — only the page path, not the number).
-        gaEvent("call_click", { page_path: window.location.pathname });
+        trackContactClick("call", locationOf(link));
       } else if (
         href.includes("wa.me") ||
         href.includes("api.whatsapp.com") ||
         href.includes("whatsapp.com/send")
       ) {
         trackConversion(CONVERSIONS.whatsapp);
-        pushDataLayer("click_whatsapp", {
-          page_path: window.location.pathname,
-        });
-        // GA4 event (no personal data — only the page path).
-        gaEvent("whatsapp_click", { page_path: window.location.pathname });
+        trackContactClick("whatsapp", locationOf(link));
       } else if (href.startsWith("mailto:")) {
         pushDataLayer("click_email", { page_path: window.location.pathname });
       }

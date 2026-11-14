@@ -139,7 +139,7 @@ export function ServicesMegaMenu({ lang }: { lang: "en" | "ar" }) {
                     const current = isCurrent(href);
                     return (
                       <li key={item.label}>
-                        <Link
+                        <Link prefetch={false}
                           href={href}
                           aria-current={current ? "page" : undefined}
                           onClick={() => {
@@ -171,7 +171,7 @@ export function ServicesMegaMenu({ lang }: { lang: "en" | "ar" }) {
               <p className="text-xs font-semibold uppercase tracking-widest text-primary">
                 {ar ? servicesFeature.arEyebrow : servicesFeature.eyebrow}
               </p>
-              <Link
+              <Link prefetch={false}
                 href={servicesFeature.projectHref}
                 onClick={() => {
                   track("feature", servicesFeature.title);
@@ -181,7 +181,7 @@ export function ServicesMegaMenu({ lang }: { lang: "en" | "ar" }) {
               >
                 {ar ? servicesFeature.arTitle : servicesFeature.title}
               </Link>
-              <Link
+              <Link prefetch={false}
                 href={ar ? servicesFeature.arQuoteHref : servicesFeature.quoteHref}
                 onClick={() => {
                   track("feature", "quote");
@@ -196,7 +196,7 @@ export function ServicesMegaMenu({ lang }: { lang: "en" | "ar" }) {
 
           {/* Bottom bar */}
           <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-border pt-4 text-sm">
-            <Link
+            <Link prefetch={false}
               href={allServicesHref}
               onClick={() => {
                 track("bottom", "all-services");
@@ -213,7 +213,7 @@ export function ServicesMegaMenu({ lang }: { lang: "en" | "ar" }) {
               </span>
               <span>{ar ? bottom.homeBase.arLabel : bottom.homeBase.label}</span>
               {bottom.areas.map((a) => (
-                <Link
+                <Link prefetch={false}
                   key={a.href}
                   href={ar ? a.arHref ?? a.href : a.href}
                   onClick={() => {

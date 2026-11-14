@@ -166,6 +166,7 @@ export default function About() {
                 src="/photos/agec-ac-vent-cleaning-villa-dubai.jpg"
                 alt="AGEC technician cleaning air conditioning ventilation in a Dubai villa"
                 fill
+                sizes="(max-width: 1024px) 100vw, 600px"
                 className="object-cover"
               />
             </div>

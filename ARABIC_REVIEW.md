@@ -222,3 +222,29 @@ re-read these sentences:
    الموازنة for balancing, المجاري for ducts).
 5. «سبليت مجاري» (ducted split) vs «سبليت دكت» — which is the usual trade wording in the UAE?
 6. «الخليج التجاري» for Business Bay in the VRF page's image caption — correct for your audience?
+
+---
+
+## Added in the speed-and-conversions pass (2026-11-14)
+
+**Mid-page "Talk to an engineer" block** (`src/components/MidPageCta.tsx`, `MidPageForm.tsx`) on every
+Arabic service, AMC, repair, duct-cleaning, maintenance and thermostat page:
+- Headline: «تحدّث مع مهندس بخصوص {الخدمة}»
+- Fields: «الاسم الكامل» · «الهاتف» · «نوع العقار» (placeholder «اختر نوع العقار»; options فيلا · شقة · مكتب · مطعم · أخرى)
+- Button: «اطلب اتصالاً» / «جارٍ الإرسال...» · errors «الاسم الكامل مطلوب» · «رقم الهاتف مطلوب»
+- Success: «شكراً — تم استلام طلبك» + «سيتصل بك مهندس قريباً. للرد الأسرع اتصل بنا أو راسلنا على واتساب.»
+- Buttons: «واتساب» · «اتصل {الرقم}»
+
+**Per-page WhatsApp message** (`src/data/whatsapp-pages.ts`, Arabic template):
+«مرحباً AGEC، أنا في صفحة {اسم الصفحة} — أحتاج مساعدة بخصوص {نوع العقار} في {المنطقة}.»
+Default property type «عقاري», default area «دبي». Arabic page names: الرئيسية · من نحن · الخدمات ·
+صيانة المكيفات · إصلاح المكيفات · عقود الصيانة السنوية · تنظيف مجاري التكييف · تركيب الثرموستات الذكي ·
+تركيب أنظمة التكييف · الاختبار والضبط والموازنة · صيانة التشيلر · أنظمة VRF / VRV · وحدات DX ·
+التهوية والهواء النقي · تصميم أنظمة التكييف · تركيب المجاري وتصنيعها · تكييف لمشاريع MEP · اتصل بنا · طلب عرض سعر.
+Please check «أنا في صفحة …» reads naturally as a WhatsApp opener.
+
+**HVAC-for-MEP Arabic page, wording fixes** (`MEP_AR` in `src/data/long-services-ar.ts`): the interface
+paragraph («نحن نورّد ونوصّل معدّات التكييف الخاصة بنا فقط…»), the authority-approvals paragraph (fire
+and life-safety systems are «يصمّمها ويعتمدها مصمّم ومقاول الحماية من الحريق، وليس نحن»), the interface
+bullet «…وإنذار الحريق، مع مسؤول عن كل منها», and the draft-banner text. Still gated (404 on the live site).
+

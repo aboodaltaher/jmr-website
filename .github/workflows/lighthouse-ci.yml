@@ -1,0 +1,23 @@
+# Lighthouse CI on pull requests: builds the site, tests the homepage on mobile and fails the PR
+# if it goes over the budget in lighthouserc.json (requests, transfer size, LCP, TBT, CLS).
+name: Lighthouse CI
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  lhci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Lighthouse CI
+        run: npx --yes @lhci/cli@0.14.0 autorun --config=lighthouserc.json

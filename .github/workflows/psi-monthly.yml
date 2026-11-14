@@ -1,0 +1,34 @@
+# Runs the PageSpeed Insights check on the 1st of every month (and on demand).
+# Fails if mobile lab LCP is over 2.5 s or CLS is over 0.1 on any of the 6 pages.
+# Needs the repository secret PSI_API_KEY (Google Cloud API key with the PageSpeed Insights API enabled).
+name: PSI monthly
+
+on:
+  schedule:
+    - cron: "0 6 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  psi:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Run PSI check
+        env:
+          PSI_API_KEY: ${{ secrets.PSI_API_KEY }}
+        run: node scripts/psi-check.ts
+      - name: Show summary
+        if: always()
+        run: cat reports/psi/*.md >> "$GITHUB_STEP_SUMMARY" || true
+      - name: Keep the reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: psi-report
+          path: reports/psi/

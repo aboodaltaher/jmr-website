@@ -1,3 +1,4 @@
+import { MidPageCta } from "@/components/MidPageCta";
 import { buildMetadata } from "@/lib/metadata";
 import Image from "next/image";
 import Link from "next/link";
@@ -27,10 +28,11 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
-import { PHONE, PHONE_DISPLAY, WHATSAPP } from "@/lib/company";
-const WA = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
-  "Hi AGEC, I'd like to book an AC service. Number of units and area: ",
-)}`;
+import { PriceTable } from "@/components/PriceTable";
+import { prices, visibleRows, offersFor } from "@/data/prices";
+import { PHONE, PHONE_DISPLAY } from "@/lib/company";
+import { whatsappUrl } from "@/lib/contact";
+const WA = whatsappUrl("/ac-maintenance-dubai");
 const CANONICAL = "/ac-maintenance-dubai";
 
 export const metadata = buildMetadata({
@@ -94,7 +96,7 @@ const areas = ["Dubai", "Abu Dhabi", "Sharjah", "Ajman", "Ras Al Khaimah", "Umm 
 
 const faqs: { q: string; a: string }[] = [
   { q: "How often should I service my AC in Dubai?", a: "Because AC runs almost year-round in the UAE, we recommend servicing every 3–4 months (3–4 times a year), or at minimum before and during the summer peak. Homes with heavy use, pets or dust exposure benefit from more frequent visits. An AMC schedules this automatically." },
-  { q: "How much does AC maintenance cost in Dubai?", a: "A one-off service starts from AED 350 per machine, with a minimum of 3 units. The exact cost depends on the number and type of units and whether it's a one-off service or an annual contract. We confirm a transparent fixed price upfront after understanding your system — with no hidden charges. AMC plans reduce the per-visit cost." },
+  { q: "How much does AC maintenance cost in Dubai?", a: `A one-off service starts from AED ${prices.maintenance[0].from} per machine, with a minimum of 3 units. The exact cost depends on the number and type of units and whether it's a one-off service or an annual contract. We confirm a transparent fixed price upfront after understanding your system — with no hidden charges. AMC plans reduce the per-visit cost.` },
   { q: "Do you service all AC brands?", a: "Yes. We service every major brand and system type — split, ducted, cassette, VRF/VRV, chillers and package units — including Daikin, O General, Carrier, Gree, Midea, LG, Mitsubishi, Trane and more." },
   { q: "Do you offer same-day or emergency AC repair?", a: "Yes. We provide same-day service where possible and 24/7 emergency breakdown support across Dubai and the UAE — important when your AC fails during peak summer." },
   { q: "What is included in an AC service?", a: "A standard service typically includes cleaning filters and coils, clearing the drainage line, checking refrigerant pressure, inspecting electrical connections and controls, and testing cooling performance — followed by a service report." },
@@ -120,6 +122,7 @@ const serviceSchema = {
   serviceType: "Air Conditioning Maintenance & Repair",
   provider: { "@id": "https://agec.ae/#business" },
   areaServed: areas,
+  ...(offersFor(prices.maintenance).length ? { offers: offersFor(prices.maintenance) } : {}),
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "AC Maintenance Services",
@@ -176,7 +179,7 @@ export default async function AcMaintenancePage() {
               top-ups and annual maintenance contracts — for villas, apartments and businesses across the UAE.
             </p>
             <p className="mt-5 inline-flex flex-wrap items-baseline gap-2 rounded-lg bg-white/10 px-4 py-2.5 text-base font-semibold text-white">
-              One-off service from AED 350 per machine
+              One-off service from AED {prices.maintenance[0].from} per machine
               <span className="text-sm font-normal text-white/70">· minimum 3 units</span>
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -238,6 +241,9 @@ export default async function AcMaintenancePage() {
           </div>
         </div>
       </section>
+
+      {/* Mid-page lead block, directly after the first proof section */}
+      <MidPageCta service="AC maintenance" path="/ac-maintenance-dubai" />
 
       {/* SERVICES */}
       <section id="services" className="bg-bg-soft py-16 md:py-24">
@@ -343,6 +349,17 @@ export default async function AcMaintenancePage() {
           </p>
         </div>
       </section>
+
+      {/* PRICES — rows appear only once their price is confirmed in src/data/prices.ts */}
+      {visibleRows(prices.maintenance).length > 0 && (
+        <section id="prices" className="bg-bg-soft py-16 md:py-20">
+          <div className="mx-auto max-w-4xl px-6">
+            <p className={eyebrow}>Pricing</p>
+            <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">Prices</h2>
+            <PriceTable rows={prices.maintenance} caption="AC maintenance prices" />
+          </div>
+        </section>
+      )}
 
       {/* FAQ */}
       <section id="faq" className="bg-bg-soft py-16 md:py-24">

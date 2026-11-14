@@ -49,13 +49,13 @@ export function ArabicChrome({ children }: { children: React.ReactNode }) {
       {/* Header */}
       <header className="relative border-b border-border">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-3">
-          <Link href="/ar" aria-label="AGEC — الصفحة الرئيسية">
+          <Link prefetch={false} href="/ar" aria-label="AGEC — الصفحة الرئيسية">
             <Logo />
           </Link>
           <nav className="hidden items-center gap-6 md:flex">
             {navLinks.map((link, i) => (
               <Fragment key={link.href}>
-                <Link
+                <Link prefetch={false}
                   href={link.href}
                   className="text-sm font-medium text-text-muted hover:text-text transition-colors"
                 >
@@ -64,13 +64,13 @@ export function ArabicChrome({ children }: { children: React.ReactNode }) {
                 {i === 0 && <ServicesMegaMenu lang="ar" />}
               </Fragment>
             ))}
-            <Link
+            <Link prefetch={false}
               href={enHref}
               className="text-sm font-semibold text-primary hover:underline"
             >
               English
             </Link>
-            <Link
+            <Link prefetch={false}
               href="/ar/quote"
               className="rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark transition-colors"
             >
@@ -84,7 +84,7 @@ export function ArabicChrome({ children }: { children: React.ReactNode }) {
               {PHONE_DISPLAY}
             </a>
           </nav>
-          <Link
+          <Link prefetch={false}
             href={enHref}
             className="text-sm font-semibold text-primary hover:underline md:hidden"
           >
@@ -95,7 +95,7 @@ export function ArabicChrome({ children }: { children: React.ReactNode }) {
         <nav className="flex flex-col border-t border-border px-6 py-1 md:hidden">
           {navLinks.map((link, i) => (
             <Fragment key={link.href}>
-              <Link
+              <Link prefetch={false}
                 href={link.href}
                 className="py-2.5 text-base font-medium text-text-muted hover:text-text transition-colors"
               >
@@ -112,7 +112,7 @@ export function ArabicChrome({ children }: { children: React.ReactNode }) {
       {/* Footer */}
       <footer className="border-t border-border bg-bg-soft">
         <div className="mx-auto max-w-7xl px-6 py-12">
-          <Link href="/ar" aria-label="AGEC — الصفحة الرئيسية">
+          <Link prefetch={false} href="/ar" aria-label="AGEC — الصفحة الرئيسية">
             <Logo />
           </Link>
           <p className="mt-3 text-sm text-text-muted">
@@ -128,11 +128,11 @@ export function ArabicChrome({ children }: { children: React.ReactNode }) {
             متاحون على الهاتف والواتساب على مدار الساعة — نرد خلال ساعة واحدة.
           </p>
           <div className="mt-6 flex items-center justify-center gap-3 border-t border-border pt-6 text-center text-xs text-text-muted">
-            <Link href="/ar/privacy-policy" className="hover:text-text transition-colors">
+            <Link prefetch={false} href="/ar/privacy-policy" className="hover:text-text transition-colors">
               سياسة الخصوصية
             </Link>
             <span aria-hidden="true">·</span>
-            <Link href="/ar/terms" className="hover:text-text transition-colors">
+            <Link prefetch={false} href="/ar/terms" className="hover:text-text transition-colors">
               شروط الاستخدام
             </Link>
           </div>
@@ -144,7 +144,7 @@ export function ArabicChrome({ children }: { children: React.ReactNode }) {
       </footer>
 
       {/* Mobile sticky contact bar */}
-      <div className="fixed inset-x-0 bottom-0 z-40 flex border-t border-border bg-white md:hidden">
+      <div data-track-location="sticky_bar" className="fixed inset-x-0 bottom-0 z-40 flex border-t border-border bg-white md:hidden">
         <a
           href={`tel:${PHONE}`}
           aria-label="اتصل بـ AGEC"

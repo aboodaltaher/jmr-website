@@ -2,12 +2,11 @@
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 import { Check } from "lucide-react";
 import { submitContactForm } from "@/app/actions";
 import { trackFormSubmit } from "@/lib/gtag";
 import { FormAssurance } from "@/components/FormAssurance";
+import { type FormOf, defineSchema, resolver, required, optionalText, optionalEmail } from "@/lib/form-schema";
 
 type Lang = "en" | "ar";
 
@@ -44,27 +43,27 @@ export function ContactForm({ lang = "en" }: { lang?: Lang }) {
   const t = T[lang];
   const [submitted, setSubmitted] = useState(false);
 
-  const schema = z.object({
-    name: z.string().min(1, t.errName),
+  const schema = defineSchema({
+    name: required(t.errName),
     // Email is optional; if given it must be valid. Phone is the required contact.
-    email: z.string().email(t.errEmail).optional().or(z.literal("")),
-    phone: z.string().min(1, t.errPhone),
-    subject: z.string().optional(),
-    message: z.string().min(1, t.errMessage),
+    email: optionalEmail(t.errEmail),
+    phone: required(t.errPhone),
+    subject: optionalText(),
+    message: required(t.errMessage),
   });
-  type FormData = z.infer<typeof schema>;
+  type FormData = FormOf<typeof schema>;
 
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
-  } = useForm<FormData>({ resolver: zodResolver(schema) });
+  } = useForm<FormData>({ resolver: resolver(schema) });
 
   const onSubmit = async (data: FormData) => {
     const result = await submitContactForm(data);
     if (result.success) {
       setSubmitted(true);
-      trackFormSubmit("contact");
+      trackFormSubmit("contact", "contact", "contact_page");
     }
   };
 

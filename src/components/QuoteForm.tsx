@@ -2,13 +2,12 @@
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 import { useRouter } from "next/navigation";
 import { Check } from "lucide-react";
 import { submitRequest } from "@/app/actions";
 import { trackFormSubmit } from "@/lib/gtag";
 import { FormAssurance } from "@/components/FormAssurance";
+import { type FormOf, defineSchema, resolver, required, optionalText, optionalEmail } from "@/lib/form-schema";
 
 type Lang = "en" | "ar";
 
@@ -72,26 +71,26 @@ export function QuoteForm({ lang = "en" }: { lang?: Lang }) {
   const router = useRouter();
   const [submitted, setSubmitted] = useState(false);
 
-  const schema = z.object({
-    requestType: z.string().min(1, t.errType),
-    name: z.string().min(1, t.errName),
-    phone: z.string().min(1, t.errPhone),
-    email: z.string().email(t.errEmail).optional().or(z.literal("")),
-    location: z.string().optional(),
-    details: z.string().optional(),
+  const schema = defineSchema({
+    requestType: required(t.errType),
+    name: required(t.errName),
+    phone: required(t.errPhone),
+    email: optionalEmail(t.errEmail),
+    location: optionalText(),
+    details: optionalText(),
   });
-  type FormData = z.infer<typeof schema>;
+  type FormData = FormOf<typeof schema>;
 
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
-  } = useForm<FormData>({ resolver: zodResolver(schema) });
+  } = useForm<FormData>({ resolver: resolver(schema) });
 
   const onSubmit = async (data: FormData) => {
     const result = await submitRequest(data);
     if (result.success) {
-      trackFormSubmit("quote");
+      trackFormSubmit("quote", "quote", "quote_page");
       // English flows to the dedicated thank-you page (conversion tracking);
       // Arabic has no thank-you route, so confirm inline.
       if (lang === "ar") setSubmitted(true);

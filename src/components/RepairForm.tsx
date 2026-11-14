@@ -2,22 +2,21 @@
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 import { Check, Phone, MessageCircle } from "lucide-react";
 import { submitRepairRequest } from "@/app/actions";
 import { trackFormSubmit } from "@/lib/gtag";
 import { PHONE } from "@/lib/contact";
 import { FormAssurance } from "@/components/FormAssurance";
+import { type FormOf, defineSchema, resolver, required } from "@/lib/form-schema";
 
-const schema = z.object({
-  name: z.string().min(1, "Name is required"),
-  phone: z.string().min(1, "Phone number is required"),
-  area: z.string().min(1, "Area is required"),
-  issue: z.string().min(1, "Please describe the issue"),
+const schema = defineSchema({
+  name: required("Name is required"),
+  phone: required("Phone number is required"),
+  area: required("Area is required"),
+  issue: required("Please describe the issue"),
 });
 
-type FormData = z.infer<typeof schema>;
+type FormData = FormOf<typeof schema>;
 
 const inputClass = (hasError: boolean) =>
   `w-full rounded-md border ${hasError ? "border-red-500" : "border-border"} bg-white px-4 py-3 text-sm transition-colors focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary`;
@@ -28,13 +27,13 @@ export function RepairForm({ whatsappHref }: { whatsappHref: string }) {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
-  } = useForm<FormData>({ resolver: zodResolver(schema) });
+  } = useForm<FormData>({ resolver: resolver(schema) });
 
   const onSubmit = async (data: FormData) => {
     const result = await submitRepairRequest(data);
     if (result.success) {
       setSubmitted(true);
-      trackFormSubmit("repair");
+      trackFormSubmit("repair", "quote", "repair_page");
     }
   };
 

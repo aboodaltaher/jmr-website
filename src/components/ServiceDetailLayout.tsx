@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Check, type LucideIcon } from "lucide-react";
+import { MidPageCta } from "@/components/MidPageCta";
 import { RelatedServices } from "@/components/RelatedServices";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { AREA_SERVED_SCHEMA, PHONE, PHONE_DISPLAY } from "@/lib/company";
@@ -293,6 +294,9 @@ export function ServiceDetailLayout({
           </ul>
         </div>
       </section>
+
+      {/* Mid-page lead block, directly after the first proof section (the "Why AGEC" checklist) */}
+      <MidPageCta service={title} path={`/${slug ?? ""}`} lang={lang} />
 
       {extraSection}
 

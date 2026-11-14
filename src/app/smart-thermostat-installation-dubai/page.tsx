@@ -5,7 +5,8 @@ import { RelatedServices } from "@/components/RelatedServices";
 import { InlineLeadForm } from "@/components/InlineLeadForm";
 import { BreadcrumbBand } from "@/components/Breadcrumbs";
 import { MAPS_URL, reviewStats } from "@/lib/reviews";
-import { THERMOSTAT_SAVINGS, EMAIL, PHONE, PHONE_DISPLAY, WHATSAPP } from "@/lib/company";
+import { THERMOSTAT_SAVINGS, EMAIL, PHONE, PHONE_DISPLAY } from "@/lib/company";
+import { whatsappUrl } from "@/lib/contact";
 import {
   PRICE_NEST_SUPPLY,
   PRICE_ECOBEE_SUPPLY,
@@ -40,9 +41,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
-const WA = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
-  "Hi AGEC, can you check if a Nest or ecobee works with my AC? Brand and model: ",
-)}`;
+const WA = whatsappUrl("/smart-thermostat-installation-dubai");
 const CANONICAL = "/smart-thermostat-installation-dubai";
 
 export const metadata = buildMetadata({

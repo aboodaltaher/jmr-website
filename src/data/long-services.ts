@@ -22,11 +22,12 @@ export interface LongService {
   kicker: string;
   /** schema.org Service.serviceType */
   serviceType: string;
+  /** Short service name for the mid-page "Talk to an engineer about your …" headline (defaults to serviceType). */
+  ctaService?: string;
   intro: string[];
   sections: LongSection[];
   faqs: { q: string; a: string }[];
   related: { href: string; label: string }[];
-  whatsappText: string;
   ctaHeading: string;
   ctaText: string;
 }
@@ -147,9 +148,8 @@ export const DUCTING: LongService = {
     { href: "/services/tab-testing-adjusting-balancing-dubai", label: "Testing, adjusting & balancing" },
     { href: "/ac-duct-cleaning-dubai", label: "AC duct cleaning" },
   ],
-  whatsappText: "Hi AGEC, I'd like to discuss AC ducting installation or duct modification.",
   ctaHeading: "Get a quote for ductwork",
-  ctaText: "Send us the drawings or a few photos of the space and the system. We reply on call and WhatsApp.",
+  ctaText: "Send us the drawings or a few photos of the space and the system.",
 };
 
 export const MEP: LongService = {
@@ -161,6 +161,7 @@ export const MEP: LongService = {
   h1: "HVAC Contractor for MEP Projects in Dubai",
   kicker: "MEP projects · HVAC scope · Coordination",
   serviceType: "HVAC contracting for MEP projects",
+  ctaService: "HVAC package for an MEP project",
   intro: [
     "On most buildings the HVAC package is the largest and most space-hungry part of the MEP scope: big ducts, chilled-water or refrigerant pipework, plant on the roof and risers through every floor. It is also the package that clashes with everyone else. AGEC is an HVAC contractor. Our trade licence covers air-conditioning, ventilation and air-filtration systems, installation and maintenance, and on an MEP project that is the package we take.",
     "This page is deliberately specific. We deliver the HVAC package with our own teams and coordinate its interfaces with the electrical, plumbing, fire-protection and controls contractors, who are appointed separately. We do not offer those trades ourselves.",
@@ -184,7 +185,7 @@ export const MEP: LongService = {
       h2: "Other trades: coordinated, not delivered by us",
       paragraphs: [
         "A building also needs electrical, plumbing and drainage, fire fighting, fire alarm and controls. Those are carried out by their own licensed contractors, appointed by the client or the main contractor, and they are outside our scope. Our role is to make sure the HVAC design and installation fit with their work, and that the interfaces between them are settled before they reach site.",
-        "Interfaces that always need an owner are the power supply and isolators for HVAC equipment, condensate drainage routes, fire dampers and smoke-control interface, and controls and BMS integration. We agree in writing at the start of the project who supplies and who connects each of these.",
+        "Interfaces that always need an owner are the power supply and isolators for HVAC equipment, condensate drainage routes, the points where our ductwork meets fire dampers and the fire alarm, and the link to the building controls. We supply and connect our own HVAC equipment only. For every other item, we agree in writing at the start of the project which contractor is responsible, so nothing is left without an owner.",
       ],
     },
     {
@@ -196,7 +197,7 @@ export const MEP: LongService = {
       bullets: [
         "Clash review of ducts, pipework and equipment against structure and other services",
         "Ceiling-void and riser allocation agreed before fabrication",
-        "Written interface list: power, drainage, controls, fire and smoke",
+        "Written interface list: power, drainage, controls and fire-alarm interfaces, with an owner for each",
         "Regular coordination with the consultant and main contractor",
       ],
     },
@@ -210,7 +211,7 @@ export const MEP: LongService = {
     {
       h2: "Authority approvals",
       paragraphs: [
-        "Mechanical and ventilation works in Dubai involve authority requirements, particularly around fire and life safety for smoke ventilation, pressurisation and fire dampers, and building-authority requirements for the installation itself. Our ventilation and design documentation is prepared to support Dubai Municipality and Civil Defence review where it applies.",
+        "Mechanical and ventilation works in Dubai involve authority requirements for the installation itself. Fire and life-safety systems, including smoke control and pressurisation, are designed and approved by the fire-protection designer and contractor, not by us. Where our HVAC system interfaces with them, for example a fire damper in our ductwork or shutdown of air handling units on alarm, we coordinate that interface and document our side of it.",
         "The consultant submits authority approvals and NOCs; AGEC prepares and supplies the HVAC drawings, calculations and documents for submission.",
       ],
     },
@@ -262,9 +263,8 @@ export const MEP: LongService = {
     { href: "/ac-amc-dubai", label: "AC maintenance contracts" },
     { href: "/about", label: "About AGEC" },
   ],
-  whatsappText: "Hi AGEC, I'd like to discuss the HVAC package for an MEP project.",
   ctaHeading: "Discuss the HVAC scope of your project",
-  ctaText: "Send us the drawings or the scope. We reply on call and WhatsApp.",
+  ctaText: "Send us the drawings or the scope.",
 };
 
 // Kitchen exhaust & hood cleaning. Published (see NEW_PAGES.kitchenExhaust). Every claim
@@ -373,7 +373,6 @@ export const KITCHEN_EXHAUST: LongService = {
     { href: "/projects/ave-restaurant-business-bay", label: "AVE Restaurant case study" },
     { href: "/ac-duct-cleaning-dubai", label: "AC duct cleaning" },
   ],
-  whatsappText: "Hi AGEC, I'd like to ask about kitchen exhaust and hood cleaning.",
   ctaHeading: "Book a kitchen exhaust clean",
-  ctaText: "Tell us about the kitchen and your opening hours. We reply on call and WhatsApp.",
+  ctaText: "Tell us about the kitchen and your opening hours.",
 };

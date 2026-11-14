@@ -69,7 +69,7 @@ export function ServicesMobileAccordion({
                       const current = isCurrent(href);
                       return (
                         <li key={item.label}>
-                          <Link
+                          <Link prefetch={false}
                             href={href}
                             aria-current={current ? "page" : undefined}
                             onClick={() => {
@@ -91,7 +91,7 @@ export function ServicesMobileAccordion({
             );
           })}
           <div className="border-t border-border">
-            <Link
+            <Link prefetch={false}
               href={ar ? bottom.allServices.arHref ?? bottom.allServices.href : bottom.allServices.href}
               onClick={() => {
                 gaEvent("nav_click", { menu: "services", group: "bottom", label: "all-services" });

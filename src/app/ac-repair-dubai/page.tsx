@@ -1,3 +1,4 @@
+import { MidPageCta } from "@/components/MidPageCta";
 import { buildMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { RelatedServices } from "@/components/RelatedServices";
@@ -6,6 +7,8 @@ import { Check, Phone, MessageCircle } from "lucide-react";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { RepairForm } from "@/components/RepairForm";
 import { PHONE, whatsappUrl } from "@/lib/contact";
+import { PriceTable } from "@/components/PriceTable";
+import { prices, offersFor } from "@/data/prices";
 
 const SITE_URL = "https://agec.ae";
 const ROUTE = "/ac-repair-dubai";
@@ -71,6 +74,7 @@ const serviceSchema = {
     name: "AGEC Technical Services",
     url: SITE_URL,
   },
+  ...(offersFor(prices.repair).length ? { offers: offersFor(prices.repair) } : {}),
   areaServed: "United Arab Emirates",
 };
 
@@ -179,6 +183,9 @@ export default function AcRepairPage() {
         </div>
       </section>
 
+      {/* Mid-page lead block, directly after the first proof section */}
+      <MidPageCta service="AC repair" path="/ac-repair-dubai" />
+
       {/* HOW A REPAIR VISIT WORKS */}
       <section className="bg-bg-soft py-16 md:py-20">
         <div className="mx-auto max-w-4xl px-6">
@@ -227,6 +234,7 @@ export default function AcRepairPage() {
             repair in writing before any work begins — you approve the cost
             before we start, with no obligation.
           </p>
+          <PriceTable rows={prices.repair} caption="AC repair call-out and typical repair prices" />
         </div>
       </section>
 
