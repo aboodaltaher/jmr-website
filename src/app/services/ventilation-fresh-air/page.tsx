@@ -125,6 +125,11 @@ export default function VentilationFreshAir() {
           a: "Measured airflow by area, CO₂ readings, a comparison against the design and the applicable standard, the likely cause of any shortfall, and the recommended corrective actions — so you have a documented basis for the fix and for consultant or landlord sign-off.",
         },
       ]}
+      relatedProjectSlugs={[
+        "cultural-center-al-barsha",
+        "pure-gym-al-barsha",
+        "ave-restaurant-business-bay",
+      ]}
     />
   );
 }

@@ -29,6 +29,8 @@ export interface Project {
   };
   /** When false, a full case-study page renders and is listed in the sitemap. */
   draft: boolean;
+  /** Content-last-changed date, YYYY-MM-DD. Feeds the sitemap's <lastmod>. */
+  updatedAt: string;
 
   // ----- Case-study content -----
   /** One-line project type, e.g. "Commercial HVAC installation". */
@@ -54,6 +56,7 @@ export const projects: Project[] = [
     systemSummary: "HVAC Installation & Commissioning, 109 Ton VRF System",
     location: { area: "Al Mamzar", emirate: "Dubai", label: "Al Mamzar, Dubai" },
     draft: false,
+    updatedAt: "2026-11-13",
     projectType: "Residential HVAC installation",
     systemType: "109 TR VRF",
     overview:
@@ -79,6 +82,7 @@ export const projects: Project[] = [
     systemSummary: "HVAC Installation & Commissioning, 224 Ton VRF System",
     location: { emirate: "Ajman", label: "Ajman, UAE" },
     draft: false,
+    updatedAt: "2026-11-04",
     projectType: "Commercial HVAC installation & commissioning",
     systemType: "224 TR VRF",
     overview:
@@ -97,6 +101,7 @@ export const projects: Project[] = [
     systemSummary: "HVAC Full Installation, 148 Ton DX System",
     location: { emirate: "Dubai", label: "Dubai, UAE" },
     draft: false,
+    updatedAt: "2026-11-04",
     projectType: "Residential HVAC installation",
     systemType: "148 TR DX",
     overview:
@@ -115,6 +120,7 @@ export const projects: Project[] = [
     systemSummary: "HVAC Installation & Commissioning, 60 Ton DX System",
     location: { emirate: "Sharjah", label: "Sharjah, UAE" },
     draft: false,
+    updatedAt: "2026-11-04",
     projectType: "Residential HVAC installation",
     systemType: "60 TR DX",
     overview:
@@ -133,6 +139,7 @@ export const projects: Project[] = [
     systemSummary: "HVAC Installation & Commissioning, 45 Ton DX System",
     location: { emirate: "Dubai", label: "Dubai, UAE" },
     draft: false,
+    updatedAt: "2026-11-04",
     projectType: "Residential HVAC installation",
     systemType: "45 TR DX",
     overview:
@@ -151,6 +158,7 @@ export const projects: Project[] = [
     systemSummary: "HVAC Installation, 140 Ton DX System",
     location: { area: "Al Barsha", emirate: "Dubai", label: "Dubai, UAE" },
     draft: false,
+    updatedAt: "2026-11-04",
     projectType: "Residential HVAC installation",
     systemType: "140 TR DX",
     overview:
@@ -169,6 +177,7 @@ export const projects: Project[] = [
     systemSummary: "Full HVAC works across 18 G+1 villas",
     location: { area: "Al Rgebah / Al Seyouh", label: "Al Rgebah / Al Seyouh" },
     draft: false,
+    updatedAt: "2026-11-04",
     projectType: "Residential HVAC — multi-villa community",
     systemType: "HVAC across 18 villas",
     overview:
@@ -187,6 +196,7 @@ export const projects: Project[] = [
     systemSummary: "Premium HVAC system, flagship residential project",
     location: { emirate: "Sharjah", label: "Sharjah, UAE" },
     draft: false,
+    updatedAt: "2026-11-04",
     projectType: "Premium residential HVAC installation",
     systemType: "Premium residential HVAC",
     overview:
@@ -205,6 +215,7 @@ export const projects: Project[] = [
     systemSummary: "Precision cooling for AI server infrastructure",
     location: { area: "Masdar City", emirate: "Abu Dhabi", label: "Masdar City, Abu Dhabi" },
     draft: false,
+    updatedAt: "2026-11-04",
     projectType: "Data-centre precision cooling",
     systemType: "Precision (close-control) cooling",
     overview:
@@ -223,6 +234,7 @@ export const projects: Project[] = [
     systemSummary: "HVAC installation and ventilation system",
     location: { area: "Al Barsha", emirate: "Dubai", label: "Al Barsha, Dubai" },
     draft: false,
+    updatedAt: "2026-11-04",
     projectType: "Commercial HVAC & ventilation",
     systemType: "HVAC & ventilation",
     overview:
@@ -241,6 +253,7 @@ export const projects: Project[] = [
     systemSummary: "Kitchen ventilation and dining area cooling",
     location: { area: "Business Bay", emirate: "Dubai", label: "Business Bay, Dubai" },
     draft: false,
+    updatedAt: "2026-11-04",
     projectType: "Restaurant HVAC & kitchen ventilation",
     systemType: "Cooling & kitchen ventilation",
     overview:
@@ -259,6 +272,7 @@ export const projects: Project[] = [
     systemSummary: "Precision cooling and ventilation",
     location: { area: "Musaffah", emirate: "Abu Dhabi", label: "Musaffah, Abu Dhabi" },
     draft: false,
+    updatedAt: "2026-11-04",
     projectType: "Data-centre precision cooling & ventilation",
     systemType: "Precision cooling & ventilation",
     overview:
@@ -277,6 +291,7 @@ export const projects: Project[] = [
     systemSummary: "HVAC works for public cultural facility",
     location: { area: "Al Barsha", emirate: "Dubai", label: "Al Barsha, Dubai" },
     draft: false,
+    updatedAt: "2026-11-04",
     projectType: "Public / cultural facility HVAC",
     systemType: "HVAC works",
     overview:

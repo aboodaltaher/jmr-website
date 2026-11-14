@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Check, type LucideIcon } from "lucide-react";
 import { RelatedServices } from "@/components/RelatedServices";
 import { AREA_SERVED_SCHEMA } from "@/lib/company";
+import { getProjectBySlug } from "@/data/projects";
 
 interface Capability {
   icon: LucideIcon;
@@ -32,6 +33,8 @@ interface ServiceDetailLayoutProps {
   slug?: string;
   /** Optional inline lead form rendered just above the closing CTA band. */
   leadForm?: React.ReactNode;
+  /** Slugs of related case studies to link (English subtree only). */
+  relatedProjectSlugs?: string[];
   /** Locale. "ar" localises the headings/CTA and points links at the /ar subtree. */
   lang?: Lang;
 }
@@ -99,6 +102,7 @@ export function ServiceDetailLayout({
   faq,
   slug,
   leadForm,
+  relatedProjectSlugs,
   lang = "en",
 }: ServiceDetailLayoutProps) {
   const s = STRINGS[lang];
@@ -320,6 +324,44 @@ export function ServiceDetailLayout({
                   </p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Related projects — English subtree only. Gives each case study an
+          inbound link from a relevant service page (internal-linking / indexing). */}
+      {lang === "en" && relatedProjectSlugs && relatedProjectSlugs.length > 0 && (
+        <section className="py-16 md:py-20">
+          <div className="mx-auto max-w-7xl px-6">
+            <h2 className="font-heading text-3xl font-bold md:text-4xl">
+              Related projects
+            </h2>
+            <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {relatedProjectSlugs.map((projectSlug) => {
+                const p = getProjectBySlug(projectSlug);
+                if (!p || p.draft) return null;
+                return (
+                  <Link
+                    key={p.slug}
+                    href={`/projects/${p.slug}`}
+                    className="group rounded-lg border border-border bg-white p-6 transition-all hover:-translate-y-1 hover:shadow-lg"
+                  >
+                    <p className="text-xs font-semibold uppercase tracking-widest text-primary">
+                      {p.category}
+                    </p>
+                    <h3 className="mt-2 font-heading text-lg font-semibold group-hover:text-primary">
+                      {p.name}
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed text-text-muted">
+                      {p.systemSummary}
+                    </p>
+                    <span className="mt-4 inline-block text-sm font-medium text-primary">
+                      View case study &rarr;
+                    </span>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </section>

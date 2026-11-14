@@ -117,6 +117,11 @@ export default function DxUnits() {
         "ASHRAE 111 and SMACNA compliant installation practices with full commissioning documentation",
         "Refrigerant piping to manufacturer standards: nitrogen-purged brazing, 500-micron vacuum hold test, and weighed charge",
       ]}
+      relatedProjectSlugs={[
+        "private-g4-building-dubai",
+        "villa-al-barsha-dubai",
+        "g1r-villa-dubai",
+      ]}
     />
   );
 }

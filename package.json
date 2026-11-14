@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
-    "seo-check": "node scripts/seo-check.mjs"
+    "seo-check": "node scripts/seo-check.ts",
+    "seo-check:legacy": "node scripts/seo-check.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.4.0",

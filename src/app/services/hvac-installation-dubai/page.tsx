@@ -138,6 +138,11 @@ export default function HvacInstallation() {
           a: "We can. Many clients move straight onto a maintenance plan or annual contract after handover so the system is serviced on schedule from day one.",
         },
       ]}
+      relatedProjectSlugs={[
+        "18-villas-community",
+        "vrf-villa-al-mamzar-dubai",
+        "private-villa-sharjah-flagship",
+      ]}
     />
   );
 }

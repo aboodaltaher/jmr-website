@@ -126,7 +126,16 @@ export function ArabicChrome({ children }: { children: React.ReactNode }) {
           <p className="mt-4 text-xs text-text-muted">
             متاحون على الهاتف والواتساب على مدار الساعة — نرد خلال ساعة واحدة.
           </p>
-          <p className="mt-6 border-t border-border pt-6 text-center text-xs text-text-muted">
+          <div className="mt-6 flex items-center justify-center gap-3 border-t border-border pt-6 text-center text-xs text-text-muted">
+            <Link href="/ar/privacy-policy" className="hover:text-text transition-colors">
+              سياسة الخصوصية
+            </Link>
+            <span aria-hidden="true">·</span>
+            <Link href="/ar/terms" className="hover:text-text transition-colors">
+              شروط الاستخدام
+            </Link>
+          </div>
+          <p className="mt-3 text-center text-xs text-text-muted">
             &copy; {new Date().getFullYear()} AGEC Technical Services L.L.C. ·
             رخصة تجارية دبي رقم 1221573. جميع الحقوق محفوظة.
           </p>

@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import ReactMarkdown, { type Components } from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Phone, MessageCircle } from "lucide-react";
-import { getAllSlugs, getPostBySlug } from "@/lib/blog";
+import { getAllSlugs, getPostBySlug, getAllPosts } from "@/lib/blog";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { RelatedServices } from "@/components/RelatedServices";
 import { AuthorByline } from "@/components/AuthorByline";
@@ -15,28 +15,17 @@ import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 
 const SITE_URL = "https://agec.ae";
 
-const relatedReading = [
-  {
-    href: "/smart-thermostat-installation-dubai",
-    title: "Smart Thermostat Installation",
-    description: "Supply & professional installation of Google Nest and ecobee across the UAE.",
-  },
-  {
-    href: "/services/vrf-vrv-systems",
-    title: "VRF / VRV Systems",
-    description: "Multi-zone climate control for villas and commercial buildings.",
-  },
-  {
-    href: "/services/chiller-maintenance-dubai",
-    title: "Chiller Systems",
-    description: "Air-cooled and water-cooled chiller plants for large-scale cooling.",
-  },
-  {
-    href: "/services/hvac-design",
-    title: "HVAC Design & Consultancy",
-    description: "Heat load calculations and full system design.",
-  },
-];
+// Other published posts to surface under "Related reading", so every post is
+// linked from several siblings (internal linking / indexing). Deterministic:
+// the three posts that follow the current one in the published list, wrapping
+// around, so every post is both a source and a target.
+function relatedPostsFor(slug: string, count = 3) {
+  const all = getAllPosts();
+  const i = all.findIndex((p) => p.slug === slug);
+  if (i === -1) return all.slice(0, count);
+  return Array.from({ length: count }, (_, n) => all[(i + 1 + n) % all.length])
+    .filter((p) => p.slug !== slug);
+}
 
 // FAQ content for posts that have an FAQ section, keyed by slug. Used to emit
 // FAQPage JSON-LD. Mirrors the visible "Frequently asked questions" section in
@@ -233,6 +222,8 @@ export default async function ArticlePage({
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) notFound();
+
+  const relatedPosts = relatedPostsFor(slug);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -460,31 +451,33 @@ export default async function ArticlePage({
 
       <RelatedServices limit={3} heading="Explore our HVAC services" />
 
-      {/* Related Reading */}
-      <section className="border-t border-border py-16 md:py-20">
-        <div className="mx-auto max-w-7xl px-6">
-          <h2 className="font-heading text-3xl font-bold">Related reading</h2>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {relatedReading.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="group rounded-lg border border-border bg-white p-6 transition-all hover:-translate-y-1 hover:shadow-lg"
-              >
-                <h3 className="font-heading text-lg font-semibold">
-                  {item.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-text-muted">
-                  {item.description}
-                </p>
-                <span className="mt-4 inline-block text-sm font-medium text-primary">
-                  Read more &rarr;
-                </span>
-              </Link>
-            ))}
+      {/* Related Reading — other posts */}
+      {relatedPosts.length > 0 && (
+        <section className="border-t border-border py-16 md:py-20">
+          <div className="mx-auto max-w-7xl px-6">
+            <h2 className="font-heading text-3xl font-bold">Related reading</h2>
+            <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {relatedPosts.map((item) => (
+                <Link
+                  key={item.slug}
+                  href={`/blog/${item.slug}`}
+                  className="group rounded-lg border border-border bg-white p-6 transition-all hover:-translate-y-1 hover:shadow-lg"
+                >
+                  <h3 className="font-heading text-lg font-semibold group-hover:text-primary">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-text-muted">
+                    {item.excerpt}
+                  </p>
+                  <span className="mt-4 inline-block text-sm font-medium text-primary">
+                    Read more &rarr;
+                  </span>
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
     </>
   );
 }
