@@ -54,3 +54,21 @@ Setup in `src/app/layout.tsx` and `src/components/GoogleTag.tsx`:
 PSI's two chunks: `0un~tui._1_~8.js` was zod plus react-hook-form (removed in #55, gone from the build);
 `17crzj_229p52.js` is the React/Next runtime chunk (69 KB, 26 KB unused, not app code). Nothing left to split
 without touching the hero form.
+
+## Round 2 (after PSI on production: 68 to 73, LCP still 6.6 s)
+
+- **gtag.js** is now loaded with the GA4 ID (`gtag/js?id=G-H7HNVQGSYM`), and `config` is called for both `G-H7HNVQGSYM`
+  and `AW-18332305339`. PSI had shown two `gtag/js` requests (G- and AW-). Our code only ever requested one; the
+  second most likely comes from gtag.js itself fetching the other destination when it is configured. Whether loading
+  with the G- ID removes it depends on how the two tags are linked in Google (GA4 Admin, Google tag, connected
+  destinations); check the Network panel on production after deploy.
+- **Fonts:** Inter (48 KB, body) is no longer preloaded (`preload: false`, still `display: swap`). The Saira Condensed
+  600 and 700 files (about 12 KB each) are still preloaded: `next/font` preloads every weight of a family, and the hero
+  headline uses 700 while other headings use 600. Preloading only 700 would need the fonts self-hosted or the 600 weight
+  dropped, which changes the look. Lab LCP with no Google tag: 3.09 s before, 2.56 s after, CLS 0.0007.
+- **Image sizes:** `images.deviceSizes` is `[640, 750, 828, 1080, 1280, 1440, 1920]` (was default incl. 1200, 2048, 3840). A
+  1414 px wide viewport now gets the 1440 px AVIF (28.9 KB) instead of the 1920 px one (38.9 KB). Phones at 375 to 412 px
+  already got the 750 px AVIF (13.5 KB).
+- **Lighthouse CI:** LCP stays a warning.
+- **Ads form label:** `REPLACE_FORM_LABEL` is still a placeholder. `trackConversion` returns before calling gtag, so nothing
+  is sent and nothing throws (checked: no events, no JS errors after a hero form submit).
