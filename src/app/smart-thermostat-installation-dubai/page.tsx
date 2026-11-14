@@ -441,6 +441,7 @@ export default async function SmartThermostatPage() {
                 width={300}
                 height={300}
                 priority
+                fetchPriority="high"
                 className="relative max-h-[250px] w-auto object-contain drop-shadow-2xl"
               />
             </div>

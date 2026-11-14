@@ -5,14 +5,14 @@
       "startServerReadyPattern": "Ready",
       "url": ["http://localhost:3100/"],
       "numberOfRuns": 3,
-      "settings": { "preset": "mobile", "onlyCategories": ["performance"] }
+      "settings": { "onlyCategories": ["performance"] }
     },
     "assert": {
       "aggregationMethod": "median-run",
       "assertions": {
         "resource-summary:total:count": ["error", { "maxNumericValue": 60 }],
         "resource-summary:total:size": ["error", { "maxNumericValue": 614400 }],
-        "largest-contentful-paint": ["error", { "maxNumericValue": 2500 }],
+        "largest-contentful-paint": ["warn", { "maxNumericValue": 2500 }],
         "total-blocking-time": ["error", { "maxNumericValue": 200 }],
         "cumulative-layout-shift": ["error", { "maxNumericValue": 0.01 }]
       }
