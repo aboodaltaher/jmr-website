@@ -5,6 +5,8 @@ import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { CallOrWhatsApp } from "@/components/CallOrWhatsApp";
 import { EmergencyStrip } from "@/components/EmergencyStrip";
 import { ServiceAreas } from "@/components/ServiceAreas";
+import { ProofStrip } from "@/components/ProofStrip";
+import { HeroQuoteForm } from "@/components/HeroQuoteForm";
 import {
   Gauge,
   Snowflake,
@@ -161,47 +163,59 @@ export default async function Home() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/65 to-black/45" />
         <div className="relative mx-auto max-w-7xl px-6 py-24">
-          <h1 className="max-w-4xl font-heading text-5xl font-bold leading-tight text-white md:text-7xl">
-            HVAC Contractor and AC Maintenance in Dubai
-          </h1>
-          <p className="mt-6 max-w-2xl text-xl text-white/80">
-            Engineer-led installation, maintenance contracts and airflow testing
-            for villas, offices and buildings across the UAE.
-          </p>
-          <div className="mt-10 flex flex-wrap items-center gap-4">
-            <CallOrWhatsApp
-              pathname="/"
-              triggerClassName="inline-flex items-center gap-2 rounded-md bg-primary px-8 py-4 font-medium text-white hover:bg-primary-dark transition-colors"
-            />
-            <Link
-              href="/quote"
-              className="inline-flex items-center gap-2 rounded-md border border-white/40 bg-white/5 px-8 py-4 font-medium text-white hover:border-white hover:bg-white/10 transition-colors"
-            >
-              Get a quote
-            </Link>
-          </div>
-          <div className="mt-4 flex flex-wrap gap-x-6 gap-y-1 text-sm text-white/80">
-            <Link
-              href="/ac-amc-dubai#amc-form"
-              className="underline-offset-4 hover:text-white hover:underline"
-            >
-              AMC plans
-            </Link>
-            <Link
-              href="/quote"
-              className="underline-offset-4 hover:text-white hover:underline"
-            >
-              Project enquiries
-            </Link>
-          </div>
-          <p className="mt-8 text-sm text-white/60">
-            Established 2022 · {PROJECTS_DELIVERED} Projects · Service across the UAE · Dubai, UAE
-          </p>
-          <div className="mt-4">
-            <GoogleReviewsBadge className="text-white/90" />
+          <div className="grid items-center gap-10 lg:grid-cols-[1.25fr_minmax(0,400px)]">
+            {/* Left: headline, value prop and primary actions (unchanged copy) */}
+            <div>
+              <h1 className="max-w-4xl font-heading text-5xl font-bold leading-tight text-white md:text-7xl">
+                HVAC Contractor and AC Maintenance in Dubai
+              </h1>
+              <p className="mt-6 max-w-2xl text-xl text-white/80">
+                Engineer-led installation, maintenance contracts and airflow testing
+                for villas, offices and buildings across the UAE.
+              </p>
+              <div className="mt-10 flex flex-wrap items-center gap-4">
+                <CallOrWhatsApp
+                  pathname="/"
+                  triggerClassName="inline-flex items-center gap-2 rounded-md bg-primary px-8 py-4 font-medium text-white hover:bg-primary-dark transition-colors"
+                />
+                <Link
+                  href="/quote"
+                  className="inline-flex items-center gap-2 rounded-md border border-white/40 bg-white/5 px-8 py-4 font-medium text-white hover:border-white hover:bg-white/10 transition-colors"
+                >
+                  Get a quote
+                </Link>
+              </div>
+              <div className="mt-4 flex flex-wrap gap-x-6 gap-y-1 text-sm text-white/80">
+                <Link
+                  href="/ac-amc-dubai#amc-form"
+                  className="underline-offset-4 hover:text-white hover:underline"
+                >
+                  AMC plans
+                </Link>
+                <Link
+                  href="/quote"
+                  className="underline-offset-4 hover:text-white hover:underline"
+                >
+                  Project enquiries
+                </Link>
+              </div>
+              <p className="mt-8 text-sm text-white/60">
+                Established 2022 · {PROJECTS_DELIVERED} Projects · Service across the UAE · Dubai, UAE
+              </p>
+              <div className="mt-4">
+                <GoogleReviewsBadge className="text-white/90" />
+              </div>
+            </div>
+
+            {/* Right: inline quote card — desktop only (≥1024px) */}
+            <div className="hidden lg:block">
+              <HeroQuoteForm />
+            </div>
           </div>
         </div>
       </section>
+
+      <ProofStrip rating={GOOGLE_RATING} count={GOOGLE_REVIEW_COUNT} />
 
       {/* Audience entry points */}
       <section className="py-14 md:py-16">
