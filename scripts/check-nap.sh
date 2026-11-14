@@ -28,7 +28,7 @@ scan "geo coordinates"       '25\.14[0-9]|55\.22[0-9]'
 scan "licence number"        '1221573'
 scan "legal / alternate name" 'Altaher Ghabboun Engineering|AGEC Technical Services L\.L\.C'
 scan "review count / rating" '[0-9]+ (Google )?reviews?\b.*(verified|rated)|reviewCount: *[0-9]|ratingValue: *"?[0-9]|aggregateRating|AggregateRating'
-scan "Maps / review links"   'maps\.app\.goo\.gl|g\.page/r/|google\.com/maps\?cid'
+scan "Maps / review links"   'maps\.app\.goo\.gl|maps\.google\.com|g\.page/r/|google\.com/maps\?cid'
 
 # Hours: if the config says the business is not always open, "24/7" must not appear.
 if grep -qE 'alwaysOpen: *false' "$CONFIG"; then
