@@ -87,7 +87,7 @@ An annual maintenance contract (AMC) turns servicing into a plan instead of a re
 - A written service report after every visit.
 - Priority response when something fails.
 
-A good AMC also says clearly what is not included. For our contracts, spare parts, refrigerant top-ups and major component replacement are not part of the visit price. They are quoted in writing before any work starts. For offices, retail and larger buildings, we also offer [commercial HVAC maintenance contracts](/services/maintenance).
+A good AMC also says clearly what is not included. For our contracts, spare parts, refrigerant top-ups and major component replacement are not part of the visit price. They are quoted in writing before any work starts. For offices, retail and larger buildings, we also offer [commercial HVAC maintenance contracts](/ac-amc-dubai).
 
 ## How often should AC be serviced in Dubai?
 

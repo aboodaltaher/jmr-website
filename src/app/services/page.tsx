@@ -12,8 +12,6 @@ import {
   Cpu,
   Settings,
   Hammer,
-  Scale,
-  Calendar,
 } from "lucide-react";
 
 export const metadata = buildMetadata({
@@ -40,17 +38,10 @@ const services = [
   },
   {
     icon: Snowflake,
-    name: "Chillers",
-    href: "/services/chillers",
-    description:
-      "Air-cooled and water-cooled chiller systems for commercial buildings, hotels, and industrial facilities. Complete piping design, pump selection, and chilled water system commissioning.",
-  },
-  {
-    icon: Calendar,
-    name: "Chiller Maintenance",
+    name: "Chiller Installation & Maintenance",
     href: "/services/chiller-maintenance-dubai",
     description:
-      "Planned maintenance for air- and water-cooled chiller plant — scheduled servicing, tube cleaning, refrigerant and performance checks, water treatment and logged reports under an AMC.",
+      "Air- and water-cooled chiller plant designed, installed and commissioned, then maintained and repaired — piping, pumps, cooling towers, scheduled servicing and logged reports under an AMC.",
   },
   {
     icon: Thermometer,
@@ -82,17 +73,10 @@ const services = [
   },
   {
     icon: Gauge,
-    name: "Testing & Commissioning",
-    href: "/services/testing-commissioning",
-    description:
-      "Documented testing, balancing, and commissioning services. Airflow measurement, water flow balancing, controls verification, and full T&C reports — every system handed over against specification.",
-  },
-  {
-    icon: Scale,
-    name: "Testing, Adjusting & Balancing (TAB)",
+    name: "Testing, Commissioning & Balancing",
     href: "/services/tab-testing-adjusting-balancing-dubai",
     description:
-      "Measured airflow and water flow set to design values across air and water systems, with a documented, signed balancing report for consultant and landlord sign-off.",
+      "Airflow and water flow measured, balanced and proven to design, controls and BMS verified, and the system commissioned — with a documented, signed report for consultant and landlord sign-off.",
   },
   {
     icon: Settings,
@@ -104,7 +88,7 @@ const services = [
   {
     icon: Wrench,
     name: "Annual Maintenance Contracts (AMC)",
-    href: "/services/maintenance",
+    href: "/ac-amc-dubai",
     description:
       "Fixed-price annual maintenance contracts (AMC), reactive servicing, and emergency callouts. Scheduled preventive maintenance extends equipment life and protects warranties — residential and commercial.",
   },

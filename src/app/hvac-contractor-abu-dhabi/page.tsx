@@ -69,12 +69,12 @@ export default function HvacContractorAbuDhabi() {
         },
       ]}
       services={[
-        { href: "/services/chillers", name: "Chillers" },
+        { href: "/services/chiller-maintenance-dubai", name: "Chillers" },
         { href: "/services/chiller-maintenance-dubai", name: "Chiller Maintenance" },
         { href: "/services/ventilation-fresh-air", name: "Ventilation & Fresh Air" },
-        { href: "/services/testing-commissioning", name: "Testing & Commissioning" },
+        { href: "/services/tab-testing-adjusting-balancing-dubai", name: "Testing & Commissioning" },
         { href: "/services/tab-testing-adjusting-balancing-dubai", name: "Testing, Adjusting & Balancing" },
-        { href: "/services/maintenance", name: "Commercial Maintenance & AMC" },
+        { href: "/ac-amc-dubai", name: "Commercial Maintenance & AMC" },
       ]}
       faq={[
         {

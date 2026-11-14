@@ -32,7 +32,7 @@ Balancing is done with calibrated instruments, not guesswork. We measure airflow
 
 ## The report you should insist on
 
-A proper air balancing job ends with a documented report: measured airflow by area, a comparison against design, and the adjustments made. That report is what consultants, facility managers and landlords need for sign-off — and what gives you confidence the job was done to a standard, not by feel. [See our air balancing and airflow testing service](/air-balancing-airflow-testing-dubai).
+A proper air balancing job ends with a documented report: measured airflow by area, a comparison against design, and the adjustments made. That report is what consultants, facility managers and landlords need for sign-off — and what gives you confidence the job was done to a standard, not by feel. [See our air balancing and airflow testing service](/services/tab-testing-adjusting-balancing-dubai).
 
 ## When you need it in Dubai
 
@@ -44,4 +44,4 @@ A proper air balancing job ends with a documented report: measured airflow by ar
 
 ## The takeaway
 
-Air balancing turns a system that was merely installed into one that performs as designed — comfortable, efficient and documented. If parts of your building never feel right, or you need commissioning sign-off, [request a site survey](/air-balancing-airflow-testing-dubai) and we'll measure what's actually happening before recommending anything.
+Air balancing turns a system that was merely installed into one that performs as designed — comfortable, efficient and documented. If parts of your building never feel right, or you need commissioning sign-off, [request a site survey](/services/tab-testing-adjusting-balancing-dubai) and we'll measure what's actually happening before recommending anything.

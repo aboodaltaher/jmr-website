@@ -188,9 +188,9 @@ If you're planning a villa build or major HVAC replacement and want a real engin
 ## Related reading
 
 - [Our VRF/VRV Systems service →](/services/vrf-vrv-systems)
-- [Our Chiller Systems service →](/services/chillers)
+- [Our Chiller Systems service →](/services/chiller-maintenance-dubai)
 - [HVAC Design & Consultancy →](/services/hvac-design)
-- [Testing & Commissioning →](/services/testing-commissioning)
+- [Testing & Commissioning →](/services/tab-testing-adjusting-balancing-dubai)
 
 ---
 

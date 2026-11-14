@@ -350,7 +350,7 @@ export default function AcRepairPage() {
               </span>
             </Link>
             <Link
-              href="/services/maintenance"
+              href="/ac-amc-dubai"
               className="group rounded-lg border border-border bg-white p-6 transition-all hover:-translate-y-1 hover:shadow-lg"
             >
               <h3 className="font-heading text-lg font-semibold">

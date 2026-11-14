@@ -284,7 +284,7 @@ export default async function AcMaintenancePage() {
             page. For yearly cover, compare our{" "}
             <Link href="/ac-amc-dubai" className="font-semibold text-primary hover:underline">AC annual maintenance contracts</Link>{" "}
             or{" "}
-            <Link href="/services/maintenance" className="font-semibold text-primary hover:underline">commercial HVAC maintenance &amp; AMC plans</Link>, or add a{" "}
+            <Link href="/ac-amc-dubai" className="font-semibold text-primary hover:underline">commercial HVAC maintenance &amp; AMC plans</Link>, or add a{" "}
             <Link href="/smart-thermostat-installation-dubai" className="font-semibold text-primary hover:underline">smart thermostat</Link> during your visit.
           </p>
         </div>
@@ -414,7 +414,7 @@ export default async function AcMaintenancePage() {
           <p className="mt-3 text-center text-text-muted">
             Send your details and we&apos;ll come back with a price. We reply on
             call and WhatsApp, 24/7. Managing a building or portfolio? See our{" "}
-            <Link href="/services/maintenance" className="font-medium text-primary hover:underline">
+            <Link href="/ac-amc-dubai" className="font-medium text-primary hover:underline">
               commercial HVAC maintenance &amp; AMC
             </Link>{" "}
             service.

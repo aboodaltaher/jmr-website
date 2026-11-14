@@ -14,7 +14,7 @@ const ROUTE = "/ac-amc-dubai";
 export const metadata = buildMetadata({
   title: "AC AMC Dubai | Annual Maintenance Contracts | AGEC",
   description:
-    "AC annual maintenance contracts for Dubai and UAE villas, apartments and offices: scheduled visits, written reports, priority repairs. Get an AMC quote.",
+    "AC annual maintenance contracts in Dubai for villas, apartments, offices and commercial buildings — scheduled visits, written reports and priority repairs.",
   path: ROUTE,
   languages: {
     "en-AE": `${SITE_URL}${ROUTE}`,
@@ -105,6 +105,14 @@ const faqs: { q: string; a: string }[] = [
     ? [{ q: "Can I cancel or change the scope?", a: amcConfig.cancellationTerms }]
     : []),
   {
+    q: "Can you cover a whole building or multiple units under one contract?",
+    a: "Yes. For offices, retail, hotels and managed estates we put all your HVAC plant — split and ducted units, VRF/VRV, chillers, AHUs, FCUs and ventilation — under one maintenance contract, with a response SLA and documented reports for the facilities team.",
+  },
+  {
+    q: "How is commercial AMC priced?",
+    a: "Residential plans start from AED 250 per machine per visit. Commercial and building cover is quoted after a site survey, based on the number and type of units and the response level you need — scheduled visits are fixed, with parts and major works quoted in writing first.",
+  },
+  {
     q: "Do you cover my emirate?",
     a: "We've delivered projects in Dubai, Sharjah, Ajman and Abu Dhabi, and are available across the UAE. Call or WhatsApp +971 58 557 5987.",
   },
@@ -114,6 +122,9 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "AC Annual Maintenance Contract",
+  serviceType: "HVAC annual maintenance contract",
+  description:
+    "Residential and commercial AC annual maintenance contracts (AMC) in Dubai — scheduled preventive visits, written reports and priority repairs for villas, apartments, offices and whole buildings.",
   provider: {
     "@type": "Organization",
     name: "AGEC Technical Services",
@@ -293,6 +304,49 @@ export default function AcAmcPage() {
           <p className="mt-6 text-lg text-text-muted">
             Anything outside the contract is quoted in writing before work
             starts.
+          </p>
+        </div>
+      </section>
+
+      {/* COMMERCIAL & BUILDING AMC */}
+      <section id="commercial-amc" className="py-16 md:py-20">
+        <div className="mx-auto max-w-4xl px-6">
+          <p className={eyebrow}>For buildings &amp; facilities</p>
+          <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">
+            Commercial &amp; building AMC
+          </h2>
+          <p className="mt-6 text-lg text-text-muted">
+            The same contract scales from a villa to a whole building. For
+            offices, retail, restaurants, hotels and managed estates, we put all
+            your HVAC plant under one maintenance contract — split and ducted
+            units, VRF/VRV, chillers, AHUs, FCUs and ventilation — so one
+            engineering team is accountable for the lot, not several separate
+            call-outs.
+          </p>
+          <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+            {[
+              "All plant under one contract — split, ducted, VRF/VRV, chillers, AHUs, FCUs and ventilation",
+              "A response line and an SLA matched to how critical the system is",
+              "Documented reports after every visit — the record facility managers need for audits and budgeting",
+              "Transparent pricing — scheduled visits are fixed; parts and major works are quoted in writing first",
+            ].map((item) => (
+              <li key={item} className="flex gap-3 text-text-muted">
+                <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" strokeWidth={2} />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-6 text-text-muted">
+            Larger plant such as chiller systems can also be covered on a
+            dedicated schedule — see{" "}
+            <Link
+              href="/services/chiller-maintenance-dubai"
+              className="font-semibold text-primary hover:underline"
+            >
+              chiller installation &amp; maintenance
+            </Link>
+            . Commercial cover is quoted after a site survey, based on the number
+            and type of units and the response level you need.
           </p>
         </div>
       </section>
@@ -513,11 +567,11 @@ export default function AcAmcPage() {
               </span>
             </Link>
             <Link
-              href="/services/maintenance"
+              href="/services/chiller-maintenance-dubai"
               className="group rounded-lg border border-border bg-white p-6 transition-all hover:-translate-y-1 hover:shadow-lg"
             >
               <h3 className="font-heading text-lg font-semibold">
-                Commercial HVAC maintenance &amp; AMC
+                Chiller installation &amp; maintenance
               </h3>
               <span className="mt-4 inline-block text-sm font-medium text-primary">
                 Read more &rarr;

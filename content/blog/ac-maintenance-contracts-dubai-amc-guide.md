@@ -144,12 +144,12 @@ To discuss AMC options for your property:
 
 - **Call us:** +971 58 557 5987
 - **Request a quote:** [Get a free assessment](/quote)
-- **Learn more:** [Our Maintenance & AMC services](/services/maintenance)
+- **Learn more:** [Our Maintenance & AMC services](/ac-amc-dubai)
 
 ---
 
 ## Related Reading
 
-- [Maintenance & AMC Services →](/services/maintenance)
+- [Maintenance & AMC Services →](/ac-amc-dubai)
 - [VRF vs Chiller Systems for Dubai Villas →](/blog/vrf-vs-chiller-dubai-villas)
-- [Testing & Commissioning →](/services/testing-commissioning)
+- [Testing & Commissioning →](/services/tab-testing-adjusting-balancing-dubai)

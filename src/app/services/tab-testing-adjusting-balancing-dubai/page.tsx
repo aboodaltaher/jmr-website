@@ -4,73 +4,82 @@ import {
   Wind,
   Droplets,
   Settings,
+  Target,
   FileText,
-  ClipboardCheck,
 } from "lucide-react";
 import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
 import { InlineLeadForm } from "@/components/InlineLeadForm";
 import { ratingValue, reviewCount } from "@/lib/siteStats";
 
 export const metadata = buildMetadata({
-  title: "HVAC TAB — Testing, Adjusting & Balancing Dubai | AGEC",
+  title: "HVAC Testing, Commissioning & Balancing Dubai | AGEC",
   description:
-    "HVAC testing, adjusting and balancing (TAB) in Dubai — measured airflow and water flow set to design values, with a documented, signed balancing report.",
+    "HVAC testing, commissioning and air balancing in Dubai — airflow and water flow set and proven to design, controls verified, with a signed handover report.",
   path: "/services/tab-testing-adjusting-balancing-dubai",
 });
 
-export default function TabTestingAdjustingBalancing() {
+export default function TestingCommissioningBalancing() {
   return (
     <ServiceDetailLayout
       slug="services/tab-testing-adjusting-balancing-dubai"
+      heroImage="/projects/agec-technician-tab-commissioning-airflow-balometer-dubai.jpg"
+      heroImageAlt="AGEC technician performing HVAC testing, commissioning and air balancing with an airflow balometer at a Dubai project"
       leadForm={
         <InlineLeadForm
-          requestType="TAB / balancing enquiry"
+          requestType="Testing, commissioning & balancing enquiry"
           whatsappPath="/services/tab-testing-adjusting-balancing-dubai"
           detailsLabel="Building and problem (optional)"
-          detailsPlaceholder="e.g. office floor in Business Bay — some rooms warm, consultant wants a balancing report."
+          detailsPlaceholder="e.g. office floor in Business Bay — some rooms warm, consultant wants a balancing and commissioning report."
         />
       }
-      title="Testing, Adjusting & Balancing (TAB)"
-      intro="Measured airflow and water flow set to their design figures — so every room gets the air it was designed for, with a report to prove it."
+      title="HVAC Testing, Commissioning & Air Balancing in Dubai"
+      intro="Measured airflow and water flow set and proven to their design figures, controls verified, and the whole system commissioned — with a documented report to prove it."
       overview={
         <>
           <p>
-            Testing, adjusting and balancing (TAB) is the engineering step that
-            makes a system deliver what it was designed to deliver. A system can
-            be installed perfectly and still leave some rooms warm and others
-            freezing, simply because the air and water were never distributed to
-            the figures on the drawings. TAB measures what each branch, diffuser
-            and terminal is actually doing, adjusts dampers, valves and fan or
-            pump settings, and re-measures until the whole system matches design.
+            Testing, commissioning and balancing is the engineering step that
+            makes an HVAC system actually deliver what it was designed to deliver.
+            A system can be installed perfectly and still leave some rooms warm and
+            others freezing, simply because the air and water were never
+            distributed to the figures on the drawings, or because controls and
+            safeties were never proven under load. This service closes that gap —
+            from measuring and balancing each branch and terminal, through
+            verifying controls, to commissioning the system as a whole.
           </p>
           <p>
-            It matters most on handover of a new building, after a fit-out or
-            retrofit, or when occupants complain that comfort is uneven despite
-            the units running constantly. It is also what consultants and
-            landlords ask for as documented proof that a system performs — a
-            balancing report is often a condition of sign-off. Without it, you
-            are relying on a system being right by chance.
+            <strong className="text-text">Testing, adjusting and balancing (TAB)</strong>{" "}
+            measures what each diffuser, grille and terminal is actually doing,
+            adjusts dampers, valves and fan or pump settings, and re-measures until
+            air and water match design.{" "}
+            <strong className="text-text">Commissioning</strong> is the broader
+            process that brings a whole system into proven operation — controls and
+            BMS point-to-point checkout, equipment performance verification, and
+            safety testing — following ASHRAE Guideline 0 and the CIBSE
+            Commissioning Code. It matters most at handover of a new building, after
+            a fit-out or retrofit, or when occupants complain that comfort is uneven
+            despite the units running constantly.
           </p>
           <p>
-            AGEC carries out TAB on air and water systems: supply and extract
-            airflow at diffusers and grilles, fresh-air quantities, and
-            chilled-water flow through coils and terminals. We use calibrated
-            instruments, record the readings area by area, and compare them
-            against the design before and after adjustment. The deliverable is a
-            clear balancing report — measured versus design, the adjustments
+            AGEC covers air and water systems: supply, extract and fresh-air
+            quantities at diffusers and grilles, chilled-water flow through coils
+            and terminals, controls and interlocks, and equipment capacity under
+            load. We use calibrated, traceable instruments, record readings area by
+            area, and compare them against design before and after adjustment. The
+            deliverable is a clear report — measured versus design, the adjustments
             made, and any shortfall that points to a sizing, leakage or equipment
-            issue rather than a balancing one. For wider handover testing see our{" "}
-            testing &amp; commissioning and air-balancing pages, linked below.
+            issue rather than a balancing one — in the documented, signed format
+            consultants and landlords ask for at sign-off.
           </p>
         </>
       }
       whenYouNeedIt={[
-        "Handover of a new building where airflow and water flow must be proven to design",
+        "Handover of a new building where airflow, water flow and controls must be proven to design",
+        "A new HVAC installation requiring full commissioning before handover to the owner",
+        "A consultant or developer requiring independent, third-party commissioning or balancing verification",
         "After a fit-out, retrofit or extension that changed the duct or pipe network",
         "Uneven comfort — some rooms never cool while others overcool and the system runs non-stop",
-        "A consultant, landlord or authority requiring a documented, signed balancing report",
-        "Suspected under-performance where you need to know if it is balancing, sizing or a fault",
-        "Energy concerns — a system moving the wrong volumes wastes fan and pump energy",
+        "Retro-commissioning of an older building to restore performance and cut energy waste",
+        "A consultant, landlord or authority requiring a documented, signed balancing and commissioning report",
       ]}
       whatWeDo={[
         {
@@ -93,37 +102,38 @@ export default function TabTestingAdjustingBalancing() {
         },
         {
           icon: Settings,
-          name: "Controls Check",
+          name: "Controls & BMS Verification",
           description:
-            "Thermostats, valves and interlocks verified so the balanced figures hold under normal control, not just during the test.",
+            "Point-to-point checkout of BMS inputs and outputs, control-sequence and setpoint verification, interlock and alarm testing — so the balanced figures hold under normal control.",
         },
         {
-          icon: ClipboardCheck,
-          name: "Verification",
+          icon: Target,
+          name: "Performance Testing",
           description:
-            "Re-measurement after adjustment to confirm the system holds its design values, with any residual shortfall identified.",
+            "Equipment capacity verified under load: chiller COP, AHU coil performance, fan curves and pump duty points confirmed against design.",
         },
         {
           icon: FileText,
-          name: "Balancing Report",
+          name: "Commissioning & Reporting",
           description:
-            "A documented report — measured versus design by area, the adjustments made, and recommendations — ready for consultant or landlord sign-off.",
+            "Systematic comparison of measured values against specification with pass/fail criteria, deficiency logs, and a signed report ready for consultant or owner handover.",
         },
       ]}
       whyAgec={[
-        "Readings taken with calibrated instruments and reported honestly — measured versus design, whether it passes or not",
-        "Air and water both covered, so a comfort problem is traced to the right cause",
+        "Readings taken with calibrated, traceable instruments and reported honestly — measured versus design, whether it passes or not",
+        "Full handover scope under one team: air and water balancing, controls/BMS checkout, equipment performance testing and commissioning",
+        "Methodology to ASHRAE 111, SMACNA and the CIBSE Commissioning Code / ASHRAE Guideline 0, with systematic documentation",
         `Rated ${ratingValue}★ by ${reviewCount} Google reviewers`,
-        "A report you can hand to a consultant, landlord or authority as proof of performance",
+        "A documented report you can hand to a consultant, landlord or authority as proof of performance",
       ]}
       faq={[
         {
-          q: "What is the difference between TAB and commissioning?",
-          a: "Commissioning is the broader process of bringing a whole system into proven operation; TAB is the specific measurement-and-adjustment step within it that sets airflow and water flow to design. We offer both — see our testing & commissioning page for full handover testing.",
+          q: "What's the difference between testing, commissioning and balancing?",
+          a: "Balancing (TAB) is the measurement-and-adjustment step that sets airflow and water flow to design. Commissioning is the broader process that brings the whole system — controls, safeties and equipment performance — into proven operation. We provide both as one service, so a system is both balanced and commissioned before handover.",
         },
         {
           q: "What do I receive at the end?",
-          a: "A balancing report: measured versus design readings area by area, the adjustments made, and any shortfall with its likely cause. It is the documented proof consultants and landlords ask for.",
+          a: "A documented report: measured versus design readings area by area, controls and performance results, the adjustments made, and any shortfall with its likely cause. It is the signed proof consultants and landlords ask for.",
         },
         {
           q: "My rooms are unevenly cooled — is that a balancing problem?",
@@ -134,8 +144,20 @@ export default function TabTestingAdjustingBalancing() {
           a: "Yes. We measure and adjust supply/extract airflow and fresh-air quantities, and chilled-water flow through coils and terminals.",
         },
         {
-          q: "Is a balancing report needed for handover?",
-          a: "On most commercial projects a balancing report is expected as part of handover and is often a condition of consultant sign-off. We produce it in a clear, documented format.",
+          q: "How long does testing and balancing take?",
+          a: "It depends on the size and complexity of the system and how many zones and terminals are involved. We scope it after a quick look at the drawings or a site visit, and give you a clear timeline before starting.",
+        },
+        {
+          q: "Do you work to the consultant's design?",
+          a: "Yes. We balance and commission to the design figures on the approved drawings and specification, and report measured against design so the consultant can sign off.",
+        },
+        {
+          q: "Do you commission and balance existing buildings, not just new ones?",
+          a: "Yes. As well as new-build handover, we carry out retro-commissioning and re-balancing of existing buildings to restore performance, fix comfort complaints and cut wasted fan and pump energy.",
+        },
+        {
+          q: "What standards do you follow?",
+          a: "Our testing, balancing and commissioning methodology follows ASHRAE 111 and SMACNA for TAB and the CIBSE Commissioning Code / ASHRAE Guideline 0 for commissioning, with calibrated, traceable instruments and systematic documentation.",
         },
       ]}
     />

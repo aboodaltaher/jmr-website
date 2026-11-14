@@ -60,8 +60,8 @@ export default function HvacContractorAjman() {
       services={[
         { href: "/services/vrf-vrv-systems", name: "VRF / VRV Systems" },
         { href: "/services/hvac-installation-dubai", name: "HVAC Installation" },
-        { href: "/services/testing-commissioning", name: "Testing & Commissioning" },
-        { href: "/services/maintenance", name: "Commercial Maintenance & AMC" },
+        { href: "/services/tab-testing-adjusting-balancing-dubai", name: "Testing & Commissioning" },
+        { href: "/ac-amc-dubai", name: "Commercial Maintenance & AMC" },
         { href: "/services/chiller-maintenance-dubai", name: "Chiller Maintenance" },
         { href: "/services/tab-testing-adjusting-balancing-dubai", name: "Testing, Adjusting & Balancing" },
       ]}
