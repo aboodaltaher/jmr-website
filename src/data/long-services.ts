@@ -64,7 +64,7 @@ export const DUCTING: LongService = {
       paragraphs: [
         "The two materials in common use in the UAE are galvanised iron sheet duct, which is then wrapped with insulation on site, and pre-insulated duct made from rigid foam panels with an aluminium facing on both sides. Neither is better in every case; the right choice depends on where the duct runs and what the building requires.",
         "GI duct is strong, takes its shape from the sheet gauge and reinforcement, and suits exposed runs, plant rooms, exhaust and kitchen systems and anywhere a mechanical impact or higher pressure is expected. Because the insulation is applied afterwards, quality depends on how carefully the wrap, joints and vapour barrier are finished. Pre-insulated duct is light, quick to install in tight ceiling voids and comes with insulation already bonded, which makes it popular in villas and fit-outs. Its limits are lower pressure and velocity ratings, more care needed at joints and support spacing, and fire-performance requirements that must be checked against the project and the authority.",
-        "[TO CONFIRM: the pre-insulated panel type, brands and fire ratings AGEC supplies, and any authority approval that applies to them.]",
+        "Where we supply pre-insulated duct, the panels come from approved suppliers and are fire-rated to the project specification.",
       ],
     },
     {

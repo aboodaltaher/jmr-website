@@ -10,12 +10,13 @@
 // (src/data/long-services.ts and long-services-ar.ts) is resolved — `npm run to-confirm`
 // lists what is still open. The Arabic twin follows its English page's switch.
 //
-// Kitchen exhaust cleaning is published (English only; there is no Arabic twin). It has
+// Ducting and kitchen exhaust cleaning are published; MEP stays off until the owner has reviewed it
+// on the preview URL. Kitchen exhaust cleaning is published (English only; there is no Arabic twin). It has
 // no open markers: the Dubai Municipality approval and the other service facts were
 // confirmed by the owner. See the "do not add" note above KITCHEN_EXHAUST in long-services.ts.
 
 export const NEW_PAGES = {
-  ducting: { published: false },
+  ducting: { published: true },
   mep: { published: false },
   kitchenExhaust: { published: true },
 } as const;

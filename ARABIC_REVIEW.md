@@ -184,7 +184,7 @@ position document on indoor CO₂.
 **Drafts — NOT published yet (noindex, out of the sitemap, unlinked, no hreflang).** They
 follow their English twin's switch in `src/data/new-pages.ts`; review the Arabic now so it is
 ready when the English facts are confirmed. Each page keeps the English `[TO CONFIRM: …]`
-markers on purpose (they are the same open questions as in `TO_CONFIRM.md`).
+markers on purpose (they are the same open questions as in `docs/open-questions.md`).
 
 - **Ducting** — `src/data/long-services-ar.ts` (`DUCTING_AR`), route `src/app/ar/ac-ducting-installation-dubai/page.tsx`
   Title: «تركيب مجاري التكييف وتصنيع المجاري في دبي | AGEC» · H1: «تركيب مجاري التكييف وتصنيعها في دبي»
@@ -204,8 +204,9 @@ re-read these sentences:
   Metal and Flexible» 4th edition (2020).
 - HVAC for MEP projects (`MEP_AR`): «يقدّم الاستشاري طلبات موافقات الجهات المختصة وشهادات عدم الممانعة (NOC)؛
   وتعدّ AGEC وتوفّر مخططات التكييف والحسابات والمستندات اللازمة للتقديم.»
-- Still open on the Arabic ducting page: the pre-insulated (PIR) panel brands and fire ratings.
+- Ducting (`DUCTING_AR`): pre-insulated panels are described generically («من موردين معتمدين… وفق مواصفات المشروع»); no brands or fire ratings are named. The ducting pages (EN + AR) are now published.
 - The kitchen exhaust cleaning page is published in English only; there is no Arabic version yet.
+- The HVAC-for-MEP pages (EN + AR) stay off until the owner has reviewed them on the preview URL.
 
 ### Existing Arabic landing pages (already live; included for completeness)
 `src/app/ar/ac-maintenance-dubai/page.tsx`, `/ar/ac-repair-dubai`, `/ar/ac-amc-dubai`,

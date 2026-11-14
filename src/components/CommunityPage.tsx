@@ -5,14 +5,13 @@ import { business } from "@/data/business";
 import { getProjectBySlug } from "@/data/projects";
 import { PHONE, PHONE_DISPLAY, WHATSAPP } from "@/lib/company";
 import type { Community } from "@/data/communities";
+import { MARKER_SPLIT, scrubDraft, resolveDraft } from "@/lib/draft";
 
-const MARKER = /(\[TO CONFIRM[^\]]*\])/g;
-
-/** Renders text, highlighting any "[TO CONFIRM: …]" marker so it cannot be missed. */
+/** Renders text, highlighting any "[TO CONFIRM: …]" marker (local/preview). Stripped in production. */
 function Text({ children }: { children: string }) {
   return (
     <>
-      {children.split(MARKER).map((part, i) =>
+      {resolveDraft(children).split(MARKER_SPLIT).map((part, i) =>
         part.startsWith("[TO CONFIRM") ? (
           <mark key={i} className="rounded bg-amber-200 px-1 font-semibold text-amber-950">
             {part}
@@ -25,7 +24,8 @@ function Text({ children }: { children: string }) {
   );
 }
 
-export function CommunityPage({ community: c }: { community: Community }) {
+export function CommunityPage({ community: raw }: { community: Community }) {
+  const c = scrubDraft(raw);
   const path = `/ac-maintenance/${c.slug}`;
   const url = `${business.url}${path}`;
   const wa = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(c.whatsappText)}`;
