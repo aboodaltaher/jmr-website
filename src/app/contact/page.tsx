@@ -4,19 +4,13 @@ import { whatsappUrl } from "@/lib/contact";
 import { ContactForm } from "@/components/ContactForm";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
-import {
-  PHONE,
-  PHONE_DISPLAY,
-  EMAIL,
-  ADDRESS_FULL,
-  GBP_URL,
-  GOOGLE_REVIEWS_URL,
-} from "@/lib/company";
+import { PHONE, PHONE_DISPLAY, EMAIL, ADDRESS_FULL, MAPS_URL, REVIEW_URL } from "@/lib/company";
+import { business } from "@/data/business";
 
 export const metadata = buildMetadata({
   title: "Contact AGEC | HVAC Services in Dubai",
   description:
-    "Contact AGEC for HVAC services in Dubai — call or WhatsApp +971 58 557 5987, or send a message about AC maintenance, repair, AMC or a new project.",
+    `Contact AGEC for HVAC services in Dubai — call or WhatsApp ${PHONE_DISPLAY}, or send a message about AC maintenance, repair, AMC or a new project.`,
   path: "/contact",
 });
 
@@ -115,7 +109,7 @@ export default function Contact() {
                     <div>
                       <p className="text-sm font-medium">Availability</p>
                       <p className="text-sm text-text-muted">
-                        Call or WhatsApp anytime, 24/7. We respond within 1
+                        Call or WhatsApp anytime, {business.hours.short}. We respond within 1
                         hour.
                       </p>
                     </div>
@@ -130,7 +124,7 @@ export default function Contact() {
               <div className="mt-6 flex flex-wrap items-center gap-4">
                 <GoogleReviewsBadge className="text-text-muted" />
                 <a
-                  href={GOOGLE_REVIEWS_URL}
+                  href={REVIEW_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-md border border-border bg-white px-4 py-2.5 text-sm font-semibold text-text hover:border-primary transition-colors"
@@ -153,7 +147,7 @@ export default function Contact() {
             {/* Pinned to AGEC's confirmed coordinates (matches the LocalBusiness schema). */}
             <iframe
               title="AGEC Technical Services location on Google Maps"
-              src="https://www.google.com/maps?q=25.1431543,55.2210657&z=16&output=embed"
+              src={`https://www.google.com/maps?q=${business.geo.lat},${business.geo.lng}&z=16&output=embed`}
               className="h-80 w-full border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
@@ -163,7 +157,7 @@ export default function Contact() {
           <p className="mt-3 text-sm text-text-muted">
             {ADDRESS_FULL} ·{" "}
             <a
-              href={GBP_URL}
+              href={MAPS_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="font-semibold text-primary hover:underline"

@@ -141,7 +141,7 @@ Usually one of a few things: a lower thermostat setting, a poorly maintained or 
 
 If your summer bills don't add up, we'll find out why — system check, heat load review where it's needed, and an honest call on whether it's a maintenance fix or an upgrade.
 
-**[Request a quote](https://agec.ae/quote)** or call **[+971 58 557 5987](tel:+971585575987)**.
+**[Request a quote](https://agec.ae/quote)** or call **[{{PHONE}}](tel:{{PHONE_TEL}})**.
 
 ---
 
@@ -154,6 +154,6 @@ If your summer bills don't add up, we'll find out why — system check, heat loa
 
 ---
 
-*Altaher Ghabboun Engineering Contracting (AGEC) is a Dubai-based HVAC contractor specializing in design, installation, testing & commissioning, and maintenance of advanced air conditioning systems across the UAE.*
+*{{NAME}} is a Dubai-based HVAC contractor specializing in design, installation, testing & commissioning, and maintenance of advanced air conditioning systems across the UAE.*
 
 

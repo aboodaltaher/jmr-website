@@ -3,7 +3,7 @@ import { Check, Phone, MessageCircle, Star, ExternalLink } from "lucide-react";
 import { buildMetadata } from "@/lib/metadata";
 import { PHONE, PHONE_DISPLAY } from "@/lib/contact";
 import { whatsappUrl } from "@/lib/contact";
-import { GOOGLE_REVIEWS_URL } from "@/lib/company";
+import { REVIEW_URL } from "@/lib/company";
 
 export const metadata = buildMetadata({
   title: "Thank You | Request Received | AGEC",
@@ -50,7 +50,7 @@ export default function QuoteThankYou() {
             homeowners and businesses find AGEC.
           </p>
           <a
-            href={GOOGLE_REVIEWS_URL}
+            href={REVIEW_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-4 inline-flex items-center gap-2 rounded-md border border-border bg-white px-6 py-3 text-sm font-semibold text-text hover:border-primary transition-colors"

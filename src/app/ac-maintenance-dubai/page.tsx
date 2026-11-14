@@ -2,10 +2,10 @@ import { buildMetadata } from "@/lib/metadata";
 import Image from "next/image";
 import Link from "next/link";
 import { RelatedServices } from "@/components/RelatedServices";
+import { publishedCommunities, communityPath } from "@/data/community-index";
 import { InlineLeadForm } from "@/components/InlineLeadForm";
 import { BreadcrumbBand } from "@/components/Breadcrumbs";
-import { GOOGLE_REVIEWS_URL, GOOGLE_REVIEWS } from "@/lib/reviews";
-import { getGoogleReviewStats } from "@/lib/google-reviews";
+import { GOOGLE_REVIEWS, MAPS_URL, reviewStats } from "@/lib/reviews";
 import {
   ShieldCheck,
   BadgeCheck,
@@ -27,9 +27,8 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
-const PHONE = "+971585575987";
-const PHONE_DISPLAY = "+971 58 557 5987";
-const WA = `https://wa.me/971585575987?text=${encodeURIComponent(
+import { PHONE, PHONE_DISPLAY, WHATSAPP } from "@/lib/company";
+const WA = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
   "Hi AGEC, I'd like to book an AC service. Number of units and area: ",
 )}`;
 const CANONICAL = "/ac-maintenance-dubai";
@@ -37,7 +36,7 @@ const CANONICAL = "/ac-maintenance-dubai";
 export const metadata = buildMetadata({
   title: "AC Maintenance Dubai — Engineer-Led, Same-Day | AGEC",
   description:
-    "AC maintenance in Dubai by HVAC engineers: servicing, repair, coil and duct cleaning, gas top-up and AMC plans. Call +971 58 557 5987.",
+    `AC maintenance in Dubai by HVAC engineers: servicing, repair, coil and duct cleaning, gas top-up and AMC plans. Call ${PHONE_DISPLAY}.`,
   path: CANONICAL,
   languages: {
     "en-AE": `https://agec.ae${CANONICAL}`,
@@ -147,7 +146,8 @@ const eyebrow = "text-sm font-semibold uppercase tracking-widest text-primary";
 
 export default async function AcMaintenancePage() {
   const { rating: GOOGLE_RATING, count: GOOGLE_REVIEW_COUNT } =
-    await getGoogleReviewStats();
+    reviewStats;
+  const areaPages = publishedCommunities();
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
@@ -319,7 +319,7 @@ export default async function AcMaintenancePage() {
           <div className="mx-auto max-w-2xl text-center">
             <p className={eyebrow}>Customer Reviews</p>
             <h2 className="mt-3 font-heading text-3xl font-bold md:text-5xl">Rated {GOOGLE_RATING}★ by Our Customers</h2>
-            <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center gap-2 rounded-full border border-border bg-bg-soft px-5 py-2.5 text-sm font-semibold text-text shadow-sm transition-colors hover:border-primary">
+            <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center gap-2 rounded-full border border-border bg-bg-soft px-5 py-2.5 text-sm font-semibold text-text shadow-sm transition-colors hover:border-primary">
               <span className="flex gap-0.5 text-primary">{Array.from({ length: 5 }).map((_, i) => (<Star key={i} className="h-4 w-4 fill-current" />))}</span>
               {GOOGLE_RATING} · {GOOGLE_REVIEW_COUNT} verified Google reviews
               <ExternalLink className="h-3.5 w-3.5 text-text-muted" />
@@ -339,7 +339,7 @@ export default async function AcMaintenancePage() {
           </div>
           <p className="mt-8 text-center text-sm text-text-muted">
             Genuine reviews from our verified Google Business Profile.{" "}
-            <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline">Read all {GOOGLE_REVIEW_COUNT} on Google →</a>
+            <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline">Read all {GOOGLE_REVIEW_COUNT} on Google →</a>
           </p>
         </div>
       </section>
@@ -384,6 +384,30 @@ export default async function AcMaintenancePage() {
           </p>
         </div>
       </section>
+
+      {/* AREAS WE COVER — local pages; shown only for published communities */}
+      {areaPages.length > 0 && (
+        <section id="areas" className="bg-bg-soft py-16 md:py-20">
+          <div className="mx-auto max-w-7xl px-6 text-center">
+            <p className={eyebrow}>Areas we cover</p>
+            <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">AC Maintenance in Your Part of Dubai</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-text-muted">
+              What we typically find, which services fit, and how to book, written for each area.
+            </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
+              {areaPages.map((a) => (
+                <Link
+                  key={a.slug}
+                  href={communityPath(a.slug)}
+                  className="rounded-full border border-border bg-white px-6 py-3 font-semibold text-text transition-colors hover:border-primary hover:text-primary"
+                >
+                  {a.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Inline quick quote */}
       <section className="bg-bg-soft py-16 md:py-20">

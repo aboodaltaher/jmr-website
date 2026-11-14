@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { business } from "@/data/business";
 
 const BLOG_DIR = path.join(process.cwd(), "content/blog");
 
@@ -20,6 +21,18 @@ export interface PostMeta {
 
 export interface Post extends PostMeta {
   content: string;
+}
+
+/**
+ * Markdown bodies can't import config, so they use tokens that are filled in
+ * from src/data/business.ts: {{PHONE}}, {{PHONE_TEL}}, {{EMAIL}}, {{NAME}}.
+ */
+function applyTokens(text: string): string {
+  return text
+    .replace(/\{\{PHONE_TEL\}\}/g, business.phone.e164)
+    .replace(/\{\{PHONE\}\}/g, business.phone.display)
+    .replace(/\{\{EMAIL\}\}/g, business.email)
+    .replace(/\{\{NAME\}\}/g, business.name);
 }
 
 function extractTitle(content: string): string {
@@ -73,7 +86,7 @@ function parsePost(slug: string): Post {
     description: String(data.description ?? generateExcerpt(content)),
     titleTag: String(data.titleTag ?? ""),
     draft: data.draft === true || data.status === "draft",
-    content: stripTitle(content),
+    content: applyTokens(stripTitle(content)),
   };
 }
 

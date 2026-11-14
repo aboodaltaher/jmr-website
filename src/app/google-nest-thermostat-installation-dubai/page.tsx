@@ -4,8 +4,7 @@ import Link from "next/link";
 import { RelatedServices } from "@/components/RelatedServices";
 import { InlineLeadForm } from "@/components/InlineLeadForm";
 import { BreadcrumbBand } from "@/components/Breadcrumbs";
-import { GOOGLE_REVIEWS_URL } from "@/lib/reviews";
-import { getGoogleReviewStats } from "@/lib/google-reviews";
+import { MAPS_URL, reviewStats } from "@/lib/reviews";
 import {
   PRICE_NEST_SUPPLY,
   PRICE_INSTALLATION,
@@ -27,9 +26,8 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
-const PHONE = "+971585575987";
-const PHONE_DISPLAY = "+971 58 557 5987";
-const WA = `https://wa.me/971585575987?text=${encodeURIComponent(
+import { PHONE, PHONE_DISPLAY, WHATSAPP } from "@/lib/company";
+const WA = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
   "Hi AGEC, can you check if a Google Nest works with my AC? Brand and model: ",
 )}`;
 const CANONICAL = "/google-nest-thermostat-installation-dubai";
@@ -159,7 +157,7 @@ const eyebrowDark = "text-sm font-semibold uppercase tracking-widest text-primar
 
 export default async function GoogleNestPage() {
   const { rating: GOOGLE_RATING, count: GOOGLE_REVIEW_COUNT } =
-    await getGoogleReviewStats();
+    reviewStats;
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
@@ -404,7 +402,7 @@ export default async function GoogleNestPage() {
               Rated {GOOGLE_RATING}★ by Our Customers
             </h2>
             <a
-              href={GOOGLE_REVIEWS_URL}
+              href={MAPS_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-5 inline-flex items-center gap-2 rounded-full border border-border bg-bg-soft px-5 py-2.5 text-sm font-semibold text-text shadow-sm transition-colors hover:border-primary"

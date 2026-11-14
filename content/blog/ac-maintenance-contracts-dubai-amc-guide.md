@@ -142,7 +142,7 @@ Our approach focuses on three principles:
 
 To discuss AMC options for your property:
 
-- **Call us:** +971 58 557 5987
+- **Call us:** {{PHONE}}
 - **Request a quote:** [Get a free assessment](/quote)
 - **Learn more:** [Our Maintenance & AMC services](/ac-amc-dubai)
 

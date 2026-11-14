@@ -56,4 +56,4 @@ VRF systems vary by brand and model, so we never promise blind. Before anything,
 
 If you want the wider picture first, our [smart thermostat compatibility guide](/blog/smart-thermostat-ac-compatibility-uae) covers every system type in the UAE.
 
-> **Got a VRF villa and want it smart?** Book a free compatibility check on our [Google Nest installation page](/google-nest-thermostat-installation-dubai), or call / WhatsApp **+971 58 557 5987** — tell us your VRF brand and we'll confirm exactly what's needed.
+> **Got a VRF villa and want it smart?** Book a free compatibility check on our [Google Nest installation page](/google-nest-thermostat-installation-dubai), or call / WhatsApp **{{PHONE}}** — tell us your VRF brand and we'll confirm exactly what's needed.

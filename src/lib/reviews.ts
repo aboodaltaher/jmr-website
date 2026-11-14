@@ -1,5 +1,10 @@
 // Google review figures come from the single company-facts source (./company).
-export { GOOGLE_RATING, GOOGLE_REVIEW_COUNT, GOOGLE_REVIEWS_URL } from "./company";
+import { GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from "./company";
+
+export { GOOGLE_RATING, GOOGLE_REVIEW_COUNT, MAPS_URL, REVIEW_URL } from "./company";
+
+/** Rating + count shown on the site, from src/data/business.ts (updated monthly). */
+export const reviewStats = { rating: GOOGLE_RATING, count: GOOGLE_REVIEW_COUNT };
 
 export interface GoogleReview {
   name: string;

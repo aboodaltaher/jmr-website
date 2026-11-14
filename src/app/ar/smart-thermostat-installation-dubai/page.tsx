@@ -8,7 +8,7 @@ import {
   BarChart3,
 } from "lucide-react";
 import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
-import { THERMOSTAT_SAVINGS } from "@/lib/company";
+import { THERMOSTAT_SAVINGS, EMAIL, PHONE_DISPLAY } from "@/lib/company";
 import { ratingValue, reviewCount } from "@/lib/siteStats";
 
 // Arabic translation of /smart-thermostat-installation-dubai. Faithful to the
@@ -159,7 +159,7 @@ export default function ArabicSmartThermostat() {
         },
         {
           q: "كيف أحجز فحص توافق مجانياً؟",
-          a: "اتصل أو راسلنا على واتساب ‎+971 58 557 5987، أو راسلنا على a.altaher@agec.ae. أخبرنا بنوع عقارك ونظام التكييف وسنرتّب تقييمك المجاني.",
+          a: `اتصل أو راسلنا على واتساب ‎${PHONE_DISPLAY}، أو راسلنا على ${EMAIL}. أخبرنا بنوع عقارك ونظام التكييف وسنرتّب تقييمك المجاني.`,
         },
       ]}
     />

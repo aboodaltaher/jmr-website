@@ -22,7 +22,7 @@ export interface RouteEntry {
 
 // Every indexable, static English page. Excludes:
 //  - /book        → canonical alias of /quote (would be duplicate content)
-//  - /quote/thank-you, /review → noindex utility pages
+//  - /quote/thank-you → noindex utility page; /review → 302 to Google reviews
 //  - dynamic blog/project pages → appended from data in sitemap.ts
 export const staticRoutes: RouteEntry[] = [
   { path: "/", updatedAt: "2026-11-14" },

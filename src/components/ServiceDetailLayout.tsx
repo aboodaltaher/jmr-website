@@ -3,7 +3,8 @@ import Link from "next/link";
 import { Check, type LucideIcon } from "lucide-react";
 import { RelatedServices } from "@/components/RelatedServices";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { AREA_SERVED_SCHEMA } from "@/lib/company";
+import { AREA_SERVED_SCHEMA, PHONE, PHONE_DISPLAY } from "@/lib/company";
+import { business } from "@/data/business";
 import { getProjectBySlug } from "@/data/projects";
 
 interface Capability {
@@ -68,7 +69,7 @@ const STRINGS: Record<Lang, {
     faqHeading: "Frequently asked questions",
     getQuote: "Get a Quote",
     quoteHref: "/quote",
-    orCall: "Or call +971 58 557 5987",
+    orCall: `Or call ${PHONE_DISPLAY}`,
     ready: "Ready to discuss your {t} project?",
     leadHeading: "Get a quote for {t}",
     leadSub: "Send your details and our engineering team will come back to you.",
@@ -84,7 +85,7 @@ const STRINGS: Record<Lang, {
     faqHeading: "أسئلة شائعة",
     getQuote: "احصل على عرض سعر",
     quoteHref: "/ar/quote",
-    orCall: "أو اتصل على ‎+971 58 557 5987",
+    orCall: `أو اتصل على ‎${PHONE_DISPLAY}`,
     ready: "هل أنت مستعد لمناقشة مشروع {t}؟",
     leadHeading: "احصل على عرض سعر لـ {t}",
     leadSub: "أرسل تفاصيلك وسيعاود فريقنا الهندسي التواصل معك.",
@@ -136,16 +137,16 @@ export function ServiceDetailLayout({
         areaServed: AREA_SERVED_SCHEMA,
         provider: {
           "@type": "HVACBusiness",
-          name: "AGEC Technical Services",
-          telephone: "+971585575987",
-          email: "a.altaher@agec.ae",
+          name: business.name,
+          telephone: business.phone.e164,
+          email: business.email,
           address: {
             "@type": "PostalAddress",
-            streetAddress: "AlMasraf Building, Sheikh Zayed Road",
-            addressLocality: "Dubai",
-            addressCountry: "AE",
+            streetAddress: business.address.line,
+            addressLocality: business.address.locality,
+            addressCountry: business.address.countryCode,
           },
-          url: "https://agec.ae",
+          url: business.url,
         },
       }
     : null;
@@ -387,7 +388,7 @@ export function ServiceDetailLayout({
           </Link>
           <div className="mt-4">
             <a
-              href="tel:+971585575987"
+              href={`tel:${PHONE}`}
               className="text-sm font-medium text-white hover:underline transition-colors"
               dir="ltr"
             >

@@ -127,4 +127,4 @@ A clean coil lets the system cool with less effort, which usually lowers energy 
 If you have several units and want them checked on a schedule before summer, an AMC is usually easier and more predictable than calling for repairs one at a time.
 
 **Do you cover my emirate?**
-We serve all 7 emirates. Call or WhatsApp +971 58 557 5987.
+We serve all 7 emirates. Call or WhatsApp {{PHONE}}.

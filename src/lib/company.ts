@@ -3,47 +3,49 @@
 // so phone, email, address, licence, review figures, turnaround and project
 // numbers stay consistent across the site. (Audit item 10.)
 
-// --- Contact (phone also re-exported from ./contact for existing imports) ---
-export const PHONE = "+971585575987";
-export const PHONE_DISPLAY = "+971 58 557 5987";
+import { business, addressFull } from "@/data/business";
 
-// One canonical email. The site previously showed both a.altaher@agec.ae and
-// m.ghabboun@agec.ae — a.altaher@agec.ae is the single public address.
-export const EMAIL = "a.altaher@agec.ae";
+// --- Contact (all values come from src/data/business.ts) ---
+export const PHONE = business.phone.e164;
+export const PHONE_DISPLAY = business.phone.display;
+
+// One canonical public email.
+export const EMAIL = business.email;
 
 // WhatsApp (digits only, no +). The wa.me link logic lives in ./contact.
-export const WHATSAPP = "971585575987";
+export const WHATSAPP = business.phone.whatsapp;
 
-// Address — AlMasraf Building, Sheikh Zayed Road (owner-confirmed).
-export const ADDRESS_LINE = "AlMasraf Building, Sheikh Zayed Road";
-export const ADDRESS_CITY = "Dubai";
-export const ADDRESS_COUNTRY = "UAE";
-export const ADDRESS_FULL = `${ADDRESS_LINE}, ${ADDRESS_CITY}, ${ADDRESS_COUNTRY}`;
+// Address — matches the Google Business Profile.
+export const ADDRESS_LINE = business.address.line;
+export const ADDRESS_CITY = business.address.locality;
+export const ADDRESS_COUNTRY = business.address.country;
+export const ADDRESS_FULL = addressFull;
 
-export const COMPANY_LEGAL = "AGEC Technical Services L.L.C.";
-export const COMPANY_FULL = "Altaher Ghabboun Engineering Contracting (AGEC)";
-export const LICENCE_NO = "1221573";
+export const COMPANY_NAME = business.name;
+export const COMPANY_LEGAL = business.legalName;
+export const COMPANY_ALTERNATE = business.alternateName;
+export const LICENCE_NO = business.licence.number;
 
 // Founder (surname spelling confirmed by owner: "Ghabboun").
 export const FOUNDER = "Mohannad Ghabboun";
 
-// --- Google reviews (figures also surfaced via ./reviews) ---
-// TODO(owner): confirm the rating and count against the live Google profile monthly.
-export const GOOGLE_RATING = "5.0";
-export const GOOGLE_REVIEW_COUNT = 32;
-export const GOOGLE_REVIEWS_URL = "https://maps.app.goo.gl/fPKs5SXmDeK9Co4VA";
+// --- Google reviews: one value, edited monthly in src/data/business.ts ---
+export const GOOGLE_RATING = business.reviews.rating.toFixed(1);
+export const GOOGLE_REVIEW_COUNT = business.reviews.count;
+export const REVIEWS_UPDATED = business.reviews.updated;
 
-// --- Public profiles (single source for sameAs / hasMap / footer links) ---
-// Google Business Profile and Instagram, previously duplicated in SiteSchema
-// and Footer. TODO(owner): add LinkedIn here if/when there is a company page.
-export const GBP_URL = "https://maps.app.goo.gl/NymgUk6cDcj8PRSL6";
-export const INSTAGRAM_URL = "https://www.instagram.com/agec_contracting";
+// --- Public profile links (single source for sameAs / hasMap / footer) ---
+/** "View on Google Maps" — the business's Google Maps profile. */
+export const MAPS_URL = business.links.mapsView;
+/** "Leave a review" — opens the Google review composer. */
+export const REVIEW_URL = business.links.reviewLeave;
+export const INSTAGRAM_URL = business.links.instagram;
 
 // --- Quote turnaround (reconciled from the old 24h/48h mix; confirmed 24h) ---
 export const QUOTE_TURNAROUND = "within 24 hours";
 
 // --- Response / privacy copy shown under lead forms (audit item 2) ---
-export const FORM_RESPONSE_NOTE = "We reply on call and WhatsApp, 24/7.";
+export const FORM_RESPONSE_NOTE = `We reply on call and WhatsApp, ${business.hours.short}.`;
 export const FORM_PRIVACY_NOTE =
   "Your details are only used to respond to your enquiry — never shared or sold.";
 

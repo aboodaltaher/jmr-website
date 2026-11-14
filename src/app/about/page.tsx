@@ -1,6 +1,7 @@
 import { buildMetadata } from "@/lib/metadata";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { FOUNDER, PROJECTS_DELIVERED } from "@/lib/company";
+import { FOUNDER, PROJECTS_DELIVERED, COMPANY_NAME, COMPANY_ALTERNATE, COMPANY_LEGAL } from "@/lib/company";
+import { business } from "@/data/business";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -13,7 +14,7 @@ import {
 export const metadata = buildMetadata({
   title: "About AGEC | HVAC Contractor in Dubai",
   description:
-    `AGEC (Altaher Ghabboun Engineering Contracting) is a Dubai HVAC, MEP and maintenance contractor — ${PROJECTS_DELIVERED} projects delivered across the UAE since 2022.`,
+    `AGEC (${COMPANY_ALTERNATE}) is a Dubai HVAC, MEP and maintenance contractor — ${PROJECTS_DELIVERED} projects delivered across the UAE since 2022.`,
   path: "/about",
 });
 
@@ -69,8 +70,8 @@ export default function About() {
             jobTitle: "Founder & Lead HVAC Engineer",
             worksFor: {
               "@type": "Organization",
-              name: "AGEC Technical Services",
-              url: "https://agec.ae",
+              name: business.name,
+              url: business.url,
             },
             image: "https://agec.ae/team/mohannad-ghabboun-agec.jpg",
             url: "https://agec.ae/about",
@@ -97,8 +98,8 @@ export default function About() {
             Engineering-led HVAC contracting in Dubai
           </h1>
           <p className="mt-6 max-w-3xl text-xl text-text-muted">
-            Founded in Dubai in 2022 by {FOUNDER}, Altaher Ghabboun
-            Engineering Contracting (AGEC) is an HVAC contracting company
+            Founded in Dubai in 2022 by {FOUNDER}, {COMPANY_NAME} (
+            {COMPANY_ALTERNATE}) is an HVAC contracting company
             delivering expert installation, maintenance, and testing &amp;
             commissioning across the UAE.
           </p>
@@ -138,9 +139,9 @@ export default function About() {
                   that work for the long term.
                 </p>
                 <p>
-                  AGEC is the trading name of AGEC Technical Services L.L.C., the
-                  licensed company behind this website. AGEC Technical Services
-                  L.L.C. holds Dubai Commercial Licence No. 1221573, issued by the
+                  AGEC is the trading name of {COMPANY_LEGAL}, the licensed
+                  company behind this website. {COMPANY_LEGAL} holds{" "}
+                  {business.licence.label}, issued by the
                   Dubai Department of Economy and Tourism, covering air-conditioning,
                   ventilation and air filtration systems installation and maintenance.
                 </p>

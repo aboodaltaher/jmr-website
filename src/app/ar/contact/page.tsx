@@ -3,21 +3,15 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Phone, Mail, MapPin, Clock, MessageCircle, Star, ExternalLink } from "lucide-react";
 import { whatsappUrl } from "@/lib/contact";
 import { ContactForm } from "@/components/ContactForm";
-import {
-  PHONE,
-  PHONE_DISPLAY,
-  EMAIL,
-  ADDRESS_FULL,
-  GBP_URL,
-  GOOGLE_REVIEWS_URL,
-} from "@/lib/company";
+import { PHONE, PHONE_DISPLAY, EMAIL, ADDRESS_FULL, MAPS_URL, REVIEW_URL } from "@/lib/company";
+import { business } from "@/data/business";
 
 // Arabic translation of /contact. Faithful to the English copy — no new claims.
 // NAP is sourced from the shared company constants. TODO(owner): native review.
 export const metadata = buildMetadata({
   title: "اتصل بـ AGEC | خدمات التكييف في دبي",
   description:
-    "تواصل مع AGEC لخدمات التكييف في دبي — اتصل أو راسلنا على واتساب ‎+971 58 557 5987، أو أرسل رسالة بخصوص صيانة أو إصلاح أو عقد صيانة أو مشروع جديد.",
+    `تواصل مع AGEC لخدمات التكييف في دبي — اتصل أو راسلنا على واتساب ‎${PHONE_DISPLAY}، أو أرسل رسالة بخصوص صيانة أو إصلاح أو عقد صيانة أو مشروع جديد.`,
   path: "/ar/contact",
   locale: "ar_AE",
 });
@@ -85,14 +79,14 @@ export default function ArabicContact() {
                     <Clock className="mt-0.5 h-5 w-5 shrink-0 text-primary" strokeWidth={1.5} />
                     <div>
                       <p className="text-sm font-medium">التوفّر</p>
-                      <p className="text-sm text-text-muted">اتصل أو راسلنا على واتساب في أي وقت، 24/7. نرد خلال ساعة.</p>
+                      <p className="text-sm text-text-muted">اتصل أو راسلنا على واتساب في أي وقت، {business.hours.short}. نرد خلال ساعة.</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Leave a review */}
                 <a
-                  href={GOOGLE_REVIEWS_URL}
+                  href={REVIEW_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-md border border-border bg-white px-5 py-3 text-sm font-semibold text-text hover:border-primary transition-colors"
@@ -119,7 +113,7 @@ export default function ArabicContact() {
           <div className="mt-6 overflow-hidden rounded-lg border border-border">
             <iframe
               title="موقع AGEC Technical Services على خرائط Google"
-              src="https://www.google.com/maps?q=25.1431543,55.2210657&z=16&output=embed"
+              src={`https://www.google.com/maps?q=${business.geo.lat},${business.geo.lng}&z=16&output=embed`}
               className="h-80 w-full border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
@@ -128,7 +122,7 @@ export default function ArabicContact() {
           </div>
           <p className="mt-3 text-sm text-text-muted">
             <span dir="ltr">{ADDRESS_FULL}</span> ·{" "}
-            <a href={GBP_URL} target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline">
+            <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline">
               افتح في خرائط Google ←
             </a>
           </p>

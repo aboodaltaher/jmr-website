@@ -19,6 +19,9 @@
 export {};
 
 const BASE = process.env.BASE || "http://127.0.0.1:3100";
+// Extra paths to check besides the sitemap (comma-separated), e.g. pages that are
+// built but noindex/unpublished:  EXTRA_URLS=/ac-maintenance/al-barsha,/x npm run onpage-check
+const EXTRA_URLS = (process.env.EXTRA_URLS || "").split(",").map((u) => u.trim()).filter(Boolean);
 const TITLE_MAX = 60;
 const DESC_MIN = 120;
 const DESC_MAX = 160;
@@ -126,7 +129,12 @@ async function main(): Promise<void> {
     console.log(`✗ cannot read ${BASE}/sitemap.xml (HTTP ${smRes.status})`);
     process.exit(1);
   }
-  const urls = [...(await smRes.text()).matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => strip(m[1]));
+  const urls = [
+    ...new Set([
+      ...[...(await smRes.text()).matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => strip(m[1])),
+      ...EXTRA_URLS,
+    ]),
+  ];
 
   const rows: Row[] = [];
   for (const url of urls) {

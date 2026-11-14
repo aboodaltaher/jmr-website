@@ -2,6 +2,7 @@ import { buildMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { LocationPageLayout } from "@/components/LocationPageLayout";
 
+import { ADDRESS_LINE, PHONE_DISPLAY } from "@/lib/company";
 export const metadata = buildMetadata({
   title: "HVAC Contractor in Sharjah | AC Install & Service | AGEC",
   description:
@@ -83,7 +84,7 @@ export default function HvacContractorSharjah() {
         },
         {
           q: "Are you based in Sharjah?",
-          a: "No — AGEC is based in Dubai (AlMasraf Building, Sheikh Zayed Road) and delivers projects in Sharjah from there. You deal with the same Dubai engineering team; we do not run a separate Sharjah branch or local number.",
+          a: `No — AGEC is based in Dubai (${ADDRESS_LINE}) and delivers projects in Sharjah from there. You deal with the same Dubai engineering team; we do not run a separate Sharjah branch or local number.`,
         },
         {
           q: "What HVAC services do you offer in Sharjah?",
@@ -91,7 +92,7 @@ export default function HvacContractorSharjah() {
         },
         {
           q: "How do I get a quote for a Sharjah project?",
-          a: "Call or WhatsApp +971 58 557 5987, or send your details through our quote form. Tell us the property and what you need and our engineers will respond — we reply on call and WhatsApp 24/7.",
+          a: `Call or WhatsApp ${PHONE_DISPLAY}, or send your details through our quote form. Tell us the property and what you need and our engineers will respond — we reply on call and WhatsApp 24/7.`,
         },
       ]}
     />

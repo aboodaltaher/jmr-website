@@ -1,3 +1,4 @@
+import { business } from "@/data/business";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,10 +11,10 @@ import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { RelatedServices } from "@/components/RelatedServices";
 import { AuthorByline } from "@/components/AuthorByline";
 import { AuthorBox } from "@/components/AuthorBox";
-import { FOUNDER } from "@/lib/company";
+import { FOUNDER, PHONE, PHONE_DISPLAY, WHATSAPP } from "@/lib/company";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 
-const SITE_URL = "https://agec.ae";
+const SITE_URL = business.url;
 
 // Other published posts to surface under "Related reading", so every post is
 // linked from several siblings (internal linking / indexing). Deterministic:
@@ -59,7 +60,7 @@ const faqBySlug: Record<string, { question: string; answer: string }[]> = {
     },
     {
       question: "Do you cover my emirate?",
-      answer: "We've delivered projects in Dubai, Sharjah, Ajman and Abu Dhabi, and are available across the UAE. Call or WhatsApp +971 58 557 5987.",
+      answer: `We've delivered projects in Dubai, Sharjah, Ajman and Abu Dhabi, and are available across the UAE. Call or WhatsApp ${PHONE_DISPLAY}.`,
     },
   ],
   "why-ac-bill-so-high-dubai": [
@@ -240,7 +241,7 @@ export default async function ArticlePage({
     },
     publisher: {
       "@type": "Organization",
-      name: "Altaher Ghabboun Engineering Contracting (AGEC)",
+      name: business.name,
       logo: {
         "@type": "ImageObject",
         url: `${SITE_URL}/agec-logo.png`,
@@ -267,7 +268,7 @@ export default async function ArticlePage({
     },
     publisher: {
       "@type": "Organization",
-      name: "Altaher Ghabboun Engineering Contracting (AGEC)",
+      name: business.name,
       logo: {
         "@type": "ImageObject",
         url: `${SITE_URL}/agec-logo.png`,
@@ -384,7 +385,7 @@ export default async function ArticlePage({
                   Get My AMC Quote
                 </Link>
                 <a
-                  href={`https://wa.me/971585575987?text=${encodeURIComponent(
+                  href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
                     cta.whatsappText,
                   )}`}
                   target="_blank"
@@ -394,7 +395,7 @@ export default async function ArticlePage({
                   <MessageCircle className="h-4 w-4" /> WhatsApp an Engineer
                 </a>
                 <a
-                  href="tel:+971585575987"
+                  href={`tel:${PHONE}`}
                   className="inline-flex items-center gap-2 rounded-md border border-border px-7 py-4 font-semibold text-text hover:border-primary hover:text-primary transition-colors"
                 >
                   <Phone className="h-4 w-4" /> Call Now
@@ -425,11 +426,11 @@ export default async function ArticlePage({
                   Get a Quote
                 </Link>
                 <a
-                  href="tel:+971585575987"
+                  href={`tel:${PHONE}`}
                   className="flex items-center gap-2 text-sm font-medium text-text-muted hover:text-primary transition-colors"
                 >
                   <Phone className="h-4 w-4" />
-                  +971 58 557 5987
+                  {PHONE_DISPLAY}
                 </a>
               </div>
             </div>

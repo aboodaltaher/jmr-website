@@ -2,6 +2,7 @@ import { buildMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { LocationPageLayout } from "@/components/LocationPageLayout";
 
+import { ADDRESS_LINE, PHONE_DISPLAY } from "@/lib/company";
 export const metadata = buildMetadata({
   title: "HVAC Contractor in Ajman | Commercial & Villas | AGEC",
   description:
@@ -72,7 +73,7 @@ export default function HvacContractorAjman() {
         },
         {
           q: "Are you based in Ajman?",
-          a: "No — AGEC is based in Dubai (AlMasraf Building, Sheikh Zayed Road) and delivers projects in Ajman from there. You deal with the same Dubai engineering team; we do not run a separate Ajman branch or local number.",
+          a: `No — AGEC is based in Dubai (${ADDRESS_LINE}) and delivers projects in Ajman from there. You deal with the same Dubai engineering team; we do not run a separate Ajman branch or local number.`,
         },
         {
           q: "Do you handle VRF systems for malls and commercial buildings?",
@@ -80,7 +81,7 @@ export default function HvacContractorAjman() {
         },
         {
           q: "How do I get a quote for an Ajman project?",
-          a: "Call or WhatsApp +971 58 557 5987, or send your details through our quote form. Tell us the building and what you need and our engineers will respond — we reply on call and WhatsApp 24/7.",
+          a: `Call or WhatsApp ${PHONE_DISPLAY}, or send your details through our quote form. Tell us the building and what you need and our engineers will respond — we reply on call and WhatsApp 24/7.`,
         },
       ]}
     />

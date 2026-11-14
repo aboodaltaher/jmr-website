@@ -2,6 +2,7 @@ import { buildMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { LocationPageLayout } from "@/components/LocationPageLayout";
 
+import { ADDRESS_LINE, PHONE_DISPLAY } from "@/lib/company";
 export const metadata = buildMetadata({
   title: "HVAC Contractor in Abu Dhabi | Data Centre Cooling | AGEC",
   description:
@@ -87,11 +88,11 @@ export default function HvacContractorAbuDhabi() {
         },
         {
           q: "Are you based in Abu Dhabi?",
-          a: "No — AGEC is based in Dubai (AlMasraf Building, Sheikh Zayed Road) and delivers projects in Abu Dhabi from there. You deal with the same Dubai engineering team; we do not run a separate Abu Dhabi branch or local number.",
+          a: `No — AGEC is based in Dubai (${ADDRESS_LINE}) and delivers projects in Abu Dhabi from there. You deal with the same Dubai engineering team; we do not run a separate Abu Dhabi branch or local number.`,
         },
         {
           q: "How do I get a quote for an Abu Dhabi project?",
-          a: "Call or WhatsApp +971 58 557 5987, or send your details through our quote form. Tell us the facility and what you need and our engineers will respond — we reply on call and WhatsApp 24/7.",
+          a: `Call or WhatsApp ${PHONE_DISPLAY}, or send your details through our quote form. Tell us the facility and what you need and our engineers will respond — we reply on call and WhatsApp 24/7.`,
         },
       ]}
     />

@@ -3,6 +3,8 @@ import { getAllPosts } from "@/lib/blog";
 import { publishedProjects } from "@/data/projects";
 import { staticRoutes } from "@/lib/routes";
 import { LOCALE_PAIRS } from "@/lib/nav";
+import { publishedCommunities, communityPath } from "@/data/community-index";
+import { getCommunity } from "@/data/communities";
 
 const BASE = "https://agec.ae";
 
@@ -59,5 +61,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: post.updated || post.date || fallback,
   }));
 
-  return [...staticPages, ...arabicPages, ...caseStudies, ...blogPosts];
+  // Local community pages — only once published (see src/data/community-index.ts).
+  const communityPages: MetadataRoute.Sitemap = publishedCommunities().map((c) => ({
+    url: `${BASE}${communityPath(c.slug)}`,
+    lastModified: getCommunity(c.slug)?.updatedAt ?? fallback,
+  }));
+
+  return [...staticPages, ...arabicPages, ...communityPages, ...caseStudies, ...blogPosts];
 }
