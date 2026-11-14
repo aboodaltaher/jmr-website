@@ -28,7 +28,7 @@ import {
   Building2,
 } from "lucide-react";
 import { PHONE, PHONE_DISPLAY } from "@/lib/contact";
-import { PROJECTS_DELIVERED, EMIRATES_WITH_PROJECTS, GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from "@/lib/company";
+import { PROJECTS_DELIVERED, GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from "@/lib/company";
 import { GOOGLE_REVIEWS_URL, GOOGLE_REVIEWS } from "@/lib/reviews";
 import { getGoogleReviewStats } from "@/lib/google-reviews";
 
@@ -353,27 +353,6 @@ export default async function Home() {
               AC annual maintenance from AED 250 per machine per visit.
             </Link>
           </p>
-        </div>
-      </section>
-
-      {/* Stats Strip */}
-      <section className="border-b border-border py-16">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
-            {[
-              { value: PROJECTS_DELIVERED, label: "Projects Delivered" },
-              { value: "240 TR", label: "Max Single Project" },
-              { value: String(EMIRATES_WITH_PROJECTS.length), label: "Emirates with projects" },
-              { value: "2022", label: "Established" },
-            ].map((stat) => (
-              <div key={stat.label} className="text-center">
-                <p className="font-heading text-5xl font-bold text-primary">
-                  {stat.value}
-                </p>
-                <p className="mt-2 text-sm text-text-muted">{stat.label}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
