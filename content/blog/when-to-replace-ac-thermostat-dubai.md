@@ -4,7 +4,7 @@ updated: "2026-11-01"
 author: "AGEC Team"
 readingTime: "5 min read"
 image: "/projects/trane-hvac-controls-commissioning-dubai.jpg"
-description: "When should you replace your AC thermostat in Dubai? The signs a thermostat is failing, when an upgrade to a smart thermostat pays off, and what to check before you buy."
+description: "When to replace your AC thermostat in Dubai: the signs it's failing and when a smart upgrade pays off. Get a free compatibility check before you buy."
 titleTag: "When Should You Replace Your AC Thermostat? (Dubai) | AGEC"
 ---
 

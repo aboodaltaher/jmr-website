@@ -2,7 +2,7 @@ import { buildMetadata } from "@/lib/metadata";
 import Image from "next/image";
 import Link from "next/link";
 import { getAllPosts } from "@/lib/blog";
-import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { AuthorByline } from "@/components/AuthorByline";
 
 export const metadata = buildMetadata({
@@ -37,15 +37,10 @@ export default function BlogIndex() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
       />
-      <BreadcrumbSchema
-        items={[
-          { name: "Home", path: "" },
-          { name: "Insights", path: "/blog" },
-        ]}
-      />
       {/* Header */}
       <section className="bg-bg-soft py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
+          <Breadcrumbs items={[{ name: "Insights", href: "/blog" }]} className="mb-6" />
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">
             Insights
           </p>

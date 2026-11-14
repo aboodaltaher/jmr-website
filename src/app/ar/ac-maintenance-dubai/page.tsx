@@ -1,4 +1,5 @@
 import { buildMetadata } from "@/lib/metadata";
+import { BreadcrumbBand } from "@/components/Breadcrumbs";
 import { Phone, MessageCircle, Check, ShieldCheck, BadgeCheck, Clock, FileText, Gauge, CalendarClock } from "lucide-react";
 import { PHONE, PHONE_DISPLAY, whatsappUrl } from "@/lib/contact";
 import { EMAIL, ADDRESS_LINE, ADDRESS_CITY } from "@/lib/company";
@@ -12,9 +13,6 @@ export const metadata = buildMetadata({
     "صيانة احترافية للمكيفات في دبي من مهندسين مرخّصين: خدمة، إصلاح، تنظيف، وعقود سنوية. خدمة لمرة واحدة من 350 درهماً للوحدة. استجابة خلال ساعة.",
   path: ROUTE,
   locale: "ar_AE",
-  ogTitle: "صيانة مكيفات في دبي | AGEC",
-  ogDescription:
-    "خدمة وإصلاح وتنظيف وعقود صيانة سنوية. خدمة لمرة واحدة من 350 درهماً للوحدة.",
   languages: {
     "en-AE": `${SITE_URL}/ac-maintenance-dubai`,
     "ar-AE": `${SITE_URL}${ROUTE}`,
@@ -110,6 +108,15 @@ export default function ArabicAcMaintenance() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+
+      {/* Breadcrumb (single trail + BreadcrumbList JSON-LD) */}
+      <BreadcrumbBand
+        lang="ar"
+        items={[
+          { name: "الخدمات", href: "/ar/services" },
+          { name: "صيانة مكيفات في دبي", href: "/ar/ac-maintenance-dubai" },
+        ]}
+      />
 
       {/* HERO */}
       <section className="relative overflow-hidden bg-[#13212E] text-white">

@@ -4,7 +4,7 @@ updated: "2026-11-01"
 author: "AGEC Team"
 readingTime: "6 min read"
 image: "/photos/agec-ac-vent-cleaning-villa-dubai.jpg"
-description: "A musty or sour smell from your AC in Dubai usually means mould in the ducts, a dirty coil or a stagnant drain. An engineer explains each smell, what causes it, and how to fix it for good."
+description: "Why does your AC smell bad in Dubai? Musty, sour or burning smells point to mould, a dirty coil or a stagnant drain. Get the fix — call or WhatsApp 24/7."
 titleTag: "Why Does My AC Smell Bad in Dubai? | AGEC"
 ---
 

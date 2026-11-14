@@ -1,4 +1,5 @@
 import { buildMetadata } from "@/lib/metadata";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import Link from "next/link";
 import {
   Wind,
@@ -21,7 +22,7 @@ import {
 export const metadata = buildMetadata({
   title: "خدمات التكييف في دبي والإمارات | AGEC",
   description:
-    "تصميم وتركيب واختبار وتشغيل تجريبي وصيانة أنظمة التكييف للفلل والمكاتب والمباني التجارية عبر الإمارات.",
+    "خدمات التكييف في دبي والإمارات: تصميم وتركيب واختبار وتشغيل تجريبي وصيانة للفلل والمكاتب والمباني التجارية. اتصل أو راسلنا على واتساب.",
   path: "/ar/services",
   locale: "ar_AE",
 });
@@ -57,6 +58,7 @@ export default function ArabicServices() {
       {/* Header */}
       <section className="bg-bg-soft py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
+          <Breadcrumbs lang="ar" items={[{ name: "الخدمات", href: "/ar/services" }]} className="mb-6" />
           <p className={eyebrow}>خدماتنا</p>
           <h1 className="mt-3 max-w-4xl font-heading text-5xl font-bold md:text-6xl">
             خدمات تكييف متكاملة لكل أنواع المشاريع

@@ -31,6 +31,10 @@ export interface Project {
   draft: boolean;
   /** Content-last-changed date, YYYY-MM-DD. Feeds the sitemap's <lastmod>. */
   updatedAt: string;
+  /** <title> and og:title for the case-study page (max 60 chars; keeps the location). */
+  metaTitle: string;
+  /** Meta + og description for the case-study page (aim 140–155 chars). */
+  metaDescription: string;
 
   // ----- Case-study content -----
   /** One-line project type, e.g. "Commercial HVAC installation". */
@@ -57,6 +61,9 @@ export const projects: Project[] = [
     location: { area: "Al Mamzar", emirate: "Dubai", label: "Al Mamzar, Dubai" },
     draft: false,
     updatedAt: "2026-11-13",
+    metaTitle: "B+G+1+R Villa Al Mamzar — 109 TR VRF HVAC Case Study | AGEC",
+    metaDescription:
+      "109 TR VRF HVAC installation for a B+G+1+R villa in Al Mamzar, Dubai — zoned controls, commissioned to design conditions. Get a quote for a similar job.",
     projectType: "Residential HVAC installation",
     systemType: "109 TR VRF",
     overview:
@@ -83,6 +90,9 @@ export const projects: Project[] = [
     location: { emirate: "Ajman", label: "Ajman, UAE" },
     draft: false,
     updatedAt: "2026-11-04",
+    metaTitle: "Basil Mall Ajman — 224 TR VRF HVAC Case Study | AGEC",
+    metaDescription:
+      "224 TR VRF HVAC installation for Basil Mall, a B+G+1+R commercial mall in Ajman — independent zoning for shops and common areas. Get a quote.",
     projectType: "Commercial HVAC installation & commissioning",
     systemType: "224 TR VRF",
     overview:
@@ -102,6 +112,9 @@ export const projects: Project[] = [
     location: { emirate: "Dubai", label: "Dubai, UAE" },
     draft: false,
     updatedAt: "2026-11-04",
+    metaTitle: "Private G+4 Building Dubai — 148 TR HVAC Case Study | AGEC",
+    metaDescription:
+      "148 TR DX HVAC installation for a private G+4 residential building in Dubai, sized to the cooling load across its floors. Get a quote for a similar job.",
     projectType: "Residential HVAC installation",
     systemType: "148 TR DX",
     overview:
@@ -121,6 +134,9 @@ export const projects: Project[] = [
     location: { emirate: "Sharjah", label: "Sharjah, UAE" },
     draft: false,
     updatedAt: "2026-11-04",
+    metaTitle: "Double Twin Villa Sharjah — 60 TR DX HVAC Case Study | AGEC",
+    metaDescription:
+      "60 TR DX HVAC installation and commissioning for a double twin G+1 villa development in Sharjah, with zoned comfort cooling. Get a quote for a similar job.",
     projectType: "Residential HVAC installation",
     systemType: "60 TR DX",
     overview:
@@ -140,6 +156,9 @@ export const projects: Project[] = [
     location: { emirate: "Dubai", label: "Dubai, UAE" },
     draft: false,
     updatedAt: "2026-11-04",
+    metaTitle: "G+1+R Villa Dubai — 45 TR DX HVAC Case Study | AGEC",
+    metaDescription:
+      "45 TR DX HVAC installation and commissioning for a G+1+R villa in Dubai, matched to the home's room-by-room cooling load. Get a quote for a similar job.",
     projectType: "Residential HVAC installation",
     systemType: "45 TR DX",
     overview:
@@ -159,6 +178,9 @@ export const projects: Project[] = [
     location: { area: "Al Barsha", emirate: "Dubai", label: "Dubai, UAE" },
     draft: false,
     updatedAt: "2026-11-04",
+    metaTitle: "B+G+1+R Villa Al Barsha — 140 TR DX HVAC Case Study | AGEC",
+    metaDescription:
+      "140 TR DX HVAC installation for a B+G+1+R villa in Al Barsha, Dubai — a large single-home system sized to the villa's cooling load. Get a quote.",
     projectType: "Residential HVAC installation",
     systemType: "140 TR DX",
     overview:
@@ -178,6 +200,9 @@ export const projects: Project[] = [
     location: { area: "Al Rgebah / Al Seyouh", label: "Al Rgebah / Al Seyouh" },
     draft: false,
     updatedAt: "2026-11-04",
+    metaTitle: "18 Villas Al Rgebah / Al Seyouh — HVAC Case Study | AGEC",
+    metaDescription:
+      "HVAC works across 18 G+1 villas in Al Rgebah / Al Seyouh — one coordinated programme, every villa commissioned to the same standard. Get a quote.",
     projectType: "Residential HVAC — multi-villa community",
     systemType: "HVAC across 18 villas",
     overview:
@@ -197,6 +222,9 @@ export const projects: Project[] = [
     location: { emirate: "Sharjah", label: "Sharjah, UAE" },
     draft: false,
     updatedAt: "2026-11-04",
+    metaTitle: "B+G+1 Private Villa Sharjah — Premium HVAC Case Study | AGEC",
+    metaDescription:
+      "Premium HVAC for a B+G+1 private villa in Sharjah — concealed ductwork and zoned controls for quiet, even comfort. Get a quote for a similar job.",
     projectType: "Premium residential HVAC installation",
     systemType: "Premium residential HVAC",
     overview:
@@ -216,6 +244,9 @@ export const projects: Project[] = [
     location: { area: "Masdar City", emirate: "Abu Dhabi", label: "Masdar City, Abu Dhabi" },
     draft: false,
     updatedAt: "2026-11-04",
+    metaTitle: "MBZ-AI Server Room Masdar City — Cooling Case Study | AGEC",
+    metaDescription:
+      "Precision cooling for the MBZ-AI server room in Masdar City, Abu Dhabi — close-control units and rack airflow for a 24/7 load. Get a quote.",
     projectType: "Data-centre precision cooling",
     systemType: "Precision (close-control) cooling",
     overview:
@@ -235,6 +266,9 @@ export const projects: Project[] = [
     location: { area: "Al Barsha", emirate: "Dubai", label: "Al Barsha, Dubai" },
     draft: false,
     updatedAt: "2026-11-04",
+    metaTitle: "Pure Gym Al Barsha — HVAC & Ventilation Case Study | AGEC",
+    metaDescription:
+      "HVAC and ventilation for Pure Gym in Al Barsha, Dubai — cooling for high-occupancy training floors with fresh-air supply and exhaust. Get a quote.",
     projectType: "Commercial HVAC & ventilation",
     systemType: "HVAC & ventilation",
     overview:
@@ -254,6 +288,9 @@ export const projects: Project[] = [
     location: { area: "Business Bay", emirate: "Dubai", label: "Business Bay, Dubai" },
     draft: false,
     updatedAt: "2026-11-04",
+    metaTitle: "AVE Restaurant Business Bay — Ventilation Case Study | AGEC",
+    metaDescription:
+      "HVAC for AVE Restaurant in Business Bay, Dubai — dining-area cooling plus kitchen exhaust and make-up air, balanced and commissioned. Get a quote.",
     projectType: "Restaurant HVAC & kitchen ventilation",
     systemType: "Cooling & kitchen ventilation",
     overview:
@@ -273,6 +310,9 @@ export const projects: Project[] = [
     location: { area: "Musaffah", emirate: "Abu Dhabi", label: "Musaffah, Abu Dhabi" },
     draft: false,
     updatedAt: "2026-11-04",
+    metaTitle: "Zain Solution Data Center Musaffah — HVAC Case Study | AGEC",
+    metaDescription:
+      "Precision cooling and ventilation for the Zain Solution data centre in Musaffah, Abu Dhabi — built for continuous, reliable operation. Get a quote.",
     projectType: "Data-centre precision cooling & ventilation",
     systemType: "Precision cooling & ventilation",
     overview:
@@ -292,6 +332,9 @@ export const projects: Project[] = [
     location: { area: "Al Barsha", emirate: "Dubai", label: "Al Barsha, Dubai" },
     draft: false,
     updatedAt: "2026-11-04",
+    metaTitle: "Cultural Center Al Barsha — HVAC Case Study | AGEC",
+    metaDescription:
+      "HVAC works for a public cultural facility in Al Barsha, Dubai — cooling and ventilation that hold comfort as crowds come and go. Get a quote.",
     projectType: "Public / cultural facility HVAC",
     systemType: "HVAC works",
     overview:

@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { RelatedServices } from "@/components/RelatedServices";
 import { InlineLeadForm } from "@/components/InlineLeadForm";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { BreadcrumbBand } from "@/components/Breadcrumbs";
 import { GOOGLE_REVIEWS_URL, GOOGLE_REVIEWS } from "@/lib/reviews";
 import { getGoogleReviewStats } from "@/lib/google-reviews";
 import {
@@ -35,11 +35,9 @@ const WA = `https://wa.me/971585575987?text=${encodeURIComponent(
 const CANONICAL = "/ac-maintenance-dubai";
 
 export const metadata = buildMetadata({
-  title: "AC Maintenance Dubai | AC Servicing, Repair & AMC | AGEC",
+  title: "AC Maintenance Dubai — Engineer-Led, Same-Day | AGEC",
   description:
     "AC maintenance in Dubai by HVAC engineers: servicing, repair, coil and duct cleaning, gas top-up and AMC plans. Call +971 58 557 5987.",
-  ogDescription:
-    "Professional AC maintenance, servicing and repair in Dubai & the UAE by licensed HVAC engineers. Same-day & emergency service, AMC plans for villas, apartments and commercial buildings.",
   path: CANONICAL,
   languages: {
     "en-AE": `https://agec.ae${CANONICAL}`,
@@ -142,15 +140,6 @@ const faqSchema = {
   mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
 };
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://agec.ae" },
-    { "@type": "ListItem", position: 2, name: "Services", item: "https://agec.ae/services" },
-    { "@type": "ListItem", position: 3, name: "AC Maintenance Dubai", item: "https://agec.ae/ac-maintenance-dubai" },
-  ],
-};
 
 const eyebrow = "text-sm font-semibold uppercase tracking-widest text-primary";
 
@@ -163,25 +152,16 @@ export default async function AcMaintenancePage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
-      {/* Breadcrumb */}
-      <nav className="bg-bg-soft border-b border-border" aria-label="Breadcrumb">
-        <div className="mx-auto max-w-7xl px-6 py-3 text-sm text-text-muted">
-          <Link href="/" className="hover:text-primary transition-colors">Home</Link>
-          <span className="mx-2">/</span>
-          <Link href="/services" className="hover:text-primary transition-colors">Services</Link>
-          <span className="mx-2">/</span>
-          <span className="text-text">AC Maintenance Dubai</span>
-        </div>
-      </nav>
+      {/* Breadcrumb (single trail + BreadcrumbList JSON-LD) */}
+      <BreadcrumbBand
+        items={[
+          { name: "Services", href: "/services" },
+          { name: "AC Maintenance Dubai", href: "/ac-maintenance-dubai" },
+        ]}
+      />
 
       {/* HERO */}
-      <div className="border-b border-border bg-bg-soft">
-        <div className="mx-auto max-w-7xl px-6 py-3">
-          <Breadcrumbs items={[{ name: "AC Maintenance" }]} />
-        </div>
-      </div>
       <section className="relative overflow-hidden bg-[#13212E] text-white">
         <div className="pointer-events-none absolute inset-0" style={{ background: "radial-gradient(1100px 560px at 82% -10%, rgba(212,118,46,.32), transparent)" }} />
         <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 py-16 md:py-24 lg:grid-cols-[1.1fr_.9fr]">

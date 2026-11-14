@@ -3,7 +3,7 @@ date: "2026-07-13"
 author: "AGEC Team"
 readingTime: "8 min read"
 image: "/images/nest-vs-ecobee-comparison-dubai.jpg"
-description: "A UAE HVAC installer compares Google Nest and ecobee smart thermostats — features, AC compatibility, energy savings, and which one suits Dubai villas vs apartments."
+description: "Google Nest vs ecobee in the UAE: features, AC compatibility and typical 10–23% cooling energy savings, for villas & apartments. Free compatibility check."
 titleTag: "Google Nest vs ecobee UAE — Which Is Better? | AGEC"
 ---
 

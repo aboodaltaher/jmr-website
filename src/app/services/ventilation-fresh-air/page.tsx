@@ -11,7 +11,7 @@ import {
 import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
 
 export const metadata = buildMetadata({
-  title: "Fresh Air Ventilation & CO2 Testing Dubai | AGEC",
+  title: "Fresh Air, FAHU & Ventilation Systems Dubai | AGEC",
   description:
     "High CO2, stuffy rooms or failed fresh-air checks? We measure airflow and outdoor-air quantity, find the cause and fix it. Request an assessment.",
   path: "/services/ventilation-fresh-air",

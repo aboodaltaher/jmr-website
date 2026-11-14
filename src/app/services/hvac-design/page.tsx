@@ -11,7 +11,7 @@ import {
 import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
 
 export const metadata = buildMetadata({
-  title: "HVAC Design & Consultancy | AGEC",
+  title: "HVAC Design & Heat Load Calculation Dubai | AGEC",
   description:
     "HVAC system design, heat load calculations, duct sizing, and MEP coordination in Dubai. Engineering documentation from concept through construction.",
   path: "/services/hvac-design",

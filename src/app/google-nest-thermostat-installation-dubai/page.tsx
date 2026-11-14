@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { RelatedServices } from "@/components/RelatedServices";
 import { InlineLeadForm } from "@/components/InlineLeadForm";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { BreadcrumbBand } from "@/components/Breadcrumbs";
 import { GOOGLE_REVIEWS_URL } from "@/lib/reviews";
 import { getGoogleReviewStats } from "@/lib/google-reviews";
 import {
@@ -38,8 +38,6 @@ export const metadata = buildMetadata({
   title: "Google Nest Thermostat Installation Dubai | AGEC",
   description:
     "Professional Google Nest thermostat installation in Dubai — free compatibility check, C-wire wiring and Google Home setup by HVAC engineers.",
-  ogDescription:
-    "Supply & professional installation of Google Nest smart thermostats across Dubai & the UAE. Free compatibility check, C-wire wiring and Google Home setup.",
   path: CANONICAL,
 });
 
@@ -151,16 +149,6 @@ const faqSchema = {
   })),
 };
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://agec.ae" },
-    { "@type": "ListItem", position: 2, name: "Services", item: "https://agec.ae/services" },
-    { "@type": "ListItem", position: 3, name: "Smart Thermostats", item: "https://agec.ae/smart-thermostat-installation-dubai" },
-    { "@type": "ListItem", position: 4, name: "Google Nest Installation Dubai", item: "https://agec.ae/google-nest-thermostat-installation-dubai" },
-  ],
-};
 
 /* ------------------------------- HELPERS ------------------------------- */
 
@@ -176,19 +164,15 @@ export default async function GoogleNestPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
-      {/* Breadcrumb */}
-      <div className="border-b border-border bg-bg-soft">
-        <div className="mx-auto max-w-7xl px-6 py-3">
-          <Breadcrumbs
-            items={[
-              { name: "Smart Thermostats", href: "/smart-thermostat-installation-dubai" },
-              { name: "Google Nest" },
-            ]}
-          />
-        </div>
-      </div>
+      {/* Breadcrumb (single trail + BreadcrumbList JSON-LD) */}
+      <BreadcrumbBand
+        items={[
+          { name: "Services", href: "/services" },
+          { name: "Smart Thermostats", href: "/smart-thermostat-installation-dubai" },
+          { name: "Google Nest", href: "/google-nest-thermostat-installation-dubai" },
+        ]}
+      />
 
       {/* HERO */}
       <section className="relative overflow-hidden bg-[#13212E] text-white">

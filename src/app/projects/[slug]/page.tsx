@@ -4,7 +4,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MapPin } from "lucide-react";
 import { buildMetadata } from "@/lib/metadata";
-import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import {
   publishedProjects,
@@ -36,8 +35,8 @@ export async function generateMetadata({
   const project = getProjectBySlug(slug);
   if (!project || project.draft) return {};
   return buildMetadata({
-    title: `${project.name} — HVAC Case Study | AGEC`,
-    description: `${project.name} in ${locationText(project)}: ${project.systemSummary}. HVAC case study by AGEC.`,
+    title: project.metaTitle,
+    description: project.metaDescription,
     path: `/projects/${project.slug}`,
   });
 }
@@ -83,20 +82,16 @@ export default async function ProjectCaseStudy({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(projectSchema) }}
       />
-      <BreadcrumbSchema
-        items={[
-          { name: "Home", path: "" },
-          { name: "Projects", path: "/projects" },
-          { name: project.name, path: `/projects/${project.slug}` },
-        ]}
-      />
 
       {/* Header */}
       <section className="bg-bg-soft py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
           <Breadcrumbs
-            items={[{ name: "Projects", href: "/projects" }, { name: project.name }]}
             className="mb-6"
+            items={[
+              { name: "Projects", href: "/projects" },
+              { name: project.name, href: `/projects/${project.slug}` },
+            ]}
           />
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">
             {project.category} · Case Study

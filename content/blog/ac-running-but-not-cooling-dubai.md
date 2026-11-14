@@ -4,7 +4,7 @@ updated: "2026-11-01"
 author: "AGEC Team"
 readingTime: "6 min read"
 image: "/projects/agec-maintenance-service-dubai.jpg"
-description: "Your AC runs all day but the room never gets cold. An HVAC engineer explains the real causes in Dubai — dirty coils, blocked drains, refrigerant leaks — and why a gas top-up usually isn't the fix."
+description: "AC running but not cooling in Dubai? Dirty coils, blocked drains and refrigerant leaks are the usual causes, not a gas top-up. Call or WhatsApp 24/7."
 titleTag: "Why Is My AC Running But Not Cooling? (Dubai) | AGEC"
 ---
 

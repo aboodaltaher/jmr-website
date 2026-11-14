@@ -1,4 +1,5 @@
 import { buildMetadata } from "@/lib/metadata";
+import { BreadcrumbBand } from "@/components/Breadcrumbs";
 import Image from "next/image";
 import { Phone, MessageCircle, Check, Wind, AlertCircle } from "lucide-react";
 import { PHONE, PHONE_DISPLAY, whatsappUrl } from "@/lib/contact";
@@ -10,12 +11,9 @@ const ROUTE = "/ar/ac-duct-cleaning-dubai";
 export const metadata = buildMetadata({
   title: "تنظيف مجاري التكييف في دبي | فلل ومكاتب | AGEC",
   description:
-    "تنظيف كامل للمجاري والمبادلات والتصريف مع التعقيم وتقرير إنجاز مكتوب. فلل وشقق ومكاتب. اطلب عرض سعر.",
+    "تنظيف مجاري التكييف في دبي: تنظيف كامل للمجاري والمبادلات والتصريف مع التعقيم وتقرير إنجاز مكتوب للفلل والشقق والمكاتب. اطلب عرض سعر.",
   path: ROUTE,
   locale: "ar_AE",
-  ogTitle: "تنظيف مجاري التكييف في دبي | AGEC",
-  ogDescription:
-    "تنظيف كامل للمجاري والمبادلات والتصريف مع التعقيم وتقرير إنجاز مكتوب.",
   languages: {
     "en-AE": `${SITE_URL}/ac-duct-cleaning-dubai`,
     "ar-AE": `${SITE_URL}${ROUTE}`,
@@ -113,6 +111,15 @@ export default function ArabicDuctCleaning() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+
+      {/* Breadcrumb (single trail + BreadcrumbList JSON-LD) */}
+      <BreadcrumbBand
+        lang="ar"
+        items={[
+          { name: "الخدمات", href: "/ar/services" },
+          { name: "تنظيف مجاري التكييف في دبي", href: "/ar/ac-duct-cleaning-dubai" },
+        ]}
+      />
 
       {/* HERO */}
       <section className="relative overflow-hidden bg-[#13212E] text-white">

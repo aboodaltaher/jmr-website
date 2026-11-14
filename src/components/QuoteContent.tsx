@@ -1,4 +1,3 @@
-import { BreadcrumbSchema } from "@/components/BreadcrumbSchema";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { QuoteForm } from "@/components/QuoteForm";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
@@ -12,16 +11,10 @@ export function QuoteContent() {
   return (
     <>
       <EmergencyStrip />
-      <BreadcrumbSchema
-        items={[
-          { name: "Home", path: "" },
-          { name: "Get a Quote", path: "/quote" },
-        ]}
-      />
       {/* Header */}
       <section className="bg-bg-soft py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-6">
-          <Breadcrumbs items={[{ name: "Get a Quote" }]} className="mb-6" />
+          <Breadcrumbs items={[{ name: "Get a Quote", href: "/quote" }]} className="mb-6" />
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">
             Get a Quote
           </p>
