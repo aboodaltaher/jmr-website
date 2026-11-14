@@ -1,3 +1,4 @@
+import { MidPageCta } from "@/components/MidPageCta";
 import { buildMetadata } from "@/lib/metadata";
 import { BreadcrumbBand } from "@/components/Breadcrumbs";
 import { Phone, MessageCircle, Check, ShieldCheck, BadgeCheck, Clock, FileText, Gauge, CalendarClock } from "lucide-react";
@@ -165,6 +166,9 @@ export default function ArabicAcMaintenance() {
           </div>
         </div>
       </section>
+
+      {/* Mid-page lead block, directly after the first proof section */}
+      <MidPageCta service="صيانة المكيفات" path="/ar/ac-maintenance-dubai" lang="ar" />
 
       {/* STEPS */}
       <section className="bg-bg-soft py-16 md:py-20">

@@ -1,3 +1,4 @@
+import { MidPageCta } from "@/components/MidPageCta";
 import Link from "next/link";
 import { MapPin, Phone, Check } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -152,6 +153,9 @@ export function LocationPageLayout({
           </div>
         </section>
       )}
+
+      {/* Mid-page lead block, directly after the first proof section (projects delivered) */}
+      <MidPageCta service={`HVAC project in ${emirate}`} path={`/${slug}`} />
 
       {/* Services offered */}
       <section className="py-16 md:py-20">

@@ -40,6 +40,7 @@ export function StickyContactBar() {
   return (
     <nav
       aria-label="Quick contact"
+      data-track-location="sticky_bar"
       className="fixed inset-x-0 bottom-0 z-40 flex border-t border-border bg-white pb-[env(safe-area-inset-bottom)] md:hidden"
     >
       <a
@@ -60,7 +61,7 @@ export function StickyContactBar() {
         <MessageCircle className="h-5 w-5 shrink-0" aria-hidden="true" />
         WhatsApp
       </a>
-      <Link
+      <Link prefetch={false}
         href="/quote"
         aria-label="Get a quote from AGEC"
         className="flex min-h-[48px] flex-1 items-center justify-center gap-2 border-l border-border bg-primary px-2 py-3 text-sm font-semibold text-white"

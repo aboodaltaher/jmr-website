@@ -1,9 +1,12 @@
+import { Fragment } from "react";
 import Link from "next/link";
 import { MessageCircle, Phone } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { MidPageCta } from "@/components/MidPageCta";
 import { business } from "@/data/business";
 import { getProjectBySlug } from "@/data/projects";
-import { PHONE, PHONE_DISPLAY, WHATSAPP } from "@/lib/company";
+import { PHONE, PHONE_DISPLAY } from "@/lib/company";
+import { whatsappUrl } from "@/lib/contact";
 import type { Community } from "@/data/communities";
 import { MARKER_SPLIT, scrubDraft, resolveDraft } from "@/lib/draft";
 
@@ -28,7 +31,7 @@ export function CommunityPage({ community: raw }: { community: Community }) {
   const c = scrubDraft(raw);
   const path = `/ac-maintenance/${c.slug}`;
   const url = `${business.url}${path}`;
-  const wa = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(c.whatsappText)}`;
+  const wa = whatsappUrl(path);
   const projects = c.projectSlugs
     .map((s) => getProjectBySlug(s))
     .filter((p) => p && !p.draft);
@@ -122,7 +125,8 @@ export function CommunityPage({ community: raw }: { community: Community }) {
 
       {/* Body sections */}
       {c.sections.map((s, i) => (
-        <section key={s.h2} className={i % 2 === 0 ? "py-14 md:py-16" : "bg-bg-soft py-14 md:py-16"}>
+        <Fragment key={s.h2}>
+        <section className={i % 2 === 0 ? "py-14 md:py-16" : "bg-bg-soft py-14 md:py-16"}>
           <div className="mx-auto max-w-4xl px-6">
             <h2 className="font-heading text-3xl font-bold md:text-4xl">{s.h2}</h2>
             <div className="mt-5 space-y-4 leading-relaxed text-text-muted">
@@ -139,6 +143,9 @@ export function CommunityPage({ community: raw }: { community: Community }) {
             </div>
           </div>
         </section>
+        {/* Mid-page lead block, directly after the first body (checklist) section */}
+        {i === 0 && <MidPageCta service={`AC maintenance in ${c.name}`} path={path} />}
+        </Fragment>
       ))}
 
       {/* Services that fit — contextual internal links */}

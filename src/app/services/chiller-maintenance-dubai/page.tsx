@@ -11,7 +11,6 @@ import {
   FileText,
 } from "lucide-react";
 import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
-import { InlineLeadForm } from "@/components/InlineLeadForm";
 import { PROJECTS_DELIVERED } from "@/lib/company";
 import { ratingValue, reviewCount } from "@/lib/siteStats";
 
@@ -28,14 +27,7 @@ export default function ChillerMaintenance() {
       slug="services/chiller-maintenance-dubai"
       heroImage="/projects/chiller-installation-dubai-agec.jpg"
       heroImageAlt="Chiller plant installed and maintained by AGEC for a commercial project in Dubai"
-      leadForm={
-        <InlineLeadForm
-          requestType="Chiller installation / maintenance enquiry"
-          whatsappPath="/services/chiller-maintenance-dubai"
-          detailsLabel="Plant and site (optional)"
-          detailsPlaceholder="e.g. 2× air-cooled chillers on a commercial tower in Dubai — need installation, or a maintenance plan."
-        />
-      }
+      ctaBar
       title="Chiller Installation and Maintenance"
       intro="Air- and water-cooled chiller plant in Dubai — selected, installed and commissioned, then kept at its design capacity through planned maintenance and repair."
       overview={

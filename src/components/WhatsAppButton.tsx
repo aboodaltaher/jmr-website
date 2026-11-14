@@ -1,14 +1,15 @@
 
-import { WHATSAPP } from "@/lib/company";const PHONE = WHATSAPP;
-const MESSAGE =
-  "Hi AGEC, I'd like to know more about your HVAC services.";
+"use client";
 
-const whatsappUrl = `https://wa.me/${PHONE}?text=${encodeURIComponent(MESSAGE)}`;
+import { usePathname } from "next/navigation";
+import { whatsappUrl } from "@/lib/contact";
 
 export function WhatsAppButton() {
+  const pathname = usePathname();
   return (
     <a
-      href={whatsappUrl}
+      href={whatsappUrl(pathname)}
+      data-track-location="floating_button"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Contact us on WhatsApp"

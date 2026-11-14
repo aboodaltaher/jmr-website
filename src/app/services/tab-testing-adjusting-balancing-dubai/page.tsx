@@ -8,7 +8,6 @@ import {
   FileText,
 } from "lucide-react";
 import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
-import { InlineLeadForm } from "@/components/InlineLeadForm";
 import { ratingValue, reviewCount } from "@/lib/siteStats";
 
 export const metadata = buildMetadata({
@@ -24,14 +23,7 @@ export default function TestingCommissioningBalancing() {
       slug="services/tab-testing-adjusting-balancing-dubai"
       heroImage="/projects/agec-technician-tab-commissioning-airflow-balometer-dubai.jpg"
       heroImageAlt="AGEC technician performing HVAC testing, commissioning and air balancing with an airflow balometer at a Dubai project"
-      leadForm={
-        <InlineLeadForm
-          requestType="Testing, commissioning & balancing enquiry"
-          whatsappPath="/services/tab-testing-adjusting-balancing-dubai"
-          detailsLabel="Building and problem (optional)"
-          detailsPlaceholder="e.g. office floor in Business Bay — some rooms warm, consultant wants a balancing and commissioning report."
-        />
-      }
+      ctaBar
       title="HVAC Testing, Commissioning & Air Balancing in Dubai"
       intro="Measured airflow and water flow set and proven to their design figures, controls verified, and the whole system commissioned — with a documented report to prove it."
       overview={

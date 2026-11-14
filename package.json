@@ -11,12 +11,12 @@
     "seo-check": "node scripts/seo-check.ts",
     "seo-check:legacy": "node scripts/seo-check.mjs",
     "check-nap": "bash scripts/check-nap.sh",
+    "psi-check": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/psi-check.ts",
     "to-confirm": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/list-to-confirm.ts",
     "qr": "node scripts/generate-review-qr.mjs",
     "onpage-check": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/onpage-check.ts"
   },
   "dependencies": {
-    "@hookform/resolvers": "^5.4.0",
     "gray-matter": "^4.0.3",
     "lucide-react": "^1.16.0",
     "next": "16.2.6",

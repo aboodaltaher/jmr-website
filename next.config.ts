@@ -2,6 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   skipTrailingSlashRedirect: true,
+  // Serve AVIF where the browser supports it (WebP otherwise).
+  // 75 is the default; 60 is used by the homepage hero, which sits under a dark gradient.
+  images: { formats: ["image/avif", "image/webp"], qualities: [60, 75] },
   async headers() {
     // Security / best-practices hardening, applied to every response.
     const securityHeaders = [

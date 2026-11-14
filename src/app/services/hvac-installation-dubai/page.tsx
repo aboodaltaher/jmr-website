@@ -10,7 +10,6 @@ import {
   FileText,
 } from "lucide-react";
 import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
-import { InlineLeadForm } from "@/components/InlineLeadForm";
 import { ratingValue, reviewCount } from "@/lib/siteStats";
 
 export const metadata = buildMetadata({
@@ -24,14 +23,7 @@ export default function HvacInstallation() {
   return (
     <ServiceDetailLayout
       slug="services/hvac-installation-dubai"
-      leadForm={
-        <InlineLeadForm
-          requestType="HVAC installation quote"
-          whatsappPath="/services/hvac-installation-dubai"
-          detailsLabel="Project details (optional)"
-          detailsPlaceholder="e.g. new villa in Dubai Hills, G+1, ducted split — need supply + install + commissioning."
-        />
-      }
+      ctaBar
       title="HVAC Installation"
       intro="Complete air-conditioning installation for new builds and fit-outs — from reading the design through to a commissioned, documented handover."
       overview={

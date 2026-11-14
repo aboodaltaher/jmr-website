@@ -1,3 +1,4 @@
+import { MidPageCta } from "@/components/MidPageCta";
 import { buildMetadata } from "@/lib/metadata";
 import { BreadcrumbBand } from "@/components/Breadcrumbs";
 import Image from "next/image";
@@ -151,6 +152,7 @@ export default function ArabicDuctCleaning() {
               src="/photos/agec-ac-vent-cleaning-villa-dubai.jpg"
               alt="فني AGEC ينظّف تهوية التكييف في فيلا بدبي"
               fill
+              sizes="(max-width: 1024px) 100vw, 600px"
               className="object-cover"
             />
           </div>
@@ -174,6 +176,9 @@ export default function ArabicDuctCleaning() {
           </ul>
         </div>
       </section>
+
+      {/* Mid-page lead block, directly after the first proof section */}
+      <MidPageCta service="تنظيف مجاري التكييف" path="/ar/ac-duct-cleaning-dubai" lang="ar" />
 
       {/* SIGNS */}
       <section className="bg-bg-soft py-16 md:py-20">

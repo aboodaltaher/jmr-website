@@ -2,26 +2,25 @@
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 import { Check, MessageCircle } from "lucide-react";
 import { submitBalancingRequest } from "@/app/actions";
 import { trackFormSubmit } from "@/lib/gtag";
 import { FormAssurance } from "@/components/FormAssurance";
+import { type FormOf, defineSchema, resolver, required, optionalText, optionalEmail } from "@/lib/form-schema";
 
-const schema = z.object({
-  name: z.string().min(1, "Full name is required"),
-  phone: z.string().min(1, "Phone number is required"),
-  buildingType: z.string().min(1, "Please select a building type"),
-  symptom: z.string().min(1, "Please describe the symptom"),
-  company: z.string().optional(),
-  email: z.string().email("Please enter a valid email").optional().or(z.literal("")),
-  location: z.string().optional(),
-  drawings: z.string().optional(),
-  notes: z.string().optional(),
+const schema = defineSchema({
+  name: required("Full name is required"),
+  phone: required("Phone number is required"),
+  buildingType: required("Please select a building type"),
+  symptom: required("Please describe the symptom"),
+  company: optionalText(),
+  email: optionalEmail("Please enter a valid email"),
+  location: optionalText(),
+  drawings: optionalText(),
+  notes: optionalText(),
 });
 
-type FormData = z.infer<typeof schema>;
+type FormData = FormOf<typeof schema>;
 
 const inputClass = (hasError: boolean) =>
   `w-full rounded-md border ${hasError ? "border-red-500" : "border-border"} bg-white px-4 py-3 text-sm transition-colors focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary`;
@@ -32,13 +31,13 @@ export function BalancingForm({ whatsappHref }: { whatsappHref: string }) {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
-  } = useForm<FormData>({ resolver: zodResolver(schema) });
+  } = useForm<FormData>({ resolver: resolver(schema) });
 
   const onSubmit = async (data: FormData) => {
     const result = await submitBalancingRequest(data);
     if (result.success) {
       setSubmitted(true);
-      trackFormSubmit("balancing");
+      trackFormSubmit("balancing", "quote", "balancing_page");
     }
   };
 
