@@ -54,4 +54,5 @@ export const staticRoutes: RouteEntry[] = [
   { path: "/blog", changeFrequency: "weekly", priority: 0.8 },
   { path: "/quote", changeFrequency: "yearly", priority: 0.9 },
   { path: "/contact", changeFrequency: "yearly", priority: 0.8 },
+  { path: "/privacy-policy", changeFrequency: "yearly", priority: 0.2 },
 ];
