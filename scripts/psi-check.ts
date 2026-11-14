@@ -39,7 +39,19 @@ interface Row {
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
-async function psi(url: string, strategy: string): Promise<any> {
+// The PSI response is large and only partly used; type just what is read.
+interface PsiMetric { percentile?: number }
+interface PsiExperience { metrics?: Record<string, PsiMetric | undefined> }
+interface PsiResponse {
+  lighthouseResult?: {
+    categories?: { performance?: { score?: number | null } };
+    audits?: Record<string, { numericValue?: number } | undefined>;
+  };
+  loadingExperience?: PsiExperience;
+  originLoadingExperience?: PsiExperience;
+}
+
+async function psi(url: string, strategy: string): Promise<PsiResponse> {
   const q = new URLSearchParams({ url, strategy, category: "performance" });
   if (KEY) q.set("key", KEY);
   for (let attempt = 1; attempt <= 4; attempt++) {
@@ -54,9 +66,9 @@ async function psi(url: string, strategy: string): Promise<any> {
   throw new Error("PSI: gave up after 4 attempts (quota or server error)");
 }
 
-const metric = (m: any, key: string): number | null => m?.[key]?.percentile ?? null;
+const metric = (m: PsiExperience["metrics"], key: string): number | null => m?.[key]?.percentile ?? null;
 
-function fieldData(json: any): Field {
+function fieldData(json: PsiResponse): Field {
   for (const [exp, source] of [
     [json.loadingExperience, "url"],
     [json.originLoadingExperience, "origin"],
