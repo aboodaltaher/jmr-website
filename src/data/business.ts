@@ -70,9 +70,9 @@ export const business = {
   },
 
   links: {
-    // TODO(owner): replace with the full Google Maps CID URL
-    // (https://www.google.com/maps?cid=…). Interim value: current profile link.
-    mapsView: "https://maps.app.goo.gl/NymgUk6cDcj8PRSL6",
+    // Google Maps CID URL for the business profile (used for "View on Google
+    // Maps", schema hasMap and sameAs).
+    mapsView: "https://maps.google.com/?cid=14934329653680563760",
     // TODO(owner): replace with the g.page review link
     // (https://g.page/r/<id>/review). Interim value: current review link.
     reviewLeave: "https://maps.app.goo.gl/fPKs5SXmDeK9Co4VA",
