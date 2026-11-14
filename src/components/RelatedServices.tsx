@@ -9,8 +9,6 @@ const ALL_SERVICES = [
   { href: "/ac-duct-cleaning-dubai", label: "AC Duct Cleaning", desc: "Ducts, coils & drains with disinfection" },
   { href: "/services/tab-testing-adjusting-balancing-dubai", label: "Testing, Commissioning & Balancing", desc: "Air & water balanced & commissioned to design" },
   { href: "/smart-thermostat-installation-dubai", label: "Smart Thermostats", desc: "Nest & ecobee installation" },
-  { href: "/google-nest-thermostat-installation-dubai", label: "Google Nest Installation", desc: "Supply & fit Google Nest thermostats" },
-  { href: "/ecobee-thermostat-installation-dubai", label: "ecobee Installation", desc: "Supply & fit ecobee thermostats" },
   { href: "/services/vrf-vrv-systems", label: "VRF / VRV Systems", desc: "Multi-zone design & commissioning" },
   { href: "/services/chiller-maintenance-dubai", label: "Chiller Installation & Maintenance", desc: "Design, install & service chiller plant" },
   { href: "/services/ventilation-fresh-air", label: "Ventilation & Fresh Air", desc: "Airflow & CO₂ testing" },

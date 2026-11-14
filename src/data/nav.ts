@@ -3,6 +3,8 @@
 // an Arabic page exists; otherwise the Arabic menu links the English page
 // (per the URL rules). `desc` is kept to ~8 words.
 
+import { isPublished } from "./new-pages";
+
 export interface MegaItem {
   label: string;
   href: string;
@@ -45,7 +47,11 @@ export const servicesMenu: MegaGroup[] = [
       { label: "Commercial Maintenance & AMC", href: "/ac-amc-dubai#commercial-amc", desc: "PPM and SLAs for buildings", arLabel: "الصيانة التجارية وعقود AMC", arDesc: "صيانة وقائية واتفاقيات للمباني", arHref: "/ar/ac-amc-dubai" },
       { label: "Chiller Maintenance", href: "/services/chiller-maintenance-dubai", desc: "Air- and water-cooled plants", arLabel: "صيانة التشيلر", arDesc: "وحدات مبرّدة بالهواء والماء", arHref: "/ar/services/chiller-maintenance-dubai" },
       { label: "Ventilation & Fresh Air", href: "/services/ventilation-fresh-air", desc: "FAHU, CO₂ and air quality", arLabel: "التهوية والهواء النقي", arDesc: "وحدات هواء نقي وجودة الهواء", arHref: "/ar/services/ventilation-fresh-air" },
-      { label: "DX Units & Split Systems", href: "/services/dx-units", desc: "Ducted and packaged DX", arLabel: "وحدات DX والسبليت", arDesc: "أنظمة DX مجاري ومجمّعة" },
+      { label: "DX Units & Split Systems", href: "/services/dx-units", desc: "Ducted and packaged DX", arLabel: "وحدات DX والسبليت", arDesc: "أنظمة DX مجاري ومجمّعة", arHref: "/ar/services/dx-units" },
+      // Ducting: only in the menu once its page is published (src/data/new-pages.ts)
+      ...(isPublished("ducting")
+        ? [{ label: "AC Ducting & Fabrication", href: "/ac-ducting-installation-dubai", desc: "GI and PIR duct, built and tested", arLabel: "مجاري التكييف وتصنيعها", arDesc: "مجاري GI ومعزولة، مصنّعة ومختبَرة", arHref: "/ar/ac-ducting-installation-dubai" }]
+        : []),
     ],
   },
   {
@@ -54,8 +60,12 @@ export const servicesMenu: MegaGroup[] = [
     audience: "Consultants, developers, contractors",
     arAudience: "استشاريون ومطوّرون ومقاولون",
     items: [
-      { label: "VRF / VRV Systems", href: "/services/vrf-vrv-systems", desc: "Design, install and commission", arLabel: "أنظمة VRF / VRV", arDesc: "تصميم وتركيب وتشغيل تجريبي" },
-      { label: "HVAC Design & Consultancy", href: "/services/hvac-design", desc: "Heat-load calcs and duct sizing", arLabel: "التصميم والاستشارات الهندسية", arDesc: "حسابات الأحمال وتحجيم المجاري" },
+      { label: "VRF / VRV Systems", href: "/services/vrf-vrv-systems", desc: "Design, install and commission", arLabel: "أنظمة VRF / VRV", arDesc: "تصميم وتركيب وتشغيل تجريبي", arHref: "/ar/services/vrf-vrv-systems" },
+      { label: "HVAC Design & Consultancy", href: "/services/hvac-design", desc: "Heat-load calcs and duct sizing", arLabel: "التصميم والاستشارات الهندسية", arDesc: "حسابات الأحمال وتحجيم المجاري", arHref: "/ar/services/hvac-design" },
+      // MEP: only in the menu once its page is published (src/data/new-pages.ts)
+      ...(isPublished("mep")
+        ? [{ label: "HVAC-Led MEP", href: "/mep-contractors-dubai", desc: "HVAC in-house, trades coordinated", arLabel: "MEP بقيادة التكييف", arDesc: "التكييف داخلياً وتنسيق بقية الأعمال", arHref: "/ar/mep-contractors-dubai" }]
+        : []),
       { label: "Testing, Commissioning & Balancing", href: "/services/tab-testing-adjusting-balancing-dubai", desc: "ASHRAE 111 TAB reports", arLabel: "الاختبار والتشغيل والموازنة", arDesc: "تقارير موازنة وفق ASHRAE 111", arHref: "/ar/services/tab-testing-adjusting-balancing-dubai" },
     ],
   },

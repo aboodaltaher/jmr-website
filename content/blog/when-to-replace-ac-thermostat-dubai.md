@@ -42,3 +42,5 @@ We run a free compatibility check before any installation, so you know exactly w
 ## The bottom line
 
 Replace the thermostat when it's clearly failing. Upgrade it when you want lower bills and real control. Either way, confirm compatibility first — a quick check now saves a wasted purchase. [Book a free compatibility check](/smart-thermostat-installation-dubai) or send us your AC brand and model on WhatsApp.
+
+If the AC itself is struggling, the thermostat may not be the cause. A service is often the answer; see our [AC maintenance](/ac-maintenance-dubai).

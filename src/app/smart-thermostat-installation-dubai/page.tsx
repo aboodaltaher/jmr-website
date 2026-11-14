@@ -292,6 +292,49 @@ const faqs: { q: string; a: string }[] = [
 
 /* ------------------------------ JSON-LD ------------------------------ */
 
+/* ------------- BRAND SECTIONS (moved from the retired Nest / ecobee pages) ------------- */
+// Text below is carried over verbatim from /google-nest-thermostat-installation-dubai
+// and /ecobee-thermostat-installation-dubai (now 301-redirected here). Only items that
+// were not already on this page were kept; pricing, reviews, process, areas and CTAs
+// were duplicates and were dropped.
+
+const nestDoes = [
+  "Supply & install genuine Google Nest thermostats — or install-only for a Nest you already own",
+  "Full Google Home app setup — Wi-Fi, schedules, geofencing and eco modes, plus a hands-on walkthrough",
+];
+const nestCompat =
+  "Most Dubai homes use 24V ducted or ducted-split systems, which Nest supports. For 220/240V split and inverter units, our engineers fit a safe interface module so Nest can control the AC without modifying or damaging your unit and without depending on its internal control board. For VRF/VRV systems we fit a drop-air adaptor so the Nest can control the indoor unit. We check split, ducted DX, VRF/VRV and chiller FCU setups first — so there's a solution for almost any system. Compatibility depends on your wiring and controls, not just the AC brand, which is why we always start with a free assessment.";
+const nestSetup =
+  "Google Home setup & training: connected, scheduled and explained so you get value from day one.";
+const nestFaqs: { q: string; a: string }[] = [
+  { q: "Is Google Nest available in the UAE?", a: "Yes — Google Nest is officially sold in the UAE. We install the model you already have, or supply a genuine unit for you as part of the job." },
+  { q: "Does Nest work with VRF/VRV or chiller FCU systems?", a: `Yes — Nest works with VRF/VRV systems using a drop-air adaptor, an interface we fit so the Nest can control the indoor unit (AED ${PRICE_DROP_AIR_ADAPTOR} where required). Chiller FCU and other setups vary, so we confirm your specific system with a free compatibility check first.` },
+  { q: "Can you install a Nest I already bought?", a: "Yes — we offer install-only. We check compatibility, wire it correctly (C-wire where needed) and set up Google Home, so a device you sourced yourself is fitted to professional standard." },
+];
+
+const ecobeeDoes = [
+  "Supply & install ecobee smart thermostats — or install-only for an ecobee you already own",
+  "Optimal SmartSensor placement for room-by-room balancing in larger villas",
+  "App and Wi-Fi setup, schedules, eco+ modes and a hands-on walkthrough",
+];
+const ecobeeCompat =
+  "We install ecobee on split, ducted DX, VRF/VRV and chiller FCU systems. Most Dubai homes use 24V ducted systems (directly compatible); for 220/240V split and inverter units we fit a safe interface module so the ecobee controls the AC without altering it. For VRF/VRV systems we fit a drop-air adaptor so the ecobee can control the indoor unit. Compatibility depends on your wiring and controls — so we always start with a free check.";
+const ecobeeCards = [
+  { title: "Multi-Room Sensor Tuning", desc: "ecobee's SmartSensors balance temperature across rooms. We place and configure them for even comfort in larger villas and multi-zone homes." },
+  { title: "Backed by Our Guarantee", desc: "Every ecobee we supply is covered by our workmanship guarantee; manufacturer warranty applies where the unit you receive carries one." },
+];
+const ecobeeSetup =
+  "App setup & training: Wi-Fi, schedules, eco+ modes and sensors configured and explained.";
+const ecobeeFaqs: { q: string; a: string }[] = [
+  { q: "Do you supply and install ecobee in Dubai?", a: "Yes — we supply and professionally install ecobee smart thermostats, and we also offer install-only if you've already sourced your own unit. Either way, we start with a free compatibility check." },
+  { q: "Is ecobee officially sold in the UAE?", a: "ecobee isn't as widely available through official UAE channels as Google Nest, so units here are typically imported. It's worth knowing before you buy, as regional warranty terms and app-account requirements can differ. We back every ecobee we supply with our workmanship guarantee, and manufacturer warranty applies where the unit you receive carries one." },
+  { q: "Does ecobee work with VRF/VRV or chiller FCU systems?", a: `Yes — for VRF/VRV we fit a drop-air adaptor so the ecobee can control the indoor unit (AED ${PRICE_DROP_AIR_ADAPTOR} where required). Chiller FCU and other setups vary, so we confirm your specific system with a free compatibility check first.` },
+];
+
+// One FAQPage schema covers the general FAQs plus the brand FAQs shown in the
+// Google Nest / ecobee sections.
+const allFaqs = [...faqs, ...nestFaqs, ...ecobeeFaqs];
+
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -313,7 +356,7 @@ const serviceSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
+  mainEntity: allFaqs.map((f) => ({
     "@type": "Question",
     name: f.q,
     acceptedAnswer: { "@type": "Answer", text: f.a },
@@ -459,10 +502,10 @@ export default async function SmartThermostatPage() {
               Every device includes professional installation, Wi-Fi setup, app configuration and hands-on training.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
-              <Link href="/google-nest-thermostat-installation-dubai" className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/5 px-5 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-primary/10">
+              <Link href="#google-nest" className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/5 px-5 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-primary/10">
                 Google Nest installation &rarr;
               </Link>
-              <Link href="/ecobee-thermostat-installation-dubai" className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/5 px-5 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-primary/10">
+              <Link href="#ecobee" className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/5 px-5 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-primary/10">
                 ecobee installation &rarr;
               </Link>
             </div>
@@ -512,6 +555,88 @@ export default async function SmartThermostatPage() {
                   </Link>
                 </div>
               </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* GOOGLE NEST */}
+      <section id="google-nest" className="scroll-mt-24 bg-bg-soft py-16 md:py-24">
+        <div className="mx-auto max-w-5xl px-6">
+          <p className={eyebrow}>Brand guide</p>
+          <h2 className="mt-3 font-heading text-3xl font-bold md:text-5xl">Google Nest Thermostat Installation</h2>
+          <div className="mt-8 grid gap-10 md:grid-cols-2">
+            <div>
+              <h3 className="font-heading text-xl font-semibold">What we do for Google Nest</h3>
+              <ul className="mt-4 space-y-3">
+                {nestDoes.map((d) => (
+                  <li key={d} className="flex gap-3 text-text-muted">
+                    <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" strokeWidth={2} />
+                    <span>{d}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-5 text-text-muted">{nestSetup}</p>
+            </div>
+            <div>
+              <h3 className="font-heading text-xl font-semibold">Does Nest work with my AC?</h3>
+              <p className="mt-4 leading-relaxed text-text-muted">{nestCompat}</p>
+            </div>
+          </div>
+          <div className="mt-10 space-y-3">
+            {nestFaqs.map((f) => (
+              <details key={f.q} className="group rounded-lg border border-border bg-white">
+                <summary className="flex cursor-pointer items-center justify-between gap-4 p-5 font-semibold text-text marker:content-none">
+                  {f.q}
+                  <span className="text-2xl leading-none text-primary transition-transform group-open:rotate-45">+</span>
+                </summary>
+                <p className="px-5 pb-5 text-text-muted">{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ECOBEE */}
+      <section id="ecobee" className="scroll-mt-24 py-16 md:py-24">
+        <div className="mx-auto max-w-5xl px-6">
+          <p className={eyebrow}>Brand guide</p>
+          <h2 className="mt-3 font-heading text-3xl font-bold md:text-5xl">ecobee Thermostat Installation</h2>
+          <div className="mt-8 grid gap-10 md:grid-cols-2">
+            <div>
+              <h3 className="font-heading text-xl font-semibold">What we do for ecobee</h3>
+              <ul className="mt-4 space-y-3">
+                {ecobeeDoes.map((d) => (
+                  <li key={d} className="flex gap-3 text-text-muted">
+                    <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" strokeWidth={2} />
+                    <span>{d}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-5 text-text-muted">{ecobeeSetup}</p>
+            </div>
+            <div>
+              <h3 className="font-heading text-xl font-semibold">Does ecobee work with my AC?</h3>
+              <p className="mt-4 leading-relaxed text-text-muted">{ecobeeCompat}</p>
+            </div>
+          </div>
+          <div className="mt-8 grid gap-6 sm:grid-cols-2">
+            {ecobeeCards.map((c) => (
+              <div key={c.title} className="rounded-lg border border-border bg-bg-soft p-6">
+                <h3 className="font-heading text-lg font-semibold">{c.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-text-muted">{c.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-10 space-y-3">
+            {ecobeeFaqs.map((f) => (
+              <details key={f.q} className="group rounded-lg border border-border bg-bg-soft">
+                <summary className="flex cursor-pointer items-center justify-between gap-4 p-5 font-semibold text-text marker:content-none">
+                  {f.q}
+                  <span className="text-2xl leading-none text-primary transition-transform group-open:rotate-45">+</span>
+                </summary>
+                <p className="px-5 pb-5 text-text-muted">{f.a}</p>
+              </details>
             ))}
           </div>
         </div>

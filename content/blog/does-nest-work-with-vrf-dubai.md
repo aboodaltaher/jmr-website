@@ -37,7 +37,7 @@ The result: full phone control, schedules, geofencing and eco modes on a VRF vil
 
 ## What about ecobee?
 
-Same answer. An [ecobee](/ecobee-thermostat-installation-dubai) also works with VRF/VRV through a drop-air adaptor. ecobee's room SmartSensors can be a nice fit for large, multi-zone villas where you want to balance comfort room by room. For most UAE homes we still recommend [Google Nest](/google-nest-thermostat-installation-dubai) first, because it's officially available here — but we'll advise honestly after seeing your setup.
+Same answer. An [ecobee](/smart-thermostat-installation-dubai#ecobee) also works with VRF/VRV through a drop-air adaptor. ecobee's room SmartSensors can be a nice fit for large, multi-zone villas where you want to balance comfort room by room. For most UAE homes we still recommend [Google Nest](/smart-thermostat-installation-dubai#google-nest) first, because it's officially available here — but we'll advise honestly after seeing your setup.
 
 ## What it costs
 
@@ -56,4 +56,6 @@ VRF systems vary by brand and model, so we never promise blind. Before anything,
 
 If you want the wider picture first, our [smart thermostat compatibility guide](/blog/smart-thermostat-ac-compatibility-uae) covers every system type in the UAE.
 
-> **Got a VRF villa and want it smart?** Book a free compatibility check on our [Google Nest installation page](/google-nest-thermostat-installation-dubai), or call / WhatsApp **{{PHONE}}** — tell us your VRF brand and we'll confirm exactly what's needed.
+A VRF system also needs regular servicing to stay efficient, and we maintain VRF systems under [annual maintenance contracts](/ac-amc-dubai).
+
+> **Got a VRF villa and want it smart?** Book a free compatibility check on our [Google Nest installation page](/smart-thermostat-installation-dubai#google-nest), or call / WhatsApp **{{PHONE}}** — tell us your VRF brand and we'll confirm exactly what's needed.

@@ -2,6 +2,7 @@ import { buildMetadata } from "@/lib/metadata";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FOUNDER, PROJECTS_DELIVERED, COMPANY_NAME, COMPANY_ALTERNATE, COMPANY_LEGAL } from "@/lib/company";
 import { business } from "@/data/business";
+import { isPublished } from "@/data/new-pages";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -138,6 +139,19 @@ export default function About() {
                   our commitment is the same: precision, timeliness, and systems
                   that work for the long term.
                 </p>
+                {isPublished("mep") && (
+                  <p>
+                    Our HVAC work is often part of a wider building package:
+                    see how we run{" "}
+                    <Link
+                      href="/mep-contractors-dubai"
+                      className="text-primary underline underline-offset-2 hover:text-primary-dark"
+                    >
+                      HVAC-led MEP contracting
+                    </Link>{" "}
+                    with the other trades coordinated.
+                  </p>
+                )}
                 <p>
                   AGEC is the trading name of {COMPANY_LEGAL}, the licensed
                   company behind this website. {COMPANY_LEGAL} holds{" "}

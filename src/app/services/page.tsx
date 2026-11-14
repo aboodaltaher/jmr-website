@@ -1,6 +1,7 @@
 import { buildMetadata } from "@/lib/metadata";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import Link from "next/link";
+import { isPublished } from "@/data/new-pages";
 import {
   Wind,
   Snowflake,
@@ -93,6 +94,26 @@ const services = [
       "Fixed-price annual maintenance contracts (AMC), reactive servicing, and emergency callouts. Scheduled preventive maintenance extends equipment life and protects warranties — residential and commercial.",
   },
 ];
+
+// Gated: shown only once the page is published (src/data/new-pages.ts)
+if (isPublished("ducting")) {
+  services.push({
+    icon: Wind,
+    name: "AC Ducting Installation & Fabrication",
+    href: "/ac-ducting-installation-dubai",
+    description:
+      "GI and pre-insulated duct fabrication, SMACNA-based construction, leakage testing and duct modification for fit-outs.",
+  });
+}
+if (isPublished("mep")) {
+  services.push({
+    icon: ClipboardCheck,
+    name: "HVAC-Led MEP Contracting",
+    href: "/mep-contractors-dubai",
+    description:
+      "HVAC design, installation and commissioning in-house, with the other trades coordinated, shop drawings and approvals.",
+  });
+}
 
 const steps = [
   { number: "01", name: "Consultation", description: "Understand the project scope and requirements" },

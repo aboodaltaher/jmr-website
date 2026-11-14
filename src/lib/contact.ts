@@ -24,6 +24,12 @@ const WHATSAPP_MESSAGES: Record<string, string> = {
     "Hi AGEC, we need HVAC testing, commissioning or balancing. Building type and what you need: ",
   "/ac-amc-dubai":
     "Hi AGEC, I'd like an AMC quote. Number of AC units and area: ",
+  "/ac-ducting-installation-dubai":
+    "Hi AGEC, I'd like to discuss AC ducting installation or duct modification. Property type and what you need: ",
+  "/mep-contractors-dubai":
+    "Hi AGEC, I'd like to discuss an HVAC-led MEP package. Project type and scope: ",
+  "/kitchen-exhaust-cleaning-dubai":
+    "Hi AGEC, I'd like to ask about kitchen exhaust and hood cleaning. Venue and area: ",
   // Arabic prefilled messages for the /ar subtree.
   "/ar": "مرحباً AGEC، أريد التحدث مع مهندس بخصوص المكيف.",
   "/ar/ac-repair-dubai":
@@ -34,6 +40,10 @@ const WHATSAPP_MESSAGES: Record<string, string> = {
     "مرحباً AGEC، أريد حجز خدمة صيانة للمكيف. عدد الوحدات والمنطقة؟ ",
   "/ar/ac-duct-cleaning-dubai":
     "مرحباً AGEC، أريد عرض سعر لتنظيف المجاري. نوع العقار وعدد الوحدات والمنطقة؟ ",
+  "/ar/ac-ducting-installation-dubai":
+    "مرحباً AGEC، أريد الاستفسار عن تركيب مجاري التكييف أو تعديلها. نوع العقار والمطلوب؟ ",
+  "/ar/mep-contractors-dubai":
+    "مرحباً AGEC، أريد مناقشة حزمة MEP بقيادة التكييف. نوع المشروع والنطاق؟ ",
 };
 
 export function whatsappMessageFor(pathname: string): string {

@@ -42,6 +42,8 @@ export const tailLinks: NavLink[] = [
   { href: "/contact", label: "Contact" },
 ];
 
+import { isPublished } from "@/data/new-pages";
+
 // Pages that exist in both English and Arabic. Used so the language switch
 // links to the counterpart of the current page (not just the locale home).
 export const LOCALE_PAIRS: { en: string; ar: string }[] = [
@@ -59,6 +61,12 @@ export const LOCALE_PAIRS: { en: string; ar: string }[] = [
   { en: "/services/chiller-maintenance-dubai", ar: "/ar/services/chiller-maintenance-dubai" },
   { en: "/services/ventilation-fresh-air", ar: "/ar/services/ventilation-fresh-air" },
   { en: "/smart-thermostat-installation-dubai", ar: "/ar/smart-thermostat-installation-dubai" },
+  { en: "/services/vrf-vrv-systems", ar: "/ar/services/vrf-vrv-systems" },
+  { en: "/services/dx-units", ar: "/ar/services/dx-units" },
+  { en: "/services/hvac-design", ar: "/ar/services/hvac-design" },
+  // Ducting / MEP pair up (hreflang + sitemap) only once published — src/data/new-pages.ts
+  ...(isPublished("ducting") ? [{ en: "/ac-ducting-installation-dubai", ar: "/ar/ac-ducting-installation-dubai" }] : []),
+  ...(isPublished("mep") ? [{ en: "/mep-contractors-dubai", ar: "/ar/mep-contractors-dubai" }] : []),
   { en: "/privacy-policy", ar: "/ar/privacy-policy" },
   { en: "/terms", ar: "/ar/terms" },
 ];

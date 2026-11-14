@@ -20,6 +20,8 @@ export interface RouteEntry {
   updatedAt: string;
 }
 
+import { isPublished } from "@/data/new-pages";
+
 // Every indexable, static English page. Excludes:
 //  - /book        → canonical alias of /quote (would be duplicate content)
 //  - /quote/thank-you → noindex utility page; /review → 302 to Google reviews
@@ -34,8 +36,6 @@ export const staticRoutes: RouteEntry[] = [
   { path: "/ac-amc-dubai", updatedAt: "2026-11-14" },
   { path: "/ac-duct-cleaning-dubai", updatedAt: "2026-11-05" },
   { path: "/smart-thermostat-installation-dubai", updatedAt: "2026-11-13" },
-  { path: "/google-nest-thermostat-installation-dubai", updatedAt: "2026-11-13" },
-  { path: "/ecobee-thermostat-installation-dubai", updatedAt: "2026-11-13" },
   // Service detail pages
   { path: "/services/hvac-installation-dubai", updatedAt: "2026-11-04" },
   { path: "/services/tab-testing-adjusting-balancing-dubai", updatedAt: "2026-11-14" },
@@ -44,6 +44,9 @@ export const staticRoutes: RouteEntry[] = [
   { path: "/services/dx-units", updatedAt: "2026-11-02" },
   { path: "/services/ventilation-fresh-air", updatedAt: "2026-11-02" },
   { path: "/services/hvac-design", updatedAt: "2026-11-02" },
+  // Gated: in the sitemap only once published (src/data/new-pages.ts)
+  ...(isPublished("ducting") ? [{ path: "/ac-ducting-installation-dubai", updatedAt: "2026-11-14" }] : []),
+  ...(isPublished("mep") ? [{ path: "/mep-contractors-dubai", updatedAt: "2026-11-14" }] : []),
   // Location / emirate landing pages
   { path: "/hvac-contractor-sharjah", updatedAt: "2026-11-13" },
   { path: "/hvac-contractor-ajman", updatedAt: "2026-11-14" },

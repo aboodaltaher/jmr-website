@@ -45,4 +45,6 @@ For advanced VRF/VRV and chiller systems, we assess the controller and recommend
 
 You don't need to diagnose any of this yourself. Before we recommend anything, we carry out a **free compatibility assessment** — we check your wiring, control system and AC type, confirm exactly what's needed, and give you a transparent quote. No obligation, no pressure.
 
+Whatever thermostat you choose, the AC behind it still needs servicing every 3–4 months in Dubai; see our [AC maintenance service](/ac-maintenance-dubai).
+
 > **Not sure if your AC is smart-ready?** Book a free compatibility check on our [smart thermostat installation page](/smart-thermostat-installation-dubai), or call **{{PHONE}}** — tell us your AC brand and property type and we'll advise.
