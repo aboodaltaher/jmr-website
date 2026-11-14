@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // 404 page for URLs that match no route: needed because there are two root layouts (English and
+  // Arabic), so app/global-not-found.tsx renders its own document.
+  experimental: { globalNotFound: true },
   skipTrailingSlashRedirect: true,
   // Serve AVIF where the browser supports it (WebP otherwise).
   // 75 is the default; 60 is used by the homepage hero, which sits under a dark gradient.

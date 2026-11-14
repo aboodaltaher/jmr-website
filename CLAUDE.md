@@ -133,7 +133,7 @@ Lead generation. Visitors should be able to (1) request a quotation, (2) book a 
 ## Component Architecture
 - Server components by default; client components only when needed (forms, interactive UI)
 - Shared components in components/
-- Layout in app/layout.tsx with shared Header/Footer
+- Two root layouts: app/(en)/layout.tsx (lang="en" dir="ltr", shared Header/Footer via SiteFrame) and app/(ar)/layout.tsx (lang="ar" dir="rtl", Arabic chrome in app/(ar)/ar/layout.tsx); both render the shared components/RootDocument.tsx
 - Tailwind utility classes
 
 ## Images
