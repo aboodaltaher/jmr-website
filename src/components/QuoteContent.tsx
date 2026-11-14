@@ -4,8 +4,8 @@ import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { EmergencyStrip } from "@/components/EmergencyStrip";
 
 /**
- * Shared body for /quote and /book — the single request form, with the
- * emergency strip on top. /book renders this same content (canonical → /quote).
+ * Body of /quote — the single request form, with the emergency strip on top.
+ * (/book used to render this too; it now 301-redirects to /quote.)
  */
 export function QuoteContent() {
   return (

@@ -37,6 +37,8 @@ const nextConfig: NextConfig = {
       ["/ar/air-balancing-airflow-testing-dubai", "/ar/services/tab-testing-adjusting-balancing-dubai"],
       // Cluster C — chiller systems folds into chiller installation & maintenance
       ["/services/chillers", "/services/chiller-maintenance-dubai"],
+      // /book was a duplicate of the /quote form; it now redirects there
+      ["/book", "/quote"],
       // Cluster D — brand pages fold into the smart-thermostat hub, landing on
       // the matching brand section (#google-nest / #ecobee)
       ["/google-nest-thermostat-installation-dubai", "/smart-thermostat-installation-dubai#google-nest"],

@@ -3,7 +3,7 @@
 const BASE = process.env.BASE || "http://127.0.0.1:3100";
 
 const enRoutes = [
-  "/", "/about", "/services", "/projects", "/blog", "/quote", "/book", "/contact", "/review",
+  "/", "/about", "/services", "/projects", "/blog", "/quote", "/contact", "/review",
   "/ac-maintenance-dubai", "/ac-repair-dubai", "/ac-amc-dubai", "/ac-duct-cleaning-dubai",
   "/smart-thermostat-installation-dubai",
   "/quote/thank-you",

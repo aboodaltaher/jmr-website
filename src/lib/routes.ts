@@ -23,7 +23,7 @@ export interface RouteEntry {
 import { isPublished } from "@/data/new-pages";
 
 // Every indexable, static English page. Excludes:
-//  - /book        → canonical alias of /quote (would be duplicate content)
+//  - /book        → 301 redirect to /quote (next.config.ts)
 //  - /quote/thank-you → noindex utility page; /review → 302 to Google reviews
 //  - dynamic blog/project pages → appended from data in sitemap.ts
 export const staticRoutes: RouteEntry[] = [
