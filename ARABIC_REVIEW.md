@@ -196,6 +196,17 @@ markers on purpose (they are the same open questions as in `TO_CONFIRM.md`).
   Terms to check: «نقاط التماس», «مخططات الورشة», «موافقات الجهات المختصة», «مقاول تكييف لمشاريع MEP».
   Both draft pages return 404 on the live site until their publish switch is on.
 
+**Update (owner answers written in):** the two draft Arabic pages now carry confirmed facts, please
+re-read these sentences:
+- Ducting (`DUCTING_AR`): fabrication «جزئياً في ورشتنا الخاصة وجزئياً عبر شريك تصنيع»; leakage testing
+  per «SMACNA HVAC Air Duct Leakage Test Manual» with the acceptance class set by the project
+  specification and a test report at handover; reference «SMACNA HVAC Duct Construction Standards —
+  Metal and Flexible» 4th edition (2020).
+- HVAC for MEP projects (`MEP_AR`): «يقدّم الاستشاري طلبات موافقات الجهات المختصة وشهادات عدم الممانعة (NOC)؛
+  وتعدّ AGEC وتوفّر مخططات التكييف والحسابات والمستندات اللازمة للتقديم.»
+- Still open on the Arabic ducting page: the pre-insulated (PIR) panel brands and fire ratings.
+- The kitchen exhaust cleaning page is published in English only; there is no Arabic version yet.
+
 ### Existing Arabic landing pages (already live; included for completeness)
 `src/app/ar/ac-maintenance-dubai/page.tsx`, `/ar/ac-repair-dubai`, `/ar/ac-amc-dubai`,
 `/ar/ac-duct-cleaning-dubai` — hero, why cards, steps and FAQs in Arabic (see files).

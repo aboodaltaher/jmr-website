@@ -96,6 +96,15 @@ const services = [
 ];
 
 // Gated: shown only once the page is published (src/data/new-pages.ts)
+if (isPublished("kitchenExhaust")) {
+  services.push({
+    icon: Fan,
+    name: "Kitchen Exhaust & Hood Cleaning",
+    href: "/kitchen-exhaust-cleaning-dubai",
+    description:
+      "Hood, filter and grease-duct cleaning for restaurants and commercial kitchens, by Dubai Municipality-approved AGEC, with before-and-after photos and a service report.",
+  });
+}
 if (isPublished("ducting")) {
   services.push({
     icon: Wind,

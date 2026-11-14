@@ -266,7 +266,7 @@ const dubaiMarina: Community = {
     },
     {
       q: "Do you need a permit or building approval to work in a Marina tower?",
-      a: "Most towers ask contractors to notify building management before starting work. [TO CONFIRM: whether AGEC handles access and permit paperwork for Marina towers, and how.] Tell us the building when you book.",
+      a: "Most towers ask contractors to notify building management before starting work. We arrange the building management / FM work permit and access for Marina towers before the visit. Tell us the building when you book.",
     },
     {
       q: "I rent my apartment. Who pays for AC maintenance?",
@@ -347,7 +347,7 @@ const arabianRanches: Community = {
     },
     {
       q: "Do you cover all the Arabian Ranches communities?",
-      a: "[TO CONFIRM: which Arabian Ranches communities AGEC covers.] Tell us your street or community when you book and we will confirm.",
+      a: "We cover Arabian Ranches 1, 2 and 3. Tell us your street or community when you book and we will confirm.",
     },
     {
       q: "What does a one-off service cost for a Ranches villa?",

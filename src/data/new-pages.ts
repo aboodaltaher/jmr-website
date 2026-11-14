@@ -10,12 +10,14 @@
 // (src/data/long-services.ts and long-services-ar.ts) is resolved — `npm run to-confirm`
 // lists what is still open. The Arabic twin follows its English page's switch.
 //
-// Kitchen exhaust cleaning is deliberately NOT here: it stays an unlinked, noindex,
-// out-of-sitemap draft until the owner decides to launch it (see long-services.ts).
+// Kitchen exhaust cleaning is published (English only; there is no Arabic twin). It has
+// no open markers: the Dubai Municipality approval and the other service facts were
+// confirmed by the owner. See the "do not add" note above KITCHEN_EXHAUST in long-services.ts.
 
 export const NEW_PAGES = {
   ducting: { published: false },
   mep: { published: false },
+  kitchenExhaust: { published: true },
 } as const;
 
 export type NewPageKey = keyof typeof NEW_PAGES;

@@ -6,37 +6,10 @@ disappears from this list. Nothing on the live site shows a marker: production h
 sections, and pages that still have open markers return 404 in production until their publish switch
 (`src/data/new-pages.ts`) is on.
 
-## A. Company and service facts — answer once (10)
+## A. Company and service facts — answer once (1)
 
-1. **BLOCKING** — whether AGEC is approved by Dubai Municipality (and any other authority) to carry out hood and grease-duct cleaning in Dubai.
-   - asked on: Kitchen exhaust page (unpublished)
-   - answer → 
-2. whether AGEC fabricates ductwork in its own workshop, through a fabrication partner, or a mix.
+1. the pre-insulated panel type, brands and fire ratings AGEC supplies, and any authority approval that applies to them.
    - asked on: Ducting page (EN + AR)
-   - answer → 
-3. the pre-insulated panel type, brands and fire ratings AGEC supplies, and any authority approval that applies to them.
-   - asked on: Ducting page (EN + AR)
-   - answer → 
-4. the duct leakage-test method and acceptance class AGEC offers, and whether a test report is issued at handover.
-   - asked on: Ducting page (EN + AR)
-   - answer → 
-5. which SMACNA edition or standard AGEC works to on fabrication.
-   - asked on: Ducting page (EN + AR)
-   - answer → 
-6. which authority approvals and NOCs AGEC submits itself for the HVAC scope, versus through the consultant or an approved liaison.
-   - asked on: MEP / HVAC-for-MEP page (EN + AR)
-   - answer → 
-7. the cleaning-frequency standard or authority requirement AGEC works to, and the schedule it recommends by kitchen type.
-   - asked on: Kitchen exhaust page (unpublished)
-   - answer → 
-8. AGEC's actual method, equipment, waste handling and whether the work is carried out by its own staff or a subcontractor.
-   - asked on: Kitchen exhaust page (unpublished)
-   - answer → 
-9. the records and certificate AGEC issues after a kitchen exhaust clean.
-   - asked on: Kitchen exhaust page (unpublished)
-   - answer → 
-10. AGEC's out-of-hours availability for kitchen cleaning.
-   - asked on: Kitchen exhaust page (unpublished)
    - answer → 
 
 ## B. Case studies — one answer per project for each question (12 questions × up to 13 projects)
@@ -195,16 +168,12 @@ Leave a project's line blank to keep that section hidden for it. Client quotes o
    - Zain Solution Data Center (/projects/zain-solution-data-center-abu-dhabi) → 
    - Cultural Center (/projects/cultural-center-al-barsha) → 
 
-## C. Local community pages — noindex until answered (4 questions)
+## C. Local community pages — noindex until answered (2 questions)
 
 1. number of Dubai Marina jobs or buildings serviced, and any project we can name with the client's permission.
    - Dubai Marina (/ac-maintenance/dubai-marina) → 
-2. whether AGEC handles access and permit paperwork for Marina towers, and how.
-   - Dubai Marina (/ac-maintenance/dubai-marina) → 
-3. number of Arabian Ranches villas serviced or under contract, and any project we can name with the owner's permission.
-   - Arabian Ranches (/ac-maintenance/arabian-ranches) → 
-4. which Arabian Ranches communities AGEC covers.
+2. number of Arabian Ranches villas serviced or under contract, and any project we can name with the owner's permission.
    - Arabian Ranches (/ac-maintenance/arabian-ranches) → 
 
 ---
-26 questions to answer (covering 167 markers in the source).
+15 questions to answer (covering 143 markers in the source).

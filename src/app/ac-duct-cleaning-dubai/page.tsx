@@ -9,6 +9,7 @@ import { Check, Phone, MessageCircle, Wind, AlertCircle } from "lucide-react";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { PHONE, whatsappUrl } from "@/lib/contact";
 import { business } from "@/data/business";
+import { isPublished } from "@/data/new-pages";
 
 import { PHONE_DISPLAY } from "@/lib/company";
 const SITE_URL = business.url;
@@ -350,6 +351,14 @@ export default function AcDuctCleaningPage() {
               </p>
             </div>
           </div>
+          {isPublished("kitchenExhaust") && (
+            <p className="mt-6 text-text-muted">
+              Running a commercial kitchen? Hood and grease-duct cleaning is a separate job:{" "}
+              <Link href="/kitchen-exhaust-cleaning-dubai" className="font-semibold text-primary hover:underline">
+                see kitchen exhaust cleaning &rarr;
+              </Link>
+            </p>
+          )}
         </div>
       </section>
 

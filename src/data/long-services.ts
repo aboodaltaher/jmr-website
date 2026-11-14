@@ -49,7 +49,7 @@ export const DUCTING: LongService = {
       h2: "What we install and fabricate",
       paragraphs: [
         "Our ductwork scope covers new installations and replacements for ducted splits, DX packaged units, VRF ducted indoor units, fresh air handling units and exhaust systems. We fabricate and install rectangular and round duct, flexible connections, volume control dampers, fire dampers where the design calls for them, plenums, diffusers, grilles and the insulation and supports that go with them.",
-        "[TO CONFIRM: whether AGEC fabricates ductwork in its own workshop, through a fabrication partner, or a mix.]",
+        "Ductwork is fabricated partly in our own workshop and partly through a fabrication partner, depending on project size and programme.",
       ],
       bullets: [
         "Supply, return and fresh-air ductwork for ducted splits, packaged DX and VRF ducted units",
@@ -71,7 +71,7 @@ export const DUCTING: LongService = {
       h2: "Duct construction to SMACNA",
       paragraphs: [
         "SMACNA's HVAC duct construction standards set out how duct should be built for a given pressure class: the sheet gauge, the type and spacing of reinforcement, the joint and seam types and the support spacing. Following them is what stops a large duct from drumming, bulging or sagging once the fan is running.",
-        "The pressure class comes from the fan and the system design. Low-pressure residential and light commercial systems sit at the lower end; fresh-air and exhaust systems with longer runs and higher velocities need heavier construction. We build to the pressure class on the design drawings and, where there is no consultant, we select it from the calculated system pressure. This matches the SMACNA-compliant practice we already follow across our installation, ventilation and balancing work.",
+        "The pressure class comes from the fan and the system design. Low-pressure residential and light commercial systems sit at the lower end; fresh-air and exhaust systems with longer runs and higher velocities need heavier construction. We build to the pressure class on the design drawings and, where there is no consultant, we select it from the calculated system pressure. Our reference is the SMACNA HVAC Duct Construction Standards — Metal and Flexible, 4th edition (2020), in line with the SMACNA-compliant practice we follow across our installation, ventilation and balancing work.",
       ],
       bullets: [
         "Sheet gauge and reinforcement chosen for the duct size and pressure class",
@@ -86,7 +86,7 @@ export const DUCTING: LongService = {
       paragraphs: [
         "Every joint in a duct network is a potential leak. Air that leaks before it reaches the room is cooled air you have paid for and not received, and in a ceiling void it can drive condensation and staining. Leakage also starves the farthest branches, which is why the room at the end of the run is so often the warm one.",
         "Leakage testing pressurises a section of duct with a calibrated fan and measures how much air escapes at the test pressure. The result is compared with the allowable leakage for the duct's class. Sealing joints properly during construction is far cheaper than finding leaks after the ceiling is closed, so we seal as we build and test before insulating and before the ceiling goes up.",
-        "[TO CONFIRM: the duct leakage-test method and acceptance class AGEC offers, and whether a test report is issued at handover.]",
+        "Ductwork is pressure-tested for leakage per the SMACNA HVAC Air Duct Leakage Test Manual, with the acceptance class set by the project specification, and a test report is issued at handover.",
         "Once the system is running, airflow at each branch and diffuser is measured and adjusted to the design values through our testing, adjusting and balancing service, so the ductwork is proven rather than assumed.",
       ],
     },
@@ -118,7 +118,7 @@ export const DUCTING: LongService = {
     },
     {
       q: "Do you follow SMACNA for duct construction?",
-      a: "Yes. Our installation, ventilation and balancing work follows SMACNA-compliant practices, with the sheet gauge, reinforcement, joints and supports selected for the system's pressure class. [TO CONFIRM: which SMACNA edition or standard AGEC works to on fabrication.]",
+      a: "Yes. Our installation, ventilation and balancing work follows SMACNA-compliant practices, with the sheet gauge, reinforcement, joints and supports selected for the system's pressure class. We build to the SMACNA HVAC Duct Construction Standards — Metal and Flexible, 4th edition (2020).",
     },
     {
       q: "Why is one room in my villa always warmer than the others?",
@@ -134,11 +134,11 @@ export const DUCTING: LongService = {
     },
     {
       q: "Do you test ducts for leakage?",
-      a: "Sealing is done as the duct is built, and sections can be pressure-tested before they are insulated and closed up. [TO CONFIRM: the duct leakage-test method and acceptance class AGEC offers, and whether a test report is issued at handover.]",
+      a: "Yes. Ductwork is pressure-tested for leakage per the SMACNA HVAC Air Duct Leakage Test Manual, with the acceptance class set by the project specification, and a test report is issued at handover.",
     },
     {
       q: "Do you fabricate the duct yourselves?",
-      a: "[TO CONFIRM: whether AGEC fabricates ductwork in its own workshop, through a fabrication partner, or a mix.]",
+      a: "Partly. Ductwork is fabricated partly in our own workshop and partly through a fabrication partner, depending on project size and programme.",
     },
   ],
   related: [
@@ -211,7 +211,7 @@ export const MEP: LongService = {
       h2: "Authority approvals",
       paragraphs: [
         "Mechanical and ventilation works in Dubai involve authority requirements, particularly around fire and life safety for smoke ventilation, pressurisation and fire dampers, and building-authority requirements for the installation itself. Our ventilation and design documentation is prepared to support Dubai Municipality and Civil Defence review where it applies.",
-        "[TO CONFIRM: which authority approvals and NOCs AGEC submits itself for the HVAC scope, versus through the consultant or an approved liaison.]",
+        "The consultant submits authority approvals and NOCs; AGEC prepares and supplies the HVAC drawings, calculations and documents for submission.",
       ],
     },
     {
@@ -244,7 +244,7 @@ export const MEP: LongService = {
     },
     {
       q: "Do you handle authority approvals?",
-      a: "[TO CONFIRM: which authority approvals and NOCs AGEC submits itself for the HVAC scope, versus through the consultant or an approved liaison.] Our design and ventilation documentation is prepared to support those reviews where they apply.",
+      a: "The consultant submits authority approvals and NOCs. AGEC prepares and supplies the HVAC drawings, calculations and documents for submission.",
     },
     {
       q: "Do you provide commissioning and handover documents?",
@@ -267,28 +267,32 @@ export const MEP: LongService = {
   ctaText: "Send us the drawings or the scope. We reply on call and WhatsApp.",
 };
 
-// DRAFT ONLY. Always noindex, never in the sitemap or menu, never linked, until the
-// owner decides to launch it. Blocking question: is AGEC approved for hood and
-// grease-duct cleaning by Dubai Municipality?
+// Kitchen exhaust & hood cleaning. Published (see NEW_PAGES.kitchenExhaust). Every claim
+// here is one the owner confirmed: Dubai Municipality approval for hood and grease-duct
+// cleaning; own trained staff (not subcontracted); schedule set by the client's insurer or
+// landlord requirements; scheduled around opening hours incl. after closing; before/after
+// photos and a service report after every clean. Do NOT add: NFPA 96 or any Dubai
+// Municipality frequency, specific equipment or waste-handling methods, or a certificate /
+// hood sticker — none of those were confirmed.
 export const KITCHEN_EXHAUST: LongService = {
   key: "kitchen-exhaust",
   path: "/kitchen-exhaust-cleaning-dubai",
   metaTitle: "Kitchen Exhaust & Hood Cleaning Dubai | AGEC",
   metaDescription:
-    "Kitchen exhaust, hood and grease duct cleaning for Dubai restaurants and commercial kitchens — fire-risk reduction and inspection records. Request a quote.",
+    "Kitchen exhaust, hood and grease duct cleaning for Dubai restaurants and commercial kitchens by Dubai Municipality-approved AGEC. Photos and a service report.",
   h1: "Kitchen Exhaust & Hood Cleaning in Dubai",
   kicker: "Kitchen exhaust · Hood cleaning · Grease duct",
   serviceType: "Kitchen exhaust and hood cleaning",
   intro: [
-    "Grease is the fuel in a commercial kitchen fire. It builds up on the hood, in the filters and along the exhaust duct above the cooking line, and a flare-up on the grill can carry fire straight into the duct. Regular, documented cleaning of the whole exhaust path is the practical way to keep that risk down. It is also what authorities and insurers ask to see.",
-    "[TO CONFIRM — BLOCKING: whether AGEC is approved by Dubai Municipality (and any other authority) to carry out hood and grease-duct cleaning in Dubai.]",
+    "Grease is the fuel in a commercial kitchen fire. It builds up on the hood, in the filters and along the exhaust duct above the cooking line, and a flare-up on the grill can carry fire straight into the duct. Regular, documented cleaning of the whole exhaust path is the practical way to keep that risk down. It is also what landlords and insurers ask to see.",
+    "AGEC is approved by Dubai Municipality for kitchen hood and grease-duct cleaning. The work is carried out by our own trained staff, not subcontracted, and scheduled around your opening hours.",
   ],
   sections: [
     {
       h2: "Why kitchen exhaust is a fire-safety item",
       paragraphs: [
         "Cooking releases grease as vapour and fine droplets. The exhaust fan pulls them into the hood, and whatever the filters do not catch condenses on the cooler surfaces of the duct as a sticky film. Layer by layer that film becomes a thick, combustible deposit. A flare-up on a grill or fryer can ignite grease in the hood and carry flame into the duct, where it can run the length of the system, through the ceiling void and up to the roof discharge, in places nobody can reach with an extinguisher.",
-        "A clean exhaust path does not remove the chance of a flare-up, but it removes the fuel that turns a flare-up into a building fire. That is why civil defence rules, landlords' fit-out guidelines and insurers all treat exhaust cleaning as a routine obligation for commercial kitchens, and why they increasingly ask to see the paperwork.",
+        "A clean exhaust path does not remove the chance of a flare-up, but it removes the fuel that turns a flare-up into a building fire. That is why landlords and insurers commonly require commercial kitchens to keep their exhaust cleaned, and why they ask to see the records.",
       ],
     },
     {
@@ -307,30 +311,27 @@ export const KITCHEN_EXHAUST: LongService = {
       h2: "Access: the part most kitchens get wrong",
       paragraphs: [
         "A duct can only be cleaned where it can be reached. Many kitchen exhaust systems were installed with too few access panels, or with panels that were later covered by ceiling, cladding or other services. Where a section cannot be reached, it cannot be cleaned, and the grease in it keeps building.",
-        "Part of any first visit is checking the access: where the panels are, whether there are enough of them, and whether long horizontal runs and vertical risers can actually be reached end to end. Where access is missing, adding panels is a modification to a grease duct and must be done properly, with sealed, grease-tight panels, not an improvised cut in the duct.",
+        "Access is therefore the first thing to look at: where the panels are, whether there are enough of them, and whether long horizontal runs and vertical risers can be reached end to end. Adding a panel is a modification to a grease duct and has to be done properly, with a sealed, grease-tight panel, not an improvised cut in the duct.",
       ],
     },
     {
       h2: "How often it needs doing",
       paragraphs: [
-        "Frequency depends on what is cooked and how much. A high-volume grill or fryer line builds up grease far faster than a light-use kitchen, and solid-fuel cooking faster again. Inspection frequency is set by cooking volume and fuel type, and is a matter for the kitchen's operating and safety requirements rather than a fixed calendar interval.",
+        "Frequency depends on what is cooked and how much. A high-volume grill or fryer line builds up grease far faster than a light-use kitchen, and solid-fuel cooking faster again. In practice the schedule is set by your insurer's or landlord's requirements, and we schedule the cleans accordingly.",
         "Grease filters are a separate, much shorter cycle. They are the first line of defence and in an active kitchen they are removed and washed far more often than the duct is cleaned. A kitchen with filters in poor condition will load its duct with grease much faster.",
-        "[TO CONFIRM: the cleaning-frequency standard or authority requirement AGEC works to, and the schedule it recommends by kitchen type.]",
       ],
     },
     {
-      h2: "How the work is done",
+      h2: "Scheduled around your service",
       paragraphs: [
-        "A kitchen cannot close for days, so cleaning is planned around service. The work is normally done out of hours. Cooking equipment and food areas are protected, the system is isolated and locked off, and grease is removed by scraping and degreasing rather than simply washing it down into the kitchen.",
-        "The hood and filters are cleaned first, then the duct section by section from the access panels, then the fan and discharge. Waste grease is contained and removed, not rinsed into drains. At the end the exhaust is run, checked for leaks at the panels and for fan rotation and noise, and the area is left clean.",
-        "[TO CONFIRM: AGEC's actual method, equipment, waste handling and whether the work is carried out by its own staff or a subcontractor.]",
+        "A kitchen cannot close for days, so cleaning is planned around your opening hours, including after closing. We operate 24 hours, which means the visit can be set for when the kitchen is quiet.",
+        "The work is carried out by AGEC's own trained staff. It is not subcontracted.",
       ],
     },
     {
-      h2: "Inspection records",
+      h2: "Photos and a service report",
       paragraphs: [
-        "After cleaning, the owner should receive a record of what was done: the date, the sections cleaned, before-and-after photographs and anything found that needs repair, such as missing access panels, damaged filters or a fan that is not performing. Those records are what you show an inspector or an insurer.",
-        "[TO CONFIRM: the records and certificate AGEC issues after a kitchen exhaust clean.]",
+        "After every clean you receive before-and-after photographs and a service report. Those are what you show a landlord or an insurer, and what you keep on file for the next visit.",
       ],
     },
     {
@@ -348,26 +349,31 @@ export const KITCHEN_EXHAUST: LongService = {
     },
     {
       q: "Are you approved to do this work in Dubai?",
-      a: "[TO CONFIRM — BLOCKING: whether AGEC is approved by Dubai Municipality (and any other authority) to carry out hood and grease-duct cleaning in Dubai.]",
+      a: "Yes. AGEC is approved by Dubai Municipality for kitchen hood and grease-duct cleaning.",
     },
     {
       q: "How often should a kitchen exhaust be cleaned?",
-      a: "It depends on cooking volume and fuel type. High-volume grilling and frying needs far more frequent cleaning than light use. [TO CONFIRM: the cleaning-frequency standard or authority requirement AGEC works to, and the schedule it recommends by kitchen type.]",
+      a: "It depends on cooking volume and fuel type. High-volume grilling and frying needs far more frequent cleaning than light use. The schedule is normally set by your insurer's or landlord's requirements, and we schedule the cleans accordingly.",
     },
     {
       q: "Do you work out of hours?",
-      a: "[TO CONFIRM: AGEC's out-of-hours availability for kitchen cleaning.]",
+      a: "Yes. Cleans are scheduled around your opening hours, including after closing. We operate 24 hours.",
+    },
+    {
+      q: "Who carries out the cleaning?",
+      a: "AGEC's own trained staff. The work is not subcontracted.",
     },
     {
       q: "Will I get a record of the cleaning?",
-      a: "[TO CONFIRM: the records and certificate AGEC issues after a kitchen exhaust clean.]",
+      a: "Yes. After every clean you receive before-and-after photographs and a service report.",
     },
   ],
   related: [
     { href: "/services/ventilation-fresh-air", label: "Ventilation & fresh air" },
     { href: "/projects/ave-restaurant-business-bay", label: "AVE Restaurant case study" },
+    { href: "/ac-duct-cleaning-dubai", label: "AC duct cleaning" },
   ],
   whatsappText: "Hi AGEC, I'd like to ask about kitchen exhaust and hood cleaning.",
-  ctaHeading: "Ask about kitchen exhaust cleaning",
-  ctaText: "Tell us about the kitchen. We reply on call and WhatsApp.",
+  ctaHeading: "Book a kitchen exhaust clean",
+  ctaText: "Tell us about the kitchen and your opening hours. We reply on call and WhatsApp.",
 };
