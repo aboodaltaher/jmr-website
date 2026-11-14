@@ -76,11 +76,11 @@ Inline form: «احصل على عرض سعر لـ {العنوان}» — «أر�
 > The full body prose of each page is in the file listed. The key discrete strings
 > are below; read the file for the paragraphs.
 
-### Home — `src/app/ar/page.tsx` (pre-existing; verified wording)
+### Home — `src/app/(ar)/ar/page.tsx` (pre-existing; verified wording)
 Coverage card: «نخدم دبي والشارقة وعجمان وأبوظبي، مع توفّر الخدمة في جميع أنحاء الإمارات عند الطلب.»
 Projects card: «32 مشروعاً» (matches the English "32 projects")
 
-### Services hub — `src/app/ar/services/page.tsx`
+### Services hub — `src/app/(ar)/ar/services/page.tsx`
 Title: «خدمات التكييف في دبي والإمارات | AGEC»
 Desc: «تصميم وتركيب واختبار وتشغيل تجريبي وصيانة أنظمة التكييف للفلل والمكاتب والمباني التجارية عبر الإمارات.»
 H1: «خدمات تكييف متكاملة لكل أنواع المشاريع»
@@ -90,13 +90,13 @@ Service names: أنظمة VRF / VRV · تركيب أنظمة التكييف · �
 عقود الصيانة السنوية (AMC)
 Process steps: الاستشارة · التصميم والعرض · التوريد · التركيب · التشغيل والتسليم
 
-### Quote — `src/app/ar/quote/page.tsx`
+### Quote — `src/app/(ar)/ar/quote/page.tsx`
 Title: «احصل على عرض سعر أو احجز خدمة في دبي | AGEC»
 H1: «احصل على عرض سعر أو احجز خدمة»
 Emergency line: «مكيّفك متوقّف الآن؟ اتصل بـ +971 58 557 5987»
 Rating line: «مقيّمون 5.0★ من 32 مراجعة على Google»
 
-### Contact — `src/app/ar/contact/page.tsx`
+### Contact — `src/app/(ar)/ar/contact/page.tsx`
 Title: «اتصل بـ AGEC | خدمات التكييف في دبي»
 H1: «تواصل معنا» — «أخبرنا عن مشروعك أو أرسل لنا سؤالاً.»
 Info labels: الهاتف · واتساب · البريد الإلكتروني · الموقع · التوفّر
@@ -104,7 +104,7 @@ Address: «مبنى المصرف، شارع الشيخ زايد، دبي، ال�
 Availability: «اتصل أو راسلنا على واتساب في أي وقت، 24/7. نرد خلال ساعة.»
 Review button: «اترك تقييماً على Google» · Map heading: «زورونا»
 
-### About — `src/app/ar/about/page.tsx`
+### About — `src/app/(ar)/ar/about/page.tsx`
 Title: «من نحن | AGEC مقاول تكييف في دبي»
 H1: «مقاولات تكييف يقودها المهندسون في دبي»
 Section headings: «مبنيّة على الهندسة لا على الطرق المختصرة» · «ما الذي يحرّكنا» ·
@@ -114,41 +114,41 @@ Engineer role: «المؤسّس وكبير مهندسي التكييف»
 Facts kept from English: تأسست 2022 · 32 مشروعاً · 240 طن · 8.75 مليون درهم ·
 ASHRAE 111 / SMACNA / CIBSE · رخصة 1221573 · إكسبو 2020 (Parcels)
 
-### HVAC Installation — `src/app/ar/services/hvac-installation-dubai/page.tsx`
+### HVAC Installation — `src/app/(ar)/ar/services/hvac-installation-dubai/page.tsx`
 Title: «تركيب أنظمة التكييف في دبي | من التصميم للتسليم | AGEC»
 H1: «تركيب أنظمة التكييف»
 FAQ Qs: «هل تركّبون أنظمة صمّمها طرف آخر؟» · «ما أنواع التكييف التي تركّبونها؟» ·
 «ماذا أستلم عند التسليم؟» · «هل يمكنكم العمل مع المقاول الرئيسي لدينا؟» ·
 «هل تتولّون الصيانة بعد ذلك؟»
 
-### TAB — `src/app/ar/services/tab-testing-adjusting-balancing-dubai/page.tsx`
+### TAB — `src/app/(ar)/ar/services/tab-testing-adjusting-balancing-dubai/page.tsx`
 Title: «موازنة واختبار وضبط أنظمة التكييف (TAB) في دبي | AGEC»
 H1: «اختبار وضبط وموازنة الأنظمة (TAB)»
 FAQ Qs: «ما الفرق بين TAB والتشغيل التجريبي؟» · «ماذا أستلم في النهاية؟» ·
 «غرفي تبرد بتفاوت — هل هذه مشكلة موازنة؟» · «هل توازنون أنظمة الهواء والماء معاً؟» ·
 «هل تقرير الموازنة مطلوب للتسليم؟»
 
-### Chiller Maintenance — `src/app/ar/services/chiller-maintenance-dubai/page.tsx`
+### Chiller Maintenance — `src/app/(ar)/ar/services/chiller-maintenance-dubai/page.tsx`
 Title: «صيانة التشيلر في دبي | صيانة محطات التبريد | AGEC»
 H1: «صيانة التشيلر»
 FAQ Qs: «كم مرة ينبغي صيانة التشيلر؟» · «هل تصونون التشيلرات المبرّدة بالهواء والماء معاً؟» ·
 «هل يمكنكم تولّي عقد صيانة قائم؟» · «ماذا نستلم بعد كل زيارة؟» ·
 «هل تُصلحون التشيلرات وتركّبونها أيضاً؟»
 
-### Ventilation & Fresh Air — `src/app/ar/services/ventilation-fresh-air/page.tsx`
+### Ventilation & Fresh Air — `src/app/(ar)/ar/services/ventilation-fresh-air/page.tsx`
 Title: «تهوية الهواء النقي وفحص ثاني أكسيد الكربون في دبي | AGEC»
 H1: «تهوية الهواء النقي وفحص ثاني أكسيد الكربون»
 FAQ Qs: «لماذا يرتفع ثاني أكسيد الكربون في مكتبي؟» · «ما سبب ضعف دوران الهواء النقي؟» ·
 «كيف تقيسون الهواء النقي وثاني أكسيد الكربون؟» · «ماذا يتضمّن تقرير تقييم الهواء النقي؟»
 (Kept figures: ASHRAE 62.1 / بلدية دبي / الدفاع المدني / «حتى 40%» لاسترجاع الطاقة)
 
-### Smart Thermostat — `src/app/ar/smart-thermostat-installation-dubai/page.tsx`
+### Smart Thermostat — `src/app/(ar)/ar/smart-thermostat-installation-dubai/page.tsx`
 Title: «تركيب ثرموستات Nest و ecobee الذكي في دبي | AGEC»
 H1: «تركيب الثرموستات الذكي (Nest و ecobee)»
 12 FAQ questions translated (compatibility, 220V interface module, C-wire, cost, savings
 «حتى 26%», Nest vs ecobee, same-day, warranty, villas, phone control, warranty void, booking).
 
-### Air Balancing — `src/app/ar/air-balancing-airflow-testing-dubai/page.tsx`
+### Air Balancing — `src/app/(ar)/ar/air-balancing-airflow-testing-dubai/page.tsx`
 Title: «موازنة الهواء واختبار التدفّق في دبي | AGEC»
 H1: «موازنة الهواء واختبار تدفّق التكييف»
 FAQ Qs: «ما هي موازنة الهواء؟» · «كم تستغرق؟» · «هل تعملون وفق تصميم الاستشاري؟» ·
@@ -161,12 +161,12 @@ terms kept in Latin script: VRF, VRV, DX, TR, FAHU, BMS, SMACNA, ASHRAE, CIBSE, 
 
 **Live now (indexable, hreflang-paired, in the sitemap):**
 
-- **VRF / VRV** — `src/app/ar/services/vrf-vrv-systems/page.tsx`
+- **VRF / VRV** — `src/app/(ar)/ar/services/vrf-vrv-systems/page.tsx`
   Title: «تركيب وصيانة أنظمة VRF وVRV في دبي | AGEC» · H1: «أنظمة VRF / VRV»
-- **DX units** — `src/app/ar/services/dx-units/page.tsx`
+- **DX units** — `src/app/(ar)/ar/services/dx-units/page.tsx`
   Title: «وحدات DX وتركيب مكيفات سبليت مجاري في دبي | AGEC» · H1: «وحدات DX وأنظمة السبليت»
   (links to the Arabic smart-thermostat page)
-- **HVAC design** — `src/app/ar/services/hvac-design/page.tsx`
+- **HVAC design** — `src/app/(ar)/ar/services/hvac-design/page.tsx`
   Title: «تصميم أنظمة التكييف وحساب الحمل الحراري في دبي | AGEC» · H1: «تصميم أنظمة التكييف والاستشارات»
   (Wording to check: «نظام السعفة» for Dubai's Al Sa'fat green-building rating; «هندسة القيمة» for
   value engineering; «حزم التصميم» for design packages.)
@@ -186,11 +186,11 @@ follow their English twin's switch in `src/data/new-pages.ts`; review the Arabic
 ready when the English facts are confirmed. Each page keeps the English `[TO CONFIRM: …]`
 markers on purpose (they are the same open questions as in `docs/open-questions.md`).
 
-- **Ducting** — `src/data/long-services-ar.ts` (`DUCTING_AR`), route `src/app/ar/ac-ducting-installation-dubai/page.tsx`
+- **Ducting** — `src/data/long-services-ar.ts` (`DUCTING_AR`), route `src/app/(ar)/ar/ac-ducting-installation-dubai/page.tsx`
   Title: «تركيب مجاري التكييف وتصنيع المجاري في دبي | AGEC» · H1: «تركيب مجاري التكييف وتصنيعها في دبي»
   Terms to check: «المجاري المعزولة مسبقاً (PIR)», «التقوية», «الدرزات», «البلينوم», «دامبرات الحريق»,
   «فراغ السقف», «مخططات الورشة».
-- **HVAC for MEP projects** — `src/data/long-services-ar.ts` (`MEP_AR`), route `src/app/ar/mep-contractors-dubai/page.tsx`
+- **HVAC for MEP projects** — `src/data/long-services-ar.ts` (`MEP_AR`), route `src/app/(ar)/ar/mep-contractors-dubai/page.tsx`
   Title: «مقاول تكييف لمشاريع MEP في دبي | AGEC» · H1: «مقاول تكييف لمشاريع MEP في دبي»
   HVAC scope only (matches the trade licence): other trades are described as coordinated, not delivered.
   Terms to check: «نقاط التماس», «مخططات الورشة», «موافقات الجهات المختصة», «مقاول تكييف لمشاريع MEP».
@@ -209,7 +209,7 @@ re-read these sentences:
 - The HVAC-for-MEP pages (EN + AR) stay off until the owner has reviewed them on the preview URL.
 
 ### Existing Arabic landing pages (already live; included for completeness)
-`src/app/ar/ac-maintenance-dubai/page.tsx`, `/ar/ac-repair-dubai`, `/ar/ac-amc-dubai`,
+`src/app/(ar)/ar/ac-maintenance-dubai/page.tsx`, `/ar/ac-repair-dubai`, `/ar/ac-amc-dubai`,
 `/ar/ac-duct-cleaning-dubai` — hero, why cards, steps and FAQs in Arabic (see files).
 
 ---

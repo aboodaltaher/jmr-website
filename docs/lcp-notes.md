@@ -31,7 +31,7 @@ Google hosts, so I measured with a 140 KB stand-in script served from our own or
 | `next/script` afterInteractive (gtag.js preloaded in `<head>`) | 3.52 s (3.51 to 3.94) |
 | **Inline queue + gtag.js injected right after hydration (this PR)** | **3.08 s** (8 runs, 2.41 to 3.13, one 4.32 outlier) |
 
-Setup in `src/app/layout.tsx` and `src/components/GoogleTag.tsx`:
+Setup in `src/components/RootDocument.tsx` and `src/components/GoogleTag.tsx`:
 - A small inline script creates `dataLayer` and `gtag()` and queues `js`, `config AW-18332305339`, `config G-H7HNVQGSYM`
   immediately, so any event fired before the tag arrives (a fast click on Call or WhatsApp) is queued and replayed. Nothing is lost.
 - `gtag.js` is requested exactly once, right after hydration (same timing as `afterInteractive`, minus the head preload).

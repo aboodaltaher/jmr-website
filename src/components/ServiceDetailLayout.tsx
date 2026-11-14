@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { FaqJsonLd } from "@/components/FaqJsonLd";
 import Link from "next/link";
 import { Check, MessageCircle, Phone, type LucideIcon } from "lucide-react";
 import { MidPageCta } from "@/components/MidPageCta";
@@ -125,20 +126,6 @@ export function ServiceDetailLayout({
   const t = (str: string) => str.replace("{t}", title);
   const url = slug ? `https://agec.ae/${slug}` : null;
 
-  const faqSchema =
-    faq && faq.length > 0
-      ? {
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          ...(lang === "ar" ? { inLanguage: "ar" } : {}),
-          mainEntity: faq.map((item) => ({
-            "@type": "Question",
-            name: item.q,
-            acceptedAnswer: { "@type": "Answer", text: item.a },
-          })),
-        }
-      : null;
-
   const serviceSchema = url
     ? {
         "@context": "https://schema.org",
@@ -149,31 +136,14 @@ export function ServiceDetailLayout({
         url,
         ...(lang === "ar" ? { inLanguage: "ar" } : {}),
         areaServed: AREA_SERVED_SCHEMA,
-        provider: {
-          "@type": "HVACBusiness",
-          name: business.name,
-          telephone: business.phone.e164,
-          email: business.email,
-          address: {
-            "@type": "PostalAddress",
-            streetAddress: business.address.line,
-            addressLocality: business.address.locality,
-            addressCountry: business.address.countryCode,
-          },
-          url: business.url,
-        },
+        provider: { "@id": `${business.url}/#business` },
       }
     : null;
 
 
   return (
     <>
-      {faqSchema && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-        />
-      )}
+      {faq && <FaqJsonLd items={faq} inLanguage={lang === "ar" ? "ar" : undefined} />}
       {serviceSchema && (
         <script
           type="application/ld+json"

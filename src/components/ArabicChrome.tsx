@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment, useEffect } from "react";
+import { Fragment } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Phone, MessageCircle } from "lucide-react";
@@ -19,25 +19,14 @@ const navLinks = [
 ];
 
 /**
- * RTL chrome for the Arabic /ar subtree. Sets the document direction and
- * language, and renders an Arabic header, footer and mobile contact bar.
+ * RTL chrome for the Arabic /ar subtree: an Arabic header, footer and mobile contact bar.
+ * The document language and direction (<html lang="ar" dir="rtl">) come from the Arabic root
+ * layout, app/(ar)/layout.tsx, so they are in the server-rendered HTML.
  */
 export function ArabicChrome({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const wa = whatsappUrl(pathname);
   const enHref = enEquivalentOf(pathname);
-
-  useEffect(() => {
-    const el = document.documentElement;
-    const prevLang = el.lang;
-    const prevDir = el.dir;
-    el.lang = "ar";
-    el.dir = "rtl";
-    return () => {
-      el.lang = prevLang || "en";
-      el.dir = prevDir || "ltr";
-    };
-  }, []);
 
   return (
     <div

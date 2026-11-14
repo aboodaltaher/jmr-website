@@ -1,4 +1,5 @@
 import { MidPageCta } from "@/components/MidPageCta";
+import { FaqJsonLd } from "@/components/FaqJsonLd";
 import Link from "next/link";
 import { MapPin, Phone, Check } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -62,20 +63,11 @@ export function LocationPageLayout({
     provider: { "@id": `${SITE_URL}/#business` },
   };
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faq.map((f) => ({
-      "@type": "Question",
-      name: f.q,
-      acceptedAnswer: { "@type": "Answer", text: f.a },
-    })),
-  };
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <FaqJsonLd items={faq} />
 
       {/* Header */}
       <section className="bg-bg-soft py-16 md:py-20">

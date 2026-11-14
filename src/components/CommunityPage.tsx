@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import { FaqJsonLd } from "@/components/FaqJsonLd";
 import Link from "next/link";
 import { MessageCircle, Phone } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -63,20 +64,11 @@ export function CommunityPage({ community: raw }: { community: Community }) {
     },
   };
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: c.faqs.map((f) => ({
-      "@type": "Question",
-      name: f.q,
-      acceptedAnswer: { "@type": "Answer", text: f.a },
-    })),
-  };
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <FaqJsonLd items={c.faqs} />
 
       {/* Header */}
       <section className="bg-bg-soft py-14 md:py-20">

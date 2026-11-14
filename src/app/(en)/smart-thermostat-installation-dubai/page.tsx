@@ -1,4 +1,5 @@
 import { buildMetadata } from "@/lib/metadata";
+import { FaqJsonLd } from "@/components/FaqJsonLd";
 import Image from "next/image";
 import Link from "next/link";
 import { RelatedServices } from "@/components/RelatedServices";
@@ -352,16 +353,6 @@ const serviceSchema = {
   },
 };
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: allFaqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
-};
-
 
 /* ------------------------------- HELPERS ------------------------------- */
 
@@ -377,7 +368,7 @@ export default async function SmartThermostatPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <FaqJsonLd items={allFaqs} />
 
       {/* Breadcrumb (single trail + BreadcrumbList JSON-LD) */}
       <BreadcrumbBand
