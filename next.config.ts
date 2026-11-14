@@ -37,6 +37,10 @@ const nextConfig: NextConfig = {
       ["/ar/air-balancing-airflow-testing-dubai", "/ar/services/tab-testing-adjusting-balancing-dubai"],
       // Cluster C — chiller systems folds into chiller installation & maintenance
       ["/services/chillers", "/services/chiller-maintenance-dubai"],
+      // Cluster D — brand pages fold into the smart-thermostat hub, landing on
+      // the matching brand section (#google-nest / #ecobee)
+      ["/google-nest-thermostat-installation-dubai", "/smart-thermostat-installation-dubai#google-nest"],
+      ["/ecobee-thermostat-installation-dubai", "/smart-thermostat-installation-dubai#ecobee"],
     ].flatMap(([source, destination]) => [
       { source, destination, statusCode: 301 as const },
       { source: `${source}/`, destination, statusCode: 301 as const },

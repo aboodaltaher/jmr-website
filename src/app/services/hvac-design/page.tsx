@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { isPublished } from "@/data/new-pages";
 import { buildMetadata } from "@/lib/metadata";
 import { PROJECTS_DELIVERED } from "@/lib/company";
 import {
@@ -52,6 +54,18 @@ export default function HvacDesign() {
             plagues the Dubai market and leads to short-cycling, humidity
             problems, and wasted capital expenditure.
           </p>
+          {isPublished("mep") && (
+            <p>
+              Where design is part of a wider package, see how we run{" "}
+              <Link
+                href="/mep-contractors-dubai"
+                className="text-primary underline underline-offset-2 hover:text-primary-dark"
+              >
+                the HVAC package on MEP projects
+              </Link>{" "}
+              with the other trades&apos; interfaces coordinated.
+            </p>
+          )}
         </>
       }
       whenYouNeedIt={[

@@ -60,4 +60,6 @@ In a climate where AC runs most of the year, both thermostats deliver real savin
 
 Still unsure? That's what our **free compatibility check** is for — we review your AC and home and recommend the best fit, with no obligation.
 
+Whichever you choose, the thermostat only controls your AC; keeping the unit itself efficient is a job for regular [AC maintenance](/ac-maintenance-dubai).
+
 > **Ready to upgrade?** See all the models and book a free assessment on our [smart thermostat installation page](/smart-thermostat-installation-dubai), or call **{{PHONE}}**.

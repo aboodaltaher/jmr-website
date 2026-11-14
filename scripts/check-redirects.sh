@@ -16,6 +16,8 @@ PAIRS=(
   "/air-balancing-airflow-testing-dubai|/services/tab-testing-adjusting-balancing-dubai"
   "/ar/air-balancing-airflow-testing-dubai|/ar/services/tab-testing-adjusting-balancing-dubai"
   "/services/chillers|/services/chiller-maintenance-dubai"
+  "/google-nest-thermostat-installation-dubai|/smart-thermostat-installation-dubai#google-nest"
+  "/ecobee-thermostat-installation-dubai|/smart-thermostat-installation-dubai#ecobee"
 )
 
 fail=0

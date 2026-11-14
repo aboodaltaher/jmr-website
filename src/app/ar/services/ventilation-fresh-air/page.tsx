@@ -2,6 +2,7 @@ import { buildMetadata } from "@/lib/metadata";
 import { PROJECTS_DELIVERED } from "@/lib/company";
 import { PenLine, Fan, Ruler, Gauge, FileText, Zap } from "lucide-react";
 import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
+import { IaqSection } from "@/components/IaqSection";
 
 // Arabic translation of /services/ventilation-fresh-air. TODO(owner): native
 // Arabic review. No new claims added (ASHRAE/Municipality/energy figures kept).
@@ -17,6 +18,7 @@ export default function ArabicVentilation() {
   return (
     <ServiceDetailLayout
       lang="ar"
+      extraSection={<IaqSection lang="ar" />}
       slug="ar/services/ventilation-fresh-air"
       title="تهوية الهواء النقي وفحص ثاني أكسيد الكربون"
       intro="تهوية ميكانيكية ومناولة هواء نقي وأنظمة سحب مصمَّمة لمناخ دبي ومتطلّبات جودة الهواء الداخلي."

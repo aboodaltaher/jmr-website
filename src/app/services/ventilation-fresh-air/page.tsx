@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { isPublished } from "@/data/new-pages";
 import { buildMetadata } from "@/lib/metadata";
 import { PROJECTS_DELIVERED } from "@/lib/company";
 import {
@@ -9,6 +11,7 @@ import {
   Zap,
 } from "lucide-react";
 import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
+import { IaqSection } from "@/components/IaqSection";
 
 export const metadata = buildMetadata({
   title: "Fresh Air, FAHU & Ventilation Systems Dubai | AGEC",
@@ -20,6 +23,7 @@ export const metadata = buildMetadata({
 export default function VentilationFreshAir() {
   return (
     <ServiceDetailLayout
+      extraSection={<IaqSection />}
       slug="services/ventilation-fresh-air"
       title="Fresh Air Ventilation & CO₂ Testing"
       heroImage="/projects/fresh-air-handling-unit-fahu-dubai-agec.jpg"
@@ -53,6 +57,18 @@ export default function VentilationFreshAir() {
             airflow. All systems are designed to comply with ASHRAE 62.1, Dubai
             Municipality requirements, and Dubai Civil Defence codes.
           </p>
+          {isPublished("ducting") && (
+            <p>
+              Ventilation depends on well-built ducts, so read about our{" "}
+              <Link
+                href="/ac-ducting-installation-dubai"
+                className="text-primary underline underline-offset-2 hover:text-primary-dark"
+              >
+                AC ducting installation and duct fabrication
+              </Link>{" "}
+              in GI and pre-insulated panel.
+            </p>
+          )}
         </>
       }
       whenYouNeedIt={[

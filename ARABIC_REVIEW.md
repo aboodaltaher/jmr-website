@@ -154,6 +154,48 @@ H1: «موازنة الهواء واختبار تدفّق التكييف»
 FAQ Qs: «ما هي موازنة الهواء؟» · «كم تستغرق؟» · «هل تعملون وفق تصميم الاستشاري؟» ·
 «هل توازنون المباني القائمة لا الجديدة فقط؟» · «ما المعيار الذي تتّبعونه؟» · «هل تغطّون إمارتي؟»
 
+### Added in the content-gaps pass (2026-11-14) — please review these first
+
+All of these are translations of the English page of the same name; no new claims. Technical
+terms kept in Latin script: VRF, VRV, DX, TR, FAHU, BMS, SMACNA, ASHRAE, CIBSE, PIR, GI, NOC.
+
+**Live now (indexable, hreflang-paired, in the sitemap):**
+
+- **VRF / VRV** — `src/app/ar/services/vrf-vrv-systems/page.tsx`
+  Title: «تركيب وصيانة أنظمة VRF وVRV في دبي | AGEC» · H1: «أنظمة VRF / VRV»
+- **DX units** — `src/app/ar/services/dx-units/page.tsx`
+  Title: «وحدات DX وتركيب مكيفات سبليت مجاري في دبي | AGEC» · H1: «وحدات DX وأنظمة السبليت»
+  (links to the Arabic smart-thermostat page)
+- **HVAC design** — `src/app/ar/services/hvac-design/page.tsx`
+  Title: «تصميم أنظمة التكييف وحساب الحمل الحراري في دبي | AGEC» · H1: «تصميم أنظمة التكييف والاستشارات»
+  (Wording to check: «نظام السعفة» for Dubai's Al Sa'fat green-building rating; «هندسة القيمة» for
+  value engineering; «حزم التصميم» for design packages.)
+
+**Indoor-air-quality section added to the Arabic ventilation page** (parity with English) —
+`src/components/IaqSection.tsx` (Arabic copy), shown on `/ar/services/ventilation-fresh-air`
+H2: «فحص جودة الهواء الداخلي» · H3s: «ماذا نقيس» / «ما الذي يعالج المشكلة عادةً»
+Terms to check: «ثاني أكسيد الكربون (CO₂)», «الجسيمات PM2.5 وPM10», «الرطوبة النسبية»,
+«نقطة الندى», «وحدة FAHU», «قيم إرشادية ومرجعية». Reference values are worded as guidance, not
+legal limits, with sources named: WHO Global Air Quality Guidelines 2021 (PM2.5: 15 µg/m³ 24-hour,
+5 µg/m³ annual); ASHRAE 62.1 (no CO₂ limit; ~1,000 ppm is only a rule of thumb; humidity by dew
+point 60 °F, earlier editions 65% RH; 40–60% RH comfort target is a rule of thumb) and the ASHRAE
+position document on indoor CO₂.
+
+**Drafts — NOT published yet (noindex, out of the sitemap, unlinked, no hreflang).** They
+follow their English twin's switch in `src/data/new-pages.ts`; review the Arabic now so it is
+ready when the English facts are confirmed. Each page keeps the English `[TO CONFIRM: …]`
+markers on purpose (they are the same open questions as in `TO_CONFIRM.md`).
+
+- **Ducting** — `src/data/long-services-ar.ts` (`DUCTING_AR`), route `src/app/ar/ac-ducting-installation-dubai/page.tsx`
+  Title: «تركيب مجاري التكييف وتصنيع المجاري في دبي | AGEC» · H1: «تركيب مجاري التكييف وتصنيعها في دبي»
+  Terms to check: «المجاري المعزولة مسبقاً (PIR)», «التقوية», «الدرزات», «البلينوم», «دامبرات الحريق»,
+  «فراغ السقف», «مخططات الورشة».
+- **HVAC for MEP projects** — `src/data/long-services-ar.ts` (`MEP_AR`), route `src/app/ar/mep-contractors-dubai/page.tsx`
+  Title: «مقاول تكييف لمشاريع MEP في دبي | AGEC» · H1: «مقاول تكييف لمشاريع MEP في دبي»
+  HVAC scope only (matches the trade licence): other trades are described as coordinated, not delivered.
+  Terms to check: «نقاط التماس», «مخططات الورشة», «موافقات الجهات المختصة», «مقاول تكييف لمشاريع MEP».
+  Both draft pages return 404 on the live site until their publish switch is on.
+
 ### Existing Arabic landing pages (already live; included for completeness)
 `src/app/ar/ac-maintenance-dubai/page.tsx`, `/ar/ac-repair-dubai`, `/ar/ac-amc-dubai`,
 `/ar/ac-duct-cleaning-dubai` — hero, why cards, steps and FAQs in Arabic (see files).
@@ -166,3 +208,5 @@ FAQ Qs: «ما هي موازنة الهواء؟» · «كم تستغرق؟» · 
 3. «التشيلر» (loanword) vs «المبرّدات» for chillers — which reads better for UAE trade?
 4. Any technical term you'd localise differently (e.g. التشغيل التجريبي for commissioning,
    الموازنة for balancing, المجاري for ducts).
+5. «سبليت مجاري» (ducted split) vs «سبليت دكت» — which is the usual trade wording in the UAE?
+6. «الخليج التجاري» for Business Bay in the VRF page's image caption — correct for your audience?

@@ -39,6 +39,8 @@ interface ServiceDetailLayoutProps {
   relatedProjectSlugs?: string[];
   /** Locale. "ar" localises the headings/CTA and points links at the /ar subtree. */
   lang?: Lang;
+  /** Optional extra section rendered between "Why AGEC" and the FAQ. */
+  extraSection?: React.ReactNode;
 }
 
 // Localised chrome strings. {t} is replaced with the service title.
@@ -106,6 +108,7 @@ export function ServiceDetailLayout({
   leadForm,
   relatedProjectSlugs,
   lang = "en",
+  extraSection,
 }: ServiceDetailLayoutProps) {
   const s = STRINGS[lang];
   const t = (str: string) => str.replace("{t}", title);
@@ -290,6 +293,8 @@ export function ServiceDetailLayout({
           </ul>
         </div>
       </section>
+
+      {extraSection}
 
       {/* FAQ */}
       {faq && faq.length > 0 && (

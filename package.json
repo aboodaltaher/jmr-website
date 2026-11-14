@@ -11,6 +11,7 @@
     "seo-check": "node scripts/seo-check.ts",
     "seo-check:legacy": "node scripts/seo-check.mjs",
     "check-nap": "bash scripts/check-nap.sh",
+    "to-confirm": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/list-to-confirm.ts",
     "qr": "node scripts/generate-review-qr.mjs",
     "onpage-check": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/onpage-check.ts"
   },

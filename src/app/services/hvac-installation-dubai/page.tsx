@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { isPublished } from "@/data/new-pages";
 import { buildMetadata } from "@/lib/metadata";
 import {
   PenLine,
@@ -62,6 +64,18 @@ export default function HvacInstallation() {
             we hand it over. You receive the test readings and as-built
             information, not just a set of keys.
           </p>
+          {isPublished("ducting") && (
+            <p>
+              The ductwork is a trade of its own: see how we{" "}
+              <Link
+                href="/ac-ducting-installation-dubai"
+                className="text-primary underline underline-offset-2 hover:text-primary-dark"
+              >
+                fabricate, install, test and modify AC ductwork
+              </Link>{" "}
+              for villas and fit-outs.
+            </p>
+          )}
         </>
       }
       whenYouNeedIt={[

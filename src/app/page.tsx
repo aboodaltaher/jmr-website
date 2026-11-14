@@ -86,7 +86,7 @@ const services = [
     image: "/projects/multiple-ahu-installation-hvac-design-dubai.jpg",
     alt: "HVAC design and engineering scale at Dubai commercial project by AGEC",
     description:
-      "Heat load calculations, duct sizing, equipment selection, and full MEP coordination.",
+      "Heat load calculations, duct sizing, equipment selection, and coordination with the other building trades.",
   },
   {
     icon: Gauge,

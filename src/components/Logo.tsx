@@ -14,8 +14,8 @@ export function Logo({ variant = "light" }: { variant?: "dark" | "light" }) {
         <span style={{ color: word }} className="font-heading font-bold text-5xl tracking-[0.06em] leading-none">AGEC</span>
       </div>
       <div style={{ borderTopColor: rule }} className="mt-3 w-full border-t" />
-      <span style={{ color: desc }} className="font-heading text-xs tracking-[0.45em] mt-3 pl-[0.45em]">
-        HVAC · MEP · MAINTENANCE
+      <span style={{ color: desc }} className="font-heading text-xs tracking-[0.3em] mt-3 pl-[0.3em]">
+        HVAC · VENTILATION · MAINTENANCE
       </span>
     </div>
   );

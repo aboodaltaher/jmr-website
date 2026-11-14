@@ -221,7 +221,7 @@ export default async function AcMaintenancePage() {
             <p className={eyebrow}>Why Choose AGEC</p>
             <h2 className="mt-3 font-heading text-3xl font-bold md:text-5xl">Dubai&apos;s Reliable AC Maintenance Company</h2>
             <p className="mt-5 text-lg text-text-muted">
-              We&apos;re a licensed HVAC &amp; MEP engineering contractor — the same engineers who design and install
+              We&apos;re a licensed HVAC contractor (air conditioning, ventilation and air filtration) — the same engineers who design and install
               major cooling systems also keep your AC running at its best.
             </p>
           </div>

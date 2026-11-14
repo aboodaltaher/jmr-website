@@ -30,11 +30,11 @@ const cairo = Cairo({
 
 export const metadata: Metadata = {
   metadataBase: new URL(business.url),
-  title: "AGEC — HVAC, MEP & Maintenance Contracting | Dubai, UAE",
+  title: "AGEC — HVAC Contracting & Maintenance | Dubai, UAE",
   description:
-    `AGEC (${business.alternateName}) designs, installs, and maintains HVAC and MEP systems across the UAE. VRF, chillers, ventilation, AMC. Dubai-based. Engineered to perform.`,
+    `AGEC (${business.alternateName}) designs, installs, and maintains air conditioning, ventilation and air filtration systems across the UAE. VRF, chillers, ventilation, AMC. Dubai-based. Engineered to perform.`,
   openGraph: {
-    title: "AGEC — HVAC, MEP & Maintenance Contracting | Dubai, UAE",
+    title: "AGEC — HVAC Contracting & Maintenance | Dubai, UAE",
     description:
       "Engineer-led HVAC design, installation, AC maintenance and AMC across Dubai and the UAE.",
     url: "https://agec.ae",

@@ -1,6 +1,7 @@
 import { buildMetadata } from "@/lib/metadata";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import Link from "next/link";
+import { isPublished } from "@/data/new-pages";
 import {
   Wind,
   Snowflake,
@@ -30,19 +31,27 @@ export const metadata = buildMetadata({
 const eyebrow = "text-sm font-semibold uppercase tracking-widest text-primary";
 
 const services = [
-  { icon: Wind, name: "أنظمة VRF / VRV", href: "/services/vrf-vrv-systems", description: "أنظمة التدفّق المتغيّر للمبرّد للمباني التي تتطلّب تبريداً مناطقياً وكفاءة في الطاقة وتشغيلاً هادئاً. نصمّم ونركّب ونشغّل أنظمة VRF من كبرى الشركات المصنّعة للفلل والمكاتب والمباني المتوسطة." },
+  { icon: Wind, name: "أنظمة VRF / VRV", href: "/ar/services/vrf-vrv-systems", description: "أنظمة التدفّق المتغيّر للمبرّد للمباني التي تتطلّب تبريداً مناطقياً وكفاءة في الطاقة وتشغيلاً هادئاً. نصمّم ونركّب ونشغّل أنظمة VRF من كبرى الشركات المصنّعة للفلل والمكاتب والمباني المتوسطة." },
   { icon: Hammer, name: "تركيب أنظمة التكييف", href: "/ar/services/hvac-installation-dubai", description: "تركيب تكييف كامل للمباني الجديدة والتجهيزات — مجاري هواء ومواسير تبريد ومياه مبرّدة وتركيب معدّات وتحكّم وتشغيل تجريبي، يُسلَّم بأوراق اختبار ومعلومات تنفيذية." },
   { icon: Snowflake, name: "التشيلر", href: "/services/chiller-maintenance-dubai", description: "أنظمة تشيلر مبرّدة بالهواء والماء للمباني التجارية والفنادق والمنشآت الصناعية. تصميم كامل للمواسير واختيار المضخّات وتشغيل منظومة المياه المبرّدة تجريبياً." },
   { icon: Calendar, name: "صيانة التشيلر", href: "/ar/services/chiller-maintenance-dubai", description: "صيانة مخطّطة لمحطات التشيلر المبرّدة بالهواء والماء — صيانة مجدولة وتنظيف الأنابيب وفحص الفريون والأداء ومعالجة المياه وتقارير موثّقة تحت عقد سنوي." },
-  { icon: Thermometer, name: "وحدات DX", href: "/services/dx-units", description: "أنظمة التمدّد المباشر من سبليت ودكت وكاسيت ووحدات مخفية للتطبيقات السكنية والتجارية الصغيرة. حلول تبريد موثوقة مقاسة ومركّبة بشكل صحيح." },
+  { icon: Thermometer, name: "وحدات DX", href: "/ar/services/dx-units", description: "أنظمة التمدّد المباشر من سبليت ودكت وكاسيت ووحدات مخفية للتطبيقات السكنية والتجارية الصغيرة. حلول تبريد موثوقة مقاسة ومركّبة بشكل صحيح." },
   { icon: Cpu, name: "تركيب الثرموستات الذكي", href: "/ar/smart-thermostat-installation-dubai", description: "توريد وتركيب احترافي لثرموستات Google Nest و ecobee عبر الإمارات — مع فحص توافق مجاني وتركيب سلك C وإعداد المنزل الذكي للفلل والشقق والمكاتب والمحلات." },
   { icon: Fan, name: "التهوية والهواء النقي", href: "/ar/services/ventilation-fresh-air", description: "تهوية ميكانيكية ووحدات مناولة هواء نقي وأنظمة سحب مصمَّمة لمناخ دبي. نحجّم ونوازن ونشغّل التهوية تجريبياً لتلبية معايير جودة الهواء الداخلي." },
-  { icon: ClipboardCheck, name: "تصميم التكييف والاستشارات", href: "/services/hvac-design", description: "حسابات حمل حراري وتحجيم مجاري واختيار معدّات وتصميم كامل لأنظمة التكييف. سواء فيلا واحدة أو تجهيز تجاري متعدّد الطوابق، نقدّم توثيقاً تصميمياً يلبّي الكود ويؤدّي عملياً." },
+  { icon: ClipboardCheck, name: "تصميم التكييف والاستشارات", href: "/ar/services/hvac-design", description: "حسابات حمل حراري وتحجيم مجاري واختيار معدّات وتصميم كامل لأنظمة التكييف. سواء فيلا واحدة أو تجهيز تجاري متعدّد الطوابق، نقدّم توثيقاً تصميمياً يلبّي الكود ويؤدّي عملياً." },
   { icon: Gauge, name: "الاختبار والتشغيل التجريبي", href: "/services/tab-testing-adjusting-balancing-dubai", description: "خدمات اختبار وموازنة وتشغيل تجريبي موثّقة. قياس تدفّق الهواء وموازنة تدفّق الماء والتحقّق من التحكّم وتقارير كاملة — كل نظام يُسلَّم مقابل المواصفات." },
   { icon: Scale, name: "الاختبار والضبط والموازنة (TAB)", href: "/ar/services/tab-testing-adjusting-balancing-dubai", description: "قياس تدفّق الهواء والماء وضبطه على قيم التصميم عبر أنظمة الهواء والماء، مع تقرير موازنة موثّق وموقّع لاعتماد الاستشاري والمالك." },
   { icon: Settings, name: "صيانة وإصلاح المكيفات", href: "/ar/ac-maintenance-dubai", description: "خدمة وإصلاح المكيفات وتنظيف الملفّات والمجاري وتعبئة الغاز والطوارئ للفلل والشقق والمنشآت عبر دبي والإمارات. خدمة في نفس اليوم وطوارئ 24/7." },
   { icon: Wrench, name: "عقود الصيانة السنوية (AMC)", href: "/ar/ac-amc-dubai", description: "عقود صيانة سنوية بسعر ثابت وصيانة تفاعلية وطوارئ. الصيانة الوقائية المجدولة تطيل عمر المعدّات وتحمي الضمانات — سكنية وتجارية." },
 ];
+
+// Gated with their English pages (src/data/new-pages.ts)
+if (isPublished("ducting")) {
+  services.push({ icon: Wind, name: "تركيب المجاري وتصنيعها", href: "/ar/ac-ducting-installation-dubai", description: "تصنيع مجاري GI والمعزولة مسبقاً، وتصنيع وفق SMACNA، واختبار التسرّب وتعديل المجاري عند التجهيز." });
+}
+if (isPublished("mep")) {
+  services.push({ icon: ClipboardCheck, name: "تكييف لمشاريع MEP", href: "/ar/mep-contractors-dubai", description: "حزمة التكييف في مشاريع MEP: تصميم وتركيب وتشغيل تجريبي داخلياً مع تنسيق نقاط تماس بقية الأعمال." });
+}
 
 const steps = [
   { number: "01", name: "الاستشارة", description: "فهم نطاق المشروع ومتطلّباته" },
