@@ -1,20 +1,18 @@
 "use client";
 
-import { useEffect } from "react";
+import { Fragment, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Phone, MessageCircle } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { PHONE, PHONE_DISPLAY, whatsappUrl } from "@/lib/contact";
 import { enEquivalentOf } from "@/lib/nav";
+import { ServicesMegaMenu } from "@/components/ServicesMegaMenu";
+import { ServicesMobileAccordion } from "@/components/ServicesMobileAccordion";
 
+// Home + About + Contact; all services now live in the Services mega-menu.
 const navLinks = [
   { href: "/ar", label: "الرئيسية" },
-  { href: "/ar/services", label: "الخدمات" },
-  { href: "/ar/ac-maintenance-dubai", label: "صيانة المكيفات" },
-  { href: "/ar/ac-repair-dubai", label: "إصلاح المكيفات" },
-  { href: "/ar/ac-duct-cleaning-dubai", label: "تنظيف المجاري" },
-  { href: "/ar/ac-amc-dubai", label: "عقود الصيانة" },
   { href: "/ar/about", label: "من نحن" },
   { href: "/ar/contact", label: "اتصل بنا" },
 ];
@@ -48,20 +46,22 @@ export function ArabicChrome({ children }: { children: React.ReactNode }) {
       className="flex min-h-screen flex-col"
     >
       {/* Header */}
-      <header className="border-b border-border">
+      <header className="relative border-b border-border">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-3">
           <Link href="/ar" aria-label="AGEC — الصفحة الرئيسية">
             <Logo />
           </Link>
           <nav className="hidden items-center gap-6 md:flex">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-text-muted hover:text-text transition-colors"
-              >
-                {link.label}
-              </Link>
+            {navLinks.map((link, i) => (
+              <Fragment key={link.href}>
+                <Link
+                  href={link.href}
+                  className="text-sm font-medium text-text-muted hover:text-text transition-colors"
+                >
+                  {link.label}
+                </Link>
+                {i === 0 && <ServicesMegaMenu lang="ar" />}
+              </Fragment>
             ))}
             <Link
               href={enHref}
@@ -90,16 +90,18 @@ export function ArabicChrome({ children }: { children: React.ReactNode }) {
             English
           </Link>
         </div>
-        {/* Mobile nav row */}
-        <nav className="flex flex-wrap gap-x-5 gap-y-2 border-t border-border px-6 py-3 md:hidden">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium text-text-muted hover:text-text transition-colors"
-            >
-              {link.label}
-            </Link>
+        {/* Mobile nav */}
+        <nav className="flex flex-col border-t border-border px-6 py-1 md:hidden">
+          {navLinks.map((link, i) => (
+            <Fragment key={link.href}>
+              <Link
+                href={link.href}
+                className="py-2.5 text-base font-medium text-text-muted hover:text-text transition-colors"
+              >
+                {link.label}
+              </Link>
+              {i === 0 && <ServicesMobileAccordion lang="ar" />}
+            </Fragment>
           ))}
         </nav>
       </header>

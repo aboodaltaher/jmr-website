@@ -8,11 +8,12 @@ import { Logo } from "@/components/Logo";
 import { CallOrWhatsApp } from "@/components/CallOrWhatsApp";
 import {
   mainLinks,
-  serviceLinks,
   maintenanceLinks,
   tailLinks,
   arEquivalentOf,
 } from "@/lib/nav";
+import { ServicesMegaMenu } from "@/components/ServicesMegaMenu";
+import { ServicesMobileAccordion } from "@/components/ServicesMobileAccordion";
 
 // (nav config lives in @/lib/nav so desktop + mobile share one source)
 
@@ -20,12 +21,10 @@ export function Header() {
   const pathname = usePathname();
   const arHref = arEquivalentOf(pathname);
   const [open, setOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
   const [maintenanceOpen, setMaintenanceOpen] = useState(false);
 
   const closeAll = () => {
     setOpen(false);
-    setServicesOpen(false);
     setMaintenanceOpen(false);
   };
 
@@ -33,7 +32,7 @@ export function Header() {
     "text-sm font-medium text-text-muted hover:text-text transition-colors";
 
   return (
-    <header className="border-b border-border">
+    <header className="relative border-b border-border">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
         <Link href="/" onClick={closeAll}>
           <Logo />
@@ -47,56 +46,8 @@ export function Header() {
             </Link>
           ))}
 
-          {/* Services: link + accessible dropdown toggle (keyboard + touch) */}
-          <div
-            className="relative"
-            onMouseEnter={() => setServicesOpen(true)}
-            onMouseLeave={() => setServicesOpen(false)}
-            onKeyDown={(e) => {
-              if (e.key === "Escape") setServicesOpen(false);
-            }}
-          >
-            <span className="flex items-center gap-0.5">
-              <Link href="/services" className={linkClass} onClick={closeAll}>
-                Services
-              </Link>
-              <button
-                type="button"
-                aria-label={servicesOpen ? "Close services menu" : "Open services menu"}
-                aria-haspopup="menu"
-                aria-expanded={servicesOpen}
-                aria-controls="services-menu"
-                onClick={() => setServicesOpen((v) => !v)}
-                className="flex items-center justify-center p-1 text-text-muted hover:text-text"
-              >
-                <ChevronDown
-                  className={`h-4 w-4 transition-transform ${servicesOpen ? "rotate-180" : ""}`}
-                  aria-hidden="true"
-                />
-              </button>
-            </span>
-            {servicesOpen && (
-              <ul
-                id="services-menu"
-                role="menu"
-                aria-label="Services"
-                className="absolute left-0 top-full z-50 mt-1 min-w-[240px] rounded-md border border-border bg-white py-2 shadow-lg"
-              >
-                {serviceLinks.map((link) => (
-                  <li role="none" key={link.href}>
-                    <Link
-                      role="menuitem"
-                      href={link.href}
-                      onClick={closeAll}
-                      className="block px-4 py-2 text-sm font-medium text-text-muted hover:bg-bg-soft hover:text-text focus:bg-bg-soft focus:outline-none transition-colors"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
+          {/* Services: accessible mega-menu (panel is always SSR-rendered for SEO) */}
+          <ServicesMegaMenu lang="en" />
 
           {/* Maintenance: dedicated dropdown (audit task 9) */}
           <div
@@ -199,23 +150,8 @@ export function Header() {
               </Link>
             ))}
 
-            <Link
-              href="/services"
-              onClick={closeAll}
-              className="mt-2 pb-1 pt-2 text-xs font-semibold uppercase tracking-widest text-primary"
-            >
-              Services
-            </Link>
-            {serviceLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={closeAll}
-                className="py-2.5 pl-3 text-base font-medium text-text-muted hover:text-text transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
+            <div className="mt-2 border-t border-border pt-1" />
+            <ServicesMobileAccordion lang="en" onNavigate={closeAll} />
 
             <Link
               href="/ac-maintenance-dubai"
