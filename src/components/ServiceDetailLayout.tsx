@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Check, type LucideIcon } from "lucide-react";
+import { Check, MessageCircle, Phone, type LucideIcon } from "lucide-react";
 import { MidPageCta } from "@/components/MidPageCta";
 import { RelatedServices } from "@/components/RelatedServices";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { AREA_SERVED_SCHEMA, PHONE, PHONE_DISPLAY } from "@/lib/company";
+import { whatsappUrl } from "@/lib/contact";
 import { business } from "@/data/business";
 import { getProjectBySlug } from "@/data/projects";
 
@@ -34,8 +35,11 @@ interface ServiceDetailLayoutProps {
   faq?: FaqItem[];
   /** Path after the domain, e.g. "services/vrf-vrv-systems" — enables Service + BreadcrumbList schema. */
   slug?: string;
-  /** Optional inline lead form rendered just above the closing CTA band. */
-  leadForm?: React.ReactNode;
+  /**
+   * Show a compact Call / WhatsApp / "Get a quote" bar just above the closing CTA band. "Get a
+   * quote" scrolls up to the page's single mid-page form (#mid-page-cta), so a page has one form.
+   */
+  ctaBar?: boolean;
   /** Slugs of related case studies to link (English subtree only). */
   relatedProjectSlugs?: string[];
   /** Locale. "ar" localises the headings/CTA and points links at the /ar subtree. */
@@ -58,8 +62,10 @@ const STRINGS: Record<Lang, {
   quoteHref: string;
   orCall: string;
   ready: string;
-  leadHeading: string;
-  leadSub: string;
+  barHeading: string;
+  call: string;
+  whatsapp: string;
+  quoteBar: string;
 }> = {
   en: {
     servicesLabel: "Services",
@@ -74,8 +80,10 @@ const STRINGS: Record<Lang, {
     quoteHref: "/quote",
     orCall: `Or call ${PHONE_DISPLAY}`,
     ready: "Ready to discuss your {t} project?",
-    leadHeading: "Get a quote for {t}",
-    leadSub: "Send your details and our engineering team will come back to you.",
+    barHeading: "Ready to talk about {t}?",
+    call: "Call",
+    whatsapp: "WhatsApp",
+    quoteBar: "Get a quote",
   },
   ar: {
     servicesLabel: "الخدمات",
@@ -90,8 +98,10 @@ const STRINGS: Record<Lang, {
     quoteHref: "/ar/quote",
     orCall: `أو اتصل على ‎${PHONE_DISPLAY}`,
     ready: "هل أنت مستعد لمناقشة مشروع {t}؟",
-    leadHeading: "احصل على عرض سعر لـ {t}",
-    leadSub: "أرسل تفاصيلك وسيعاود فريقنا الهندسي التواصل معك.",
+    barHeading: "هل أنت مستعد لمناقشة {t}؟",
+    call: "اتصل",
+    whatsapp: "واتساب",
+    quoteBar: "احصل على عرض سعر",
   },
 };
 
@@ -106,7 +116,7 @@ export function ServiceDetailLayout({
   whyAgec,
   faq,
   slug,
-  leadForm,
+  ctaBar,
   relatedProjectSlugs,
   lang = "en",
   extraSection,
@@ -366,18 +376,33 @@ export function ServiceDetailLayout({
         <RelatedServices currentPath={url ? `/${slug}` : undefined} />
       )}
 
-      {/* Inline quick quote */}
-      {leadForm && (
-        <section className="bg-bg-soft py-16 md:py-20">
-          <div className="mx-auto max-w-3xl px-6">
-            <h2 className="text-center font-heading text-3xl font-bold md:text-4xl">
-              {t(s.leadHeading)}
-            </h2>
-            <p className="mt-3 text-center text-text-muted">
-              {s.leadSub}
-            </p>
-            <div className="mt-8 rounded-xl border border-border bg-white p-6 md:p-8">
-              {leadForm}
+      {/* Compact CTA bar (replaces the old bottom form). "Get a quote" scrolls to the page's one form. */}
+      {ctaBar && (
+        <section data-track-location="cta_bar" className="border-y border-border bg-bg-soft py-8">
+          <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 px-6 md:flex-row">
+            <p className="font-heading text-xl font-bold">{t(s.barHeading)}</p>
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              <a
+                href={`tel:${PHONE}`}
+                dir="ltr"
+                className="inline-flex items-center gap-2 rounded-md border border-border bg-white px-5 py-3 text-sm font-semibold hover:border-primary hover:text-primary"
+              >
+                <Phone className="h-4 w-4 text-primary" aria-hidden="true" /> {s.call} {PHONE_DISPLAY}
+              </a>
+              <a
+                href={whatsappUrl(`/${slug ?? ""}`)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-md bg-[#25D366] px-5 py-3 text-sm font-semibold text-[#062e14] transition-colors hover:bg-[#1fad52]"
+              >
+                <MessageCircle className="h-4 w-4" aria-hidden="true" /> {s.whatsapp}
+              </a>
+              <a
+                href="#mid-page-cta"
+                className="inline-flex items-center rounded-md bg-primary px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary-dark"
+              >
+                {s.quoteBar}
+              </a>
             </div>
           </div>
         </section>

@@ -43,7 +43,7 @@ So existing GA4 reports keep working, the previous names still fire alongside th
 |---|---|---|
 | `call_click` | `click_call` | Old event carries `page_path` only |
 | `whatsapp_click` | `click_whatsapp` | Same |
-| `form_submit` (with `form_name`) | the matching `form_submit_*` | `form_name` is `quote`, `repair`, `amc`, `balancing`, `contact`, `thermostat` |
+| `form_submit` (with `form_name`) | the matching `form_submit_*` | `form_name` is `quote`, `repair`, `amc`, `balancing`, `contact`, `thermostat`. Now also carries `service` and `form_location`, so you can compare form positions on this event as well |
 
 **Retire the old events on 2027-01-15** (about 60 days of overlap). In `src/lib/gtag.ts`, delete the
 lines marked `LEGACY` and the `OLD_EVENTS_RETIRE_ON` constant. **Do not mark the old events as key

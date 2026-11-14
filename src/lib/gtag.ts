@@ -139,7 +139,9 @@ export function trackFormSubmit(
   trackConversion(CONVERSIONS.form);
   const params = leadParams(formLocation);
   fireLeadEvent(`form_submit_${kind}`, params);
-  // LEGACY (retire on OLD_EVENTS_RETIRE_ON): the generic form_submit event with form_name.
-  pushDataLayer("form_submit", { form_name: formName, page_path: params.page_path });
-  gaEvent("form_submit", { form_name: formName, page_path: params.page_path });
+  // LEGACY (retire on OLD_EVENTS_RETIRE_ON): the generic form_submit event with form_name. It now
+  // also carries service and form_location, so you can compare positions on this event too.
+  const legacy = { form_name: formName, ...params };
+  pushDataLayer("form_submit", legacy);
+  gaEvent("form_submit", legacy);
 }

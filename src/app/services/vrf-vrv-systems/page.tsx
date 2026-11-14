@@ -9,7 +9,6 @@ import {
   Shield,
 } from "lucide-react";
 import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
-import { InlineLeadForm } from "@/components/InlineLeadForm";
 
 export const metadata = buildMetadata({
   title: "VRF & VRV Installation and Maintenance Dubai | AGEC",
@@ -22,14 +21,7 @@ export default function VrfVrvSystems() {
   return (
     <ServiceDetailLayout
       slug="services/vrf-vrv-systems"
-      leadForm={
-        <InlineLeadForm
-          requestType="VRF / VRV system quote"
-          whatsappPath="/services/vrf-vrv-systems"
-          detailsLabel="Project details (optional)"
-          detailsPlaceholder="e.g. new villa fit-out, 6 zones, Dubai Hills — need design + supply + install."
-        />
-      }
+      ctaBar
       title="VRF / VRV Systems"
       heroImage="/projects/daikin-vrv-x-business-bay-dubai-rooftop-installation.jpg"
       heroImageAlt="Daikin VRV-X variable refrigerant volume system installation on rooftop in Business Bay Dubai by AGEC"

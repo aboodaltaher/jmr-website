@@ -33,9 +33,10 @@ export function MidPageCta({
 
   return (
     <section
+      id="mid-page-cta"
       data-track-location="mid_page"
       aria-labelledby="mid-cta-heading"
-      className="bg-bg-soft py-12 md:py-14"
+      className="scroll-mt-24 bg-bg-soft py-12 md:py-14"
     >
       <div className="mx-auto max-w-5xl px-6">
         <h2 id="mid-cta-heading" className="font-heading text-2xl font-bold md:text-3xl">
