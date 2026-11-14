@@ -210,6 +210,7 @@ export default async function AcMaintenancePage() {
               alt="AGEC technician performing AC duct cleaning in a Dubai apartment"
               fill
               priority
+              fetchPriority="high"
               className="object-cover"
               sizes="(max-width:1024px) 100vw, 45vw"
             />

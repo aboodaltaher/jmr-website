@@ -157,8 +157,10 @@ export default async function Home() {
           alt="Daikin VRV-X variable refrigerant volume system installation on rooftop in Business Bay Dubai by AGEC"
           fill
           sizes="100vw"
+          quality={60}
           className="object-cover"
           priority
+          fetchPriority="high"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/65 to-black/45" />
         <div className="relative mx-auto max-w-7xl px-6 py-24">
