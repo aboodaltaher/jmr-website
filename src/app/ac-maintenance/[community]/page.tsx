@@ -4,6 +4,7 @@ import { buildMetadata } from "@/lib/metadata";
 import { communities, getCommunity } from "@/data/communities";
 import { COMMUNITY_INDEX, communityPath } from "@/data/community-index";
 import { CommunityPage } from "@/components/CommunityPage";
+import { hasOpenMarkers, isProductionSite } from "@/lib/draft";
 
 // Only the communities in the index exist; anything else is a 404.
 export const dynamicParams = false;
@@ -38,5 +39,8 @@ export default async function CommunityRoute({
   const { community } = await params;
   const c = getCommunity(community);
   if (!c) notFound();
+  // Same rule as the new service pages: 404 on the live site while any [TO CONFIRM] is open.
+  // Local and Vercel preview builds still render it (markers highlighted) for review.
+  if (isProductionSite() && hasOpenMarkers(c)) notFound();
   return <CommunityPage community={c} />;
 }

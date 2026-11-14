@@ -57,6 +57,18 @@ export default function VentilationFreshAir() {
             airflow. All systems are designed to comply with ASHRAE 62.1, Dubai
             Municipality requirements, and Dubai Civil Defence codes.
           </p>
+          {isPublished("kitchenExhaust") && (
+            <p>
+              Commercial kitchens need their exhaust kept clean as well as balanced: see our{" "}
+              <Link
+                href="/kitchen-exhaust-cleaning-dubai"
+                className="text-primary underline underline-offset-2 hover:text-primary-dark"
+              >
+                kitchen exhaust and hood cleaning
+              </Link>
+              .
+            </p>
+          )}
           {isPublished("ducting") && (
             <p>
               Ventilation depends on well-built ducts, so read about our{" "}

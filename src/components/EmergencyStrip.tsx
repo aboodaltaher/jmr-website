@@ -3,8 +3,8 @@ import { PHONE, PHONE_DISPLAY, EMERGENCY_PREFIX } from "@/lib/company";
 
 /**
  * Slim full-width emergency strip — the whole bar is a tel: link. Copy and
- * phone come from the single company config. Shown at the very top of /, /quote
- * and /book so it is visible without scrolling on mobile. (Emergency CTA.)
+ * phone come from the single company config. Shown at the very top of / and /quote
+ * so it is visible without scrolling on mobile. (Emergency CTA.)
  */
 export function EmergencyStrip() {
   return (

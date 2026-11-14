@@ -2,6 +2,9 @@
 // from the long page copy (./communities.ts) so the footer and the WhatsApp bar
 // — which ship in the client bundle — never pull in the page content.
 //
+// A page with an open [TO CONFIRM] marker must never be published: in production it returns 404
+// (see the route), so a page is either fully live or not there at all.
+//
 // `published` is the ONE switch per page:
 //   false → the page exists (reachable by URL for review) but is noindex, left
 //           out of the sitemap, and not linked from the footer or
@@ -17,8 +20,8 @@ export interface CommunityIndexEntry {
 }
 
 export const COMMUNITY_INDEX: CommunityIndexEntry[] = [
-  { slug: "al-barsha", name: "Al Barsha", published: false },
-  { slug: "business-bay", name: "Business Bay", published: false },
+  { slug: "al-barsha", name: "Al Barsha", published: true },
+  { slug: "business-bay", name: "Business Bay", published: true },
   { slug: "dubai-marina", name: "Dubai Marina", published: false },
   { slug: "arabian-ranches", name: "Arabian Ranches", published: false },
 ];

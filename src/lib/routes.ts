@@ -23,7 +23,7 @@ export interface RouteEntry {
 import { isPublished } from "@/data/new-pages";
 
 // Every indexable, static English page. Excludes:
-//  - /book        → canonical alias of /quote (would be duplicate content)
+//  - /book        → 301 redirect to /quote (next.config.ts)
 //  - /quote/thank-you → noindex utility page; /review → 302 to Google reviews
 //  - dynamic blog/project pages → appended from data in sitemap.ts
 export const staticRoutes: RouteEntry[] = [
@@ -45,6 +45,7 @@ export const staticRoutes: RouteEntry[] = [
   { path: "/services/ventilation-fresh-air", updatedAt: "2026-11-02" },
   { path: "/services/hvac-design", updatedAt: "2026-11-02" },
   // Gated: in the sitemap only once published (src/data/new-pages.ts)
+  ...(isPublished("kitchenExhaust") ? [{ path: "/kitchen-exhaust-cleaning-dubai", updatedAt: "2026-11-14" }] : []),
   ...(isPublished("ducting") ? [{ path: "/ac-ducting-installation-dubai", updatedAt: "2026-11-14" }] : []),
   ...(isPublished("mep") ? [{ path: "/mep-contractors-dubai", updatedAt: "2026-11-14" }] : []),
   // Location / emirate landing pages

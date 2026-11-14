@@ -184,7 +184,7 @@ position document on indoor CO₂.
 **Drafts — NOT published yet (noindex, out of the sitemap, unlinked, no hreflang).** They
 follow their English twin's switch in `src/data/new-pages.ts`; review the Arabic now so it is
 ready when the English facts are confirmed. Each page keeps the English `[TO CONFIRM: …]`
-markers on purpose (they are the same open questions as in `TO_CONFIRM.md`).
+markers on purpose (they are the same open questions as in `docs/open-questions.md`).
 
 - **Ducting** — `src/data/long-services-ar.ts` (`DUCTING_AR`), route `src/app/ar/ac-ducting-installation-dubai/page.tsx`
   Title: «تركيب مجاري التكييف وتصنيع المجاري في دبي | AGEC» · H1: «تركيب مجاري التكييف وتصنيعها في دبي»
@@ -195,6 +195,18 @@ markers on purpose (they are the same open questions as in `TO_CONFIRM.md`).
   HVAC scope only (matches the trade licence): other trades are described as coordinated, not delivered.
   Terms to check: «نقاط التماس», «مخططات الورشة», «موافقات الجهات المختصة», «مقاول تكييف لمشاريع MEP».
   Both draft pages return 404 on the live site until their publish switch is on.
+
+**Update (owner answers written in):** the two draft Arabic pages now carry confirmed facts, please
+re-read these sentences:
+- Ducting (`DUCTING_AR`): fabrication «جزئياً في ورشتنا الخاصة وجزئياً عبر شريك تصنيع»; leakage testing
+  per «SMACNA HVAC Air Duct Leakage Test Manual» with the acceptance class set by the project
+  specification and a test report at handover; reference «SMACNA HVAC Duct Construction Standards —
+  Metal and Flexible» 4th edition (2020).
+- HVAC for MEP projects (`MEP_AR`): «يقدّم الاستشاري طلبات موافقات الجهات المختصة وشهادات عدم الممانعة (NOC)؛
+  وتعدّ AGEC وتوفّر مخططات التكييف والحسابات والمستندات اللازمة للتقديم.»
+- Ducting (`DUCTING_AR`): pre-insulated panels are described generically («من موردين معتمدين… وفق مواصفات المشروع»); no brands or fire ratings are named. The ducting pages (EN + AR) are now published.
+- The kitchen exhaust cleaning page is published in English only; there is no Arabic version yet.
+- The HVAC-for-MEP pages (EN + AR) stay off until the owner has reviewed them on the preview URL.
 
 ### Existing Arabic landing pages (already live; included for completeness)
 `src/app/ar/ac-maintenance-dubai/page.tsx`, `/ar/ac-repair-dubai`, `/ar/ac-amc-dubai`,

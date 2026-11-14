@@ -48,6 +48,10 @@ export const servicesMenu: MegaGroup[] = [
       { label: "Chiller Maintenance", href: "/services/chiller-maintenance-dubai", desc: "Air- and water-cooled plants", arLabel: "صيانة التشيلر", arDesc: "وحدات مبرّدة بالهواء والماء", arHref: "/ar/services/chiller-maintenance-dubai" },
       { label: "Ventilation & Fresh Air", href: "/services/ventilation-fresh-air", desc: "FAHU, CO₂ and air quality", arLabel: "التهوية والهواء النقي", arDesc: "وحدات هواء نقي وجودة الهواء", arHref: "/ar/services/ventilation-fresh-air" },
       { label: "DX Units & Split Systems", href: "/services/dx-units", desc: "Ducted and packaged DX", arLabel: "وحدات DX والسبليت", arDesc: "أنظمة DX مجاري ومجمّعة", arHref: "/ar/services/dx-units" },
+      // Kitchen exhaust (English page only, so the Arabic menu links the English URL)
+      ...(isPublished("kitchenExhaust")
+        ? [{ label: "Kitchen Exhaust Cleaning", href: "/kitchen-exhaust-cleaning-dubai", desc: "Hood and grease-duct cleaning", arLabel: "تنظيف شفاط المطابخ", arDesc: "تنظيف الهود ومجاري الدهون" }]
+        : []),
       // Ducting: only in the menu once its page is published (src/data/new-pages.ts)
       ...(isPublished("ducting")
         ? [{ label: "AC Ducting & Fabrication", href: "/ac-ducting-installation-dubai", desc: "GI and PIR duct, built and tested", arLabel: "مجاري التكييف وتصنيعها", arDesc: "مجاري GI ومعزولة، مصنّعة ومختبَرة", arHref: "/ar/ac-ducting-installation-dubai" }]

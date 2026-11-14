@@ -54,7 +54,7 @@ export const FORM_RESPONSE_NOTE_AR = "نرد عبر الهاتف والواتس�
 export const FORM_PRIVACY_NOTE_AR =
   "تُستخدم بياناتك للرد على استفسارك فقط — لا تُشارك ولا تُباع أبداً.";
 
-// --- Emergency strip copy (shown on /, /quote and /book) ---
+// --- Emergency strip copy (shown on / and /quote) ---
 export const EMERGENCY_PREFIX = "AC down right now? Call";
 
 // --- Project figures ---
