@@ -2,9 +2,12 @@
 // Canonical company facts live in ./company; phone is re-exported here so
 // existing `@/lib/contact` imports keep working.
 
+import { WHATSAPP } from "./company";
+import { communityNameForPath } from "@/data/community-index";
+
 export { PHONE, PHONE_DISPLAY } from "./company";
 
-const WA_NUMBER = "971585575987";
+const WA_NUMBER = WHATSAPP;
 
 // Page-specific WhatsApp prefilled text, keyed by route. Falls back to default.
 const WHATSAPP_MESSAGES: Record<string, string> = {
@@ -34,6 +37,10 @@ const WHATSAPP_MESSAGES: Record<string, string> = {
 };
 
 export function whatsappMessageFor(pathname: string): string {
+  const community = communityNameForPath(pathname);
+  if (community) {
+    return `Hi AGEC, I'd like to book AC maintenance in ${community}. Number of units and villa/apartment: `;
+  }
   return WHATSAPP_MESSAGES[pathname] ?? WHATSAPP_MESSAGES.default;
 }
 

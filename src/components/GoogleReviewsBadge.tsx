@@ -1,14 +1,13 @@
 import { Star } from "lucide-react";
-import { GOOGLE_REVIEWS_URL } from "@/lib/reviews";
-import { getGoogleReviewStats } from "@/lib/google-reviews";
+import { MAPS_URL, reviewStats } from "@/lib/reviews";
 
-/** "Rated on Google — N reviews" linking to the AGEC Google Business Profile.
- *  Count is live from Google (cached daily), with a config fallback. */
-export async function GoogleReviewsBadge({ className = "" }: { className?: string }) {
-  const { count } = await getGoogleReviewStats();
+/** "Rated on Google — N reviews" linking to the AGEC Google Maps profile.
+ *  Count comes from src/data/business.ts (updated monthly). */
+export function GoogleReviewsBadge({ className = "" }: { className?: string }) {
+  const { count } = reviewStats;
   return (
     <a
-      href={GOOGLE_REVIEWS_URL}
+      href={MAPS_URL}
       target="_blank"
       rel="noopener noreferrer"
       className={`inline-flex items-center gap-1.5 text-sm font-medium hover:underline ${className}`}

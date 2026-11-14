@@ -7,6 +7,7 @@ import { AmcForm } from "@/components/AmcForm";
 import { BreadcrumbBand } from "@/components/Breadcrumbs";
 import { PHONE, whatsappUrl } from "@/lib/contact";
 
+import { PHONE_DISPLAY } from "@/lib/company";
 const SITE_URL = "https://agec.ae";
 const ROUTE = "/ac-amc-dubai";
 
@@ -113,7 +114,7 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: "Do you cover my emirate?",
-    a: "We've delivered projects in Dubai, Sharjah, Ajman and Abu Dhabi, and are available across the UAE. Call or WhatsApp +971 58 557 5987.",
+    a: `We've delivered projects in Dubai, Sharjah, Ajman and Abu Dhabi, and are available across the UAE. Call or WhatsApp ${PHONE_DISPLAY}.`,
   },
 ];
 

@@ -8,8 +8,10 @@ import { DeepCleanVideo } from "@/components/DeepCleanVideo";
 import { Check, Phone, MessageCircle, Wind, AlertCircle } from "lucide-react";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { PHONE, whatsappUrl } from "@/lib/contact";
+import { business } from "@/data/business";
 
-const SITE_URL = "https://agec.ae";
+import { PHONE_DISPLAY } from "@/lib/company";
+const SITE_URL = business.url;
 const ROUTE = "/ac-duct-cleaning-dubai";
 
 export const metadata = buildMetadata({
@@ -127,14 +129,14 @@ const serviceSchema = {
   areaServed: { "@type": "Country", name: "United Arab Emirates" },
   provider: {
     "@type": "HVACBusiness",
-    name: "AGEC Technical Services",
-    telephone: PHONE,
-    email: "a.altaher@agec.ae",
+    name: business.name,
+    telephone: business.phone.e164,
+    email: business.email,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "AlMasraf Building, Sheikh Zayed Road",
-      addressLocality: "Dubai",
-      addressCountry: "AE",
+      streetAddress: business.address.line,
+      addressLocality: business.address.locality,
+      addressCountry: business.address.countryCode,
     },
     url: SITE_URL,
   },
@@ -410,7 +412,7 @@ export default function AcDuctCleaningPage() {
           <p className="mt-4 text-sm text-white">
             Or call{" "}
             <a href={`tel:${PHONE}`} className="font-semibold text-white hover:underline">
-              +971 58 557 5987
+              {PHONE_DISPLAY}
             </a>
           </p>
         </div>

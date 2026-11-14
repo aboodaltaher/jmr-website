@@ -10,6 +10,8 @@
     "typecheck": "tsc --noEmit",
     "seo-check": "node scripts/seo-check.ts",
     "seo-check:legacy": "node scripts/seo-check.mjs",
+    "check-nap": "bash scripts/check-nap.sh",
+    "qr": "node scripts/generate-review-qr.mjs",
     "onpage-check": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/onpage-check.ts"
   },
   "dependencies": {
@@ -32,6 +34,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
+    "qrcode": "^1.5.4",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

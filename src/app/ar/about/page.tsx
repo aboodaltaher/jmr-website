@@ -1,6 +1,7 @@
 import { buildMetadata } from "@/lib/metadata";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { FOUNDER, PROJECTS_DELIVERED, LICENCE_NO } from "@/lib/company";
+import { FOUNDER, PROJECTS_DELIVERED, LICENCE_NO, COMPANY_LEGAL } from "@/lib/company";
+import { business } from "@/data/business";
 import Image from "next/image";
 import Link from "next/link";
 import { Award, ShieldCheck, PhoneCall, TrendingUp } from "lucide-react";
@@ -41,7 +42,7 @@ const personSchema = {
   inLanguage: "ar",
   name: FOUNDER,
   jobTitle: "المؤسّس وكبير مهندسي التكييف",
-  worksFor: { "@type": "Organization", name: "AGEC Technical Services", url: "https://agec.ae" },
+  worksFor: { "@type": "Organization", name: business.name, url: business.url },
   image: "https://agec.ae/team/mohannad-ghabboun-agec.jpg",
   url: "https://agec.ae/ar/about",
   description:
@@ -99,7 +100,7 @@ export default function ArabicAbout() {
                   التزامنا واحد: الدقّة والالتزام بالمواعيد وأنظمة تعمل على المدى الطويل.
                 </p>
                 <p>
-                  AGEC هو الاسم التجاري لشركة AGEC Technical Services L.L.C.، الشركة
+                  AGEC هو الاسم التجاري لشركة {COMPANY_LEGAL}، الشركة
                   المرخّصة صاحبة هذا الموقع. وتحمل الشركة رخصة تجارية دبي رقم {LICENCE_NO}،
                   صادرة عن دائرة الاقتصاد والسياحة بدبي، تشمل تركيب وصيانة أنظمة التكييف
                   والتهوية وترشيح الهواء.

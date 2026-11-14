@@ -1,4 +1,5 @@
-const PHONE = "971585575987";
+
+import { WHATSAPP } from "@/lib/company";const PHONE = WHATSAPP;
 const MESSAGE =
   "Hi AGEC, I'd like to know more about your HVAC services.";
 

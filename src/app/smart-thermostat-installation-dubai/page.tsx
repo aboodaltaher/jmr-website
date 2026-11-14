@@ -4,9 +4,8 @@ import Link from "next/link";
 import { RelatedServices } from "@/components/RelatedServices";
 import { InlineLeadForm } from "@/components/InlineLeadForm";
 import { BreadcrumbBand } from "@/components/Breadcrumbs";
-import { GOOGLE_REVIEWS_URL } from "@/lib/reviews";
-import { getGoogleReviewStats } from "@/lib/google-reviews";
-import { THERMOSTAT_SAVINGS } from "@/lib/company";
+import { MAPS_URL, reviewStats } from "@/lib/reviews";
+import { THERMOSTAT_SAVINGS, EMAIL, PHONE, PHONE_DISPLAY, WHATSAPP } from "@/lib/company";
 import {
   PRICE_NEST_SUPPLY,
   PRICE_ECOBEE_SUPPLY,
@@ -41,9 +40,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
-const PHONE = "+971585575987";
-const PHONE_DISPLAY = "+971 58 557 5987";
-const WA = `https://wa.me/971585575987?text=${encodeURIComponent(
+const WA = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
   "Hi AGEC, can you check if a Nest or ecobee works with my AC? Brand and model: ",
 )}`;
 const CANONICAL = "/smart-thermostat-installation-dubai";
@@ -290,7 +287,7 @@ const faqs: { q: string; a: string }[] = [
   { q: "Is a smart thermostat suitable for villas?", a: "Absolutely. Villas often have multiple AC zones, making smart thermostats ideal for room-by-room scheduling and major savings. We handle multi-zone villa installations across Dubai and the UAE." },
   { q: "Can I control the thermostat from my phone?", a: "Yes. Both Google Nest and ecobee offer full mobile app control over Wi-Fi, so you can adjust temperature, set schedules and monitor energy use from anywhere in the world." },
   { q: "Will a smart thermostat void my AC warranty?", a: "No. A correctly installed smart thermostat is a control upgrade and does not affect your AC's warranty. Our professional installation ensures everything is done to standard." },
-  { q: "How do I book a free compatibility check?", a: "Simply call or WhatsApp us at +971 58 557 5987, or email a.altaher@agec.ae. Tell us your property type and AC system, and we'll arrange your free assessment." },
+  { q: "How do I book a free compatibility check?", a: `Simply call or WhatsApp us at ${PHONE_DISPLAY}, or email ${EMAIL}. Tell us your property type and AC system, and we'll arrange your free assessment.` },
 ];
 
 /* ------------------------------ JSON-LD ------------------------------ */
@@ -334,7 +331,7 @@ const eyebrowDark = "text-sm font-semibold uppercase tracking-widest text-primar
 
 export default async function SmartThermostatPage() {
   const { rating: GOOGLE_RATING, count: GOOGLE_REVIEW_COUNT } =
-    await getGoogleReviewStats();
+    reviewStats;
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
@@ -709,7 +706,7 @@ export default async function SmartThermostatPage() {
               Rated {GOOGLE_RATING}★ by Our Customers
             </h2>
             <a
-              href={GOOGLE_REVIEWS_URL}
+              href={MAPS_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-5 inline-flex items-center gap-2 rounded-full border border-border bg-bg-soft px-5 py-2.5 text-sm font-semibold text-text shadow-sm transition-colors hover:border-primary"
@@ -746,7 +743,7 @@ export default async function SmartThermostatPage() {
           </div>
           <p className="mt-8 text-center text-sm text-text-muted">
             Genuine reviews from our verified Google Business Profile.{" "}
-            <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline">
+            <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline">
               Read all {GOOGLE_REVIEW_COUNT} on Google →
             </a>
           </p>

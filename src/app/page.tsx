@@ -28,9 +28,8 @@ import {
   Building2,
 } from "lucide-react";
 import { PHONE, PHONE_DISPLAY } from "@/lib/contact";
-import { PROJECTS_DELIVERED, GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from "@/lib/company";
-import { GOOGLE_REVIEWS_URL, GOOGLE_REVIEWS } from "@/lib/reviews";
-import { getGoogleReviewStats } from "@/lib/google-reviews";
+import { PROJECTS_DELIVERED, GOOGLE_RATING, GOOGLE_REVIEW_COUNT, EMAIL } from "@/lib/company";
+import { GOOGLE_REVIEWS, MAPS_URL, REVIEW_URL, reviewStats } from "@/lib/reviews";
 
 // Image for the "Why AGEC" panel. Swap it by replacing the file at
 // public/why-agec.jpg, or point this at another path under /public.
@@ -147,7 +146,7 @@ const reasons = [
 
 export default async function Home() {
   const { rating: GOOGLE_RATING, count: GOOGLE_REVIEW_COUNT } =
-    await getGoogleReviewStats();
+    reviewStats;
   return (
     <>
       <EmergencyStrip />
@@ -472,19 +471,14 @@ export default async function Home() {
             <h2 className="mt-3 font-heading text-3xl font-bold md:text-5xl">
               Rated {GOOGLE_RATING}★ by Dubai clients
             </h2>
-            <a
-              href={GOOGLE_REVIEWS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-5 inline-flex items-center gap-2 rounded-full border border-border bg-bg-soft px-5 py-2.5 text-sm font-semibold text-text shadow-sm transition-colors hover:border-primary"
-            >
+            <p className="mt-5 inline-flex items-center gap-2 rounded-full border border-border bg-bg-soft px-5 py-2.5 text-sm font-semibold text-text shadow-sm">
               <span className="flex gap-0.5 text-primary">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} className="h-4 w-4 fill-current" />
                 ))}
               </span>
               {GOOGLE_RATING} · {GOOGLE_REVIEW_COUNT} verified Google reviews
-            </a>
+            </p>
           </div>
           <div className="mt-12 grid gap-7 md:grid-cols-3">
             {GOOGLE_REVIEWS.map((r) => (
@@ -515,17 +509,17 @@ export default async function Home() {
           <p className="mt-8 text-center text-sm text-text-muted">
             Genuine reviews from our verified Google Business Profile.{" "}
             <a
-              href={GOOGLE_REVIEWS_URL}
+              href={MAPS_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="font-semibold text-primary hover:underline"
             >
-              Read all {GOOGLE_REVIEW_COUNT} on Google →
+              View on Google Maps →
             </a>
           </p>
           <div className="mt-6 text-center">
             <a
-              href={GOOGLE_REVIEWS_URL}
+              href={REVIEW_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-md border border-border bg-white px-6 py-3 text-sm font-semibold text-text hover:border-primary hover:text-primary transition-colors"
@@ -574,10 +568,10 @@ export default async function Home() {
               <div>
                 <p className="font-heading font-semibold">Phone</p>
                 <a
-                  href="tel:+971585575987"
+                  href={`tel:${PHONE}`}
                   className="text-text-muted hover:text-primary transition-colors"
                 >
-                  +971 58 557 5987
+                  {PHONE_DISPLAY}
                 </a>
               </div>
             </div>
@@ -586,10 +580,10 @@ export default async function Home() {
               <div>
                 <p className="font-heading font-semibold">Email</p>
                 <a
-                  href="mailto:a.altaher@agec.ae"
+                  href={`mailto:${EMAIL}`}
                   className="text-text-muted hover:text-primary transition-colors"
                 >
-                  a.altaher@agec.ae
+                  {EMAIL}
                 </a>
               </div>
             </div>

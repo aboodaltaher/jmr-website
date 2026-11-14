@@ -3,8 +3,8 @@
 //
 // Numbers reuse the canonical company facts where they already exist, so they
 // stay consistent with the rest of the site. The Google-reviews stat is NOT
-// listed here — it's composed at render time from the live review source
-// (getGoogleReviewStats) so the homepage always shows the same count as the
+// listed here — it's composed at render time from business.reviews
+// (src/data/business.ts) so the homepage always shows the same count as the
 // reviews section, contact and quote pages.
 
 import { PROJECTS_DELIVERED, LARGEST_PROJECT_TR, LICENCE_NO } from "@/lib/company";

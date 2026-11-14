@@ -2,15 +2,16 @@ import Link from "next/link";
 import { MapPin } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { CallOrWhatsApp } from "@/components/CallOrWhatsApp";
+import { business } from "@/data/business";
+import { publishedCommunities, communityPath } from "@/data/community-index";
 import {
-  COMPANY_FULL,
+  COMPANY_NAME,
   COMPANY_LEGAL,
-  LICENCE_NO,
   PHONE_DISPLAY,
   EMAIL,
   ADDRESS_FULL,
   INSTAGRAM_URL,
-  GBP_URL,
+  MAPS_URL,
 } from "@/lib/company";
 
 function InstagramIcon({ className }: { className?: string }) {
@@ -62,7 +63,7 @@ export function Footer() {
               <Logo />
             </Link>
             <p className="mt-2 text-sm text-text-muted">
-              {COMPANY_FULL}
+              {COMPANY_NAME}
             </p>
             <div className="mt-4 space-y-1 text-sm text-text-muted">
               <p>{PHONE_DISPLAY}</p>
@@ -70,10 +71,10 @@ export function Footer() {
               <p>{ADDRESS_FULL}</p>
             </div>
             <p className="mt-4 text-xs text-text-muted">
-              24/7 Emergency Support · {PHONE_DISPLAY}
+              {business.hours.label} · {PHONE_DISPLAY}
             </p>
             <p className="mt-1 text-xs text-text-muted">
-              {COMPANY_LEGAL} · Dubai Commercial Licence No. {LICENCE_NO}
+              {COMPANY_LEGAL} · {business.licence.label}
             </p>
             <div className="mt-4 flex items-center gap-4">
               <a
@@ -86,10 +87,10 @@ export function Footer() {
                 <InstagramIcon className="h-5 w-5" />
               </a>
               <a
-                href={GBP_URL}
+                href={MAPS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="AGEC on Google Maps"
+                aria-label="View AGEC on Google Maps"
                 className="text-text-muted hover:text-primary transition-colors"
               >
                 <MapPin className="h-5 w-5" strokeWidth={1.75} />
@@ -107,6 +108,20 @@ export function Footer() {
               </Link>
             ))}
           </nav>
+          {publishedCommunities().length > 0 && (
+            <nav aria-label="Areas we cover" className="flex flex-col gap-1">
+              <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-text">Areas</p>
+              {publishedCommunities().map((a) => (
+                <Link
+                  key={a.slug}
+                  href={communityPath(a.slug)}
+                  className="inline-flex min-h-[32px] items-center text-sm text-text-muted hover:text-text transition-colors"
+                >
+                  AC maintenance {a.name}
+                </Link>
+              ))}
+            </nav>
+          )}
           <div className="flex flex-col gap-3">
             <Link
               href="/quote"
@@ -130,7 +145,7 @@ export function Footer() {
               Terms of Use
             </Link>
           </div>
-          <p>&copy; {new Date().getFullYear()} {COMPANY_FULL}. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} {COMPANY_NAME}. All rights reserved.</p>
         </div>
       </div>
     </footer>

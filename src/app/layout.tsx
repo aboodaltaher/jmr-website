@@ -6,6 +6,7 @@ import { SiteSchema } from "@/components/SiteSchema";
 import { Analytics, GtmNoScript } from "@/components/Analytics";
 import { ConversionTracking } from "@/components/ConversionTracking";
 import { GA_ADS_ID, GA4_ID } from "@/lib/gtag";
+import { business } from "@/data/business";
 import "./globals.css";
 
 const inter = Inter({
@@ -28,10 +29,10 @@ const cairo = Cairo({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://agec.ae"),
+  metadataBase: new URL(business.url),
   title: "AGEC — HVAC, MEP & Maintenance Contracting | Dubai, UAE",
   description:
-    "AGEC (Altaher Ghabboun Engineering Contracting) designs, installs, and maintains HVAC and MEP systems across the UAE. VRF, chillers, ventilation, AMC. Dubai-based. Engineered to perform.",
+    `AGEC (${business.alternateName}) designs, installs, and maintains HVAC and MEP systems across the UAE. VRF, chillers, ventilation, AMC. Dubai-based. Engineered to perform.`,
   openGraph: {
     title: "AGEC — HVAC, MEP & Maintenance Contracting | Dubai, UAE",
     description:

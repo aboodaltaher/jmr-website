@@ -181,7 +181,7 @@ When a client comes to us for a new villa HVAC system, our process is:
 5. **Testing & Commissioning (TAB)** — airflow balanced room by room, performance verified against design, full handover documentation.
 6. **AMC** — ongoing maintenance to protect your investment.
 
-If you're planning a villa build or major HVAC replacement and want a real engineering opinion (not a sales pitch), **[request a quote](/quote)** or **[call us on +971 58 557 5987](tel:+971585575987)**. We'll come look at the project, do the calculations properly, and tell you honestly what makes sense.
+If you're planning a villa build or major HVAC replacement and want a real engineering opinion (not a sales pitch), **[request a quote](/quote)** or **[call us on {{PHONE}}](tel:{{PHONE_TEL}})**. We'll come look at the project, do the calculations properly, and tell you honestly what makes sense.
 
 ---
 
@@ -194,4 +194,4 @@ If you're planning a villa build or major HVAC replacement and want a real engin
 
 ---
 
-*Altaher Ghabboun Engineering Contracting (AGEC) is a Dubai-based HVAC contractor specializing in design, installation, testing & commissioning, and maintenance of advanced air conditioning systems across the UAE.*
+*{{NAME}} is a Dubai-based HVAC contractor specializing in design, installation, testing & commissioning, and maintenance of advanced air conditioning systems across the UAE.*
