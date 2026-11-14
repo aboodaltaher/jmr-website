@@ -27,7 +27,7 @@ const relatedReading = [
     description: "Multi-zone climate control for villas and commercial buildings.",
   },
   {
-    href: "/services/chillers",
+    href: "/services/chiller-maintenance-dubai",
     title: "Chiller Systems",
     description: "Air-cooled and water-cooled chiller plants for large-scale cooling.",
   },

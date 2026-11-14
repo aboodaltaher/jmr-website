@@ -5,11 +5,11 @@ const BASE = process.env.BASE || "http://127.0.0.1:3100";
 const enRoutes = [
   "/", "/about", "/services", "/projects", "/blog", "/quote", "/book", "/contact", "/review",
   "/ac-maintenance-dubai", "/ac-repair-dubai", "/ac-amc-dubai", "/ac-duct-cleaning-dubai",
-  "/air-balancing-airflow-testing-dubai", "/smart-thermostat-installation-dubai",
+  "/smart-thermostat-installation-dubai",
   "/quote/thank-you",
-  "/services/vrf-vrv-systems", "/services/chillers", "/services/dx-units",
-  "/services/ventilation-fresh-air", "/services/hvac-design", "/services/testing-commissioning",
-  "/services/maintenance", "/services/hvac-installation-dubai",
+  "/services/vrf-vrv-systems", "/services/dx-units",
+  "/services/ventilation-fresh-air", "/services/hvac-design",
+  "/services/hvac-installation-dubai",
   "/services/tab-testing-adjusting-balancing-dubai", "/services/chiller-maintenance-dubai",
   // Published case studies
   "/projects/basil-mall-ajman", "/projects/private-g4-building-dubai",

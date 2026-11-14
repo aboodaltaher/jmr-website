@@ -56,7 +56,7 @@ const services = [
   {
     icon: Wrench,
     name: "Maintenance",
-    href: "/services/maintenance",
+    href: "/ac-amc-dubai",
     image: "/projects/agec-maintenance-service-dubai.jpg",
     alt: "AGEC HVAC maintenance in Dubai",
     description:
@@ -73,8 +73,8 @@ const services = [
   },
   {
     icon: ClipboardCheck,
-    name: "Testing & Commissioning",
-    href: "/services/testing-commissioning",
+    name: "Testing, Commissioning & Balancing",
+    href: "/services/tab-testing-adjusting-balancing-dubai",
     image: "/projects/agec-technician-tab-commissioning-airflow-balometer-dubai.jpg",
     alt: "AGEC technician performing TAB testing and commissioning in Dubai",
     description:
@@ -100,8 +100,8 @@ const services = [
   },
   {
     icon: Snowflake,
-    name: "Chillers",
-    href: "/services/chillers",
+    name: "Chiller Installation & Maintenance",
+    href: "/services/chiller-maintenance-dubai",
     image: "/projects/chiller-installation-dubai-agec.jpg",
     alt: "Chiller plant installation by AGEC for commercial project in Dubai",
     description:

@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  skipTrailingSlashRedirect: true,
   async headers() {
     // Security / best-practices hardening, applied to every response.
     const securityHeaders = [
@@ -16,12 +17,32 @@ const nextConfig: NextConfig = {
   async redirects() {
     // Folded the four AC-cleaning sub-pages into the single /ac-duct-cleaning-dubai
     // landing page (audit #5). Permanent redirects consolidate their SEO signal.
-    return [
+    const acCleaning = [
       { source: "/services/ac-cleaning/premium-duct", destination: "/ac-duct-cleaning-dubai", permanent: true },
       { source: "/services/ac-cleaning/full-ac", destination: "/ac-duct-cleaning-dubai", permanent: true },
       { source: "/services/ac-cleaning/split-ac", destination: "/ac-duct-cleaning-dubai", permanent: true },
       { source: "/services/ac-cleaning/coil-cleaning", destination: "/ac-duct-cleaning-dubai", permanent: true },
     ];
+
+    // Keyword-cannibalisation merges: one page per search intent. Each retired
+    // URL redirects straight to its single target. statusCode 301 (a literal
+    // 301, not Next's 308 `permanent`) and an explicit trailing-slash variant
+    // so each URL is a single hop. Query strings are preserved by Next.
+    const merges = [
+      // Cluster A — commercial maintenance folds into AMC
+      ["/services/maintenance", "/ac-amc-dubai"],
+      // Cluster B — testing/commissioning/balancing → single TAB target
+      ["/services/testing-commissioning", "/services/tab-testing-adjusting-balancing-dubai"],
+      ["/air-balancing-airflow-testing-dubai", "/services/tab-testing-adjusting-balancing-dubai"],
+      ["/ar/air-balancing-airflow-testing-dubai", "/ar/services/tab-testing-adjusting-balancing-dubai"],
+      // Cluster C — chiller systems folds into chiller installation & maintenance
+      ["/services/chillers", "/services/chiller-maintenance-dubai"],
+    ].flatMap(([source, destination]) => [
+      { source, destination, statusCode: 301 as const },
+      { source: `${source}/`, destination, statusCode: 301 as const },
+    ]);
+
+    return [...acCleaning, ...merges];
   },
 };
 

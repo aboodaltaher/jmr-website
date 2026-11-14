@@ -150,7 +150,7 @@ If your summer bills don't add up, we'll find out why — system check, heat loa
 - [AC Maintenance Contracts in Dubai: Why Reactive Maintenance Costs You More →](https://agec.ae/blog/ac-maintenance-contracts-dubai-amc-guide)
 - [HVAC Design & Consultancy →](https://agec.ae/services/hvac-design)
 - [VRF / VRV Systems →](https://agec.ae/services/vrf-vrv-systems)
-- [Maintenance & AMC →](https://agec.ae/services/maintenance)
+- [Maintenance & AMC →](https://agec.ae/ac-amc-dubai)
 
 ---
 

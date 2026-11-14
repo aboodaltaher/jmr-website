@@ -28,7 +28,7 @@ interface ServiceDetailLayoutProps {
   whatWeDo: Capability[];
   whyAgec: string[];
   faq?: FaqItem[];
-  /** Path after the domain, e.g. "services/chillers" — enables Service + BreadcrumbList schema. */
+  /** Path after the domain, e.g. "services/vrf-vrv-systems" — enables Service + BreadcrumbList schema. */
   slug?: string;
   /** Optional inline lead form rendered just above the closing CTA band. */
   leadForm?: React.ReactNode;

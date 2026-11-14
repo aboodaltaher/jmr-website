@@ -17,14 +17,10 @@ const WHATSAPP_MESSAGES: Record<string, string> = {
     "Hi AGEC, I'd like a duct cleaning quote. Property type, number of units and area: ",
   "/smart-thermostat-installation-dubai":
     "Hi AGEC, can you check if a Nest or ecobee works with my AC? Brand and model: ",
-  "/services/maintenance":
-    "Hi AGEC, we manage a building and need maintenance support. Units and location: ",
-  "/services/testing-commissioning":
-    "Hi AGEC, we need airflow testing. Building type and problem: ",
+  "/services/tab-testing-adjusting-balancing-dubai":
+    "Hi AGEC, we need HVAC testing, commissioning or balancing. Building type and what you need: ",
   "/ac-amc-dubai":
     "Hi AGEC, I'd like an AMC quote. Number of AC units and area: ",
-  "/air-balancing-airflow-testing-dubai":
-    "Hi AGEC, we need airflow testing. Building type and problem: ",
   // Arabic prefilled messages for the /ar subtree.
   "/ar": "مرحباً AGEC، أريد التحدث مع مهندس بخصوص المكيف.",
   "/ar/ac-repair-dubai":

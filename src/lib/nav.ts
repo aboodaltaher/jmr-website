@@ -19,15 +19,12 @@ export const serviceLinks: NavLink[] = [
   { href: "/ac-repair-dubai", label: "AC Repair" },
   { href: "/ac-amc-dubai", label: "AC AMC" },
   { href: "/ac-duct-cleaning-dubai", label: "AC Duct Cleaning" },
-  { href: "/air-balancing-airflow-testing-dubai", label: "Air Balancing" },
   { href: "/smart-thermostat-installation-dubai", label: "Smart Thermostats" },
   { href: "/services/vrf-vrv-systems", label: "VRF / VRV Systems" },
-  { href: "/services/maintenance", label: "Commercial Maintenance & AMC" },
   { href: "/services/chiller-maintenance-dubai", label: "Chiller Maintenance" },
   { href: "/services/ventilation-fresh-air", label: "Ventilation & Fresh Air" },
   { href: "/services/hvac-design", label: "HVAC Design" },
-  { href: "/services/testing-commissioning", label: "Testing & Commissioning" },
-  { href: "/services/tab-testing-adjusting-balancing-dubai", label: "TAB (Balancing)" },
+  { href: "/services/tab-testing-adjusting-balancing-dubai", label: "Testing, Commissioning & Balancing" },
 ];
 
 // Dedicated Maintenance menu — a subset of serviceLinks surfaced on its own.
@@ -36,7 +33,6 @@ export const maintenanceLinks: NavLink[] = [
   { href: "/ac-amc-dubai", label: "AC AMC" },
   { href: "/ac-repair-dubai", label: "AC Repair" },
   { href: "/ac-duct-cleaning-dubai", label: "AC Duct Cleaning" },
-  { href: "/services/maintenance", label: "Commercial Maintenance & AMC" },
   { href: "/services/chiller-maintenance-dubai", label: "Chiller Maintenance" },
 ];
 
@@ -63,7 +59,6 @@ export const LOCALE_PAIRS: { en: string; ar: string }[] = [
   { en: "/services/chiller-maintenance-dubai", ar: "/ar/services/chiller-maintenance-dubai" },
   { en: "/services/ventilation-fresh-air", ar: "/ar/services/ventilation-fresh-air" },
   { en: "/smart-thermostat-installation-dubai", ar: "/ar/smart-thermostat-installation-dubai" },
-  { en: "/air-balancing-airflow-testing-dubai", ar: "/ar/air-balancing-airflow-testing-dubai" },
 ];
 
 /** Arabic counterpart of an English path, or /ar if none exists. */
