@@ -149,19 +149,7 @@ export function ServiceDetailLayout({
         url,
         ...(lang === "ar" ? { inLanguage: "ar" } : {}),
         areaServed: AREA_SERVED_SCHEMA,
-        provider: {
-          "@type": "HVACBusiness",
-          name: business.name,
-          telephone: business.phone.e164,
-          email: business.email,
-          address: {
-            "@type": "PostalAddress",
-            streetAddress: business.address.line,
-            addressLocality: business.address.locality,
-            addressCountry: business.address.countryCode,
-          },
-          url: business.url,
-        },
+        provider: { "@id": `${business.url}/#business` },
       }
     : null;
 
