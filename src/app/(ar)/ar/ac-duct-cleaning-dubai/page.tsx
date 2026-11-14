@@ -1,4 +1,5 @@
 import { MidPageCta } from "@/components/MidPageCta";
+import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { buildMetadata } from "@/lib/metadata";
 import { BreadcrumbBand } from "@/components/Breadcrumbs";
 import Image from "next/image";
@@ -94,24 +95,13 @@ const serviceSchema = {
   },
 };
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  inLanguage: "ar",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
-};
-
 export default function ArabicDuctCleaning() {
   const wa = whatsappUrl(ROUTE);
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <FaqJsonLd items={faqs} inLanguage="ar" />
 
       {/* Breadcrumb (single trail + BreadcrumbList JSON-LD) */}
       <BreadcrumbBand

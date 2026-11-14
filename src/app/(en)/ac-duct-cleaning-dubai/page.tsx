@@ -1,4 +1,5 @@
 import { MidPageCta } from "@/components/MidPageCta";
+import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { buildMetadata } from "@/lib/metadata";
 import Image from "next/image";
 import Link from "next/link";
@@ -147,16 +148,6 @@ const serviceSchema = {
   },
 };
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((f) => ({
-    "@type": "Question",
-    name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
-  })),
-};
-
 
 export default function AcDuctCleaningPage() {
   const waHref = whatsappUrl(ROUTE);
@@ -164,7 +155,7 @@ export default function AcDuctCleaningPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <FaqJsonLd items={faqs} />
 
       {/* Breadcrumb (single trail + BreadcrumbList JSON-LD) */}
       <BreadcrumbBand

@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { business } from "@/data/business";
+import { extractMarkdownFaq, type FaqItem } from "@/lib/faq";
 
 const BLOG_DIR = path.join(process.cwd(), "content/blog");
 
@@ -21,6 +22,8 @@ export interface PostMeta {
 
 export interface Post extends PostMeta {
   content: string;
+  /** FAQ read from the post's own "Frequently asked questions" section (empty if it has none). */
+  faq: FaqItem[];
 }
 
 /**
@@ -74,6 +77,8 @@ function parsePost(slug: string): Post {
   const raw = fs.readFileSync(filePath, "utf8");
   const { data, content } = matter(raw);
 
+  const body = applyTokens(stripTitle(content));
+
   return {
     slug,
     title: extractTitle(content),
@@ -86,7 +91,8 @@ function parsePost(slug: string): Post {
     description: String(data.description ?? generateExcerpt(content)),
     titleTag: String(data.titleTag ?? ""),
     draft: data.draft === true || data.status === "draft",
-    content: applyTokens(stripTitle(content)),
+    content: body,
+    faq: extractMarkdownFaq(body),
   };
 }
 
