@@ -50,7 +50,7 @@ if (isPublished("ducting")) {
   services.push({ icon: Wind, name: "تركيب المجاري وتصنيعها", href: "/ar/ac-ducting-installation-dubai", description: "تصنيع مجاري GI والمعزولة مسبقاً، وتصنيع وفق SMACNA، واختبار التسرّب وتعديل المجاري عند التجهيز." });
 }
 if (isPublished("mep")) {
-  services.push({ icon: ClipboardCheck, name: "MEP بقيادة التكييف", href: "/ar/mep-contractors-dubai", description: "تصميم التكييف وتركيبه وتشغيله داخلياً مع تنسيق بقية الأعمال ومخططات الورشة والموافقات." });
+  services.push({ icon: ClipboardCheck, name: "تكييف لمشاريع MEP", href: "/ar/mep-contractors-dubai", description: "حزمة التكييف في مشاريع MEP: تصميم وتركيب وتشغيل تجريبي داخلياً مع تنسيق نقاط تماس بقية الأعمال." });
 }
 
 const steps = [

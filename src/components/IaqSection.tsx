@@ -7,11 +7,12 @@ const COPY = {
       "A room can be cool and still have poor air. Indoor air quality testing measures what people are actually breathing, finds why it is off, and tells you what to change. We test occupied spaces — offices, classrooms, gyms, clinics, restaurants and homes — and report against the design intent and the relevant standard.",
     measureH: "What we measure",
     measure: [
-      ["CO₂", "A direct indicator of whether enough fresh air reaches the people in the room. A reading that climbs through the day points to under-ventilation; a commonly used rule of thumb treats sustained readings around 1,000 ppm as a flag for inadequate ventilation."],
-      ["PM2.5 and PM10", "Fine dust and particles from outdoor air, cooking, construction and dirty filters. We compare readings with the WHO air-quality guideline values and with the filter grade the system is meant to deliver."],
-      ["Temperature and relative humidity", "Humidity that sits too high encourages condensation and mould; too low is uncomfortable. A band of roughly 40–60% relative humidity is the usual comfort target."],
+      ["CO₂", "A practical indicator of whether enough fresh air reaches the people in the room: a reading that climbs through the day points to under-ventilation. Reference only: ASHRAE sets no CO₂ limit in Standard 62.1, and its position document on indoor carbon dioxide treats CO₂ as an indicator of ventilation, not a health threshold. Around 1,000 ppm is a widely used rule of thumb for flagging inadequate ventilation; we compare readings with the outdoor level and the design."],
+      ["PM2.5 and PM10", "Fine dust and particles from outdoor air, cooking, construction and dirty filters. Reference values: the WHO Global Air Quality Guidelines (2021) give 15 µg/m³ as a 24-hour mean and 5 µg/m³ as an annual mean for PM2.5. These are WHO guideline values for outdoor air, not legal limits; we use them as a benchmark alongside the filter grade the system is meant to deliver."],
+      ["Temperature and relative humidity", "Humidity that sits too high encourages condensation and mould. Reference: ASHRAE Standard 62.1 limits indoor humidity at design dehumidification conditions by dew point (60 °F, about 15.6 °C) in current editions, where earlier editions used 65% relative humidity. For comfort, roughly 40–60% RH is a commonly used target — a rule of thumb, not a code requirement."],
       ["Airflow", "Outdoor air quantity at the FAHU and at the diffusers, compared with the ASHRAE 62.1 requirement for the room's use and occupancy."],
     ],
+    note: "The values above are guideline and reference values from WHO and ASHRAE. They are not legal limits and do not replace the requirements in your project specification or those of the authority. Sources: WHO Global Air Quality Guidelines (2021); ASHRAE Standard 62.1; ASHRAE position document on indoor carbon dioxide.",
     fixH: "What usually fixes it",
     fix: [
       "Restoring or increasing the outdoor-air supply and rebalancing the ductwork to deliver it",
@@ -30,11 +31,12 @@ const COPY = {
       "قد تكون الغرفة باردة وهواؤها رديء مع ذلك. فحص جودة الهواء الداخلي يقيس ما يتنفسه الناس فعلاً، ويحدّد سبب الخلل، ويبيّن ما يجب تغييره. نفحص الأماكن المشغولة — المكاتب والمدارس والنوادي الرياضية والعيادات والمطاعم والمنازل — ونقارن النتائج بمتطلبات التصميم والمعيار المعتمد.",
     measureH: "ماذا نقيس",
     measure: [
-      ["ثاني أكسيد الكربون (CO₂)", "مؤشر مباشر على وصول كمية كافية من الهواء النقي إلى الأشخاص داخل الغرفة. ارتفاع القراءة خلال اليوم يدل على نقص التهوية، ويُستخدم عادةً مستوى نحو 1,000 جزء في المليون إذا استمر كإشارة تحذيرية إلى تهوية غير كافية."],
-      ["الجسيمات PM2.5 وPM10", "غبار دقيق وجسيمات من الهواء الخارجي والطبخ والبناء والفلاتر المتسخة. نقارن القراءات بالقيم الإرشادية لمنظمة الصحة العالمية وبدرجة الفلتر التي يُفترض أن يوفّرها النظام."],
-      ["درجة الحرارة والرطوبة النسبية", "الرطوبة المرتفعة تشجّع التكثّف والعفن، والمنخفضة جداً غير مريحة. المعدّل المعتاد للراحة نحو 40–60٪ رطوبة نسبية."],
+      ["ثاني أكسيد الكربون (CO₂)", "مؤشر عملي على وصول كمية كافية من الهواء النقي إلى الأشخاص داخل الغرفة: ارتفاع القراءة خلال اليوم يدل على نقص التهوية. للاسترشاد فقط: لا يضع معيار ASHRAE 62.1 حدّاً لثاني أكسيد الكربون، وتعامله وثيقة موقف ASHRAE بشأن ثاني أكسيد الكربون في الأماكن المغلقة كمؤشر على التهوية لا كعتبة صحية. ويُستخدم مستوى نحو 1,000 جزء في المليون قاعدةً تقريبية شائعة للتنبيه إلى تهوية غير كافية؛ ونقارن القراءات بمستوى الهواء الخارجي وبالتصميم."],
+      ["الجسيمات PM2.5 وPM10", "غبار دقيق وجسيمات من الهواء الخارجي والطبخ والبناء والفلاتر المتسخة. قيم مرجعية: تحدّد الإرشادات العالمية لجودة الهواء الصادرة عن منظمة الصحة العالمية (2021) القيمة 15 ميكروغرام/م³ متوسطاً على 24 ساعة و5 ميكروغرام/م³ متوسطاً سنوياً للجسيمات PM2.5. وهي قيم إرشادية للهواء الخارجي وليست حدوداً قانونية؛ نستخدمها معياراً للمقارنة إلى جانب درجة الفلتر التي يُفترض أن يوفّرها النظام."],
+      ["درجة الحرارة والرطوبة النسبية", "الرطوبة المرتفعة تشجّع التكثّف والعفن. للاسترشاد: يضبط معيار ASHRAE 62.1 في إصداراته الحالية رطوبة الأماكن عند ظروف التصميم لإزالة الرطوبة بحدّ لنقطة الندى (60 درجة فهرنهايت، أي نحو 15.6 درجة مئوية)، بينما استخدمت إصدارات أقدم 65٪ رطوبة نسبية. وللراحة يُستخدم عادةً نطاق نحو 40–60٪ رطوبة نسبية — قاعدة تقريبية وليست متطلباً في الأكواد."],
       ["تدفّق الهواء", "كمية الهواء الخارجي عند وحدة FAHU وعند الناشرات، مقارنةً بمتطلبات ASHRAE 62.1 لاستخدام الغرفة وعدد شاغليها."],
     ],
+    note: "القيم أعلاه قيم إرشادية ومرجعية صادرة عن منظمة الصحة العالمية وASHRAE. وهي ليست حدوداً قانونية ولا تحلّ محل متطلبات مواصفات مشروعك أو متطلبات الجهة المختصة. المصادر: الإرشادات العالمية لجودة الهواء الصادرة عن منظمة الصحة العالمية (2021)؛ ASHRAE Standard 62.1؛ وثيقة موقف ASHRAE بشأن ثاني أكسيد الكربون في الأماكن المغلقة.",
     fixH: "ما الذي يعالج المشكلة عادةً",
     fix: [
       "إعادة أو زيادة إمداد الهواء الخارجي وإعادة موازنة المجاري لإيصاله",
@@ -75,7 +77,8 @@ export function IaqSection({ lang = "en" }: { lang?: "en" | "ar" }) {
             </li>
           ))}
         </ul>
-        <p className="mt-8 max-w-3xl leading-relaxed text-text-muted">
+        <p className="mt-8 max-w-3xl text-sm leading-relaxed text-text-muted">{c.note}</p>
+        <p className="mt-4 max-w-3xl leading-relaxed text-text-muted">
           {c.outro}
           <Link href={c.link.href} className="font-semibold text-primary hover:underline">
             {c.link.label}

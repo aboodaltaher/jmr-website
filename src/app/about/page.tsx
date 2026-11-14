@@ -15,7 +15,7 @@ import {
 export const metadata = buildMetadata({
   title: "About AGEC | HVAC Contractor in Dubai",
   description:
-    `AGEC (${COMPANY_ALTERNATE}) is a Dubai HVAC, MEP and maintenance contractor — ${PROJECTS_DELIVERED} projects delivered across the UAE since 2022.`,
+    `AGEC (${COMPANY_ALTERNATE}): HVAC contractor (air conditioning, ventilation and air filtration). ${PROJECTS_DELIVERED} projects across the UAE since 2022.`,
   path: "/about",
 });
 
@@ -147,9 +147,9 @@ export default function About() {
                       href="/mep-contractors-dubai"
                       className="text-primary underline underline-offset-2 hover:text-primary-dark"
                     >
-                      HVAC-led MEP contracting
+                      HVAC for MEP projects
                     </Link>{" "}
-                    with the other trades coordinated.
+                    with the other trades&apos; interfaces coordinated.
                   </p>
                 )}
                 <p>

@@ -56,14 +56,14 @@ export default function HvacDesign() {
           </p>
           {isPublished("mep") && (
             <p>
-              Where design is part of a wider package, see how we run 
+              Where design is part of a wider package, see how we run{" "}
               <Link
                 href="/mep-contractors-dubai"
                 className="text-primary underline underline-offset-2 hover:text-primary-dark"
               >
-                HVAC-led MEP contracting
-              </Link>
-               with the other trades coordinated.
+                the HVAC package on MEP projects
+              </Link>{" "}
+              with the other trades&apos; interfaces coordinated.
             </p>
           )}
         </>

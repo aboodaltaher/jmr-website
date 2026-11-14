@@ -27,7 +27,7 @@ const WHATSAPP_MESSAGES: Record<string, string> = {
   "/ac-ducting-installation-dubai":
     "Hi AGEC, I'd like to discuss AC ducting installation or duct modification. Property type and what you need: ",
   "/mep-contractors-dubai":
-    "Hi AGEC, I'd like to discuss an HVAC-led MEP package. Project type and scope: ",
+    "Hi AGEC, I'd like to discuss the HVAC package for an MEP project. Project type and scope: ",
   "/kitchen-exhaust-cleaning-dubai":
     "Hi AGEC, I'd like to ask about kitchen exhaust and hood cleaning. Venue and area: ",
   // Arabic prefilled messages for the /ar subtree.
@@ -43,7 +43,7 @@ const WHATSAPP_MESSAGES: Record<string, string> = {
   "/ar/ac-ducting-installation-dubai":
     "مرحباً AGEC، أريد الاستفسار عن تركيب مجاري التكييف أو تعديلها. نوع العقار والمطلوب؟ ",
   "/ar/mep-contractors-dubai":
-    "مرحباً AGEC، أريد مناقشة حزمة MEP بقيادة التكييف. نوع المشروع والنطاق؟ ",
+    "مرحباً AGEC، أريد مناقشة حزمة التكييف لمشروع MEP. نوع المشروع والنطاق؟ ",
 };
 
 export function whatsappMessageFor(pathname: string): string {

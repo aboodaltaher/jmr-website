@@ -3,7 +3,7 @@ import { MessageCircle, Phone } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { business } from "@/data/business";
 import { PHONE, PHONE_DISPLAY, WHATSAPP } from "@/lib/company";
-import { MARKER_SPLIT } from "@/lib/draft";
+import { MARKER_SPLIT, resolveDraft } from "@/lib/draft";
 import type { LongService } from "@/data/long-services";
 
 const UI = {
@@ -31,11 +31,12 @@ const UI = {
   },
 } as const;
 
-/** Highlights any "[TO CONFIRM: …]" marker so it cannot be missed on a draft page. */
+/** Highlights any "[TO CONFIRM: …]" marker (local/preview). In production the marker is stripped (resolveDraft). */
 function Text({ children }: { children: string }) {
+  const text = resolveDraft(children);
   return (
     <>
-      {children.split(MARKER_SPLIT).map((part, i) =>
+      {text.split(MARKER_SPLIT).map((part, i) =>
         part.startsWith("[TO CONFIRM") ? (
           <mark key={i} dir="ltr" className="rounded bg-amber-200 px-1 font-semibold text-amber-950">
             {part}
@@ -50,11 +51,12 @@ function Text({ children }: { children: string }) {
 
 /**
  * Long-form service page (ducting, MEP, kitchen exhaust, and the Arabic twins).
- * `published` false → shows a DRAFT banner; the route itself sets noindex.
- * Markers are always highlighted: a page with markers is a draft by definition.
+ * `published` false → shows a DRAFT banner; the route sets noindex and 404s in production.
+ * Pages that still have markers 404 in production (see each route), so markers only ever
+ * render in local and Vercel preview builds.
  */
 export function LongServicePage({
-  service: c,
+  service: raw,
   lang = "en",
   path,
   published,
@@ -69,6 +71,18 @@ export function LongServicePage({
   related: { href: string; label: string }[];
 }) {
   const t = UI[lang];
+  // On the live site markers are stripped, so drop anything left empty (and any FAQ with no answer).
+  const keep = (x: string) => resolveDraft(x) !== "";
+  const c: LongService = {
+    ...raw,
+    intro: raw.intro.filter(keep),
+    sections: raw.sections.map((s) => ({
+      ...s,
+      paragraphs: s.paragraphs.filter(keep),
+      bullets: s.bullets?.filter(keep),
+    })),
+    faqs: raw.faqs.filter((f) => keep(f.a)).map((f) => ({ ...f, a: resolveDraft(f.a) })),
+  };
   const url = `${business.url}${path}`;
   const wa = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(c.whatsappText)}`;
 

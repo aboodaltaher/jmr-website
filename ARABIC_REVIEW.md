@@ -175,9 +175,11 @@ terms kept in Latin script: VRF, VRV, DX, TR, FAHU, BMS, SMACNA, ASHRAE, CIBSE, 
 `src/components/IaqSection.tsx` (Arabic copy), shown on `/ar/services/ventilation-fresh-air`
 H2: «فحص جودة الهواء الداخلي» · H3s: «ماذا نقيس» / «ما الذي يعالج المشكلة عادةً»
 Terms to check: «ثاني أكسيد الكربون (CO₂)», «الجسيمات PM2.5 وPM10», «الرطوبة النسبية»,
-«وحدة FAHU». Reference values quoted (same as English): ~1,000 ppm CO₂ as a ventilation flag,
-~40–60% relative humidity, WHO guideline values for PM2.5 — please confirm you are happy to
-publish these as general guidance.
+«نقطة الندى», «وحدة FAHU», «قيم إرشادية ومرجعية». Reference values are worded as guidance, not
+legal limits, with sources named: WHO Global Air Quality Guidelines 2021 (PM2.5: 15 µg/m³ 24-hour,
+5 µg/m³ annual); ASHRAE 62.1 (no CO₂ limit; ~1,000 ppm is only a rule of thumb; humidity by dew
+point 60 °F, earlier editions 65% RH; 40–60% RH comfort target is a rule of thumb) and the ASHRAE
+position document on indoor CO₂.
 
 **Drafts — NOT published yet (noindex, out of the sitemap, unlinked, no hreflang).** They
 follow their English twin's switch in `src/data/new-pages.ts`; review the Arabic now so it is
@@ -188,9 +190,11 @@ markers on purpose (they are the same open questions as in `TO_CONFIRM.md`).
   Title: «تركيب مجاري التكييف وتصنيع المجاري في دبي | AGEC» · H1: «تركيب مجاري التكييف وتصنيعها في دبي»
   Terms to check: «المجاري المعزولة مسبقاً (PIR)», «التقوية», «الدرزات», «البلينوم», «دامبرات الحريق»,
   «فراغ السقف», «مخططات الورشة».
-- **MEP** — `src/data/long-services-ar.ts` (`MEP_AR`), route `src/app/ar/mep-contractors-dubai/page.tsx`
-  Title: «مقاول MEP بقيادة التكييف في دبي | AGEC» · H1: «مقاول MEP بقيادة التكييف في دبي»
-  Terms to check: «بقيادة التكييف», «نقاط التماس», «مخططات الورشة», «موافقات الجهات المختصة».
+- **HVAC for MEP projects** — `src/data/long-services-ar.ts` (`MEP_AR`), route `src/app/ar/mep-contractors-dubai/page.tsx`
+  Title: «مقاول تكييف لمشاريع MEP في دبي | AGEC» · H1: «مقاول تكييف لمشاريع MEP في دبي»
+  HVAC scope only (matches the trade licence): other trades are described as coordinated, not delivered.
+  Terms to check: «نقاط التماس», «مخططات الورشة», «موافقات الجهات المختصة», «مقاول تكييف لمشاريع MEP».
+  Both draft pages return 404 on the live site until their publish switch is on.
 
 ### Existing Arabic landing pages (already live; included for completeness)
 `src/app/ar/ac-maintenance-dubai/page.tsx`, `/ar/ac-repair-dubai`, `/ar/ac-amc-dubai`,

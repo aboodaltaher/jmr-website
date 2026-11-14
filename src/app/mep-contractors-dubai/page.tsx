@@ -1,3 +1,5 @@
+import { notFound } from "next/navigation";
+import { isProductionSite } from "@/lib/draft";
 import { buildMetadata } from "@/lib/metadata";
 import { LongServicePage } from "@/components/LongServicePage";
 import { MEP } from "@/data/long-services";
@@ -13,6 +15,8 @@ export const metadata = buildMetadata({
 });
 
 export default function Page() {
+  // 404 on the live site until published; local and Vercel preview builds still render it for review.
+  if (isProductionSite() && !isPublished("mep")) notFound();
   return (
     <LongServicePage
       service={MEP}

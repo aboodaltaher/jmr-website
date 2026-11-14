@@ -108,10 +108,10 @@ if (isPublished("ducting")) {
 if (isPublished("mep")) {
   services.push({
     icon: ClipboardCheck,
-    name: "HVAC-Led MEP Contracting",
+    name: "HVAC for MEP Projects",
     href: "/mep-contractors-dubai",
     description:
-      "HVAC design, installation and commissioning in-house, with the other trades coordinated, shop drawings and approvals.",
+      "The HVAC package on MEP projects: design, installation and commissioning in-house, with the other trades' interfaces coordinated.",
   });
 }
 

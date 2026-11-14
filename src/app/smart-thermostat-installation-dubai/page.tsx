@@ -472,7 +472,7 @@ export default async function SmartThermostatPage() {
               Dubai&apos;s Trusted Smart Thermostat Specialists
             </h2>
             <p className="mt-5 text-lg text-text-muted">
-              As a licensed HVAC &amp; MEP engineering contractor, we understand UAE cooling
+              As a licensed HVAC contractor (air conditioning, ventilation and air filtration), we understand UAE cooling
               systems from the ductwork up — so your Nest or ecobee is installed right, first time.
             </p>
           </div>

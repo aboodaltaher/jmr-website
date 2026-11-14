@@ -49,7 +49,7 @@ export const DUCTING: LongService = {
       h2: "What we install and fabricate",
       paragraphs: [
         "Our ductwork scope covers new installations and replacements for ducted splits, DX packaged units, VRF ducted indoor units, fresh air handling units and exhaust systems. We fabricate and install rectangular and round duct, flexible connections, volume control dampers, fire dampers where the design calls for them, plenums, diffusers, grilles and the insulation and supports that go with them.",
-        "[TO CONFIRM: whether AGEC fabricates ductwork in its own workshop, through a fabrication partner, or a mix — state it plainly here.]",
+        "[TO CONFIRM: whether AGEC fabricates ductwork in its own workshop, through a fabrication partner, or a mix.]",
       ],
       bullets: [
         "Supply, return and fresh-air ductwork for ducted splits, packaged DX and VRF ducted units",
@@ -86,7 +86,7 @@ export const DUCTING: LongService = {
       paragraphs: [
         "Every joint in a duct network is a potential leak. Air that leaks before it reaches the room is cooled air you have paid for and not received, and in a ceiling void it can drive condensation and staining. Leakage also starves the farthest branches, which is why the room at the end of the run is so often the warm one.",
         "Leakage testing pressurises a section of duct with a calibrated fan and measures how much air escapes at the test pressure. The result is compared with the allowable leakage for the duct's class. Sealing joints properly during construction is far cheaper than finding leaks after the ceiling is closed, so we seal as we build and test before insulating and before the ceiling goes up.",
-        "[TO CONFIRM: the leakage-test method and acceptance class AGEC offers, and whether a test report is issued with handover.]",
+        "[TO CONFIRM: the duct leakage-test method and acceptance class AGEC offers, and whether a test report is issued at handover.]",
         "Once the system is running, airflow at each branch and diffuser is measured and adjusted to the design values through our testing, adjusting and balancing service, so the ductwork is proven rather than assumed.",
       ],
     },
@@ -134,11 +134,11 @@ export const DUCTING: LongService = {
     },
     {
       q: "Do you test ducts for leakage?",
-      a: "Sealing is done as the duct is built, and sections can be pressure-tested before they are insulated and closed up. [TO CONFIRM: the leakage-test scope and report AGEC provides.]",
+      a: "Sealing is done as the duct is built, and sections can be pressure-tested before they are insulated and closed up. [TO CONFIRM: the duct leakage-test method and acceptance class AGEC offers, and whether a test report is issued at handover.]",
     },
     {
       q: "Do you fabricate the duct yourselves?",
-      a: "[TO CONFIRM: answer on in-house workshop versus fabrication partner.]",
+      a: "[TO CONFIRM: whether AGEC fabricates ductwork in its own workshop, through a fabrication partner, or a mix.]",
     },
   ],
   related: [
@@ -155,21 +155,21 @@ export const DUCTING: LongService = {
 export const MEP: LongService = {
   key: "mep",
   path: "/mep-contractors-dubai",
-  metaTitle: "HVAC-Led MEP Contractor in Dubai | AGEC Technical Services",
+  metaTitle: "HVAC Contractor for MEP Projects in Dubai | AGEC",
   metaDescription:
-    "HVAC-led MEP contracting in Dubai: HVAC design, installation and commissioning in-house, other trades coordinated, shop drawings and approvals. Get a quote.",
-  h1: "HVAC-Led MEP Contractor in Dubai",
-  kicker: "MEP · HVAC-led · Coordination",
-  serviceType: "HVAC-led MEP contracting",
+    "HVAC contractor for MEP projects in Dubai: air conditioning, ventilation and air filtration — design, installation, shop drawings, commissioning. Get a quote.",
+  h1: "HVAC Contractor for MEP Projects in Dubai",
+  kicker: "MEP projects · HVAC scope · Coordination",
+  serviceType: "HVAC contracting for MEP projects",
   intro: [
-    "On most buildings the HVAC package is the largest and most space-hungry part of the MEP scope: big ducts, chilled-water or refrigerant pipework, plant on the roof and risers through every floor. It is also the package that clashes with everyone else. AGEC is an HVAC specialist, and our approach to MEP contracting starts there: we deliver the air-conditioning, ventilation and air-filtration scope ourselves, in-house, and coordinate it with the trades around it.",
-    "This page is deliberately specific about what that means. We would rather you know exactly which parts of an MEP package we build with our own teams, and which we coordinate, than read a long list of trades that does not match what turns up on site.",
+    "On most buildings the HVAC package is the largest and most space-hungry part of the MEP scope: big ducts, chilled-water or refrigerant pipework, plant on the roof and risers through every floor. It is also the package that clashes with everyone else. AGEC is an HVAC contractor. Our trade licence covers air-conditioning, ventilation and air-filtration systems, installation and maintenance, and on an MEP project that is the package we take.",
+    "This page is deliberately specific. We deliver the HVAC package with our own teams and coordinate its interfaces with the electrical, plumbing, fire-protection and controls contractors, who are appointed separately. We do not offer those trades ourselves.",
   ],
   sections: [
     {
-      h2: "What we deliver in-house: the HVAC package",
+      h2: "What we deliver: the HVAC package",
       paragraphs: [
-        "The HVAC scope is where our engineers and installation teams work directly, from the first heat-load calculation to the commissioning report. Our licence covers air-conditioning, ventilation and air-filtration systems, installation and maintenance, and that is the scope we take responsibility for.",
+        "The HVAC scope is where our engineers and installation teams work directly, from the first heat-load calculation to the commissioning report. It covers air-conditioning, ventilation and air-filtration systems, and that is the scope we take responsibility for.",
       ],
       bullets: [
         "HVAC design: heat-load calculations, equipment selection, duct sizing and layout",
@@ -181,11 +181,10 @@ export const MEP: LongService = {
       ],
     },
     {
-      h2: "Other trades: what we coordinate and what we do not claim",
+      h2: "Other trades: coordinated, not delivered by us",
       paragraphs: [
-        "A building needs electrical, plumbing and drainage, fire fighting, fire alarm and controls alongside HVAC. Our role on those packages is coordination: making sure the HVAC design and installation fit with the work of the electrical, plumbing and fire-protection contractors, and that the interfaces between them are settled before they reach site.",
-        "[TO CONFIRM: which of electrical, plumbing and drainage, fire fighting, fire alarm and BMS/controls AGEC delivers itself, which it delivers through named partners, and which it only coordinates. List each trade with one of those three statuses. Nothing is claimed on this page for a trade until this is answered.]",
-        "Interfaces that always need an owner are the power supply and isolators for HVAC equipment, condensate drainage routes, fire dampers and smoke control interface, and controls and BMS integration. We define who supplies and who connects each of these in writing at the start of the project.",
+        "A building also needs electrical, plumbing and drainage, fire fighting, fire alarm and controls. Those are carried out by their own licensed contractors, appointed by the client or the main contractor, and they are outside our scope. Our role is to make sure the HVAC design and installation fit with their work, and that the interfaces between them are settled before they reach site.",
+        "Interfaces that always need an owner are the power supply and isolators for HVAC equipment, condensate drainage routes, fire dampers and smoke-control interface, and controls and BMS integration. We agree in writing at the start of the project who supplies and who connects each of these.",
       ],
     },
     {
@@ -212,28 +211,28 @@ export const MEP: LongService = {
       h2: "Authority approvals",
       paragraphs: [
         "Mechanical and ventilation works in Dubai involve authority requirements, particularly around fire and life safety for smoke ventilation, pressurisation and fire dampers, and building-authority requirements for the installation itself. Our ventilation and design documentation is prepared to support Dubai Municipality and Civil Defence review where it applies.",
-        "[TO CONFIRM: which authority approvals and NOCs AGEC submits itself versus through the consultant or an approved liaison, and which are handled on the client's behalf.]",
+        "[TO CONFIRM: which authority approvals and NOCs AGEC submits itself for the HVAC scope, versus through the consultant or an approved liaison.]",
       ],
     },
     {
       h2: "Testing, commissioning and handover",
       paragraphs: [
-        "An MEP package is not finished when the equipment is on the roof. HVAC systems are tested, balanced and commissioned: airflows measured and adjusted, water or refrigerant circuits verified, controls tested against the sequence of operation, and results recorded. We follow ASHRAE 111, SMACNA and CIBSE commissioning guidance and hand over the measured figures, not just a completion certificate.",
+        "An HVAC package is not finished when the equipment is on the roof. Systems are tested, balanced and commissioned: airflows measured and adjusted, water or refrigerant circuits verified, controls tested against the sequence of operation, and results recorded. We follow ASHRAE 111, SMACNA and CIBSE commissioning guidance and hand over the measured figures, not just a completion certificate.",
         "After handover we keep the system running through annual maintenance contracts, so the people who built the system are the ones looking after it.",
       ],
     },
     {
       h2: "Who this suits",
       paragraphs: [
-        "HVAC-led MEP contracting suits projects where air-conditioning and ventilation are the dominant package: villas and villa communities, retail and F&B fit-outs, offices, gyms, clinics and data rooms. It also suits main contractors who want one accountable HVAC subcontractor with in-house design, installation and commissioning rather than separate parties for each stage.",
-        "If you need a single contractor for every trade on a large building, tell us the scope and we will say plainly which parts we build, which we coordinate and what we recommend.",
+        "This suits projects where air-conditioning and ventilation are the dominant package: villas and villa communities, retail and F&B fit-outs, offices, gyms, clinics and data rooms. It also suits main contractors who want one accountable HVAC subcontractor with in-house design, installation and commissioning, rather than separate parties for each stage.",
+        "If you need one contractor for every trade on a building, we are not that contractor: we are the HVAC package within it, and we will work with the other trades your project appoints.",
       ],
     },
   ],
   faqs: [
     {
       q: "Do you do the whole MEP package or only HVAC?",
-      a: "HVAC, ventilation and air filtration are delivered by our own teams. Other trades are coordinated with the contractors responsible for them. [TO CONFIRM: which other trades AGEC delivers directly or through named partners.]",
+      a: "HVAC only. Our trade licence covers air-conditioning, ventilation and air-filtration systems, installation and maintenance. Electrical, plumbing, fire fighting, fire alarm and controls are delivered by their own contractors, and we coordinate the HVAC interfaces with them.",
     },
     {
       q: "Can you work under a main contractor or consultant?",
@@ -245,7 +244,7 @@ export const MEP: LongService = {
     },
     {
       q: "Do you handle authority approvals?",
-      a: "[TO CONFIRM: AGEC's role in Dubai Municipality and Civil Defence submissions and NOCs.] Our design and ventilation documentation is prepared to support those reviews where they apply.",
+      a: "[TO CONFIRM: which authority approvals and NOCs AGEC submits itself for the HVAC scope, versus through the consultant or an approved liaison.] Our design and ventilation documentation is prepared to support those reviews where they apply.",
     },
     {
       q: "Do you provide commissioning and handover documents?",
@@ -263,8 +262,8 @@ export const MEP: LongService = {
     { href: "/ac-amc-dubai", label: "AC maintenance contracts" },
     { href: "/about", label: "About AGEC" },
   ],
-  whatsappText: "Hi AGEC, I'd like to discuss an HVAC-led MEP package for a project.",
-  ctaHeading: "Discuss your MEP scope",
+  whatsappText: "Hi AGEC, I'd like to discuss the HVAC package for an MEP project.",
+  ctaHeading: "Discuss the HVAC scope of your project",
   ctaText: "Send us the drawings or the scope. We reply on call and WhatsApp.",
 };
 
@@ -282,7 +281,7 @@ export const KITCHEN_EXHAUST: LongService = {
   serviceType: "Kitchen exhaust and hood cleaning",
   intro: [
     "Grease is the fuel in a commercial kitchen fire. It builds up on the hood, in the filters and along the exhaust duct above the cooking line, and a flare-up on the grill can carry fire straight into the duct. Regular, documented cleaning of the whole exhaust path is the practical way to keep that risk down. It is also what authorities and insurers ask to see.",
-    "[TO CONFIRM — BLOCKING: whether AGEC is approved by Dubai Municipality (and any other authority) to carry out hood and grease-duct cleaning in Dubai. This page must not go live until that is answered and the approval is stated correctly here.]",
+    "[TO CONFIRM — BLOCKING: whether AGEC is approved by Dubai Municipality (and any other authority) to carry out hood and grease-duct cleaning in Dubai.]",
   ],
   sections: [
     {
@@ -331,7 +330,7 @@ export const KITCHEN_EXHAUST: LongService = {
       h2: "Inspection records",
       paragraphs: [
         "After cleaning, the owner should receive a record of what was done: the date, the sections cleaned, before-and-after photographs and anything found that needs repair, such as missing access panels, damaged filters or a fan that is not performing. Those records are what you show an inspector or an insurer.",
-        "[TO CONFIRM: the records and certificate AGEC issues after a clean.]",
+        "[TO CONFIRM: the records and certificate AGEC issues after a kitchen exhaust clean.]",
       ],
     },
     {
@@ -349,11 +348,11 @@ export const KITCHEN_EXHAUST: LongService = {
     },
     {
       q: "Are you approved to do this work in Dubai?",
-      a: "[TO CONFIRM — BLOCKING: Dubai Municipality approval status for hood and grease-duct cleaning.]",
+      a: "[TO CONFIRM — BLOCKING: whether AGEC is approved by Dubai Municipality (and any other authority) to carry out hood and grease-duct cleaning in Dubai.]",
     },
     {
       q: "How often should a kitchen exhaust be cleaned?",
-      a: "It depends on cooking volume and fuel type. High-volume grilling and frying needs far more frequent cleaning than light use. [TO CONFIRM: AGEC's recommended schedule.]",
+      a: "It depends on cooking volume and fuel type. High-volume grilling and frying needs far more frequent cleaning than light use. [TO CONFIRM: the cleaning-frequency standard or authority requirement AGEC works to, and the schedule it recommends by kitchen type.]",
     },
     {
       q: "Do you work out of hours?",
@@ -361,7 +360,7 @@ export const KITCHEN_EXHAUST: LongService = {
     },
     {
       q: "Will I get a record of the cleaning?",
-      a: "[TO CONFIRM: the report or certificate AGEC provides.]",
+      a: "[TO CONFIRM: the records and certificate AGEC issues after a kitchen exhaust clean.]",
     },
   ],
   related: [

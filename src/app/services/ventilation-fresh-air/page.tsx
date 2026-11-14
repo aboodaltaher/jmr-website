@@ -59,14 +59,14 @@ export default function VentilationFreshAir() {
           </p>
           {isPublished("ducting") && (
             <p>
-              Ventilation depends on well-built ducts, so read about our 
+              Ventilation depends on well-built ducts, so read about our{" "}
               <Link
                 href="/ac-ducting-installation-dubai"
                 className="text-primary underline underline-offset-2 hover:text-primary-dark"
               >
                 AC ducting installation and duct fabrication
-              </Link>
-               in GI and pre-insulated panel.
+              </Link>{" "}
+              in GI and pre-insulated panel.
             </p>
           )}
         </>

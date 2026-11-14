@@ -66,14 +66,14 @@ export default function HvacInstallation() {
           </p>
           {isPublished("ducting") && (
             <p>
-              The ductwork is a trade of its own: see how we 
+              The ductwork is a trade of its own: see how we{" "}
               <Link
                 href="/ac-ducting-installation-dubai"
                 className="text-primary underline underline-offset-2 hover:text-primary-dark"
               >
                 fabricate, install, test and modify AC ductwork
-              </Link>
-               for villas and fit-outs.
+              </Link>{" "}
+              for villas and fit-outs.
             </p>
           )}
         </>

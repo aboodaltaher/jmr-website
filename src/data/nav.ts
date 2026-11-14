@@ -64,7 +64,7 @@ export const servicesMenu: MegaGroup[] = [
       { label: "HVAC Design & Consultancy", href: "/services/hvac-design", desc: "Heat-load calcs and duct sizing", arLabel: "التصميم والاستشارات الهندسية", arDesc: "حسابات الأحمال وتحجيم المجاري", arHref: "/ar/services/hvac-design" },
       // MEP: only in the menu once its page is published (src/data/new-pages.ts)
       ...(isPublished("mep")
-        ? [{ label: "HVAC-Led MEP", href: "/mep-contractors-dubai", desc: "HVAC in-house, trades coordinated", arLabel: "MEP بقيادة التكييف", arDesc: "التكييف داخلياً وتنسيق بقية الأعمال", arHref: "/ar/mep-contractors-dubai" }]
+        ? [{ label: "HVAC for MEP Projects", href: "/mep-contractors-dubai", desc: "HVAC package, trades coordinated", arLabel: "تكييف لمشاريع MEP", arDesc: "حزمة التكييف وتنسيق بقية الأعمال", arHref: "/ar/mep-contractors-dubai" }]
         : []),
       { label: "Testing, Commissioning & Balancing", href: "/services/tab-testing-adjusting-balancing-dubai", desc: "ASHRAE 111 TAB reports", arLabel: "الاختبار والتشغيل والموازنة", arDesc: "تقارير موازنة وفق ASHRAE 111", arHref: "/ar/services/tab-testing-adjusting-balancing-dubai" },
     ],

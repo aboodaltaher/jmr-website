@@ -12,7 +12,7 @@ const ALL_SERVICES = [
   { href: "/services/vrf-vrv-systems", label: "VRF / VRV Systems", desc: "Multi-zone design & commissioning" },
   { href: "/services/chiller-maintenance-dubai", label: "Chiller Installation & Maintenance", desc: "Design, install & service chiller plant" },
   { href: "/services/ventilation-fresh-air", label: "Ventilation & Fresh Air", desc: "Airflow & CO₂ testing" },
-  { href: "/services/hvac-design", label: "HVAC Design", desc: "Heat loads, duct sizing & MEP" },
+  { href: "/services/hvac-design", label: "HVAC Design", desc: "Heat loads, duct sizing & coordination" },
   { href: "/services/dx-units", label: "DX Units & Splits", desc: "Sized & installed from heat loads" },
 ];
 
