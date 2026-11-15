@@ -371,3 +371,27 @@ Plural-polite («لديكم / تحتاجونه / يمكنكم») in the new text
 ### Not changed (owner decision)
 "Every 3–4 months" stays on `/ac-maintenance-dubai`, `/ar/ac-maintenance-dubai` and the blog posts: general servicing advice, not the AMC recommendation.
 The Arabic chiller page («زيارات وقائية مخطّطة») still uses the older wording; not part of this PR.
+
+## `/ar/services/chiller-maintenance-dubai` — new PPM checklist section (2026-11-15)
+
+Mirrors the English "PPM checklist for chiller maintenance in Dubai" after the owner confirmed the planned-visit tasks. New text, for owner review. «صيانة دورية» is used for planned/PPM maintenance. The existing «زيارات وقائية مخطّطة» wording elsewhere on this page is unchanged.
+
+**H2:** «قائمة الصيانة الدورية للتشيلر في دبي»
+
+**Intro:** «ما تغطّيه كل زيارة صيانة دورية مخطّطة. تُصان التشيلرات المركزية في مناخ دبي عادةً وفق جدول فصلي، مع اهتمام إضافي قبل ذروة الصيف؛ ونحدّد التواتر حسب المحطة ونضمّنه العقد.»
+
+**«جميع التشيلرات»**
+1. فحص الضواغط والكهرباء وأنظمة الأمان
+2. تحليل الفريون وفحص شحنته *(refrigerant analysis)*
+3. أخذ عيّنات من الزيت وفحص حالته *(oil sampling)*
+4. تنظيف أنابيب المكثّف والمبخّر *(tube cleaning)*
+5. استبدال الفلاتر *(filter replacement)*
+6. قياس معدّلات التدفّق وفروق درجات الحرارة مقابل قيم تصميم المحطة
+7. التحقّق من التحكّم والتسلسل وضبط القيم والتعشيقات وقواطع الأمان
+8. تسجيل القراءات وتتبّع اتجاه الأداء من زيارة إلى أخرى، وإصدار تقرير بعد كل زيارة *(performance trending)*
+
+**«المحطات المبرّدة بالماء، إضافةً إلى ما سبق»**
+1. مراجعة حالة مياه المكثّف ومعالجتها للتحكّم في الترسّب والاتّساخ والتآكل
+2. فحص حالة حوض برج التبريد ودائرة مياه المكثّف
+
+Per-item frequencies are not stated (hidden TODO). Only the existing general quarterly schedule is repeated.
