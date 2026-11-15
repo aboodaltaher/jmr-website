@@ -17,7 +17,7 @@ const ROUTE = "/ac-amc-dubai";
 export const metadata = buildMetadata({
   title: "AC AMC Dubai | Annual Maintenance Contracts | AGEC",
   description:
-    "AC annual maintenance contracts in Dubai for villas, apartments, offices and commercial buildings — scheduled visits, written reports and priority repairs.",
+    "AC AMC in Dubai: annual maintenance contracts for villas, apartments, offices and whole buildings — scheduled visits, written reports and priority repairs.",
   path: ROUTE,
   languages: {
     "en-AE": `${SITE_URL}${ROUTE}`,
@@ -97,6 +97,18 @@ const faqs: { q: string; a: string }[] = [
     a: `Residential plans start from AED ${Math.min(...prices.amcPlans.map((p) => p.from))} per machine per visit. Commercial and building cover is quoted after a site survey, based on the number and type of units and the response level you need — scheduled visits are fixed, with parts and major works quoted in writing first.`,
   },
   {
+    q: "What do building managers receive after each visit?",
+    a: "A written service report after every visit, documented for the facilities team. It is the record facility managers need for audits and budgeting.",
+  },
+  {
+    q: "Who do we contact if a unit fails in the building?",
+    a: "AMC customers have a response line and a response level matched to how critical the system is, and you can reach us 24/7 by call or WhatsApp. The response level for a building is part of the quote after the site survey.",
+  },
+  {
+    q: "Do you survey the building before quoting a commercial AMC?",
+    a: "Yes. We start with a site survey and baseline audit of your current system, then send a written proposal. Commercial cover is priced on the number and type of units and the response level you need.",
+  },
+  {
     q: "Do you cover my emirate?",
     a: `We've delivered projects in Dubai, Sharjah, Ajman and Abu Dhabi, and are available across the UAE. Call or WhatsApp ${PHONE_DISPLAY}.`,
   },
@@ -162,12 +174,12 @@ export default function AcAmcPage() {
         <div className="relative mx-auto max-w-7xl px-6 py-16 md:py-24">
           <p className={eyebrow}>Dubai &amp; the UAE</p>
           <h1 className="mt-4 max-w-3xl font-heading text-4xl font-bold leading-[1.05] md:text-6xl">
-            AC Annual Maintenance Contracts in Dubai
+            AC AMC in Dubai — Annual Maintenance Contracts
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-white/70">
-            An AMC keeps your AC serviced on a schedule, with a named engineer, a
-            written report after every visit, and priority response when
-            something fails.
+            An AC AMC in Dubai keeps your air conditioning serviced on a schedule,
+            with a named engineer, a written report after every visit, and
+            priority response when something fails.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
@@ -221,7 +233,7 @@ export default function AcAmcPage() {
         <div className="mx-auto max-w-4xl px-6">
           <p className={eyebrow}>What&apos;s Included</p>
           <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">
-            What an AMC covers
+            What an AC AMC in Dubai covers
           </h2>
           <ul className="mt-8 grid gap-3 sm:grid-cols-2">
             {amcConfig.included.map((item) => {
@@ -264,17 +276,18 @@ export default function AcAmcPage() {
         </div>
       </section>
 
-      {/* COMMERCIAL & BUILDING AMC */}
+      {/* COMMERCIAL & BUILDING AMC (HVAC MAINTENANCE) */}
       <section id="commercial-amc" className="py-16 md:py-20">
         <div className="mx-auto max-w-4xl px-6">
           <p className={eyebrow}>For buildings &amp; facilities</p>
           <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">
-            Commercial &amp; building AMC
+            Commercial &amp; Building AMC (HVAC Maintenance)
           </h2>
           <p className="mt-6 text-lg text-text-muted">
             The same contract scales from a villa to a whole building. For
-            offices, retail, restaurants, hotels and managed estates, we put all
-            your HVAC plant under one maintenance contract — split and ducted
+            HVAC maintenance in Dubai across offices, retail, restaurants,
+            hotels and managed estates, we put all your HVAC plant under one
+            maintenance contract — split and ducted
             units, VRF/VRV, chillers, AHUs, FCUs and ventilation — so one
             engineering team is accountable for the lot, not several separate
             call-outs.
@@ -282,8 +295,6 @@ export default function AcAmcPage() {
           <ul className="mt-6 grid gap-3 sm:grid-cols-2">
             {[
               "All plant under one contract — split, ducted, VRF/VRV, chillers, AHUs, FCUs and ventilation",
-              "A response line and an SLA matched to how critical the system is",
-              "Documented reports after every visit — the record facility managers need for audits and budgeting",
               "Transparent pricing — scheduled visits are fixed; parts and major works are quoted in writing first",
             ].map((item) => (
               <li key={item} className="flex gap-3 text-text-muted">
@@ -292,16 +303,78 @@ export default function AcAmcPage() {
               </li>
             ))}
           </ul>
-          <p className="mt-6 text-text-muted">
-            Larger plant such as chiller systems can also be covered on a
-            dedicated schedule — see{" "}
-            <Link
-              href="/services/chiller-maintenance-dubai"
-              className="font-semibold text-primary hover:underline"
-            >
-              chiller installation &amp; maintenance
-            </Link>
-            . Commercial cover is quoted after a site survey, based on the number
+
+          <h3 className="mt-10 font-heading text-2xl font-bold">PPM schedule</h3>
+          <p className="mt-3 text-text-muted">
+            Planned preventive maintenance (PPM) visits by type of plant.
+          </p>
+          <div className="mt-4 overflow-x-auto">
+            <table className="w-full min-w-[32rem] text-left text-sm">
+              <thead>
+                <tr className="border-b border-border text-xs uppercase tracking-wider text-text-muted">
+                  <th className="py-3 pr-4 font-semibold">Plant</th>
+                  <th className="py-3 font-semibold">PPM visits</th>
+                </tr>
+              </thead>
+              <tbody className="align-top">
+                <tr className="border-b border-border">
+                  <th scope="row" className="py-3 pr-4 font-medium">Split and ducted units</th>
+                  <td className="py-3 text-text-muted">
+                    {amcConfig.visitsPerYear}. Each visit: filter and coil
+                    cleaning, drain flushing, refrigerant pressure check,
+                    electrical and control check, performance test, and a written
+                    report.
+                  </td>
+                </tr>
+                <tr className="border-b border-border">
+                  <th scope="row" className="py-3 pr-4 font-medium">
+                    VRF/VRV, AHUs, FCUs and ventilation
+                  </th>
+                  <td className="py-3 text-text-muted">
+                    Set per site after the survey, based on the number and type of
+                    units.
+                  </td>
+                </tr>
+                <tr className="border-b border-border">
+                  <th scope="row" className="py-3 pr-4 font-medium">Chillers</th>
+                  <td className="py-3 text-text-muted">
+                    A dedicated schedule — see{" "}
+                    <Link
+                      href="/services/chiller-maintenance-dubai"
+                      className="font-semibold text-primary hover:underline"
+                    >
+                      chiller installation &amp; maintenance
+                    </Link>
+                    .
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          {/* TODO(owner): PPM visit frequency per plant type for buildings (VRF/VRV, AHU/FCU, ventilation, chillers) and the task list per plant type. Only the residential visit counts and the task list already stated on this page are shown; the other rows say "set per site". */}
+
+          <h3 className="mt-10 font-heading text-2xl font-bold">SLA response levels</h3>
+          <p className="mt-3 text-text-muted">
+            Response on our standard plans:{" "}
+            {amcConfig.plans
+              .map((pl) => `${pl.name}: ${pl.response.replace(/^Response /, "").replace(/^S/, "s")}`)
+              .join("; ")}
+            .
+            For a building, the SLA is matched to how critical the system is, and
+            the response level you need is part of the quote after a site
+            survey.
+          </p>
+          {/* TODO(owner): the commercial SLA tiers (for example emergency / urgent / routine response times in hours). None is stated on the site, so only the plan response levels above are shown. */}
+
+          <h3 className="mt-10 font-heading text-2xl font-bold">Reporting for facilities teams</h3>
+          <p className="mt-3 text-text-muted">
+            A written, documented report after every visit — the record
+            facility managers need for audits and budgeting.
+          </p>
+          {/* TODO(owner): do you export or integrate with a CAFM / facility-management system, and do you keep an asset log per site? If yes, say so here (for example "PPM reports and asset logs after every visit"). Until confirmed, nothing beyond the written report is claimed. */}
+
+          <p className="mt-8 text-text-muted">
+            Commercial cover is quoted after a site survey, based on the number
             and type of units and the response level you need.
           </p>
         </div>

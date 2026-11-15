@@ -171,8 +171,9 @@ export default async function Home() {
                 HVAC Contractor and AC Maintenance in Dubai
               </h1>
               <p className="mt-6 max-w-2xl text-xl text-white/80">
-                Engineer-led installation, maintenance contracts and airflow testing
-                for villas, offices and buildings across the UAE.
+                Engineer-led HVAC contractor in Dubai and across the UAE:
+                installation, maintenance contracts and airflow testing for villas,
+                offices and buildings.
               </p>
               <div className="mt-10 flex flex-wrap items-center gap-4">
                 <CallOrWhatsApp
@@ -354,6 +355,44 @@ export default async function Home() {
               AC annual maintenance from AED 250 per machine per visit.
             </Link>
           </p>
+        </div>
+      </section>
+
+      {/* Why engineer-led + capacity strip */}
+      <section id="why-engineer-led" className="bg-bg-soft py-16 md:py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary">
+            Why engineer-led
+          </p>
+          <h2 className="mt-3 max-w-3xl font-heading text-3xl font-bold md:text-4xl">
+            Why choose an engineer-led HVAC contractor in Dubai
+          </h2>
+          <p className="mt-5 max-w-3xl leading-relaxed text-text-muted">
+            An engineer-led contractor sizes the system from the heat load,
+            installs it to the design and proves it at commissioning, instead of
+            guessing at equipment and finding the problems after handover.
+          </p>
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            {[
+              {
+                name: "Heat-load first",
+                text: "The room-by-room heat load and the project drawings decide the equipment, so it is matched to the space rather than guessed.",
+              },
+              {
+                name: "Engineers on site",
+                text: "The people who design and commission the system are the people who sign off the work.",
+              },
+              {
+                name: "Proven and documented",
+                text: "Airflow, temperatures and controls are tested against the design, and you receive the test readings and as-built information.",
+              },
+            ].map((item) => (
+              <div key={item.name}>
+                <h3 className="font-heading text-lg font-semibold">{item.name}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-text-muted">{item.text}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

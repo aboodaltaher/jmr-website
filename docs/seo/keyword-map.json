@@ -1,0 +1,327 @@
+{
+  "meta": {
+    "purpose": "Keyword to page map for AGEC. Read by scripts/seo-keyword-audit.ts and typed in src/data/seo/keywords.ts.",
+    "estimates": "volumeTier, difficulty and intent are editorial estimates, NOT taken from a keyword tool. Check them in Google Keyword Planner and Search Console before relying on them.",
+    "volumeTier": {
+      "VH": "very high",
+      "H": "high",
+      "M": "medium",
+      "L": "low"
+    },
+    "difficulty": [
+      "Low",
+      "Medium",
+      "High"
+    ],
+    "intent": [
+      "transactional",
+      "commercial",
+      "informational"
+    ],
+    "priority": [
+      "Critical",
+      "High",
+      "Medium",
+      "Low"
+    ],
+    "status": {
+      "exists": "the target URL is published and in the sitemap",
+      "planned-phase7": "the target URL is not published yet (no route, or built but gated)"
+    },
+    "interimUrl": "optional: a published page that stands in for a planned targetUrl until it exists"
+  },
+  "entries": [
+    {
+      "keyword": "ac amc dubai",
+      "secondaryKeywords": [
+        "annual maintenance contract ac dubai"
+      ],
+      "volumeTier": "M",
+      "difficulty": "Medium",
+      "intent": "transactional",
+      "priority": "Critical",
+      "targetUrl": "/ac-amc-dubai",
+      "status": "exists",
+      "notes": "Owns contracts. Same page also owns 'hvac maintenance dubai' (see its entry); keep the AMC and commercial wording here, not on /ac-maintenance-dubai."
+    },
+    {
+      "keyword": "hvac contractors dubai",
+      "secondaryKeywords": [
+        "hvac company dubai"
+      ],
+      "volumeTier": "H",
+      "difficulty": "High",
+      "intent": "commercial",
+      "priority": "Critical",
+      "targetUrl": "/",
+      "status": "exists"
+    },
+    {
+      "keyword": "hvac installation dubai",
+      "secondaryKeywords": [
+        "ac installation dubai",
+        "ducted ac installation dubai",
+        "split ac installation"
+      ],
+      "volumeTier": "M",
+      "difficulty": "High",
+      "intent": "transactional",
+      "priority": "Critical",
+      "targetUrl": "/services/hvac-installation-dubai",
+      "status": "exists"
+    },
+    {
+      "keyword": "vrf installation dubai",
+      "secondaryKeywords": [
+        "vrf maintenance dubai",
+        "fcu maintenance dubai"
+      ],
+      "volumeTier": "L",
+      "difficulty": "Medium",
+      "intent": "commercial",
+      "priority": "Critical",
+      "targetUrl": "/services/vrf-vrv-systems",
+      "status": "exists"
+    },
+    {
+      "keyword": "chiller maintenance dubai",
+      "secondaryKeywords": [
+        "chiller repair dubai"
+      ],
+      "volumeTier": "L",
+      "difficulty": "Medium",
+      "intent": "commercial",
+      "priority": "Critical",
+      "targetUrl": "/services/chiller-maintenance-dubai",
+      "status": "exists"
+    },
+    {
+      "keyword": "ac maintenance dubai",
+      "secondaryKeywords": [
+        "ac service dubai",
+        "ac cleaning dubai"
+      ],
+      "volumeTier": "VH",
+      "difficulty": "High",
+      "intent": "transactional",
+      "priority": "High",
+      "targetUrl": "/ac-maintenance-dubai",
+      "status": "exists",
+      "notes": "Owns homes and one-off service (villas, apartments). Do not use 'buildings', 'commercial' or 'hvac maintenance' in this page's title, H1, H2s or meta: those belong to /ac-amc-dubai. Link to /ac-amc-dubai#commercial-amc for building managers."
+    },
+    {
+      "keyword": "ac repair dubai",
+      "secondaryKeywords": [
+        "emergency ac repair dubai",
+        "24 hour ac repair",
+        "ac replacement dubai",
+        "ac compressor replacement"
+      ],
+      "volumeTier": "VH",
+      "difficulty": "High",
+      "intent": "transactional",
+      "priority": "High",
+      "targetUrl": "/ac-repair-dubai",
+      "status": "exists"
+    },
+    {
+      "keyword": "ac duct cleaning dubai",
+      "secondaryKeywords": [],
+      "volumeTier": "H",
+      "difficulty": "Medium",
+      "intent": "transactional",
+      "priority": "High",
+      "targetUrl": "/ac-duct-cleaning-dubai",
+      "status": "exists"
+    },
+    {
+      "keyword": "hvac maintenance dubai",
+      "secondaryKeywords": [
+        "commercial hvac maintenance",
+        "ac maintenance for buildings dubai"
+      ],
+      "volumeTier": "M",
+      "difficulty": "Medium",
+      "intent": "commercial",
+      "priority": "High",
+      "targetUrl": "/ac-amc-dubai",
+      "status": "exists",
+      "notes": "Owner of commercial/building maintenance keywords ('commercial hvac maintenance', 'ac maintenance for buildings dubai'). Lives in the 'Commercial & Building AMC (HVAC Maintenance)' section (#commercial-amc) of /ac-amc-dubai. Shares the URL with 'ac amc dubai'; do not target these terms on /ac-maintenance-dubai."
+    },
+    {
+      "keyword": "ventilation dubai",
+      "secondaryKeywords": [
+        "fresh air",
+        "fahu dubai"
+      ],
+      "volumeTier": "L",
+      "difficulty": "Medium",
+      "intent": "commercial",
+      "priority": "High",
+      "targetUrl": "/services/ventilation-fresh-air",
+      "status": "exists"
+    },
+    {
+      "keyword": "testing and commissioning hvac dubai",
+      "secondaryKeywords": [
+        "tab",
+        "air balancing"
+      ],
+      "volumeTier": "L",
+      "difficulty": "Low",
+      "intent": "commercial",
+      "priority": "High",
+      "targetUrl": "/services/tab-testing-adjusting-balancing-dubai",
+      "status": "exists"
+    },
+    {
+      "keyword": "ducting contractors dubai",
+      "secondaryKeywords": [
+        "ac ducting dubai"
+      ],
+      "volumeTier": "L",
+      "difficulty": "Medium",
+      "intent": "commercial",
+      "priority": "High",
+      "targetUrl": "/ac-ducting-installation-dubai",
+      "status": "exists",
+      "notes": "Published and live (indexable, in the sitemap); the brief labelled it planned."
+    },
+    {
+      "keyword": "villa ac maintenance dubai",
+      "secondaryKeywords": [],
+      "volumeTier": "M",
+      "difficulty": "Medium",
+      "intent": "transactional",
+      "priority": "High",
+      "targetUrl": "/villa-ac-maintenance-dubai",
+      "status": "planned-phase7",
+      "notes": "No route yet."
+    },
+    {
+      "keyword": "صيانة مكيفات دبي",
+      "secondaryKeywords": [],
+      "volumeTier": "H",
+      "difficulty": "Medium",
+      "intent": "transactional",
+      "priority": "High",
+      "targetUrl": "/ar/ac-maintenance-dubai",
+      "status": "exists"
+    },
+    {
+      "keyword": "تنظيف دكت المكيف",
+      "secondaryKeywords": [],
+      "volumeTier": "M",
+      "difficulty": "Low",
+      "intent": "transactional",
+      "priority": "High",
+      "targetUrl": "/ar/ac-duct-cleaning-dubai",
+      "status": "exists"
+    },
+    {
+      "keyword": "indoor air quality dubai",
+      "secondaryKeywords": [
+        "iaq testing"
+      ],
+      "volumeTier": "L",
+      "difficulty": "Low",
+      "intent": "informational",
+      "priority": "Medium",
+      "targetUrl": "/services/ventilation-fresh-air",
+      "status": "exists",
+      "notes": "Shares /services/ventilation-fresh-air with 'ventilation dubai'."
+    },
+    {
+      "keyword": "mep contractors dubai",
+      "secondaryKeywords": [],
+      "volumeTier": "M",
+      "difficulty": "High",
+      "intent": "commercial",
+      "priority": "Medium",
+      "targetUrl": "/mep-contractors-dubai",
+      "status": "planned-phase7",
+      "notes": "The page is built but unpublished (404 in production) until the owner approves it. Audited once published."
+    },
+    {
+      "keyword": "kitchen exhaust cleaning dubai",
+      "secondaryKeywords": [],
+      "volumeTier": "L",
+      "difficulty": "Low",
+      "intent": "transactional",
+      "priority": "Medium",
+      "targetUrl": "/kitchen-exhaust-cleaning-dubai",
+      "status": "exists",
+      "notes": "Published and live (indexable, in the sitemap); the brief labelled it planned."
+    },
+    {
+      "keyword": "ac gas refill dubai",
+      "secondaryKeywords": [
+        "ac not cooling dubai"
+      ],
+      "volumeTier": "M",
+      "difficulty": "Medium",
+      "intent": "informational",
+      "priority": "Medium",
+      "targetUrl": "/blog/ac-running-but-not-cooling-dubai",
+      "status": "exists"
+    },
+    {
+      "keyword": "ac company dubai",
+      "secondaryKeywords": [
+        "air conditioning companies dubai"
+      ],
+      "volumeTier": "H",
+      "difficulty": "High",
+      "intent": "commercial",
+      "priority": "Medium",
+      "targetUrl": "/",
+      "status": "exists",
+      "notes": "Same target as 'hvac contractors dubai' (the homepage)."
+    },
+    {
+      "keyword": "server room cooling uae",
+      "secondaryKeywords": [
+        "precision cooling uae"
+      ],
+      "volumeTier": "L",
+      "difficulty": "Low",
+      "intent": "commercial",
+      "priority": "Medium",
+      "targetUrl": "/commercial-hvac-dubai",
+      "status": "planned-phase7",
+      "interimUrl": "/services/hvac-installation-dubai",
+      "notes": "No route yet. Until it exists, the HVAC installation page is the interim landing page."
+    },
+    {
+      "keyword": "hvac fit-out contractor dubai",
+      "secondaryKeywords": [],
+      "volumeTier": "L",
+      "difficulty": "Medium",
+      "intent": "commercial",
+      "priority": "Medium",
+      "targetUrl": "/services/hvac-installation-dubai",
+      "status": "exists"
+    },
+    {
+      "keyword": "dewa bill reduction ac",
+      "secondaryKeywords": [],
+      "volumeTier": "L",
+      "difficulty": "Low",
+      "intent": "informational",
+      "priority": "Medium",
+      "targetUrl": "/blog/why-ac-bill-so-high-dubai",
+      "status": "exists",
+      "notes": "'Why Your AC Bill Is So High in Dubai'. Related post: /blog/smart-thermostat-save-dewa-bill."
+    },
+    {
+      "keyword": "smart thermostat installation dubai",
+      "secondaryKeywords": [],
+      "volumeTier": "L",
+      "difficulty": "Low",
+      "intent": "transactional",
+      "priority": "Low",
+      "targetUrl": "/smart-thermostat-installation-dubai",
+      "status": "exists"
+    }
+  ]
+}

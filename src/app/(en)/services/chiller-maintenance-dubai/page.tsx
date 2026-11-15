@@ -10,6 +10,7 @@ import {
   Settings,
   FileText,
 } from "lucide-react";
+import Link from "next/link";
 import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
 import { PROJECTS_DELIVERED } from "@/lib/company";
 import { ratingValue, reviewCount } from "@/lib/siteStats";
@@ -17,9 +18,44 @@ import { ratingValue, reviewCount } from "@/lib/siteStats";
 export const metadata = buildMetadata({
   title: "Chiller Installation, Repair & Maintenance Dubai | AGEC",
   description:
-    "Chiller installation, repair and maintenance in Dubai for air- and water-cooled plant — designed, installed, serviced and commissioned, with logged reports.",
+    "Chiller maintenance in Dubai for air- and water-cooled plant: planned preventive visits, repair and installation, with logged reports after every visit.",
   path: "/services/chiller-maintenance-dubai",
 });
+
+const linkClass = "text-primary underline underline-offset-2 hover:text-primary-dark";
+const h2Class = "font-heading text-3xl font-bold md:text-4xl";
+
+// Checks already described on this page for each planned visit.
+const ppmAll = [
+  "Compressors, electrical and safety checks",
+  "Refrigerant charge and oil condition",
+  "Condenser and evaporator surfaces cleaned",
+  "Flow rates and temperature differentials measured against the plant's design figures",
+  "Controls, sequencing, setpoints, interlocks and safety cut-outs verified",
+  "Readings logged and a report issued after every visit",
+];
+const ppmWater = [
+  "Condenser-water condition and treatment reviewed for scaling, fouling and corrosion",
+  "Cooling-tower basin and condenser-water loop condition checked",
+];
+
+const comparison = [
+  {
+    row: "Heat rejection",
+    air: "Condenser coils reject heat to the outside air",
+    water: "Condenser-water loop and cooling tower",
+  },
+  {
+    row: "Dubai selection factors",
+    air: "Must perform at ambient temperatures above 50°C; altitude, humidity, fouling allowances and part-load profiles are factored in",
+    water: "Tower sizing, basin piping and condenser-water loop commissioning, with water treatment set up from the start",
+  },
+  {
+    row: "Maintenance focus",
+    air: "Coil and surface cleaning, refrigerant charge, compressors, controls and safeties",
+    water: "The same checks, plus condenser-water treatment and the cooling-tower basin and loop",
+  },
+];
 
 export default function ChillerMaintenance() {
   return (
@@ -29,7 +65,8 @@ export default function ChillerMaintenance() {
       heroImageAlt="Chiller plant installed and maintained by AGEC for a commercial project in Dubai"
       ctaBar
       title="Chiller Installation and Maintenance"
-      intro="Air- and water-cooled chiller plant in Dubai — selected, installed and commissioned, then kept at its design capacity through planned maintenance and repair."
+      h1="Chiller Maintenance in Dubai — Air- and Water-Cooled Plant"
+      intro="Chiller maintenance in Dubai for air- and water-cooled plant — with selection, installation and commissioning when you need them — keeping the plant at its design capacity through planned maintenance and repair."
       overview={
         <>
           <p>
@@ -158,6 +195,105 @@ export default function ChillerMaintenance() {
           a: "A report with the logged readings, the work carried out, and anything that needs attention — the documented record a facilities team or owner can rely on.",
         },
       ]}
+      extraSection={
+        <>
+          {/* AIR- VS WATER-COOLED */}
+          <section className="py-16 md:py-20">
+            <div className="mx-auto max-w-7xl px-6">
+              <h2 className={h2Class}>Air-cooled vs water-cooled chillers</h2>
+              <p className="mt-6 max-w-3xl leading-relaxed text-text-muted">
+                We maintain and install both. The difference that matters for
+                maintenance is the condenser side.
+              </p>
+              <div className="mt-8 overflow-x-auto">
+                <table className="w-full min-w-[34rem] text-left text-sm">
+                  <thead>
+                    <tr className="border-b border-border text-xs uppercase tracking-wider text-text-muted">
+                      <th className="py-3 pr-4 font-semibold" />
+                      <th className="py-3 pr-4 font-semibold">Air-cooled</th>
+                      <th className="py-3 font-semibold">Water-cooled</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {comparison.map((r) => (
+                      <tr key={r.row} className="border-b border-border align-top">
+                        <th scope="row" className="py-3 pr-4 font-medium">{r.row}</th>
+                        <td className="py-3 pr-4 text-text-muted">{r.air}</td>
+                        <td className="py-3 text-text-muted">{r.water}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          {/* PPM CHECKLIST */}
+          <section className="bg-bg-soft py-16 md:py-20">
+            <div className="mx-auto max-w-7xl px-6">
+              <h2 className={h2Class}>PPM checklist for chiller maintenance in Dubai</h2>
+              <p className="mt-6 max-w-3xl leading-relaxed text-text-muted">
+                What each planned preventive visit covers. Central chillers in
+                Dubai&apos;s climate are typically maintained on a quarterly
+                schedule, with extra attention before the summer peak; we set the
+                frequency to the plant and build it into the contract.
+              </p>
+              <div className="mt-8 grid gap-10 md:grid-cols-2">
+                <div>
+                  <h3 className="font-heading text-lg font-semibold">All chillers</h3>
+                  <ul className="mt-4 list-disc space-y-2 pl-5 text-text-muted">
+                    {ppmAll.map((i) => (
+                      <li key={i}>{i}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-heading text-lg font-semibold">Water-cooled plant, in addition</h3>
+                  <ul className="mt-4 list-disc space-y-2 pl-5 text-text-muted">
+                    {ppmWater.map((i) => (
+                      <li key={i}>{i}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              {/* TODO(owner): a numbered PPM checklist with check frequencies (monthly / quarterly / annual) per item, if you want one. Only the checks already described on this page are listed. */}
+            </div>
+          </section>
+
+          {/* OVERHAUL */}
+          <section className="py-16 md:py-20">
+            <div className="mx-auto max-w-7xl px-6">
+              <h2 className={h2Class}>Chiller overhaul and repair</h2>
+              <div className="mt-6 max-w-3xl space-y-4 leading-relaxed text-text-muted">
+                <p>
+                  Repairs are part of the maintenance route: the same team that
+                  maintains the plant repairs it, under an annual maintenance
+                  contract with a fault response line. A baseline inspection of
+                  the plant comes first, so its real condition is known before we
+                  agree the scope in writing. See{" "}
+                  <Link href="/ac-amc-dubai#commercial-amc" className={linkClass}>
+                    commercial and building AMC
+                  </Link>{" "}
+                  for how chillers, AHUs and FCUs can sit under one contract.
+                </p>
+                {/* TODO(owner): overhaul scope (for example compressor or major-component overhaul, tube replacement, refrigerant recovery), whether it is quoted separately, and typical lead times. None is stated on the site, so none is shown. */}
+              </div>
+            </div>
+          </section>
+
+          {/* BRANDS */}
+          <section className="bg-bg-soft py-16 md:py-20">
+            <div className="mx-auto max-w-7xl px-6">
+              <h2 className={h2Class}>Chiller brands we service</h2>
+              <p className="mt-6 max-w-3xl leading-relaxed text-text-muted">
+                We service chillers from Carrier, Trane, York and Daikin. Brand
+                names are trademarks of their respective owners.
+              </p>
+              {/* TODO(owner): do not add any "authorised dealer" or "partner" wording unless the manufacturer has confirmed that status in writing. */}
+            </div>
+          </section>
+        </>
+      }
     />
   );
 }
