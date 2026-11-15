@@ -27,20 +27,20 @@ import { isPublished } from "@/data/new-pages";
 //  - /quote/thank-you → noindex utility page; /review → 302 to Google reviews
 //  - dynamic blog/project pages → appended from data in sitemap.ts
 export const staticRoutes: RouteEntry[] = [
-  { path: "/", updatedAt: "2026-11-14" },
+  { path: "/", updatedAt: "2026-11-15" },
   { path: "/about", updatedAt: "2026-11-05" },
   { path: "/services", updatedAt: "2026-11-14" },
   // Landing pages
-  { path: "/ac-maintenance-dubai", updatedAt: "2026-11-14" },
+  { path: "/ac-maintenance-dubai", updatedAt: "2026-11-15" },
   { path: "/ac-repair-dubai", updatedAt: "2026-11-14" },
-  { path: "/ac-amc-dubai", updatedAt: "2026-11-14" },
+  { path: "/ac-amc-dubai", updatedAt: "2026-11-15" },
   { path: "/ac-duct-cleaning-dubai", updatedAt: "2026-11-05" },
   { path: "/smart-thermostat-installation-dubai", updatedAt: "2026-11-13" },
   // Service detail pages
-  { path: "/services/hvac-installation-dubai", updatedAt: "2026-11-04" },
+  { path: "/services/hvac-installation-dubai", updatedAt: "2026-11-15" },
   { path: "/services/tab-testing-adjusting-balancing-dubai", updatedAt: "2026-11-14" },
-  { path: "/services/chiller-maintenance-dubai", updatedAt: "2026-11-14" },
-  { path: "/services/vrf-vrv-systems", updatedAt: "2026-11-04" },
+  { path: "/services/chiller-maintenance-dubai", updatedAt: "2026-11-15" },
+  { path: "/services/vrf-vrv-systems", updatedAt: "2026-11-15" },
   { path: "/services/dx-units", updatedAt: "2026-11-02" },
   { path: "/services/ventilation-fresh-air", updatedAt: "2026-11-02" },
   { path: "/services/hvac-design", updatedAt: "2026-11-02" },
@@ -60,4 +60,31 @@ export const staticRoutes: RouteEntry[] = [
   // Legal
   { path: "/privacy-policy", updatedAt: "2026-11-14" },
   { path: "/terms", updatedAt: "2026-11-14" },
+];
+
+// Arabic pages, each with its OWN content-last-changed date (YYYY-MM-DD). The sitemap does not
+// copy an English page's date onto its Arabic twin: bump an entry here only when that Arabic
+// page's own content changes. A page missing from this list (for example an Arabic page that is
+// still gated) falls back to its English twin's date in sitemap.ts.
+export const arabicRoutes: RouteEntry[] = [
+  { path: "/ar", updatedAt: "2026-11-14" },
+  { path: "/ar/ac-maintenance-dubai", updatedAt: "2026-11-14" },
+  { path: "/ar/ac-repair-dubai", updatedAt: "2026-11-14" },
+  { path: "/ar/ac-duct-cleaning-dubai", updatedAt: "2026-11-05" },
+  { path: "/ar/ac-amc-dubai", updatedAt: "2026-11-14" },
+  { path: "/ar/services", updatedAt: "2026-11-14" },
+  { path: "/ar/about", updatedAt: "2026-11-05" },
+  { path: "/ar/quote", updatedAt: "2026-11-05" },
+  { path: "/ar/contact", updatedAt: "2026-11-13" },
+  { path: "/ar/services/hvac-installation-dubai", updatedAt: "2026-11-04" },
+  { path: "/ar/services/tab-testing-adjusting-balancing-dubai", updatedAt: "2026-11-14" },
+  { path: "/ar/services/chiller-maintenance-dubai", updatedAt: "2026-11-14" },
+  { path: "/ar/services/ventilation-fresh-air", updatedAt: "2026-11-02" },
+  { path: "/ar/smart-thermostat-installation-dubai", updatedAt: "2026-11-13" },
+  { path: "/ar/services/vrf-vrv-systems", updatedAt: "2026-11-04" },
+  { path: "/ar/services/dx-units", updatedAt: "2026-11-02" },
+  { path: "/ar/services/hvac-design", updatedAt: "2026-11-02" },
+  { path: "/ar/ac-ducting-installation-dubai", updatedAt: "2026-11-14" },
+  { path: "/ar/privacy-policy", updatedAt: "2026-11-14" },
+  { path: "/ar/terms", updatedAt: "2026-11-14" },
 ];
