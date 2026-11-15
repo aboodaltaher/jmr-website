@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { JobPhoto } from "@/components/JobPhoto";
 import Link from "next/link";
 import { Check, MessageCircle, Phone } from "lucide-react";
 import { BreadcrumbBand } from "@/components/Breadcrumbs";
@@ -268,6 +269,26 @@ export default function AcInstallationPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* REAL JOB PHOTO */}
+      <section className="py-14 md:py-16">
+        <div className="mx-auto flex max-w-5xl flex-wrap items-center gap-8 px-6">
+          <JobPhoto
+            src="/projects/mira-oasis-ducted-ac-installation.jpg"
+            alt="Ducted AC unit installed above the ceiling with insulated flexible ducts in a Mira Oasis villa, Dubai"
+            width={1600}
+            height={1200}
+          />
+          <p className="min-w-[240px] flex-1 text-lg leading-relaxed text-text-muted">
+            A ducted unit we installed above the ceiling of a Mira Oasis villa, with insulated flexible
+            ducts. See{" "}
+            <Link href="/ac-maintenance/mira-oasis" className={link}>
+              ducted AC installation in Mira Oasis
+            </Link>
+            .
+          </p>
         </div>
       </section>
 

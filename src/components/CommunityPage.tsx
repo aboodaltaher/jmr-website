@@ -91,21 +91,30 @@ export function CommunityPage({ community: raw }: { community: Community }) {
               <p key={i}><Text>{p}</Text></p>
             ))}
           </div>
-          {c.photo && (
-            <figure className="mt-8 max-w-3xl">
-              {c.photo.startsWith("/") ? (
-                <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-border">
-                  <Image src={c.photo} alt={`${jobName} in ${c.name} by AGEC`} fill sizes="(min-width: 768px) 768px, 100vw" className="object-cover" />
-                </div>
-              ) : (
-                <div className="rounded-xl border border-dashed border-border bg-white px-6 py-12 text-center text-text-muted">
-                  <Text>{c.photo}</Text>
-                </div>
-              )}
-              {c.photoCaption && (
-                <figcaption className="mt-2 text-sm text-text-muted"><Text>{c.photoCaption}</Text></figcaption>
-              )}
-            </figure>
+          {c.photos && c.photos.length > 0 && (
+            <div className="mt-8 flex flex-wrap items-start gap-4">
+              {c.photos.map((ph) => (
+                <figure key={ph.src} className="max-w-md">
+                  {ph.src.startsWith("/") ? (
+                    <Image
+                      src={ph.src}
+                      alt={ph.alt}
+                      width={ph.width ?? 1200}
+                      height={ph.height ?? 900}
+                      sizes="(min-width: 768px) 448px, 100vw"
+                      className="h-auto w-full rounded-xl border border-border"
+                    />
+                  ) : (
+                    <div className="rounded-xl border border-dashed border-border bg-white px-6 py-12 text-center text-text-muted">
+                      <Text>{ph.src}</Text>
+                    </div>
+                  )}
+                  {ph.caption && (
+                    <figcaption className="mt-2 text-sm text-text-muted"><Text>{ph.caption}</Text></figcaption>
+                  )}
+                </figure>
+              ))}
+            </div>
           )}
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a
@@ -164,7 +173,7 @@ export function CommunityPage({ community: raw }: { community: Community }) {
           <h2 className="font-heading text-3xl font-bold md:text-4xl">Related services</h2>
           <ul className="mt-5 grid gap-3 sm:grid-cols-2">
             {[
-              ...(c.job ? [{ href: c.job.serviceHref, label: c.job.serviceLabel }] : []),
+              ...(c.job ? c.job.links : []),
               { href: "/ac-maintenance-dubai", label: "AC maintenance in Dubai" },
               { href: "/ac-amc-dubai", label: "Annual maintenance contracts (AMC)" },
               { href: "/ac-repair-dubai", label: "AC repair" },

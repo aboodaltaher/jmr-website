@@ -141,7 +141,7 @@ English pages with no Arabic twin yet. Not started; translate in this order. A r
 
 ## Method
 
-- Source: `.next/server/app/**/*.html` of a production build (89 pages, 80 in the sitemap).
+- Source: `.next/server/app/**/*.html` of a production build (90 pages, 83 in the sitemap).
 - Phrase match: words in order and adjacent, ignoring case and punctuation, allowing one filler word (in, for, of, the, and, a, to, في) between words. Simple English plurals are folded (contractors = contractor). Arabic diacritics and alef/yeh/teh-marbuta variants are folded.
 - First 100 words: the first 100 words of page text after the `<h1>`, scripts and styles removed.
 - Limits: title <= 60, meta 140-155 characters (the site-wide on-page check allows 120-155; this audit uses the tighter range you asked for).

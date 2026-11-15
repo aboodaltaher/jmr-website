@@ -26,11 +26,13 @@ export const COMMUNITY_INDEX: CommunityIndexEntry[] = [
   { slug: "business-bay", name: "Business Bay", published: true },
   { slug: "dubai-marina", name: "Dubai Marina", published: false },
   { slug: "arabian-ranches", name: "Arabian Ranches", published: false },
-  // Job-type pages (replacement / AMC / leak repair). Hidden until the owner adds the real photo.
+  // Job-type pages built from real jobs. A page with an open [TO CONFIRM] marker 404s in production anyway.
+  { slug: "mira-oasis", name: "Mira Oasis", published: true, job: "ducted AC installation" },
+  { slug: "al-wasl", name: "Al Wasl", published: true, job: "AC maintenance contract" },
+  { slug: "sustainable-city", name: "Sustainable City", published: true, job: "AC leak repair and compressor replacement" },
+  // Waiting for a photo: keep false until it is added.
+  { slug: "dubai-hills", name: "Dubai Hills", published: false, job: "AC installation and replacement" },
   { slug: "villanova", name: "Villanova", published: false, job: "AC replacement" },
-  { slug: "dubai-hills", name: "Dubai Hills", published: false, job: "AC replacement" },
-  { slug: "al-wasl", name: "Al Wasl", published: false, job: "AC maintenance contract" },
-  { slug: "sustainable-city", name: "Sustainable City", published: false, job: "AC leak repair" },
 ];
 
 export const communityPath = (slug: string): string => `/ac-maintenance/${slug}`;

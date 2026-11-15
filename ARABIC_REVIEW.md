@@ -465,3 +465,7 @@ New Arabic twin of `/ac-installation-dubai`, written from the owner's confirmed 
 ## Phase 2: `/ar/ac-repair-dubai`, `/ar/ac-maintenance-dubai` — NOT changed
 
 The English pages gained prices and six symptom sections. The Arabic twins were left as they are (no call-out fee, no symptom sections), so they now trail the English pages. Say if you want the Arabic updated next.
+
+## Phase 2b (2026-11-15): no Arabic changes
+
+The new Mira Oasis, Al Wasl and Sustainable City area pages and the photo additions are English only. Nothing in `/ar/*` changed in this step.

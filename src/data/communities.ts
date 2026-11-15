@@ -37,14 +37,16 @@ export interface Community {
   projectSlugs: string[];
   faqs: CommunityFaq[];
   /**
-   * Set for pages built around one real job type (replacement, AMC, leak repair) instead of
-   * general maintenance. `name` is the short job name used in headings, schema and the WhatsApp
-   * pre-fill; the link points at the matching service page.
+   * Set for pages built around real job types (installation, replacement, AMC, leak repair)
+   * instead of general maintenance. `name` is the short job name used in headings, schema and
+   * the WhatsApp pre-fill; `links` point at the matching service pages (first one is primary).
    */
-  job?: { name: string; serviceHref: string; serviceLabel: string };
-  /** Real job photo: a /public path, or a "[TO CONFIRM: photo]" marker until it is supplied. */
-  photo?: string;
-  photoCaption?: string;
+  job?: { name: string; links: { href: string; label: string }[] };
+  /**
+   * Real job photos. `src` is a /public path, or a "[TO CONFIRM: photo]" marker until supplied
+   * (an open marker keeps the page hidden in production). `alt` is the ALT text.
+   */
+  photos?: { src: string; alt: string; width?: number; height?: number; caption?: string }[];
   /** WhatsApp pre-fill that names the area. */
   /** Everything the owner must confirm before this page is published. */
   toConfirm: string[];
@@ -368,10 +370,16 @@ const arabianRanches: Community = {
 
 
 const replacePrice = money(prices.installation[4].from as number);
+const splitPrice = money(prices.installation[0].from as number);
+const ductedPrice = money(prices.installation[2].from as number);
 const callout = money(prices.repair[0].from as number);
 const amc = prices.amcPlans;
+const amcFrom = money(Math.min(...amc.map((p) => p.from)));
 const warranty =
   "The manufacturer gives a 5-year warranty on the compressor. AGEC gives a 1-year warranty on the indoor unit and on our installation work.";
+const installLink = { href: "/ac-installation-dubai", label: "AC installation in Dubai" };
+const repairLink = { href: "/ac-repair-dubai", label: "AC repair in Dubai" };
+const amcLink = { href: "/ac-amc-dubai", label: "AC annual maintenance contracts (AMC)" };
 
 const villanova: Community = {
   slug: "villanova",
@@ -380,9 +388,8 @@ const villanova: Community = {
   metaTitle: "AC Replacement Villanova Dubai | New Unit Fitted | AGEC",
   metaDescription: `AC machine replacement in Villanova, Dubai: we supply the new unit, remove the old one and fit it, from AED ${replacePrice} per unit. Call or WhatsApp AGEC.`,
   h1: "AC Machine Replacement in Villanova, Dubai",
-  job: { name: "AC replacement", serviceHref: "/ac-installation-dubai", serviceLabel: "AC installation and replacement in Dubai" },
-  photo: "[TO CONFIRM: photo of the Villanova AC machine replacement]",
-  photoCaption: "[TO CONFIRM: caption for the photo: the unit replaced and the unit fitted, if you want it shown]",
+  job: { name: "AC replacement", links: [installLink] },
+  photos: [{ src: "[TO CONFIRM: photo of the Villanova AC machine replacement]", alt: "" }],
   intro: [
     "AGEC replaces AC machines in Villanova. When an old unit keeps failing, we supply a new one, take out the old unit and fit the new one, so you deal with one company for the unit and the installation.",
     `Replacing an old unit starts from AED ${replacePrice} per unit, with the new unit included. The exact price depends on the unit and the job, and we confirm it in writing before any work starts.`,
@@ -442,41 +449,120 @@ const villanova: Community = {
   ],
   toConfirm: [
     "Villanova: photo of a real AC machine replacement job (the page stays hidden until it is added).",
-    "Villanova: photo caption, if you want one shown (unit replaced and unit fitted).",
   ],
+};
+
+const miraOasis: Community = {
+  slug: "mira-oasis",
+  name: "Mira Oasis",
+  updatedAt: "2026-11-15",
+  metaTitle: "Ducted AC Installation Mira Oasis Dubai | AGEC",
+  metaDescription: `Ducted AC installation in Mira Oasis, Dubai: unit above the ceiling, insulated ducts, new unit included, from AED ${ductedPrice} per ton. Call or WhatsApp AGEC.`,
+  h1: "Ducted AC Installation in Mira Oasis, Dubai",
+  job: { name: "ducted AC installation", links: [installLink] },
+  photos: [
+    {
+      src: "/projects/mira-oasis-ducted-ac-installation.jpg",
+      alt: "Ducted AC unit installed above the ceiling with insulated flexible ducts in a Mira Oasis villa, Dubai",
+      width: 1600,
+      height: 1200,
+    },
+  ],
+  intro: [
+    "AGEC installs ducted AC in Mira Oasis. The photo below is a ducted unit we installed above the ceiling of a Mira Oasis villa, connected to insulated flexible ducts.",
+    `A ducted split is supplied and installed from AED ${ductedPrice} per ton, new unit included. We confirm the exact price in writing before work starts.`,
+  ],
+  sections: [
+    {
+      h2: "How a ducted AC works in a villa",
+      paragraphs: [
+        "A ducted unit sits in the ceiling void and sends cooled air through ducts to grilles or diffusers in the rooms. Only the grilles show, so the ceiling stays clean. The ducts carry cold air through a hot ceiling void, so they are insulated, as in the photo.",
+      ],
+    },
+    {
+      h2: "What is included in the price",
+      paragraphs: ["The ducted installation price covers the whole job, not just the unit:"],
+      bullets: [
+        "The new AC unit, supplied by us",
+        "Copper piping",
+        "Pipe insulation",
+        "Drain connection",
+        "Electrical connection",
+        "The ducting",
+      ],
+    },
+    {
+      h2: "How long it takes",
+      paragraphs: [
+        "About 7 hours for a ducted unit, including the ducting. We confirm the time in the quote, and jobs with several units take longer.",
+      ],
+    },
+    {
+      h2: "Warranty",
+      paragraphs: [warranty],
+    },
+    {
+      h2: "Brands we install and repair",
+      paragraphs: ["Daikin, Trane, O General, Mitsubishi, LG, Carrier and York."],
+    },
+  ],
+  projectsHeading: "Ducted installation in Mira Oasis",
+  projectsIntro:
+    "The photo above is from our Mira Oasis installation. You can see the projects we have published on our projects page.",
+  projectSlugs: [],
+  faqs: [
+    {
+      q: "How much does ducted AC installation cost in Mira Oasis?",
+      a: `A ducted split starts from AED ${ductedPrice} per ton, supplied and installed, with the new unit included. We confirm the exact price in writing.`,
+    },
+    {
+      q: "How long does ducted installation take?",
+      a: "About 7 hours for a ducted unit including the ducting.",
+    },
+    {
+      q: "Are the ducts insulated?",
+      a: "Yes. The ducts run through the ceiling void, so we use insulated ducts, as shown in the photo above.",
+    },
+    {
+      q: "What warranty do I get?",
+      a: warranty,
+    },
+  ],
+  toConfirm: [],
 };
 
 const dubaiHills: Community = {
   slug: "dubai-hills",
   name: "Dubai Hills",
   updatedAt: "2026-11-15",
-  metaTitle: "AC Replacement Dubai Hills | Machine Swap | AGEC",
-  metaDescription: `AC machine replacement in Dubai Hills: split, cassette, ducted or VRF, new unit included, from AED ${replacePrice} per unit. Call or WhatsApp AGEC for a quote.`,
-  h1: "AC Machine Replacement in Dubai Hills",
-  job: { name: "AC replacement", serviceHref: "/ac-installation-dubai", serviceLabel: "AC installation and replacement in Dubai" },
-  photo: "[TO CONFIRM: photo of the Dubai Hills AC machine replacement]",
-  photoCaption: "[TO CONFIRM: caption for the photo: the unit replaced and the unit fitted, if you want it shown]",
+  metaTitle: "AC Installation & Replacement Dubai Hills | AGEC",
+  metaDescription: `AC installation and machine replacement in Dubai Hills: split, cassette, ducted or VRF, new unit included, from AED ${replacePrice} per unit. Call or WhatsApp AGEC.`,
+  h1: "AC Installation and Machine Replacement in Dubai Hills",
+  job: { name: "AC installation and replacement", links: [installLink] },
+  // TODO(owner): dubai-hills-ac-installation-linear-diffuser.jpg was not received. Add it to
+  // public/projects with this ALT, then set published: true in community-index.ts.
+  photos: [{ src: "[TO CONFIRM: photo dubai-hills-ac-installation-linear-diffuser.jpg]", alt: "AGEC technician fitting a linear slot diffuser during AC installation in a Dubai Hills villa" }],
   intro: [
-    "AGEC replaces AC machines in Dubai Hills, supplying the new unit and fitting it in place of the old one. Some homes need one machine replaced, others need several, and we plan the job around what the home actually needs.",
-    `Replacing an old unit starts from AED ${replacePrice} per unit, new unit included. We confirm the exact price in writing before work starts.`,
+    "AGEC installs AC and replaces AC machines in Dubai Hills, supplying the new unit and fitting it. The photo below shows our technician fitting a linear slot diffuser during an AC installation in a Dubai Hills villa.",
+    `Replacing an old unit starts from AED ${replacePrice} per unit, new unit included. New installations are priced per ton. We confirm the exact price in writing before work starts.`,
   ],
   sections: [
     {
-      h2: "Replacing one machine or several",
+      h2: "AC installation in Dubai Hills",
       paragraphs: [
-        "If one unit has failed and the others are fine, we replace that one and match it to the system you have. If several units are old, it can make sense to replace them together, because the home is cooled evenly and you are not calling us for the next failure a month later. We give you the price per unit so you can decide.",
+        "These are the types we install, with our supply-and-install prices, new unit included:",
+      ],
+      bullets: [
+        `Split AC: AED ${splitPrice} per ton.`,
+        `Cassette AC: AED ${money(prices.installation[1].from as number)} per ton.`,
+        `Ducted split AC: from AED ${ductedPrice} per ton.`,
+        `VRF for homes: from AED ${money(prices.installation[3].from as number)} per ton.`,
       ],
     },
     {
-      h2: "Which type of unit to replace it with",
+      h2: "Replacing one machine or several",
       paragraphs: [
-        "The replacement does not have to be the same type as the old machine. These are the options we install, with our supply-and-install prices:",
-      ],
-      bullets: [
-        `Split AC: AED ${money(prices.installation[0].from as number)} per ton.`,
-        `Cassette AC: AED ${money(prices.installation[1].from as number)} per ton.`,
-        `Ducted split AC: from AED ${money(prices.installation[2].from as number)} per ton.`,
-        `VRF for homes: from AED ${money(prices.installation[3].from as number)} per ton.`,
+        "If one unit has failed and the others are fine, we replace that one and match it to the system you have. If several units are old, it can make sense to replace them together, so the home is cooled evenly and you are not calling us for the next failure a month later. We give you the price per unit so you can decide.",
       ],
     },
     {
@@ -497,14 +583,14 @@ const dubaiHills: Community = {
       paragraphs: ["Daikin, Trane, O General, Mitsubishi, LG, Carrier and York."],
     },
   ],
-  projectsHeading: "Replacement work in Dubai Hills",
+  projectsHeading: "Installation work in Dubai Hills",
   projectsIntro:
-    "A photo of an AC machine replacement we completed in Dubai Hills goes above. You can see the projects we have published on our projects page.",
+    "The photo above is from a Dubai Hills installation. You can see the projects we have published on our projects page.",
   projectSlugs: [],
   faqs: [
     {
-      q: "How much does it cost to replace an AC machine in Dubai Hills?",
-      a: `Replacing an old unit starts from AED ${replacePrice} per unit, new unit included. Split and cassette units are AED ${money(prices.installation[0].from as number)} per ton supplied and installed. We confirm the exact price in writing.`,
+      q: "How much does AC installation cost in Dubai Hills?",
+      a: `Split and cassette units are AED ${splitPrice} per ton supplied and installed, a ducted split is from AED ${ductedPrice} per ton, and replacing an old unit starts from AED ${replacePrice} per unit. New unit included. We confirm the exact price in writing.`,
     },
     {
       q: "Can I change the type of AC when I replace it?",
@@ -520,8 +606,7 @@ const dubaiHills: Community = {
     },
   ],
   toConfirm: [
-    "Dubai Hills: photo of a real AC machine replacement job (the page stays hidden until it is added).",
-    "Dubai Hills: photo caption, if you want one shown (unit replaced and unit fitted).",
+    "Dubai Hills: the photo dubai-hills-ac-installation-linear-diffuser.jpg was not received. Add it to public/projects, then publish the page.",
   ],
 };
 
@@ -530,14 +615,26 @@ const alWasl: Community = {
   name: "Al Wasl",
   updatedAt: "2026-11-15",
   metaTitle: "AC Maintenance Contract Al Wasl Dubai | AMC | AGEC",
-  metaDescription: `AC annual maintenance contracts in Al Wasl, Dubai: 2, 4 or 6 scheduled visits a year from AED ${money(Math.min(...amc.map((p) => p.from)))} per machine per visit. Call or WhatsApp.`,
+  metaDescription: `AC maintenance contracts in Al Wasl, Dubai: 2, 4 or 6 visits a year from AED ${amcFrom} per machine per visit, plus drain repairs. Call or WhatsApp AGEC.`,
   h1: "AC Maintenance Contracts (AMC) in Al Wasl, Dubai",
-  job: { name: "AC maintenance contract", serviceHref: "/ac-amc-dubai", serviceLabel: "AC annual maintenance contracts (AMC)" },
-  photo: "[TO CONFIRM: photo of the Al Wasl AC maintenance contract job]",
-  photoCaption: "[TO CONFIRM: caption for the photo, if you want one shown]",
+  job: { name: "AC maintenance contract", links: [amcLink, repairLink] },
+  photos: [
+    {
+      src: "/projects/al-wasl-ac-maintenance-coil-cleaning.jpg",
+      alt: "Technician cleaning the condenser coil of a packaged AC unit during an AMC visit in Al Wasl, Dubai",
+      width: 950,
+      height: 1600,
+    },
+    {
+      src: "/projects/al-wasl-ac-drain-rectification.jpg",
+      alt: "AC condensate drain connection being corrected after a previous contractor's installation, Al Wasl, Dubai",
+      width: 1206,
+      height: 1600,
+    },
+  ],
   intro: [
-    "AGEC looks after AC in Al Wasl under annual maintenance contracts. A contract fixes the visits for the year, so your units are serviced on schedule and you do not have to remember to book.",
-    `Plans are priced per machine per visit, from AED ${money(Math.min(...amc.map((p) => p.from)))} excluding VAT, with 2, 4 or 6 visits a year.`,
+    "AGEC looks after AC in Al Wasl under annual maintenance contracts. A contract fixes the visits for the year, so your units are serviced on schedule and you do not have to remember to book. The first photo below is a technician cleaning the condenser coil of a packaged unit during an AMC visit in Al Wasl.",
+    `Plans are priced per machine per visit, from AED ${amcFrom} excluding VAT, with 2, 4 or 6 visits a year.`,
   ],
   sections: [
     {
@@ -554,13 +651,17 @@ const alWasl: Community = {
     },
     {
       h2: "The three plans",
-      paragraphs: [
-        "All prices are per machine, per visit, excluding VAT.",
-      ],
+      paragraphs: ["All prices are per machine, per visit, excluding VAT."],
       bullets: amc.map(
         (p) =>
           `${p.name}: ${p.visits} visits a year, from AED ${money(p.from)}. ${p.response}. ${p.partsDiscount} off parts.`,
       ),
+    },
+    {
+      h2: "Correcting a previous contractor's drain connection",
+      paragraphs: [
+        "The second photo above shows an AC condensate drain connection being corrected in Al Wasl after a previous contractor's installation. A drain that is connected badly can leave water with nowhere to go, so we correct the connection so the water drains away. If you have a unit that leaks or drains badly after an earlier installation, see AC repair in Dubai below.",
+      ],
     },
     {
       h2: "One-off service instead",
@@ -575,14 +676,14 @@ const alWasl: Community = {
       ],
     },
   ],
-  projectsHeading: "Maintenance contracts in Al Wasl",
+  projectsHeading: "Work in Al Wasl",
   projectsIntro:
-    "A photo from one of our Al Wasl maintenance contract jobs goes above. You can see the projects we have published on our projects page.",
+    "The photos above are from our work in Al Wasl. You can see the projects we have published on our projects page.",
   projectSlugs: [],
   faqs: [
     {
       q: "How much is an AC maintenance contract in Al Wasl?",
-      a: `Plans are from AED ${money(Math.min(...amc.map((p) => p.from)))} per machine per visit, excluding VAT, depending on how many visits you choose.`,
+      a: `Plans are from AED ${amcFrom} per machine per visit, excluding VAT, depending on how many visits you choose.`,
     },
     {
       q: "How many visits a year should I choose?",
@@ -596,25 +697,32 @@ const alWasl: Community = {
       q: "What if a repair is needed during the contract?",
       a: "We quote the repair in writing first. The plans include a discount on parts: 5% on Basic, 10% on Standard and 15% on Premium.",
     },
+    {
+      q: "Can you fix a drain that a previous contractor connected badly?",
+      a: `Yes. We have corrected a condensate drain connection in Al Wasl after a previous contractor's installation. Diagnosis is AED ${callout}, waived if you go ahead with the repair, and the exact repair price is quoted after diagnosis.`,
+    },
   ],
-  toConfirm: [
-    "Al Wasl: photo of a real AC maintenance contract job (the page stays hidden until it is added).",
-    "Al Wasl: photo caption, if you want one shown.",
-  ],
+  toConfirm: [],
 };
 
 const sustainableCity: Community = {
   slug: "sustainable-city",
   name: "Sustainable City",
   updatedAt: "2026-11-15",
-  metaTitle: "AC Leak Repair Sustainable City Dubai | AGEC",
-  metaDescription: `AC leak repair in The Sustainable City, Dubai: water and refrigerant leaks traced and fixed. Diagnosis AED ${callout}, waived if you proceed. Call or WhatsApp.`,
-  h1: "AC Leak Repairs in The Sustainable City, Dubai",
-  job: { name: "AC leak repair", serviceHref: "/ac-repair-dubai", serviceLabel: "AC repair in Dubai" },
-  photo: "[TO CONFIRM: photo of the Sustainable City AC leak repair]",
-  photoCaption: "[TO CONFIRM: caption for the photo: where the leak was and what the fix was, if you want it shown]",
+  metaTitle: "AC Leak Repair & Compressor Replacement | AGEC",
+  metaDescription: `AC leak repairs and compressor replacement in The Sustainable City, Dubai. Diagnosis AED ${callout}, waived if you go ahead. Call or WhatsApp AGEC.`,
+  h1: "AC Leak Repairs and Compressor Replacement in The Sustainable City, Dubai",
+  job: { name: "AC leak repair and compressor replacement", links: [repairLink] },
+  photos: [
+    {
+      src: "/projects/sustainable-city-ac-compressor-replacement.jpg",
+      alt: "Worn twin scroll compressors in an AC outdoor unit before compressor replacement, The Sustainable City, Dubai",
+      width: 1187,
+      height: 1600,
+    },
+  ],
   intro: [
-    "AGEC finds and fixes AC leaks in The Sustainable City. A leak can be water dripping from an indoor unit, or refrigerant escaping from the system so it stops cooling. Both need the source found, not a patch over the symptom.",
+    "AGEC finds and fixes AC leaks in The Sustainable City, and replaces compressors. The photo below shows worn twin scroll compressors in an outdoor unit in The Sustainable City before the compressors were replaced.",
     `Diagnosis costs AED ${callout}, waived if you go ahead with the repair. The exact repair price is quoted after diagnosis, in writing, before any work starts.`,
   ],
   sections: [
@@ -631,21 +739,21 @@ const sustainableCity: Community = {
       ],
     },
     {
-      h2: "How an AC leak visit works",
+      h2: "Compressor replacement",
       paragraphs: [
-        "We inspect the unit and measure the system to find the source of the leak. We tell you the price in writing before any work starts. We carry out the repair and send a short report with what we measured.",
+        "The compressor is the heart of an outdoor unit. When it is worn or has failed, the unit cannot cool. We diagnose first, because not every failed compressor is worth replacing. Where replacing it approaches the cost of a new unit, we say so and give you the reasoning and the price in writing before any work starts. If a new unit is the better choice, see AC installation in Dubai.",
       ],
     },
     {
-      h2: "If a leak keeps coming back",
+      h2: "How an AC repair visit works",
       paragraphs: [
-        "A repeat leak usually means the cause was not the one first treated. Tell us what has been tried and we start from there. If a unit is beyond repair, we say so and quote a replacement.",
+        "We inspect the unit and measure the system to find the source of the problem. We tell you the price in writing before any work starts. We carry out the repair and send a short report with what we measured.",
       ],
     },
   ],
-  projectsHeading: "Leak repairs in The Sustainable City",
+  projectsHeading: "Repairs in The Sustainable City",
   projectsIntro:
-    "A photo of an AC leak repair we completed in The Sustainable City goes above. You can see the projects we have published on our projects page.",
+    "The photo above is from a compressor replacement in The Sustainable City. You can see the projects we have published on our projects page.",
   projectSlugs: [],
   faqs: [
     {
@@ -661,14 +769,15 @@ const sustainableCity: Community = {
       a: "No. Refrigerant is not used up, so low gas means a leak. We find and repair the leak and then recharge, so the fault does not return.",
     },
     {
+      q: "Is it worth replacing a compressor?",
+      a: "Sometimes. If replacing it approaches the cost of a new unit, we tell you and give you the price of both in writing before any work starts.",
+    },
+    {
       q: "Can you come urgently?",
       a: "We respond within an hour, at any time of day. Call or WhatsApp us with your location and what the unit is doing.",
     },
   ],
-  toConfirm: [
-    "Sustainable City: photo of a real AC leak repair job (the page stays hidden until it is added).",
-    "Sustainable City: photo caption, if you want one shown (where the leak was and what the fix was).",
-  ],
+  toConfirm: [],
 };
 
 export const communities: Community[] = [
@@ -676,6 +785,7 @@ export const communities: Community[] = [
   businessBay,
   dubaiMarina,
   arabianRanches,
+  miraOasis,
   villanova,
   dubaiHills,
   alWasl,

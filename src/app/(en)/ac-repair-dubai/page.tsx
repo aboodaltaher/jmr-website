@@ -1,4 +1,5 @@
 import { MidPageCta } from "@/components/MidPageCta";
+import { JobPhoto } from "@/components/JobPhoto";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { buildMetadata } from "@/lib/metadata";
 import Link from "next/link";
@@ -28,7 +29,15 @@ export const metadata = buildMetadata({
 
 const eyebrow = "text-sm font-semibold uppercase tracking-widest text-primary";
 
-const symptoms: { id: string; h2: string; paras: string[] }[] = [
+const drainPhoto = {
+  src: "/projects/al-wasl-ac-drain-rectification.jpg",
+  alt: "AC condensate drain connection being corrected after a previous contractor's installation, Al Wasl, Dubai",
+  width: 1206,
+  height: 1600,
+  caption: "A condensate drain connection being corrected after a previous contractor's installation, in Al Wasl.",
+};
+
+const symptoms: { id: string; h2: string; paras: string[]; photo?: typeof drainPhoto }[] = [
   {
     id: "ac-not-cooling",
     h2: "AC not cooling in Dubai",
@@ -40,6 +49,7 @@ const symptoms: { id: string; h2: string; paras: string[] }[] = [
   },
   {
     id: "ac-leaking-water",
+    photo: drainPhoto,
     h2: "AC leaking water in Dubai",
     paras: [
       "Water from an indoor unit is almost always condensate with nowhere to go. As the coil cools the air it collects water, which runs into a tray and out through a drain line. If that line is blocked with dust and algae, has lost its slope, or the tray is cracked, the water overflows into your ceiling or wall. A frozen coil does the same: ice forms from poor airflow or low refrigerant, then melts faster than the tray can take it.",
@@ -265,6 +275,7 @@ export default function AcRepairPage() {
                 )}
               </p>
             ))}
+            {sym.photo && <JobPhoto {...sym.photo} className="mt-6" />}
             {i === 0 && (
               <p className="mt-5 text-lg leading-relaxed text-text-muted">
                 The exact repair price is quoted after diagnosis; see{" "}
@@ -334,6 +345,21 @@ export default function AcRepairPage() {
             </Link>
             .
           </p>
+          <JobPhoto
+            className="mt-6"
+            src="/projects/sustainable-city-ac-compressor-replacement.jpg"
+            alt="Worn twin scroll compressors in an AC outdoor unit before compressor replacement, The Sustainable City, Dubai"
+            width={1187}
+            height={1600}
+            caption={
+              <>
+                Worn compressors in an outdoor unit before replacement, in The Sustainable City.{" "}
+                <Link href="/ac-maintenance/sustainable-city" className="font-semibold text-primary hover:underline">
+                  AC leak repair and compressor replacement in The Sustainable City
+                </Link>
+              </>
+            }
+          />
         </div>
       </section>
 
