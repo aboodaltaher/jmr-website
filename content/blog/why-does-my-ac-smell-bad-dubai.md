@@ -1,6 +1,6 @@
 ---
 date: "2026-11-01"
-updated: "2026-11-01"
+updated: "2026-11-15"
 author: "AGEC Team"
 readingTime: "6 min read"
 image: "/photos/agec-ac-vent-cleaning-villa-dubai.jpg"
@@ -10,7 +10,7 @@ titleTag: "Why Does My AC Smell Bad in Dubai? | AGEC"
 
 # Why Does My AC Smell Bad — and How to Fix It
 
-A bad smell from the air conditioning is more than unpleasant — it's usually your system telling you something is growing or stagnating where the air passes through. In Dubai's humidity, that happens faster than people expect. The good news: almost every AC smell has a specific, fixable cause. Here's how to read them.
+A bad smell from the air conditioning is more than unpleasant — it's usually your system telling you something is growing or stagnating where the air passes through. In Dubai's humidity, that happens faster than people expect. The good news: almost every AC smell has a specific, fixable cause. Here's how to read them, and when [AC maintenance in Dubai](/ac-maintenance-dubai) is the right fix.
 
 ## The musty, "dirty socks" smell
 

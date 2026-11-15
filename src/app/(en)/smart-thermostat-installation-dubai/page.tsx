@@ -1,4 +1,5 @@
 import { buildMetadata } from "@/lib/metadata";
+import { business } from "@/data/business";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
 import Image from "next/image";
 import Link from "next/link";
@@ -48,7 +49,7 @@ const CANONICAL = "/smart-thermostat-installation-dubai";
 export const metadata = buildMetadata({
   title: "Nest & ecobee Thermostat Installation Dubai | AGEC",
   description:
-    "Google Nest and ecobee smart thermostat installation in Dubai and the UAE. Free compatibility check and C-wire installation by licensed HVAC engineers.",
+    "Google Nest and ecobee smart thermostat installation in Dubai and the UAE. Free compatibility check and C-wire installation by an engineer-led team.",
   path: CANONICAL,
 });
 
@@ -56,7 +57,7 @@ export const metadata = buildMetadata({
 
 const trustBadges = [
   "Nest & ecobee Installation",
-  "Licensed HVAC Engineers",
+  "Engineer-Led Installation",
   "Free Compatibility Check",
   "Same-Day Service Available",
   "Workmanship Guarantee",
@@ -65,8 +66,8 @@ const trustBadges = [
 const whyCards: { icon: LucideIcon; title: string; desc: string }[] = [
   {
     icon: ShieldCheck,
-    title: "Licensed HVAC Engineers",
-    desc: "Installations by trained technicians following ASHRAE and Dubai Municipality standards — not general handymen.",
+    title: "Engineer-Led Installation",
+    desc: `Installations by trained technicians following ASHRAE and Dubai Municipality standards, under a licensed HVAC contractor (${business.licence.label}) — not general handymen.`,
   },
   {
     icon: BadgeCheck,
@@ -395,7 +396,7 @@ export default async function SmartThermostatPage() {
             <p className="mt-6 max-w-xl text-lg text-white/70">
               Supplier and professional installer of Google Nest and ecobee smart
               thermostats across Dubai and the UAE. Cut your DEWA cooling bill, control your AC
-              from your phone, and let licensed HVAC engineers handle everything — including
+              from your phone, and let our engineer-led team handle everything — including
               C-wire installation and a <strong className="text-white">free compatibility check</strong>.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">

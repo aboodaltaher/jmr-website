@@ -1,5 +1,6 @@
 import { buildMetadata } from "@/lib/metadata";
 import { PROJECTS_DELIVERED } from "@/lib/company";
+import { getProjectBySlug } from "@/data/projects";
 import {
   PenLine,
   Package,
@@ -102,7 +103,7 @@ export default function ArabicVrfVrvSystems() {
         },
       ]}
       whyAgec={[
-        "مهندسون ذوو خبرة في أنظمة VRF/VRV من Daikin وMitsubishi Electric وCarrier — وتم تنفيذ سعات تصل إلى 240 TR في مشروع واحد",
+        `مهندسون ذوو خبرة في أنظمة VRF/VRV من Daikin وMitsubishi Electric وCarrier — بما في ذلك نظام VRF بسعة ${getProjectBySlug("basil-mall-ajman")?.tonnage ?? "224 TR"} في باسل مول بعجمان`,
         `${PROJECTS_DELIVERED} مشروع تكييف أُنجز في دبي والشارقة وعجمان وأبوظبي`,
         "ممارسات تركيب وتشغيل تجريبي متوافقة مع ASHRAE 111 وSMACNA",
         "مواسير غاز تبريد منفَّذة بإتقان: لحام بتطهير النيتروجين، واختبارات تفريغ ثابتة، وكشف إلكتروني عن التسرّب في كل وصلة",

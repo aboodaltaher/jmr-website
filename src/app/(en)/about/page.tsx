@@ -1,6 +1,6 @@
 import { buildMetadata } from "@/lib/metadata";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { FOUNDER, PROJECTS_DELIVERED, COMPANY_NAME, COMPANY_ALTERNATE, COMPANY_LEGAL } from "@/lib/company";
+import { FOUNDER, PROJECTS_DELIVERED, LARGEST_PROJECT_TR, COMPANY_NAME, COMPANY_ALTERNATE, COMPANY_LEGAL } from "@/lib/company";
 import { business } from "@/data/business";
 import { isPublished } from "@/data/new-pages";
 import Image from "next/image";
@@ -129,7 +129,7 @@ export default function About() {
                   Ajman and Abu Dhabi — ranging from residential villas to data
                   centers, commercial buildings, and cultural facilities. Our
                   largest single project has handled
-                  a 240-ton cooling capacity, and our largest contract value to
+                  a {LARGEST_PROJECT_TR}-ton cooling capacity, and our largest contract value to
                   date is 8.75 million AED.
                 </p>
                 <p>

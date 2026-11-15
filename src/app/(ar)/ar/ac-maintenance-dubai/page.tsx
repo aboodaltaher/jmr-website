@@ -12,7 +12,7 @@ const ROUTE = "/ar/ac-maintenance-dubai";
 export const metadata = buildMetadata({
   title: "صيانة مكيفات دبي — بإشراف مهندسين وفي نفس اليوم | AGEC",
   description:
-    "صيانة مكيفات في دبي من مهندسين مرخّصين: خدمة وإصلاح وتنظيف وتعبئة غاز وعقود سنوية. الخدمة لمرة واحدة من 350 درهماً للوحدة. اتصل أو راسلنا على واتساب.",
+    "صيانة مكيفات في دبي بإشراف مهندسين: خدمة وإصلاح وتنظيف وتعبئة غاز وعقود سنوية. الخدمة لمرة واحدة من 350 درهماً للوحدة. اتصل أو راسلنا على واتساب.",
   path: ROUTE,
   locale: "ar_AE",
   languages: {
@@ -25,7 +25,7 @@ export const metadata = buildMetadata({
 const eyebrow = "text-sm font-semibold tracking-widest text-primary";
 
 const whyCards = [
-  { icon: ShieldCheck, title: "مهندسون مرخّصون", desc: "فنيّون مدرّبون يعملون وفق معايير ASHRAE وبلدية دبي — لا عمالة غير مؤهلة." },
+  { icon: ShieldCheck, title: "إشراف هندسي", desc: "فنيّون مدرّبون يعملون وفق معايير ASHRAE وبلدية دبي — لا عمالة غير مؤهلة." },
   { icon: BadgeCheck, title: "جميع العلامات والأنواع", desc: "سبليت، مخفي، كاسيت، VRF/VRV، تشيلر ووحدات مجمّعة — دايكن، أوجنرال، كاريير، جري، ميديا، إل جي والمزيد." },
   { icon: Clock, title: "خدمة في نفس اليوم وطوارئ 24/7", desc: "استجابة سريعة في دبي والإمارات، مع دعم طوارئ عند تعطّل المكيف في ذروة الصيف." },
   { icon: FileText, title: "تقارير موثّقة", desc: "كل زيارة مسجّلة بالحالة قبل وبعد والعمل المنفّذ والقطع المستخدمة — سجل صيانة كامل." },
@@ -121,7 +121,7 @@ export default function ArabicAcMaintenance() {
             صيانة مكيفات في دبي — خدمة وإصلاح وعقود سنوية
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-white/70">
-            يتولّى مهندسو AGEC المرخّصون صيانة مكيفات في دبي: الخدمة والإصلاح
+            يتولّى مهندسو AGEC صيانة مكيفات في دبي: الخدمة والإصلاح
             وتنظيف المبادلات والمجاري وتعبئة الغاز وعقود الصيانة السنوية، ليبقى
             مكيفك يبرّد بكفاءة ويستهلك كهرباء أقل — في الفلل والشقق والمكاتب.
           </p>
@@ -144,7 +144,7 @@ export default function ArabicAcMaintenance() {
       <section className="py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
           <p className={eyebrow}>لماذا AGEC</p>
-          <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">صيانة مكيفات في دبي بإشراف مهندسين مرخّصين</h2>
+          <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">صيانة مكيفات في دبي بإشراف مهندسين</h2>
           <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {whyCards.map((c) => (
               <div key={c.title}>
