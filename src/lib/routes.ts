@@ -38,7 +38,7 @@ export const staticRoutes: RouteEntry[] = [
   { path: "/smart-thermostat-installation-dubai", updatedAt: "2026-11-15" },
   // Service detail pages
   { path: "/services/hvac-installation-dubai", updatedAt: "2026-11-15" },
-  { path: "/services/tab-testing-adjusting-balancing-dubai", updatedAt: "2026-11-14" },
+  { path: "/services/tab-testing-adjusting-balancing-dubai", updatedAt: "2026-11-15" },
   { path: "/services/chiller-maintenance-dubai", updatedAt: "2026-11-15" },
   { path: "/services/vrf-vrv-systems", updatedAt: "2026-11-15" },
   { path: "/services/dx-units", updatedAt: "2026-11-15" },
@@ -47,6 +47,8 @@ export const staticRoutes: RouteEntry[] = [
   // Gated: in the sitemap only once published (src/data/new-pages.ts)
   ...(isPublished("kitchenExhaust") ? [{ path: "/kitchen-exhaust-cleaning-dubai", updatedAt: "2026-11-15" }] : []),
   ...(isPublished("ducting") ? [{ path: "/ac-ducting-installation-dubai", updatedAt: "2026-11-15" }] : []),
+  ...(isPublished("vrfMaintenance") ? [{ path: "/vrf-maintenance-dubai", updatedAt: "2026-11-15" }] : []),
+  ...(isPublished("airBalancing") ? [{ path: "/air-balancing-dubai", updatedAt: "2026-11-15" }] : []),
   ...(isPublished("mep") ? [{ path: "/mep-contractors-dubai", updatedAt: "2026-11-14" }] : []),
   // Location / emirate landing pages
   { path: "/hvac-contractor-sharjah", updatedAt: "2026-11-13" },

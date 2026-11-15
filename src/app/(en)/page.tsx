@@ -31,12 +31,10 @@ import { PHONE, PHONE_DISPLAY } from "@/lib/contact";
 import { PROJECTS_DELIVERED, GOOGLE_RATING, GOOGLE_REVIEW_COUNT, EMAIL } from "@/lib/company";
 import { GOOGLE_REVIEWS, MAPS_URL, REVIEW_URL, reviewStats } from "@/lib/reviews";
 
-// Image for the "Why AGEC" panel. Swap it by replacing the file at
-// public/why-agec.jpg, or point this at another path under /public.
-// TODO(owner): this is a placeholder (a real AGEC commissioning photo).
-// Replace with your preferred image — recommended ~1200×1500px (portrait),
-// JPG or WebP, compressed. The panel is a tall column cropped to fill.
-const WHY_AGEC_IMAGE = "/why-agec.jpg";
+// Image for the "Why AGEC" panel: an AGEC villa project photo (the old balometer photo showed the former JMR
+// name and is archived under archive/jmr-branded-photos). Point this at another path under /public to change it.
+// TODO(owner): replace with an AGEC commissioning photo when you have one. The panel is a tall column cropped to fill.
+const WHY_AGEC_IMAGE = "/projects/agec-stone-villa-hvac-dubai-elevation.jpg";
 
 export const metadata = buildMetadata({
   title: "Engineer-Led HVAC Contractor in Dubai & the UAE | AGEC",
@@ -56,8 +54,8 @@ const services = [
     icon: Wrench,
     name: "Maintenance",
     href: "/ac-amc-dubai",
-    image: "/projects/agec-maintenance-service-dubai.jpg",
-    alt: "AGEC HVAC maintenance in Dubai",
+    image: "/projects/trane-packaged-unit-rooftop-dubai.jpg",
+    alt: "Packaged rooftop air conditioning unit and insulated pipework at a Dubai project",
     description:
       "Preventive and corrective maintenance contracts to keep systems running at peak performance.",
   },
@@ -74,8 +72,8 @@ const services = [
     icon: ClipboardCheck,
     name: "Testing, Commissioning & Balancing",
     href: "/services/tab-testing-adjusting-balancing-dubai",
-    image: "/projects/agec-technician-tab-commissioning-airflow-balometer-dubai.jpg",
-    alt: "AGEC technician performing TAB testing and commissioning in Dubai",
+    image: "/projects/trane-hvac-controls-commissioning-dubai.jpg",
+    alt: "Trane wired controller at a Dubai project during commissioning",
     description:
       "System verification, airflow balancing, and performance testing against design specifications.",
   },
@@ -473,7 +471,7 @@ export default async function Home() {
             <div className="relative hidden overflow-hidden rounded-lg lg:col-span-2 lg:block">
               <Image
                 src={WHY_AGEC_IMAGE}
-                alt="AGEC engineer commissioning an HVAC system with an airflow balometer in Dubai"
+                alt="Stone-clad classical villa in Dubai with HVAC installation and commissioning by AGEC"
                 fill
                 sizes="(min-width: 1024px) 40vw, 0px"
                 loading="lazy"

@@ -205,8 +205,8 @@ export default function AcDuctCleaningPage() {
           </div>
           <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/10">
             <Image
-              src="/photos/agec-ac-vent-cleaning-villa-dubai.jpg"
-              alt="AGEC technician cleaning air conditioning ventilation in a Dubai villa"
+              src="/photos/agec-ac-grille-cleaning-dubai.jpg"
+              alt="AGEC technician removing an AC supply grille for cleaning, with the floor protected"
               fill
               sizes="(max-width: 1024px) 100vw, 600px"
               className="object-cover"

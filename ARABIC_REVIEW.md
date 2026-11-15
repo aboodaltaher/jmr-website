@@ -443,3 +443,9 @@ The brief bans "licensed HVAC engineers" and similar claims, so the Arabic equiv
 **`/ar/services/vrf-vrv-systems`** (why-AGEC bullet): «… — بما في ذلك نظام VRF بسعة 224 TR في باسل مول بعجمان» replaces «وتم تنفيذ سعات تصل إلى 240 TR في مشروع واحد». 224 TR is the VRF system in the published Basil Mall case study; the owner's 240 TR project is not described as VRF.
 
 **`/ar/services/dx-units`, `/ar/about`:** unchanged text; the 240 figure now comes from the one constant `LARGEST_PROJECT_TR`.
+
+## Photo replacements (2026-11-15): Arabic alt text for review
+
+The photos that showed the old JMR name were replaced (see PR "Replace JMR-branded photos"). New Arabic alt texts:
+- `/ar/ac-duct-cleaning-dubai` hero (grille cleaning photo): «فني AGEC يفكّ شبكة تكييف لتنظيفها مع حماية الأرضية»
+- `/ar/about` panel (duct cleaning equipment photo): «فنّي AGEC يجهّز معدات تنظيف مجاري التكييف في شقة بدبي»

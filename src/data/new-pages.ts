@@ -19,6 +19,10 @@ export const NEW_PAGES = {
   ducting: { published: true },
   mep: { published: false },
   kitchenExhaust: { published: true },
+  // Published 2026-11-15 after the owner's review. The one remaining marker on these pages (the AGEC balometer photo)
+  // is stripped in production, so the air balancing page simply has no first photo until it is supplied.
+  vrfMaintenance: { published: true },
+  airBalancing: { published: true },
 } as const;
 
 export type NewPageKey = keyof typeof NEW_PAGES;

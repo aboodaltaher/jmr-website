@@ -109,8 +109,8 @@ export default function ArabicAbout() {
             </div>
             <div className="relative overflow-hidden rounded-lg lg:min-h-[400px]">
               <Image
-                src="/photos/agec-ac-vent-cleaning-villa-dubai.jpg"
-                alt="فنّي AGEC ينظّف تهوية التكييف في فيلا بدبي"
+                src="/images/ac-maintenance-duct-cleaning-dubai.jpg"
+                alt="فنّي AGEC يجهّز معدات تنظيف مجاري التكييف في شقة بدبي"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover"

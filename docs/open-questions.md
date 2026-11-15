@@ -212,7 +212,7 @@ question on them is answered).
 
 ## Service pages
 
-None open — every fact on the ducting, HVAC-for-MEP and kitchen exhaust pages is confirmed.
+- [ ] Air balancing page (unpublished): AGEC balometer photo — path under /projects, with an AGEC-branded technician → 
 
 ---
-141 open answers.
+142 open answers.

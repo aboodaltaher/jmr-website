@@ -26,6 +26,8 @@ export const WA_PAGES_EN: Record<string, WaPage> = {
   "/services/ventilation-fresh-air": { name: "ventilation and fresh air" },
   "/services/hvac-design": { name: "HVAC design" },
   "/ac-ducting-installation-dubai": { name: "AC ducting installation" },
+  "/vrf-maintenance-dubai": { name: "VRF maintenance", property: "building" },
+  "/air-balancing-dubai": { name: "air balancing", property: "building" },
   "/mep-contractors-dubai": { name: "HVAC for MEP projects", property: "project" },
   "/kitchen-exhaust-cleaning-dubai": { name: "kitchen exhaust cleaning", property: "kitchen" },
   "/hvac-contractor-sharjah": { name: "HVAC contractor in Sharjah", area: "Sharjah" },

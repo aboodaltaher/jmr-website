@@ -73,7 +73,6 @@
     {
       "keyword": "vrf installation dubai",
       "secondaryKeywords": [
-        "vrf maintenance dubai",
         "fcu maintenance dubai"
       ],
       "volumeTier": "L",
@@ -163,17 +162,39 @@
       "status": "exists"
     },
     {
-      "keyword": "testing and commissioning hvac dubai",
+      "keyword": "hvac testing and commissioning dubai",
       "secondaryKeywords": [
-        "tab",
-        "air balancing"
+        "tab"
       ],
       "volumeTier": "L",
       "difficulty": "Low",
       "intent": "commercial",
       "priority": "High",
       "targetUrl": "/services/tab-testing-adjusting-balancing-dubai",
-      "status": "exists"
+      "status": "exists",
+      "notes": "Renamed from 'testing and commissioning hvac dubai' to match the owner's keyword research (2026-11-15). 'air balancing' now belongs to /air-balancing-dubai."
+    },
+    {
+      "keyword": "vrf maintenance dubai",
+      "secondaryKeywords": [],
+      "volumeTier": "M",
+      "difficulty": "Medium",
+      "intent": "commercial",
+      "priority": "High",
+      "targetUrl": "/vrf-maintenance-dubai",
+      "status": "exists",
+      "notes": "Published 2026-11-15. Maintenance only; /services/vrf-vrv-systems keeps installation."
+    },
+    {
+      "keyword": "air balancing dubai",
+      "secondaryKeywords": [],
+      "volumeTier": "M",
+      "difficulty": "Medium",
+      "intent": "commercial",
+      "priority": "High",
+      "targetUrl": "/air-balancing-dubai",
+      "status": "exists",
+      "notes": "Published 2026-11-15. Airflow only; full TAB stays on the TAB page. /air-balancing-airflow-testing-dubai redirects here."
     },
     {
       "keyword": "ducting contractors dubai",

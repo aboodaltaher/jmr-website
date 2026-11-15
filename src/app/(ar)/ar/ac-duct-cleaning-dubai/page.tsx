@@ -140,8 +140,8 @@ export default function ArabicDuctCleaning() {
           </div>
           <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/10">
             <Image
-              src="/photos/agec-ac-vent-cleaning-villa-dubai.jpg"
-              alt="فني AGEC ينظّف تهوية التكييف في فيلا بدبي"
+              src="/photos/agec-ac-grille-cleaning-dubai.jpg"
+              alt="فني AGEC يفكّ شبكة تكييف لتنظيفها مع حماية الأرضية"
               fill
               sizes="(max-width: 1024px) 100vw, 600px"
               className="object-cover"

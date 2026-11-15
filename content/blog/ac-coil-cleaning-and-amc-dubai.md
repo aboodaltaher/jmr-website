@@ -3,7 +3,7 @@ date: "2026-10-29"
 author: "AGEC engineering team"
 readingTime: "6 min read"
 # TODO: replace with a real AGEC photo of a coil cleaning job
-image: "/projects/agec-maintenance-service-dubai.jpg"
+image: "/images/ac-maintenance-duct-cleaning-dubai.jpg"
 description: "Why AC coil cleaning and an annual maintenance contract (AMC) matter in Dubai: dust, heat, higher bills and breakdowns, and what to check."
 titleTag: "AC Coil Cleaning & AMC in Dubai: Why Both Matter | AGEC"
 ---
