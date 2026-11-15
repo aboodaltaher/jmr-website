@@ -181,9 +181,8 @@
       "intent": "commercial",
       "priority": "High",
       "targetUrl": "/vrf-maintenance-dubai",
-      "status": "planned-phase7",
-      "interimUrl": "/services/vrf-vrv-systems",
-      "notes": "Built 2026-11-15 and unpublished until the owner approves it (src/data/new-pages.ts, vrfMaintenance). Maintenance only; /services/vrf-vrv-systems keeps installation. Audited once published. Volume and difficulty are estimates."
+      "status": "exists",
+      "notes": "Published 2026-11-15. Maintenance only; /services/vrf-vrv-systems keeps installation."
     },
     {
       "keyword": "air balancing dubai",
@@ -193,9 +192,8 @@
       "intent": "commercial",
       "priority": "High",
       "targetUrl": "/air-balancing-dubai",
-      "status": "planned-phase7",
-      "interimUrl": "/services/tab-testing-adjusting-balancing-dubai",
-      "notes": "Built 2026-11-15 and unpublished until the owner approves it (src/data/new-pages.ts, airBalancing). Airflow only; full TAB stays on the TAB page. Once live, /air-balancing-airflow-testing-dubai redirects here. Audited once published. Volume and difficulty are estimates."
+      "status": "exists",
+      "notes": "Published 2026-11-15. Airflow only; full TAB stays on the TAB page. /air-balancing-airflow-testing-dubai redirects here."
     },
     {
       "keyword": "ducting contractors dubai",
