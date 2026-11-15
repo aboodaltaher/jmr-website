@@ -45,8 +45,8 @@ export const staticRoutes: RouteEntry[] = [
   { path: "/services/ventilation-fresh-air", updatedAt: "2026-11-15" },
   { path: "/services/hvac-design", updatedAt: "2026-11-02" },
   // Gated: in the sitemap only once published (src/data/new-pages.ts)
-  ...(isPublished("kitchenExhaust") ? [{ path: "/kitchen-exhaust-cleaning-dubai", updatedAt: "2026-11-14" }] : []),
-  ...(isPublished("ducting") ? [{ path: "/ac-ducting-installation-dubai", updatedAt: "2026-11-14" }] : []),
+  ...(isPublished("kitchenExhaust") ? [{ path: "/kitchen-exhaust-cleaning-dubai", updatedAt: "2026-11-15" }] : []),
+  ...(isPublished("ducting") ? [{ path: "/ac-ducting-installation-dubai", updatedAt: "2026-11-15" }] : []),
   ...(isPublished("mep") ? [{ path: "/mep-contractors-dubai", updatedAt: "2026-11-14" }] : []),
   // Location / emirate landing pages
   { path: "/hvac-contractor-sharjah", updatedAt: "2026-11-13" },
@@ -76,7 +76,7 @@ export const arabicRoutes: RouteEntry[] = [
   { path: "/ar/about", updatedAt: "2026-11-05" },
   { path: "/ar/quote", updatedAt: "2026-11-05" },
   { path: "/ar/contact", updatedAt: "2026-11-13" },
-  { path: "/ar/services/hvac-installation-dubai", updatedAt: "2026-11-04" },
+  { path: "/ar/services/hvac-installation-dubai", updatedAt: "2026-11-15" },
   { path: "/ar/services/tab-testing-adjusting-balancing-dubai", updatedAt: "2026-11-14" },
   { path: "/ar/services/chiller-maintenance-dubai", updatedAt: "2026-11-15" },
   { path: "/ar/services/ventilation-fresh-air", updatedAt: "2026-11-02" },
@@ -84,7 +84,7 @@ export const arabicRoutes: RouteEntry[] = [
   { path: "/ar/services/vrf-vrv-systems", updatedAt: "2026-11-04" },
   { path: "/ar/services/dx-units", updatedAt: "2026-11-02" },
   { path: "/ar/services/hvac-design", updatedAt: "2026-11-02" },
-  { path: "/ar/ac-ducting-installation-dubai", updatedAt: "2026-11-14" },
+  { path: "/ar/ac-ducting-installation-dubai", updatedAt: "2026-11-15" },
   { path: "/ar/privacy-policy", updatedAt: "2026-11-14" },
   { path: "/ar/terms", updatedAt: "2026-11-14" },
 ];

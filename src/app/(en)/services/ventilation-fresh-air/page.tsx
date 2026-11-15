@@ -16,7 +16,7 @@ import { IaqSection } from "@/components/IaqSection";
 export const metadata = buildMetadata({
   title: "Fresh Air, FAHU & Ventilation Systems Dubai | AGEC",
   description:
-    "High CO2, stuffy rooms or failed fresh-air checks? We measure airflow and outdoor-air quantity, find the cause and fix it. Request an assessment.",
+    "Ventilation in Dubai: FAHU and fresh-air systems, designed and balanced. Indoor air quality in Dubai: we test CO₂ and airflow, find the cause and fix it.",
   path: "/services/ventilation-fresh-air",
 });
 
@@ -26,6 +26,7 @@ export default function VentilationFreshAir() {
       extraSection={<IaqSection />}
       slug="services/ventilation-fresh-air"
       title="Fresh Air Ventilation & CO₂ Testing"
+      h1="Ventilation in Dubai: Fresh Air, FAHU and Indoor Air Quality Testing"
       heroImage="/projects/fresh-air-handling-unit-fahu-dubai-agec.jpg"
       heroImageAlt="Fresh Air Handling Unit (FAHU) installation by AGEC in Dubai commercial project"
       intro="Mechanical ventilation, fresh air handling, and exhaust systems engineered for Dubai's climate and indoor air quality requirements."

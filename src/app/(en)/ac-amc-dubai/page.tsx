@@ -179,7 +179,8 @@ export default function AcAmcPage() {
           <p className="mt-6 max-w-2xl text-lg text-white/70">
             An AC AMC in Dubai keeps your air conditioning serviced on a schedule,
             with a named engineer, a service report with photos after every visit, and
-            priority response when something fails.
+            priority response when something fails. It puts HVAC maintenance in Dubai on
+            one annual contract for villas, apartments and buildings.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link

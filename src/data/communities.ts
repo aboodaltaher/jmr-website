@@ -127,10 +127,10 @@ const alBarsha: Community = {
 const businessBay: Community = {
   slug: "business-bay",
   name: "Business Bay",
-  updatedAt: "2026-11-14",
+  updatedAt: "2026-11-15",
   metaTitle: "AC Maintenance Business Bay, Dubai — Offices & F&B | AGEC",
   metaDescription:
-    "AC and FCU maintenance in Business Bay, Dubai for offices and restaurants on district cooling: leaks, weak cooling, rebalancing and AMC. Call or WhatsApp us.",
+    "AC and FCU maintenance in Business Bay, Dubai for offices and restaurants on district cooling: leaks, weak cooling, rebalancing and AMC. Call or WhatsApp.",
   h1: "AC Maintenance in Business Bay, Dubai",
   intro: [
     "Business Bay is a district of towers, and almost everything about AC maintenance there follows from one fact: the cold usually arrives as chilled water from a district cooling provider, and the equipment inside your unit is what turns it into comfortable air. If your office is warm, your meeting room is noisy, or the unit below yours is complaining about a stain, the problem is nearly always in that in-unit equipment.",

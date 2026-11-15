@@ -35,19 +35,20 @@ export interface LongService {
 export const DUCTING: LongService = {
   key: "ducting",
   path: "/ac-ducting-installation-dubai",
-  metaTitle: "AC Ducting Installation & Duct Fabrication Dubai | AGEC",
+  metaTitle: "Ducting Contractors in Dubai — AC Duct Fabrication | AGEC",
   metaDescription:
-    "AC ducting installation, duct fabrication and modification in Dubai — GI and pre-insulated duct, SMACNA-based construction, leakage testing. Request a quote.",
-  h1: "AC Ducting Installation & Duct Fabrication in Dubai",
+    "Ducting contractors in Dubai: AC duct installation, fabrication and modification in GI or pre-insulated duct, leakage tested to SMACNA. Request a quote.",
+  h1: "Ducting Contractors in Dubai: AC Duct Installation & Fabrication",
   kicker: "Ductwork · Installation · Fabrication",
   serviceType: "AC ducting installation and duct fabrication",
   intro: [
+    "AGEC is a ducting contractor in Dubai. We install, fabricate and modify AC ductwork, in galvanised iron (GI) and pre-insulated duct, for villas, offices, retail units and commercial buildings across the UAE.",
     "Ductwork is the part of an air-conditioning system nobody sees once the ceiling is closed, and the part that decides whether the system performs. A correctly sized, well-sealed, properly insulated duct network delivers the design airflow to every room at the supply temperature the equipment was selected for. A poorly built one wastes fan energy, leaks cooled air into the ceiling void, sweats in Dubai's humidity and leaves some rooms warm however low the thermostat is set.",
-    "AGEC installs, fabricates and modifies ductwork for villas, offices, retail units and commercial buildings across the UAE, working from the engineering side: duct sizes come from the airflow and pressure-drop calculation, not from whatever was in the ceiling before. This page explains the materials, the construction standard, the testing and the modification work, so you know what to ask for from any contractor, including us.",
+    "We work from the engineering side: duct sizes come from the airflow and pressure-drop calculation, not from whatever was in the ceiling before. This page explains the materials, the construction standard, the testing and the modification work, so you know what to ask for from any contractor, including us.",
   ],
   sections: [
     {
-      h2: "What we install and fabricate",
+      h2: "Ducting contractors in Dubai: what we install and fabricate",
       paragraphs: [
         "Our ductwork scope covers new installations and replacements for ducted splits, DX packaged units, VRF ducted indoor units, fresh air handling units and exhaust systems. We fabricate and install rectangular and round duct, flexible connections, volume control dampers, fire dampers where the design calls for them, plenums, diffusers, grilles and the insulation and supports that go with them.",
         "Ductwork is fabricated partly in our own workshop and partly through a fabrication partner, depending on project size and programme.",
@@ -279,7 +280,7 @@ export const KITCHEN_EXHAUST: LongService = {
   path: "/kitchen-exhaust-cleaning-dubai",
   metaTitle: "Kitchen Exhaust & Hood Cleaning Dubai | AGEC",
   metaDescription:
-    "Kitchen exhaust, hood and grease duct cleaning for Dubai restaurants and commercial kitchens by Dubai Municipality-approved AGEC. Photos and a service report.",
+    "Kitchen exhaust, hood and grease duct cleaning for Dubai restaurants and kitchens by Dubai Municipality-approved AGEC, with photos and a service report.",
   h1: "Kitchen Exhaust & Hood Cleaning in Dubai",
   kicker: "Kitchen exhaust · Hood cleaning · Grease duct",
   serviceType: "Kitchen exhaust and hood cleaning",
