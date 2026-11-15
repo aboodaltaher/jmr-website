@@ -215,14 +215,9 @@ question on them is answered).
 
 - [ ] Photo of the Villanova AC machine replacement → 
 
-### Dubai Hills
-`/ac-maintenance/dubai-hills` · 1 open
-
-- [ ] Photo dubai-hills-ac-installation-linear-diffuser.jpg → 
-
 ## Service pages
 
 - [ ] Air balancing page (unpublished): AGEC balometer photo — path under /projects, with an AGEC-branded technician → 
 
 ---
-144 open answers.
+143 open answers.

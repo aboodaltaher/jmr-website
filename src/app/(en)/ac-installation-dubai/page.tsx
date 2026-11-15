@@ -289,6 +289,20 @@ export default function AcInstallationPage() {
             </Link>
             .
           </p>
+          <JobPhoto
+            src="/projects/dubai-hills-duct-installation-corridor.jpg"
+            alt="Insulated duct boxes and ducted AC units installed along a ceiling during duct installation in Dubai Hills, Dubai"
+            width={900}
+            height={1600}
+            caption={
+              <>
+                Duct installation in Dubai Hills.{" "}
+                <Link href="/ac-maintenance/dubai-hills" className={link}>
+                  AC installation and replacement in Dubai Hills
+                </Link>
+              </>
+            }
+          />
         </div>
       </section>
 

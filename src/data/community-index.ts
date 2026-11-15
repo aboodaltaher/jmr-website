@@ -28,10 +28,10 @@ export const COMMUNITY_INDEX: CommunityIndexEntry[] = [
   { slug: "arabian-ranches", name: "Arabian Ranches", published: false },
   // Job-type pages built from real jobs. A page with an open [TO CONFIRM] marker 404s in production anyway.
   { slug: "mira-oasis", name: "Mira Oasis", published: true, job: "ducted AC installation" },
+  { slug: "dubai-hills", name: "Dubai Hills", published: true, job: "AC installation and replacement" },
   { slug: "al-wasl", name: "Al Wasl", published: true, job: "AC maintenance contract" },
   { slug: "sustainable-city", name: "Sustainable City", published: true, job: "AC leak repair and compressor replacement" },
   // Waiting for a photo: keep false until it is added.
-  { slug: "dubai-hills", name: "Dubai Hills", published: false, job: "AC installation and replacement" },
   { slug: "villanova", name: "Villanova", published: false, job: "AC replacement" },
 ];
 

@@ -467,9 +467,15 @@ const miraOasis: Community = {
       width: 1600,
       height: 1200,
     },
+    {
+      src: "/projects/mira-oasis-duct-installation-ceiling-unit.jpg",
+      alt: "Ceiling-mounted ducted AC unit and insulated ductwork during duct installation in Mira Oasis, Dubai",
+      width: 1600,
+      height: 900,
+    },
   ],
   intro: [
-    "AGEC installs ducted AC in Mira Oasis. The photo below is a ducted unit we installed above the ceiling of a Mira Oasis villa, connected to insulated flexible ducts.",
+    "AGEC installs ducted AC in Mira Oasis. The first photo below is a ducted unit we installed above the ceiling of a Mira Oasis villa, connected to insulated flexible ducts. The second shows a ceiling-mounted unit and its insulated ductwork during duct installation in Mira Oasis.",
     `A ducted split is supplied and installed from AED ${ductedPrice} per ton, new unit included. We confirm the exact price in writing before work starts.`,
   ],
   sections: [
@@ -508,7 +514,7 @@ const miraOasis: Community = {
   ],
   projectsHeading: "Ducted installation in Mira Oasis",
   projectsIntro:
-    "The photo above is from our Mira Oasis installation. You can see the projects we have published on our projects page.",
+    "The photos above are from our Mira Oasis installations. You can see the projects we have published on our projects page.",
   projectSlugs: [],
   faqs: [
     {
@@ -539,11 +545,19 @@ const dubaiHills: Community = {
   metaDescription: `AC installation and machine replacement in Dubai Hills: split, cassette, ducted or VRF, new unit included, from AED ${replacePrice} per unit. Call or WhatsApp AGEC.`,
   h1: "AC Installation and Machine Replacement in Dubai Hills",
   job: { name: "AC installation and replacement", links: [installLink] },
-  // TODO(owner): dubai-hills-ac-installation-linear-diffuser.jpg was not received. Add it to
-  // public/projects with this ALT, then set published: true in community-index.ts.
-  photos: [{ src: "[TO CONFIRM: photo dubai-hills-ac-installation-linear-diffuser.jpg]", alt: "AGEC technician fitting a linear slot diffuser during AC installation in a Dubai Hills villa" }],
+  // The linear-diffuser photo (dubai-hills-ac-installation-linear-diffuser.jpg) was never received.
+  // When it arrives, add it here with the ALT: "AGEC technician fitting a linear slot diffuser during
+  // AC installation in a Dubai Hills villa".
+  photos: [
+    {
+      src: "/projects/dubai-hills-duct-installation-corridor.jpg",
+      alt: "Insulated duct boxes and ducted AC units installed along a ceiling during duct installation in Dubai Hills, Dubai",
+      width: 900,
+      height: 1600,
+    },
+  ],
   intro: [
-    "AGEC installs AC and replaces AC machines in Dubai Hills, supplying the new unit and fitting it. The photo below shows our technician fitting a linear slot diffuser during an AC installation in a Dubai Hills villa.",
+    "AGEC installs AC and replaces AC machines in Dubai Hills, supplying the new unit and fitting it. The photo below shows duct installation in Dubai Hills: insulated duct boxes and ducted units along the ceiling.",
     `Replacing an old unit starts from AED ${replacePrice} per unit, new unit included. New installations are priced per ton. We confirm the exact price in writing before work starts.`,
   ],
   sections: [
@@ -585,7 +599,7 @@ const dubaiHills: Community = {
   ],
   projectsHeading: "Installation work in Dubai Hills",
   projectsIntro:
-    "The photo above is from a Dubai Hills installation. You can see the projects we have published on our projects page.",
+    "The photo above is from a Dubai Hills duct installation. You can see the projects we have published on our projects page.",
   projectSlugs: [],
   faqs: [
     {
@@ -605,9 +619,7 @@ const dubaiHills: Community = {
       a: warranty,
     },
   ],
-  toConfirm: [
-    "Dubai Hills: the photo dubai-hills-ac-installation-linear-diffuser.jpg was not received. Add it to public/projects, then publish the page.",
-  ],
+  toConfirm: [],
 };
 
 const alWasl: Community = {
