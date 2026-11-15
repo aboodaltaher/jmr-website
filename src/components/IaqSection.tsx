@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const COPY = {
   en: {
-    h2: "Indoor air quality testing",
+    h2: "Indoor Air Quality (IAQ) Testing",
     intro:
       "A room can be cool and still have poor air. Indoor air quality testing measures what people are actually breathing, finds why it is off, and tells you what to change. We test occupied spaces — offices, classrooms, gyms, clinics, restaurants and homes — and report against the design intent and the relevant standard.",
     measureH: "What we measure",

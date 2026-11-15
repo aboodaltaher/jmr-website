@@ -22,7 +22,7 @@ const ROUTE = "/ac-duct-cleaning-dubai";
 export const metadata = buildMetadata({
   title: "AC Duct Cleaning Dubai | Villas & Offices | AGEC",
   description:
-    "Full duct, coil and drain cleaning with disinfection and a written completion report. Villas, apartments and offices. Request a quote.",
+    "AC duct cleaning in Dubai: grilles, ducts, coils, blower and drain cleaned and disinfected, with a written report of what we found. Request a quote.",
   path: ROUTE,
   languages: {
     "en-AE": `${SITE_URL}${ROUTE}`,
@@ -104,6 +104,16 @@ const packages = [
   },
 ];
 
+const reportItems = [
+  "What was cleaned: grilles, ducts, coils, blower, drain and cavity",
+  "The condition of the system before and after cleaning",
+  "The disinfection treatment used",
+  "Recommendations for follow-up work",
+];
+
+// TODO(owner): FAQ "Does Dubai Municipality set rules for AC duct cleaning?" — the answer needs the exact Dubai Municipality guideline
+// (name, reference, what it requires of contractors or building owners). Not stated anywhere on the site; do not publish an unverified claim.
+// TODO(owner): report format (PDF?), whether it includes photos, delivery time, and a sample report to link or show.
 const faqs: { q: string; a: string }[] = [
   {
     q: "How often should ducts be cleaned?",
@@ -178,8 +188,8 @@ export default function AcDuctCleaningPage() {
               AC Duct Cleaning in Dubai With a Completion Report
             </h1>
             <p className="mt-6 max-w-xl text-lg text-white/70">
-              Full duct, coil and drain cleaning with disinfection — and a written report of
-              what we cleaned and found. For villas, apartments and offices across the UAE.
+              AC duct cleaning in Dubai means full duct, coil and drain cleaning with disinfection,
+              and a written report of what we cleaned and found. For villas, apartments and offices across the UAE.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/quote" className="rounded-md bg-primary px-7 py-4 font-semibold text-white hover:bg-primary-dark transition-colors">
@@ -292,7 +302,7 @@ export default function AcDuctCleaningPage() {
         <div className="mx-auto max-w-7xl px-6">
           <p className={eyebrow}>Cleaning packages</p>
           <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">
-            Choose the clean that fits your system
+            AC duct cleaning in Dubai: our packages
           </h2>
           <p className="mt-4 max-w-2xl text-text-muted">
             Every package includes professional disinfection and a written completion report.
@@ -319,6 +329,30 @@ export default function AcDuctCleaningPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* WHAT THE REPORT INCLUDES */}
+      <section id="cleaning-report" className="py-16 md:py-20">
+        <div className="mx-auto max-w-4xl px-6">
+          <p className={eyebrow}>The report</p>
+          <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">
+            What our cleaning report includes
+          </h2>
+          <p className="mt-4 text-lg leading-relaxed text-text-muted">
+            Every clean ends with a written completion report. It is useful for landlords, handovers and your own records.
+          </p>
+          <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+            {reportItems.map((item) => (
+              <li key={item} className="flex gap-3 text-text-muted">
+                <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" strokeWidth={2} />
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-6 text-text-muted">
+            The coil cleaning package adds pre- and post-clean temperature readings and a performance verification report.
+          </p>
         </div>
       </section>
 

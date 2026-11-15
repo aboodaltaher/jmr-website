@@ -4,7 +4,7 @@ import { buildMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { RelatedServices } from "@/components/RelatedServices";
 import { BreadcrumbBand } from "@/components/Breadcrumbs";
-import { Check, Phone, MessageCircle } from "lucide-react";
+import { Phone, MessageCircle } from "lucide-react";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { RepairForm } from "@/components/RepairForm";
 import { PHONE, whatsappUrl } from "@/lib/contact";
@@ -17,7 +17,7 @@ const ROUTE = "/ac-repair-dubai";
 export const metadata = buildMetadata({
   title: "AC Repair Dubai — Same-Day Engineer Diagnosis | AGEC",
   description:
-    "AC not cooling, leaking or tripping? AGEC engineers find the root cause, quote in writing first and report every repair. Call or WhatsApp.",
+    "AC repair in Dubai: not cooling, leaking or tripping? AGEC engineers find the root cause, quote in writing first and report every repair. Call or WhatsApp.",
   path: ROUTE,
   languages: {
     "en-AE": `${SITE_URL}${ROUTE}`,
@@ -28,13 +28,37 @@ export const metadata = buildMetadata({
 
 const eyebrow = "text-sm font-semibold uppercase tracking-widest text-primary";
 
-const faults = [
-  "AC not cooling",
-  "Water leaks from the indoor unit",
-  "Tripping the breaker",
-  "Unusual noise",
-  "Bad or musty smells",
+// TODO(owner): typical cost range per fault. Not on the site yet, so the table has no cost column. When supplied, add a "Typical cost" column
+// (or fill prices.repair in src/data/prices.ts, which feeds the Prices section and the Service offers).
+const faults: { fault: string; cause: string; fix: string }[] = [
+  {
+    fault: "AC not cooling",
+    cause: "A dirty coil, a blocked drain or low refrigerant from a leak.",
+    fix: "We measure the system to find the cause before we quote.",
+  },
+  {
+    fault: "Water leaks from the indoor unit",
+    cause: "A blocked or misaligned condensate drain, or a frozen coil that drips when it melts.",
+    fix: "We clear the drain, check the coil and confirm the unit drains freely.",
+  },
+  {
+    fault: "Tripping the breaker",
+    cause: "An electrical or refrigerant-side problem that needs diagnosis.",
+    fix: "We inspect the electrical and refrigerant circuits and quote the repair.",
+  },
+  {
+    fault: "Unusual noise",
+    cause: "A loose or worn part, or a fan or compressor problem.",
+    fix: "We find the source before we quote.",
+  },
+  {
+    fault: "Bad or musty smells",
+    cause: "Dirt or mould building up in the coil, drain tray or ducts.",
+    fix: "We clean what is affected; for ducts see AC duct cleaning in Dubai.",
+  },
 ];
+
+const brands = ["Daikin", "Carrier", "Mitsubishi", "LG", "Samsung", "Gree"];
 
 const steps = [
   "We inspect and measure the system to find the root cause.",
@@ -43,6 +67,9 @@ const steps = [
   "We send a short report with what we measured.",
 ];
 
+// TODO(owner): FAQ "What is the call-out fee?" — prices.repair "Call-out and diagnosis" is TBC; say whether diagnosis is charged and how much.
+// TODO(owner): FAQ "Do you warranty repairs?" — no repair warranty wording exists on the site; give the period and what it covers.
+// TODO(owner): parts FAQ: confirm which parts you stock and typical lead time for others.
 const faqs: { q: string; a: string }[] = [
   {
     q: "My AC runs but does not cool: why?",
@@ -59,6 +86,10 @@ const faqs: { q: string; a: string }[] = [
   {
     q: "How fast can you come?",
     a: "We respond within an hour, any time of day. Call or WhatsApp us with your area and the problem, and we will confirm the soonest we can reach you.",
+  },
+  {
+    q: "Do you have spare parts on hand?",
+    a: "We carry common parts on hand. If a repair needs a part we do not have, we tell you before the work starts, in the written quote.",
   },
   {
     q: "Do you repair split, ducted and VRF?",
@@ -115,8 +146,9 @@ export default function AcRepairPage() {
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-white/70">
             Weak cooling is often a dirty coil, a blocked drain or a leak, not
-            just low gas. We find the cause, tell you the price in writing, then
-            repair it and send a short report with what we measured.
+            just low gas. AC repair in Dubai starts with finding the cause: we
+            tell you the price in writing, then repair it and send a short
+            report with what we measured.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
@@ -150,24 +182,70 @@ export default function AcRepairPage() {
         </div>
       </section>
 
-      {/* COMMON FAULTS */}
+      {/* EMERGENCY */}
       <section className="py-16 md:py-20">
+        <div className="mx-auto max-w-4xl px-6">
+          <p className={eyebrow}>Emergency</p>
+          <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">
+            Emergency (24/7) AC Repair
+          </h2>
+          <p className="mt-5 text-lg leading-relaxed text-text-muted">
+            When the AC fails in peak summer, call or WhatsApp us any time of
+            day. We respond within an hour and tell you the soonest we can reach
+            you. Send your area, what the unit is doing and a photo of it, and
+            an engineer can start on the likely cause before the visit.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a
+              href={`tel:${PHONE}`}
+              className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 font-semibold text-white hover:bg-primary-dark transition-colors"
+            >
+              <Phone className="h-4 w-4" /> Call Now
+            </a>
+            <a
+              href={waHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-md bg-[#25D366] px-6 py-3 font-semibold text-[#062e14] hover:bg-[#1fad52] transition-colors"
+            >
+              <MessageCircle className="h-4 w-4" /> WhatsApp a Photo of the Unit
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* COMMON FAULTS */}
+      <section className="bg-bg-soft py-16 md:py-20">
         <div className="mx-auto max-w-4xl px-6">
           <p className={eyebrow}>What We Fix</p>
           <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">
-            Common faults we fix
+            Common faults and typical costs
           </h2>
-          <ul className="mt-8 grid gap-3 sm:grid-cols-2">
-            {faults.map((f) => (
-              <li
-                key={f}
-                className="flex items-start gap-3 rounded-lg border border-border bg-white p-4"
-              >
-                <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                <span className="text-sm text-text">{f}</span>
-              </li>
-            ))}
-          </ul>
+          <p className="mt-5 text-lg leading-relaxed text-text-muted">
+            The cost depends on the fault, so we diagnose first and quote the
+            repair in writing before any work begins.
+          </p>
+          <div className="mt-8 overflow-x-auto" tabIndex={0} role="region" aria-label="Common AC faults, likely causes and what we do">
+            <table className="w-full min-w-[640px] border-collapse text-sm">
+              <caption className="sr-only">Common AC faults, likely causes and what we do</caption>
+              <thead className="bg-primary text-left text-white">
+                <tr>
+                  <th scope="col" className="border border-border px-4 py-3 font-semibold">Fault</th>
+                  <th scope="col" className="border border-border px-4 py-3 font-semibold">Likely cause</th>
+                  <th scope="col" className="border border-border px-4 py-3 font-semibold">What we do</th>
+                </tr>
+              </thead>
+              <tbody className="bg-white">
+                {faults.map((f) => (
+                  <tr key={f.fault}>
+                    <th scope="row" className="border border-border px-4 py-3 text-left font-semibold">{f.fault}</th>
+                    <td className="border border-border px-4 py-3 text-text-muted">{f.cause}</td>
+                    <td className="border border-border px-4 py-3 text-text-muted">{f.fix}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 
@@ -210,8 +288,30 @@ export default function AcRepairPage() {
         </div>
       </section>
 
-      {/* PRICING */}
+      {/* REPLACEMENT */}
+      {/* TODO(owner): replacement scope (do you supply and fit new units or compressors?), compressor warranty and lead times. Nothing on the site states these. */}
       <section className="bg-bg-soft py-16 md:py-20">
+        <div className="mx-auto max-w-4xl px-6">
+          <p className={eyebrow}>Repair or Replace</p>
+          <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">
+            AC &amp; Compressor Replacement
+          </h2>
+          <p className="mt-5 text-lg leading-relaxed text-text-muted">
+            A failing compressor is one of the faults we diagnose. Not every
+            failed AC is worth repairing, so where replacing a compressor
+            approaches the cost of a new unit we say so, and give you the
+            reasoning and the price in writing before any work starts. Looking
+            at a new system? See{" "}
+            <Link href="/services/hvac-installation-dubai" className="font-semibold text-primary hover:underline">
+              HVAC installation in Dubai
+            </Link>
+            .
+          </p>
+        </div>
+      </section>
+
+      {/* PRICING */}
+      <section className="py-16 md:py-20">
         <div className="mx-auto max-w-4xl px-6">
           <p className={eyebrow}>Pricing</p>
           <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">
@@ -227,25 +327,34 @@ export default function AcRepairPage() {
       </section>
 
       {/* BRANDS & SYSTEM TYPES */}
-      <section className="py-16 md:py-20">
+      {/* TODO(owner): confirm the brand list (Samsung is not named elsewhere on the site). No dealer/authorised-partner wording. */}
+      <section className="bg-bg-soft py-16 md:py-20">
         <div className="mx-auto max-w-4xl px-6">
           <p className={eyebrow}>Brands &amp; Systems</p>
           <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">
-            Brands and system types
+            Brands we repair
           </h2>
+          <ul className="mt-6 flex flex-wrap gap-3">
+            {brands.map((b) => (
+              <li key={b} className="rounded-full border border-border bg-white px-5 py-2 font-semibold text-text">
+                {b}
+              </li>
+            ))}
+          </ul>
           <p className="mt-5 text-lg leading-relaxed text-text-muted">
             We repair split, ducted and VRF/VRV systems from all major brands,
-            across the UAE.
+            across the UAE. Brand names are trademarks of their owners, listed
+            to show the equipment we work on.
           </p>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="bg-bg-soft py-16 md:py-20">
+      <section className="py-16 md:py-20">
         <div className="mx-auto max-w-4xl px-6">
           <p className={eyebrow}>FAQ</p>
           <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">
-            AC repair FAQs
+            AC repair in Dubai: FAQs
           </h2>
           <div className="mt-8 space-y-3">
             {faqs.map((f) => (
