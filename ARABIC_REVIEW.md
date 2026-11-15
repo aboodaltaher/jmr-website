@@ -380,7 +380,7 @@ Written for search terms «صيانة مكيفات دبي» and «تنظيف د�
 - **Title (54):** «صيانة مكيفات دبي — بإشراف مهندسين وفي نفس اليوم | AGEC» (was «صيانة مكيفات في دبي | خدمة وإصلاح وعقود | AGEC»)
 - **Meta (149):** «صيانة مكيفات في دبي من مهندسين مرخّصين: خدمة وإصلاح وتنظيف وتعبئة غاز وعقود سنوية. الخدمة لمرة واحدة من 350 درهماً للوحدة. اتصل أو راسلنا على واتساب.» The old «استجابة خلال ساعة» was dropped: the English maintenance page makes no one-hour claim (the repair page does).
 - **H1:** «صيانة مكيفات في دبي — خدمة وإصلاح وعقود سنوية» (was «صيانة المكيفات في دبي — خدمة، إصلاح، وعقود»; the definite article was dropped so the phrase matches what people search)
-- **First paragraph:** «تبحث عن صيانة مكيفات في دبي؟ يتولّى مهندسو AGEC المرخّصون الخدمة والإصلاح وتنظيف المبادلات والمجاري وتعبئة الغاز وعقود الصيانة السنوية، ليبقى مكيفك يبرّد بكفاءة ويستهلك كهرباء أقل — في الفلل والشقق والمكاتب.»
+- **First paragraph (owner-approved; opening question dropped):** «يتولّى مهندسو AGEC المرخّصون صيانة مكيفات في دبي: الخدمة والإصلاح وتنظيف المبادلات والمجاري وتعبئة الغاز وعقود الصيانة السنوية، ليبقى مكيفك يبرّد بكفاءة ويستهلك كهرباء أقل — في الفلل والشقق والمكاتب.» The phrase is kept inside the sentence so it stays in the first 100 words.
 - **H2:** «صيانة مكيفات في دبي بإشراف مهندسين مرخّصين» (was «صيانة هندسية موثوقة»)
 
 ### `/ar/ac-duct-cleaning-dubai`
@@ -391,3 +391,27 @@ Written for search terms «صيانة مكيفات دبي» and «تنظيف د�
 - **H2:** «باقات تنظيف دكت المكيف في دبي» (was «اختر التنظيف المناسب لنظامك»)
 
 Not changed: FAQs, Service/FAQ schema, «كل 3 إلى 4 أشهر» on the maintenance page.
+
+## `/ar/services/chiller-maintenance-dubai` — new PPM checklist section (2026-11-15)
+
+Mirrors the English "PPM checklist for chiller maintenance in Dubai" after the owner confirmed the planned-visit tasks. New text, for owner review. «صيانة دورية» is used for planned/PPM maintenance. The existing «زيارات وقائية مخطّطة» wording elsewhere on this page is unchanged.
+
+**H2:** «قائمة الصيانة الدورية للتشيلر في دبي»
+
+**Intro:** «ما تغطّيه كل زيارة صيانة دورية مخطّطة. تُصان التشيلرات المركزية في مناخ دبي عادةً وفق جدول فصلي، مع اهتمام إضافي قبل ذروة الصيف؛ ونحدّد التواتر حسب المحطة ونضمّنه العقد.»
+
+**«جميع التشيلرات»**
+1. فحص الضواغط والكهرباء وأنظمة الأمان
+2. تحليل الفريون وفحص شحنته *(refrigerant analysis)*
+3. أخذ عيّنات من الزيت وفحص حالته *(oil sampling)*
+4. تنظيف أنابيب المكثّف والمبخّر *(tube cleaning)*
+5. استبدال الفلاتر *(filter replacement)*
+6. قياس معدّلات التدفّق وفروق درجات الحرارة مقابل قيم تصميم المحطة
+7. التحقّق من التحكّم والتسلسل وضبط القيم والتعشيقات وقواطع الأمان
+8. تسجيل القراءات وتتبّع اتجاه الأداء من زيارة إلى أخرى، وإصدار تقرير بعد كل زيارة *(performance trending)*
+
+**«المحطات المبرّدة بالماء، إضافةً إلى ما سبق»**
+1. مراجعة حالة مياه المكثّف ومعالجتها للتحكّم في الترسّب والاتّساخ والتآكل
+2. فحص حالة حوض برج التبريد ودائرة مياه المكثّف
+
+Per-item frequencies are not stated (hidden TODO). Only the existing general quarterly schedule is repeated.
