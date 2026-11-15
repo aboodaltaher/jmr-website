@@ -21,8 +21,8 @@ export default function TestingCommissioningBalancing() {
   return (
     <ServiceDetailLayout
       slug="services/tab-testing-adjusting-balancing-dubai"
-      heroImage="/projects/agec-technician-tab-commissioning-airflow-balometer-dubai.jpg"
-      heroImageAlt="AGEC technician performing HVAC testing, commissioning and air balancing with an airflow balometer at a Dubai project"
+      heroImage="/projects/trane-hvac-controls-commissioning-dubai.jpg"
+      heroImageAlt="Trane wired controller at a Dubai project during commissioning, showing set temperature and status"
       ctaBar
       title="HVAC Testing, Commissioning & Air Balancing in Dubai"
       intro="Measured airflow and water flow set and proven to their design figures, controls verified, and the whole system commissioned — with a documented report to prove it."

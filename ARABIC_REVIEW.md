@@ -426,3 +426,9 @@ Changes, so you can review them. The Arabic ducting page has no keyword of its o
 - **Ducting first paragraph (new):** «AGEC مقاول دكت تكييف في دبي: نركّب مجاري الهواء ونصنّعها ونعدّلها، من الحديد المجلفن (GI) والألواح المعزولة مسبقاً، للفلل والمكاتب والمحلات والمباني التجارية في أنحاء الإمارات.» The second paragraph now starts «نعمل من منطلق هندسي:» so the "who we are" sentence is not repeated.
 - **Ducting H2:** «مقاول دكت تكييف في دبي: ما نركّبه ونصنّعه» (was «ما الذي نركّبه ونصنّعه»)
 - **Installation meta (147):** trimmed from 157 by dropping «التنفيذية» from «المخططات التنفيذية»; no other change.
+
+## Photo replacements (2026-11-15): Arabic alt text for review
+
+The photos that showed the old JMR name were replaced (see PR "Replace JMR-branded photos"). New Arabic alt texts:
+- `/ar/ac-duct-cleaning-dubai` hero (grille cleaning photo): «فني AGEC يفكّ شبكة تكييف لتنظيفها مع حماية الأرضية»
+- `/ar/about` panel (duct cleaning equipment photo): «فنّي AGEC يجهّز معدات تنظيف مجاري التكييف في شقة بدبي»
