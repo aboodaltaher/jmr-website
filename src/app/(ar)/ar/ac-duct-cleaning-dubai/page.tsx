@@ -11,9 +11,9 @@ const SITE_URL = "https://agec.ae";
 const ROUTE = "/ar/ac-duct-cleaning-dubai";
 
 export const metadata = buildMetadata({
-  title: "تنظيف مجاري التكييف في دبي | فلل ومكاتب | AGEC",
+  title: "تنظيف دكت المكيف في دبي | فلل ومكاتب | AGEC",
   description:
-    "تنظيف مجاري التكييف في دبي: تنظيف كامل للمجاري والمبادلات والتصريف مع التعقيم وتقرير إنجاز مكتوب للفلل والشقق والمكاتب. اطلب عرض سعر.",
+    "تنظيف دكت المكيف في دبي: تنظيف الدكت والمبادلات وصينية التصريف مع التعقيم وتقرير إنجاز مكتوب للفلل والشقق والمكاتب. اطلب عرض سعر أو أرسل صور الفتحات.",
   path: ROUTE,
   locale: "ar_AE",
   languages: {
@@ -122,11 +122,12 @@ export default function ArabicDuctCleaning() {
           <div>
             <p className={eyebrow}>دبي والإمارات · فلل وشقق ومكاتب</p>
             <h1 className="mt-4 font-heading text-4xl font-bold leading-[1.2] md:text-6xl">
-              تنظيف مجاري التكييف في دبي مع تقرير إنجاز
+              تنظيف دكت المكيف في دبي مع تقرير إنجاز
             </h1>
             <p className="mt-6 max-w-xl text-lg text-white/70">
-              تنظيف كامل للمجاري والمبادلات والتصريف مع التعقيم — وتقرير مكتوب بما
-              نظّفناه ووجدناه. للفلل والشقق والمكاتب في جميع أنحاء الإمارات.
+              تنظيف دكت المكيف (مجاري التكييف) يشمل الدكت والمبادلات والتصريف مع
+              التعقيم، ثم نسلّمك تقريراً مكتوباً بما نظّفناه وما وجدناه. للفلل والشقق
+              والمكاتب في جميع أنحاء الإمارات.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href={`tel:${PHONE}`} className="inline-flex items-center gap-2 rounded-md bg-primary px-7 py-4 font-semibold text-white hover:bg-primary-dark transition-colors">
@@ -190,7 +191,7 @@ export default function ArabicDuctCleaning() {
       <section className="py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
           <p className={eyebrow}>باقات التنظيف</p>
-          <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">اختر التنظيف المناسب لنظامك</h2>
+          <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">باقات تنظيف دكت المكيف في دبي</h2>
           <p className="mt-4 max-w-2xl text-text-muted">
             كل باقة تشمل تعقيماً احترافياً وتقرير إنجاز مكتوب. يعتمد السعر على عدد
             الوحدات والنظام، لذلك نسعّر بعد معرفة تفاصيل منظومتك — أرسل صور الفتحات

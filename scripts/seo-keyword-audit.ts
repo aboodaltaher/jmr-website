@@ -369,6 +369,24 @@ if (markerPages.length) {
   );
 }
 L.push("");
+L.push("## Next batch: Arabic twins (owner priority order)");
+L.push("");
+L.push("English pages with no Arabic twin yet. Not started; translate in this order. A row's status turns to \"published\" once the Arabic page is in the sitemap.");
+L.push("");
+L.push("| # | English page | Arabic page to create | Status |");
+L.push("|---|---|---|---|");
+const ARABIC_NEXT_BATCH: [string, string][] = [
+  ["/hvac-contractor-abu-dhabi", "/ar/hvac-contractor-abu-dhabi"],
+  ["/hvac-contractor-sharjah", "/ar/hvac-contractor-sharjah"],
+  ["/hvac-contractor-ajman", "/ar/hvac-contractor-ajman"],
+  ["/kitchen-exhaust-cleaning-dubai", "/ar/kitchen-exhaust-cleaning-dubai"],
+  ["/ac-maintenance/business-bay", "/ar/ac-maintenance/business-bay"],
+  ["/ac-maintenance/al-barsha", "/ar/ac-maintenance/al-barsha"],
+];
+ARABIC_NEXT_BATCH.forEach(([en, ar], i) => {
+  L.push(`| ${i + 1} | \`${en}\` | \`${ar}\` | ${sitemapPaths.has(ar) ? "published" : "not started"} |`);
+});
+L.push("");
 L.push("## Method");
 L.push("");
 L.push(

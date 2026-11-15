@@ -68,9 +68,9 @@ export const staticRoutes: RouteEntry[] = [
 // still gated) falls back to its English twin's date in sitemap.ts.
 export const arabicRoutes: RouteEntry[] = [
   { path: "/ar", updatedAt: "2026-11-14" },
-  { path: "/ar/ac-maintenance-dubai", updatedAt: "2026-11-14" },
+  { path: "/ar/ac-maintenance-dubai", updatedAt: "2026-11-15" },
   { path: "/ar/ac-repair-dubai", updatedAt: "2026-11-14" },
-  { path: "/ar/ac-duct-cleaning-dubai", updatedAt: "2026-11-05" },
+  { path: "/ar/ac-duct-cleaning-dubai", updatedAt: "2026-11-15" },
   { path: "/ar/ac-amc-dubai", updatedAt: "2026-11-15" },
   { path: "/ar/services", updatedAt: "2026-11-14" },
   { path: "/ar/about", updatedAt: "2026-11-05" },

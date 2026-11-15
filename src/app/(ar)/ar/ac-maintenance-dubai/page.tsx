@@ -10,9 +10,9 @@ const SITE_URL = "https://agec.ae";
 const ROUTE = "/ar/ac-maintenance-dubai";
 
 export const metadata = buildMetadata({
-  title: "صيانة مكيفات في دبي | خدمة وإصلاح وعقود | AGEC",
+  title: "صيانة مكيفات دبي — بإشراف مهندسين وفي نفس اليوم | AGEC",
   description:
-    "صيانة احترافية للمكيفات في دبي من مهندسين مرخّصين: خدمة، إصلاح، تنظيف، وعقود سنوية. خدمة لمرة واحدة من 350 درهماً للوحدة. استجابة خلال ساعة.",
+    "صيانة مكيفات في دبي من مهندسين مرخّصين: خدمة وإصلاح وتنظيف وتعبئة غاز وعقود سنوية. الخدمة لمرة واحدة من 350 درهماً للوحدة. اتصل أو راسلنا على واتساب.",
   path: ROUTE,
   locale: "ar_AE",
   languages: {
@@ -118,12 +118,12 @@ export default function ArabicAcMaintenance() {
         <div className="relative mx-auto max-w-7xl px-6 py-16 md:py-24">
           <p className={eyebrow}>دبي والإمارات · خدمة في نفس اليوم وطوارئ</p>
           <h1 className="mt-4 max-w-3xl font-heading text-4xl font-bold leading-[1.2] md:text-6xl">
-            صيانة المكيفات في دبي — خدمة، إصلاح، وعقود
+            صيانة مكيفات في دبي — خدمة وإصلاح وعقود سنوية
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-white/70">
-            حافظ على برودة مكيفك وكفاءته مع صيانة احترافية من مهندسين مرخّصين:
-            خدمة، إصلاحات، تنظيف مبادلات ومجاري، تعبئة غاز، وعقود صيانة سنوية — للفلل
-            والشقق والمنشآت التجارية.
+            يتولّى مهندسو AGEC المرخّصون صيانة مكيفات في دبي: الخدمة والإصلاح
+            وتنظيف المبادلات والمجاري وتعبئة الغاز وعقود الصيانة السنوية، ليبقى
+            مكيفك يبرّد بكفاءة ويستهلك كهرباء أقل — في الفلل والشقق والمكاتب.
           </p>
           <p className="mt-5 inline-flex flex-wrap items-baseline gap-2 rounded-lg bg-white/10 px-4 py-2.5 text-base font-semibold text-white">
             خدمة لمرة واحدة من 350 درهماً للوحدة
@@ -144,7 +144,7 @@ export default function ArabicAcMaintenance() {
       <section className="py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
           <p className={eyebrow}>لماذا AGEC</p>
-          <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">صيانة هندسية موثوقة</h2>
+          <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">صيانة مكيفات في دبي بإشراف مهندسين مرخّصين</h2>
           <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {whyCards.map((c) => (
               <div key={c.title}>

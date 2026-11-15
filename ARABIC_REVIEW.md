@@ -372,6 +372,26 @@ Plural-polite («لديكم / تحتاجونه / يمكنكم») in the new text
 "Every 3–4 months" stays on `/ac-maintenance-dubai`, `/ar/ac-maintenance-dubai` and the blog posts: general servicing advice, not the AMC recommendation.
 The Arabic chiller page («زيارات وقائية مخطّطة») still uses the older wording; not part of this PR.
 
+## `/ar/ac-maintenance-dubai` and `/ar/ac-duct-cleaning-dubai` — keyword pass (2026-11-15)
+
+Written for search terms «صيانة مكيفات دبي» and «تنظيف دكت المكيف», not translated from the English. No new claims. «دكت» is the word people search with in the Gulf, so it leads the duct page's title, H1 and first paragraph; the existing «مجاري التكييف» wording stays elsewhere on the page and appears once in the first paragraph as a gloss.
+
+### `/ar/ac-maintenance-dubai`
+- **Title (54):** «صيانة مكيفات دبي — بإشراف مهندسين وفي نفس اليوم | AGEC» (was «صيانة مكيفات في دبي | خدمة وإصلاح وعقود | AGEC»)
+- **Meta (149):** «صيانة مكيفات في دبي من مهندسين مرخّصين: خدمة وإصلاح وتنظيف وتعبئة غاز وعقود سنوية. الخدمة لمرة واحدة من 350 درهماً للوحدة. اتصل أو راسلنا على واتساب.» The old «استجابة خلال ساعة» was dropped: the English maintenance page makes no one-hour claim (the repair page does).
+- **H1:** «صيانة مكيفات في دبي — خدمة وإصلاح وعقود سنوية» (was «صيانة المكيفات في دبي — خدمة، إصلاح، وعقود»; the definite article was dropped so the phrase matches what people search)
+- **First paragraph (owner-approved; opening question dropped):** «يتولّى مهندسو AGEC المرخّصون صيانة مكيفات في دبي: الخدمة والإصلاح وتنظيف المبادلات والمجاري وتعبئة الغاز وعقود الصيانة السنوية، ليبقى مكيفك يبرّد بكفاءة ويستهلك كهرباء أقل — في الفلل والشقق والمكاتب.» The phrase is kept inside the sentence so it stays in the first 100 words.
+- **H2:** «صيانة مكيفات في دبي بإشراف مهندسين مرخّصين» (was «صيانة هندسية موثوقة»)
+
+### `/ar/ac-duct-cleaning-dubai`
+- **Title (43):** «تنظيف دكت المكيف في دبي | فلل ومكاتب | AGEC» (was «تنظيف مجاري التكييف في دبي | فلل ومكاتب | AGEC»)
+- **Meta (149):** «تنظيف دكت المكيف في دبي: تنظيف الدكت والمبادلات وصينية التصريف مع التعقيم وتقرير إنجاز مكتوب للفلل والشقق والمكاتب. اطلب عرض سعر أو أرسل صور الفتحات.»
+- **H1:** «تنظيف دكت المكيف في دبي مع تقرير إنجاز»
+- **First paragraph:** «تنظيف دكت المكيف (مجاري التكييف) يشمل الدكت والمبادلات والتصريف مع التعقيم، ثم نسلّمك تقريراً مكتوباً بما نظّفناه وما وجدناه. للفلل والشقق والمكاتب في جميع أنحاء الإمارات.»
+- **H2:** «باقات تنظيف دكت المكيف في دبي» (was «اختر التنظيف المناسب لنظامك»)
+
+Not changed: FAQs, Service/FAQ schema, «كل 3 إلى 4 أشهر» on the maintenance page.
+
 ## `/ar/services/chiller-maintenance-dubai` — new PPM checklist section (2026-11-15)
 
 Mirrors the English "PPM checklist for chiller maintenance in Dubai" after the owner confirmed the planned-visit tasks. New text, for owner review. «صيانة دورية» is used for planned/PPM maintenance. The existing «زيارات وقائية مخطّطة» wording elsewhere on this page is unchanged.
