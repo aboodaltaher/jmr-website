@@ -26,8 +26,7 @@ Footer legal: «© {year} AGEC Technical Services L.L.C. · رخصة تجاري�
 جميع الحقوق محفوظة.»
 Mobile bar: اتصل · واتساب · aria: «اتصل بـ AGEC» / «تواصل مع AGEC على واتساب»
 
-> NOTE for reviewer: the company's own Arabic rendering of "Altaher" is written here as
-> «التاهر». Confirm whether you prefer «الطاهر». (English keeps "Altaher Ghabboun".)
+> (The old company name "Altaher Ghabboun Engineering Contracting" was removed from the site, English and Arabic, at the owner's request.)
 
 ## 2. Forms (shared, bilingual)
 
@@ -469,3 +468,10 @@ The English pages gained prices and six symptom sections. The Arabic twins were 
 ## Phase 2b (2026-11-15): no Arabic changes
 
 The new Mira Oasis, Al Wasl and Sustainable City area pages and the photo additions are English only. Nothing in `/ar/*` changed in this step.
+
+## Old company name removed (2026-11-15) — Arabic changes for your review
+
+Removed «التاهر غبون للمقاولات الهندسية» from:
+- `/ar` hero: «شركة AGEC تقدّم حلول التكييف والتهوية…»
+- `/ar/about` meta: «AGEC مقاول تكييف وكهروميكانيك وصيانة في دبي…»
+- `/ar/about` intro: «تأسّست في دبي عام 2022 على يد {FOUNDER}، وAGEC شركة مقاولات تكييف…»

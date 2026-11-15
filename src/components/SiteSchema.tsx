@@ -21,7 +21,7 @@ const schema = {
       "@id": `${SITE_URL}/#organization`,
       name: business.name,
       legalName: business.legalName,
-      alternateName: business.alternateName,
+      alternateName: business.brand,
       url: SITE_URL,
       logo: { "@type": "ImageObject", url: `${SITE_URL}/agec-logo.png` },
       email: business.email,
@@ -33,7 +33,7 @@ const schema = {
       "@id": `${SITE_URL}/#business`,
       name: business.name,
       legalName: business.legalName,
-      alternateName: business.alternateName,
+      alternateName: business.brand,
       description:
         "Dubai-based HVAC contractor providing design, installation, testing & commissioning, and maintenance for VRF, VRV, chillers, ducted splits, DX units, and ventilation systems across the UAE.",
       url: SITE_URL,

@@ -1,6 +1,6 @@
 import { buildMetadata } from "@/lib/metadata";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { FOUNDER, PROJECTS_DELIVERED, LARGEST_PROJECT_TR, COMPANY_NAME, COMPANY_ALTERNATE, COMPANY_LEGAL } from "@/lib/company";
+import { FOUNDER, PROJECTS_DELIVERED, LARGEST_PROJECT_TR, COMPANY_NAME, COMPANY_LEGAL } from "@/lib/company";
 import { business } from "@/data/business";
 import { isPublished } from "@/data/new-pages";
 import Image from "next/image";
@@ -15,7 +15,7 @@ import {
 export const metadata = buildMetadata({
   title: `About ${COMPANY_NAME} — Engineer-Led HVAC Team`,
   description:
-    `${COMPANY_NAME} (${COMPANY_ALTERNATE}): an engineer-led HVAC team in Dubai. ${PROJECTS_DELIVERED} projects across the UAE since 2022.`,
+    `${COMPANY_NAME}: an engineer-led HVAC team in Dubai. ${PROJECTS_DELIVERED} projects across the UAE since 2022. Meet the team and see our work.`,
   path: "/about",
 });
 
@@ -99,8 +99,7 @@ export default function About() {
             Engineering-led HVAC contracting in Dubai
           </h1>
           <p className="mt-6 max-w-3xl text-xl text-text-muted">
-            Founded in Dubai in 2022 by {FOUNDER}, {COMPANY_NAME} (
-            {COMPANY_ALTERNATE}) is an HVAC contracting company
+            Founded in Dubai in 2022 by {FOUNDER}, {COMPANY_NAME} is an HVAC contracting company
             delivering expert installation, maintenance, and testing &amp;
             commissioning across the UAE.
           </p>

@@ -23,7 +23,6 @@ export const ADDRESS_FULL = addressFull;
 
 export const COMPANY_NAME = business.name;
 export const COMPANY_LEGAL = business.legalName;
-export const COMPANY_ALTERNATE = business.alternateName;
 export const LICENCE_NO = business.licence.number;
 
 // Founder (surname spelling confirmed by owner: "Ghabboun").

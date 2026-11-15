@@ -10,7 +10,6 @@ export const business = {
   /** Public business name — matches the Google Business Profile. */
   name: "AGEC Technical Services",
   legalName: "AGEC Technical Services L.L.C.",
-  alternateName: "Altaher Ghabboun Engineering Contracting",
   /** Short brand used in body copy and the " | AGEC" title suffix. */
   brand: "AGEC",
   url: "https://agec.ae",
