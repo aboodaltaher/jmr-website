@@ -17,7 +17,7 @@ const ROUTE = "/ac-amc-dubai";
 export const metadata = buildMetadata({
   title: "AC AMC Dubai | Annual Maintenance Contracts | AGEC",
   description:
-    "AC AMC in Dubai: annual maintenance contracts for villas, apartments, offices and whole buildings — scheduled visits, written reports and priority repairs.",
+    "AC AMC in Dubai: annual maintenance contracts for villas, apartments and buildings — scheduled visits, service reports with photos and priority repairs.",
   path: ROUTE,
   languages: {
     "en-AE": `${SITE_URL}${ROUTE}`,
@@ -120,7 +120,7 @@ const serviceSchema = {
   name: "AC Annual Maintenance Contract",
   serviceType: "HVAC annual maintenance contract",
   description:
-    "Residential and commercial AC annual maintenance contracts (AMC) in Dubai — scheduled preventive visits, written reports and priority repairs for villas, apartments, offices and whole buildings.",
+    "Residential and commercial AC annual maintenance contracts (AMC) in Dubai — scheduled preventive visits, service reports with photos and priority repairs for villas, apartments, offices and whole buildings.",
   provider: {
     "@type": "Organization",
     name: "AGEC Technical Services",
@@ -140,7 +140,7 @@ const steps = [
   "Written proposal.",
   "Signed agreement.",
   "Scheduled visits.",
-  "Report after every visit.",
+  "Service report with photos after every visit.",
 ];
 
 export default function AcAmcPage() {
@@ -439,7 +439,7 @@ export default function AcAmcPage() {
                         Discount on spare parts
                       </th>
                       <th className="border border-border px-4 py-3 font-semibold">
-                        Written report after every visit
+                        Service report with photos after every visit
                       </th>
                     </tr>
                   </thead>

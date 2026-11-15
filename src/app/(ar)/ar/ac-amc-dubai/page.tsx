@@ -59,7 +59,7 @@ const steps = [
   "عرض مكتوب.",
   "توقيع العقد.",
   "زيارات مجدولة.",
-  "تقرير بعد كل زيارة.",
+  "تقرير خدمة مع صور بعد كل زيارة.",
 ];
 
 const slaTiers = [
@@ -121,7 +121,7 @@ const serviceSchema = {
   name: "عقد صيانة مكيفات سنوي",
   serviceType: "AC Annual Maintenance Contract",
   description:
-    "عقود صيانة سنوية للمكيفات في دبي بزيارات مجدولة وتقارير موثّقة وأولوية في الاستجابة.",
+    "عقود صيانة سنوية للمكيفات في دبي بزيارات مجدولة، وتقرير خدمة مع صور بعد كل زيارة، وأولوية في الاستجابة.",
   url: `${SITE_URL}${ROUTE}`,
   areaServed: { "@type": "Country", name: "United Arab Emirates" },
   provider: {
