@@ -114,6 +114,24 @@ if (isPublished("ducting")) {
       "GI and pre-insulated duct fabrication, SMACNA-based construction, leakage testing and duct modification for fit-outs.",
   });
 }
+if (isPublished("vrfMaintenance")) {
+  services.push({
+    icon: Wrench,
+    name: "VRF Maintenance",
+    href: "/vrf-maintenance-dubai",
+    description:
+      "Preventive maintenance, error-code diagnostics, AMC and 24/7 breakdown support for VRF/VRV systems, including Daikin, Trane, O General, Midea and LG.",
+  });
+}
+if (isPublished("airBalancing")) {
+  services.push({
+    icon: Wind,
+    name: "Air Balancing",
+    href: "/air-balancing-dubai",
+    description:
+      "Airflow measured at every diffuser, grille, FCU and AHU, adjusted to design, with a balancing report for consultant approval.",
+  });
+}
 if (isPublished("mep")) {
   services.push({
     icon: ClipboardCheck,

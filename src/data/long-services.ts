@@ -10,10 +10,12 @@ export interface LongSection {
   h2: string;
   paragraphs: string[];
   bullets?: string[];
+  /** H3 blocks rendered under the paragraphs and bullets. */
+  subsections?: { h3: string; paragraphs?: string[]; bullets?: string[] }[];
 }
 
 export interface LongService {
-  key: "ducting" | "mep" | "kitchen-exhaust";
+  key: "ducting" | "mep" | "kitchen-exhaust" | "vrf-maintenance" | "air-balancing";
   /** English path. */
   path: string;
   metaTitle: string;
@@ -30,6 +32,12 @@ export interface LongService {
   related: { href: string; label: string }[];
   ctaHeading: string;
   ctaText: string;
+  /** Optional: places named in the Service schema (default: Dubai only). */
+  areaServed?: string[];
+  /** Optional: named sub-services listed in the Service schema (no prices). */
+  offerCatalog?: { name: string; items: string[] };
+  /** Optional: real project photos shown after section number `afterSection` (0-based). */
+  figures?: { afterSection: number; src: string; alt: string; caption?: string; fit?: "cover" | "contain" }[];
 }
 
 export const DUCTING: LongService = {
@@ -376,4 +384,448 @@ export const KITCHEN_EXHAUST: LongService = {
   ],
   ctaHeading: "Book a kitchen exhaust clean",
   ctaText: "Tell us about the kitchen and your opening hours.",
+};
+
+// ---------------------------------------------------------------------------------------------
+// VRF maintenance and air balancing (built 2026-11-15; unpublished until the owner approves).
+// {{LICENCE}} is filled from business.ts by LongServicePage, so the number is never typed here.
+// ---------------------------------------------------------------------------------------------
+
+export const VRF_MAINTENANCE: LongService = {
+  "key": "vrf-maintenance",
+  "path": "/vrf-maintenance-dubai",
+  "metaTitle": "VRF Maintenance Dubai | VRV Service, AMC, 24/7 | AGEC",
+  "metaDescription": "VRF maintenance in Dubai: preventive service, error-code diagnostics, AMC and 24/7 breakdown support for Daikin, Trane, O General, Midea and LG systems.",
+  "h1": "VRF Maintenance in Dubai: Service, AMC and 24/7 Breakdown Support",
+  "kicker": "VRF Maintenance · Service · AMC",
+  "serviceType": "VRF and VRV system maintenance",
+  "ctaService": "VRF maintenance",
+  "intro": [
+    "A VRF (or VRV) system cools many zones from one refrigerant circuit. That makes it efficient and flexible, but it also means one neglected outdoor unit, one blocked drain or one communication fault can take a whole floor out of comfort. Planned maintenance is how you find those problems before the summer does.",
+    "AGEC Technical Services provides VRF maintenance in Dubai as an engineer-led HVAC contractor ({{LICENCE}}). We maintain VRF/VRV systems of all types for commercial and residential buildings in Dubai, Sharjah, Ajman, Abu Dhabi, Umm Al Quwain, Ras Al Khaimah and Fujairah, including Daikin VRV, Trane, O General, Midea and LG Multi V. This page covers maintenance, contracts and breakdown support. Planning a new system? See our [VRF/VRV installation service](/services/vrf-vrv-systems)."
+  ],
+  "sections": [
+    {
+      "h2": "VRF Maintenance in Dubai: What Our Service Covers",
+      "paragraphs": [
+        "Every planned visit follows a written preventive maintenance checklist, so every outdoor unit, indoor unit and branch is checked the same way every time and readings can be compared from one visit to the next."
+      ],
+      "subsections": [
+        {
+          "h3": "Outdoor units",
+          "bullets": [
+            "Condenser coil and fins inspected and cleaned to restore heat rejection",
+            "Fan motors, blades, mountings and vibration checked",
+            "Inverter board, PCBs and heat sink inspected for dust, heat marks and loose connections",
+            "Compressor and fan running currents compared with previous readings and nameplate data",
+            "Panels, wiring, terminals and refrigerant pipe insulation inspected"
+          ]
+        },
+        {
+          "h3": "Indoor units",
+          "bullets": [
+            "Filters cleaned or replaced and the indoor coil checked",
+            "Condensate drain pan, drain pipe and drain pump or float switch tested for free flow",
+            "Fan, louvre and electronic expansion valve operation checked",
+            "Room sensors and wired or wireless controllers tested"
+          ]
+        },
+        {
+          "h3": "Refrigerant circuit",
+          "bullets": [
+            "High and low pressures and key temperatures recorded and compared with manufacturer data",
+            "Joints, service valves and connections checked for leaks",
+            "If the system is low on refrigerant we find and repair the leak first; a top-up alone only hides the problem"
+          ]
+        },
+        {
+          "h3": "Controls, communications and error codes",
+          "bullets": [
+            "Current and historic error codes read and logged",
+            "Communication between outdoor units, indoor units and any central controller or BMS interface checked",
+            "Setpoints, schedules and lockouts reviewed against how the building is actually used"
+          ]
+        }
+      ]
+    },
+    {
+      "h2": "Error code diagnostics",
+      "paragraphs": [
+        "VRF systems report faults as codes on the controller or on the outdoor unit display. A code names a circuit, sensor or component; it does not always name the cause. A pressure-sensor code, for example, can come from a refrigerant fault, a failed sensor or a wiring problem.",
+        "We record the code, its history and the operating readings first, trace the fault to its root cause, repair it and only then clear the code. Resetting a system without finding the cause usually brings the same fault back, often on the hottest day.",
+        "We diagnose with manufacturer service software where available (Daikin Service Checker, LG LGMV), plus digital manifold gauges, clamp meters, insulation testers, thermal imaging cameras, electronic leak detectors and nitrogen pressure testing."
+      ]
+    },
+    {
+      "h2": "Signs your VRF system needs service",
+      "paragraphs": [],
+      "bullets": [
+        "Some zones are warm or cool unevenly while others are fine",
+        "An error code shows on a controller or outdoor unit display",
+        "The system trips, restarts or short-cycles",
+        "Water leaks, ice or condensation at indoor units",
+        "Unusual noise or vibration from an outdoor unit",
+        "The outdoor units run flat out but the building still does not cool",
+        "Indoor units drop off the controller or stop communicating",
+        "Electricity use rises without a change in how the building is used"
+      ]
+    },
+    {
+      "h2": "How Dubai's heat affects VRF systems",
+      "paragraphs": [
+        "Outdoor air in Dubai regularly passes 45°C in summer, and that is exactly when a VRF outdoor unit has to reject the most heat. A coil that is slightly dirty in winter becomes a real capacity problem in July.",
+        "This is why we recommend servicing before the summer peak and checking again during it."
+      ],
+      "bullets": [
+        "**Dust and sand** collect on condenser coils and inverter heat sinks, raising pressures and operating temperatures.",
+        "**Direct sun on rooftops** adds to the load on outdoor units, especially where units are packed close together and recirculate their own hot discharge air.",
+        "**Long running hours** wear fan motors, bearings and compressors faster than in cooler climates.",
+        "**Humidity** increases the condensate load, so blocked drains and failing drain pumps show up quickly as ceiling leaks.",
+        "**Coastal air** can corrode fins, fixings and electrical terminals on units near the sea."
+      ]
+    },
+    {
+      "h2": "VRF AMC options",
+      "paragraphs": [
+        "A maintenance contract (AMC) puts the visits on a schedule instead of waiting for a breakdown. For VRF and other building plant, our commercial AMC starts with a baseline audit of your units, then agrees the scope, visit frequency and response targets with you in writing.",
+        "Commercial cover is priced after a site survey, based on the systems, the number of units and the visit frequency, not a fixed per-machine rate. We can also take over from your current contractor with a full audit and baseline report. See the [commercial AMC options](/ac-amc-dubai#commercial-amc)."
+      ],
+      "bullets": [
+        "Response tiers: emergency within 4 hours, urgent same day, routine within 48 hours",
+        "Visit frequency: quarterly preventive maintenance as standard; monthly visits are available for critical sites such as data rooms, hotels and hospitals",
+        "A service report with photos after every visit, for AMC contracts and one-off visits"
+      ]
+    },
+    {
+      "h2": "24/7 breakdown response",
+      "paragraphs": [
+        "If your VRF system stops cooling, call or WhatsApp us at any hour. Tell us the building, the brand, any code on the controller and, if you can, send a photo of the controller or outdoor unit display. Response follows our tiers: emergency within 4 hours, urgent same day, routine within 48 hours."
+      ]
+    },
+    {
+      "h2": "Brands we maintain",
+      "paragraphs": [
+        "We service all VRF/VRV types, including Daikin VRV, Trane, O General, Midea and LG Multi V. Below are the faults and service points we see most often on each brand. Brand names are trademarks of their respective owners and are listed to show the equipment we work on."
+      ],
+      "bullets": [
+        "**Daikin VRV:** inverter PCB faults, refrigerant leaks at branch joints and communication errors between outdoor and indoor units.",
+        "**Trane:** communication wiring faults, electronic expansion valve (EEV) issues, and condenser coils clogged by dust and sand that cause high-pressure trips in summer.",
+        "**O General:** indoor–outdoor communication errors, thermistor/sensor faults, and EEV faults that cause uneven cooling between indoor units.",
+        "**Midea:** outdoor PCB and inverter module faults linked to voltage fluctuations, thermistor faults, and condenser coil fouling.",
+        "**LG Multi V:** high discharge temperature and compressor oil-return issues in peak summer, communication errors, and inverter PCB faults."
+      ]
+    },
+    {
+      "h2": "Why AGEC for VRF maintenance",
+      "paragraphs": [],
+      "bullets": [
+        "Engineer-led service under a licensed HVAC contractor ({{LICENCE}}), established 2022",
+        "33 completed projects across the UAE, including VRF systems such as 224 TR at Basil Mall, Ajman and 109 TR at a villa in Al Mamzar; see our [projects](/projects)",
+        "A service report with photos after every visit, so you keep a maintenance history for each unit",
+        "If a repair changes airflow or refrigerant conditions, we can re-test and rebalance through our [testing, adjusting and balancing](/services/tab-testing-adjusting-balancing-dubai) service"
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How often should a VRF system be serviced in Dubai?",
+      "a": "We recommend quarterly preventive maintenance as standard, with a service before the summer peak. Monthly visits are available for critical sites such as data rooms, hotels and hospitals."
+    },
+    {
+      "q": "Do you maintain VRF brands other than Daikin?",
+      "a": "Yes. We service all VRF/VRV types, including Daikin VRV, Trane, O General, Midea and LG Multi V."
+    },
+    {
+      "q": "Do you provide 24/7 breakdown support for VRF systems?",
+      "a": "Yes. You can call or WhatsApp us at any hour. Tell us the building, the brand and any code on the controller. Response follows our tiers: emergency within 4 hours, urgent same day, routine within 48 hours."
+    },
+    {
+      "q": "What does a VRF maintenance visit include?",
+      "a": "Outdoor unit coil and fan checks, inverter board and PCB inspection, indoor filter and condensate drain checks, refrigerant pressure and temperature readings, error-code logging and a check of communications between units and controllers, followed by a service report with photos."
+    },
+    {
+      "q": "My VRF controller shows an error code. What should I do?",
+      "a": "Note the code and which unit shows it, and avoid repeatedly resetting the system. Call us or send a photo of the controller. A code names a circuit or component, not always the cause, so we check the readings before clearing it."
+    },
+    {
+      "q": "How is a VRF AMC priced?",
+      "a": "After a site survey. Commercial maintenance pricing depends on the systems, the number of units and the visit frequency, so we quote once we have seen the plant."
+    },
+    {
+      "q": "Can you take over VRF maintenance from my current contractor?",
+      "a": "Yes. We start with a baseline audit of every unit, document its condition and any defects, then agree the scope, visit schedule and response targets with you in writing."
+    }
+  ],
+  "related": [
+    {
+      "href": "/ac-amc-dubai#commercial-amc",
+      "label": "Commercial maintenance and AMC"
+    },
+    {
+      "href": "/services/chiller-maintenance-dubai",
+      "label": "Chiller maintenance"
+    },
+    {
+      "href": "/services/tab-testing-adjusting-balancing-dubai",
+      "label": "Testing, commissioning and balancing"
+    }
+  ],
+  "ctaHeading": "Book a VRF service",
+  "ctaText": "Call, WhatsApp or request a quote for VRF maintenance, a contract or breakdown support.",
+  "areaServed": [
+    "Dubai",
+    "Sharjah",
+    "Ajman",
+    "Abu Dhabi",
+    "Umm Al Quwain",
+    "Ras Al Khaimah",
+    "Fujairah"
+  ],
+  "offerCatalog": {
+    "name": "VRF/VRV maintenance",
+    "items": [
+      "Daikin VRV maintenance",
+      "Trane VRF maintenance",
+      "O General VRF maintenance",
+      "Midea VRF maintenance",
+      "LG Multi V maintenance",
+      "VRF error-code diagnostics",
+      "VRF AMC (annual maintenance contract)",
+      "24/7 VRF breakdown support"
+    ]
+  },
+  "figures": [
+    {
+      "afterSection": 0,
+      "src": "/projects/daikin-vrv-x-business-bay-dubai-rooftop-installation.jpg",
+      "alt": "Two Daikin VRV X outdoor units on a rooftop in Business Bay, Dubai, with insulated refrigerant pipework"
+    },
+    {
+      "afterSection": 1,
+      "src": "/projects/trane-hvac-controls-commissioning-dubai.jpg",
+      "alt": "Trane wired controller on a wall in a Dubai project, showing set temperature and status"
+    },
+    {
+      "afterSection": 6,
+      "src": "/projects/trane-outdoor-units-rooftop-array-dubai.jpg",
+      "alt": "Trane outdoor units on a Dubai rooftop with insulated refrigerant pipes and neighbouring plant"
+    }
+  ]
+};
+
+export const AIR_BALANCING: LongService = {
+  "key": "air-balancing",
+  "path": "/air-balancing-dubai",
+  "metaTitle": "Air Balancing Dubai | Airflow Testing & Reports | AGEC",
+  "metaDescription": "Air balancing in Dubai: airflow measured at every diffuser, grille, FCU and AHU, adjusted to design and signed off in a report for consultant approval.",
+  "h1": "Air Balancing in Dubai: Airflow Testing and Balancing Reports",
+  "kicker": "Air Balancing · Airflow Testing",
+  "serviceType": "HVAC air balancing and airflow testing",
+  "ctaService": "air balancing",
+  "intro": [
+    "Air balancing measures how much air each diffuser, grille, coil and fan is actually moving, then adjusts the system until it matches the design airflow on the consultant's drawings. Until that is done, an air conditioning system is only installed, not proven: some rooms stay warm, others run cold and noisy, and the plant works harder than it should.",
+    "AGEC Technical Services provides air balancing in Dubai as a service in its own right, and in Sharjah, Ajman, Abu Dhabi, Umm Al Quwain, Ras Al Khaimah and Fujairah. We are an engineer-led HVAC contractor ({{LICENCE}}), established 2022. If you also need water-side balancing, commissioning and functional tests, see our full [testing and commissioning (TAB) service](/services/tab-testing-adjusting-balancing-dubai)."
+  ],
+  "sections": [
+    {
+      "h2": "What is air balancing?",
+      "paragraphs": [
+        "Air balancing is the part of testing, adjusting and balancing that deals with air. An engineer measures the airflow at each supply, return and exhaust terminal, compares it with the design figure, and adjusts dampers and fan speeds until each space gets what it was designed to get. Every measurement is recorded before and after adjustment, so the result is documented rather than assumed.",
+        "A system can be built exactly to the drawings and still be out of balance. Ducts differ in length and resistance, dampers are left in the wrong position and fans run off their design point. Balancing corrects that."
+      ]
+    },
+    {
+      "h2": "Signs your system is out of balance",
+      "paragraphs": [
+        "None of these proves the cause on its own. Measuring the airflow does: it shows whether the problem is distribution, which balancing fixes, or something else such as a sizing error, duct leakage or an equipment fault, which we report so it can be dealt with."
+      ],
+      "bullets": [
+        "Some rooms never reach the set temperature while others overcool",
+        "Diffusers whistle, rattle or blow hard, while others in the same room barely move",
+        "Draughts in one area and stale, stuffy air in another",
+        "Fans running at high speed without delivering the airflow on the drawings",
+        "Doors that pull shut or slam because the pressure between spaces is off",
+        "Higher fan energy than the design predicted"
+      ]
+    },
+    {
+      "h2": "When you need air balancing",
+      "paragraphs": [],
+      "bullets": [
+        "**Handover of a new building or floor**, where the airflow must be proven to the design before sign-off",
+        "**Fit-outs and partition changes**, which alter duct runs, terminals and the air each room receives",
+        "**Comfort complaints**: rooms that never cool, rooms that overcool, noisy diffusers, draughts, or stuffy spaces",
+        "**Consultant or authority requirements** for a signed balancing report",
+        "**After duct modifications or equipment changes**, when the old balance no longer applies",
+        "**High CO₂ or poor fresh-air supply**, where outdoor-air quantity needs measuring (see [ventilation and fresh air](/services/ventilation-fresh-air))"
+      ]
+    },
+    {
+      "h2": "Air Balancing in Dubai: Our Method",
+      "paragraphs": [],
+      "subsections": [
+        {
+          "h3": "1. Review the design",
+          "paragraphs": [
+            "We start from the consultant's drawings and design airflows for each terminal, coil and fan. Where there are no drawings we survey the system and agree reference values with you first."
+          ]
+        },
+        {
+          "h3": "2. Pre-checks",
+          "paragraphs": [
+            "Before measuring we confirm the system is ready: filters in place and clean, dampers and fire dampers open, ductwork complete, fans rotating the right way and the system running in a representative mode."
+          ]
+        },
+        {
+          "h3": "3. Measure at diffusers and grilles",
+          "paragraphs": [
+            "Supply, return and exhaust airflow is measured at every terminal with a capture hood, and with an anemometer where a hood cannot be used. We record initial readings for the report."
+          ]
+        },
+        {
+          "h3": "4. Measure at FCUs, AHUs and FAHUs",
+          "paragraphs": [
+            "Airflow at fan coil units, air handling units and fresh air handling units is measured and compared with the design duty, including the outdoor-air quantity on fresh-air units."
+          ]
+        },
+        {
+          "h3": "5. Check static pressure and fan speed",
+          "paragraphs": [
+            "Duct static pressure and fan speed are read to see where the fan is working against its design point. This often explains why a branch is starved or noisy."
+          ]
+        },
+        {
+          "h3": "6. Adjust and re-measure",
+          "paragraphs": [
+            "We set balancing dampers and fan speeds, then re-measure every point, repeating until each terminal is within the acceptance tolerance (±10% of design airflow unless your specification or consultant requires tighter). The final readings go in the report."
+          ]
+        }
+      ]
+    },
+    {
+      "h2": "Instruments and calibration",
+      "paragraphs": [
+        "We use an airflow capture hood (balometer), an anemometer, a digital manometer or static pressure gauge and a tachometer. Instruments are calibrated, and calibration certificates are attached to every final balancing report, with the model and calibration details for each instrument used."
+      ]
+    },
+    {
+      "h2": "Standards we work to",
+      "paragraphs": [
+        "Specifications in the UAE usually name an air balancing procedure. Our procedures follow AABC/NEBB and ASHRAE guidelines, together with SMACNA and CIBSE guidance, and we balance to the design values and tolerances in your specification."
+      ]
+    },
+    {
+      "h2": "What you receive",
+      "paragraphs": [
+        "You receive a balancing report, signed by the engineer who carried out the work, that your consultant can review and approve. Acceptance tolerance is ±10% of design airflow at terminals, unless the project specification or consultant requires a tighter tolerance. See the [sample report format (PDF)](/sample-air-balancing-report.pdf); the values in it are illustrative only. The report includes:"
+      ],
+      "bullets": [
+        "Project details, drawing reference and system tested",
+        "Design, initial and final airflow for every terminal, with the deviation",
+        "Fan and system readings, including static pressure and fan speed",
+        "Instruments used, with calibration certificates attached",
+        "Observations and recommendations, for example an obstructed return grille or a fan that cannot reach its design duty"
+      ]
+    },
+    {
+      "h2": "Who we work with",
+      "paragraphs": [],
+      "bullets": [
+        "**MEP contractors** who need a balancing sub-contractor to prove their installation before handover",
+        "**Consultants** who need an independent, measured report against their design",
+        "**Fit-out companies** adjusting an existing system after partitions and ceilings change",
+        "**Facility managers** investigating comfort complaints in occupied buildings"
+      ]
+    },
+    {
+      "h2": "Air balancing or full TAB?",
+      "paragraphs": [
+        "Air balancing covers airflow only. Full testing, adjusting and balancing adds water-side balancing, equipment commissioning, controls verification and functional performance testing. If your project needs more than airflow, our [TAB and commissioning service](/services/tab-testing-adjusting-balancing-dubai) covers it under one team. You can also see our [projects](/projects)."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What is air balancing?",
+      "a": "Adjusting an HVAC system so each room and branch receives the airflow it was designed for, then recording the measured results in a report."
+    },
+    {
+      "q": "When do I need air balancing?",
+      "a": "At handover of a new building or floor, after a fit-out or duct modification, when rooms are unevenly cooled or noisy, or when a consultant or authority requires a signed balancing report."
+    },
+    {
+      "q": "What instruments do you use?",
+      "a": "An airflow capture hood (balometer), an anemometer, a digital manometer or static pressure gauge and a tachometer. Calibration certificates are attached to the final report."
+    },
+    {
+      "q": "Do you work to the consultant's design?",
+      "a": "Yes. We balance to the design values on the approved drawings and report any difference, so the consultant can review and approve."
+    },
+    {
+      "q": "Do you balance existing buildings, not only new ones?",
+      "a": "Yes. We balance occupied buildings after fit-outs, modifications or comfort complaints."
+    },
+    {
+      "q": "How long does air balancing take?",
+      "a": "It depends on the size of the system and the number of terminals. We confirm the time after reviewing the drawings or a site visit, before work starts."
+    },
+    {
+      "q": "What is the difference between air balancing and TAB?",
+      "a": "Air balancing covers airflow only. TAB (testing, adjusting and balancing) also covers water-side balancing, commissioning, controls verification and performance testing."
+    }
+  ],
+  "related": [
+    {
+      "href": "/services/tab-testing-adjusting-balancing-dubai",
+      "label": "Testing, commissioning and balancing"
+    },
+    {
+      "href": "/services/ventilation-fresh-air",
+      "label": "Ventilation and fresh air"
+    },
+    {
+      "href": "/services/hvac-design",
+      "label": "HVAC design and consultancy"
+    }
+  ],
+  "ctaHeading": "Book air balancing",
+  "ctaText": "Call, WhatsApp or request a quote for air balancing and airflow testing.",
+  "areaServed": [
+    "Dubai",
+    "Sharjah",
+    "Ajman",
+    "Abu Dhabi",
+    "Umm Al Quwain",
+    "Ras Al Khaimah",
+    "Fujairah"
+  ],
+  "offerCatalog": {
+    "name": "Air balancing services",
+    "items": [
+      "Airflow measurement at diffusers and grilles",
+      "Damper and fan adjustment to design airflow",
+      "FCU, AHU and FAHU airflow balancing",
+      "Duct static pressure measurement",
+      "Air balancing report for consultant approval"
+    ]
+  },
+  "figures": [
+    {
+      "afterSection": 0,
+      "src": "[TO CONFIRM: AGEC balometer photo — path under /projects, with an AGEC-branded technician]",
+      "alt": "AGEC technician measuring supply airflow at a ceiling diffuser with an airflow capture hood in a Dubai office"
+    },
+    {
+      "afterSection": 3,
+      "src": "/projects/fresh-air-handling-unit-fahu-dubai-agec.jpg",
+      "alt": "Fresh air handling unit installed by AGEC on a commercial project in Dubai"
+    },
+    {
+      "afterSection": 7,
+      "src": "/images/sample-air-balancing-report-page-1.png",
+      "alt": "Sample AGEC air balancing report showing design, initial and final airflow for each terminal",
+      "caption": "Page 1 of the sample report. All values are illustrative.",
+      "fit": "contain"
+    }
+  ]
 };
