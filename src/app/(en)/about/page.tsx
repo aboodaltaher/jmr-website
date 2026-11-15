@@ -13,9 +13,9 @@ import {
 } from "lucide-react";
 
 export const metadata = buildMetadata({
-  title: "About AGEC | HVAC Contractor in Dubai",
+  title: `About ${COMPANY_NAME} — Engineer-Led HVAC Team`,
   description:
-    `AGEC (${COMPANY_ALTERNATE}): HVAC contractor (air conditioning, ventilation and air filtration). ${PROJECTS_DELIVERED} projects across the UAE since 2022.`,
+    `${COMPANY_NAME} (${COMPANY_ALTERNATE}): an engineer-led HVAC team in Dubai. ${PROJECTS_DELIVERED} projects across the UAE since 2022.`,
   path: "/about",
 });
 

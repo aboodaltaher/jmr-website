@@ -38,7 +38,7 @@ const amcConfig = {
     "Refrigerant pressure check",
     "Electrical and control check",
     "Performance test",
-    "Written service report after every visit",
+    "Service report with photos after every visit",
   ],
   excluded: [
     "Spare parts and components",
@@ -98,11 +98,11 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: "What do building managers receive after each visit?",
-    a: "A written service report after every visit, documented for the facilities team. It is the record facility managers need for audits and budgeting.",
+    a: "A service report with photos after every visit, documented for the facilities team. It is the record facility managers need for audits and budgeting.",
   },
   {
     q: "Who do we contact if a unit fails in the building?",
-    a: "AMC customers have a response line and a response level matched to how critical the system is, and you can reach us 24/7 by call or WhatsApp. The response level for a building is part of the quote after the site survey.",
+    a: "You can reach us 24/7 by call or WhatsApp. Commercial AMC response tiers are: emergency within 4 hours, urgent the same day, and routine within 48 hours.",
   },
   {
     q: "Do you survey the building before quoting a commercial AMC?",
@@ -331,8 +331,9 @@ export default function AcAmcPage() {
                     VRF/VRV, AHUs, FCUs and ventilation
                   </th>
                   <td className="py-3 text-text-muted">
-                    Set per site after the survey, based on the number and type of
-                    units.
+                    Filter cleaning on FCUs and indoor units: quarterly. Other
+                    visits are set per site after the survey, based on the number
+                    and type of units.
                   </td>
                 </tr>
                 <tr className="border-b border-border">
@@ -351,27 +352,41 @@ export default function AcAmcPage() {
               </tbody>
             </table>
           </div>
-          {/* TODO(owner): PPM visit frequency per plant type for buildings (VRF/VRV, AHU/FCU, ventilation, chillers) and the task list per plant type. Only the residential visit counts and the task list already stated on this page are shown; the other rows say "set per site". */}
+          {/* TODO(owner): PPM visit frequency and task list per plant type for buildings (VRF/VRV outdoor units, AHUs, ventilation, chillers). Only the residential visit counts, the task list stated on this page and the quarterly FCU / indoor-unit filter cleaning are shown; the rest says "set per site". */}
 
-          <h3 className="mt-10 font-heading text-2xl font-bold">SLA response levels</h3>
+          <h3 className="mt-10 font-heading text-2xl font-bold">SLA response tiers</h3>
+          <div className="mt-4 overflow-x-auto">
+            <table className="w-full min-w-[20rem] text-left text-sm">
+              <thead>
+                <tr className="border-b border-border text-xs uppercase tracking-wider text-text-muted">
+                  <th className="py-3 pr-4 font-semibold">Tier</th>
+                  <th className="py-3 font-semibold">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ["Emergency", "Within 4 hours"],
+                  ["Urgent", "Same day"],
+                  ["Routine", "Within 48 hours"],
+                ].map(([tier, response]) => (
+                  <tr key={tier} className="border-b border-border">
+                    <th scope="row" className="py-3 pr-4 font-medium">{tier}</th>
+                    <td className="py-3 text-text-muted">{response}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
           <p className="mt-3 text-text-muted">
-            Response on our standard plans:{" "}
-            {amcConfig.plans
-              .map((pl) => `${pl.name}: ${pl.response.replace(/^Response /, "").replace(/^S/, "s")}`)
-              .join("; ")}
-            .
-            For a building, the SLA is matched to how critical the system is, and
-            the response level you need is part of the quote after a site
-            survey.
+            The SLA is matched to how critical each system is, and the response
+            level you need is part of the quote after a site survey.
           </p>
-          {/* TODO(owner): the commercial SLA tiers (for example emergency / urgent / routine response times in hours). None is stated on the site, so only the plan response levels above are shown. */}
 
           <h3 className="mt-10 font-heading text-2xl font-bold">Reporting for facilities teams</h3>
           <p className="mt-3 text-text-muted">
-            A written, documented report after every visit — the record
+            A service report with photos after every visit — the record
             facility managers need for audits and budgeting.
           </p>
-          {/* TODO(owner): do you export or integrate with a CAFM / facility-management system, and do you keep an asset log per site? If yes, say so here (for example "PPM reports and asset logs after every visit"). Until confirmed, nothing beyond the written report is claimed. */}
 
           <p className="mt-8 text-text-muted">
             Commercial cover is quoted after a site survey, based on the number

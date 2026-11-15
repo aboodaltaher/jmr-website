@@ -15,7 +15,7 @@ import { PROJECTS_DELIVERED, LARGEST_PROJECT_TR } from "@/lib/company";
 import { capacityProjects } from "@/data/project-capacity";
 
 export const metadata = buildMetadata({
-  title: "HVAC & AC Installation in Dubai — Design to Handover | AGEC",
+  title: "HVAC Installation Dubai — AC, Ducted & VRF | AGEC",
   description:
     "HVAC and AC installation in Dubai: split, ducted, VRF and chilled-water systems, commissioned and handed over with test sheets and as-built drawings.",
   path: "/services/hvac-installation-dubai",
@@ -330,7 +330,6 @@ export default function HvacInstallation() {
                   See all projects
                 </Link>
               </p>
-              {/* TODO(owner): confirm the 109 TR Al Mamzar villa figure; that project is left out of this table until you do (see src/data/project-capacity.ts). */}
             </div>
           </section>
         </>
