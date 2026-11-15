@@ -8,7 +8,7 @@ import { MidPageCta } from "@/components/MidPageCta";
 import { business } from "@/data/business";
 import { PHONE, PHONE_DISPLAY } from "@/lib/company";
 import { whatsappUrl } from "@/lib/contact";
-import { MARKER_SPLIT, resolveDraft } from "@/lib/draft";
+import { MARKER_SPLIT, hasMarker, resolveDraft } from "@/lib/draft";
 import type { LongService } from "@/data/long-services";
 
 const UI = {
@@ -125,6 +125,8 @@ export function LongServicePage({
       })),
     })),
     faqs: raw.faqs.filter((f) => keep(f.a)).map((f) => ({ ...f, a: resolveDraft(f.a) })),
+    // A photo whose source is still a [TO CONFIRM] marker is dropped on the live site and shown as a placeholder in previews.
+    figures: raw.figures?.filter((f) => keep(f.src)),
   };
   const ctaAfter = Math.max(0, c.sections.findIndex((s) => (s.bullets?.length ?? 0) > 0 || (s.subsections?.length ?? 0) > 0));
   const url = `${business.url}${path}`;
@@ -250,7 +252,16 @@ export function LongServicePage({
             </div>
             {c.figures
               ?.filter((f) => f.afterSection === i)
-              .map((f) => (
+              .map((f) =>
+                hasMarker(f.src) ? (
+                  <div
+                    key={f.src}
+                    dir="ltr"
+                    className="mt-8 flex aspect-[16/9] items-center justify-center rounded-xl border-2 border-dashed border-amber-400 bg-amber-50 p-6 text-center text-sm font-semibold text-amber-950"
+                  >
+                    {f.src}
+                  </div>
+                ) : (
                 <figure key={f.src} className="mt-8">
                   <div
                     className={
@@ -269,7 +280,8 @@ export function LongServicePage({
                   </div>
                   {f.caption && <figcaption className="mt-2 text-sm text-text-muted">{f.caption}</figcaption>}
                 </figure>
-              ))}
+                ),
+              )}
           </div>
         </section>
         {/* Mid-page lead block, directly after the first checklist section */}

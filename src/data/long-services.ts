@@ -452,7 +452,8 @@ export const VRF_MAINTENANCE: LongService = {
       "h2": "Error code diagnostics",
       "paragraphs": [
         "VRF systems report faults as codes on the controller or on the outdoor unit display. A code names a circuit, sensor or component; it does not always name the cause. A pressure-sensor code, for example, can come from a refrigerant fault, a failed sensor or a wiring problem.",
-        "We record the code, its history and the operating readings first, trace the fault to its root cause, repair it and only then clear the code. Resetting a system without finding the cause usually brings the same fault back, often on the hottest day. [TO CONFIRM: which diagnostic tools and code references AGEC uses for each brand.]"
+        "We record the code, its history and the operating readings first, trace the fault to its root cause, repair it and only then clear the code. Resetting a system without finding the cause usually brings the same fault back, often on the hottest day.",
+        "We diagnose with manufacturer service software where available (Daikin Service Checker, LG LGMV), plus digital manifold gauges, clamp meters, insulation testers, thermal imaging cameras, electronic leak detectors and nitrogen pressure testing."
       ]
     },
     {
@@ -490,28 +491,28 @@ export const VRF_MAINTENANCE: LongService = {
         "Commercial cover is priced after a site survey, based on the systems, the number of units and the visit frequency, not a fixed per-machine rate. We can also take over from your current contractor with a full audit and baseline report. See the [commercial AMC options](/ac-amc-dubai#commercial-amc)."
       ],
       "bullets": [
-        "[TO CONFIRM: contract response tiers for VRF plant. Same as /ac-amc-dubai: emergency within 4 hours, urgent same day, routine within 48 hours?]",
-        "[TO CONFIRM: visit frequency for VRF plant, for example quarterly.]",
-        "[TO CONFIRM: does the service report with photos after every visit also apply to VRF contract and one-off visits?]"
+        "Response tiers: emergency within 4 hours, urgent same day, routine within 48 hours",
+        "Visit frequency: quarterly preventive maintenance as standard; monthly visits are available for critical sites such as data rooms, hotels and hospitals",
+        "A service report with photos after every visit, for AMC contracts and one-off visits"
       ]
     },
     {
       "h2": "24/7 breakdown response",
       "paragraphs": [
-        "If your VRF system stops cooling, call or WhatsApp us at any hour. Tell us the building, the brand, any code on the controller and, if you can, send a photo of the controller or outdoor unit display. We will tell you the soonest an engineer can attend. [TO CONFIRM: on-site response target in hours, only if you want it stated.]"
+        "If your VRF system stops cooling, call or WhatsApp us at any hour. Tell us the building, the brand, any code on the controller and, if you can, send a photo of the controller or outdoor unit display. Response follows our tiers: emergency within 4 hours, urgent same day, routine within 48 hours."
       ]
     },
     {
       "h2": "Brands we maintain",
       "paragraphs": [
-        "We service all VRF/VRV types, including Daikin VRV, Trane, O General, Midea and LG Multi V. Brand names are trademarks of their respective owners and are listed to show the equipment we work on."
+        "We service all VRF/VRV types, including Daikin VRV, Trane, O General, Midea and LG Multi V. Below are the faults and service points we see most often on each brand. Brand names are trademarks of their respective owners and are listed to show the equipment we work on."
       ],
       "bullets": [
-        "**Daikin VRV:** common faults are inverter PCB faults, refrigerant leaks at branch joints and communication errors between outdoor and indoor units.",
-        "[TO CONFIRM: Trane line, written as 'Trane: common faults or service points', short and practical.]",
-        "[TO CONFIRM: O General line, written as 'O General: common faults or service points'.]",
-        "[TO CONFIRM: Midea line, written as 'Midea: common faults or service points'.]",
-        "[TO CONFIRM: LG Multi V line, written as 'LG Multi V: common faults or service points'.]"
+        "**Daikin VRV:** inverter PCB faults, refrigerant leaks at branch joints and communication errors between outdoor and indoor units.",
+        "**Trane:** communication wiring faults, electronic expansion valve (EEV) issues, and condenser coils clogged by dust and sand that cause high-pressure trips in summer.",
+        "**O General:** indoor–outdoor communication errors, thermistor/sensor faults, and EEV faults that cause uneven cooling between indoor units.",
+        "**Midea:** outdoor PCB and inverter module faults linked to voltage fluctuations, thermistor faults, and condenser coil fouling.",
+        "**LG Multi V:** high discharge temperature and compressor oil-return issues in peak summer, communication errors, and inverter PCB faults."
       ]
     },
     {
@@ -520,7 +521,7 @@ export const VRF_MAINTENANCE: LongService = {
       "bullets": [
         "Engineer-led service under a licensed HVAC contractor ({{LICENCE}}), established 2022",
         "33 completed projects across the UAE, including VRF systems such as 224 TR at Basil Mall, Ajman and 109 TR at a villa in Al Mamzar; see our [projects](/projects)",
-        "A written report after every visit, so you keep a maintenance history for each unit",
+        "A service report with photos after every visit, so you keep a maintenance history for each unit",
         "If a repair changes airflow or refrigerant conditions, we can re-test and rebalance through our [testing, adjusting and balancing](/services/tab-testing-adjusting-balancing-dubai) service"
       ]
     }
@@ -528,7 +529,7 @@ export const VRF_MAINTENANCE: LongService = {
   "faqs": [
     {
       "q": "How often should a VRF system be serviced in Dubai?",
-      "a": "It depends on the size of the system, its running hours and how the building is used. Because systems here run for most of the year and collect dust quickly, we recommend a service before the summer peak and regular visits during it. We set the visit frequency for your site when we quote."
+      "a": "We recommend quarterly preventive maintenance as standard, with a service before the summer peak. Monthly visits are available for critical sites such as data rooms, hotels and hospitals."
     },
     {
       "q": "Do you maintain VRF brands other than Daikin?",
@@ -536,11 +537,11 @@ export const VRF_MAINTENANCE: LongService = {
     },
     {
       "q": "Do you provide 24/7 breakdown support for VRF systems?",
-      "a": "Yes. You can call or WhatsApp us at any hour. Tell us the building, the brand and any code on the controller, and we will confirm the soonest an engineer can attend."
+      "a": "Yes. You can call or WhatsApp us at any hour. Tell us the building, the brand and any code on the controller. Response follows our tiers: emergency within 4 hours, urgent same day, routine within 48 hours."
     },
     {
       "q": "What does a VRF maintenance visit include?",
-      "a": "Outdoor unit coil and fan checks, inverter board and PCB inspection, indoor filter and condensate drain checks, refrigerant pressure and temperature readings, error-code logging and a check of communications between units and controllers, followed by a report."
+      "a": "Outdoor unit coil and fan checks, inverter board and PCB inspection, indoor filter and condensate drain checks, refrigerant pressure and temperature readings, error-code logging and a check of communications between units and controllers, followed by a service report with photos."
     },
     {
       "q": "My VRF controller shows an error code. What should I do?",
@@ -696,7 +697,7 @@ export const AIR_BALANCING: LongService = {
         {
           "h3": "6. Adjust and re-measure",
           "paragraphs": [
-            "We set balancing dampers and fan speeds, then re-measure every point, repeating until each terminal is within the tolerance in your specification. The final readings go in the report."
+            "We set balancing dampers and fan speeds, then re-measure every point, repeating until each terminal is within the acceptance tolerance (±10% of design airflow unless your specification or consultant requires tighter). The final readings go in the report."
           ]
         }
       ]
@@ -716,7 +717,7 @@ export const AIR_BALANCING: LongService = {
     {
       "h2": "What you receive",
       "paragraphs": [
-        "You receive a balancing report, signed by the engineer who carried out the work, that your consultant can review and approve. Acceptance tolerances are set by the project specification and stated on the signed report. [TO CONFIRM: default tolerance, for example +/-10%, if you want one stated.] See the [sample report format (PDF)](/sample-air-balancing-report.pdf); the values in it are illustrative only. The report includes:"
+        "You receive a balancing report, signed by the engineer who carried out the work, that your consultant can review and approve. Acceptance tolerance is ±10% of design airflow at terminals, unless the project specification or consultant requires a tighter tolerance. See the [sample report format (PDF)](/sample-air-balancing-report.pdf); the values in it are illustrative only. The report includes:"
       ],
       "bullets": [
         "Project details, drawing reference and system tested",
@@ -811,7 +812,7 @@ export const AIR_BALANCING: LongService = {
   "figures": [
     {
       "afterSection": 0,
-      "src": "/projects/agec-technician-tab-commissioning-airflow-balometer-dubai.jpg",
+      "src": "[TO CONFIRM: AGEC balometer photo — path under /projects, with an AGEC-branded technician]",
       "alt": "AGEC technician measuring supply airflow at a ceiling diffuser with an airflow capture hood in a Dubai office"
     },
     {
