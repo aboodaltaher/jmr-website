@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 const ALL_SERVICES = [
   { href: "/services/hvac-installation-dubai", label: "HVAC Installation", desc: "New builds & fit-outs, design to handover" },
+  { href: "/ac-installation-dubai", label: "AC Installation", desc: "Split, cassette, ducted & VRF, new unit included" },
   { href: "/ac-maintenance-dubai", label: "AC Maintenance", desc: "Servicing, repair & AMC for homes" },
   { href: "/ac-repair-dubai", label: "AC Repair", desc: "Root-cause diagnosis, fixed in writing" },
   { href: "/ac-amc-dubai", label: "AC AMC", desc: "Annual maintenance contracts" },

@@ -26,7 +26,7 @@ scan "email address"         'a\.altaher@|m\.ghabboun@'
 scan "street address"        'AlMasraf|Almasraf|Sheikh Zayed|Al Quoz Industrial'
 scan "geo coordinates"       '25\.14[0-9]|55\.22[0-9]'
 scan "licence number"        '1221573'
-scan "legal / alternate name" 'Altaher Ghabboun Engineering|AGEC Technical Services L\.L\.C'
+scan "legal / alternate name" 'AGEC Technical Services L\.L\.C'
 scan "review count / rating" '[0-9]+ (Google )?reviews?\b.*(verified|rated)|reviewCount: *[0-9]|ratingValue: *"?[0-9]|aggregateRating|AggregateRating'
 scan "Maps / review links"   'maps\.app\.goo\.gl|maps\.google\.com|g\.page/r/|google\.com/maps\?cid'
 

@@ -15,6 +15,7 @@ export const mainLinks: NavLink[] = [
 export const serviceLinks: NavLink[] = [
   { href: "/services", label: "All Services" },
   { href: "/services/hvac-installation-dubai", label: "HVAC Installation" },
+  { href: "/ac-installation-dubai", label: "AC Installation" },
   { href: "/ac-maintenance-dubai", label: "AC Maintenance" },
   { href: "/ac-repair-dubai", label: "AC Repair" },
   { href: "/ac-amc-dubai", label: "AC AMC" },
@@ -48,6 +49,7 @@ import { isPublished } from "@/data/new-pages";
 // links to the counterpart of the current page (not just the locale home).
 export const LOCALE_PAIRS: { en: string; ar: string }[] = [
   { en: "/", ar: "/ar" },
+  { en: "/ac-installation-dubai", ar: "/ar/ac-installation-dubai" },
   { en: "/ac-maintenance-dubai", ar: "/ar/ac-maintenance-dubai" },
   { en: "/ac-repair-dubai", ar: "/ar/ac-repair-dubai" },
   { en: "/ac-duct-cleaning-dubai", ar: "/ar/ac-duct-cleaning-dubai" },

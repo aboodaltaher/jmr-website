@@ -29,6 +29,7 @@ import {
 } from "lucide-react";
 import { PHONE, PHONE_DISPLAY } from "@/lib/contact";
 import { PROJECTS_DELIVERED, GOOGLE_RATING, GOOGLE_REVIEW_COUNT, EMAIL } from "@/lib/company";
+import { BrandStrip } from "@/components/BrandStrip";
 import { GOOGLE_REVIEWS, MAPS_URL, REVIEW_URL, reviewStats } from "@/lib/reviews";
 
 // Image for the "Why AGEC" panel: an AGEC villa project photo (the old balometer photo showed the former JMR
@@ -259,10 +260,16 @@ export default async function Home() {
             <Link href="/ac-repair-dubai" className="font-semibold text-primary hover:underline">
               AC repair in Dubai
             </Link>
-            .
+            . Need a new unit? See{" "}
+            <Link href="/ac-installation-dubai" className="font-semibold text-primary hover:underline">
+              AC installation in Dubai
+            </Link>
+            , supplied and installed.
           </p>
         </div>
       </section>
+
+      <BrandStrip />
 
       {/* AC Cleaning Packages */}
       <section className="py-16 md:py-20">
@@ -585,8 +592,8 @@ export default async function Home() {
             Ready to start your project?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-lg text-white">
-            Get a free quotation from our engineering team. Most quotes returned
-            within 24 hours.
+            Get a free quotation from our engineering team. WhatsApp reply within
+            1 hour. Written quote within 24 hours.
           </p>
           <Link
             href="/quote"
@@ -644,7 +651,7 @@ export default async function Home() {
           <div className="mt-10 text-center">
             <p className="font-heading text-lg font-semibold">Prefer to talk?</p>
             <p className="mt-1 text-sm text-text-muted">
-              Call or WhatsApp anytime, 24/7. We respond within 1 hour.
+              Call or WhatsApp anytime, 24/7. WhatsApp reply within 1 hour.
             </p>
           </div>
         </div>

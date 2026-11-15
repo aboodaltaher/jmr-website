@@ -7,7 +7,7 @@ B="${1:-http://localhost:3000}"
 
 URLS=(
   # English
-  /ac-maintenance-dubai /ac-repair-dubai /ac-duct-cleaning-dubai /ac-amc-dubai
+  /ac-installation-dubai /ac-maintenance-dubai /ac-repair-dubai /ac-duct-cleaning-dubai /ac-amc-dubai
   /smart-thermostat-installation-dubai /services/hvac-installation-dubai
   /services/chiller-maintenance-dubai /services/ventilation-fresh-air
   /services/dx-units /services/vrf-vrv-systems /services/hvac-design
@@ -15,7 +15,7 @@ URLS=(
   /hvac-contractor-sharjah /hvac-contractor-ajman /hvac-contractor-abu-dhabi
   /projects/basil-mall-ajman /quote
   # Arabic
-  /ar/ac-maintenance-dubai /ar/ac-repair-dubai /ar/ac-duct-cleaning-dubai
+  /ar/ac-installation-dubai /ar/ac-maintenance-dubai /ar/ac-repair-dubai /ar/ac-duct-cleaning-dubai
   /ar/ac-amc-dubai /ar/smart-thermostat-installation-dubai
   /ar/services/hvac-installation-dubai /ar/services/chiller-maintenance-dubai
   /ar/services/ventilation-fresh-air /ar/services/tab-testing-adjusting-balancing-dubai

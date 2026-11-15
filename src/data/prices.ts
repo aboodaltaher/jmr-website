@@ -1,5 +1,5 @@
-// ONE config for every price shown on the service pages: /ac-maintenance-dubai, /ac-amc-dubai,
-// /ac-duct-cleaning-dubai and /ac-repair-dubai. (Thermostat prices stay in src/lib/pricing.ts.)
+// ONE config for every price shown on the service pages: /ac-installation-dubai, /ac-maintenance-dubai,
+// /ac-amc-dubai, /ac-duct-cleaning-dubai and /ac-repair-dubai. (Thermostat prices stay in src/lib/pricing.ts.)
 //
 // HOW IT WORKS
 //  - A price is a number (AED) or TBC. A row whose price is TBC is HIDDEN: the placeholder text
@@ -22,6 +22,8 @@ export interface PriceRow {
   from: Money;
   /** Optional upper end of a range, AED. Ignored while TBC. */
   to?: Money;
+  /** True when `from` is the exact price (shown as "AED 2,500", not "From AED 2,500"). */
+  exact?: boolean;
   /** Shown after the price, e.g. "per machine". */
   unit?: string;
   note?: string;
@@ -33,11 +35,21 @@ export const PRICE_FOOTNOTE =
 export const prices = {
   vat: "excluded" as "excluded" | "included",
 
+  /** /ac-installation-dubai — supply AND install: every price includes the new unit. */
+  installation: [
+    { label: "Split AC, supplied and installed", from: 2500, exact: true, unit: "per ton" },
+    { label: "Cassette AC, supplied and installed", from: 2500, exact: true, unit: "per ton" },
+    { label: "Ducted split AC, supplied and installed", from: 3800, unit: "per ton" },
+    { label: "VRF for homes, supplied and installed", from: 5000, unit: "per ton" },
+    { label: "Replacing an old unit", from: 3000, unit: "per unit", note: "New unit supplied; old unit removed and replaced." },
+  ] as PriceRow[],
+
   /** /ac-maintenance-dubai */
   maintenance: [
     { label: "One-off AC service", from: 350, unit: "per machine", note: "Minimum 3 units." },
-    { label: "Ducted unit service", from: TBC, unit: "per machine" },
-    { label: "Gas top-up", from: TBC, unit: "per machine" },
+    { label: "Ducted unit service", from: 250, exact: true, unit: "per machine" },
+    // Unit ("per machine") assumed — the owner gave "AED 150" with no unit. Confirm.
+    { label: "Gas top-up", from: 150, exact: true, unit: "per machine" },
   ] as PriceRow[],
 
   /** /ac-amc-dubai — the confirmed visit-frequency plans (per machine, per visit, excl. VAT). */
@@ -62,22 +74,27 @@ export const prices = {
     { label: "Villa with 5 or more bedrooms", from: TBC },
   ] as PriceRow[],
 
-  /** /ac-repair-dubai — call-out / diagnosis fee and typical repair ranges. */
+  /**
+   * /ac-repair-dubai — call-out / diagnosis fee only. There are no fixed repair ranges: the exact
+   * repair price is quoted after diagnosis, so there are deliberately no minor/mid/major rows.
+   */
   repair: [
-    { label: "Call-out and diagnosis", from: TBC },
-    { label: "Minor repair", from: TBC, to: TBC },
-    { label: "Mid-range repair", from: TBC, to: TBC },
-    { label: "Major repair", from: TBC, to: TBC },
+    { label: "Call-out and diagnosis", from: 100, exact: true, note: "Waived if you go ahead with the repair." },
   ] as PriceRow[],
 };
 
 /** Rows whose price is confirmed (the only ones ever shown or marked up). */
 export const visibleRows = (rows: PriceRow[]): PriceRow[] => rows.filter((r) => isConfirmed(r.from));
 
-/** "AED 350", "AED 200–450" — returns null while the price is TBC. */
+/** 2500 → "2,500". */
+export const money = (n: number): string => n.toLocaleString("en-US");
+
+/** "From AED 350", "AED 2,500", "AED 200–450" — returns null while the price is TBC. */
 export function formatPrice(r: PriceRow): string | null {
   if (!isConfirmed(r.from)) return null;
-  const range = isConfirmed(r.to) ? `AED ${r.from}–${r.to}` : `From AED ${r.from}`;
+  const range = isConfirmed(r.to)
+    ? `AED ${money(r.from)}–${money(r.to)}`
+    : `${r.exact ? "" : "From "}AED ${money(r.from)}`;
   return r.unit ? `${range} ${r.unit}` : range;
 }
 
@@ -91,5 +108,15 @@ export function offersFor(rows: PriceRow[]) {
     name: r.label,
     price: String(r.from),
     priceCurrency: "AED",
+    ...(r.unit
+      ? {
+          priceSpecification: {
+            "@type": "UnitPriceSpecification",
+            price: String(r.from),
+            priceCurrency: "AED",
+            unitText: r.unit.replace(/^per /, ""),
+          },
+        }
+      : {}),
   }));
 }

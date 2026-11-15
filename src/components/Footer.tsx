@@ -38,6 +38,7 @@ const navLinks = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/services/hvac-installation-dubai", label: "HVAC Installation" },
+  { href: "/ac-installation-dubai", label: "AC Installation" },
   { href: "/ac-maintenance-dubai", label: "AC Maintenance" },
   { href: "/ac-repair-dubai", label: "AC Repair" },
   { href: "/ac-duct-cleaning-dubai", label: "AC Duct Cleaning" },
@@ -120,6 +121,12 @@ export function Footer() {
                   AC maintenance {a.name}
                 </Link>
               ))}
+              <Link prefetch={false}
+                href="/areas"
+                className="inline-flex min-h-[32px] items-center text-sm font-semibold text-text-muted hover:text-text transition-colors"
+              >
+                All areas
+              </Link>
             </nav>
           )}
           <div className="flex flex-col gap-3">

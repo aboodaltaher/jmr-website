@@ -11,7 +11,7 @@ import { Award, ShieldCheck, PhoneCall, TrendingUp } from "lucide-react";
 export const metadata = buildMetadata({
   title: "من نحن | AGEC مقاول تكييف في دبي",
   description:
-    `AGEC (التاهر غبون للمقاولات الهندسية) مقاول تكييف وكهروميكانيك وصيانة في دبي، أنجز ${PROJECTS_DELIVERED} مشروعاً عبر الإمارات منذ 2022. اطلب عرض سعر.`,
+    `AGEC مقاول تكييف وكهروميكانيك وصيانة في دبي، أنجز ${PROJECTS_DELIVERED} مشروعاً عبر الإمارات منذ 2022. تعرّف على فريقنا الهندسي واطّلع على مشاريعنا، ثم اطلب عرض سعر.`,
   path: "/ar/about",
   locale: "ar_AE",
 });
@@ -65,8 +65,7 @@ export default function ArabicAbout() {
             مقاولات تكييف يقودها المهندسون في دبي
           </h1>
           <p className="mt-6 max-w-3xl text-xl text-text-muted">
-            تأسّست في دبي عام 2022 على يد {FOUNDER}، والتاهر غبون للمقاولات الهندسية
-            (AGEC) شركة مقاولات تكييف تقدّم خبرة في التركيب والصيانة والاختبار والتشغيل
+            تأسّست في دبي عام 2022 على يد {FOUNDER}، وAGEC شركة مقاولات تكييف تقدّم خبرة في التركيب والصيانة والاختبار والتشغيل
             التجريبي عبر الإمارات.
           </p>
         </div>

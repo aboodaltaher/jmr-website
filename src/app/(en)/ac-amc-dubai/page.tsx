@@ -1,4 +1,5 @@
 import { MidPageCta } from "@/components/MidPageCta";
+import { JobPhoto } from "@/components/JobPhoto";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { buildMetadata } from "@/lib/metadata";
 import Link from "next/link";
@@ -575,6 +576,26 @@ export default function AcAmcPage() {
         </div>
       </section>
 
+      {/* REAL JOB PHOTO */}
+      <section className="py-14 md:py-16">
+        <div className="mx-auto flex max-w-4xl flex-wrap items-center gap-8 px-6">
+          <JobPhoto
+            src="/projects/al-wasl-ac-maintenance-coil-cleaning.jpg"
+            alt="Technician cleaning the condenser coil of a packaged AC unit during an AMC visit in Al Wasl, Dubai"
+            width={950}
+            height={1600}
+          />
+          <p className="min-w-[240px] flex-1 text-lg leading-relaxed text-text-muted">
+            A technician cleaning the condenser coil of a packaged unit during an AMC visit in Al Wasl.
+            See{" "}
+            <Link href="/ac-maintenance/al-wasl" className="font-semibold text-primary hover:underline">
+              AC maintenance contracts in Al Wasl
+            </Link>
+            .
+          </p>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="bg-bg-soft py-16 md:py-20">
         <div className="mx-auto max-w-4xl px-6">
@@ -590,9 +611,7 @@ export default function AcAmcPage() {
               >
                 <summary className="flex cursor-pointer items-center justify-between gap-4 p-5 font-semibold text-text marker:content-none">
                   {f.q}
-                  <span className="text-2xl leading-none text-primary transition-transform group-open:rotate-45">
-                    +
-                  </span>
+                  <span aria-hidden="true" className="text-2xl leading-none text-primary transition-transform after:content-['+'] group-open:rotate-45" />
                 </summary>
                 <p className="px-5 pb-5 text-text-muted">{f.a}</p>
               </details>

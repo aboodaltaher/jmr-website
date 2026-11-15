@@ -7,7 +7,7 @@ export const rootMetadata: Metadata = {
   metadataBase: new URL(business.url),
   title: "AGEC — HVAC Contracting & Maintenance | Dubai, UAE",
   description:
-    `AGEC (${business.alternateName}) designs, installs, and maintains air conditioning, ventilation and air filtration systems across the UAE. VRF, chillers, ventilation, AMC. Dubai-based. Engineered to perform.`,
+    `AGEC designs, installs, and maintains air conditioning, ventilation and air filtration systems across the UAE. VRF, chillers, ventilation, AMC. Dubai-based. Engineered to perform.`,
   openGraph: {
     title: "AGEC — HVAC Contracting & Maintenance | Dubai, UAE",
     description:

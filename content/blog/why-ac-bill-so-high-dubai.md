@@ -86,7 +86,7 @@ Not every fix is worth the same. Here's the honest order, from "do it today" to 
 - Add solar film or shading to your worst sun-exposed glass.
 
 **Capital, real payback**
-- Replace old fixed-speed units with inverter equipment if your kit is 10+ years old — typically a two-season payback in Dubai's climate.
+- Replace old fixed-speed units with inverter equipment if your kit is 10+ years old — typically a two-season payback in Dubai's climate. We [supply and install new units](/ac-installation-dubai), with the unit included in the price.
 - Seal and re-balance leaking ductwork.
 - Add zoning if you're heating and cooling rooms nobody uses.
 

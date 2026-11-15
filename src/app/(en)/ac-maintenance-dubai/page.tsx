@@ -1,4 +1,5 @@
 import { MidPageCta } from "@/components/MidPageCta";
+import { JobPhoto } from "@/components/JobPhoto";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { buildMetadata } from "@/lib/metadata";
 import Image from "next/image";
@@ -31,7 +32,7 @@ import {
 } from "lucide-react";
 
 import { PriceTable } from "@/components/PriceTable";
-import { prices, visibleRows, offersFor } from "@/data/prices";
+import { prices, visibleRows, offersFor, money } from "@/data/prices";
 import { PHONE, PHONE_DISPLAY } from "@/lib/company";
 import { business } from "@/data/business";
 import { whatsappUrl } from "@/lib/contact";
@@ -140,12 +141,12 @@ const caseStudySlugs = ["vrf-villa-al-mamzar-dubai", "villa-al-barsha-dubai", "g
 const areas = ["Dubai", "Abu Dhabi", "Sharjah", "Ajman", "Ras Al Khaimah", "Umm Al Quwain", "Fujairah"];
 
 // TODO(owner): "How long does an AC service take?" gives no minutes per unit; add the typical time if you want it stated.
-// TODO(owner): confirm whether a gas top-up is included in the one-off price (prices.maintenance has a separate "Gas top-up" row, price TBC).
+// TODO(owner): confirm the gas top-up price is per machine and is separate from the one-off service price (assumed from the price table).
 const faqs: { q: string; a: string }[] = [
   { q: "How often should I service my AC in Dubai?", a: "Because AC runs almost year-round in the UAE, we recommend servicing every 3–4 months (3–4 times a year), or at minimum before and during the summer peak. Homes with heavy use, pets or dust exposure benefit from more frequent visits. An AMC schedules this automatically." },
-  { q: "How much does AC maintenance cost in Dubai?", a: `A one-off service starts from AED ${prices.maintenance[0].from} per machine, with a minimum of 3 units. The exact cost depends on the number and type of units and whether it's a one-off service or an annual contract. We confirm a transparent fixed price upfront after understanding your system — with no hidden charges. AMC plans reduce the per-visit cost.` },
+  { q: "How much does AC maintenance cost in Dubai?", a: `A one-off service starts from AED ${prices.maintenance[0].from} per machine, with a minimum of 3 units. The exact cost depends on the number and type of units and whether it's a one-off service or an annual contract. We confirm a transparent fixed price upfront after understanding your system — with no hidden charges. Prices exclude 5% VAT. AMC plans reduce the per-visit cost.` },
   { q: "How long does an AC service take?", a: "It depends on the number and type of units. We confirm the expected time when we quote, once we know your system." },
-  { q: "Is gas included in an AC service?", a: "A service includes checking the refrigerant pressure. Refrigerant runs in a sealed loop, so low gas means a leak: we find it and give you the price for the repair and recharge before any work starts." },
+  { q: "Is gas included in an AC service?", a: `A service includes checking the refrigerant pressure. A gas top-up is priced separately, at AED ${money(prices.maintenance[2].from as number)} per machine. Refrigerant runs in a sealed loop, so low gas means a leak: we find it and give you the price for any repair before work starts.` },
   { q: "Do you service VRF and ducted AC?", a: "Yes. We service ducted, cassette and VRF/VRV systems as well as split units, and we confirm the price once we know the system type and the number of units." },
   { q: "Do you service all AC brands?", a: "Yes. We service every major brand and system type — split, ducted, cassette, VRF/VRV, chillers and package units — including Daikin, O General, Carrier, Gree, Midea, LG, Mitsubishi, Trane and more." },
   { q: "Do you offer same-day or emergency AC repair?", a: "Yes. We provide same-day service where possible and 24/7 emergency breakdown support across Dubai and the UAE — important when your AC fails during peak summer." },
@@ -154,7 +155,7 @@ const faqs: { q: string; a: string }[] = [
   { q: "My AC isn't cooling — do I just need a gas top-up?", a: "Not always. Low cooling can be low refrigerant, but it can also be a dirty coil, a failing compressor or airflow problems. We diagnose the real cause first — topping up gas without fixing a leak is a temporary and wasteful fix." },
   { q: "Do you do AC coil and duct cleaning?", a: "Yes. We deep-clean coils, drainage and ductwork to restore airflow, remove odours and improve indoor air quality — often a big factor in weak cooling and high bills." },
   { q: "Can regular maintenance lower my electricity bill?", a: "Yes. A clean, well-charged, properly running AC uses noticeably less energy than a neglected one — efficiency can drop 20–30% within two years without maintenance, and that shows up on your DEWA bill." },
-  { q: "Do you maintain AC for villas and apartments?", a: "Both. We handle single apartments, large villas, and everything in between — as one-off services or annual contracts." },
+  { q: "Do you maintain AC for villas and apartments?", a: "Both, as one-off services or annual contracts. A one-off service has a minimum of 3 units. If you have fewer than 3 units, send us the details on WhatsApp and we will tell you the options." },
   { q: "Do you handle commercial AC maintenance?", a: "Yes. We provide AMC and reactive maintenance for offices, shops, restaurants, hotels and buildings — including chillers, AHUs, FCUs and VRF systems, with 24/7 response options." },
   { q: "Are your technicians qualified?", a: `Yes. AGEC is a licensed HVAC contractor (${business.licence.label}). Our work is engineer-led, and our technicians are trained to work to ASHRAE and Dubai Municipality standards.` },
   { q: "Which areas do you cover?", a: "We've delivered projects in Dubai, Sharjah, Ajman and Abu Dhabi, and are available for AC maintenance across the UAE." },
@@ -219,7 +220,6 @@ export default async function AcMaintenancePage() {
               AC Maintenance <span className="text-primary">&amp; Servicing in Dubai</span>
             </h1>
             {/* PRICES — first screen on mobile; rows appear only once their price is confirmed in src/data/prices.ts */}
-            {/* TODO(owner): ducted unit service and gas top-up prices (prices.maintenance, currently TBC and hidden). */}
             {visibleRows(prices.maintenance).length > 0 && (
               <div id="prices" className="order-3 mt-5 max-w-xl rounded-xl bg-white p-4 text-text md:order-5 md:mt-6">
                 <h2 className="font-heading text-lg font-bold">Prices</h2>
@@ -324,6 +324,8 @@ export default async function AcMaintenancePage() {
             or{" "}
             <Link href="/ac-amc-dubai#commercial-amc" className="font-semibold text-primary hover:underline">commercial HVAC maintenance &amp; AMC plans</Link>, or add a{" "}
             <Link href="/smart-thermostat-installation-dubai" className="font-semibold text-primary hover:underline">smart thermostat</Link> during your visit.
+            If a unit is past servicing, see{" "}
+            <Link href="/ac-installation-dubai" className="font-semibold text-primary hover:underline">AC installation in Dubai</Link>.
           </p>
         </div>
       </section>
@@ -387,7 +389,7 @@ export default async function AcMaintenancePage() {
               <details key={f.q} className="group rounded-lg border border-border bg-white">
                 <summary className="flex cursor-pointer items-center justify-between gap-4 p-5 font-semibold text-text marker:content-none">
                   {f.q}
-                  <span className="text-2xl leading-none text-primary transition-transform group-open:rotate-45">+</span>
+                  <span aria-hidden="true" className="text-2xl leading-none text-primary transition-transform after:content-['+'] group-open:rotate-45" />
                 </summary>
                 <p className="px-5 pb-5 text-text-muted">{f.a}</p>
               </details>
@@ -527,12 +529,32 @@ export default async function AcMaintenancePage() {
               <details key={f.q} className="group rounded-lg border border-border bg-white">
                 <summary className="flex cursor-pointer items-center justify-between gap-4 p-5 font-semibold text-text marker:content-none">
                   {f.q}
-                  <span className="text-2xl leading-none text-primary transition-transform group-open:rotate-45">+</span>
+                  <span aria-hidden="true" className="text-2xl leading-none text-primary transition-transform after:content-['+'] group-open:rotate-45" />
                 </summary>
                 <p className="px-5 pb-5 text-text-muted">{f.a}</p>
               </details>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* REAL JOB PHOTO */}
+      <section className="py-14 md:py-16">
+        <div className="mx-auto flex max-w-4xl flex-wrap items-center gap-8 px-6">
+          <JobPhoto
+            src="/projects/al-wasl-ac-maintenance-coil-cleaning.jpg"
+            alt="Technician cleaning the condenser coil of a packaged AC unit during an AMC visit in Al Wasl, Dubai"
+            width={950}
+            height={1600}
+          />
+          <p className="min-w-[240px] flex-1 text-lg leading-relaxed text-text-muted">
+            A technician cleaning the condenser coil of a packaged unit during an AMC visit in Al Wasl.
+            See{" "}
+            <Link href="/ac-maintenance/al-wasl" className="font-semibold text-primary hover:underline">
+              AC maintenance contracts in Al Wasl
+            </Link>
+            .
+          </p>
         </div>
       </section>
 
