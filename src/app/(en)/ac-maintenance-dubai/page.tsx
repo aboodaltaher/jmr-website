@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { RelatedServices } from "@/components/RelatedServices";
 import { publishedCommunities, communityPath } from "@/data/community-index";
+import { getProjectBySlug } from "@/data/projects";
 import { InlineLeadForm } from "@/components/InlineLeadForm";
 import { BreadcrumbBand } from "@/components/Breadcrumbs";
 import { GOOGLE_REVIEWS, MAPS_URL, reviewStats } from "@/lib/reviews";
@@ -39,7 +40,7 @@ const CANONICAL = "/ac-maintenance-dubai";
 export const metadata = buildMetadata({
   title: "AC Maintenance Dubai — Engineer-Led, Same-Day | AGEC",
   description:
-    `AC maintenance in Dubai by HVAC engineers: servicing, repair, coil and duct cleaning, gas top-up and AMC plans. Call ${PHONE_DISPLAY}.`,
+    `AC maintenance in Dubai for villas and apartments: servicing, repair, gas top-up and AMC plans. One-off service from AED ${prices.maintenance[0].from}. Call ${PHONE_DISPLAY}.`,
   path: CANONICAL,
   languages: {
     "en-AE": `https://agec.ae${CANONICAL}`,
@@ -93,11 +94,51 @@ const signs: { icon: LucideIcon; title: string; desc: string }[] = [
   { icon: Wrench, title: "Frequent Tripping", desc: "An AC that keeps cutting out has an electrical or refrigerant problem that needs diagnosis." },
 ];
 
+const checklist = [
+  "Filters cleaned",
+  "Coils cleaned",
+  "Drainage line cleared",
+  "Refrigerant pressure checked",
+  "Electrical connections and controls inspected",
+  "Cooling performance tested",
+  "Service report handed over",
+];
+
+// TODO(owner): per property type, add the typical number of units and how long a visit takes. Not stated anywhere on the site yet.
+const propertyTypes: { type: string; system: string; focus: string; fit: string }[] = [
+  {
+    type: "Villa",
+    system: "Several indoor units across floors, often ducted or concealed units, plus outdoor units.",
+    focus: "Every unit, its drain line and, where fitted, the ducts and grilles.",
+    fit: "A one-off service before summer, or an AMC for scheduled visits.",
+  },
+  {
+    type: "Apartment",
+    system: "One to a few split or ducted units.",
+    focus: "Filters, coils and drain line, the usual causes of weak cooling and leaks.",
+    fit: "A one-off service (minimum 3 units) or an AMC.",
+  },
+  {
+    type: "Office",
+    system: "Split, cassette or ducted units that run through the working day.",
+    focus: "The same checklist on every unit, with a record of each visit.",
+    fit: "Scheduled visits under an AMC. Larger sites: see the AMC page.",
+  },
+];
+
+// TODO(owner): a maintenance-specific case study (before/after readings, client approval to publish). The published case studies are installations.
+const caseStudySlugs = ["vrf-villa-al-mamzar-dubai", "villa-al-barsha-dubai", "g1r-villa-dubai"];
+
 const areas = ["Dubai", "Abu Dhabi", "Sharjah", "Ajman", "Ras Al Khaimah", "Umm Al Quwain", "Fujairah"];
 
+// TODO(owner): "How long does an AC service take?" gives no minutes per unit; add the typical time if you want it stated.
+// TODO(owner): confirm whether a gas top-up is included in the one-off price (prices.maintenance has a separate "Gas top-up" row, price TBC).
 const faqs: { q: string; a: string }[] = [
   { q: "How often should I service my AC in Dubai?", a: "Because AC runs almost year-round in the UAE, we recommend servicing every 3–4 months (3–4 times a year), or at minimum before and during the summer peak. Homes with heavy use, pets or dust exposure benefit from more frequent visits. An AMC schedules this automatically." },
   { q: "How much does AC maintenance cost in Dubai?", a: `A one-off service starts from AED ${prices.maintenance[0].from} per machine, with a minimum of 3 units. The exact cost depends on the number and type of units and whether it's a one-off service or an annual contract. We confirm a transparent fixed price upfront after understanding your system — with no hidden charges. AMC plans reduce the per-visit cost.` },
+  { q: "How long does an AC service take?", a: "It depends on the number and type of units. We confirm the expected time when we quote, once we know your system." },
+  { q: "Is gas included in an AC service?", a: "A service includes checking the refrigerant pressure. Refrigerant runs in a sealed loop, so low gas means a leak: we find it and give you the price for the repair and recharge before any work starts." },
+  { q: "Do you service VRF and ducted AC?", a: "Yes. We service ducted, cassette and VRF/VRV systems as well as split units, and we confirm the price once we know the system type and the number of units." },
   { q: "Do you service all AC brands?", a: "Yes. We service every major brand and system type — split, ducted, cassette, VRF/VRV, chillers and package units — including Daikin, O General, Carrier, Gree, Midea, LG, Mitsubishi, Trane and more." },
   { q: "Do you offer same-day or emergency AC repair?", a: "Yes. We provide same-day service where possible and 24/7 emergency breakdown support across Dubai and the UAE — important when your AC fails during peak summer." },
   { q: "What is included in an AC service?", a: "A standard service typically includes cleaning filters and coils, clearing the drainage line, checking refrigerant pressure, inspecting electrical connections and controls, and testing cooling performance — followed by a service report." },
@@ -170,9 +211,9 @@ export default async function AcMaintenancePage() {
               AC Maintenance in Dubai — <span className="text-primary">Servicing, Repair &amp; AMC</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg text-white/70">
-              Keep your air conditioning cooling properly and running efficiently with professional AC
-              maintenance from licensed HVAC engineers. Servicing, repairs, coil &amp; duct cleaning, gas
-              top-ups and annual maintenance contracts — for villas, apartments and businesses across the UAE.
+              Professional AC maintenance in Dubai from licensed HVAC engineers: servicing, repairs,
+              coil &amp; duct cleaning, gas top-ups and annual maintenance contracts. We keep your air
+              conditioning cooling properly and running efficiently, in villas, apartments and businesses across the UAE.
             </p>
             <p className="mt-5 inline-flex flex-wrap items-baseline gap-2 rounded-lg bg-white/10 px-4 py-2.5 text-base font-semibold text-white">
               One-off service from AED {prices.maintenance[0].from} per machine
@@ -247,7 +288,7 @@ export default async function AcMaintenancePage() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-3xl text-center">
             <p className={eyebrow}>What We Cover</p>
-            <h2 className="mt-3 font-heading text-3xl font-bold md:text-5xl">Complete AC Maintenance &amp; Repair Services</h2>
+            <h2 className="mt-3 font-heading text-3xl font-bold md:text-5xl">What&apos;s included</h2>
             <p className="mt-5 text-lg text-text-muted">From a one-off service to a full annual contract — everything your air conditioning needs, done properly.</p>
           </div>
           <div className="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
@@ -270,6 +311,76 @@ export default async function AcMaintenancePage() {
             <Link href="/ac-amc-dubai#commercial-amc" className="font-semibold text-primary hover:underline">commercial HVAC maintenance &amp; AMC plans</Link>, or add a{" "}
             <Link href="/smart-thermostat-installation-dubai" className="font-semibold text-primary hover:underline">smart thermostat</Link> during your visit.
           </p>
+        </div>
+      </section>
+
+      {/* PRICES — rows appear only once their price is confirmed in src/data/prices.ts */}
+      {/* TODO(owner): ducted unit service and gas top-up prices (prices.maintenance, currently TBC and hidden). */}
+      {visibleRows(prices.maintenance).length > 0 && (
+        <section id="prices" className="bg-bg-soft py-16 md:py-20">
+          <div className="mx-auto max-w-4xl px-6">
+            <p className={eyebrow}>Pricing</p>
+            <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">Prices</h2>
+            <PriceTable rows={prices.maintenance} caption="AC maintenance prices" />
+          </div>
+        </section>
+      )}
+
+      {/* VILLAS VS APARTMENTS VS OFFICES */}
+      <section id="property-types" className="py-16 md:py-24">
+        <div className="mx-auto max-w-5xl px-6">
+          <p className={eyebrow}>By property type</p>
+          <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">Villas vs apartments vs offices</h2>
+          <p className="mt-4 max-w-3xl text-lg text-text-muted">
+            The checklist is the same. What changes is the number and type of units, and whether a one-off service or scheduled visits fit better.
+          </p>
+          <div className="mt-8 overflow-x-auto" tabIndex={0} role="region" aria-label="AC maintenance by property type">
+            <table className="w-full min-w-[640px] border-collapse text-sm">
+              <caption className="sr-only">AC maintenance by property type</caption>
+              <thead className="bg-primary text-left text-white">
+                <tr>
+                  <th scope="col" className="border border-border px-4 py-3 font-semibold">Property</th>
+                  <th scope="col" className="border border-border px-4 py-3 font-semibold">Typical system</th>
+                  <th scope="col" className="border border-border px-4 py-3 font-semibold">What we focus on</th>
+                  <th scope="col" className="border border-border px-4 py-3 font-semibold">Best fit</th>
+                </tr>
+              </thead>
+              <tbody className="bg-white">
+                {propertyTypes.map((r) => (
+                  <tr key={r.type}>
+                    <th scope="row" className="border border-border px-4 py-3 text-left font-semibold">{r.type}</th>
+                    <td className="border border-border px-4 py-3 text-text-muted">{r.system}</td>
+                    <td className="border border-border px-4 py-3 text-text-muted">{r.focus}</td>
+                    <td className="border border-border px-4 py-3 text-text-muted">
+                      {r.fit}
+                      {r.type === "Office" && (
+                        <>
+                          {" "}
+                          <Link href="/ac-amc-dubai" className="font-semibold text-primary hover:underline">AC AMC in Dubai</Link>
+                        </>
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICE CHECKLIST */}
+      <section id="checklist" className="bg-bg-soft py-16 md:py-20">
+        <div className="mx-auto max-w-4xl px-6">
+          <p className={eyebrow}>Every visit</p>
+          <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">Our service checklist</h2>
+          <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+            {checklist.map((item) => (
+              <li key={item} className="flex gap-3 text-text-muted">
+                <Check className="mt-0.5 h-5 w-5 shrink-0 text-primary" strokeWidth={2} />
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -347,23 +458,41 @@ export default async function AcMaintenancePage() {
         </div>
       </section>
 
-      {/* PRICES — rows appear only once their price is confirmed in src/data/prices.ts */}
-      {visibleRows(prices.maintenance).length > 0 && (
-        <section id="prices" className="bg-bg-soft py-16 md:py-20">
-          <div className="mx-auto max-w-4xl px-6">
-            <p className={eyebrow}>Pricing</p>
-            <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">Prices</h2>
-            <PriceTable rows={prices.maintenance} caption="AC maintenance prices" />
+      {/* CASE STUDIES — published villa projects (installation case studies; no maintenance-specific ones yet) */}
+      <section id="case-studies" className="py-16 md:py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <p className={eyebrow}>Our work</p>
+          <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">Case studies</h2>
+          <p className="mt-4 max-w-3xl text-text-muted">
+            Villa systems AGEC installed and commissioned. The same engineers service ducted DX and VRF systems like these.
+          </p>
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {caseStudySlugs.map((slug) => {
+              const p = getProjectBySlug(slug);
+              if (!p || p.draft) return null;
+              return (
+                <Link
+                  key={p.slug}
+                  href={`/projects/${p.slug}`}
+                  className="group rounded-lg border border-border bg-white p-6 transition-all hover:-translate-y-1 hover:shadow-lg"
+                >
+                  <p className="text-xs font-semibold uppercase tracking-widest text-primary">{p.category}</p>
+                  <h3 className="mt-2 font-heading text-lg font-semibold group-hover:text-primary">{p.name}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-text-muted">{p.systemSummary}</p>
+                  <span className="mt-4 inline-block text-sm font-medium text-primary">View case study &rarr;</span>
+                </Link>
+              );
+            })}
           </div>
-        </section>
-      )}
+        </div>
+      </section>
 
       {/* FAQ */}
       <section id="faq" className="bg-bg-soft py-16 md:py-24">
         <div className="mx-auto max-w-4xl px-6">
           <div className="text-center">
             <p className={eyebrow}>FAQ</p>
-            <h2 className="mt-3 font-heading text-3xl font-bold md:text-5xl">AC Maintenance — Your Questions Answered</h2>
+            <h2 className="mt-3 font-heading text-3xl font-bold md:text-5xl">FAQs</h2>
           </div>
           <div className="mt-12 space-y-3">
             {faqs.map((f) => (
@@ -379,14 +508,32 @@ export default async function AcMaintenancePage() {
         </div>
       </section>
 
-      {/* SERVICE AREAS */}
-      <section className="py-16 md:py-20">
+      {/* AREAS WE COVER — emirates, plus local pages for published communities */}
+      <section id="areas" className="bg-bg-soft py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-6 text-center">
           <p className={eyebrow}>Service Areas</p>
-          <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">AC Maintenance Across the UAE</h2>
+          <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">Areas we cover</h2>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            {areas.map((a) => (<span key={a} className="rounded-full border border-border bg-bg-soft px-6 py-3 font-semibold text-text">{a}</span>))}
+            {areas.map((a) => (<span key={a} className="rounded-full border border-border bg-white px-6 py-3 font-semibold text-text">{a}</span>))}
           </div>
+          {areaPages.length > 0 && (
+            <>
+              <p className="mx-auto mt-10 max-w-2xl text-text-muted">
+                What we typically find, which services fit, and how to book, written for each area of Dubai.
+              </p>
+              <div className="mt-6 flex flex-wrap justify-center gap-3">
+                {areaPages.map((a) => (
+                  <Link
+                    key={a.slug}
+                    href={communityPath(a.slug)}
+                    className="rounded-full border border-border bg-white px-6 py-3 font-semibold text-text transition-colors hover:border-primary hover:text-primary"
+                  >
+                    {a.name}
+                  </Link>
+                ))}
+              </div>
+            </>
+          )}
           <p className="mt-8 text-sm text-text-muted">
             Related reading:{" "}
             <Link
@@ -398,30 +545,6 @@ export default async function AcMaintenancePage() {
           </p>
         </div>
       </section>
-
-      {/* AREAS WE COVER — local pages; shown only for published communities */}
-      {areaPages.length > 0 && (
-        <section id="areas" className="bg-bg-soft py-16 md:py-20">
-          <div className="mx-auto max-w-7xl px-6 text-center">
-            <p className={eyebrow}>Areas we cover</p>
-            <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">AC Maintenance in Your Part of Dubai</h2>
-            <p className="mx-auto mt-4 max-w-2xl text-text-muted">
-              What we typically find, which services fit, and how to book, written for each area.
-            </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-3">
-              {areaPages.map((a) => (
-                <Link
-                  key={a.slug}
-                  href={communityPath(a.slug)}
-                  className="rounded-full border border-border bg-white px-6 py-3 font-semibold text-text transition-colors hover:border-primary hover:text-primary"
-                >
-                  {a.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* Inline quick quote */}
       <section className="bg-bg-soft py-16 md:py-20">

@@ -32,9 +32,9 @@ export const staticRoutes: RouteEntry[] = [
   { path: "/services", updatedAt: "2026-11-14" },
   // Landing pages
   { path: "/ac-maintenance-dubai", updatedAt: "2026-11-15" },
-  { path: "/ac-repair-dubai", updatedAt: "2026-11-14" },
+  { path: "/ac-repair-dubai", updatedAt: "2026-11-15" },
   { path: "/ac-amc-dubai", updatedAt: "2026-11-15" },
-  { path: "/ac-duct-cleaning-dubai", updatedAt: "2026-11-05" },
+  { path: "/ac-duct-cleaning-dubai", updatedAt: "2026-11-15" },
   { path: "/smart-thermostat-installation-dubai", updatedAt: "2026-11-13" },
   // Service detail pages
   { path: "/services/hvac-installation-dubai", updatedAt: "2026-11-15" },
@@ -42,7 +42,7 @@ export const staticRoutes: RouteEntry[] = [
   { path: "/services/chiller-maintenance-dubai", updatedAt: "2026-11-15" },
   { path: "/services/vrf-vrv-systems", updatedAt: "2026-11-15" },
   { path: "/services/dx-units", updatedAt: "2026-11-02" },
-  { path: "/services/ventilation-fresh-air", updatedAt: "2026-11-02" },
+  { path: "/services/ventilation-fresh-air", updatedAt: "2026-11-15" },
   { path: "/services/hvac-design", updatedAt: "2026-11-02" },
   // Gated: in the sitemap only once published (src/data/new-pages.ts)
   ...(isPublished("kitchenExhaust") ? [{ path: "/kitchen-exhaust-cleaning-dubai", updatedAt: "2026-11-14" }] : []),
