@@ -415,3 +415,14 @@ Mirrors the English "PPM checklist for chiller maintenance in Dubai" after the o
 2. فحص حالة حوض برج التبريد ودائرة مياه المكثّف
 
 Per-item frequencies are not stated (hidden TODO). Only the existing general quarterly schedule is repeated.
+
+## `/ar/ac-ducting-installation-dubai` and `/ar/services/hvac-installation-dubai` (2026-11-15) — merged with the SEO batch, for your review after the fact
+
+Changes, so you can review them. The Arabic ducting page has no keyword of its own in `keyword-map.json`; it follows the English «ducting contractors dubai» using «دكت», the Gulf search word.
+
+- **Ducting title (52):** «مقاول دكت تكييف في دبي | تركيب وتصنيع المجاري | AGEC»
+- **Ducting H1:** «مقاول دكت تكييف في دبي — تركيب وتصنيع المجاري»
+- **Ducting meta (145):** «مقاول دكت تكييف في دبي: تركيب المجاري وتصنيعها وتعديلها من الحديد المجلفن أو الألواح المعزولة مسبقاً، مع اختبار التسرّب وفق SMACNA. اطلب عرض سعر.»
+- **Ducting first paragraph (new):** «AGEC مقاول دكت تكييف في دبي: نركّب مجاري الهواء ونصنّعها ونعدّلها، من الحديد المجلفن (GI) والألواح المعزولة مسبقاً، للفلل والمكاتب والمحلات والمباني التجارية في أنحاء الإمارات.» The second paragraph now starts «نعمل من منطلق هندسي:» so the "who we are" sentence is not repeated.
+- **Ducting H2:** «مقاول دكت تكييف في دبي: ما نركّبه ونصنّعه» (was «ما الذي نركّبه ونصنّعه»)
+- **Installation meta (147):** trimmed from 157 by dropping «التنفيذية» from «المخططات التنفيذية»; no other change.

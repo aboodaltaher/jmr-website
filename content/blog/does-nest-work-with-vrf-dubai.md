@@ -3,7 +3,7 @@ date: "2026-11-13"
 author: "AGEC Team"
 readingTime: "6 min read"
 image: "/projects/agec-vrf-villa-al-mamzar-dubai.jpg"
-description: "Does Google Nest work with VRF/VRV in Dubai? Yes — with a drop-air adaptor that lets Nest control your VRF indoor unit. Here's how it works and what it costs."
+description: "Does Google Nest work with VRF/VRV in Dubai? Yes, with a drop-air adaptor that lets Nest control your VRF indoor unit. How it works and what it costs."
 titleTag: "Does Nest Work With VRF in Dubai? | AGEC"
 ---
 
