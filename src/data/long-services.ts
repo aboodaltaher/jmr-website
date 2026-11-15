@@ -402,13 +402,13 @@ export const VRF_MAINTENANCE: LongService = {
   "ctaService": "VRF maintenance",
   "intro": [
     "A VRF (or VRV) system cools many zones from one refrigerant circuit. That makes it efficient and flexible, but it also means one neglected outdoor unit, one blocked drain or one communication fault can take a whole floor out of comfort. Planned maintenance is how you find those problems before the summer does.",
-    "AGEC Technical Services is an engineer-led HVAC contractor in Dubai ({{LICENCE}}). We maintain VRF/VRV systems of all types for commercial and residential buildings in Dubai, Sharjah, Ajman, Abu Dhabi, Umm Al Quwain, Ras Al Khaimah and Fujairah, including Daikin VRV, Trane, O General, Midea and LG Multi V. This page covers maintenance, contracts and breakdown support. Planning a new system? See our [VRF/VRV installation service](/services/vrf-vrv-systems)."
+    "AGEC Technical Services provides VRF maintenance in Dubai as an engineer-led HVAC contractor ({{LICENCE}}). We maintain VRF/VRV systems of all types for commercial and residential buildings in Dubai, Sharjah, Ajman, Abu Dhabi, Umm Al Quwain, Ras Al Khaimah and Fujairah, including Daikin VRV, Trane, O General, Midea and LG Multi V. This page covers maintenance, contracts and breakdown support. Planning a new system? See our [VRF/VRV installation service](/services/vrf-vrv-systems)."
   ],
   "sections": [
     {
-      "h2": "Preventive maintenance checklist for VRF systems",
+      "h2": "VRF Maintenance in Dubai: What Our Service Covers",
       "paragraphs": [
-        "Each planned visit follows a written checklist, so every outdoor unit, indoor unit and branch is checked the same way every time and readings can be compared from one visit to the next."
+        "Every planned visit follows a written preventive maintenance checklist, so every outdoor unit, indoor unit and branch is checked the same way every time and readings can be compared from one visit to the next."
       ],
       "subsections": [
         {
@@ -624,7 +624,7 @@ export const AIR_BALANCING: LongService = {
   "ctaService": "air balancing",
   "intro": [
     "Air balancing measures how much air each diffuser, grille, coil and fan is actually moving, then adjusts the system until it matches the design airflow on the consultant's drawings. Until that is done, an air conditioning system is only installed, not proven: some rooms stay warm, others run cold and noisy, and the plant works harder than it should.",
-    "AGEC Technical Services provides air balancing as a service in its own right, in Dubai, Sharjah, Ajman, Abu Dhabi, Umm Al Quwain, Ras Al Khaimah and Fujairah. We are an engineer-led HVAC contractor ({{LICENCE}}), established 2022. If you also need water-side balancing, commissioning and functional tests, see our full [testing and commissioning (TAB) service](/services/tab-testing-adjusting-balancing-dubai)."
+    "AGEC Technical Services provides air balancing in Dubai as a service in its own right, and in Sharjah, Ajman, Abu Dhabi, Umm Al Quwain, Ras Al Khaimah and Fujairah. We are an engineer-led HVAC contractor ({{LICENCE}}), established 2022. If you also need water-side balancing, commissioning and functional tests, see our full [testing and commissioning (TAB) service](/services/tab-testing-adjusting-balancing-dubai)."
   ],
   "sections": [
     {
@@ -661,7 +661,7 @@ export const AIR_BALANCING: LongService = {
       ]
     },
     {
-      "h2": "Our air balancing method",
+      "h2": "Air Balancing in Dubai: Our Method",
       "paragraphs": [],
       "subsections": [
         {
