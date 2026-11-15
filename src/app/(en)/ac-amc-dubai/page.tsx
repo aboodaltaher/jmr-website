@@ -30,7 +30,7 @@ export const metadata = buildMetadata({
 // as [BRACKETS]). Fill these in to reveal the matching lines/rows.
 const amcConfig = {
   visitsPerYear:
-    "2, 4 or 6 per year depending on your plan (we recommend 4, every 3 months)",
+    "2, 4 or 6 per year depending on your plan; we recommend every 3 months (4 visits a year)",
   included: [
     "Scheduled visits",
     "Filter and coil cleaning",
@@ -72,7 +72,7 @@ const eyebrow = "text-sm font-semibold uppercase tracking-widest text-primary";
 const faqs: { q: string; a: string }[] = [
   {
     q: "How often should a villa AC be serviced in Dubai?",
-    a: "Every 3–4 months is our recommendation, with the heaviest use between May and October.",
+    a: "Every 3 months (4 visits a year) is our recommendation, with the heaviest use between May and October.",
   },
   {
     q: "What is the difference between an AMC and a one-off service?",
@@ -322,8 +322,8 @@ export default function AcAmcPage() {
                   <td className="py-3 text-text-muted">
                     {amcConfig.visitsPerYear}. Each visit: filter and coil
                     cleaning, drain flushing, refrigerant pressure check,
-                    electrical and control check, performance test, and a written
-                    report.
+                    electrical and control check, performance test, and a service
+                    report with photos.
                   </td>
                 </tr>
                 <tr className="border-b border-border">
@@ -482,7 +482,7 @@ export default function AcAmcPage() {
               <p className="mt-3 text-sm text-text-muted">
                 The <strong>Basic</strong> plan&apos;s 2 visits suit low-use or
                 single-split homes; for year-round villa and office use we
-                recommend 4 visits a year — roughly one every 3 months. AMC visits
+                recommend every 3 months (4 visits a year). AMC visits
                 are AED {Math.min(...prices.amcPlans.map((p) => p.from))}–{Math.max(...prices.amcPlans.map((p) => p.from))} per machine depending on plan, which is below our
                 one-off service rate of AED {prices.maintenance[0].from} per machine (minimum 3 units),
                 because the visits are scheduled for the year.
