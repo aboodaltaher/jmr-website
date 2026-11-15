@@ -28,7 +28,7 @@ import { isPublished } from "@/data/new-pages";
 //  - dynamic blog/project pages → appended from data in sitemap.ts
 export const staticRoutes: RouteEntry[] = [
   { path: "/", updatedAt: "2026-11-15" },
-  { path: "/about", updatedAt: "2026-11-05" },
+  { path: "/about", updatedAt: "2026-11-15" },
   { path: "/services", updatedAt: "2026-11-14" },
   // Landing pages
   { path: "/ac-maintenance-dubai", updatedAt: "2026-11-15" },

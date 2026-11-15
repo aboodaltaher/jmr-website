@@ -22,9 +22,7 @@ export const metadata = buildMetadata({
 const linkClass = "text-primary underline underline-offset-2 hover:text-primary-dark";
 
 export default function VrfVrvSystems() {
-  // Case studies referenced in the maintenance section. Names come from the case-study data.
-  // TODO(owner): the 109 TR figure for the Al Mamzar villa is not confirmed, so no tonnage is
-  // shown for it here. Add it once you confirm.
+  // Case studies referenced in the maintenance section. Names and capacities come from the case-study data.
   const mamzar = getProjectBySlug("vrf-villa-al-mamzar-dubai");
   const basil = getProjectBySlug("basil-mall-ajman");
 
@@ -134,8 +132,9 @@ export default function VrfVrvSystems() {
                   your HVAC plant can sit under one annual maintenance contract:
                   scheduled visits covering filter and coil cleaning, drain
                   flushing, refrigerant pressure checks, electrical and control
-                  checks and a performance test, with a written report after every
-                  visit.
+                  checks and a performance test, plus a service report with
+                  photos after every visit. Filters on FCUs and indoor units are
+                  cleaned quarterly under the AMC.
                 </p>
                 <p>
                   For offices, retail and whole buildings, see{" "}
@@ -144,7 +143,7 @@ export default function VrfVrvSystems() {
                   </Link>
                   .
                 </p>
-                {/* TODO(owner): a VRF-specific PPM checklist (outdoor unit, branch/BS boxes, controllers) and the FCU filter-cleaning frequency, if you want them listed. None is stated on the site, so none is shown. */}
+                {/* TODO(owner): a VRF-specific PPM checklist (outdoor unit, branch/BS boxes, controllers), if you want it listed. None is stated on the site, so none is shown. */}
               </div>
 
               <h3 className="mt-10 font-heading text-xl font-semibold">
@@ -157,7 +156,8 @@ export default function VrfVrvSystems() {
                       {mamzar.name}
                     </Link>{" "}
                     — a private villa in {mamzar.location.emirate}: HVAC
-                    installation and commissioning with a VRF system.
+                    installation and commissioning with a {mamzar.tonnage} VRF
+                    system.
                   </li>
                 )}
                 {basil && !basil.draft && (
