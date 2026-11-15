@@ -248,3 +248,79 @@ paragraph («نحن نورّد ونوصّل معدّات التكييف الخا
 and life-safety systems are «يصمّمها ويعتمدها مصمّم ومقاول الحماية من الحريق، وليس نحن»), the interface
 bullet «…وإنذار الحريق، مع مسؤول عن كل منها», and the draft-banner text. Still gated (404 on the live site).
 
+---
+
+## DRAFT — `/ar/ac-amc-dubai`: commercial & building AMC (2026-11-15) — NOT PUBLISHED
+
+Arabic for the sections added to the English `/ac-amc-dubai` on 2026-11-15 (owner-confirmed facts: SLA tiers
+emergency 4 hours · urgent same day · routine 48 hours; "service report with photos after every visit"; FCU /
+indoor-unit filter cleaning quarterly; no CAFM). Written as natural Gulf business Arabic, not word-for-word.
+**Nothing here is on the site yet.** The Arabic page currently has no commercial section at all (hero, plans,
+exclusions, 5 FAQs only), so the SLA, reporting and quarterly-filter lines sit inside a new section.
+Where it goes: after the plans section and the mid-page CTA, before «ما هو غير مشمول» (`id="commercial-amc"`).
+
+### A. New section
+
+**Eyebrow:** «للمباني والمنشآت»
+**H2:** «عقد الصيانة للمباني والمنشآت التجارية (صيانة التكييف والتهوية HVAC)»
+**Intro:**
+«العقد نفسه يتّسع من فيلا واحدة إلى مبنى كامل. في المكاتب والمحلات التجارية والمطاعم والفنادق والمجمّعات المُدارة، نضع كامل منظومة التكييف والتهوية لديكم تحت عقد صيانة واحد — سبليت ومجاري، وVRF/VRV، وتشيلرات، ووحدات مناولة الهواء (AHU)، ووحدات ملف المروحة (FCU)، والتهوية — فيكون فريق هندسي واحد مسؤولاً عن كل شيء، بدلاً من زيارات متفرقة من جهات مختلفة.»
+**Two ticks:**
+- «كل المعدات تحت عقد واحد — سبليت، ومجاري، وVRF/VRV، وتشيلرات، ووحدات مناولة الهواء، ووحدات ملف المروحة، والتهوية»
+- «تسعير شفاف — الزيارات المجدولة بسعر ثابت، وقطع الغيار والأعمال الكبرى تُسعَّر كتابةً قبل التنفيذ»
+
+**H3:** «جدول الصيانة الوقائية المجدولة (PPM)»
+**Lead-in:** «زيارات الصيانة الوقائية المجدولة حسب نوع المعدات.»
+**Table** — headers «المعدات» | «زيارات الصيانة الوقائية»
+
+| المعدات | زيارات الصيانة الوقائية |
+|---|---|
+| وحدات السبليت والمجاري | زيارتان أو 4 أو 6 زيارات في السنة حسب الخطة (ننصح بـ 4 زيارات، كل 3 أشهر). في كل زيارة: تنظيف الفلاتر والملفات، وتنظيف خط التصريف، وفحص ضغط الفريون، وفحص الأجزاء الكهربائية والتحكم، واختبار الأداء، وتقرير خدمة مع صور. |
+| VRF/VRV، ووحدات مناولة الهواء، ووحدات ملف المروحة، والتهوية | تنظيف فلاتر وحدات ملف المروحة والوحدات الداخلية: كل 3 أشهر. باقي الزيارات تُحدَّد لكل موقع بعد المعاينة، بحسب عدد المعدات وأنواعها. |
+| التشيلرات | جدول مخصّص — راجع «صيانة التشيلر» (link to `/ar/services/chiller-maintenance-dubai`). |
+
+**H3:** «مستويات الاستجابة (SLA)»
+**Table** — headers «المستوى» | «زمن الاستجابة»
+
+| المستوى | زمن الاستجابة |
+|---|---|
+| طارئ | خلال 4 ساعات |
+| عاجل | في نفس اليوم |
+| روتيني | خلال 48 ساعة |
+
+**Note under the table:** «نربط مستوى الاستجابة بمدى أهمية كل نظام، ويكون المستوى الذي تحتاجونه جزءاً من عرض السعر بعد معاينة الموقع.»
+
+**H3:** «التقارير لفرق إدارة المرافق»
+**Text:** «تقرير خدمة مع صور بعد كل زيارة — هو السجل الذي يحتاجه مديرو المرافق للتدقيق وإعداد الميزانيات.»
+**Closing line:** «يُسعَّر عقد المباني بعد معاينة الموقع، بحسب عدد الوحدات وأنواعها ومستوى الاستجابة الذي تحتاجونه.»
+
+### B. Three FAQs to add (the FAQPage schema is built from the same list, so it follows automatically)
+
+1. **س:** «ماذا يستلم مدير المبنى بعد كل زيارة؟»
+   **ج:** «تقرير خدمة مع صور بعد كل زيارة، موثّق لفريق إدارة المرافق. وهو السجل الذي يحتاجه مدير المرافق للتدقيق وإعداد الميزانيات.»
+2. **س:** «بمن نتصل إذا تعطّلت إحدى الوحدات في المبنى؟»
+   **ج:** «يمكنكم التواصل معنا على مدار الساعة (24/7) بالاتصال أو عبر واتساب. مستويات الاستجابة في عقود المباني: الطارئ خلال 4 ساعات، والعاجل في نفس اليوم، والروتيني خلال 48 ساعة.»
+3. **س:** «هل تعاينون المبنى قبل تسعير عقد الصيانة التجاري؟»
+   **ج:** «نعم. نبدأ بمعاينة الموقع وفحص مرجعي للمنظومة الحالية، ثم نرسل عرضاً مكتوباً. يُسعَّر العقد بحسب عدد الوحدات وأنواعها ومستوى الاستجابة الذي تحتاجونه.»
+
+### C. Two existing strings to change (photo reports)
+
+| Where | Now | Proposed |
+|---|---|---|
+| Plans lead-in | «الأسعار لكل وحدة لكل زيارة. جميع الخطط تشمل تقريراً موثّقاً بعد كل زيارة.» | «الأسعار لكل وحدة لكل زيارة. جميع الخطط تشمل تقرير خدمة مع صور بعد كل زيارة.» |
+| Plan card tick | «تقرير موثّق لكل زيارة» | «تقرير خدمة مع صور لكل زيارة» |
+
+The hero line and meta description say «تقارير موثّقة» — still true, left as is.
+
+### Wording choices to check
+1. «روتيني» for "routine" (alternative: «اعتيادي»). «عاجل» = urgent, «طارئ» = emergency.
+2. «وحدات ملف المروحة (FCU)» — the site also has the shorter «وحدات الملف» in one place.
+3. «مدير المبنى» / «مديرو المرافق» / «فرق إدارة المرافق» for building / facility managers.
+4. «الصيانة الوقائية المجدولة (PPM)» for planned preventive maintenance; «PPM», «SLA», «AHU», «FCU», «VRF/VRV» kept in Latin letters as trade terms.
+5. Plural-polite «لديكم / تحتاجونه / يمكنكم» in the new text, to match the existing FAQ («لوحداتكم»); the CTAs on this page use the singular («اتصل الآن»).
+6. «ننصح بـ 4 زيارات» vs the existing FAQ's «نوصي بكل 3 إلى 4 أشهر».
+
+### Not part of this draft (English-only for now)
+The English page also has FAQs «Can you cover a whole building…» and «How is commercial AMC priced?», plus the "What an AC AMC covers" list and the "AC AMC in Dubai" heading changes. The Arabic page has none of these.
+The English PPM table row for split/ducted units still says "a written report"; the confirmed wording is "service report with photos", so that English cell needs the same one-word update.
+
