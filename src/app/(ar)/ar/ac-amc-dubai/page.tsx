@@ -12,9 +12,9 @@ const SITE_URL = "https://agec.ae";
 const ROUTE = "/ar/ac-amc-dubai";
 
 export const metadata = buildMetadata({
-  title: "عقود صيانة المكيفات السنوية في دبي | AMC | AGEC",
+  title: "عقد صيانة المكيفات السنوي (AMC) في دبي | AGEC",
   description:
-    "عقود صيانة سنوية للمكيفات في دبي بزيارات مجدولة وتقارير موثّقة وأولوية في الاستجابة. تبدأ خدمة الوحدة من 350 درهماً. اطلب عرض سعر.",
+    "عقد صيانة المكيفات السنوي (AMC) في دبي للفلل والشقق والمكاتب والمباني: زيارات مجدولة، وتقرير خدمة مع صور بعد كل زيارة، وأولوية في الاستجابة عند الأعطال.",
   path: ROUTE,
   locale: "ar_AE",
   languages: {
@@ -54,10 +54,18 @@ const covers = [
   "تقرير خدمة مع صور بعد كل زيارة",
 ];
 
+const steps = [
+  "معاينة الموقع وفحص مرجعي للمنظومة الحالية.",
+  "عرض مكتوب.",
+  "توقيع العقد.",
+  "زيارات مجدولة.",
+  "تقرير بعد كل زيارة.",
+];
+
 const slaTiers = [
   ["طارئ", "خلال 4 ساعات"],
   ["عاجل", "في نفس اليوم"],
-  ["روتيني", "خلال 48 ساعة"],
+  ["اعتيادي", "خلال 48 ساعة"],
 ];
 
 const faqs: { q: string; a: string }[] = [
@@ -78,6 +86,10 @@ const faqs: { q: string; a: string }[] = [
     a: "نعم. نبدأ بفحص مرجعي لوحداتكم، ثم نتفق على النطاق كتابةً.",
   },
   {
+    q: "هل يمكنني إلغاء العقد أو تعديل نطاقه؟",
+    a: "مدة العقد 12 شهراً. يمكنكم إضافة وحدات أو إزالتها كتابةً في أي وقت، ويحق لأي من الطرفين إنهاء العقد بإشعار كتابي مدته 30 يوماً. وتُحتسب الزيارات المنفَّذة فعلاً بسعر الخطة.",
+  },
+  {
     q: "هل يمكنكم تغطية مبنى كامل أو عدة وحدات بعقد واحد؟",
     a: "نعم. في المكاتب والمحلات التجارية والفنادق والمجمّعات المُدارة نضع كامل منظومة التكييف والتهوية لديكم — سبليت ومجاري، وVRF/VRV، وتشيلرات، ووحدات مناولة الهواء (AHU)، ووحدات ملف المروحة (FCU)، والتهوية — تحت عقد صيانة واحد، مع مستويات استجابة محدّدة (SLA) وتقارير موثّقة لفريق إدارة المرافق.",
   },
@@ -91,7 +103,7 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: "بمن نتصل إذا تعطّلت إحدى الوحدات في المبنى؟",
-    a: "يمكنكم التواصل معنا على مدار الساعة (24/7) بالاتصال أو عبر واتساب. مستويات الاستجابة في عقود المباني: الطارئ خلال 4 ساعات، والعاجل في نفس اليوم، والروتيني خلال 48 ساعة.",
+    a: "يمكنكم التواصل معنا على مدار الساعة (24/7) بالاتصال أو عبر واتساب. مستويات الاستجابة في عقود المباني: الطارئ خلال 4 ساعات، والعاجل في نفس اليوم، والاعتيادي خلال 48 ساعة.",
   },
   {
     q: "هل تعاينون المبنى قبل تسعير عقد الصيانة التجاري؟",
@@ -168,6 +180,17 @@ export default function ArabicAmc() {
               <MessageCircle className="h-4 w-4" /> واتساب لعرض سعر
             </a>
           </div>
+        </div>
+      </section>
+
+      {/* WHO AN AMC SUITS */}
+      <section className="py-16 md:py-20">
+        <div className="mx-auto max-w-4xl px-6">
+          <p className={eyebrow}>لمن يناسب العقد</p>
+          <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">لمن يناسب عقد الصيانة السنوي</h2>
+          <p className="mt-5 text-lg leading-relaxed text-text-muted">
+            ملّاك الفلل وملّاك العقارات ومديرو العقارات، والمكاتب والمحلات التجارية. مقاول واحد يتولّى كل وحدة وفق جدول ثابت، فتُكتشف الأعطال قبل ذروة الصيف لا في أثنائها.
+          </p>
         </div>
       </section>
 
@@ -268,14 +291,14 @@ export default function ArabicAmc() {
             ))}
           </ul>
 
-          <h3 className="mt-10 font-heading text-2xl font-bold">جدول الصيانة الوقائية المجدولة (PPM)</h3>
-          <p className="mt-3 text-text-muted">زيارات الصيانة الوقائية المجدولة حسب نوع المعدات.</p>
+          <h3 className="mt-10 font-heading text-2xl font-bold">جدول الصيانة الدورية (PPM)</h3>
+          <p className="mt-3 text-text-muted">زيارات الصيانة الدورية حسب نوع المعدات.</p>
           <div className="mt-4 overflow-x-auto">
             <table className="w-full min-w-[32rem] text-start text-sm">
               <thead>
                 <tr className="border-b border-border text-xs tracking-wider text-text-muted">
                   <th className="py-3 pe-4 text-start font-semibold">المعدات</th>
-                  <th className="py-3 text-start font-semibold">زيارات الصيانة الوقائية</th>
+                  <th className="py-3 text-start font-semibold">زيارات الصيانة الدورية</th>
                 </tr>
               </thead>
               <tbody className="align-top">
@@ -338,6 +361,35 @@ export default function ArabicAmc() {
 
           <p className="mt-8 text-text-muted">
             يُسعَّر عقد المباني بعد معاينة الموقع، بحسب عدد الوحدات وأنواعها ومستوى الاستجابة الذي تحتاجونه.
+          </p>
+        </div>
+      </section>
+
+      {/* HOW IT WORKS */}
+      <section className="py-16 md:py-20">
+        <div className="mx-auto max-w-4xl px-6">
+          <p className={eyebrow}>كيف يعمل</p>
+          <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">كيف يعمل العقد</h2>
+          <ol className="mt-8 space-y-4">
+            {steps.map((step, i) => (
+              <li key={step} className="flex items-start gap-4">
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary font-heading text-sm font-bold text-white">
+                  {i + 1}
+                </span>
+                <span className="pt-1 text-text">{step}</span>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* SWITCHING */}
+      <section className="bg-bg-soft py-16 md:py-20">
+        <div className="mx-auto max-w-4xl px-6">
+          <p className={eyebrow}>الانتقال</p>
+          <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">الانتقال من مقاولكم الحالي</h2>
+          <p className="mt-5 text-lg leading-relaxed text-text-muted">
+            يمكننا استلام الصيانة من مقاولكم الحالي، ونبدأ بفحص مرجعي لوحداتكم.
           </p>
         </div>
       </section>
