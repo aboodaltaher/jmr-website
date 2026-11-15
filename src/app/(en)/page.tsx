@@ -259,7 +259,11 @@ export default async function Home() {
             <Link href="/ac-repair-dubai" className="font-semibold text-primary hover:underline">
               AC repair in Dubai
             </Link>
-            .
+            . Need a new unit? See{" "}
+            <Link href="/ac-installation-dubai" className="font-semibold text-primary hover:underline">
+              AC installation in Dubai
+            </Link>
+            , supplied and installed.
           </p>
         </div>
       </section>

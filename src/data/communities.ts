@@ -8,6 +8,8 @@
 // and the same item is listed in `toConfirm` so nothing is forgotten. The only
 // prices quoted are the ones already on /ac-maintenance-dubai.
 
+import { money, prices } from "./prices.ts";
+
 export interface CommunitySection {
   h2: string;
   paragraphs: string[];
@@ -34,6 +36,15 @@ export interface Community {
   /** Slugs from src/data/projects.ts — real case studies only. */
   projectSlugs: string[];
   faqs: CommunityFaq[];
+  /**
+   * Set for pages built around one real job type (replacement, AMC, leak repair) instead of
+   * general maintenance. `name` is the short job name used in headings, schema and the WhatsApp
+   * pre-fill; the link points at the matching service page.
+   */
+  job?: { name: string; serviceHref: string; serviceLabel: string };
+  /** Real job photo: a /public path, or a "[TO CONFIRM: photo]" marker until it is supplied. */
+  photo?: string;
+  photoCaption?: string;
   /** WhatsApp pre-fill that names the area. */
   /** Everything the owner must confirm before this page is published. */
   toConfirm: string[];
@@ -355,11 +366,320 @@ const arabianRanches: Community = {
   ],
 };
 
+
+const replacePrice = money(prices.installation[4].from as number);
+const callout = money(prices.repair[0].from as number);
+const amc = prices.amcPlans;
+const warranty =
+  "The manufacturer gives a 5-year warranty on the compressor. AGEC gives a 1-year warranty on the indoor unit and on our installation work.";
+
+const villanova: Community = {
+  slug: "villanova",
+  name: "Villanova",
+  updatedAt: "2026-11-15",
+  metaTitle: "AC Replacement Villanova Dubai | New Unit Fitted | AGEC",
+  metaDescription: `AC machine replacement in Villanova, Dubai: we supply the new unit, remove the old one and fit it, from AED ${replacePrice} per unit. Call or WhatsApp AGEC.`,
+  h1: "AC Machine Replacement in Villanova, Dubai",
+  job: { name: "AC replacement", serviceHref: "/ac-installation-dubai", serviceLabel: "AC installation and replacement in Dubai" },
+  photo: "[TO CONFIRM: photo of the Villanova AC machine replacement]",
+  photoCaption: "[TO CONFIRM: caption for the photo: the unit replaced and the unit fitted, if you want it shown]",
+  intro: [
+    "AGEC replaces AC machines in Villanova. When an old unit keeps failing, we supply a new one, take out the old unit and fit the new one, so you deal with one company for the unit and the installation.",
+    `Replacing an old unit starts from AED ${replacePrice} per unit, with the new unit included. The exact price depends on the unit and the job, and we confirm it in writing before any work starts.`,
+  ],
+  sections: [
+    {
+      h2: "When to replace the machine instead of repairing it",
+      paragraphs: [
+        "Most faults are worth repairing. A replacement makes sense when the repair stops making sense, and we tell you honestly which side of that line your unit is on.",
+      ],
+      bullets: [
+        "The unit has failed repeatedly and each repair buys only a few weeks.",
+        "The compressor has failed and the cost of replacing it approaches the cost of a new unit.",
+        "The unit no longer holds the room at temperature in summer even after it has been cleaned and checked.",
+        "Parts for an old model are hard to get, or a repair would cost more than the unit is worth.",
+      ],
+    },
+    {
+      h2: "What a replacement in Villanova involves",
+      paragraphs: [
+        "We start with the unit that is there: what it is, how it is connected and what is failing. From that we recommend a replacement of the right size and type and give you a written price.",
+        "On the day we remove the old unit and fit the new one. A single split unit takes about 3 hours to install; a ducted unit takes about 7 hours including the ducting. We test the new unit before we leave and show you how to use it. We confirm in the quote what existing pipework and connections are reused and what is new, so the price covers the whole job.",
+      ],
+    },
+    {
+      h2: "Warranty on a replacement unit",
+      paragraphs: [warranty],
+    },
+    {
+      h2: "Brands we install and repair",
+      paragraphs: [
+        "Daikin, Trane, O General, Mitsubishi, LG, Carrier and York. If you want to stay with the brand you have, or change to another, tell us when you ask for the quote.",
+      ],
+    },
+  ],
+  projectsHeading: "Replacement work in Villanova",
+  projectsIntro:
+    "A photo of an AC machine replacement we completed in Villanova goes above. You can see the projects we have published on our projects page.",
+  projectSlugs: [],
+  faqs: [
+    {
+      q: "How much does an AC replacement cost in Villanova?",
+      a: `Replacing an old unit starts from AED ${replacePrice} per unit, with the new unit included. We confirm the exact price in writing once we have seen the unit and the job.`,
+    },
+    {
+      q: "How long does a replacement take?",
+      a: "About 3 hours for a single split unit and about 7 hours for a ducted unit including the ducting. We confirm the time when we quote.",
+    },
+    {
+      q: "What warranty does a replacement unit have?",
+      a: warranty,
+    },
+    {
+      q: "Should I repair my AC or replace it?",
+      a: `It depends on the fault and the age of the unit. An engineer can diagnose it for a call-out fee of AED ${callout}, waived if you go ahead with the repair, and tell you whether repair or replacement makes sense.`,
+    },
+  ],
+  toConfirm: [
+    "Villanova: photo of a real AC machine replacement job (the page stays hidden until it is added).",
+    "Villanova: photo caption, if you want one shown (unit replaced and unit fitted).",
+  ],
+};
+
+const dubaiHills: Community = {
+  slug: "dubai-hills",
+  name: "Dubai Hills",
+  updatedAt: "2026-11-15",
+  metaTitle: "AC Replacement Dubai Hills | Machine Swap | AGEC",
+  metaDescription: `AC machine replacement in Dubai Hills: split, cassette, ducted or VRF, new unit included, from AED ${replacePrice} per unit. Call or WhatsApp AGEC for a quote.`,
+  h1: "AC Machine Replacement in Dubai Hills",
+  job: { name: "AC replacement", serviceHref: "/ac-installation-dubai", serviceLabel: "AC installation and replacement in Dubai" },
+  photo: "[TO CONFIRM: photo of the Dubai Hills AC machine replacement]",
+  photoCaption: "[TO CONFIRM: caption for the photo: the unit replaced and the unit fitted, if you want it shown]",
+  intro: [
+    "AGEC replaces AC machines in Dubai Hills, supplying the new unit and fitting it in place of the old one. Some homes need one machine replaced, others need several, and we plan the job around what the home actually needs.",
+    `Replacing an old unit starts from AED ${replacePrice} per unit, new unit included. We confirm the exact price in writing before work starts.`,
+  ],
+  sections: [
+    {
+      h2: "Replacing one machine or several",
+      paragraphs: [
+        "If one unit has failed and the others are fine, we replace that one and match it to the system you have. If several units are old, it can make sense to replace them together, because the home is cooled evenly and you are not calling us for the next failure a month later. We give you the price per unit so you can decide.",
+      ],
+    },
+    {
+      h2: "Which type of unit to replace it with",
+      paragraphs: [
+        "The replacement does not have to be the same type as the old machine. These are the options we install, with our supply-and-install prices:",
+      ],
+      bullets: [
+        `Split AC: AED ${money(prices.installation[0].from as number)} per ton.`,
+        `Cassette AC: AED ${money(prices.installation[1].from as number)} per ton.`,
+        `Ducted split AC: from AED ${money(prices.installation[2].from as number)} per ton.`,
+        `VRF for homes: from AED ${money(prices.installation[3].from as number)} per ton.`,
+      ],
+    },
+    {
+      h2: "How we size the new machine",
+      paragraphs: [
+        "A replacement is a chance to correct the size of the system. We look at the room, how it is used and how much heat comes into it, and recommend a size in tons. Send us a photo of the room and the old unit's label and we can give you a first idea before any visit.",
+      ],
+    },
+    {
+      h2: "Warranty and time",
+      paragraphs: [
+        warranty,
+        "A single split unit takes about 3 hours to install and a ducted unit about 7 hours including the ducting. Jobs with several machines take longer, and we give you the time in the quote.",
+      ],
+    },
+    {
+      h2: "Brands we install and repair",
+      paragraphs: ["Daikin, Trane, O General, Mitsubishi, LG, Carrier and York."],
+    },
+  ],
+  projectsHeading: "Replacement work in Dubai Hills",
+  projectsIntro:
+    "A photo of an AC machine replacement we completed in Dubai Hills goes above. You can see the projects we have published on our projects page.",
+  projectSlugs: [],
+  faqs: [
+    {
+      q: "How much does it cost to replace an AC machine in Dubai Hills?",
+      a: `Replacing an old unit starts from AED ${replacePrice} per unit, new unit included. Split and cassette units are AED ${money(prices.installation[0].from as number)} per ton supplied and installed. We confirm the exact price in writing.`,
+    },
+    {
+      q: "Can I change the type of AC when I replace it?",
+      a: "Yes. We install split, cassette, ducted split and VRF for homes. Tell us what you have and what you want, and we recommend what fits the layout.",
+    },
+    {
+      q: "How do I know what size to replace it with?",
+      a: "We size by the room, how it is used and the heat coming in, not by the size of the old machine. Send a photo of the room and an engineer will recommend a size.",
+    },
+    {
+      q: "What warranty do I get on the new machine?",
+      a: warranty,
+    },
+  ],
+  toConfirm: [
+    "Dubai Hills: photo of a real AC machine replacement job (the page stays hidden until it is added).",
+    "Dubai Hills: photo caption, if you want one shown (unit replaced and unit fitted).",
+  ],
+};
+
+const alWasl: Community = {
+  slug: "al-wasl",
+  name: "Al Wasl",
+  updatedAt: "2026-11-15",
+  metaTitle: "AC Maintenance Contract Al Wasl Dubai | AMC | AGEC",
+  metaDescription: `AC annual maintenance contracts in Al Wasl, Dubai: 2, 4 or 6 scheduled visits a year from AED ${money(Math.min(...amc.map((p) => p.from)))} per machine per visit. Call or WhatsApp.`,
+  h1: "AC Maintenance Contracts (AMC) in Al Wasl, Dubai",
+  job: { name: "AC maintenance contract", serviceHref: "/ac-amc-dubai", serviceLabel: "AC annual maintenance contracts (AMC)" },
+  photo: "[TO CONFIRM: photo of the Al Wasl AC maintenance contract job]",
+  photoCaption: "[TO CONFIRM: caption for the photo, if you want one shown]",
+  intro: [
+    "AGEC looks after AC in Al Wasl under annual maintenance contracts. A contract fixes the visits for the year, so your units are serviced on schedule and you do not have to remember to book.",
+    `Plans are priced per machine per visit, from AED ${money(Math.min(...amc.map((p) => p.from)))} excluding VAT, with 2, 4 or 6 visits a year.`,
+  ],
+  sections: [
+    {
+      h2: "What an AC maintenance contract gives you",
+      paragraphs: [
+        "Without a contract, AC servicing tends to happen after something goes wrong. A contract turns it into a schedule: we visit, service every machine, and send a report each time.",
+      ],
+      bullets: [
+        "Scheduled visits for the year, set when you sign.",
+        "A service report after each visit.",
+        "A discount on parts if a repair is needed.",
+        "A response time set by the plan: within 48 hours, within 24 hours, or same day.",
+      ],
+    },
+    {
+      h2: "The three plans",
+      paragraphs: [
+        "All prices are per machine, per visit, excluding VAT.",
+      ],
+      bullets: amc.map(
+        (p) =>
+          `${p.name}: ${p.visits} visits a year, from AED ${money(p.from)}. ${p.response}. ${p.partsDiscount} off parts.`,
+      ),
+    },
+    {
+      h2: "One-off service instead",
+      paragraphs: [
+        `If you would rather not sign a contract, a one-off service is from AED ${money(prices.maintenance[0].from as number)} per machine, with a minimum of 3 units. A contract works out lower per visit.`,
+      ],
+    },
+    {
+      h2: "How to start",
+      paragraphs: [
+        "Tell us how many machines you have and what type they are. We confirm the plan and the price in writing before the first visit.",
+      ],
+    },
+  ],
+  projectsHeading: "Maintenance contracts in Al Wasl",
+  projectsIntro:
+    "A photo from one of our Al Wasl maintenance contract jobs goes above. You can see the projects we have published on our projects page.",
+  projectSlugs: [],
+  faqs: [
+    {
+      q: "How much is an AC maintenance contract in Al Wasl?",
+      a: `Plans are from AED ${money(Math.min(...amc.map((p) => p.from)))} per machine per visit, excluding VAT, depending on how many visits you choose.`,
+    },
+    {
+      q: "How many visits a year should I choose?",
+      a: "The Basic plan has 2 visits, Standard 4 and Premium 6. Because AC runs for most of the year in Dubai, more visits keep the units cleaner and catch faults earlier.",
+    },
+    {
+      q: "Do the plans include reports?",
+      a: "Yes, every plan includes a service report after each visit.",
+    },
+    {
+      q: "What if a repair is needed during the contract?",
+      a: "We quote the repair in writing first. The plans include a discount on parts: 5% on Basic, 10% on Standard and 15% on Premium.",
+    },
+  ],
+  toConfirm: [
+    "Al Wasl: photo of a real AC maintenance contract job (the page stays hidden until it is added).",
+    "Al Wasl: photo caption, if you want one shown.",
+  ],
+};
+
+const sustainableCity: Community = {
+  slug: "sustainable-city",
+  name: "Sustainable City",
+  updatedAt: "2026-11-15",
+  metaTitle: "AC Leak Repair Sustainable City Dubai | AGEC",
+  metaDescription: `AC leak repair in The Sustainable City, Dubai: water and refrigerant leaks traced and fixed. Diagnosis AED ${callout}, waived if you proceed. Call or WhatsApp.`,
+  h1: "AC Leak Repairs in The Sustainable City, Dubai",
+  job: { name: "AC leak repair", serviceHref: "/ac-repair-dubai", serviceLabel: "AC repair in Dubai" },
+  photo: "[TO CONFIRM: photo of the Sustainable City AC leak repair]",
+  photoCaption: "[TO CONFIRM: caption for the photo: where the leak was and what the fix was, if you want it shown]",
+  intro: [
+    "AGEC finds and fixes AC leaks in The Sustainable City. A leak can be water dripping from an indoor unit, or refrigerant escaping from the system so it stops cooling. Both need the source found, not a patch over the symptom.",
+    `Diagnosis costs AED ${callout}, waived if you go ahead with the repair. The exact repair price is quoted after diagnosis, in writing, before any work starts.`,
+  ],
+  sections: [
+    {
+      h2: "Water leaks from the indoor unit",
+      paragraphs: [
+        "Water from an indoor unit is almost always condensate that cannot drain. The usual causes are a blocked or misaligned drain line, a damaged drain tray, bare or damaged pipe insulation that sweats, or a coil that has frozen and is melting. We trace the water to its source, clear and flush the drain, check the tray and insulation, and find out why a frozen coil iced up.",
+      ],
+    },
+    {
+      h2: "Refrigerant leaks",
+      paragraphs: [
+        "Refrigerant runs in a sealed loop and is not used up, so a system that is low on gas has a leak. Topping up without fixing the leak hides the problem and the cooling fades again. We find the leak, repair it and then recharge to the correct level, so the repair lasts.",
+      ],
+    },
+    {
+      h2: "How an AC leak visit works",
+      paragraphs: [
+        "We inspect the unit and measure the system to find the source of the leak. We tell you the price in writing before any work starts. We carry out the repair and send a short report with what we measured.",
+      ],
+    },
+    {
+      h2: "If a leak keeps coming back",
+      paragraphs: [
+        "A repeat leak usually means the cause was not the one first treated. Tell us what has been tried and we start from there. If a unit is beyond repair, we say so and quote a replacement.",
+      ],
+    },
+  ],
+  projectsHeading: "Leak repairs in The Sustainable City",
+  projectsIntro:
+    "A photo of an AC leak repair we completed in The Sustainable City goes above. You can see the projects we have published on our projects page.",
+  projectSlugs: [],
+  faqs: [
+    {
+      q: "How much does an AC leak repair cost?",
+      a: `Diagnosis is AED ${callout}, waived if you go ahead with the repair. The exact repair price depends on the leak and is quoted in writing after diagnosis.`,
+    },
+    {
+      q: "Why is my AC leaking water?",
+      a: "Most often a blocked or misaligned drain line, a damaged tray, uninsulated pipework that sweats, or a frozen coil that drips as it melts. We trace the water to its source and fix it.",
+    },
+    {
+      q: "Is a gas top-up enough for a refrigerant leak?",
+      a: "No. Refrigerant is not used up, so low gas means a leak. We find and repair the leak and then recharge, so the fault does not return.",
+    },
+    {
+      q: "Can you come urgently?",
+      a: "We respond within an hour, at any time of day. Call or WhatsApp us with your location and what the unit is doing.",
+    },
+  ],
+  toConfirm: [
+    "Sustainable City: photo of a real AC leak repair job (the page stays hidden until it is added).",
+    "Sustainable City: photo caption, if you want one shown (where the leak was and what the fix was).",
+  ],
+};
+
 export const communities: Community[] = [
   alBarsha,
   businessBay,
   dubaiMarina,
   arabianRanches,
+  villanova,
+  dubaiHills,
+  alWasl,
+  sustainableCity,
 ];
 
 export function getCommunity(slug: string): Community | undefined {

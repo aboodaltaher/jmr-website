@@ -4,7 +4,7 @@
 
 import { WHATSAPP } from "./company";
 import { WA_DEFAULTS, WA_PAGES_AR, WA_PAGES_EN, WA_TEMPLATE } from "@/data/whatsapp-pages";
-import { communityNameForPath } from "@/data/community-index";
+import { communityForPath } from "@/data/community-index";
 
 export { PHONE, PHONE_DISPLAY } from "./company";
 
@@ -33,9 +33,9 @@ export function waPageFor(pathname: string): { lang: "en" | "ar"; name: string; 
   const defaults = WA_DEFAULTS[lang];
   const known = (lang === "ar" ? WA_PAGES_AR : WA_PAGES_EN)[path];
 
-  const community = lang === "en" ? communityNameForPath(path) : undefined;
+  const community = lang === "en" ? communityForPath(path) : undefined;
   if (community) {
-    return { lang, name: `AC maintenance in ${community}`, property: "home", area: community };
+    return { lang, name: `${community.job ?? "AC maintenance"} in ${community.name}`, property: "home", area: community.name };
   }
   const name = known?.name ?? humanise(path.split("/").filter(Boolean).pop() ?? "home");
   return {

@@ -17,6 +17,8 @@ export interface CommunityIndexEntry {
   slug: string;
   name: string;
   published: boolean;
+  /** Short job name for pages built around one job type; absent = general AC maintenance. */
+  job?: string;
 }
 
 export const COMMUNITY_INDEX: CommunityIndexEntry[] = [
@@ -24,6 +26,11 @@ export const COMMUNITY_INDEX: CommunityIndexEntry[] = [
   { slug: "business-bay", name: "Business Bay", published: true },
   { slug: "dubai-marina", name: "Dubai Marina", published: false },
   { slug: "arabian-ranches", name: "Arabian Ranches", published: false },
+  // Job-type pages (replacement / AMC / leak repair). Hidden until the owner adds the real photo.
+  { slug: "villanova", name: "Villanova", published: false, job: "AC replacement" },
+  { slug: "dubai-hills", name: "Dubai Hills", published: false, job: "AC replacement" },
+  { slug: "al-wasl", name: "Al Wasl", published: false, job: "AC maintenance contract" },
+  { slug: "sustainable-city", name: "Sustainable City", published: false, job: "AC leak repair" },
 ];
 
 export const communityPath = (slug: string): string => `/ac-maintenance/${slug}`;
@@ -33,8 +40,8 @@ export function publishedCommunities(): CommunityIndexEntry[] {
   return COMMUNITY_INDEX.filter((c) => c.published);
 }
 
-/** Display name for a community path like /ac-maintenance/al-barsha, if it is one. */
-export function communityNameForPath(pathname: string): string | undefined {
+/** Index entry for a path like /ac-maintenance/al-barsha, if it is one. */
+export function communityForPath(pathname: string): CommunityIndexEntry | undefined {
   const m = pathname.match(/^\/ac-maintenance\/([a-z-]+)\/?$/);
-  return m ? COMMUNITY_INDEX.find((c) => c.slug === m[1])?.name : undefined;
+  return m ? COMMUNITY_INDEX.find((c) => c.slug === m[1]) : undefined;
 }

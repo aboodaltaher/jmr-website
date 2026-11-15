@@ -210,9 +210,33 @@ question on them is answered).
 
 - [ ] Number of Arabian Ranches villas serviced or under contract, and any project we can name with the owner's permission. → 
 
+### Villanova
+`/ac-maintenance/villanova` · 2 open
+
+- [ ] Photo of the Villanova AC machine replacement → 
+- [ ] Caption for the photo: the unit replaced and the unit fitted, if you want it shown → 
+
+### Dubai Hills
+`/ac-maintenance/dubai-hills` · 2 open
+
+- [ ] Photo of the Dubai Hills AC machine replacement → 
+- [ ] Caption for the photo: the unit replaced and the unit fitted, if you want it shown → 
+
+### Al Wasl
+`/ac-maintenance/al-wasl` · 2 open
+
+- [ ] Photo of the Al Wasl AC maintenance contract job → 
+- [ ] Caption for the photo, if you want one shown → 
+
+### Sustainable City
+`/ac-maintenance/sustainable-city` · 2 open
+
+- [ ] Photo of the Sustainable City AC leak repair → 
+- [ ] Caption for the photo: where the leak was and what the fix was, if you want it shown → 
+
 ## Service pages
 
 - [ ] Air balancing page (unpublished): AGEC balometer photo — path under /projects, with an AGEC-branded technician → 
 
 ---
-142 open answers.
+150 open answers.

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Fragment } from "react";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
 import Link from "next/link";
@@ -37,11 +38,12 @@ export function CommunityPage({ community: raw }: { community: Community }) {
     .map((s) => getProjectBySlug(s))
     .filter((p) => p && !p.draft);
 
+  const jobName = c.job?.name ?? "AC maintenance";
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: `AC Maintenance in ${c.name}`,
-    serviceType: "AC maintenance",
+    name: `${jobName[0].toUpperCase()}${jobName.slice(1)} in ${c.name}`,
+    serviceType: jobName,
     description: c.metaDescription,
     url,
     areaServed: {
@@ -81,7 +83,7 @@ export function CommunityPage({ community: raw }: { community: Community }) {
             ]}
           />
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-            AC maintenance · {c.name}
+            {jobName} · {c.name}
           </p>
           <h1 className="mt-3 max-w-4xl font-heading text-4xl font-bold md:text-6xl">{c.h1}</h1>
           <div className="mt-6 max-w-3xl space-y-4 text-lg leading-relaxed text-text-muted">
@@ -89,6 +91,22 @@ export function CommunityPage({ community: raw }: { community: Community }) {
               <p key={i}><Text>{p}</Text></p>
             ))}
           </div>
+          {c.photo && (
+            <figure className="mt-8 max-w-3xl">
+              {c.photo.startsWith("/") ? (
+                <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-border">
+                  <Image src={c.photo} alt={`${jobName} in ${c.name} by AGEC`} fill sizes="(min-width: 768px) 768px, 100vw" className="object-cover" />
+                </div>
+              ) : (
+                <div className="rounded-xl border border-dashed border-border bg-white px-6 py-12 text-center text-text-muted">
+                  <Text>{c.photo}</Text>
+                </div>
+              )}
+              {c.photoCaption && (
+                <figcaption className="mt-2 text-sm text-text-muted"><Text>{c.photoCaption}</Text></figcaption>
+              )}
+            </figure>
+          )}
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a
               href={wa}
@@ -136,7 +154,7 @@ export function CommunityPage({ community: raw }: { community: Community }) {
           </div>
         </section>
         {/* Mid-page lead block, directly after the first body (checklist) section */}
-        {i === 0 && <MidPageCta service={`AC maintenance in ${c.name}`} path={path} />}
+        {i === 0 && <MidPageCta service={`${jobName} in ${c.name}`} path={path} />}
         </Fragment>
       ))}
 
@@ -146,11 +164,14 @@ export function CommunityPage({ community: raw }: { community: Community }) {
           <h2 className="font-heading text-3xl font-bold md:text-4xl">Related services</h2>
           <ul className="mt-5 grid gap-3 sm:grid-cols-2">
             {[
+              ...(c.job ? [{ href: c.job.serviceHref, label: c.job.serviceLabel }] : []),
               { href: "/ac-maintenance-dubai", label: "AC maintenance in Dubai" },
               { href: "/ac-amc-dubai", label: "Annual maintenance contracts (AMC)" },
               { href: "/ac-repair-dubai", label: "AC repair" },
               { href: "/ac-duct-cleaning-dubai", label: "AC duct cleaning" },
-            ].map((l) => (
+            ]
+              .filter((l, i, all) => all.findIndex((x) => x.href === l.href) === i)
+              .map((l) => (
               <li key={l.href}>
                 <Link href={l.href} className="font-semibold text-primary hover:underline">
                   {l.label} →
@@ -197,7 +218,7 @@ export function CommunityPage({ community: raw }: { community: Community }) {
       {/* FAQ */}
       <section className="py-14 md:py-16">
         <div className="mx-auto max-w-3xl px-6">
-          <h2 className="font-heading text-3xl font-bold md:text-4xl">{c.name} AC maintenance: common questions</h2>
+          <h2 className="font-heading text-3xl font-bold md:text-4xl">{c.name} {jobName}: common questions</h2>
           <div className="mt-8 space-y-6">
             {c.faqs.map((f) => (
               <div key={f.q}>
@@ -213,7 +234,7 @@ export function CommunityPage({ community: raw }: { community: Community }) {
       <section className="bg-primary py-14 md:py-16">
         <div className="mx-auto max-w-7xl px-6 text-center">
           <h2 className="font-heading text-3xl font-bold text-white md:text-4xl">
-            Book AC maintenance in {c.name}
+            {c.job ? `Get a quote for ${jobName} in ${c.name}` : `Book AC maintenance in ${c.name}`}
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-white/90">
             Tell us the number of units and the property. We reply on call and WhatsApp, {business.hours.short}.

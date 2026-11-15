@@ -29,6 +29,7 @@ export const servicesMenu: MegaGroup[] = [
     audience: "Villas & apartments",
     arAudience: "فلل وشقق",
     items: [
+      { label: "AC Installation", href: "/ac-installation-dubai", desc: "New unit included, priced per ton", arLabel: "تركيب المكيفات", arDesc: "الوحدة الجديدة مشمولة، والسعر بالطن", arHref: "/ar/ac-installation-dubai" },
       { label: "AC Maintenance", href: "/ac-maintenance-dubai", desc: "Servicing, cleaning and gas checks", arLabel: "صيانة المكيفات", arDesc: "خدمة وتنظيف وفحص الغاز", arHref: "/ar/ac-maintenance-dubai" },
       { label: "AC Repair", href: "/ac-repair-dubai", desc: "Same-day engineer diagnosis", arLabel: "إصلاح المكيفات", arDesc: "تشخيص هندسي في نفس اليوم", arHref: "/ar/ac-repair-dubai" },
       { label: "AC Duct Cleaning", href: "/ac-duct-cleaning-dubai", desc: "With a written completion report", arLabel: "تنظيف مجاري التكييف", arDesc: "مع تقرير إنجاز مكتوب", arHref: "/ar/ac-duct-cleaning-dubai" },

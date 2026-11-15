@@ -31,6 +31,7 @@ export const staticRoutes: RouteEntry[] = [
   { path: "/about", updatedAt: "2026-11-15" },
   { path: "/services", updatedAt: "2026-11-14" },
   // Landing pages
+  { path: "/ac-installation-dubai", updatedAt: "2026-11-15" },
   { path: "/ac-maintenance-dubai", updatedAt: "2026-11-15" },
   { path: "/ac-repair-dubai", updatedAt: "2026-11-15" },
   { path: "/ac-amc-dubai", updatedAt: "2026-11-15" },
@@ -70,6 +71,7 @@ export const staticRoutes: RouteEntry[] = [
 // still gated) falls back to its English twin's date in sitemap.ts.
 export const arabicRoutes: RouteEntry[] = [
   { path: "/ar", updatedAt: "2026-11-14" },
+  { path: "/ar/ac-installation-dubai", updatedAt: "2026-11-15" },
   { path: "/ar/ac-maintenance-dubai", updatedAt: "2026-11-15" },
   { path: "/ar/ac-repair-dubai", updatedAt: "2026-11-14" },
   { path: "/ar/ac-duct-cleaning-dubai", updatedAt: "2026-11-15" },

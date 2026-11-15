@@ -170,6 +170,25 @@ export default function HvacInstallation() {
       ]}
       extraSection={
         <>
+          {/* HOME vs PROJECT: sends home owners to the AC installation page */}
+          <section className="border-b border-border py-10">
+            <div className="mx-auto grid max-w-7xl gap-4 px-6 md:grid-cols-2">
+              <Link href="/ac-installation-dubai" className="rounded-lg border border-border bg-white p-6 transition-colors hover:border-primary">
+                <h2 className="font-heading text-xl font-bold">Installing AC in your home?</h2>
+                <p className="mt-2 text-text-muted">
+                  Split, cassette, ducted and VRF for villas and apartments, supplied and installed, priced per ton.
+                </p>
+                <span className="mt-3 inline-block text-sm font-medium text-primary">AC installation in Dubai &rarr;</span>
+              </Link>
+              <div className="rounded-lg border border-border bg-bg-soft p-6">
+                <h2 className="font-heading text-xl font-bold">Installing HVAC for a project?</h2>
+                <p className="mt-2 text-text-muted">
+                  New buildings, fit-outs and larger systems are on this page, from design review to commissioned handover.
+                </p>
+              </div>
+            </div>
+          </section>
+
           {/* HEAT LOAD FIRST */}
           <section className="py-16 md:py-20">
             <div className="mx-auto max-w-7xl px-6">

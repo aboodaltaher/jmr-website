@@ -449,3 +449,19 @@ The brief bans "licensed HVAC engineers" and similar claims, so the Arabic equiv
 The photos that showed the old JMR name were replaced (see PR "Replace JMR-branded photos"). New Arabic alt texts:
 - `/ar/ac-duct-cleaning-dubai` hero (grille cleaning photo): «فني AGEC يفكّ شبكة تكييف لتنظيفها مع حماية الأرضية»
 - `/ar/about` panel (duct cleaning equipment photo): «فنّي AGEC يجهّز معدات تنظيف مجاري التكييف في شقة بدبي»
+
+## Phase 2: `/ar/ac-installation-dubai` (new, 2026-11-15) — Arabic for your review
+
+New Arabic twin of `/ac-installation-dubai`, written from the owner's confirmed facts. Source: `src/app/(ar)/ar/ac-installation-dubai/page.tsx`. Please review these points:
+- **Title (≈45):** «تركيب مكيفات في دبي | توريد وتركيب | AGEC»
+- **H1:** «تركيب مكيفات في دبي: الوحدة الجديدة مشمولة والسعر بالطن»
+- **Warranty, exact wording:** «تمنح الشركة المصنّعة ضماناً لمدة 5 سنوات على الكمبروسر. وتمنح AGEC ضماناً لمدة سنة واحدة على الوحدة الداخلية وعلى أعمال التركيب.» (never a 5-year AGEC warranty)
+- **Unit names:** «مكيف سبليت», «مكيف كاسيت», «سبليت مجاري (دكت)», «نظام VRF للمنازل». The ducted split term is the open question in section 5 above («سبليت مجاري» vs «سبليت دكت»).
+- **Brands line:** «العلامات التي نركّبها ونصلحها» (not «وكيل» / «معتمد» / «مركز خدمة»).
+- **WhatsApp button:** «أرسل لنا صورة الغرفة على واتساب»; page name in the WhatsApp pre-fill: «تركيب المكيفات».
+- **Prices** are read from `src/data/prices.ts`, not typed into the Arabic copy.
+- The Arabic page has the MidPageCta form; the English page has the inline form (the inline form is English-only).
+
+## Phase 2: `/ar/ac-repair-dubai`, `/ar/ac-maintenance-dubai` — NOT changed
+
+The English pages gained prices and six symptom sections. The Arabic twins were left as they are (no call-out fee, no symptom sections), so they now trail the English pages. Say if you want the Arabic updated next.

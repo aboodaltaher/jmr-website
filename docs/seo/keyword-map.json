@@ -58,17 +58,29 @@
     },
     {
       "keyword": "hvac installation dubai",
-      "secondaryKeywords": [
-        "ac installation dubai",
-        "ducted ac installation dubai",
-        "split ac installation"
-      ],
+      "secondaryKeywords": [],
       "volumeTier": "M",
       "difficulty": "High",
       "intent": "transactional",
       "priority": "Critical",
       "targetUrl": "/services/hvac-installation-dubai",
-      "status": "exists"
+      "status": "exists",
+      "notes": "Projects, buildings and fit-outs. Homes: ac installation dubai and its variants moved to /ac-installation-dubai. Link both ways."
+    },
+    {
+      "keyword": "ac installation dubai",
+      "secondaryKeywords": [
+        "split ac installation",
+        "ducted ac installation dubai",
+        "ac installation cost dubai"
+      ],
+      "volumeTier": "H",
+      "difficulty": "High",
+      "intent": "transactional",
+      "priority": "Critical",
+      "targetUrl": "/ac-installation-dubai",
+      "status": "exists",
+      "notes": "Homes: supply-and-install priced per ton, new unit included. Warranty wording is fixed: 5-year manufacturer compressor warranty, AGEC gives 1 year on indoor unit and installation. Never 'authorised', 'dealer' or 'service centre'."
     },
     {
       "keyword": "vrf installation dubai",
@@ -115,7 +127,9 @@
         "emergency ac repair dubai",
         "24 hour ac repair",
         "ac replacement dubai",
-        "ac compressor replacement"
+        "ac compressor replacement",
+        "ac not cooling dubai",
+        "ac leaking water dubai"
       ],
       "volumeTier": "VH",
       "difficulty": "High",

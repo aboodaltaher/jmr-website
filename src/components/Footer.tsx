@@ -38,6 +38,7 @@ const navLinks = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/services/hvac-installation-dubai", label: "HVAC Installation" },
+  { href: "/ac-installation-dubai", label: "AC Installation" },
   { href: "/ac-maintenance-dubai", label: "AC Maintenance" },
   { href: "/ac-repair-dubai", label: "AC Repair" },
   { href: "/ac-duct-cleaning-dubai", label: "AC Duct Cleaning" },

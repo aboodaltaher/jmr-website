@@ -31,7 +31,7 @@ import {
 } from "lucide-react";
 
 import { PriceTable } from "@/components/PriceTable";
-import { prices, visibleRows, offersFor } from "@/data/prices";
+import { prices, visibleRows, offersFor, money } from "@/data/prices";
 import { PHONE, PHONE_DISPLAY } from "@/lib/company";
 import { business } from "@/data/business";
 import { whatsappUrl } from "@/lib/contact";
@@ -140,12 +140,12 @@ const caseStudySlugs = ["vrf-villa-al-mamzar-dubai", "villa-al-barsha-dubai", "g
 const areas = ["Dubai", "Abu Dhabi", "Sharjah", "Ajman", "Ras Al Khaimah", "Umm Al Quwain", "Fujairah"];
 
 // TODO(owner): "How long does an AC service take?" gives no minutes per unit; add the typical time if you want it stated.
-// TODO(owner): confirm whether a gas top-up is included in the one-off price (prices.maintenance has a separate "Gas top-up" row, price TBC).
+// TODO(owner): confirm the gas top-up price is per machine and is separate from the one-off service price (assumed from the price table).
 const faqs: { q: string; a: string }[] = [
   { q: "How often should I service my AC in Dubai?", a: "Because AC runs almost year-round in the UAE, we recommend servicing every 3–4 months (3–4 times a year), or at minimum before and during the summer peak. Homes with heavy use, pets or dust exposure benefit from more frequent visits. An AMC schedules this automatically." },
   { q: "How much does AC maintenance cost in Dubai?", a: `A one-off service starts from AED ${prices.maintenance[0].from} per machine, with a minimum of 3 units. The exact cost depends on the number and type of units and whether it's a one-off service or an annual contract. We confirm a transparent fixed price upfront after understanding your system — with no hidden charges. AMC plans reduce the per-visit cost.` },
   { q: "How long does an AC service take?", a: "It depends on the number and type of units. We confirm the expected time when we quote, once we know your system." },
-  { q: "Is gas included in an AC service?", a: "A service includes checking the refrigerant pressure. Refrigerant runs in a sealed loop, so low gas means a leak: we find it and give you the price for the repair and recharge before any work starts." },
+  { q: "Is gas included in an AC service?", a: `A service includes checking the refrigerant pressure. A gas top-up is priced separately, at AED ${money(prices.maintenance[2].from as number)} per machine. Refrigerant runs in a sealed loop, so low gas means a leak: we find it and give you the price for any repair before work starts.` },
   { q: "Do you service VRF and ducted AC?", a: "Yes. We service ducted, cassette and VRF/VRV systems as well as split units, and we confirm the price once we know the system type and the number of units." },
   { q: "Do you service all AC brands?", a: "Yes. We service every major brand and system type — split, ducted, cassette, VRF/VRV, chillers and package units — including Daikin, O General, Carrier, Gree, Midea, LG, Mitsubishi, Trane and more." },
   { q: "Do you offer same-day or emergency AC repair?", a: "Yes. We provide same-day service where possible and 24/7 emergency breakdown support across Dubai and the UAE — important when your AC fails during peak summer." },
@@ -219,7 +219,6 @@ export default async function AcMaintenancePage() {
               AC Maintenance <span className="text-primary">&amp; Servicing in Dubai</span>
             </h1>
             {/* PRICES — first screen on mobile; rows appear only once their price is confirmed in src/data/prices.ts */}
-            {/* TODO(owner): ducted unit service and gas top-up prices (prices.maintenance, currently TBC and hidden). */}
             {visibleRows(prices.maintenance).length > 0 && (
               <div id="prices" className="order-3 mt-5 max-w-xl rounded-xl bg-white p-4 text-text md:order-5 md:mt-6">
                 <h2 className="font-heading text-lg font-bold">Prices</h2>
@@ -324,6 +323,8 @@ export default async function AcMaintenancePage() {
             or{" "}
             <Link href="/ac-amc-dubai#commercial-amc" className="font-semibold text-primary hover:underline">commercial HVAC maintenance &amp; AMC plans</Link>, or add a{" "}
             <Link href="/smart-thermostat-installation-dubai" className="font-semibold text-primary hover:underline">smart thermostat</Link> during your visit.
+            If a unit is past servicing, see{" "}
+            <Link href="/ac-installation-dubai" className="font-semibold text-primary hover:underline">AC installation in Dubai</Link>.
           </p>
         </div>
       </section>
