@@ -118,7 +118,7 @@ const services = [
 const reasons = [
   {
     icon: Award,
-    name: "Certified Engineering",
+    name: "Engineer-Led Delivery",
     description:
       "Heat load calculations, duct sizing, and system balancing done by qualified engineers — not just installers.",
   },
@@ -254,6 +254,13 @@ export default async function Home() {
               </span>
             </Link>
           </div>
+          <p className="mt-6 text-center text-sm text-text-muted">
+            AC not cooling or leaking? See{" "}
+            <Link href="/ac-repair-dubai" className="font-semibold text-primary hover:underline">
+              AC repair in Dubai
+            </Link>
+            .
+          </p>
         </div>
       </section>
 

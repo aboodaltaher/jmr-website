@@ -1,6 +1,6 @@
 import { buildMetadata } from "@/lib/metadata";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { FOUNDER, PROJECTS_DELIVERED, LICENCE_NO, COMPANY_LEGAL } from "@/lib/company";
+import { FOUNDER, PROJECTS_DELIVERED, LARGEST_PROJECT_TR, LICENCE_NO, COMPANY_LEGAL } from "@/lib/company";
 import { business } from "@/data/business";
 import Image from "next/image";
 import Link from "next/link";
@@ -91,7 +91,7 @@ export default function ArabicAbout() {
                   نعمل مع عملاء عبر الإمارات، بسجلّ من {PROJECTS_DELIVERED} مشروعاً منجزاً —
                   في دبي والشارقة وعجمان وأبوظبي — تتراوح من الفلل السكنية إلى مراكز
                   البيانات والمباني التجارية والمنشآت الثقافية. وقد تعامل أكبر مشروع
-                  مفرد لدينا مع طاقة تبريد 240 طناً، وأكبر قيمة عقد حتى الآن 8.75 مليون
+                  مفرد لدينا مع طاقة تبريد {LARGEST_PROJECT_TR} طناً، وأكبر قيمة عقد حتى الآن 8.75 مليون
                   درهم.
                 </p>
                 <p>

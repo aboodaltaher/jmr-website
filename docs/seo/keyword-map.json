@@ -98,6 +98,7 @@
       "keyword": "ac maintenance dubai",
       "secondaryKeywords": [
         "ac service dubai",
+        "ac servicing dubai",
         "ac cleaning dubai"
       ],
       "volumeTier": "VH",
@@ -215,9 +216,9 @@
       "difficulty": "Medium",
       "intent": "transactional",
       "priority": "High",
-      "targetUrl": "/villa-ac-maintenance-dubai",
-      "status": "planned-phase7",
-      "notes": "No route yet."
+      "targetUrl": "/ac-maintenance-dubai",
+      "status": "exists",
+      "notes": "Served by the 'Villa AC maintenance' H2 section and FAQ on /ac-maintenance-dubai (2026-11-15). No separate villa page, so the two do not compete. The title, H1 and meta stay on 'ac maintenance dubai', so expect the title/H1/meta checks to show as gaps in the audit for this row."
     },
     {
       "keyword": "صيانة مكيفات دبي",

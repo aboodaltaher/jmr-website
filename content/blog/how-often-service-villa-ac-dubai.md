@@ -1,6 +1,6 @@
 ---
 date: "2026-11-01"
-updated: "2026-11-01"
+updated: "2026-11-15"
 author: "AGEC Team"
 readingTime: "5 min read"
 image: "/projects/agec-private-villa-hvac-dubai.jpg"
@@ -10,7 +10,7 @@ titleTag: "How Often Should You Service Villa AC in Dubai? | AGEC"
 
 # How Often Should You Service Your Villa AC in Dubai?
 
-Short answer: **every 3 to 4 months** — three or four times a year — with the most important visits before and during the summer peak. That's more often than the "once a year" most people assume, and there's a specific reason for it in the UAE.
+Short answer: **every 3 to 4 months** — three or four times a year — with the most important visits before and during the summer peak. That's more often than the "once a year" most people assume, and there's a specific reason for it in the UAE. Our [villa AC maintenance in Dubai](/ac-maintenance-dubai#villa-ac-maintenance) covers every unit in one visit.
 
 ## Why the UAE needs more frequent servicing
 

@@ -427,6 +427,23 @@ Changes, so you can review them. The Arabic ducting page has no keyword of its o
 - **Ducting H2:** «مقاول دكت تكييف في دبي: ما نركّبه ونصنّعه» (was «ما الذي نركّبه ونصنّعه»)
 - **Installation meta (147):** trimmed from 157 by dropping «التنفيذية» from «المخططات التنفيذية»; no other change.
 
+## Phase 1 claim wording and 240 TR (2026-11-15) — Arabic changes for your review
+
+The brief bans "licensed HVAC engineers" and similar claims, so the Arabic equivalents («مهندسون مرخّصون» etc.) were replaced with «بإشراف مهندسين» / «بإشراف فريق هندسي» (engineer-led).
+
+**`/ar/ac-maintenance-dubai`**
+- Meta (145): «صيانة مكيفات في دبي بإشراف مهندسين: خدمة وإصلاح وتنظيف وتعبئة غاز وعقود سنوية. الخدمة لمرة واحدة من 350 درهماً للوحدة. اتصل أو راسلنا على واتساب.»
+- First paragraph now opens «يتولّى مهندسو AGEC صيانة مكيفات في دبي: …» (word «المرخّصون» removed).
+- H2: «صيانة مكيفات في دبي بإشراف مهندسين»; card title «إشراف هندسي» (was «مهندسون مرخّصون»).
+
+**`/ar/smart-thermostat-installation-dubai`**
+- Meta (124) and intro: «…وتركيب سلك C بإشراف فريق هندسي.» (was «على يد مهندسي تكييف مرخّصين»).
+- Body: «دع فريقنا الهندسي يتولّى كل شيء»; card name «تركيب بإشراف هندسي»; FAQ «يمدّ فنيّونا سلك C مناسباً…» (word «المرخّصون» removed).
+
+**`/ar/services/vrf-vrv-systems`** (why-AGEC bullet): «… — بما في ذلك نظام VRF بسعة 224 TR في باسل مول بعجمان» replaces «وتم تنفيذ سعات تصل إلى 240 TR في مشروع واحد». 224 TR is the VRF system in the published Basil Mall case study; the owner's 240 TR project is not described as VRF.
+
+**`/ar/services/dx-units`, `/ar/about`:** unchanged text; the 240 figure now comes from the one constant `LARGEST_PROJECT_TR`.
+
 ## Photo replacements (2026-11-15): Arabic alt text for review
 
 The photos that showed the old JMR name were replaced (see PR "Replace JMR-branded photos"). New Arabic alt texts:

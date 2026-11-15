@@ -33,6 +33,7 @@ import {
 import { PriceTable } from "@/components/PriceTable";
 import { prices, visibleRows, offersFor } from "@/data/prices";
 import { PHONE, PHONE_DISPLAY } from "@/lib/company";
+import { business } from "@/data/business";
 import { whatsappUrl } from "@/lib/contact";
 const WA = whatsappUrl("/ac-maintenance-dubai");
 const CANONICAL = "/ac-maintenance-dubai";
@@ -52,7 +53,7 @@ export const metadata = buildMetadata({
 /* ------------------------------ CONTENT ------------------------------ */
 
 const trustBadges = [
-  "Licensed HVAC Engineers",
+  "Engineer-Led Service",
   "All AC Brands Serviced",
   "Same-Day & Emergency Service",
   "Transparent Pricing",
@@ -60,7 +61,7 @@ const trustBadges = [
 ];
 
 const whyCards: { icon: LucideIcon; title: string; desc: string }[] = [
-  { icon: ShieldCheck, title: "Licensed HVAC Engineers", desc: "Real, trained technicians working to ASHRAE and Dubai Municipality standards — not unqualified handymen." },
+  { icon: ShieldCheck, title: "Engineer-Led Service", desc: `Real, trained technicians working to ASHRAE and Dubai Municipality standards, under a licensed HVAC contractor (${business.licence.label}) — not unqualified handymen.` },
   { icon: BadgeCheck, title: "Every AC Brand & Type", desc: "Split, ducted, cassette, VRF/VRV, chillers and package units — Daikin, O General, Carrier, Gree, Midea, LG and more." },
   { icon: Clock, title: "Same-Day & 24/7 Emergency", desc: "Fast response across Dubai and the UAE, with emergency breakdown support when your AC fails in peak summer." },
   { icon: FileText, title: "Documented Reports", desc: "Every visit is logged with before/after condition, work performed and parts used — a full maintenance history for your records." },
@@ -92,6 +93,13 @@ const signs: { icon: LucideIcon; title: string; desc: string }[] = [
   { icon: Droplets, title: "Water Leaks", desc: "Dripping indoor units usually mean a blocked drain line — easy to fix, costly if ignored." },
   { icon: AlertTriangle, title: "Strange Noises or Smells", desc: "Rattles, buzzing or musty odours are early warnings worth acting on." },
   { icon: Wrench, title: "Frequent Tripping", desc: "An AC that keeps cutting out has an electrical or refrigerant problem that needs diagnosis." },
+];
+
+const villaFaqs: { q: string; a: string }[] = [
+  { q: "How often should a villa's AC be serviced?", a: "Every 3–4 months, three or four times a year, with the most important visits before and during the summer peak. A villa has several units, so it helps to service them together." },
+  { q: "How much does villa AC maintenance cost?", a: `A one-off service starts from AED ${prices.maintenance[0].from} per machine with a minimum of 3 units, which most villas meet. An AMC is priced per machine per visit from AED ${prices.amcPlans[0].from} (excluding VAT) and sets the visits for you.` },
+  { q: "Do you service ducted and concealed units in a villa?", a: "Yes. We service ducted, cassette and concealed units as well as split units and VRF/VRV systems, and we confirm the price once we know the system type and the number of units." },
+  { q: "Can I put the whole villa on a yearly contract?", a: "Yes. An AMC schedules the visits for every unit in the villa, with a service report with photos after every visit." },
 ];
 
 const checklist = [
@@ -148,7 +156,7 @@ const faqs: { q: string; a: string }[] = [
   { q: "Can regular maintenance lower my electricity bill?", a: "Yes. A clean, well-charged, properly running AC uses noticeably less energy than a neglected one — efficiency can drop 20–30% within two years without maintenance, and that shows up on your DEWA bill." },
   { q: "Do you maintain AC for villas and apartments?", a: "Both. We handle single apartments, large villas, and everything in between — as one-off services or annual contracts." },
   { q: "Do you handle commercial AC maintenance?", a: "Yes. We provide AMC and reactive maintenance for offices, shops, restaurants, hotels and buildings — including chillers, AHUs, FCUs and VRF systems, with 24/7 response options." },
-  { q: "Are your technicians qualified?", a: "Yes. AGEC is a licensed engineering contracting company and our technicians are trained, working to ASHRAE and Dubai Municipality standards." },
+  { q: "Are your technicians qualified?", a: `Yes. AGEC is a licensed HVAC contractor (${business.licence.label}). Our work is engineer-led, and our technicians are trained to work to ASHRAE and Dubai Municipality standards.` },
   { q: "Which areas do you cover?", a: "We've delivered projects in Dubai, Sharjah, Ajman and Abu Dhabi, and are available for AC maintenance across the UAE." },
   { q: "Can you take over maintenance from my previous contractor?", a: "Yes. We can take over an existing system with a full audit and baseline report, so you have a clear record and a fresh maintenance schedule." },
   { q: "While you're here, can you also upgrade my thermostat?", a: "Yes — many customers add a smart thermostat during a service visit. See our smart thermostat installation page for Google Nest and ecobee options." },
@@ -191,7 +199,7 @@ export default async function AcMaintenancePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      <FaqJsonLd items={faqs} />
+      <FaqJsonLd items={[...faqs, ...villaFaqs]} />
 
       {/* Breadcrumb (single trail + BreadcrumbList JSON-LD) */}
       <BreadcrumbBand
@@ -205,33 +213,39 @@ export default async function AcMaintenancePage() {
       <section className="relative overflow-hidden bg-[#13212E] text-white">
         <div className="pointer-events-none absolute inset-0" style={{ background: "radial-gradient(1100px 560px at 82% -10%, rgba(212,118,46,.32), transparent)" }} />
         <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 py-16 md:py-24 lg:grid-cols-[1.1fr_.9fr]">
-          <div>
-            <p className={eyebrow}>Dubai &amp; UAE · Same-Day &amp; Emergency</p>
-            <h1 className="mt-4 font-heading text-4xl font-bold leading-[1.03] md:text-6xl">
-              AC Maintenance in Dubai — <span className="text-primary">Servicing, Repair &amp; AMC</span>
+          <div className="flex flex-col">
+            <p className={`${eyebrow} order-1`}>Dubai &amp; UAE · Same-Day &amp; Emergency</p>
+            <h1 className="order-2 mt-4 font-heading text-4xl font-bold leading-[1.03] md:text-6xl">
+              AC Maintenance <span className="text-primary">&amp; Servicing in Dubai</span>
             </h1>
-            <p className="mt-6 max-w-xl text-lg text-white/70">
-              Professional AC maintenance in Dubai from licensed HVAC engineers: servicing, repairs,
+            {/* PRICES — first screen on mobile; rows appear only once their price is confirmed in src/data/prices.ts */}
+            {/* TODO(owner): ducted unit service and gas top-up prices (prices.maintenance, currently TBC and hidden). */}
+            {visibleRows(prices.maintenance).length > 0 && (
+              <div id="prices" className="order-3 mt-5 max-w-xl rounded-xl bg-white p-4 text-text md:order-5 md:mt-6">
+                <h2 className="font-heading text-lg font-bold">Prices</h2>
+                <div className="[&>div]:mt-3">
+                  <PriceTable rows={prices.maintenance} caption="AC maintenance prices" />
+                </div>
+              </div>
+            )}
+            <p className="order-4 mt-5 max-w-xl text-lg text-white/70 md:order-3 md:mt-6">
+              Engineer-led AC maintenance in Dubai: servicing, repairs,
               coil &amp; duct cleaning, gas top-ups and annual maintenance contracts. We keep your air
               conditioning cooling properly and running efficiently, in villas, apartments and businesses across the UAE.
             </p>
-            <p className="mt-5 inline-flex flex-wrap items-baseline gap-2 rounded-lg bg-white/10 px-4 py-2.5 text-base font-semibold text-white">
-              One-off service from AED {prices.maintenance[0].from} per machine
-              <span className="text-sm font-normal text-white/70">· minimum 3 units</span>
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="order-6 mt-8 flex flex-wrap gap-3">
               <Link href="/quote" className="rounded-md bg-primary px-7 py-4 font-semibold text-white hover:bg-primary-dark transition-colors">Get a Quote</Link>
               <a href={WA} className="rounded-md bg-[#25D366] px-7 py-4 font-semibold text-[#062e14] hover:bg-[#1fad52] transition-colors">WhatsApp Us</a>
               <a href={`tel:${PHONE}`} className="rounded-md border border-white/30 px-7 py-4 font-semibold text-white hover:bg-white/10 transition-colors">Call Now</a>
             </div>
-            <div className="mt-8 flex flex-wrap gap-2">
+            <div className="order-7 mt-8 flex flex-wrap gap-2">
               {trustBadges.map((b) => (
                 <span key={b} className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-medium text-white/85">
                   <Check className="h-3.5 w-3.5 text-primary" strokeWidth={3} /> {b}
                 </span>
               ))}
             </div>
-            <p className="mt-6 text-sm text-white/70">
+            <p className="order-8 mt-6 text-sm text-white/70">
               AC not cooling or leaking right now?{" "}
               <Link
                 href="/ac-repair-dubai"
@@ -314,18 +328,6 @@ export default async function AcMaintenancePage() {
         </div>
       </section>
 
-      {/* PRICES — rows appear only once their price is confirmed in src/data/prices.ts */}
-      {/* TODO(owner): ducted unit service and gas top-up prices (prices.maintenance, currently TBC and hidden). */}
-      {visibleRows(prices.maintenance).length > 0 && (
-        <section id="prices" className="bg-bg-soft py-16 md:py-20">
-          <div className="mx-auto max-w-4xl px-6">
-            <p className={eyebrow}>Pricing</p>
-            <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">Prices</h2>
-            <PriceTable rows={prices.maintenance} caption="AC maintenance prices" />
-          </div>
-        </section>
-      )}
-
       {/* VILLAS VS APARTMENTS VS OFFICES */}
       <section id="property-types" className="py-16 md:py-24">
         <div className="mx-auto max-w-5xl px-6">
@@ -364,6 +366,32 @@ export default async function AcMaintenancePage() {
                 ))}
               </tbody>
             </table>
+          </div>
+        </div>
+      </section>
+
+      {/* VILLA AC MAINTENANCE */}
+      <section id="villa-ac-maintenance" className="bg-bg-soft py-16 md:py-20">
+        <div className="mx-auto max-w-4xl px-6">
+          <p className={eyebrow}>For homeowners</p>
+          <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">Villa AC maintenance in Dubai</h2>
+          <p className="mt-5 text-lg leading-relaxed text-text-muted">
+            A villa usually has several indoor units across floors, often ducted or concealed, plus
+            outdoor units. We service them together: every unit, its drain line and, where fitted,
+            the ducts and grilles. Choose a one-off service before summer, or an{" "}
+            <Link href="/ac-amc-dubai" className="font-semibold text-primary hover:underline">AC AMC in Dubai</Link>{" "}
+            to have the visits scheduled for you.
+          </p>
+          <div className="mt-8 space-y-3">
+            {villaFaqs.map((f) => (
+              <details key={f.q} className="group rounded-lg border border-border bg-white">
+                <summary className="flex cursor-pointer items-center justify-between gap-4 p-5 font-semibold text-text marker:content-none">
+                  {f.q}
+                  <span className="text-2xl leading-none text-primary transition-transform group-open:rotate-45">+</span>
+                </summary>
+                <p className="px-5 pb-5 text-text-muted">{f.a}</p>
+              </details>
+            ))}
           </div>
         </div>
       </section>

@@ -1,6 +1,6 @@
 ---
 date: "2026-11-01"
-updated: "2026-11-01"
+updated: "2026-11-15"
 author: "AGEC Team"
 readingTime: "6 min read"
 image: "/projects/insulated-rooftop-ductwork-hvac-dubai.jpg"
@@ -12,7 +12,7 @@ titleTag: "Why Is My AC Running But Not Cooling? (Dubai) | AGEC"
 
 It's the most common call we get in summer: the air conditioner is clearly running — you can hear the fan, air is coming out of the vents — but the room just won't get cold. Before anyone sells you a "gas top-up," it's worth understanding what actually causes weak cooling, because the right fix depends entirely on the cause.
 
-We diagnose and repair this every week across Dubai, Sharjah and Abu Dhabi. Here's what's really going on, roughly in order of how often we see it.
+We diagnose and repair this every week across Dubai, Sharjah and Abu Dhabi, as part of our [AC repair service](/ac-repair-dubai). Here's what's really going on, roughly in order of how often we see it.
 
 ## 1. A dirty evaporator coil
 

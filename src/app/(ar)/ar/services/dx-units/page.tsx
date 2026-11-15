@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { buildMetadata } from "@/lib/metadata";
-import { PROJECTS_DELIVERED } from "@/lib/company";
+import { PROJECTS_DELIVERED, LARGEST_PROJECT_TR } from "@/lib/company";
 import {
   Ruler,
   Wrench,
@@ -113,7 +113,7 @@ export default function ArabicDxUnits() {
         },
       ]}
       whyAgec={[
-        "كل وحدة بحجم محسوب من الأحمال الحرارية — وتم تنفيذ سعات تصل إلى 240 TR في مشروع واحد ضمن أعمالنا",
+        `كل وحدة بحجم محسوب من الأحمال الحرارية — وتم تنفيذ سعات تصل إلى ${LARGEST_PROJECT_TR} TR في مشروع واحد ضمن أعمالنا`,
         `${PROJECTS_DELIVERED} مشروع تكييف أُنجز في الإمارات، من شقق الاستوديو إلى مجمّعات الفلل المتعددة`,
         "ممارسات تركيب متوافقة مع ASHRAE 111 وSMACNA مع وثائق تشغيل تجريبي كاملة",
         "مواسير غاز تبريد وفق معايير الشركة المصنّعة: لحام بتطهير النيتروجين، واختبار ثبات تفريغ عند 500 ميكرون، وشحن بالوزن",
