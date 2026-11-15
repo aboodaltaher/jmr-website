@@ -9,11 +9,15 @@
 set -u
 BASE="${1:-http://localhost:3000}"
 
+# Once /air-balancing-dubai is published the old balancing URL must land there (one hop), not on the TAB page.
+AIR_TARGET="/services/tab-testing-adjusting-balancing-dubai"
+if [ "$(curl -s -o /dev/null -w "%{http_code}" "$BASE/air-balancing-dubai")" = "200" ]; then AIR_TARGET="/air-balancing-dubai"; fi
+
 # "retired|final target"
 PAIRS=(
   "/services/maintenance|/ac-amc-dubai"
   "/services/testing-commissioning|/services/tab-testing-adjusting-balancing-dubai"
-  "/air-balancing-airflow-testing-dubai|/services/tab-testing-adjusting-balancing-dubai"
+  "/air-balancing-airflow-testing-dubai|$AIR_TARGET"
   "/ar/air-balancing-airflow-testing-dubai|/ar/services/tab-testing-adjusting-balancing-dubai"
   "/services/chillers|/services/chiller-maintenance-dubai"
   "/book|/quote"

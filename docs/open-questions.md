@@ -212,7 +212,16 @@ question on them is answered).
 
 ## Service pages
 
-None open — every fact on the ducting, HVAC-for-MEP and kitchen exhaust pages is confirmed.
+- [ ] VRF maintenance page (unpublished): which diagnostic tools and code references AGEC uses for each brand. → 
+- [ ] VRF maintenance page (unpublished): contract response tiers for VRF plant. Same as /ac-amc-dubai: emergency within 4 hours, urgent same day, routine within 48 hours? → 
+- [ ] VRF maintenance page (unpublished): visit frequency for VRF plant, for example quarterly. → 
+- [ ] VRF maintenance page (unpublished): does the service report with photos after every visit also apply to VRF contract and one-off visits? → 
+- [ ] VRF maintenance page (unpublished): on-site response target in hours, only if you want it stated. → 
+- [ ] VRF maintenance page (unpublished): Trane line, written as 'Trane: common faults or service points', short and practical. → 
+- [ ] VRF maintenance page (unpublished): O General line, written as 'O General: common faults or service points'. → 
+- [ ] VRF maintenance page (unpublished): Midea line, written as 'Midea: common faults or service points'. → 
+- [ ] VRF maintenance page (unpublished): LG Multi V line, written as 'LG Multi V: common faults or service points'. → 
+- [ ] Air balancing page (unpublished): default tolerance, for example +/-10%, if you want one stated. → 
 
 ---
-141 open answers.
+151 open answers.

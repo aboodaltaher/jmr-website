@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { isPublished } from "./src/data/new-pages";
 
 const nextConfig: NextConfig = {
   // 404 page for URLs that match no route: needed because there are two root layouts (English and
@@ -45,7 +46,8 @@ const nextConfig: NextConfig = {
       ["/services/maintenance", "/ac-amc-dubai"],
       // Cluster B — testing/commissioning/balancing → single TAB target
       ["/services/testing-commissioning", "/services/tab-testing-adjusting-balancing-dubai"],
-      ["/air-balancing-airflow-testing-dubai", "/services/tab-testing-adjusting-balancing-dubai"],
+      // Once the dedicated air balancing page is published the old URL goes straight to it (one hop); until then to the TAB page.
+      ["/air-balancing-airflow-testing-dubai", isPublished("airBalancing") ? "/air-balancing-dubai" : "/services/tab-testing-adjusting-balancing-dubai"],
       ["/ar/air-balancing-airflow-testing-dubai", "/ar/services/tab-testing-adjusting-balancing-dubai"],
       // Cluster C — chiller systems folds into chiller installation & maintenance
       ["/services/chillers", "/services/chiller-maintenance-dubai"],

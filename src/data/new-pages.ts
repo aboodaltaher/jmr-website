@@ -19,6 +19,10 @@ export const NEW_PAGES = {
   ducting: { published: true },
   mep: { published: false },
   kitchenExhaust: { published: true },
+  // Built 2026-11-15, waiting for the owner's review. Both are 404 in production, noindex, and out of the
+  // sitemap, menu and redirects until switched to true. See docs in PR "VRF maintenance, air balancing and TAB".
+  vrfMaintenance: { published: false },
+  airBalancing: { published: false },
 } as const;
 
 export type NewPageKey = keyof typeof NEW_PAGES;

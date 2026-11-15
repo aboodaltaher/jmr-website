@@ -39,7 +39,7 @@ const hits = (v: unknown, where = ""): Hit[] => {
 };
 
 const { projects } = await load("../src/data/projects.ts");
-const { DUCTING, MEP, KITCHEN_EXHAUST } = await load("../src/data/long-services.ts");
+const { DUCTING, MEP, KITCHEN_EXHAUST, VRF_MAINTENANCE, AIR_BALANCING } = await load("../src/data/long-services.ts");
 const { DUCTING_AR, MEP_AR } = await load("../src/data/long-services-ar.ts");
 const { communities } = await load("../src/data/communities.ts");
 
@@ -105,6 +105,8 @@ const service = [
   ["Ducting page (EN + AR)", [DUCTING, DUCTING_AR]],
   ["HVAC for MEP projects page (EN + AR)", [MEP, MEP_AR]],
   ["Kitchen exhaust page", [KITCHEN_EXHAUST]],
+  ["VRF maintenance page (unpublished)", [VRF_MAINTENANCE]],
+  ["Air balancing page (unpublished)", [AIR_BALANCING]],
 ] as const;
 const seen = new Set<string>();
 const serviceLines: string[] = [];

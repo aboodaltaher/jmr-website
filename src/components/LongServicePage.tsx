@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
+import Image from "next/image";
 import Link from "next/link";
 import { MessageCircle, Phone } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -35,6 +36,31 @@ const UI = {
   },
 } as const;
 
+const INLINE = /(\*\*[^*]+\*\*|\[[^\]]+\]\([^)\s]+\))/g;
+
+/** Renders **bold** and [label](/path) links inside a piece of copy. */
+function Inline({ children }: { children: string }) {
+  return (
+    <>
+      {children.split(INLINE).map((part, i) => {
+        const bold = part.match(/^\*\*([^*]+)\*\*$/);
+        if (bold) return <strong key={i} className="text-text">{bold[1]}</strong>;
+        const link = part.match(/^\[([^\]]+)\]\(([^)\s]+)\)$/);
+        if (link) {
+          const [, label, href] = link;
+          const cls = "font-semibold text-primary underline underline-offset-2 hover:text-primary-dark";
+          return href.endsWith(".pdf") ? (
+            <a key={i} href={href} className={cls} download>{label}</a>
+          ) : (
+            <Link key={i} href={href} className={cls}>{label}</Link>
+          );
+        }
+        return <span key={i}>{part}</span>;
+      })}
+    </>
+  );
+}
+
 /** Highlights any "[TO CONFIRM: …]" marker (local/preview). In production the marker is stripped (resolveDraft). */
 function Text({ children }: { children: string }) {
   const text = resolveDraft(children);
@@ -46,7 +72,7 @@ function Text({ children }: { children: string }) {
             {part}
           </mark>
         ) : (
-          <span key={i}>{part}</span>
+          <Inline key={i}>{part}</Inline>
         ),
       )}
     </>
@@ -60,7 +86,7 @@ function Text({ children }: { children: string }) {
  * render in local and Vercel preview builds.
  */
 export function LongServicePage({
-  service: raw,
+  service: rawIn,
   lang = "en",
   path,
   published,
@@ -75,6 +101,14 @@ export function LongServicePage({
   related: { href: string; label: string }[];
 }) {
   const t = UI[lang];
+  // {{LICENCE}} is filled from business.ts, so the licence number is never typed into copy (check-nap).
+  const fill = <T,>(v: T): T => {
+    if (typeof v === "string") return v.replaceAll("{{LICENCE}}", business.licence.label) as T;
+    if (Array.isArray(v)) return v.map(fill) as T;
+    if (v && typeof v === "object") return Object.fromEntries(Object.entries(v).map(([k, x]) => [k, fill(x)])) as T;
+    return v;
+  };
+  const raw = fill(rawIn);
   // On the live site markers are stripped, so drop anything left empty (and any FAQ with no answer).
   const keep = (x: string) => resolveDraft(x) !== "";
   const c: LongService = {
@@ -84,10 +118,15 @@ export function LongServicePage({
       ...s,
       paragraphs: s.paragraphs.filter(keep),
       bullets: s.bullets?.filter(keep),
+      subsections: s.subsections?.map((x) => ({
+        ...x,
+        paragraphs: x.paragraphs?.filter(keep),
+        bullets: x.bullets?.filter(keep),
+      })),
     })),
     faqs: raw.faqs.filter((f) => keep(f.a)).map((f) => ({ ...f, a: resolveDraft(f.a) })),
   };
-  const ctaAfter = Math.max(0, c.sections.findIndex((s) => (s.bullets?.length ?? 0) > 0));
+  const ctaAfter = Math.max(0, c.sections.findIndex((s) => (s.bullets?.length ?? 0) > 0 || (s.subsections?.length ?? 0) > 0));
   const url = `${business.url}${path}`;
   const wa = whatsappUrl(path);
 
@@ -99,7 +138,21 @@ export function LongServicePage({
     description: c.metaDescription,
     url,
     inLanguage: lang === "ar" ? "ar-AE" : "en-AE",
-    areaServed: { "@type": "City", name: "Dubai" },
+    areaServed: c.areaServed
+      ? c.areaServed.map((name) => ({ "@type": "AdministrativeArea", name }))
+      : { "@type": "City", name: "Dubai" },
+    ...(c.offerCatalog
+      ? {
+          hasOfferCatalog: {
+            "@type": "OfferCatalog",
+            name: c.offerCatalog.name,
+            itemListElement: c.offerCatalog.items.map((name) => ({
+              "@type": "Offer",
+              itemOffered: { "@type": "Service", name },
+            })),
+          },
+        }
+      : {}),
     provider: {
       "@type": "HVACBusiness",
       "@id": `${business.url}/#business`,
@@ -179,7 +232,44 @@ export function LongServicePage({
                   ))}
                 </ul>
               )}
+              {s.subsections?.map((x) => (
+                <div key={x.h3} className="pt-2">
+                  <h3 className="font-heading text-xl font-semibold text-text">{x.h3}</h3>
+                  {x.paragraphs?.map((p, j) => (
+                    <p key={j} className="mt-2"><Text>{p}</Text></p>
+                  ))}
+                  {x.bullets && (
+                    <ul className="mt-2 list-disc space-y-2 ps-6">
+                      {x.bullets.map((b) => (
+                        <li key={b}><Text>{b}</Text></li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ))}
             </div>
+            {c.figures
+              ?.filter((f) => f.afterSection === i)
+              .map((f) => (
+                <figure key={f.src} className="mt-8">
+                  <div
+                    className={
+                      f.fit === "contain"
+                        ? "relative mx-auto aspect-[3/4] max-w-xs overflow-hidden rounded-xl border border-border bg-white"
+                        : "relative aspect-[16/9] overflow-hidden rounded-xl border border-border"
+                    }
+                  >
+                    <Image
+                      src={f.src}
+                      alt={f.alt}
+                      fill
+                      sizes={f.fit === "contain" ? "320px" : "(max-width: 896px) 100vw, 896px"}
+                      className={f.fit === "contain" ? "object-contain" : "object-cover"}
+                    />
+                  </div>
+                  {f.caption && <figcaption className="mt-2 text-sm text-text-muted">{f.caption}</figcaption>}
+                </figure>
+              ))}
           </div>
         </section>
         {/* Mid-page lead block, directly after the first checklist section */}
