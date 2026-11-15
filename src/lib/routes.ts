@@ -78,7 +78,7 @@ export const arabicRoutes: RouteEntry[] = [
   { path: "/ar/contact", updatedAt: "2026-11-13" },
   { path: "/ar/services/hvac-installation-dubai", updatedAt: "2026-11-04" },
   { path: "/ar/services/tab-testing-adjusting-balancing-dubai", updatedAt: "2026-11-14" },
-  { path: "/ar/services/chiller-maintenance-dubai", updatedAt: "2026-11-14" },
+  { path: "/ar/services/chiller-maintenance-dubai", updatedAt: "2026-11-15" },
   { path: "/ar/services/ventilation-fresh-air", updatedAt: "2026-11-02" },
   { path: "/ar/smart-thermostat-installation-dubai", updatedAt: "2026-11-13" },
   { path: "/ar/services/vrf-vrv-systems", updatedAt: "2026-11-04" },

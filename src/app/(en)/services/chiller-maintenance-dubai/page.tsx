@@ -25,14 +25,17 @@ export const metadata = buildMetadata({
 const linkClass = "text-primary underline underline-offset-2 hover:text-primary-dark";
 const h2Class = "font-heading text-3xl font-bold md:text-4xl";
 
-// Checks already described on this page for each planned visit.
+// Planned preventive visit tasks. Refrigerant analysis, oil sampling, tube cleaning, filter replacement and
+// performance trending were confirmed by the owner on 2026-11-15.
 const ppmAll = [
   "Compressors, electrical and safety checks",
-  "Refrigerant charge and oil condition",
-  "Condenser and evaporator surfaces cleaned",
+  "Refrigerant analysis and charge check",
+  "Oil sampling and oil condition",
+  "Condenser and evaporator tube cleaning",
+  "Filter replacement",
   "Flow rates and temperature differentials measured against the plant's design figures",
   "Controls, sequencing, setpoints, interlocks and safety cut-outs verified",
-  "Readings logged and a report issued after every visit",
+  "Readings logged, performance trended visit to visit, and a report issued after every visit",
 ];
 const ppmWater = [
   "Condenser-water condition and treatment reviewed for scaling, fouling and corrosion",
@@ -256,7 +259,7 @@ export default function ChillerMaintenance() {
                   </ul>
                 </div>
               </div>
-              {/* TODO(owner): a numbered PPM checklist with check frequencies (monthly / quarterly / annual) per item, if you want one. Only the checks already described on this page are listed. */}
+              {/* TODO(owner): check frequency per item (monthly / quarterly / annual). Only the overall quarterly schedule is stated on the site, so no per-item frequency is shown. */}
             </div>
           </section>
 

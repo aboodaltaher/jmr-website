@@ -20,11 +20,59 @@ export const metadata = buildMetadata({
   locale: "ar_AE",
 });
 
+const ppmAll = [
+  "فحص الضواغط والكهرباء وأنظمة الأمان",
+  "تحليل الفريون وفحص شحنته",
+  "أخذ عيّنات من الزيت وفحص حالته",
+  "تنظيف أنابيب المكثّف والمبخّر",
+  "استبدال الفلاتر",
+  "قياس معدّلات التدفّق وفروق درجات الحرارة مقابل قيم تصميم المحطة",
+  "التحقّق من التحكّم والتسلسل وضبط القيم والتعشيقات وقواطع الأمان",
+  "تسجيل القراءات وتتبّع اتجاه الأداء من زيارة إلى أخرى، وإصدار تقرير بعد كل زيارة",
+];
+const ppmWater = [
+  "مراجعة حالة مياه المكثّف ومعالجتها للتحكّم في الترسّب والاتّساخ والتآكل",
+  "فحص حالة حوض برج التبريد ودائرة مياه المكثّف",
+];
+
 export default function ArabicChillerMaintenance() {
   return (
     <ServiceDetailLayout
       lang="ar"
       slug="ar/services/chiller-maintenance-dubai"
+      extraSection={
+        <section id="ppm" className="scroll-mt-24 bg-bg-soft py-16 md:py-20">
+          <div className="mx-auto max-w-7xl px-6">
+            <h2 className="font-heading text-3xl font-bold md:text-4xl">
+              قائمة الصيانة الدورية للتشيلر في دبي
+            </h2>
+            <p className="mt-6 max-w-3xl leading-relaxed text-text-muted">
+              ما تغطّيه كل زيارة صيانة دورية مخطّطة. تُصان التشيلرات المركزية في مناخ
+              دبي عادةً وفق جدول فصلي، مع اهتمام إضافي قبل ذروة الصيف؛ ونحدّد التواتر
+              حسب المحطة ونضمّنه العقد.
+            </p>
+            <div className="mt-8 grid gap-10 md:grid-cols-2">
+              <div>
+                <h3 className="font-heading text-lg font-semibold">جميع التشيلرات</h3>
+                <ul className="mt-4 list-disc space-y-2 ps-5 text-text-muted">
+                  {ppmAll.map((i) => (
+                    <li key={i}>{i}</li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-heading text-lg font-semibold">المحطات المبرّدة بالماء، إضافةً إلى ما سبق</h3>
+                <ul className="mt-4 list-disc space-y-2 ps-5 text-text-muted">
+                  {ppmWater.map((i) => (
+                    <li key={i}>{i}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            {/* TODO(owner): تواتر الفحص لكل بند (شهري / فصلي / سنوي). المذكور في الموقع هو الجدول الفصلي العام فقط. */}
+          </div>
+        </section>
+      }
       title="صيانة التشيلر"
       intro="صيانة مخطّطة لمحطات التشيلر المبرّدة بالهواء والماء — تُبقي التبريد المركزي موثوقاً وفعّالاً وموثّقاً طوال موسم التبريد."
       overview={
