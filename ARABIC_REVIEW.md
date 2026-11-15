@@ -327,7 +327,7 @@ commercial & building · how it works · switching · FAQs · CTA.
 2. «عرض مكتوب.»
 3. «توقيع العقد.»
 4. «زيارات مجدولة.»
-5. «تقرير بعد كل زيارة.»
+5. «تقرير خدمة مع صور بعد كل زيارة.»
 
 ### 7. Switching contractor (new)
 **Eyebrow:** «الانتقال»
