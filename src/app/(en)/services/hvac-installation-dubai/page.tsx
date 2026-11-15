@@ -9,6 +9,7 @@ import {
   ClipboardCheck,
   FileText,
 } from "lucide-react";
+import { BrandStrip } from "@/components/BrandStrip";
 import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
 import { ratingValue, reviewCount } from "@/lib/siteStats";
 import { PROJECTS_DELIVERED, LARGEST_PROJECT_TR } from "@/lib/company";
@@ -188,6 +189,8 @@ export default function HvacInstallation() {
               </div>
             </div>
           </section>
+
+          <BrandStrip />
 
           {/* HEAT LOAD FIRST */}
           <section className="py-16 md:py-20">

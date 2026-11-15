@@ -78,7 +78,7 @@ export function CommunityPage({ community: raw }: { community: Community }) {
           <Breadcrumbs
             className="mb-6"
             items={[
-              { name: "Areas", href: "/ac-maintenance-dubai" },
+              { name: "Areas", href: "/areas" },
               { name: c.name, href: path },
             ]}
           />

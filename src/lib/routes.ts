@@ -52,6 +52,7 @@ export const staticRoutes: RouteEntry[] = [
   ...(isPublished("airBalancing") ? [{ path: "/air-balancing-dubai", updatedAt: "2026-11-15" }] : []),
   ...(isPublished("mep") ? [{ path: "/mep-contractors-dubai", updatedAt: "2026-11-14" }] : []),
   // Location / emirate landing pages
+  { path: "/areas", updatedAt: "2026-11-15" },
   { path: "/hvac-contractor-sharjah", updatedAt: "2026-11-13" },
   { path: "/hvac-contractor-ajman", updatedAt: "2026-11-14" },
   { path: "/hvac-contractor-abu-dhabi", updatedAt: "2026-11-14" },

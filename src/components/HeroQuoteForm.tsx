@@ -85,8 +85,8 @@ export function HeroQuoteForm() {
       ) : (
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
           <div>
-            <h2 className="font-heading text-xl font-bold text-text">Get a quote in 1 hour</h2>
-            <p className="mt-1 text-sm text-text-muted">We reply on call and WhatsApp, 24/7.</p>
+            <h2 className="font-heading text-xl font-bold text-text">Written quote within 24 hours</h2>
+            <p className="mt-1 text-sm text-text-muted">WhatsApp reply within 1 hour, 24/7.</p>
           </div>
 
           <div>

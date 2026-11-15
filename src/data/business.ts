@@ -64,8 +64,8 @@ export const business = {
   // self-served LocalBusiness review markup, and a stale count hurts trust).
   reviews: {
     rating: 5.0,
-    count: 37,
-    updated: "2026-11-14",
+    count: 39,
+    updated: "2026-11-15",
   },
 
   links: {

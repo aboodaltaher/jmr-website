@@ -121,6 +121,12 @@ export function Footer() {
                   AC maintenance {a.name}
                 </Link>
               ))}
+              <Link prefetch={false}
+                href="/areas"
+                className="inline-flex min-h-[32px] items-center text-sm font-semibold text-text-muted hover:text-text transition-colors"
+              >
+                All areas
+              </Link>
             </nav>
           )}
           <div className="flex flex-col gap-3">

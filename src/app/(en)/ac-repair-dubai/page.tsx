@@ -419,9 +419,7 @@ export default function AcRepairPage() {
               >
                 <summary className="flex cursor-pointer items-center justify-between gap-4 p-5 font-semibold text-text marker:content-none">
                   {f.q}
-                  <span className="text-2xl leading-none text-primary transition-transform group-open:rotate-45">
-                    +
-                  </span>
+                  <span aria-hidden="true" className="text-2xl leading-none text-primary transition-transform after:content-['+'] group-open:rotate-45" />
                 </summary>
                 <p className="px-5 pb-5 text-text-muted">{f.a}</p>
               </details>
