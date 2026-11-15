@@ -47,7 +47,7 @@ const WA = whatsappUrl("/smart-thermostat-installation-dubai");
 const CANONICAL = "/smart-thermostat-installation-dubai";
 
 export const metadata = buildMetadata({
-  title: "Nest & ecobee Thermostat Installation Dubai | AGEC",
+  title: "Smart Thermostat Installation Dubai – Nest & ecobee | AGEC",
   description:
     "Google Nest and ecobee smart thermostat installation in Dubai and the UAE. Free compatibility check and C-wire installation by an engineer-led team.",
   path: CANONICAL,

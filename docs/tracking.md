@@ -7,7 +7,7 @@ No new third-party scripts. No personal data is ever sent: never a name, phone n
 
 Code: `src/lib/gtag.ts` (helpers) and `src/components/ConversionTracking.tsx` (click listener).
 
-## Mark these 6 as key events in GA4
+## Mark these 7 as key events in GA4
 
 GA4 → Admin → Data display → Events → find each event → toggle **Mark as key event**.
 (Events appear in the list only after they have fired once; test on the live site, then mark them.)
@@ -16,6 +16,7 @@ GA4 → Admin → Data display → Events → find each event → toggle **Mark 
 |---|---|---|
 | `click_whatsapp` | A visitor clicks any WhatsApp link (`wa.me`) | Site-wide click listener: floating button, sticky mobile bar, header, footer, hero buttons, mid-page CTA, every page's own WhatsApp buttons |
 | `click_call` | A visitor clicks any `tel:` link | Same listener: header, footer, sticky bar, hero, mid-page CTA, emergency strip |
+| `generate_lead` | **Any** form is successfully sent (quote, contact, AMC, repair, balancing, hero, mid-page, inline). Needs no Google Ads label. Carries `form_name`, `service`, `page_path`, `form_location`. | `trackFormSubmit()` in `src/lib/gtag.ts`, so every form above |
 | `form_submit_quote` | A quote, repair or balancing request is **successfully** sent | `QuoteForm` (`quote_page`), `HeroQuoteForm` (`home_hero`), `RepairForm` (`repair_page`), `BalancingForm` (`balancing_page`) |
 | `form_submit_contact` | The contact form is successfully sent | `ContactForm` (`contact_page`, English and Arabic) |
 | `form_submit_amc` | The AMC request form is successfully sent | `AmcForm` (`amc_page`) |

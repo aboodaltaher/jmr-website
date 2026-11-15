@@ -83,8 +83,8 @@ export type FormName =
 
 /**
  * Lead events, in GA4 / dataLayer. Mark these as KEY EVENTS in GA4 (see docs/tracking.md):
- *   click_whatsapp, click_call, form_submit_quote, form_submit_contact, form_submit_amc,
- *   form_submit_inline.
+ *   generate_lead, click_whatsapp, click_call, form_submit_quote, form_submit_contact,
+ *   form_submit_amc, form_submit_inline.
  * Every one carries { page_path, service, form_location }. No personal data is ever sent.
  *
  * The older events (call_click, whatsapp_click, form_submit with form_name) keep firing in
@@ -108,7 +108,7 @@ export function leadParams(formLocation: string): LeadParams {
 }
 
 /** Send one lead event to both GA4 (gtag) and the dataLayer (GTM), if present. */
-function fireLeadEvent(name: string, params: LeadParams): void {
+function fireLeadEvent(name: string, params: LeadParams & { form_name?: string }): void {
   pushDataLayer(name, { ...params });
   gaEvent(name, { ...params });
 }
@@ -144,4 +144,7 @@ export function trackFormSubmit(
   const legacy = { form_name: formName, ...params };
   pushDataLayer("form_submit", legacy);
   gaEvent("form_submit", legacy);
+  // GA4's recommended lead event. Fires on every successful submit (quote, contact, AMC and the
+  // short inline forms) with no Google Ads label needed. Mark it as a key event in GA4.
+  fireLeadEvent("generate_lead", { ...params, form_name: formName });
 }
