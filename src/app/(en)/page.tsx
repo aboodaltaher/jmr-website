@@ -28,8 +28,7 @@ import {
   Building2,
 } from "lucide-react";
 import { PHONE, PHONE_DISPLAY } from "@/lib/contact";
-import { PROJECTS_DELIVERED, LARGEST_PROJECT_TR, GOOGLE_RATING, GOOGLE_REVIEW_COUNT, EMAIL } from "@/lib/company";
-import { capacityProjects } from "@/data/project-capacity";
+import { PROJECTS_DELIVERED, GOOGLE_RATING, GOOGLE_REVIEW_COUNT, EMAIL } from "@/lib/company";
 import { GOOGLE_REVIEWS, MAPS_URL, REVIEW_URL, reviewStats } from "@/lib/reviews";
 
 // Image for the "Why AGEC" panel. Swap it by replacing the file at
@@ -394,37 +393,6 @@ export default async function Home() {
               </div>
             ))}
           </div>
-
-          {/* Capacity strip: the two headline figures plus the largest published case studies. */}
-          <div className="mt-10 grid grid-cols-2 gap-6 border-t border-border pt-8 lg:grid-cols-4">
-            <div>
-              <p className="font-heading text-3xl font-bold text-primary md:text-4xl">
-                {PROJECTS_DELIVERED}
-              </p>
-              <p className="mt-1 text-sm leading-snug text-text-muted">completed projects</p>
-            </div>
-            <div>
-              <p className="font-heading text-3xl font-bold text-primary md:text-4xl">
-                {LARGEST_PROJECT_TR} TR
-              </p>
-              <p className="mt-1 text-sm leading-snug text-text-muted">
-                largest single cooling capacity
-              </p>
-            </div>
-            {capacityProjects()
-              .slice(0, 2)
-              .map((p) => (
-                <Link key={p.slug} href={`/projects/${p.slug}`} className="group">
-                  <p className="font-heading text-3xl font-bold text-primary md:text-4xl">
-                    {p.tonnage}
-                  </p>
-                  <p className="mt-1 text-sm leading-snug text-text-muted group-hover:text-primary">
-                    {p.name}, {p.location.label}
-                  </p>
-                </Link>
-              ))}
-          </div>
-          {/* TODO(owner): name the 240 TR project (and link its case study) if it may be shown. The 109 TR Al Mamzar villa is left out of this strip until you confirm that figure. */}
         </div>
       </section>
 
