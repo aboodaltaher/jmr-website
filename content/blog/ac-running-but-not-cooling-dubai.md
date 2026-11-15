@@ -3,7 +3,7 @@ date: "2026-11-01"
 updated: "2026-11-01"
 author: "AGEC Team"
 readingTime: "6 min read"
-image: "/projects/agec-maintenance-service-dubai.jpg"
+image: "/projects/insulated-rooftop-ductwork-hvac-dubai.jpg"
 description: "AC running but not cooling in Dubai? Dirty coils, blocked drains and refrigerant leaks are the usual causes, not a gas top-up. Call or WhatsApp 24/7."
 titleTag: "Why Is My AC Running But Not Cooling? (Dubai) | AGEC"
 ---

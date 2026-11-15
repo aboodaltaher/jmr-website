@@ -163,8 +163,8 @@ export default function About() {
             </div>
             <div className="relative overflow-hidden rounded-lg lg:min-h-[400px]">
               <Image
-                src="/photos/agec-ac-vent-cleaning-villa-dubai.jpg"
-                alt="AGEC technician cleaning air conditioning ventilation in a Dubai villa"
+                src="/images/ac-maintenance-duct-cleaning-dubai.jpg"
+                alt="AGEC technician preparing duct cleaning equipment in a Dubai apartment"
                 fill
                 sizes="(max-width: 1024px) 100vw, 600px"
                 className="object-cover"

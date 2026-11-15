@@ -3,7 +3,7 @@ date: "2026-11-01"
 updated: "2026-11-01"
 author: "AGEC Team"
 readingTime: "6 min read"
-image: "/projects/agec-technician-tab-commissioning-airflow-balometer-dubai.jpg"
+image: "/projects/multiple-ahu-installation-hvac-design-dubai.jpg"
 description: "Air balancing in Dubai fixes freezing rooms next to stuffy ones. See what we measure, the report you should get and when you need it. Get a quote."
 titleTag: "What Is Air Balancing and When Do You Need It? | AGEC"
 ---

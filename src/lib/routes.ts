@@ -75,7 +75,7 @@ export const arabicRoutes: RouteEntry[] = [
   { path: "/ar/ac-duct-cleaning-dubai", updatedAt: "2026-11-15" },
   { path: "/ar/ac-amc-dubai", updatedAt: "2026-11-15" },
   { path: "/ar/services", updatedAt: "2026-11-14" },
-  { path: "/ar/about", updatedAt: "2026-11-05" },
+  { path: "/ar/about", updatedAt: "2026-11-15" },
   { path: "/ar/quote", updatedAt: "2026-11-05" },
   { path: "/ar/contact", updatedAt: "2026-11-13" },
   { path: "/ar/services/hvac-installation-dubai", updatedAt: "2026-11-15" },

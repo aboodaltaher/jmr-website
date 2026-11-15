@@ -3,7 +3,7 @@ date: "2026-11-01"
 updated: "2026-11-01"
 author: "AGEC Team"
 readingTime: "5 min read"
-image: "/projects/agec-maintenance-service-dubai.jpg"
+image: "/projects/agec-private-villa-hvac-dubai.jpg"
 description: "Service your villa AC in Dubai every 3 to 4 months — a neglected unit can lose 20–30% of its efficiency within two years. Book an AC service today."
 titleTag: "How Often Should You Service Villa AC in Dubai? | AGEC"
 ---
