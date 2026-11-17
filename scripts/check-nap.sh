@@ -22,7 +22,7 @@ scan() {  # scan "<label>" "<ERE pattern>"
 }
 
 scan "phone number"          '971 ?58 ?557 ?5987|971585575987'
-scan "email address"         'info@agec\.ae|a\.altaher@|m\.ghabboun@'
+scan "email address"         'a\.altaher@|m\.ghabboun@'
 scan "street address"        'AlMasraf|Almasraf|Sheikh Zayed|Al Quoz Industrial'
 scan "geo coordinates"       '25\.14[0-9]|55\.22[0-9]'
 scan "licence number"        '1221573'

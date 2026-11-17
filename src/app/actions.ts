@@ -2,9 +2,12 @@
 
 import { Resend } from "resend";
 import { z } from "zod";
+import { business } from "@/data/business";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const CONTACT_EMAIL = process.env.CONTACT_EMAIL ?? "";
+// Form notifications go to the CONTACT_EMAIL environment variable if it is set, otherwise to the
+// public address in src/data/business.ts (the single source for the site email).
+const CONTACT_EMAIL = process.env.CONTACT_EMAIL || business.email;
 const FROM = "AGEC Website <onboarding@resend.dev>";
 
 function timestamp() {
