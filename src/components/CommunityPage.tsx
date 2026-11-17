@@ -10,6 +10,8 @@ import { getProjectBySlug } from "@/data/projects";
 import { PHONE, PHONE_DISPLAY } from "@/lib/company";
 import { whatsappUrl } from "@/lib/contact";
 import type { Community } from "@/data/communities";
+import { AREA_JOBS } from "@/data/area-jobs";
+import { RecentJob } from "@/components/RecentJob";
 import { MARKER_SPLIT, scrubDraft, resolveDraft } from "@/lib/draft";
 
 /** Renders text, highlighting any "[TO CONFIRM: …]" marker (local/preview). Stripped in production. */
@@ -167,6 +169,9 @@ export function CommunityPage({ community: raw }: { community: Community }) {
         </Fragment>
       ))}
 
+      {/* Recent job in this area: renders only when real data is filled in (src/data/area-jobs.ts) */}
+      <RecentJob job={AREA_JOBS[c.slug]} areaName={c.name} />
+
       {/* Services that fit — contextual internal links */}
       <section className="py-14 md:py-16">
         <div className="mx-auto max-w-4xl px-6">
@@ -188,6 +193,13 @@ export function CommunityPage({ community: raw }: { community: Community }) {
               </li>
             ))}
           </ul>
+          <p className="mt-6 text-text-muted">
+            See all{" "}
+            <Link href="/areas" className="font-semibold text-primary hover:underline">
+              areas we cover
+            </Link>
+            .
+          </p>
         </div>
       </section>
 

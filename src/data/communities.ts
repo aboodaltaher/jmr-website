@@ -477,6 +477,7 @@ const miraOasis: Community = {
   intro: [
     "AGEC installs ducted AC in Mira Oasis. The first photo below is a ducted unit we installed above the ceiling of a Mira Oasis villa, connected to insulated flexible ducts. The second shows a ceiling-mounted unit and its insulated ductwork during duct installation in Mira Oasis.",
     `A ducted split is supplied and installed from AED ${ductedPrice} per ton, new unit included. We confirm the exact price in writing before work starts.`,
+    "Mira Oasis is a community of townhouses and villas, usually laid out over two or three floors. On a layout like that the choice is normally between a split unit in each room and a ducted system with the unit above the ceiling and a grille in each room. We install both, and we tell you which suits your floor plan.",
   ],
   sections: [
     {
@@ -559,6 +560,7 @@ const dubaiHills: Community = {
   intro: [
     "AGEC installs AC and replaces AC machines in Dubai Hills, supplying the new unit and fitting it. The photo below shows duct installation in Dubai Hills: insulated duct boxes and ducted units along the ceiling.",
     `Replacing an old unit starts from AED ${replacePrice} per unit, new unit included. New installations are priced per ton. We confirm the exact price in writing before work starts.`,
+    "Dubai Hills mixes villas, townhouses and apartments, so the right machine is rarely the same twice. A larger villa may suit several units replaced together, or a VRF system with separate control for each room; an apartment usually needs one split or cassette unit. We price each case on its own.",
   ],
   sections: [
     {
@@ -647,6 +649,7 @@ const alWasl: Community = {
   intro: [
     "AGEC looks after AC in Al Wasl under annual maintenance contracts. A contract fixes the visits for the year, so your units are serviced on schedule and you do not have to remember to book. The first photo below is a technician cleaning the condenser coil of a packaged unit during an AMC visit in Al Wasl.",
     `Plans are priced per machine per visit, from AED ${amcFrom} excluding VAT, with 2, 4 or 6 visits a year.`,
+    "Al Wasl is an established part of central Dubai, with villas of different ages and low-rise buildings. Properties of different ages can carry different generations of AC equipment, so a contract starts by listing every machine on the property: its type, brand and condition. We then set the visits around that list.",
   ],
   sections: [
     {
@@ -736,6 +739,7 @@ const sustainableCity: Community = {
   intro: [
     "AGEC finds and fixes AC leaks in The Sustainable City, and replaces compressors. The photo below shows worn twin scroll compressors in an outdoor unit in The Sustainable City before the compressors were replaced.",
     `Diagnosis costs AED ${callout}, waived if you go ahead with the repair. The exact repair price is quoted after diagnosis, in writing, before any work starts.`,
+    "The Sustainable City is a community of villas, townhouses and apartments. Whether a home is cooled by split units or a ducted system, a leak usually shows up as a stain on a ceiling, water at an indoor unit, or a unit that stops cooling. We start by finding which of those it is, and where the leak comes from.",
   ],
   sections: [
     {
