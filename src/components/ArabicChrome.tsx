@@ -110,7 +110,7 @@ export function ArabicChrome({ children }: { children: React.ReactNode }) {
           </p>
           <div className="mt-4 space-y-1 text-sm text-text-muted" dir="ltr">
             <p>{PHONE_DISPLAY}</p>
-            <p>{EMAIL}</p>
+            <p><a href={`mailto:${EMAIL}`} dir="ltr" className="hover:text-text">{EMAIL}</a></p>
             <p>{ADDRESS_FULL}</p>
           </div>
           <p className="mt-4 text-xs text-text-muted">
