@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { FormSendError } from "@/components/FormSendError";
 import { useForm } from "react-hook-form";
 import { Check } from "lucide-react";
 import { submitContactForm } from "@/app/actions";
@@ -42,6 +43,7 @@ const inputClass = (hasError: boolean) =>
 export function ContactForm({ lang = "en" }: { lang?: Lang }) {
   const t = T[lang];
   const [submitted, setSubmitted] = useState(false);
+  const [sendFailed, setSendFailed] = useState(false);
 
   const schema = defineSchema({
     name: required(t.errName),
@@ -62,8 +64,11 @@ export function ContactForm({ lang = "en" }: { lang?: Lang }) {
   const onSubmit = async (data: FormData) => {
     const result = await submitContactForm(data);
     if (result.success) {
+      setSendFailed(false);
       setSubmitted(true);
       trackFormSubmit("contact", "contact", "contact_page");
+    } else {
+      setSendFailed(true);
     }
   };
 
@@ -161,6 +166,7 @@ export function ContactForm({ lang = "en" }: { lang?: Lang }) {
         )}
       </div>
 
+      {sendFailed && <FormSendError />}
       <button
         type="submit"
         disabled={isSubmitting}
