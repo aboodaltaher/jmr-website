@@ -25,7 +25,7 @@ export const business = {
     /** wa.me format: digits only, no "+". */
     whatsapp: "971585575987",
   },
-  email: "info@agec.ae",
+  email: "a.altaher@agec.ae",
 
   address: {
     /** Street line as it appears on the Google Business Profile. */
