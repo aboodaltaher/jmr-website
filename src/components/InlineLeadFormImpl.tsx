@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { FormSendError } from "@/components/FormSendError";
 import { useForm } from "react-hook-form";
 import { Check, Phone, MessageCircle } from "lucide-react";
 import { submitRequest } from "@/app/actions";
@@ -40,6 +41,7 @@ export function InlineLeadFormImpl({
   formName?: FormName;
 }) {
   const [submitted, setSubmitted] = useState(false);
+  const [sendFailed, setSendFailed] = useState(false);
   const {
     register,
     handleSubmit,
@@ -49,8 +51,11 @@ export function InlineLeadFormImpl({
   const onSubmit = async (data: FormData) => {
     const result = await submitRequest({ ...data, requestType });
     if (result.success) {
+      setSendFailed(false);
       setSubmitted(true);
       trackFormSubmit(formName, "inline", "inline");
+    } else {
+      setSendFailed(true);
     }
   };
 
@@ -108,6 +113,7 @@ export function InlineLeadFormImpl({
         </label>
         <textarea id="il-details" rows={3} placeholder={detailsPlaceholder} {...register("details")} className={inputClass(false)} />
       </div>
+      {sendFailed && <FormSendError />}
       <button
         type="submit"
         disabled={isSubmitting}

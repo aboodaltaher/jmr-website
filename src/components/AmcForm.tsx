@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { FormSendError } from "@/components/FormSendError";
 import { useForm } from "react-hook-form";
 import { Check, MessageCircle } from "lucide-react";
 import { submitAmcRequest } from "@/app/actions";
@@ -32,6 +33,7 @@ export function AmcForm({
   responsePromise?: boolean;
 }) {
   const [submitted, setSubmitted] = useState(false);
+  const [sendFailed, setSendFailed] = useState(false);
   const {
     register,
     handleSubmit,
@@ -41,8 +43,11 @@ export function AmcForm({
   const onSubmit = async (data: FormData) => {
     const result = await submitAmcRequest(data);
     if (result.success) {
+      setSendFailed(false);
       setSubmitted(true);
       trackFormSubmit("amc", "amc", "amc_page");
+    } else {
+      setSendFailed(true);
     }
   };
 
@@ -189,6 +194,7 @@ export function AmcForm({
         />
       </div>
 
+      {sendFailed && <FormSendError />}
       <button
         type="submit"
         disabled={isSubmitting}

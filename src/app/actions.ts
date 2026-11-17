@@ -4,11 +4,33 @@ import { Resend } from "resend";
 import { z } from "zod";
 import { business } from "@/data/business";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
 // Form notifications go to the CONTACT_EMAIL environment variable if it is set, otherwise to the
 // public address in src/data/business.ts (the single source for the site email).
 const CONTACT_EMAIL = process.env.CONTACT_EMAIL || business.email;
 const FROM = "AGEC Website <onboarding@resend.dev>";
+
+/**
+ * Email one form submission to CONTACT_EMAIL. Returns true only when Resend accepted it.
+ * The Resend SDK does not throw on API errors (for example "you can only send testing emails to
+ * your own address"); it returns { error }, so the result must be checked or failures are silent.
+ */
+async function sendEmail(
+  kind: string,
+  mail: { subject: string; html: string; replyTo?: string },
+): Promise<boolean> {
+  try {
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    const { error } = await resend.emails.send({ from: FROM, to: CONTACT_EMAIL, ...mail });
+    if (error) {
+      console.error(`Resend rejected the ${kind} email (to ${CONTACT_EMAIL}):`, error);
+      return false;
+    }
+    return true;
+  } catch (err) {
+    console.error(`Failed to send ${kind} email:`, err);
+    return false;
+  }
+}
 
 function timestamp() {
   return new Date().toLocaleString("en-AE", { timeZone: "Asia/Dubai" });
@@ -54,19 +76,8 @@ export async function submitRequest(data: Record<string, unknown>) {
       row("Details", d.details),
   );
 
-  try {
-    await resend.emails.send({
-      from: FROM,
-      to: CONTACT_EMAIL,
-      subject: `Website Request (${d.requestType}) - ${d.name}`,
-      replyTo: d.email || undefined,
-      html,
-    });
-  } catch (err) {
-    console.error("Failed to send request email:", err);
-  }
-
-  return { success: true };
+  const sent = await sendEmail("request", { subject: `Website Request (${d.requestType}) - ${d.name}`, replyTo: d.email || undefined, html });
+  return sent ? { success: true } : { success: false, error: "send_failed" };
 }
 
 // ── Contact Form ──
@@ -94,19 +105,8 @@ export async function submitContactForm(data: Record<string, unknown>) {
       row("Message", message),
   );
 
-  try {
-    await resend.emails.send({
-      from: FROM,
-      to: CONTACT_EMAIL,
-      subject: `New Contact Form Submission - ${name}`,
-      replyTo: email || undefined,
-      html,
-    });
-  } catch (err) {
-    console.error("Failed to send contact email:", err);
-  }
-
-  return { success: true };
+  const sent = await sendEmail("contact", { subject: `New Contact Form Submission - ${name}`, replyTo: email || undefined, html });
+  return sent ? { success: true } : { success: false, error: "send_failed" };
 }
 
 // ── Quote Request ──
@@ -145,19 +145,8 @@ export async function submitQuoteRequest(data: Record<string, unknown>) {
       row("Details", d.details),
   );
 
-  try {
-    await resend.emails.send({
-      from: FROM,
-      to: CONTACT_EMAIL,
-      subject: `Quote Request - ${d.name} - ${d.projectType}`,
-      replyTo: d.email,
-      html,
-    });
-  } catch (err) {
-    console.error("Failed to send quote email:", err);
-  }
-
-  return { success: true };
+  const sent = await sendEmail("quote", { subject: `Quote Request - ${d.name} - ${d.projectType}`, replyTo: d.email, html });
+  return sent ? { success: true } : { success: false, error: "send_failed" };
 }
 
 // ── Service Booking ──
@@ -192,19 +181,8 @@ export async function submitBooking(data: Record<string, unknown>) {
       row("Preferred Time", d.preferredTime),
   );
 
-  try {
-    await resend.emails.send({
-      from: FROM,
-      to: CONTACT_EMAIL,
-      subject: `Service Booking Request - ${d.name}`,
-      replyTo: d.email || undefined,
-      html,
-    });
-  } catch (err) {
-    console.error("Failed to send booking email:", err);
-  }
-
-  return { success: true };
+  const sent = await sendEmail("booking", { subject: `Service Booking Request - ${d.name}`, replyTo: d.email || undefined, html });
+  return sent ? { success: true } : { success: false, error: "send_failed" };
 }
 
 // ── AMC Enquiry ──
@@ -237,19 +215,8 @@ export async function submitAmcRequest(data: Record<string, unknown>) {
       row("Notes", d.notes),
   );
 
-  try {
-    await resend.emails.send({
-      from: FROM,
-      to: CONTACT_EMAIL,
-      subject: `AMC Enquiry - ${d.name}`,
-      replyTo: d.email || undefined,
-      html,
-    });
-  } catch (err) {
-    console.error("Failed to send AMC email:", err);
-  }
-
-  return { success: true };
+  const sent = await sendEmail("AMC", { subject: `AMC Enquiry - ${d.name}`, replyTo: d.email || undefined, html });
+  return sent ? { success: true } : { success: false, error: "send_failed" };
 }
 
 // ── Air Balancing / Technical Assessment ──
@@ -284,19 +251,8 @@ export async function submitBalancingRequest(data: Record<string, unknown>) {
       row("Notes", d.notes),
   );
 
-  try {
-    await resend.emails.send({
-      from: FROM,
-      to: CONTACT_EMAIL,
-      subject: `Technical Assessment Request - ${d.name}`,
-      replyTo: d.email || undefined,
-      html,
-    });
-  } catch (err) {
-    console.error("Failed to send balancing email:", err);
-  }
-
-  return { success: true };
+  const sent = await sendEmail("balancing", { subject: `Technical Assessment Request - ${d.name}`, replyTo: d.email || undefined, html });
+  return sent ? { success: true } : { success: false, error: "send_failed" };
 }
 
 // ── Urgent AC Repair ──
@@ -321,16 +277,6 @@ export async function submitRepairRequest(data: Record<string, unknown>) {
       row("Issue", d.issue),
   );
 
-  try {
-    await resend.emails.send({
-      from: FROM,
-      to: CONTACT_EMAIL,
-      subject: `Urgent AC Repair - ${d.name}`,
-      html,
-    });
-  } catch (err) {
-    console.error("Failed to send repair email:", err);
-  }
-
-  return { success: true };
+  const sent = await sendEmail("repair", { subject: `Urgent AC Repair - ${d.name}`, html });
+  return sent ? { success: true } : { success: false, error: "send_failed" };
 }

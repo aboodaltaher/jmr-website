@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { FormSendError } from "@/components/FormSendError";
 import { useForm } from "react-hook-form";
 import { Check, Phone, MessageCircle } from "lucide-react";
 import { submitRepairRequest } from "@/app/actions";
@@ -23,6 +24,7 @@ const inputClass = (hasError: boolean) =>
 
 export function RepairForm({ whatsappHref }: { whatsappHref: string }) {
   const [submitted, setSubmitted] = useState(false);
+  const [sendFailed, setSendFailed] = useState(false);
   const {
     register,
     handleSubmit,
@@ -32,8 +34,11 @@ export function RepairForm({ whatsappHref }: { whatsappHref: string }) {
   const onSubmit = async (data: FormData) => {
     const result = await submitRepairRequest(data);
     if (result.success) {
+      setSendFailed(false);
       setSubmitted(true);
       trackFormSubmit("repair", "quote", "repair_page");
+    } else {
+      setSendFailed(true);
     }
   };
 
@@ -135,6 +140,7 @@ export function RepairForm({ whatsappHref }: { whatsappHref: string }) {
         )}
       </div>
 
+      {sendFailed && <FormSendError />}
       <button
         type="submit"
         disabled={isSubmitting}

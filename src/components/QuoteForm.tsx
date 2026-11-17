@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { FormSendError } from "@/components/FormSendError";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { Check } from "lucide-react";
@@ -70,6 +71,7 @@ export function QuoteForm({ lang = "en" }: { lang?: Lang }) {
   const t = T[lang];
   const router = useRouter();
   const [submitted, setSubmitted] = useState(false);
+  const [sendFailed, setSendFailed] = useState(false);
 
   const schema = defineSchema({
     requestType: required(t.errType),
@@ -90,11 +92,14 @@ export function QuoteForm({ lang = "en" }: { lang?: Lang }) {
   const onSubmit = async (data: FormData) => {
     const result = await submitRequest(data);
     if (result.success) {
+      setSendFailed(false);
       trackFormSubmit("quote", "quote", "quote_page");
       // English flows to the dedicated thank-you page (conversion tracking);
       // Arabic has no thank-you route, so confirm inline.
       if (lang === "ar") setSubmitted(true);
       else router.push("/quote/thank-you");
+    } else {
+      setSendFailed(true);
     }
   };
 
@@ -187,6 +192,7 @@ export function QuoteForm({ lang = "en" }: { lang?: Lang }) {
         {errors.details && <p className="mt-1 text-sm text-red-600">{errors.details.message}</p>}
       </div>
 
+      {sendFailed && <FormSendError />}
       <button
         type="submit"
         disabled={isSubmitting}

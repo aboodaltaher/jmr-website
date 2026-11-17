@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { FormSendError } from "@/components/FormSendError";
 import { useForm } from "react-hook-form";
 import { Check, MessageCircle } from "lucide-react";
 import { submitBalancingRequest } from "@/app/actions";
@@ -27,6 +28,7 @@ const inputClass = (hasError: boolean) =>
 
 export function BalancingForm({ whatsappHref }: { whatsappHref: string }) {
   const [submitted, setSubmitted] = useState(false);
+  const [sendFailed, setSendFailed] = useState(false);
   const {
     register,
     handleSubmit,
@@ -36,8 +38,11 @@ export function BalancingForm({ whatsappHref }: { whatsappHref: string }) {
   const onSubmit = async (data: FormData) => {
     const result = await submitBalancingRequest(data);
     if (result.success) {
+      setSendFailed(false);
       setSubmitted(true);
       trackFormSubmit("balancing", "quote", "balancing_page");
+    } else {
+      setSendFailed(true);
     }
   };
 
@@ -213,6 +218,7 @@ export function BalancingForm({ whatsappHref }: { whatsappHref: string }) {
         />
       </div>
 
+      {sendFailed && <FormSendError />}
       <button
         type="submit"
         disabled={isSubmitting}
