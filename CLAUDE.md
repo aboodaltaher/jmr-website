@@ -122,7 +122,7 @@ Lead generation. Visitors should be able to (1) request a quotation, (2) book a 
 
 ## Contact Details
 - Phone: +971 58 557 5987
-- Email: m.ghabboun@agec.ae
+- Email: a.altaher@agec.ae (the official public contact email; the single source is `email` in `src/data/business.ts`. Do NOT use info@agec.ae or m.ghabboun@agec.ae, and never hard-code the address anywhere else.)
 - Location: Dubai, UAE
 
 ## Content Tone
