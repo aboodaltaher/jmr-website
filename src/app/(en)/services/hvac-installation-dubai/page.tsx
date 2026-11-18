@@ -49,7 +49,7 @@ const faq = [
     a: "Yes. Ducted and concealed splits are part of our regular scope, for villas and apartments and for office, retail and restaurant fit-outs, installed to the tenant's layout.",
   },
   {
-    q: "Who handles the DCD and DEWA approvals?",
+    q: "Who handles the authority approvals?",
     a: "The project consultant submits the approvals and obtains the NOCs. AGEC prepares and supplies the HVAC drawings, calculations and documents the consultant needs for those submissions.",
   },
   {
@@ -280,11 +280,10 @@ export default function HvacInstallation() {
           {/* AUTHORITY APPROVALS */}
           <section className="py-16 md:py-20">
             <div className="mx-auto max-w-7xl px-6">
-              <h2 className={h2Class}>Authority approvals (DCD/DEWA)</h2>
+              <h2 className={h2Class}>Authority approvals</h2>
               <div className="mt-6 max-w-3xl space-y-4 leading-relaxed text-text-muted">
                 <p>
-                  Authority approvals, including Dubai Civil Defence (DCD) and
-                  DEWA, are submitted by the project consultant, who also obtains
+                  Authority approvals are submitted by the project consultant, who also obtains
                   the NOCs. AGEC prepares and supplies the HVAC drawings,
                   calculations and documents the consultant needs for those
                   submissions, and installs to the approved drawings.

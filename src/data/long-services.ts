@@ -172,7 +172,7 @@ export const MEP: LongService = {
   serviceType: "HVAC contracting for MEP projects",
   ctaService: "HVAC package for an MEP project",
   intro: [
-    "On most buildings the HVAC package is the largest and most space-hungry part of the MEP scope: big ducts, chilled-water or refrigerant pipework, plant on the roof and risers through every floor. It is also the package that clashes with everyone else. AGEC is an HVAC contractor. Our trade licence covers air-conditioning, ventilation and air-filtration systems, installation and maintenance, and on an MEP project that is the package we take.",
+    "On most buildings the HVAC package is the largest and most space-hungry part of the MEP scope: big ducts, chilled-water or refrigerant pipework, plant on the roof and risers through every floor. It is also the package that clashes with everyone else. AGEC is an HVAC contractor. Our scope is air-conditioning, ventilation and air-filtration systems, installation and maintenance, and on an MEP project that is the package we take.",
     "This page is deliberately specific. We deliver the HVAC package with our own teams and coordinate its interfaces with the electrical, plumbing, fire-protection and controls contractors, who are appointed separately. We do not offer those trades ourselves.",
   ],
   sections: [
@@ -193,7 +193,7 @@ export const MEP: LongService = {
     {
       h2: "Other trades: coordinated, not delivered by us",
       paragraphs: [
-        "A building also needs electrical, plumbing and drainage, fire fighting, fire alarm and controls. Those are carried out by their own licensed contractors, appointed by the client or the main contractor, and they are outside our scope. Our role is to make sure the HVAC design and installation fit with their work, and that the interfaces between them are settled before they reach site.",
+        "A building also needs electrical, plumbing and drainage, fire fighting, fire alarm and controls. Those are carried out by their own specialist contractors, appointed by the client or the main contractor, and they are outside our scope. Our role is to make sure the HVAC design and installation fit with their work, and that the interfaces between them are settled before they reach site.",
         "Interfaces that always need an owner are the power supply and isolators for HVAC equipment, condensate drainage routes, the points where our ductwork meets fire dampers and the fire alarm, and the link to the building controls. We supply and connect our own HVAC equipment only. For every other item, we agree in writing at the start of the project which contractor is responsible, so nothing is left without an owner.",
       ],
     },
@@ -242,7 +242,7 @@ export const MEP: LongService = {
   faqs: [
     {
       q: "Do you do the whole MEP package or only HVAC?",
-      a: "HVAC only. Our trade licence covers air-conditioning, ventilation and air-filtration systems, installation and maintenance. Electrical, plumbing, fire fighting, fire alarm and controls are delivered by their own contractors, and we coordinate the HVAC interfaces with them.",
+      a: "HVAC only. Our scope is air-conditioning, ventilation and air-filtration systems, installation and maintenance. Electrical, plumbing, fire fighting, fire alarm and controls are delivered by their own contractors, and we coordinate the HVAC interfaces with them.",
     },
     {
       q: "Can you work under a main contractor or consultant?",
@@ -277,27 +277,24 @@ export const MEP: LongService = {
 };
 
 // Kitchen exhaust & hood cleaning. Published (see NEW_PAGES.kitchenExhaust). Every claim
-// here is one the owner confirmed: Dubai Municipality approval for hood and grease-duct
-// cleaning; own trained staff (not subcontracted); schedule set by the client's insurer or
-// landlord requirements; scheduled around opening hours incl. after closing; before/after
-// photos and a service report after every clean. Do NOT add: NFPA 96 or any Dubai
-// Municipality frequency, specific equipment or waste-handling methods, or a certificate /
-// hood sticker — none of those were confirmed.
-// TODO(owner): add the Dubai Municipality approval number or certificate reference, and the exact Dubai
-// Civil Defence requirement you want quoted, once confirmed. Until then the page states only the approval
-// and says the requirement depends on the premises.
+// here is one the owner confirmed: own trained staff (not subcontracted); schedule set by the
+// client's insurer or landlord requirements; scheduled around opening hours incl. after closing;
+// before/after photos and a service report after every clean. AGEC holds NO authority approval
+// or licence claim (owner, Nov 2026: docs/business-facts.md). Do NOT add: any approval, NFPA 96
+// or any authority frequency, specific equipment or waste-handling methods, or a certificate /
+// hood sticker.
 export const KITCHEN_EXHAUST: LongService = {
   key: "kitchen-exhaust",
   path: "/kitchen-exhaust-cleaning-dubai",
   metaTitle: "Kitchen Exhaust & Hood Cleaning Dubai | AGEC",
   metaDescription:
-    "Kitchen exhaust, hood and grease duct cleaning for Dubai restaurants and kitchens by Dubai Municipality-approved AGEC, with photos and a service report.",
+    "Kitchen exhaust, hood and grease duct cleaning for Dubai restaurants and kitchens by AGEC's own trained team, with photos and a service report.",
   h1: "Kitchen Exhaust & Hood Cleaning in Dubai",
   kicker: "Kitchen exhaust · Hood cleaning · Grease duct",
   serviceType: "Kitchen exhaust and hood cleaning",
   intro: [
     "Grease is the fuel in a commercial kitchen fire. It builds up on the hood, in the filters and along the exhaust duct above the cooking line, and a flare-up on the grill can carry fire straight into the duct. Regular, documented cleaning of the whole exhaust path is the practical way to keep that risk down. It is also what landlords and insurers ask to see.",
-    "AGEC is approved by Dubai Municipality for kitchen hood and grease-duct cleaning. The work is carried out by our own trained staff, not subcontracted, and scheduled around your opening hours.",
+    "The work is carried out by AGEC's own trained staff, not subcontracted, and scheduled around your opening hours.",
   ],
   sections: [
     {
@@ -356,9 +353,9 @@ export const KITCHEN_EXHAUST: LongService = {
       ],
     },
     {
-      h2: "Compliance: Dubai Municipality and Civil Defence",
+      h2: "Compliance: what your landlord or insurer will ask for",
       paragraphs: [
-        "AGEC is approved by Dubai Municipality for kitchen hood and grease-duct cleaning. Commercial kitchens are also subject to fire-safety requirements set by the authorities, including Dubai Civil Defence, and an inspection, your landlord or your insurer may ask to see evidence that the exhaust is cleaned.",
+        "Commercial kitchens are subject to fire-safety requirements set by the authorities, and an inspection, your landlord or your insurer may ask to see evidence that the exhaust is cleaned.",
         "The exact requirement for your premises depends on the type of kitchen and the building, so confirm it with your landlord or the authority. What we provide is the evidence: dated before-and-after photographs and a service report for each visit, which you keep on file. For a kitchen in a hotel, mall or restaurant group, we can schedule recurring visits under a [maintenance contract](/ac-amc-dubai).",
       ],
     },
@@ -389,8 +386,8 @@ export const KITCHEN_EXHAUST: LongService = {
       a: "Grease collects in the hood, filters and duct and can ignite from a flare-up at the cooking line. Cleaning the full exhaust path removes that fuel.",
     },
     {
-      q: "Are you approved to do this work in Dubai?",
-      a: "Yes. AGEC is approved by Dubai Municipality for kitchen hood and grease-duct cleaning.",
+      q: "Who carries out the cleaning?",
+      a: "AGEC's own trained staff. The work is not subcontracted, and it is scheduled around your opening hours, including after closing.",
     },
     {
       q: "How often should a kitchen exhaust be cleaned?",

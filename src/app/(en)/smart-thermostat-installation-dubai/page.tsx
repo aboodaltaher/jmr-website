@@ -230,7 +230,7 @@ const steps: { title: string; desc: string }[] = [
   { title: "Contact Us", desc: "Call, WhatsApp or request a callback. Tell us your property type and AC system." },
   { title: "Free Compatibility Check", desc: "We verify your wiring and control system and confirm the right thermostat for you." },
   { title: "Schedule Visit", desc: "Pick a convenient slot — same-day and weekend appointments available." },
-  { title: "Professional Installation", desc: "Licensed technicians mount and wire your thermostat cleanly and safely." },
+  { title: "Professional Installation", desc: "Trained technicians mount and wire your thermostat cleanly and safely." },
   { title: "Testing", desc: "We test heating/cooling calls, fan and modes to confirm flawless operation." },
   { title: "Wi-Fi Setup", desc: "Your thermostat is connected to your home network and cloud account." },
   { title: "App Configuration", desc: "We set up the Nest/ecobee app, schedules, geofencing and eco modes." },
@@ -278,7 +278,7 @@ const reviews = [
 const faqs: { q: string; a: string }[] = [
   { q: "Is the Google Nest Thermostat compatible with my AC in Dubai?", a: "Most Dubai homes use 24V ducted or ducted-split HVAC systems, which are compatible with Google Nest. Compatibility ultimately depends on your existing wiring and control system, so we provide a free compatibility check before installation and advise on any wiring modifications, such as adding a C-wire." },
   { q: "What if my AC isn't compatible or runs on 220V?", a: "No problem — even if your system doesn't use standard 24V control, including 220V/240V split and inverter units, we have a solution. Our engineers fit a safe interface module that lets your Google Nest or ecobee control the AC without modifying or damaging the machine, and without depending on or cutting into its internal PCB control board. Your unit keeps working exactly as the manufacturer designed it, with smart control simply added on top." },
-  { q: "Can you install a C-wire if my system doesn't have one?", a: "Yes — C-wire (common wire) installation is one of our core services. If your thermostat needs continuous power, our licensed technicians run a proper C-wire or fit a compatible power extender kit safely and cleanly." },
+  { q: "Can you install a C-wire if my system doesn't have one?", a: "Yes — C-wire (common wire) installation is one of our core services. If your thermostat needs continuous power, our trained technicians run a proper C-wire or fit a compatible power extender kit safely and cleanly." },
   { q: "How much does smart thermostat installation cost in Dubai?", a: "Standard installation is quoted upfront after your free compatibility check. Final cost depends on your HVAC type, whether a C-wire or wiring modification is needed, and the number of zones. You always receive a transparent, no-obligation quote before any work begins." },
   { q: "Can a smart thermostat really save electricity in the UAE?", a: "Yes. Scheduling, geofencing, AI learning and eco modes all cut wasted cooling — ecobee reports up to ~26% annual HVAC savings with its eco+ features. Actual savings depend on your home, usage and settings, but the potential is significant given the UAE's long, hot cooling season and DEWA tariffs." },
   { q: "Which is better — Google Nest or ecobee?", a: "Both are excellent. Nest offers AI auto-scheduling and a premium minimalist design; ecobee Premium adds built-in Alexa, a room sensor and air-quality monitoring. We recommend the best fit after reviewing your home and HVAC setup." },
@@ -464,7 +464,7 @@ export default async function SmartThermostatPage() {
               Dubai&apos;s Trusted Smart Thermostat Specialists
             </h2>
             <p className="mt-5 text-lg text-text-muted">
-              As a licensed HVAC contractor (air conditioning, ventilation and air filtration), we understand UAE cooling
+              As an HVAC contractor (air conditioning, ventilation and air filtration), we understand UAE cooling
               systems from the ductwork up — so your Nest or ecobee is installed right, first time.
             </p>
           </div>

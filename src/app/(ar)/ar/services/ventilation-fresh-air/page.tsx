@@ -5,7 +5,7 @@ import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
 import { IaqSection } from "@/components/IaqSection";
 
 // Arabic translation of /services/ventilation-fresh-air. TODO(owner): native
-// Arabic review. No new claims added (ASHRAE/Municipality/energy figures kept).
+// Arabic review. No new claims added. No authority or approval claims (owner, Nov 2026).
 export const metadata = buildMetadata({
   title: "تهوية الهواء النقي وفحص ثاني أكسيد الكربون في دبي | AGEC",
   description:
@@ -43,7 +43,7 @@ export default function ArabicVentilation() {
             مطابخ، وسحب دورات مياه، وتهوية مواقف السيارات، وأنظمة إدارة الدخان.
             نقيس المجاري لسرعة وفاقد ضغط مناسبين، ونختار المراوح لمقاومة النظام
             المحسوبة، ونوازن كل فرع لتقديم التدفّق المحدّد. وتُصمَّم جميع الأنظمة
-            للامتثال لـ ASHRAE 62.1 ومتطلّبات بلدية دبي وأكواد الدفاع المدني بدبي.
+            وفق ASHRAE 62.1 والمتطلّبات التي تنطبق على المبنى.
           </p>
         </>
       }
@@ -53,7 +53,7 @@ export default function ArabicVentilation() {
         "مواقف سيارات بالقبو تتطلّب مراقبة أول أكسيد الكربون وتهوية",
         "تجهيزات مكتبية يكون فيها توريد الهواء النقي غير كافٍ أو سيّئ التوزيع",
         "مساحات بها شكاوى جودة هواء — ثاني أكسيد كربون مرتفع أو روائح أو رطوبة",
-        "مبانٍ تتطلّب تهوية دخان أو أنظمة ضغط لاعتماد الدفاع المدني",
+        "مبانٍ تتطلّب أنظمة تهوية دخان أو ضغط للسلالم",
       ]}
       whatWeDo={[
         {
@@ -84,7 +84,7 @@ export default function ArabicVentilation() {
           icon: FileText,
           name: "الامتثال للأكواد",
           description:
-            "توثيق تصميمي يلبّي متطلّبات بلدية دبي و ASHRAE والدفاع المدني بدبي للتهوية والسحب وإدارة الدخان.",
+            "توثيق تصميمي وفق ASHRAE ومواصفات المشروع للتهوية والسحب وإدارة الدخان.",
         },
         {
           icon: Zap,
@@ -97,7 +97,7 @@ export default function ArabicVentilation() {
         "تصاميم تهوية مبنية على متطلّبات الهواء الخارجي المحسوبة، لا على معدّلات تغيير هواء اعتباطية",
         `${PROJECTS_DELIVERED} مشروع تكييف عبر الإمارات — مطاعم وصالات رياضية ومراكز بيانات ومبانٍ تجارية`,
         "تركيب مجاري وموازنة هواء وفق ASHRAE 111 و SMACNA",
-        "توثيق امتثال كامل لبلدية دبي والدفاع المدني واعتماد الاستشاري",
+        "توثيق كامل للتصميم والاختبار لاعتماد الاستشاري",
       ]}
       faq={[
         {

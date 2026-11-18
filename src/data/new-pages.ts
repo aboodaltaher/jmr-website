@@ -12,8 +12,8 @@
 //
 // Ducting and kitchen exhaust cleaning are published; MEP stays off until the owner has reviewed it
 // on the preview URL. Kitchen exhaust cleaning is published (English only; there is no Arabic twin). It has
-// no open markers: the Dubai Municipality approval and the other service facts were
-// confirmed by the owner. See the "do not add" note above KITCHEN_EXHAUST in long-services.ts.
+// no open markers: the service facts were confirmed by the owner (no authority approval
+// is claimed). See the "do not add" note above KITCHEN_EXHAUST in long-services.ts.
 
 export const NEW_PAGES = {
   ducting: { published: true },

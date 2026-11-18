@@ -41,7 +41,7 @@ Plenty of UAE homes don't have a C-wire at the thermostat — and it's one of th
 1. **Run a proper C-wire** from your air handler to the thermostat — the cleanest, most reliable solution, and
 2. **Fit a compatible power extender / adapter kit** where running a new wire isn't practical.
 
-Either way, our licensed technicians do it **safely and tidily**, and test the whole system afterwards. C-wire installation is a core part of our [smart thermostat installation service](/smart-thermostat-installation-dubai).
+Either way, our trained technicians do it **safely and tidily**, and test the whole system afterwards. C-wire installation is a core part of our [smart thermostat installation service](/smart-thermostat-installation-dubai).
 
 ## What about 220V or non-standard systems?
 

@@ -41,7 +41,7 @@ const WHY_AGEC_IMAGE = "/projects/agec-stone-villa-hvac-dubai-elevation.jpg";
 export const metadata = buildMetadata({
   title: "Engineer-Led HVAC Contractor in Dubai & the UAE | AGEC",
   description:
-    `Engineer-led HVAC contractor in Dubai — installation, maintenance, AMC, testing and commissioning. Licensed since 2022, ${GOOGLE_RATING}★ from ${GOOGLE_REVIEW_COUNT} Google reviews.`,
+    `Engineer-led HVAC contractor in Dubai — installation, maintenance, AMC, testing and commissioning. Established 2022, ${GOOGLE_RATING}★ from ${GOOGLE_REVIEW_COUNT} Google reviews.`,
   path: "",
   languages: {
     "en-AE": "https://agec.ae/",
@@ -68,7 +68,7 @@ const services = [
     image: "/projects/fresh-air-handling-unit-fahu-dubai-agec.jpg",
     alt: "Fresh Air Handling Unit (FAHU) installation by AGEC in Dubai commercial project",
     description:
-      "Mechanical ventilation and fresh air systems designed to meet Dubai Municipality air quality standards.",
+      "Mechanical ventilation and fresh air systems designed to ASHRAE 62.1 for healthy indoor air.",
   },
   {
     icon: ClipboardCheck,
@@ -134,7 +134,7 @@ const reasons = [
     icon: ShieldCheck,
     name: "Quality Equipment Partners",
     description:
-      "Approved brands, manufacturer-rated equipment, and proper warranties on every system we install.",
+      "Leading brands, manufacturer-rated equipment, and proper warranties on every system we install.",
   },
   {
     icon: Target,

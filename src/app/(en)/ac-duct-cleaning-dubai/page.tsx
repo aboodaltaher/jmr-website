@@ -111,8 +111,6 @@ const reportItems = [
   "Recommendations for follow-up work",
 ];
 
-// TODO(owner): FAQ "Does Dubai Municipality set rules for AC duct cleaning?" — the answer needs the exact Dubai Municipality guideline
-// (name, reference, what it requires of contractors or building owners). Not stated anywhere on the site; do not publish an unverified claim.
 // TODO(owner): report format (PDF?), whether it includes photos, delivery time, and a sample report to link or show.
 const faqs: { q: string; a: string }[] = [
   {

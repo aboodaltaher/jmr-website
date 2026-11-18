@@ -104,7 +104,7 @@ Every visit should produce a written report showing what was checked, what was f
 
 Whether you choose AGEC or another contractor, here's what to verify before signing any AMC in Dubai:
 
-**Engineering credentials.** Is the provider a licensed HVAC contractor with qualified engineers on staff, or just a maintenance company subcontracting the technical work to whoever is cheapest? Ask to see the trade license and the engineers' qualifications.
+**Engineering credentials.** Is the provider an engineer-led HVAC contractor with qualified engineers on staff, or just a maintenance company subcontracting the technical work to whoever is cheapest? Ask about the engineers' qualifications and who will actually do the work.
 
 **Equipment expertise.** Different brands have different service requirements. A provider who works on everything from window ACs to industrial chillers may not have deep expertise in your specific equipment. Ask specifically which manufacturers — Daikin, Trane, Mitsubishi Electric, Carrier, York — they're authorized or experienced to service.
 

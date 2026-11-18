@@ -55,8 +55,8 @@ export default function VentilationFreshAir() {
             garage ventilation, and smoke management systems. We size ductwork
             for proper velocity and pressure drop, select fans for the calculated
             system resistance, and balance every branch to deliver the specified
-            airflow. All systems are designed to comply with ASHRAE 62.1, Dubai
-            Municipality requirements, and Dubai Civil Defence codes.
+            airflow. All systems are designed to ASHRAE 62.1 and to the
+            requirements that apply to the building.
           </p>
           {isPublished("kitchenExhaust") && (
             <p>
@@ -90,7 +90,7 @@ export default function VentilationFreshAir() {
         "Basement parking garages requiring CO monitoring and ventilation",
         "Office fit-outs where fresh air supply is insufficient or poorly distributed",
         "Spaces with indoor air quality complaints — high CO₂, odor, or humidity issues",
-        "Buildings requiring smoke ventilation or pressurization systems for civil defence approval",
+        "Buildings requiring smoke ventilation or stair pressurization systems",
       ]}
       whatWeDo={[
         {
@@ -121,7 +121,7 @@ export default function VentilationFreshAir() {
           icon: FileText,
           name: "Code Compliance",
           description:
-            "Design documentation meeting Dubai Municipality, ASHRAE, and Dubai Civil Defence requirements for ventilation, exhaust, and smoke management systems.",
+            "Design documentation to ASHRAE and the project specification for ventilation, exhaust, and smoke management systems, ready for the consultant's submissions.",
         },
         {
           icon: Zap,
@@ -134,7 +134,7 @@ export default function VentilationFreshAir() {
         "Ventilation designs based on calculated outdoor air requirements, not arbitrary air change rates",
         `${PROJECTS_DELIVERED} HVAC projects across the UAE — restaurants, gyms, data centers, and commercial buildings`,
         "ASHRAE 111 and SMACNA compliant ductwork installation and air balancing practices",
-        "Full compliance documentation for Dubai Municipality, civil defence, and consultant sign-off",
+        "Full design and test documentation for consultant sign-off",
       ]}
       faq={[
         {

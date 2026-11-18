@@ -1,6 +1,6 @@
 // Single source of truth for AGEC company facts.
 // Every page/component should import these rather than hard-coding values,
-// so phone, email, address, licence, review figures, turnaround and project
+// so phone, email, address, review figures, turnaround and project
 // numbers stay consistent across the site. (Audit item 10.)
 
 import { business, addressFull } from "@/data/business";

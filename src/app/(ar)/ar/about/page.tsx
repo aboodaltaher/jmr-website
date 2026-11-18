@@ -20,7 +20,7 @@ const eyebrow = "text-sm font-semibold uppercase tracking-widest text-primary";
 
 const values = [
   { icon: Award, name: "صرامة هندسية", description: "حسابات حمل حراري وتصميم أنظمة وتشغيل تجريبي على يد مهندسين مؤهّلين بخبرة ميدانية في الإمارات." },
-  { icon: ShieldCheck, name: "التزام بمواصفات المصنّع", description: "قطع غيار أصلية وإجراءات صيانة معتمدة، ومعدّات بتصنيف المصنّع وضمانات صحيحة." },
+  { icon: ShieldCheck, name: "التزام بمواصفات المصنّع", description: "قطع غيار أصلية وإجراءات الصيانة التي يوصي بها المصنّع، ومعدّات بتصنيف المصنّع وضمانات صحيحة." },
   { icon: PhoneCall, name: "دعم 24/7", description: "دعم طوارئ للأعطال عبر الإمارات." },
   { icon: TrendingUp, name: "سجلّ مُثبَت", description: `${PROJECTS_DELIVERED} مشروع تكييف منجز، من الفلل إلى مراكز البيانات والمنشآت الثقافية.` },
 ];
