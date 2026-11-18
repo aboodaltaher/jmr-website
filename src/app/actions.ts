@@ -4,32 +4,57 @@ import { Resend } from "resend";
 import { z } from "zod";
 import { business } from "@/data/business";
 
-// Form notifications go to the CONTACT_EMAIL environment variable if it is set, otherwise to the
-// public address in src/data/business.ts (the single source for the site email).
+// Environment variables (names only; values live in Vercel):
+//   RESEND_API_KEY        Resend API key (required for any email to be sent)
+//   CONTACT_EMAIL         lead inbox; falls back to the public address in src/data/business.ts
+//   RESEND_FROM           sender; falls back to Resend's shared test sender until agec.ae is verified
+//                         in Resend. Do not point this at an agec.ae address before that.
+//   CONTACT_EMAIL_BACKUP  optional extra inbox. Inactive unless set. Sent as a SEPARATE email so
+//                         that a rejected backup can never make the main lead email fail.
 const CONTACT_EMAIL = process.env.CONTACT_EMAIL || business.email;
-const FROM = "AGEC Website <onboarding@resend.dev>";
+const CONTACT_EMAIL_BACKUP = process.env.CONTACT_EMAIL_BACKUP || "";
+const FROM = process.env.RESEND_FROM || "AGEC Website <onboarding@resend.dev>";
+
+/** Short random reference for one submission. Logged and shown in the email, never tied to personal data in logs. */
+function newLeadId(): string {
+  return crypto.randomUUID().slice(0, 8);
+}
 
 /**
- * Email one form submission to CONTACT_EMAIL. Returns true only when Resend accepted it.
- * The Resend SDK does not throw on API errors (for example "you can only send testing emails to
- * your own address"); it returns { error }, so the result must be checked or failures are silent.
+ * Email one form submission to CONTACT_EMAIL (and, if set, a separate copy to CONTACT_EMAIL_BACKUP).
+ * Returns true only when Resend accepted the MAIN email. The Resend SDK does not throw on API
+ * errors (for example "you can only send testing emails to your own address"); it returns
+ * { error }, so the result must be checked or failures are silent.
+ * Logs carry the lead ID and the error type only: never names, phones, emails or messages.
  */
 async function sendEmail(
   kind: string,
   mail: { subject: string; html: string; replyTo?: string },
 ): Promise<boolean> {
+  const leadId = newLeadId();
+  const message = {
+    from: FROM,
+    ...mail,
+    subject: `${mail.subject} [ref ${leadId}]`,
+  };
+  let sent = false;
   try {
     const resend = new Resend(process.env.RESEND_API_KEY);
-    const { error } = await resend.emails.send({ from: FROM, to: CONTACT_EMAIL, ...mail });
+    const { error } = await resend.emails.send({ ...message, to: CONTACT_EMAIL });
     if (error) {
-      console.error(`Resend rejected the ${kind} email (to ${CONTACT_EMAIL}):`, error);
-      return false;
+      console.error(`[lead ${leadId}] ${kind}: main email rejected by Resend (${error.name})`);
+    } else {
+      sent = true;
+      console.info(`[lead ${leadId}] ${kind}: main email accepted`);
     }
-    return true;
+    if (CONTACT_EMAIL_BACKUP) {
+      const backup = await resend.emails.send({ ...message, to: CONTACT_EMAIL_BACKUP });
+      if (backup.error) console.error(`[lead ${leadId}] ${kind}: backup email rejected by Resend (${backup.error.name})`);
+    }
   } catch (err) {
-    console.error(`Failed to send ${kind} email:`, err);
-    return false;
+    console.error(`[lead ${leadId}] ${kind}: email send threw (${err instanceof Error ? err.name : "unknown"})`);
   }
+  return sent;
 }
 
 function timestamp() {

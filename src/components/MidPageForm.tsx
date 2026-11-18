@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Check } from "lucide-react";
 import { submitRequest } from "@/app/actions";
+import { FormSendError } from "@/components/FormSendError";
 import { trackFormSubmit } from "@/lib/gtag";
 import { type FormOf, defineSchema, resolver, required, optionalText } from "@/lib/form-schema";
 
@@ -113,9 +114,9 @@ export default function MidPageForm({ service, lang = "en" }: { service: string;
         </button>
       </div>
       {failed && (
-        <p role="alert" className="text-sm text-red-600 md:col-span-4">
-          {lang === "ar" ? "تعذّر الإرسال. يرجى الاتصال بنا أو مراسلتنا على واتساب." : "Something went wrong. Please call or WhatsApp us instead."}
-        </p>
+        <div className="md:col-span-4">
+          <FormSendError lang={lang} />
+        </div>
       )}
     </form>
   );

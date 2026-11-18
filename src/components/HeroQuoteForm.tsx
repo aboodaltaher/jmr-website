@@ -4,8 +4,9 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Check, MessageCircle, Phone } from "lucide-react";
 import { submitRequest } from "@/app/actions";
+import { FormSendError } from "@/components/FormSendError";
 import { trackFormSubmit } from "@/lib/gtag";
-import { PHONE, PHONE_DISPLAY, whatsappUrl } from "@/lib/contact";
+import { PHONE_DISPLAY, whatsappUrl } from "@/lib/contact";
 import { type FormOf, defineSchema, resolver, required, optionalText, all, check } from "@/lib/form-schema";
 
 // Same enquiry types and emirates as the /quote form (English).
@@ -179,15 +180,7 @@ export function HeroQuoteForm() {
             </select>
           </div>
 
-          {failed && (
-            <p role="alert" className="rounded-md bg-red-50 px-3 py-2 text-sm text-red-700">
-              Something went wrong. Please try again, or call{" "}
-              <a href={`tel:${PHONE}`} className="font-semibold underline">
-                {PHONE_DISPLAY}
-              </a>
-              .
-            </p>
-          )}
+          {failed && <FormSendError lang="en" />}
 
           <button
             type="submit"
