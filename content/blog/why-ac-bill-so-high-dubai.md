@@ -1,6 +1,6 @@
 ---
 date: "2026-06-27"
-updated: "2026-11-15"
+updated: "2026-11-18"
 author: "AGEC Team"
 readingTime: "9 min read"
 image: "/projects/trane-outdoor-units-rooftop-array-dubai.jpg"

@@ -27,14 +27,14 @@ import { isPublished } from "@/data/new-pages";
 //  - /quote/thank-you → noindex utility page; /review → 302 to Google reviews
 //  - dynamic blog/project pages → appended from data in sitemap.ts
 export const staticRoutes: RouteEntry[] = [
-  { path: "/", updatedAt: "2026-11-15" },
+  { path: "/", updatedAt: "2026-11-18" },
   { path: "/about", updatedAt: "2026-11-15" },
   { path: "/services", updatedAt: "2026-11-14" },
   // Landing pages
   { path: "/ac-installation-dubai", updatedAt: "2026-11-15" },
-  { path: "/ac-maintenance-dubai", updatedAt: "2026-11-15" },
+  { path: "/ac-maintenance-dubai", updatedAt: "2026-11-18" },
   { path: "/ac-repair-dubai", updatedAt: "2026-11-15" },
-  { path: "/ac-amc-dubai", updatedAt: "2026-11-15" },
+  { path: "/ac-amc-dubai", updatedAt: "2026-11-18" },
   { path: "/ac-duct-cleaning-dubai", updatedAt: "2026-11-15" },
   { path: "/smart-thermostat-installation-dubai", updatedAt: "2026-11-15" },
   // Service detail pages
@@ -46,16 +46,16 @@ export const staticRoutes: RouteEntry[] = [
   { path: "/services/ventilation-fresh-air", updatedAt: "2026-11-15" },
   { path: "/services/hvac-design", updatedAt: "2026-11-02" },
   // Gated: in the sitemap only once published (src/data/new-pages.ts)
-  ...(isPublished("kitchenExhaust") ? [{ path: "/kitchen-exhaust-cleaning-dubai", updatedAt: "2026-11-15" }] : []),
+  ...(isPublished("kitchenExhaust") ? [{ path: "/kitchen-exhaust-cleaning-dubai", updatedAt: "2026-11-18" }] : []),
   ...(isPublished("ducting") ? [{ path: "/ac-ducting-installation-dubai", updatedAt: "2026-11-15" }] : []),
   ...(isPublished("vrfMaintenance") ? [{ path: "/vrf-maintenance-dubai", updatedAt: "2026-11-15" }] : []),
   ...(isPublished("airBalancing") ? [{ path: "/air-balancing-dubai", updatedAt: "2026-11-15" }] : []),
   ...(isPublished("mep") ? [{ path: "/mep-contractors-dubai", updatedAt: "2026-11-14" }] : []),
   // Location / emirate landing pages
   { path: "/areas", updatedAt: "2026-11-15" },
-  { path: "/hvac-contractor-sharjah", updatedAt: "2026-11-13" },
-  { path: "/hvac-contractor-ajman", updatedAt: "2026-11-14" },
-  { path: "/hvac-contractor-abu-dhabi", updatedAt: "2026-11-14" },
+  { path: "/hvac-contractor-sharjah", updatedAt: "2026-11-18" },
+  { path: "/hvac-contractor-ajman", updatedAt: "2026-11-18" },
+  { path: "/hvac-contractor-abu-dhabi", updatedAt: "2026-11-18" },
   // Index & conversion pages
   { path: "/projects", updatedAt: "2026-11-13" },
   { path: "/blog", updatedAt: "2026-11-02" },
