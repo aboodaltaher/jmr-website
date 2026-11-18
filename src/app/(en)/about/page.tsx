@@ -1,6 +1,6 @@
 import { buildMetadata } from "@/lib/metadata";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { FOUNDER, PROJECTS_DELIVERED, LARGEST_PROJECT_TR, COMPANY_NAME, COMPANY_LEGAL } from "@/lib/company";
+import { FOUNDER, PROJECTS_DELIVERED, LARGEST_PROJECT_TR, COMPANY_NAME } from "@/lib/company";
 import { business } from "@/data/business";
 import { isPublished } from "@/data/new-pages";
 import Image from "next/image";
@@ -152,8 +152,8 @@ export default function About() {
                   </p>
                 )}
                 <p>
-                  AGEC is the trading name of {COMPANY_LEGAL}, the company behind
-                  this website. We design, install and maintain air-conditioning,
+                  {COMPANY_NAME} is also known as Altaher Ghabboun Engineering
+                  Contracting, and as AGEC for short. We design, install and maintain air-conditioning,
                   ventilation and air filtration systems.
                 </p>
               </div>

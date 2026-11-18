@@ -6,7 +6,6 @@ import { business } from "@/data/business";
 import { publishedCommunities, communityPath } from "@/data/community-index";
 import {
   COMPANY_NAME,
-  COMPANY_LEGAL,
   PHONE_DISPLAY,
   EMAIL,
   ADDRESS_FULL,
@@ -70,9 +69,6 @@ export function Footer() {
             </div>
             <p className="mt-4 text-xs text-text-muted">
               {business.hours.label} · {PHONE_DISPLAY}
-            </p>
-            <p className="mt-1 text-xs text-text-muted">
-              {COMPANY_LEGAL}
             </p>
             <div className="mt-4 flex items-center gap-4">
               <a

@@ -217,7 +217,7 @@ export default function AcRepairPage() {
           <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-white/80">
             <GoogleReviewsBadge className="text-white/90" />
             <span className="text-white/30">|</span>
-            <span>Available across the UAE</span>
+            <span>Serving all 7 emirates</span>
             <span className="text-white/30">|</span>
             <span>Call or WhatsApp</span>
           </div>

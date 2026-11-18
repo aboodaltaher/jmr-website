@@ -22,7 +22,6 @@ export const ADDRESS_COUNTRY = business.address.country;
 export const ADDRESS_FULL = addressFull;
 
 export const COMPANY_NAME = business.name;
-export const COMPANY_LEGAL = business.legalName;
 
 // Founder (surname spelling confirmed by owner: "Ghabboun").
 export const FOUNDER = "Mohannad Ghabboun";
@@ -94,20 +93,22 @@ export const EMIRATES_WITH_PROJECTS_LABEL = EMIRATES_WITH_PROJECTS.slice(0, -1)
   .join(", ")
   .concat(" and ", EMIRATES_WITH_PROJECTS[EMIRATES_WITH_PROJECTS.length - 1]);
 
-// Honest coverage wording: name the emirates with delivered projects, and make
-// clear the company is available UAE-wide. Use these instead of "all 7 emirates"
-// so the copy doesn't imply projects delivered in every emirate. (Audit task 3.)
-export const COVERAGE_SENTENCE = `Serving ${EMIRATES_WITH_PROJECTS_LABEL}, with service available across the UAE on request.`;
-export const COVERAGE_SHORT = "Available across the UAE";
+// Coverage wording. Service area = all 7 emirates (owner-confirmed, docs/business-facts.md).
+// Delivered projects are a separate fact (EMIRATES_WITH_PROJECTS): never imply projects in all seven.
+export const COVERAGE_SENTENCE = "Serving all 7 emirates: Abu Dhabi, Dubai, Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah and Fujairah.";
+export const COVERAGE_SHORT = "Serving all 7 emirates";
 
-// Arabic coverage wording. TODO(owner): have a native Arabic speaker review this
-// translation of COVERAGE_SENTENCE.
+// Arabic coverage wording. TODO(owner): have a native Arabic speaker review.
 export const COVERAGE_SENTENCE_AR =
-  "نخدم دبي والشارقة وعجمان وأبوظبي، مع توفّر الخدمة في جميع أنحاء الإمارات عند الطلب.";
+  "نخدم الإمارات السبع: أبوظبي ودبي والشارقة وعجمان وأم القيوين ورأس الخيمة والفجيرة.";
 
-// Shared areaServed for LocalBusiness / Service JSON-LD: the emirates with
-// delivered projects, plus the country to reflect UAE-wide availability.
+// Shared areaServed for LocalBusiness / Service JSON-LD: all 7 emirates.
 export const AREA_SERVED_SCHEMA = [
-  ...EMIRATES_WITH_PROJECTS.map((name) => ({ "@type": "City", name })),
-  { "@type": "Country", name: "United Arab Emirates" },
-];
+  "Abu Dhabi",
+  "Dubai",
+  "Sharjah",
+  "Ajman",
+  "Umm Al Quwain",
+  "Ras Al Khaimah",
+  "Fujairah",
+].map((name) => ({ "@type": "AdministrativeArea", name }));

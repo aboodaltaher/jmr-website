@@ -157,7 +157,7 @@ const faqs: { q: string; a: string }[] = [
   { q: "Do you maintain AC for villas and apartments?", a: "Both, as one-off services or annual contracts. A one-off service has a minimum of 3 units. If you have fewer than 3 units, send us the details on WhatsApp and we will tell you the options." },
   { q: "Do you handle commercial AC maintenance?", a: "Yes. We provide AMC and reactive maintenance for offices, shops, restaurants, hotels and buildings — including chillers, AHUs, FCUs and VRF systems, with 24/7 response options." },
   { q: "Are your technicians qualified?", a: `Yes. Our work is engineer-led, and our technicians are trained to work to ASHRAE standards.` },
-  { q: "Which areas do you cover?", a: "We've delivered projects in Dubai, Sharjah, Ajman and Abu Dhabi, and are available for AC maintenance across the UAE." },
+  { q: "Which areas do you cover?", a: "We serve all 7 emirates: Abu Dhabi, Dubai, Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah and Fujairah. Our completed projects so far are in Dubai, Sharjah, Ajman and Abu Dhabi." },
   { q: "Can you take over maintenance from my previous contractor?", a: "Yes. We can take over an existing system with a full audit and baseline report, so you have a clear record and a fresh maintenance schedule." },
   { q: "While you're here, can you also upgrade my thermostat?", a: "Yes — many customers add a smart thermostat during a service visit. See our smart thermostat installation page for Google Nest and ecobee options." },
 ];

@@ -1,6 +1,6 @@
 import { buildMetadata } from "@/lib/metadata";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { FOUNDER, PROJECTS_DELIVERED, LARGEST_PROJECT_TR, COMPANY_LEGAL } from "@/lib/company";
+import { FOUNDER, PROJECTS_DELIVERED, LARGEST_PROJECT_TR, COMPANY_NAME } from "@/lib/company";
 import { business } from "@/data/business";
 import Image from "next/image";
 import Link from "next/link";
@@ -99,8 +99,8 @@ export default function ArabicAbout() {
                   التزامنا واحد: الدقّة والالتزام بالمواعيد وأنظمة تعمل على المدى الطويل.
                 </p>
                 <p>
-                  AGEC هو الاسم التجاري لشركة {COMPANY_LEGAL}، الشركة صاحبة هذا
-                  الموقع. نصمّم ونركّب ونصون أنظمة التكييف والتهوية وترشيح الهواء.
+                  تُعرف <span dir="ltr">{COMPANY_NAME}</span> أيضاً باسم Altaher Ghabboun Engineering
+                  Contracting، واختصاراً AGEC. نصمّم ونركّب ونصون أنظمة التكييف والتهوية وترشيح الهواء.
                 </p>
               </div>
             </div>
