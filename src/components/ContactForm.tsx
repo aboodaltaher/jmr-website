@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { FormSendError } from "@/components/FormSendError";
 import { useForm } from "react-hook-form";
+import { useSpamGuard } from "@/components/useSpamGuard";
 import { Check } from "lucide-react";
 import { submitContactForm } from "@/app/actions";
 import { trackFormSubmit } from "@/lib/gtag";
@@ -60,9 +61,10 @@ export function ContactForm({ lang = "en" }: { lang?: Lang }) {
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm<FormData>({ resolver: resolver(schema) });
+  const spam = useSpamGuard();
 
   const onSubmit = async (data: FormData) => {
-    const result = await submitContactForm(data);
+    const result = await submitContactForm({ ...data, ...spam.values() });
     if (result.success) {
       setSendFailed(false);
       setSubmitted(true);
@@ -86,6 +88,7 @@ export function ContactForm({ lang = "en" }: { lang?: Lang }) {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+      {spam.field}
       <div>
         <label htmlFor="name" className="block text-sm font-medium mb-1.5">
           {t.name} <span className="text-red-500">{t.required}</span>

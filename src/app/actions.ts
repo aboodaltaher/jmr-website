@@ -4,6 +4,7 @@ import { Resend } from "resend";
 import { z } from "zod";
 import { business } from "@/data/business";
 import { row, wrap } from "@/lib/lead-email";
+import { isLikelyBot } from "@/lib/spam-guard";
 
 // Environment variables (names only; values live in Vercel):
 //   RESEND_API_KEY        Resend API key (required for any email to be sent)
@@ -58,6 +59,17 @@ async function sendEmail(
   return sent;
 }
 
+
+/**
+ * Honeypot / too-fast check (src/lib/spam-guard.ts). A bot gets the same { success: true } a person
+ * gets, so it learns nothing, but no email is sent. Logged without any form content.
+ */
+function droppedAsBot(kind: string, data: Record<string, unknown>): boolean {
+  if (!isLikelyBot(data)) return false;
+  console.info(`[spam] ${kind}: submission dropped`);
+  return true;
+}
+
 // ── Unified Request (quote / service booking) ──
 
 const requestSchema = z.object({
@@ -70,6 +82,7 @@ const requestSchema = z.object({
 });
 
 export async function submitRequest(data: Record<string, unknown>) {
+  if (droppedAsBot("request", data)) return { success: true };
   const parsed = requestSchema.safeParse(data);
   if (!parsed.success) return { success: false, error: "Invalid form data" };
   const d = parsed.data;
@@ -100,6 +113,7 @@ const contactSchema = z.object({
 });
 
 export async function submitContactForm(data: Record<string, unknown>) {
+  if (droppedAsBot("contact", data)) return { success: true };
   const parsed = contactSchema.safeParse(data);
   if (!parsed.success) return { success: false, error: "Invalid form data" };
   const { name, email, phone, subject, message } = parsed.data;
@@ -134,6 +148,7 @@ const quoteSchema = z.object({
 });
 
 export async function submitQuoteRequest(data: Record<string, unknown>) {
+  if (droppedAsBot("quote", data)) return { success: true };
   const parsed = quoteSchema.safeParse(data);
   if (!parsed.success) return { success: false, error: "Invalid form data" };
   const d = parsed.data;
@@ -172,6 +187,7 @@ const bookSchema = z.object({
 });
 
 export async function submitBooking(data: Record<string, unknown>) {
+  if (droppedAsBot("booking", data)) return { success: true };
   const parsed = bookSchema.safeParse(data);
   if (!parsed.success) return { success: false, error: "Invalid form data" };
   const d = parsed.data;
@@ -207,6 +223,7 @@ const amcSchema = z.object({
 });
 
 export async function submitAmcRequest(data: Record<string, unknown>) {
+  if (droppedAsBot("amc", data)) return { success: true };
   const parsed = amcSchema.safeParse(data);
   if (!parsed.success) return { success: false, error: "Invalid form data" };
   const d = parsed.data;
@@ -242,6 +259,7 @@ const balancingSchema = z.object({
 });
 
 export async function submitBalancingRequest(data: Record<string, unknown>) {
+  if (droppedAsBot("balancing", data)) return { success: true };
   const parsed = balancingSchema.safeParse(data);
   if (!parsed.success) return { success: false, error: "Invalid form data" };
   const d = parsed.data;
@@ -273,6 +291,7 @@ const repairSchema = z.object({
 });
 
 export async function submitRepairRequest(data: Record<string, unknown>) {
+  if (droppedAsBot("repair", data)) return { success: true };
   const parsed = repairSchema.safeParse(data);
   if (!parsed.success) return { success: false, error: "Invalid form data" };
   const d = parsed.data;

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { FormSendError } from "@/components/FormSendError";
 import { useForm } from "react-hook-form";
+import { useSpamGuard } from "@/components/useSpamGuard";
 import { useRouter } from "next/navigation";
 import { Check } from "lucide-react";
 import { submitRequest } from "@/app/actions";
@@ -88,9 +89,10 @@ export function QuoteForm({ lang = "en" }: { lang?: Lang }) {
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm<FormData>({ resolver: resolver(schema) });
+  const spam = useSpamGuard();
 
   const onSubmit = async (data: FormData) => {
-    const result = await submitRequest(data);
+    const result = await submitRequest({ ...data, ...spam.values() });
     if (result.success) {
       setSendFailed(false);
       trackFormSubmit("quote", "quote", "quote_page");
@@ -117,6 +119,7 @@ export function QuoteForm({ lang = "en" }: { lang?: Lang }) {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+      {spam.field}
       {/* What do you need? */}
       <fieldset>
         <legend className="block text-sm font-medium mb-2">

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useSpamGuard } from "@/components/useSpamGuard";
 import { Check, MessageCircle, Phone } from "lucide-react";
 import { submitRequest } from "@/app/actions";
 import { FormSendError } from "@/components/FormSendError";
@@ -43,10 +44,12 @@ export function HeroQuoteForm() {
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm<FormData>({ resolver: resolver(schema) });
+  const spam = useSpamGuard();
 
   const onSubmit = async (data: FormData) => {
     setFailed(false);
     const result = await submitRequest({
+      ...spam.values(),
       ...data,
       details: "Sent from the homepage hero quick-quote form.",
     });
@@ -85,6 +88,7 @@ export function HeroQuoteForm() {
         </div>
       ) : (
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
+          {spam.field}
           <div>
             <h2 className="font-heading text-xl font-bold text-text">Written quote within 24 hours</h2>
             <p className="mt-1 text-sm text-text-muted">WhatsApp reply within 1 hour, 24/7.</p>

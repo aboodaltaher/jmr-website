@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { FormSendError } from "@/components/FormSendError";
 import { useForm } from "react-hook-form";
+import { useSpamGuard } from "@/components/useSpamGuard";
 import { Check, Phone, MessageCircle } from "lucide-react";
 import { submitRequest } from "@/app/actions";
 import { trackFormSubmit, type FormName } from "@/lib/gtag";
@@ -47,9 +48,10 @@ export function InlineLeadFormImpl({
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm<FormData>({ resolver: resolver(schema) });
+  const spam = useSpamGuard();
 
   const onSubmit = async (data: FormData) => {
-    const result = await submitRequest({ ...data, requestType });
+    const result = await submitRequest({ ...data, requestType, ...spam.values() });
     if (result.success) {
       setSendFailed(false);
       setSubmitted(true);
@@ -91,6 +93,7 @@ export function InlineLeadFormImpl({
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+      {spam.field}
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <label htmlFor="il-name" className="mb-1.5 block text-sm font-medium">

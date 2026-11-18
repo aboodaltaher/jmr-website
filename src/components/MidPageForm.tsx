@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useSpamGuard } from "@/components/useSpamGuard";
 import { Check } from "lucide-react";
 import { submitRequest } from "@/app/actions";
 import { FormSendError } from "@/components/FormSendError";
@@ -52,10 +53,12 @@ export default function MidPageForm({ service, lang = "en" }: { service: string;
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm<FormData>({ resolver: resolver(schema), defaultValues: { propertyType: "" } });
+  const spam = useSpamGuard();
 
   const onSubmit = async (data: FormData) => {
     setFailed(false);
     const result = await submitRequest({
+      ...spam.values(),
       requestType: `${service} — mid-page enquiry`,
       name: data.name,
       phone: data.phone,
@@ -85,6 +88,7 @@ export default function MidPageForm({ service, lang = "en" }: { service: string;
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate className="grid gap-4 md:grid-cols-4 md:items-start">
+      {spam.field}
       <div>
         <label htmlFor="mp-name" className="mb-1.5 block text-sm font-medium">
           {t.name} <span className="text-red-500" aria-hidden="true">*</span>

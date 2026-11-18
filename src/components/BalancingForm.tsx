@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { FormSendError } from "@/components/FormSendError";
 import { useForm } from "react-hook-form";
+import { useSpamGuard } from "@/components/useSpamGuard";
 import { Check, MessageCircle } from "lucide-react";
 import { submitBalancingRequest } from "@/app/actions";
 import { trackFormSubmit } from "@/lib/gtag";
@@ -34,9 +35,10 @@ export function BalancingForm({ whatsappHref }: { whatsappHref: string }) {
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm<FormData>({ resolver: resolver(schema) });
+  const spam = useSpamGuard();
 
   const onSubmit = async (data: FormData) => {
-    const result = await submitBalancingRequest(data);
+    const result = await submitBalancingRequest({ ...data, ...spam.values() });
     if (result.success) {
       setSendFailed(false);
       setSubmitted(true);
@@ -72,6 +74,7 @@ export function BalancingForm({ whatsappHref }: { whatsappHref: string }) {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+      {spam.field}
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="bal-name" className="mb-1.5 block text-sm font-medium">
