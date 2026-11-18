@@ -6,6 +6,8 @@
 // "[TO CONFIRM: …]" and listed by `npm run to-confirm`. General engineering
 // explanation (what a duct standard is, how a leakage test works) is fine.
 
+import { isPublished } from "./new-pages";
+
 export interface LongSection {
   h2: string;
   paragraphs: string[];
@@ -156,6 +158,7 @@ export const DUCTING: LongService = {
     { href: "/services/ventilation-fresh-air", label: "Ventilation & fresh air" },
     { href: "/services/tab-testing-adjusting-balancing-dubai", label: "Testing, adjusting & balancing" },
     { href: "/ac-duct-cleaning-dubai", label: "AC duct cleaning" },
+    ...(isPublished("mep") ? [{ href: "/mep-contractors-dubai", label: "HVAC for MEP projects" }] : []),
   ],
   ctaHeading: "Get a quote for ductwork",
   ctaText: "Send us the drawings or a few photos of the space and the system.",
@@ -164,10 +167,12 @@ export const DUCTING: LongService = {
 export const MEP: LongService = {
   key: "mep",
   path: "/mep-contractors-dubai",
-  metaTitle: "HVAC Contractor for MEP Projects in Dubai | AGEC",
+  // MEP-specific wording on purpose: the homepage targets "HVAC contractor Dubai", this page the MEP
+  // (HVAC package) intent. Honest scope: AGEC delivers the HVAC package only, not the other MEP trades.
+  metaTitle: "HVAC Package for MEP Projects in Dubai | AGEC",
   metaDescription:
-    "HVAC contractor for MEP projects in Dubai: air conditioning, ventilation and air filtration — design, installation, shop drawings, commissioning. Get a quote.",
-  h1: "HVAC Contractor for MEP Projects in Dubai",
+    "MEP projects in Dubai: AGEC delivers the HVAC package (design, shop drawings, installation, commissioning) and coordinates it with the other MEP trades.",
+  h1: "The HVAC Package for MEP Projects in Dubai",
   kicker: "MEP projects · HVAC scope · Coordination",
   serviceType: "HVAC contracting for MEP projects",
   ctaService: "HVAC package for an MEP project",

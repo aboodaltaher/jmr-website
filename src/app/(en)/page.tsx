@@ -1,6 +1,7 @@
 import { buildMetadata } from "@/lib/metadata";
 import Image from "next/image";
 import Link from "next/link";
+import { isPublished } from "@/data/new-pages";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
 import { ReviewCards, RatingLink } from "@/components/ReviewCards";
 import { CallOrWhatsApp } from "@/components/CallOrWhatsApp";
@@ -115,6 +116,19 @@ const services = [
     description:
       "Direct expansion split and packaged units for targeted cooling in offices, retail, and server rooms.",
   },
+  ...(isPublished("mep")
+    ? [
+        {
+          icon: Building2,
+          name: "HVAC for MEP Projects",
+          href: "/mep-contractors-dubai",
+          image: "/projects/insulated-rooftop-ductwork-hvac-dubai.jpg",
+          alt: "Insulated rooftop ductwork installed by AGEC on a Dubai project",
+          description:
+            "The HVAC package on MEP projects: design, shop drawings, installation and commissioning, coordinated with the other trades.",
+        },
+      ]
+    : []),
 ];
 
 const reasons = [

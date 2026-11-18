@@ -10,14 +10,14 @@
 // (src/data/long-services.ts and long-services-ar.ts) is resolved — `npm run to-confirm`
 // lists what is still open. The Arabic twin follows its English page's switch.
 //
-// Ducting and kitchen exhaust cleaning are published; MEP stays off until the owner has reviewed it
-// on the preview URL. Kitchen exhaust cleaning is published (English only; there is no Arabic twin). It has
+// Ducting, kitchen exhaust cleaning and MEP are published. Kitchen exhaust cleaning is published (English only; there is no Arabic twin). It has
 // no open markers: the service facts were confirmed by the owner (no authority approval
 // is claimed). See the "do not add" note above KITCHEN_EXHAUST in long-services.ts.
 
 export const NEW_PAGES = {
   ducting: { published: true },
-  mep: { published: false },
+  // Published 2026-11-19 (owner approved, overnight run). HVAC package only; no other MEP trades claimed.
+  mep: { published: true },
   kitchenExhaust: { published: true },
   // Published 2026-11-15 after the owner's review. The one remaining marker on these pages (the AGEC balometer photo)
   // is stripped in production, so the air balancing page simply has no first photo until it is supplied.

@@ -149,10 +149,10 @@ export const MEP_AR: LongServiceAr = {
   key: "mep",
   path: "/ar/mep-contractors-dubai",
   enPath: "/mep-contractors-dubai",
-  metaTitle: "مقاول تكييف لمشاريع MEP في دبي | AGEC",
+  metaTitle: "حزمة التكييف لمشاريع MEP في دبي | AGEC",
   metaDescription:
-    "مقاول تكييف لمشاريع MEP في دبي: أنظمة التكييف والتهوية وتنقية الهواء — تصميم وتركيب ومخططات ورشة وتشغيل تجريبي. اطلب عرض سعر.",
-  h1: "مقاول تكييف لمشاريع MEP في دبي",
+    "مشاريع MEP في دبي: تنفّذ AGEC حزمة التكييف (التصميم ومخططات الورشة والتركيب والتشغيل التجريبي) وتنسّقها مع بقية أعمال MEP.",
+  h1: "حزمة التكييف لمشاريع MEP في دبي",
   kicker: "مشاريع MEP · نطاق التكييف · التنسيق",
   serviceType: "مقاولات التكييف لمشاريع MEP",
   intro: [
