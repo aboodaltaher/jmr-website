@@ -34,7 +34,6 @@ import {
 import { PriceTable } from "@/components/PriceTable";
 import { prices, visibleRows, offersFor, money } from "@/data/prices";
 import { PHONE, PHONE_DISPLAY } from "@/lib/company";
-import { business } from "@/data/business";
 import { whatsappUrl } from "@/lib/contact";
 const WA = whatsappUrl("/ac-maintenance-dubai");
 const CANONICAL = "/ac-maintenance-dubai";
@@ -62,7 +61,7 @@ const trustBadges = [
 ];
 
 const whyCards: { icon: LucideIcon; title: string; desc: string }[] = [
-  { icon: ShieldCheck, title: "Engineer-Led Service", desc: `Real, trained technicians working to ASHRAE and Dubai Municipality standards, under a licensed HVAC contractor (${business.licence.label}) — not unqualified handymen.` },
+  { icon: ShieldCheck, title: "Engineer-Led Service", desc: `Real, trained technicians led by an HVAC engineer and working to ASHRAE standards — not unqualified handymen.` },
   { icon: BadgeCheck, title: "Every AC Brand & Type", desc: "Split, ducted, cassette, VRF/VRV, chillers and package units — Daikin, O General, Carrier, Gree, Midea, LG and more." },
   { icon: Clock, title: "Same-Day & 24/7 Emergency", desc: "Fast response across Dubai and the UAE, with emergency breakdown support when your AC fails in peak summer." },
   { icon: FileText, title: "Documented Reports", desc: "Every visit is logged with before/after condition, work performed and parts used — a full maintenance history for your records." },
@@ -157,7 +156,7 @@ const faqs: { q: string; a: string }[] = [
   { q: "Can regular maintenance lower my electricity bill?", a: "Yes. A clean, well-charged, properly running AC uses noticeably less energy than a neglected one — efficiency can drop 20–30% within two years without maintenance, and that shows up on your DEWA bill." },
   { q: "Do you maintain AC for villas and apartments?", a: "Both, as one-off services or annual contracts. A one-off service has a minimum of 3 units. If you have fewer than 3 units, send us the details on WhatsApp and we will tell you the options." },
   { q: "Do you handle commercial AC maintenance?", a: "Yes. We provide AMC and reactive maintenance for offices, shops, restaurants, hotels and buildings — including chillers, AHUs, FCUs and VRF systems, with 24/7 response options." },
-  { q: "Are your technicians qualified?", a: `Yes. AGEC is a licensed HVAC contractor (${business.licence.label}). Our work is engineer-led, and our technicians are trained to work to ASHRAE and Dubai Municipality standards.` },
+  { q: "Are your technicians qualified?", a: `Yes. Our work is engineer-led, and our technicians are trained to work to ASHRAE standards.` },
   { q: "Which areas do you cover?", a: "We've delivered projects in Dubai, Sharjah, Ajman and Abu Dhabi, and are available for AC maintenance across the UAE." },
   { q: "Can you take over maintenance from my previous contractor?", a: "Yes. We can take over an existing system with a full audit and baseline report, so you have a clear record and a fresh maintenance schedule." },
   { q: "While you're here, can you also upgrade my thermostat?", a: "Yes — many customers add a smart thermostat during a service visit. See our smart thermostat installation page for Google Nest and ecobee options." },

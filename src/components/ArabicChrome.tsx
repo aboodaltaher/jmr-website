@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { Phone, MessageCircle } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { PHONE, PHONE_DISPLAY, whatsappUrl } from "@/lib/contact";
-import { COMPANY_NAME, COMPANY_LEGAL, EMAIL, ADDRESS_FULL, LICENCE_NO } from "@/lib/company";
+import { COMPANY_NAME, COMPANY_LEGAL, EMAIL, ADDRESS_FULL } from "@/lib/company";
 import { enEquivalentOf } from "@/lib/nav";
 import { ServicesMegaMenu } from "@/components/ServicesMegaMenu";
 import { ServicesMobileAccordion } from "@/components/ServicesMobileAccordion";
@@ -126,8 +126,7 @@ export function ArabicChrome({ children }: { children: React.ReactNode }) {
             </Link>
           </div>
           <p className="mt-3 text-center text-xs text-text-muted">
-            &copy; {new Date().getFullYear()} {COMPANY_LEGAL} · رخصة تجارية دبي رقم{" "}
-            {LICENCE_NO}. جميع الحقوق محفوظة.
+            &copy; {new Date().getFullYear()} {COMPANY_LEGAL}. جميع الحقوق محفوظة.
           </p>
         </div>
       </footer>

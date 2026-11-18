@@ -152,11 +152,9 @@ export default function About() {
                   </p>
                 )}
                 <p>
-                  AGEC is the trading name of {COMPANY_LEGAL}, the licensed
-                  company behind this website. {COMPANY_LEGAL} holds{" "}
-                  {business.licence.label}, issued by the
-                  Dubai Department of Economy and Tourism, covering air-conditioning,
-                  ventilation and air filtration systems installation and maintenance.
+                  AGEC is the trading name of {COMPANY_LEGAL}, the company behind
+                  this website. We design, install and maintain air-conditioning,
+                  ventilation and air filtration systems.
                 </p>
               </div>
             </div>
@@ -290,7 +288,6 @@ export default function About() {
           </Link>
         </div>
       </section>
-      {/* TODO: add trade licence number */}
     </>
   );
 }

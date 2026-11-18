@@ -14,11 +14,6 @@ export const business = {
   brand: "AGEC",
   url: "https://agec.ae",
 
-  licence: {
-    number: "1221573",
-    label: "Dubai Commercial Licence No. 1221573",
-  },
-
   phone: {
     e164: "+971585575987",
     display: "+971 58 557 5987",

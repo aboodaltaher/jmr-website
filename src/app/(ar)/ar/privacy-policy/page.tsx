@@ -6,7 +6,6 @@ import {
   EMAIL,
   PHONE_DISPLAY,
   ADDRESS_FULL,
-  LICENCE_NO,
 } from "@/lib/company";
 
 // Arabic translation of /privacy-policy. Faithful to the English copy.
@@ -150,8 +149,6 @@ export default function ArabicPrivacyPolicyPage() {
             {COMPANY_LEGAL}
             <br />
             {ADDRESS_FULL}
-            <br />
-            رقم الرخصة التجارية {LICENCE_NO}
             <br />
             البريد الإلكتروني:{" "}
             <a href={`mailto:${EMAIL}`} className="font-medium text-primary hover:underline">

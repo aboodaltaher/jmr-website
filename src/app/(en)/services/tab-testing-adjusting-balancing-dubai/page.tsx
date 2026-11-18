@@ -12,7 +12,6 @@ import {
   Download,
 } from "lucide-react";
 import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
-import { business } from "@/data/business";
 import { isPublished } from "@/data/new-pages";
 import { PROJECTS_DELIVERED } from "@/lib/company";
 import { ratingValue, reviewCount } from "@/lib/siteStats";
@@ -85,7 +84,7 @@ export default function TestingCommissioningBalancing() {
           </p>
           <p>
             AGEC carries out testing, adjusting and balancing (TAB) and commissioning for HVAC systems
-            in Dubai and across the UAE. We are an engineer-led HVAC contractor ({business.licence.label}),
+            in Dubai and across the UAE. We are an engineer-led HVAC contractor,
             established 2022, with {PROJECTS_DELIVERED} completed projects. Our methodology follows ASHRAE
             111 and SMACNA for TAB and the CIBSE Commissioning Code and ASHRAE Guideline 0 for commissioning.
           </p>

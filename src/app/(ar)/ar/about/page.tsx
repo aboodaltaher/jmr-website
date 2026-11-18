@@ -1,6 +1,6 @@
 import { buildMetadata } from "@/lib/metadata";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { FOUNDER, PROJECTS_DELIVERED, LARGEST_PROJECT_TR, LICENCE_NO, COMPANY_LEGAL } from "@/lib/company";
+import { FOUNDER, PROJECTS_DELIVERED, LARGEST_PROJECT_TR, COMPANY_LEGAL } from "@/lib/company";
 import { business } from "@/data/business";
 import Image from "next/image";
 import Link from "next/link";
@@ -99,10 +99,8 @@ export default function ArabicAbout() {
                   التزامنا واحد: الدقّة والالتزام بالمواعيد وأنظمة تعمل على المدى الطويل.
                 </p>
                 <p>
-                  AGEC هو الاسم التجاري لشركة {COMPANY_LEGAL}، الشركة
-                  المرخّصة صاحبة هذا الموقع. وتحمل الشركة رخصة تجارية دبي رقم {LICENCE_NO}،
-                  صادرة عن دائرة الاقتصاد والسياحة بدبي، تشمل تركيب وصيانة أنظمة التكييف
-                  والتهوية وترشيح الهواء.
+                  AGEC هو الاسم التجاري لشركة {COMPANY_LEGAL}، الشركة صاحبة هذا
+                  الموقع. نصمّم ونركّب ونصون أنظمة التكييف والتهوية وترشيح الهواء.
                 </p>
               </div>
             </div>

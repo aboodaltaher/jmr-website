@@ -72,7 +72,7 @@ export function Footer() {
               {business.hours.label} · {PHONE_DISPLAY}
             </p>
             <p className="mt-1 text-xs text-text-muted">
-              {COMPANY_LEGAL} · {business.licence.label}
+              {COMPANY_LEGAL}
             </p>
             <div className="mt-4 flex items-center gap-4">
               <a

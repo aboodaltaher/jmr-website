@@ -1,5 +1,4 @@
 import { buildMetadata } from "@/lib/metadata";
-import { business } from "@/data/business";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
 import Image from "next/image";
 import Link from "next/link";
@@ -67,7 +66,7 @@ const whyCards: { icon: LucideIcon; title: string; desc: string }[] = [
   {
     icon: ShieldCheck,
     title: "Engineer-Led Installation",
-    desc: `Installations by trained technicians following ASHRAE and Dubai Municipality standards, under a licensed HVAC contractor (${business.licence.label}) — not general handymen.`,
+    desc: `Installations by trained technicians led by an HVAC engineer and following ASHRAE standards — not general handymen.`,
   },
   {
     icon: BadgeCheck,

@@ -86,7 +86,7 @@ function Text({ children }: { children: string }) {
  * render in local and Vercel preview builds.
  */
 export function LongServicePage({
-  service: rawIn,
+  service: raw,
   lang = "en",
   path,
   published,
@@ -101,14 +101,6 @@ export function LongServicePage({
   related: { href: string; label: string }[];
 }) {
   const t = UI[lang];
-  // {{LICENCE}} is filled from business.ts, so the licence number is never typed into copy (check-nap).
-  const fill = <T,>(v: T): T => {
-    if (typeof v === "string") return v.replaceAll("{{LICENCE}}", business.licence.label) as T;
-    if (Array.isArray(v)) return v.map(fill) as T;
-    if (v && typeof v === "object") return Object.fromEntries(Object.entries(v).map(([k, x]) => [k, fill(x)])) as T;
-    return v;
-  };
-  const raw = fill(rawIn);
   // On the live site markers are stripped, so drop anything left empty (and any FAQ with no answer).
   const keep = (x: string) => resolveDraft(x) !== "";
   const c: LongService = {
