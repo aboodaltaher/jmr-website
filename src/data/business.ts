@@ -23,11 +23,11 @@ export const business = {
   email: "a.altaher@agec.ae",
 
   address: {
-    /** Street line as it appears on the Google Business Profile. */
-    line: "AlMasraf Building, Sheikh Zayed Road, Al Quoz Industrial Area 1",
+    /** Address exactly as on the Google Business Profile (docs/business-facts.md). */
+    line: "AlMasraf Sheikh Zayed branch",
     locality: "Dubai",
     region: "Dubai",
-    country: "UAE",
+    country: "United Arab Emirates",
     countryCode: "AE",
   },
 
@@ -70,7 +70,7 @@ export const business = {
   links: {
     // Google Maps CID URL for the business profile (used for "View on Google
     // Maps", schema hasMap and sameAs).
-    mapsView: "https://maps.google.com/?cid=14934329653680563760",
+    mapsView: "https://maps.google.com/maps?cid=14934329653680563760",
     // Opens the Google review composer. Used by every "Leave a review" link and
     // by the /review redirect (which the printed QR codes point at).
     reviewLeave: "https://g.page/r/CTBmNs6xZUHPEBM/review",
@@ -82,7 +82,7 @@ export const business = {
   },
 } as const;
 
-/** "AlMasraf Building, …, Al Quoz Industrial Area 1, Dubai, UAE" */
+/** "AlMasraf Sheikh Zayed branch, Dubai, United Arab Emirates" — exactly as on the Business Profile. */
 export const addressFull = `${business.address.line}, ${business.address.locality}, ${business.address.country}`;
 
 /** Non-empty entity profile URLs for schema.org `sameAs`. */

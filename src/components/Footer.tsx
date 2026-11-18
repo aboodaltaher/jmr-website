@@ -66,7 +66,7 @@ export function Footer() {
             <div className="mt-4 space-y-1 text-sm text-text-muted">
               <p>{PHONE_DISPLAY}</p>
               <p><a href={`mailto:${EMAIL}`} className="hover:text-text">{EMAIL}</a></p>
-              <p>{ADDRESS_FULL}</p>
+              <p><a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="hover:text-text">{ADDRESS_FULL}</a></p>
             </div>
             <p className="mt-4 text-xs text-text-muted">
               {business.hours.label} · {PHONE_DISPLAY}

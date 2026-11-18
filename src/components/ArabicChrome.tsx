@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { Phone, MessageCircle } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { PHONE, PHONE_DISPLAY, whatsappUrl } from "@/lib/contact";
-import { COMPANY_NAME, COMPANY_LEGAL, EMAIL, ADDRESS_FULL } from "@/lib/company";
+import { COMPANY_NAME, COMPANY_LEGAL, EMAIL, ADDRESS_FULL, MAPS_URL } from "@/lib/company";
 import { enEquivalentOf } from "@/lib/nav";
 import { ServicesMegaMenu } from "@/components/ServicesMegaMenu";
 import { ServicesMobileAccordion } from "@/components/ServicesMobileAccordion";
@@ -111,7 +111,7 @@ export function ArabicChrome({ children }: { children: React.ReactNode }) {
           <div className="mt-4 space-y-1 text-sm text-text-muted" dir="ltr">
             <p>{PHONE_DISPLAY}</p>
             <p><a href={`mailto:${EMAIL}`} dir="ltr" className="hover:text-text">{EMAIL}</a></p>
-            <p>{ADDRESS_FULL}</p>
+            <p><a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="hover:text-text">{ADDRESS_FULL}</a></p>
           </div>
           <p className="mt-4 text-xs text-text-muted">
             متاحون على الهاتف والواتساب على مدار الساعة — نرد خلال ساعة واحدة.

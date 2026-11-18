@@ -6,6 +6,7 @@ import {
   EMAIL,
   PHONE_DISPLAY,
   ADDRESS_FULL,
+  MAPS_URL,
 } from "@/lib/company";
 
 // NOTE(owner): this is a standard, good-faith privacy policy drafted for the
@@ -153,7 +154,7 @@ export default function PrivacyPolicyPage() {
           <p>
             {COMPANY_LEGAL}
             <br />
-            {ADDRESS_FULL}
+            <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" dir="ltr" className="hover:underline">{ADDRESS_FULL}</a>
             <br />
             Email:{" "}
             <a href={`mailto:${EMAIL}`} className="font-medium text-primary hover:underline">

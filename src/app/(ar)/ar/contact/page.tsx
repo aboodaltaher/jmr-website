@@ -72,7 +72,7 @@ export default function ArabicContact() {
                     <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-primary" strokeWidth={1.5} />
                     <div>
                       <p className="text-sm font-medium">الموقع</p>
-                      <p className="text-sm text-text-muted">مبنى المصرف، شارع الشيخ زايد، دبي، الإمارات</p>
+                      <p className="text-sm text-text-muted" dir="ltr"><a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="hover:text-text hover:underline">{ADDRESS_FULL}</a></p>
                     </div>
                   </div>
                   <div className="flex gap-4">

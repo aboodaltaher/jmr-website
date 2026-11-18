@@ -6,6 +6,7 @@ import {
   EMAIL,
   PHONE_DISPLAY,
   ADDRESS_FULL,
+  MAPS_URL,
 } from "@/lib/company";
 
 // Arabic translation of /terms. Faithful to the English copy.
@@ -131,7 +132,7 @@ export default function ArabicTermsPage() {
           <p>
             {COMPANY_LEGAL}
             <br />
-            {ADDRESS_FULL}
+            <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" dir="ltr" className="hover:underline">{ADDRESS_FULL}</a>
             <br />
             البريد الإلكتروني:{" "}
             <a href={`mailto:${EMAIL}`} className="font-medium text-primary hover:underline">
