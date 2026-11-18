@@ -1,0 +1,7 @@
+domain target ids {'44865': 'ae.agec'}
+domain inbound edges 1
+domain names 1
+host target ids {'64043': 'ae.agec'}
+host inbound edges 1
+host names 1
+done

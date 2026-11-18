@@ -1,0 +1,13 @@
+{
+ "referring_domains": 1,
+ "links_known": null,
+ "sources_present": [
+  "CommonCrawl"
+ ],
+ "gsc_present": false,
+ "bing_present": false,
+ "commoncrawl_release": "cc-main-2026-aug-sep-oct",
+ "categories": {
+  "directory": 1
+ }
+}

@@ -42,3 +42,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# backlink audit: large raw downloads
+backlinks/raw/*
+!backlinks/raw/summary.json
+!backlinks/raw/cc_release.txt
+!backlinks/raw/cc_webgraph.log
+!backlinks/raw/cc_*_names.json
+!backlinks/raw/cc_*_target_ids.json
+!backlinks/raw/cc_*_inlink_ids.txt
