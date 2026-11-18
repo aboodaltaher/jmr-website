@@ -6,6 +6,8 @@ import Link from "next/link";
 import { RelatedServices } from "@/components/RelatedServices";
 import { Check, Phone, MessageCircle } from "lucide-react";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
+import { ReviewsSection } from "@/components/ReviewCards";
+import { GOOGLE_REVIEWS, reviewsAbout } from "@/lib/reviews";
 import { AmcForm } from "@/components/AmcForm";
 import { BreadcrumbBand } from "@/components/Breadcrumbs";
 import { PHONE, whatsappUrl } from "@/lib/contact";
@@ -659,6 +661,8 @@ export default function AcAmcPage() {
           </p>
         </div>
       </section>
+
+      <ReviewsSection title="What contract customers say" reviews={[...reviewsAbout("amc"), ...GOOGLE_REVIEWS.filter((r) => r.name === "Khalid Abdo")]} />
 
       {/* FAQ */}
       <section className="bg-bg-soft py-16 md:py-20">

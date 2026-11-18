@@ -2,6 +2,7 @@ import { buildMetadata } from "@/lib/metadata";
 import Image from "next/image";
 import Link from "next/link";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
+import { ReviewCards, RatingLink } from "@/components/ReviewCards";
 import { CallOrWhatsApp } from "@/components/CallOrWhatsApp";
 import { EmergencyStrip } from "@/components/EmergencyStrip";
 import { ServiceAreas } from "@/components/ServiceAreas";
@@ -24,7 +25,6 @@ import {
   MapPin,
   Sparkles,
   Layers,
-  Star,
   Building2,
 } from "lucide-react";
 import { PHONE, PHONE_DISPLAY } from "@/lib/contact";
@@ -527,41 +527,9 @@ export default async function Home() {
             <h2 className="mt-3 font-heading text-3xl font-bold md:text-5xl">
               Rated {GOOGLE_RATING}★ by Dubai clients
             </h2>
-            <p className="mt-5 inline-flex items-center gap-2 rounded-full border border-border bg-bg-soft px-5 py-2.5 text-sm font-semibold text-text shadow-sm">
-              <span className="flex gap-0.5 text-primary">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-current" />
-                ))}
-              </span>
-              {GOOGLE_RATING} · {GOOGLE_REVIEW_COUNT} verified Google reviews
-            </p>
+            <RatingLink className="mt-5" />
           </div>
-          <div className="mt-12 grid gap-7 md:grid-cols-3">
-            {GOOGLE_REVIEWS.map((r) => (
-              <figure
-                key={r.name}
-                className="flex flex-col rounded-xl border border-border bg-bg-soft p-7"
-              >
-                <div className="flex gap-0.5 text-primary">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-current" />
-                  ))}
-                </div>
-                <blockquote className="mt-4 flex-1 text-text">
-                  {r.text}
-                </blockquote>
-                <figcaption className="mt-5 flex items-center gap-3">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#13212E] font-heading font-bold text-white">
-                    {r.initials}
-                  </span>
-                  <span>
-                    <b className="block text-sm">{r.name}</b>
-                    <span className="text-xs text-text-muted">{r.role}</span>
-                  </span>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
+          <ReviewCards reviews={GOOGLE_REVIEWS} />
           <p className="mt-8 text-center text-sm text-text-muted">
             Genuine reviews from our verified Google Business Profile.{" "}
             <a

@@ -62,10 +62,11 @@ export const business = {
   // self-served LocalBusiness review markup, and a stale count hurts trust), so the schema can never
   // disagree with the visible text.
   reviews: {
-    // TODO(owner): confirm the current Google rating (shown as 5.0 until you do).
+    // Verified 19 Nov 2026 against the Google Business Profile: 5.0 from 42 reviews (all-time).
+    // This is the ONE value behind every "5.0 ★ from 42 Google reviews" on the site.
     rating: 5.0,
     count: 42,
-    updated: "2026-11",
+    updated: "2026-11-19",
   },
 
   links: {

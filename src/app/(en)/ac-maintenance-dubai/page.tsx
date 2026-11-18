@@ -9,7 +9,8 @@ import { publishedCommunities, communityPath } from "@/data/community-index";
 import { getProjectBySlug } from "@/data/projects";
 import { InlineLeadForm } from "@/components/InlineLeadForm";
 import { BreadcrumbBand } from "@/components/Breadcrumbs";
-import { GOOGLE_REVIEWS, MAPS_URL, reviewStats } from "@/lib/reviews";
+import { MAPS_URL, reviewStats, reviewsAbout } from "@/lib/reviews";
+import { ReviewCards, RatingLink } from "@/components/ReviewCards";
 import {
   ShieldCheck,
   BadgeCheck,
@@ -26,8 +27,6 @@ import {
   Phone,
   MessageCircle,
   Check,
-  Star,
-  ExternalLink,
   type LucideIcon,
 } from "lucide-react";
 
@@ -162,7 +161,8 @@ const faqs: { q: string; a: string }[] = [
   { q: "While you're here, can you also upgrade my thermostat?", a: "Yes — many customers add a smart thermostat during a service visit. See our smart thermostat installation page for Google Nest and ecobee options." },
 ];
 
-const reviews = GOOGLE_REVIEWS;
+// Reviews about maintenance, leaks, smells and repairs (verbatim from Google).
+const reviews = reviewsAbout("maintenance", "leak", "smell", "repair");
 
 /* ------------------------------ JSON-LD ------------------------------ */
 
@@ -462,24 +462,9 @@ export default async function AcMaintenancePage() {
           <div className="mx-auto max-w-2xl text-center">
             <p className={eyebrow}>Customer Reviews</p>
             <h2 className="mt-3 font-heading text-3xl font-bold md:text-5xl">Rated {GOOGLE_RATING}★ by Our Customers</h2>
-            <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center gap-2 rounded-full border border-border bg-bg-soft px-5 py-2.5 text-sm font-semibold text-text shadow-sm transition-colors hover:border-primary">
-              <span className="flex gap-0.5 text-primary">{Array.from({ length: 5 }).map((_, i) => (<Star key={i} className="h-4 w-4 fill-current" />))}</span>
-              {GOOGLE_RATING} · {GOOGLE_REVIEW_COUNT} verified Google reviews
-              <ExternalLink className="h-3.5 w-3.5 text-text-muted" />
-            </a>
+            <RatingLink className="mt-5" />
           </div>
-          <div className="mt-12 grid gap-7 md:grid-cols-3">
-            {reviews.map((r) => (
-              <figure key={r.name} className="flex flex-col rounded-xl border border-border bg-bg-soft p-7">
-                <div className="flex gap-0.5 text-primary">{Array.from({ length: 5 }).map((_, i) => (<Star key={i} className="h-4 w-4 fill-current" />))}</div>
-                <blockquote className="mt-4 flex-1 text-text">{r.text}</blockquote>
-                <figcaption className="mt-5 flex items-center gap-3">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#13212E] font-heading font-bold text-white">{r.initials}</span>
-                  <span><b className="block text-sm">{r.name}</b><span className="text-xs text-text-muted">{r.role}</span></span>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
+          <ReviewCards reviews={reviews} />
           <p className="mt-8 text-center text-sm text-text-muted">
             Genuine reviews from our verified Google Business Profile.{" "}
             <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline">Read all {GOOGLE_REVIEW_COUNT} on Google →</a>

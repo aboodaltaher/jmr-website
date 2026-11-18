@@ -7,6 +7,8 @@ import { RelatedServices } from "@/components/RelatedServices";
 import { BreadcrumbBand } from "@/components/Breadcrumbs";
 import { Phone, MessageCircle } from "lucide-react";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
+import { ReviewsSection } from "@/components/ReviewCards";
+import { reviewsAbout } from "@/lib/reviews";
 import { RepairForm } from "@/components/RepairForm";
 import { PHONE, whatsappUrl } from "@/lib/contact";
 import { PriceTable } from "@/components/PriceTable";
@@ -403,6 +405,8 @@ export default function AcRepairPage() {
           </p>
         </div>
       </section>
+
+      <ReviewsSection title="What customers say after a repair" reviews={reviewsAbout("repair")} />
 
       {/* FAQ */}
       <section className="py-16 md:py-20">
