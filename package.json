@@ -15,7 +15,8 @@
     "to-confirm": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/list-to-confirm.ts",
     "qr": "node scripts/generate-review-qr.mjs",
     "onpage-check": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/onpage-check.ts",
-    "seo:audit": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/seo-keyword-audit.ts"
+    "seo:audit": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/seo-keyword-audit.ts",
+    "test": "node --test src/lib/*.test.ts"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",

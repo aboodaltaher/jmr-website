@@ -3,6 +3,7 @@
 import { Resend } from "resend";
 import { z } from "zod";
 import { business } from "@/data/business";
+import { row, wrap } from "@/lib/lead-email";
 
 // Environment variables (names only; values live in Vercel):
 //   RESEND_API_KEY        Resend API key (required for any email to be sent)
@@ -55,24 +56,6 @@ async function sendEmail(
     console.error(`[lead ${leadId}] ${kind}: email send threw (${err instanceof Error ? err.name : "unknown"})`);
   }
   return sent;
-}
-
-function timestamp() {
-  return new Date().toLocaleString("en-AE", { timeZone: "Asia/Dubai" });
-}
-
-function row(label: string, value: string | undefined) {
-  if (!value) return "";
-  return `<tr><td style="padding:6px 12px 6px 0;color:#6B7280;vertical-align:top">${label}</td><td style="padding:6px 0">${value}</td></tr>`;
-}
-
-function wrap(heading: string, rows: string) {
-  return `
-    <div style="font-family:sans-serif;max-width:600px;margin:0 auto">
-      <h2 style="color:#1A1A1A;border-bottom:2px solid #FF6B1A;padding-bottom:8px">${heading}</h2>
-      <table style="width:100%;border-collapse:collapse;font-size:14px;color:#1A1A1A">${rows}</table>
-      <p style="margin-top:24px;font-size:12px;color:#6B7280">Submitted ${timestamp()} via agec.ae contact form</p>
-    </div>`;
 }
 
 // ── Unified Request (quote / service booking) ──
