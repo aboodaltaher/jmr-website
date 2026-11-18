@@ -492,6 +492,70 @@ export default function AcAmcPage() {
             </>
           )}
 
+          {/* WHAT EACH PLAN COVERS — every figure comes from prices.ts or amcConfig */}
+          {amcConfig.plans.length > 0 && (
+            <div className="mt-12">
+              <h3 className="font-heading text-2xl font-bold">What each plan covers</h3>
+              <p className="mt-3 text-text-muted">
+                Every plan has the same visit checklist. The plans differ in how many visits you get a year, how
+                fast we respond and how much you save on parts.
+              </p>
+              <div className="mt-6 overflow-x-auto" tabIndex={0} role="region" aria-label="What each AMC plan covers">
+                <table className="w-full border-collapse text-sm">
+                  <thead className="bg-primary text-left text-white">
+                    <tr>
+                      <th scope="col" className="border border-border px-4 py-3 font-semibold">Included</th>
+                      {amcConfig.plans.map((p) => (
+                        <th key={p.name} scope="col" className="border border-border px-4 py-3 font-semibold">{p.name}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody className="bg-white">
+                    {[
+                      { label: "Scheduled visits a year", cells: amcConfig.plans.map((p) => p.visits) },
+                      ...amcConfig.included
+                        .filter((i) => i !== "Scheduled visits" && !i.startsWith("Service report"))
+                        .map((i) => ({ label: i, cells: amcConfig.plans.map(() => "Every visit") })),
+                      { label: "Service report with photos", cells: amcConfig.plans.map(() => "Every visit") },
+                      { label: "Response time", cells: amcConfig.plans.map((p) => p.response) },
+                      { label: "Spare parts", cells: amcConfig.plans.map((p) => `${p.partsDiscount} discount`) },
+                      {
+                        label: "Gas top-up",
+                        cells: amcConfig.plans.map(
+                          () => `Not included. AED ${prices.maintenance[2].from} per machine, quoted before work`,
+                        ),
+                      },
+                      {
+                        label: "VRF, chiller and DX plant",
+                        cells: amcConfig.plans.map(() => "Not priced per machine. Quoted after a site survey"),
+                      },
+                    ].map((row) => (
+                      <tr key={row.label}>
+                        <th scope="row" className="border border-border px-4 py-3 text-left font-semibold">{row.label}</th>
+                        {row.cells.map((c, i) => (
+                          <td key={i} className="border border-border px-4 py-3">{c}</td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="mt-3 text-sm text-text-muted">
+                For VRF systems see{" "}
+                <Link href="/vrf-maintenance-dubai" className="font-semibold text-primary hover:underline">VRF maintenance in Dubai</Link>,
+                for chillers see{" "}
+                <Link href="/services/chiller-maintenance-dubai" className="font-semibold text-primary hover:underline">chiller maintenance</Link>,
+                and for restaurant kitchens see{" "}
+                <Link href="/kitchen-exhaust-cleaning-dubai" className="font-semibold text-primary hover:underline">kitchen exhaust and hood cleaning</Link>.
+                Buildings outside Dubai: see{" "}
+                <Link href="/hvac-contractor-sharjah" className="font-semibold text-primary hover:underline">Sharjah</Link>,{" "}
+                <Link href="/hvac-contractor-ajman" className="font-semibold text-primary hover:underline">Ajman</Link> and{" "}
+                <Link href="/hvac-contractor-abu-dhabi" className="font-semibold text-primary hover:underline">Abu Dhabi</Link>.
+              </p>
+              {/* TODO(owner): confirm whether a villa VRF/VRV system can be on a per-machine residential plan; until then VRF, chiller and DX are shown as quoted after a site survey. Also confirm gas top-up is never part of an AMC visit. */}
+            </div>
+          )}
+
           {/* By property type — rows appear only once their price is confirmed in prices.ts */}
           {visibleTiers().length > 0 && (
             <div className="mt-12">

@@ -155,13 +155,8 @@ export function LongServicePage({
           },
         }
       : {}),
-    provider: {
-      "@type": "HVACBusiness",
-      "@id": `${business.url}/#business`,
-      name: business.name,
-      telephone: business.phone.e164,
-      url: business.url,
-    },
+    // One LocalBusiness per page: the site-wide block in SiteSchema (@id #business) is referenced here.
+    provider: { "@id": `${business.url}/#business` },
   };
 
   return (

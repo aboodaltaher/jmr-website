@@ -57,6 +57,34 @@ export default function HvacContractorSharjah() {
           </p>
         </>
       }
+      sections={[
+              {
+                      "h2": "Buildings we are typically asked about in Sharjah",
+                      "paragraphs": [
+                              "Sharjah has a varied building stock, and the right cooling system depends on which kind of building you have. This is guidance on what usually suits each type, not a list of clients."
+                      ],
+                      "bullets": [
+                              "Private villas and townhouses: usually a ducted or concealed split or DX system, sized room by room, so the ceiling stays clean and each zone has its own control. This is the kind of work in our two Sharjah villa projects above.",
+                              "Residential buildings and mixed-use blocks: split or VRF systems sized per apartment or per floor, with drainage and condensate routes planned before the ceilings are closed.",
+                              "Shops, offices and showrooms: cassette or ducted units chosen around the ceiling void and the opening hours, with fresh air treated so the space does not feel stuffy.",
+                              "Warehouses and workshops: packaged or ducted units with ventilation matched to the heat from equipment and stored goods. This is a different design from a home, and we size it from the actual load."
+                      ]
+              },
+              {
+                      "h2": "Cooling load in Sharjah: heat, humidity and dust",
+                      "paragraphs": [
+                              "Summer in Sharjah brings outdoor temperatures above 40°C for long stretches, with high humidity, especially near the coast. A cooling system has to remove heat and moisture at the same time. An undersized unit runs flat out and still leaves rooms sticky. An oversized one cools quickly, switches off and leaves humid air behind. That is why we size from a room-by-room heat load, not from a rule of thumb.",
+                              "Dust is the second factor. Fine dust from the desert and from building work clogs filters and outdoor coils faster than most owners expect. A blocked coil raises running cost and shortens compressor life, so regular cleaning matters as much as the original design. Our [AC maintenance](/ac-maintenance-dubai) and [duct cleaning](/ac-duct-cleaning-dubai) work covers exactly this."
+                      ]
+              },
+              {
+                      "h2": "From enquiry to site visit in Sharjah",
+                      "paragraphs": [
+                              "AGEC works from Dubai, so you deal with one engineering team for Sharjah and Dubai alike. When you call or WhatsApp, tell us your area in Sharjah and the kind of property. We confirm when an engineer can attend and what to prepare; photos of the indoor units and the outdoor equipment help us arrive with the right parts.",
+                              "If a unit has failed, see [AC repair](/ac-repair-dubai). If you want visits scheduled so nothing is missed, an [annual maintenance contract](/ac-amc-dubai) fixes the visit dates for the year and gives you a service report each time."
+                      ]
+              }
+      ]}
       projects={[
         {
           slug: "double-twin-villa-sharjah",
@@ -94,6 +122,8 @@ export default function HvacContractorSharjah() {
           q: "How do I get a quote for a Sharjah project?",
           a: `Call or WhatsApp ${PHONE_DISPLAY}, or send your details through our quote form. Tell us the property and what you need and our engineers will respond — we reply on call and WhatsApp 24/7.`,
         },
+        {"q": "What type of AC suits a Sharjah villa?", "a": "It depends on the layout. For most villas we recommend a ducted or concealed split or DX system sized room by room, because it keeps the ceilings clean and lets each zone be controlled separately. Smaller villas or extensions may suit individual split units. Send us the plans or photos and an engineer will recommend one."},
+        {"q": "Can you cool a warehouse or workshop in Sharjah?", "a": "Our published Sharjah projects are villas. For warehouses and workshops we design cooling and ventilation from the actual heat load of the space, equipment and stock. Send us the size, use and location of the unit and we will advise on the options and quote in writing."},
       ]}
     />
   );

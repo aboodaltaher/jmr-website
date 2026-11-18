@@ -51,6 +51,34 @@ export default function HvacContractorAjman() {
           </p>
         </>
       }
+      sections={[
+              {
+                      "h2": "Commercial and residential buildings in Ajman",
+                      "paragraphs": [
+                              "Ajman's buildings range from malls and mixed-use developments to residential towers and smaller commercial units. What suits each one:"
+                      ],
+                      "bullets": [
+                              "Malls and retail buildings: VRF or VRV, where shops, corridors and back-of-house each need independent temperature control from shared outdoor units, as on our Basil Mall project above.",
+                              "Residential towers and mixed-use blocks: split or VRF systems per apartment or floor, with outdoor units placed so they get enough airflow and can be reached for service.",
+                              "Offices and clinics: ducted or cassette units, with fresh air provided so occupants are not breathing recirculated air all day.",
+                              "Workshops and light-industrial units: packaged or ducted units with ventilation sized for the heat the work produces."
+                      ]
+              },
+              {
+                      "h2": "Why VRF suits multi-zone buildings, and what it asks of the installer",
+                      "paragraphs": [
+                              "A VRF system connects many indoor units to a shared outdoor system and varies the refrigerant flow to each, so every zone can run at its own temperature. For a building with many tenants or rooms that is efficient, but it is also more demanding to install: the refrigerant pipework has to be designed and sized carefully, the controls set up zone by zone, and the whole system commissioned and balanced before handover.",
+                              "That is the work on the 224-ton Basil Mall system. Once the system is live, it needs maintenance that understands VRF: error-code history, filter and coil cleaning, and refrigerant checks. See [VRF and VRV systems](/services/vrf-vrv-systems) for installation and [VRF maintenance](/vrf-maintenance-dubai) for service."
+                      ]
+              },
+              {
+                      "h2": "Cooling load in Ajman: heat, humidity and exposed plant",
+                      "paragraphs": [
+                              "Ajman is hot and humid through the long summer, and in a coastal location the humidity is a large part of the load. Rooftop and balcony plant sits in direct sun and dust, so outdoor coils foul quickly and need regular cleaning. Sealed commercial buildings also need engineered [ventilation and fresh air](/services/ventilation-fresh-air), not just cooling, to keep carbon dioxide and humidity under control.",
+                              "For plant you cannot afford to lose in summer, a planned [maintenance contract](/ac-amc-dubai#commercial-amc) is cheaper than a breakdown. Tell us the building and the systems it has, and we will propose a visit plan."
+                      ]
+              }
+      ]}
       projects={[
         {
           slug: "basil-mall-ajman",
@@ -83,6 +111,8 @@ export default function HvacContractorAjman() {
           q: "How do I get a quote for an Ajman project?",
           a: `Call or WhatsApp ${PHONE_DISPLAY}, or send your details through our quote form. Tell us the building and what you need and our engineers will respond — we reply on call and WhatsApp 24/7.`,
         },
+        {"q": "Do you maintain VRF systems in Ajman?", "a": "Yes. We maintain VRF and VRV systems, including checking the error-code history, cleaning filters and coils, and testing refrigerant performance, with a service report after each visit. See our VRF maintenance page for what a visit covers."},
+        {"q": "How is a VRF system commissioned?", "a": "After installation we pressure-test and evacuate the pipework, charge the system, set up the controls zone by zone, and measure the system running against its design. We document the results so the building owner has a record at handover."},
       ]}
     />
   );

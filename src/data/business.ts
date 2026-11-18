@@ -59,13 +59,17 @@ export const business = {
     closes: "23:59",
   },
 
-  // Update monthly. Shown on the site and used for the homepage meta description.
+  // Update monthly from the Google Business Profile.
+  // Shown on the site and used for the homepage meta description. Every page reads these values
+  // through src/lib/company.ts, src/lib/reviews.ts or src/lib/siteStats.ts: never type a count into a page.
   // Deliberately NOT emitted as schema.org aggregateRating (Google ignores
-  // self-served LocalBusiness review markup, and a stale count hurts trust).
+  // self-served LocalBusiness review markup, and a stale count hurts trust), so the schema can never
+  // disagree with the visible text.
   reviews: {
+    // TODO(owner): confirm the current Google rating (shown as 5.0 until you do).
     rating: 5.0,
-    count: 39,
-    updated: "2026-11-15",
+    count: 42,
+    updated: "2026-11",
   },
 
   links: {

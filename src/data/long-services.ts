@@ -283,6 +283,9 @@ export const MEP: LongService = {
 // photos and a service report after every clean. Do NOT add: NFPA 96 or any Dubai
 // Municipality frequency, specific equipment or waste-handling methods, or a certificate /
 // hood sticker — none of those were confirmed.
+// TODO(owner): add the Dubai Municipality approval number or certificate reference, and the exact Dubai
+// Civil Defence requirement you want quoted, once confirmed. Until then the page states only the approval
+// and says the requirement depends on the premises.
 export const KITCHEN_EXHAUST: LongService = {
   key: "kitchen-exhaust",
   path: "/kitchen-exhaust-cleaning-dubai",
@@ -338,6 +341,35 @@ export const KITCHEN_EXHAUST: LongService = {
       ],
     },
     {
+      h2: "How a cleaning visit runs",
+      paragraphs: [
+        "Every visit follows the same order, so nothing is skipped and the record is comparable from one visit to the next.",
+      ],
+      bullets: [
+        "Walk the system with your kitchen manager: hood, filters, duct runs, access panels, fan and discharge point.",
+        "Protect the kitchen: cover equipment and floors, and switch the exhaust off and isolate it before work starts.",
+        "Photograph the hood, filters, duct interior and fan before cleaning begins.",
+        "Remove and degrease the filters, then clean the hood canopy and plenum.",
+        "Clean the duct runs section by section through the access panels, then the fan housing and the discharge.",
+        "Refit the filters and panels, and test that the exhaust runs and captures properly.",
+        "Photograph the same points again, then send the photos and a service report.",
+      ],
+    },
+    {
+      h2: "Compliance: Dubai Municipality and Civil Defence",
+      paragraphs: [
+        "AGEC is approved by Dubai Municipality for kitchen hood and grease-duct cleaning. Commercial kitchens are also subject to fire-safety requirements set by the authorities, including Dubai Civil Defence, and an inspection, your landlord or your insurer may ask to see evidence that the exhaust is cleaned.",
+        "The exact requirement for your premises depends on the type of kitchen and the building, so confirm it with your landlord or the authority. What we provide is the evidence: dated before-and-after photographs and a service report for each visit, which you keep on file. For a kitchen in a hotel, mall or restaurant group, we can schedule recurring visits under a [maintenance contract](/ac-amc-dubai).",
+      ],
+    },
+    {
+      h2: "Before and after: what the photos show",
+      paragraphs: [
+        "The before photos show the condition we found: the grease film on the filters and hood, and the deposit inside the duct and on the fan. The after photos show the same points clean, taken from the same position so you can compare them directly.",
+        "If a section could not be reached, the report says which and why, so a blocked access panel is recorded and can be fixed, rather than hidden. If you run several kitchens, the reports let you compare them and spot the one that loads with grease fastest.",
+      ],
+    },
+    {
       h2: "Photos and a service report",
       paragraphs: [
         "After every clean you receive before-and-after photographs and a service report. Those are what you show a landlord or an insurer, and what you keep on file for the next visit.",
@@ -365,6 +397,10 @@ export const KITCHEN_EXHAUST: LongService = {
       a: "It depends on cooking volume and fuel type. High-volume grilling and frying needs far more frequent cleaning than light use. The schedule is normally set by your insurer's or landlord's requirements, and we schedule the cleans accordingly.",
     },
     {
+      q: "What records do I get for a landlord or an inspection?",
+      a: "Dated before-and-after photographs of the hood, filters, duct and fan, and a service report for each visit. If a section could not be reached, the report says which and why.",
+    },
+    {
       q: "Do you work out of hours?",
       a: "Yes. Cleans are scheduled around your opening hours, including after closing. We operate 24 hours.",
     },
@@ -381,6 +417,7 @@ export const KITCHEN_EXHAUST: LongService = {
     { href: "/services/ventilation-fresh-air", label: "Ventilation & fresh air" },
     { href: "/projects/ave-restaurant-business-bay", label: "AVE Restaurant case study" },
     { href: "/ac-duct-cleaning-dubai", label: "AC duct cleaning" },
+    { href: "/ac-amc-dubai", label: "Maintenance contracts (AMC)" },
   ],
   ctaHeading: "Book a kitchen exhaust clean",
   ctaText: "Tell us about the kitchen and your opening hours.",

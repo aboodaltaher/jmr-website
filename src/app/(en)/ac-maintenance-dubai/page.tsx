@@ -566,6 +566,13 @@ export default async function AcMaintenancePage() {
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             {areas.map((a) => (<span key={a} className="rounded-full border border-border bg-white px-6 py-3 font-semibold text-text">{a}</span>))}
           </div>
+          <p className="mx-auto mt-8 max-w-2xl text-text-muted">
+            Outside Dubai? See{" "}
+            <Link href="/hvac-contractor-sharjah" className="font-semibold text-primary hover:underline">HVAC contractor in Sharjah</Link>,{" "}
+            <Link href="/hvac-contractor-ajman" className="font-semibold text-primary hover:underline">HVAC contractor in Ajman</Link> and{" "}
+            <Link href="/hvac-contractor-abu-dhabi" className="font-semibold text-primary hover:underline">HVAC contractor in Abu Dhabi</Link>, or{" "}
+            <Link href="/areas" className="font-semibold text-primary hover:underline">all areas we serve</Link>.
+          </p>
           {areaPages.length > 0 && (
             <>
               <p className="mx-auto mt-10 max-w-2xl text-text-muted">

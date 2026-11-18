@@ -4,7 +4,6 @@ import { buildMetadata } from "@/lib/metadata";
 import { BreadcrumbBand } from "@/components/Breadcrumbs";
 import { Phone, MessageCircle, Check, ShieldCheck, BadgeCheck, Clock, FileText, Gauge, CalendarClock } from "lucide-react";
 import { PHONE, PHONE_DISPLAY, whatsappUrl } from "@/lib/contact";
-import { EMAIL, ADDRESS_LINE, ADDRESS_CITY } from "@/lib/company";
 
 const SITE_URL = "https://agec.ae";
 const ROUTE = "/ar/ac-maintenance-dubai";
@@ -77,19 +76,8 @@ const serviceSchema = {
     "صيانة احترافية للمكيفات في دبي: خدمة وإصلاح وتنظيف وعقود صيانة سنوية.",
   url: `${SITE_URL}${ROUTE}`,
   areaServed: { "@type": "Country", name: "United Arab Emirates" },
-  provider: {
-    "@type": "HVACBusiness",
-    name: "AGEC Technical Services",
-    telephone: PHONE,
-    email: EMAIL,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: ADDRESS_LINE,
-      addressLocality: ADDRESS_CITY,
-      addressCountry: "AE",
-    },
-    url: SITE_URL,
-  },
+  // One LocalBusiness per page: the site-wide block in SiteSchema (@id #business) is referenced here.
+  provider: { "@id": `${SITE_URL}/#business` },
 };
 
 export default function ArabicAcMaintenance() {
