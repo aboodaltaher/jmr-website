@@ -57,6 +57,34 @@ export default function HvacContractorAbuDhabi() {
           </p>
         </>
       }
+      sections={[
+              {
+                      "h2": "Critical and commercial facilities in Abu Dhabi",
+                      "paragraphs": [
+                              "Abu Dhabi's demanding cooling work is often in buildings where stable temperature is a business requirement. The main types, and how we approach each:"
+                      ],
+                      "bullets": [
+                              "Data centres and server rooms: close-control (precision) cooling, airflow management and containment, designed for continuous running. This is our delivered work in Masdar City and Musaffah, shown above.",
+                              "Commercial offices and towers: chilled-water or VRF systems with treated fresh air, commissioned to the design before handover.",
+                              "Industrial and logistics buildings: ventilation and packaged cooling sized for the heat load of the activity and the building.",
+                              "Villas and residential compounds: ducted or concealed split systems sized room by room."
+                      ]
+              },
+              {
+                      "h2": "What precision cooling asks for",
+                      "paragraphs": [
+                              "A server room is not cooled like an office. The heat is concentrated in racks, it runs all day and all night, and a temperature drift or an airflow short-circuit shows up as equipment risk, not as discomfort. The design therefore starts from the equipment heat load, separates cold supply air from hot return air, and plans for resilience so that one failed unit does not take the room down.",
+                              "Commissioning is the other half: the system is tested under load and the airflow checked at the equipment, not just at the cooling unit. Our [testing, adjusting and balancing](/services/tab-testing-adjusting-balancing-dubai) work and [air balancing](/air-balancing-dubai) service describe how we measure and document that."
+                      ]
+              },
+              {
+                      "h2": "Climate in Abu Dhabi, and keeping plant running",
+                      "paragraphs": [
+                              "Abu Dhabi combines high summer temperatures with coastal humidity, so cooling coils do a lot of dehumidification as well as cooling, and condensate drainage has to be designed with care. Fresh-air and ventilation systems bring in outdoor air at high temperature and humidity, so they need properly sized cooling coils; see [ventilation and fresh air](/services/ventilation-fresh-air).",
+                              "Plant that cannot stop needs planned maintenance, not repair after the fact. We offer [chiller maintenance](/services/chiller-maintenance-dubai) and [commercial AMC](/ac-amc-dubai#commercial-amc), with service reports so you can see what was measured on every visit."
+                      ]
+              }
+      ]}
       projects={[
         {
           slug: "mbz-ai-server-room-abu-dhabi",
@@ -94,6 +122,8 @@ export default function HvacContractorAbuDhabi() {
           q: "How do I get a quote for an Abu Dhabi project?",
           a: `Call or WhatsApp ${PHONE_DISPLAY}, or send your details through our quote form. Tell us the facility and what you need and our engineers will respond — we reply on call and WhatsApp 24/7.`,
         },
+        {"q": "Do you maintain chillers in Abu Dhabi?", "a": "We install and maintain chillers; see our chiller maintenance page for what a service covers. Tell us the plant type, capacity and location and we will propose a visit plan and quote in writing."},
+        {"q": "Can you cool a small server room?", "a": "Yes. A small server room still needs cooling designed for its equipment load, run continuously, and with a plan for what happens if the unit fails. Send us the room size, the equipment list or its power draw, and the building details, and an engineer will advise."},
       ]}
     />
   );

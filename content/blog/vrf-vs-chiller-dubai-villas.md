@@ -154,7 +154,7 @@ Multiple buildings, combined 40+ ton load, complex zoning. **Chiller plant.** A 
 
 ### Scenario 4: 18-villa community development in Sharjah
 
-Multiple identical villas on a shared plot, developer build. **Could go either way.** Individual VRF per villa gives each owner independent control and billing. Central chiller plant with chilled water distributed to each villa gives the developer lower upfront cost per villa but requires an HOA structure for shared utility billing. AGEC has done it both ways depending on the developer's preference.
+Multiple identical villas on a shared plot, developer build. **Could go either way.** Individual VRF per villa gives each owner independent control and billing. Central chiller plant with chilled water distributed to each villa gives the developer lower upfront cost per villa but requires an HOA structure for shared utility billing. AGEC has done it both ways depending on the developer's preference. For villas in Sharjah see [HVAC contractor in Sharjah](/hvac-contractor-sharjah).
 
 ---
 
@@ -184,6 +184,8 @@ When a client comes to us for a new villa HVAC system, our process is:
 If you're planning a villa build or major HVAC replacement and want a real engineering opinion (not a sales pitch), **[request a quote](/quote)** or **[call us on {{PHONE}}](tel:{{PHONE_TEL}})**. We'll come look at the project, do the calculations properly, and tell you honestly what makes sense.
 
 ---
+
+Once a VRF system is running, it is serviced under a contract: see [VRF maintenance in Dubai](/vrf-maintenance-dubai) and our [AC maintenance contract in Dubai](/ac-amc-dubai).
 
 ## Related reading
 

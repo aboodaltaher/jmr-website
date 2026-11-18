@@ -12,7 +12,7 @@ titleTag: "Why Is Your AC Bill So High in Dubai? | AGEC"
 
 Every summer in Dubai follows the same script. The temperature crosses 45°C, the AC runs around the clock, and the DEWA bill arrives looking like a small rent payment. The instinct is to blame the tariff — but the tariff hasn't changed since 2022. What changed is how many kilowatt-hours your cooling system is burning to keep you comfortable, and how efficiently it's doing it.
 
-We design, install, and maintain HVAC systems across Dubai, Sharjah, and Abu Dhabi, and we see the same bill-driving problems on site again and again. Fixing them is what our [AC maintenance in Dubai](/ac-maintenance-dubai) visits are for. This isn't a "set it to 24°C" listicle. It's an engineer's breakdown of where your money actually goes, ranked by how much each problem really costs you — and what's worth doing about it.
+We design, install, and maintain HVAC systems across Dubai, Sharjah, and Abu Dhabi, and we see the same bill-driving problems on site again and again. Fixing them is what our [AC maintenance in Dubai](/ac-maintenance-dubai) visits are for, and an [AC maintenance contract in Dubai](/ac-amc-dubai) schedules those visits so they do not get missed. This isn't a "set it to 24°C" listicle. It's an engineer's breakdown of where your money actually goes, ranked by how much each problem really costs you — and what's worth doing about it.
 
 ---
 

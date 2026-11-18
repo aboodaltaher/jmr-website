@@ -23,12 +23,46 @@ export interface LocationFaq {
   a: string;
 }
 
+export interface LocationSection {
+  h2: string;
+  /** Plain text; "[label](/path)" becomes a link. */
+  paragraphs: string[];
+  bullets?: string[];
+}
+
+/** Renders "[label](/path)" as links inside plain text. */
+function RichText({ text }: { text: string }) {
+  const parts = text.split(/(\[[^\]]+\]\(\/[^)]*\))/g);
+  return (
+    <>
+      {parts.map((part, i) => {
+        const m = part.match(/^\[([^\]]+)\]\((\/[^)]*)\)$/);
+        return m ? (
+          <Link key={i} href={m[2]} className="font-semibold text-primary hover:underline">
+            {m[1]}
+          </Link>
+        ) : (
+          <span key={i}>{part}</span>
+        );
+      })}
+    </>
+  );
+}
+
+const EMIRATE_PAGES = [
+  { slug: "hvac-contractor-sharjah", name: "Sharjah" },
+  { slug: "hvac-contractor-ajman", name: "Ajman" },
+  { slug: "hvac-contractor-abu-dhabi", name: "Abu Dhabi" },
+];
+
 export interface LocationPageLayoutProps {
   emirate: string;
   slug: string; // e.g. "hvac-contractor-sharjah"
   title: string; // H1
   intro: string;
   body: React.ReactNode;
+  /** Extra sections after the body: copy specific to this emirate. */
+  sections?: LocationSection[];
   projects: LocationProjectLink[];
   services: LocationServiceLink[];
   faq: LocationFaq[];
@@ -46,6 +80,7 @@ export function LocationPageLayout({
   title,
   intro,
   body,
+  sections = [],
   projects,
   services,
   faq,
@@ -108,6 +143,43 @@ export function LocationPageLayout({
       <section className="py-16 md:py-20">
         <div className="mx-auto max-w-3xl px-6">
           <div className="space-y-4 leading-relaxed text-text-muted">{body}</div>
+          {sections.map((s) => (
+            <div key={s.h2} className="mt-12">
+              <h2 className="font-heading text-2xl font-bold text-text md:text-3xl">{s.h2}</h2>
+              <div className="mt-4 space-y-4 leading-relaxed text-text-muted">
+                {s.paragraphs.map((p, i) => (
+                  <p key={i}>
+                    <RichText text={p} />
+                  </p>
+                ))}
+                {s.bullets && (
+                  <ul className="list-disc space-y-2 pl-6">
+                    {s.bullets.map((b, i) => (
+                      <li key={i}>
+                        <RichText text={b} />
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </div>
+          ))}
+          <p className="mt-12 text-text-muted">
+            We also work in{" "}
+            {EMIRATE_PAGES.filter((e) => e.slug !== slug).map((e, i, all) => (
+              <span key={e.slug}>
+                <Link href={`/${e.slug}`} className="font-semibold text-primary hover:underline">
+                  {e.name}
+                </Link>
+                {i < all.length - 1 ? " and " : ""}
+              </span>
+            ))}
+            . See all the{" "}
+            <Link href="/areas" className="font-semibold text-primary hover:underline">
+              areas we serve
+            </Link>
+            .
+          </p>
         </div>
       </section>
 

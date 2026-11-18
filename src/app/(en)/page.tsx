@@ -30,6 +30,7 @@ import {
 import { PHONE, PHONE_DISPLAY } from "@/lib/contact";
 import { PROJECTS_DELIVERED, GOOGLE_RATING, GOOGLE_REVIEW_COUNT, EMAIL } from "@/lib/company";
 import { BrandStrip } from "@/components/BrandStrip";
+import { HomeLinkBlocks } from "@/components/HomeLinkBlocks";
 import { GOOGLE_REVIEWS, MAPS_URL, REVIEW_URL, reviewStats } from "@/lib/reviews";
 
 // Image for the "Why AGEC" panel: an AGEC villa project photo (the old balometer photo showed the former JMR
@@ -451,6 +452,8 @@ export default async function Home() {
           </div>
         </div>
       </section>
+
+      <HomeLinkBlocks />
 
       {/* Why AGEC */}
       <section className="bg-bg-soft py-20 md:py-24">

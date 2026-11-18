@@ -46,9 +46,6 @@ const navLinks = [
   { href: "/services/chiller-maintenance-dubai", label: "Chiller Maintenance" },
   { href: "/services/tab-testing-adjusting-balancing-dubai", label: "Testing, Commissioning & Balancing" },
   { href: "/smart-thermostat-installation-dubai", label: "Smart Thermostats" },
-  { href: "/hvac-contractor-sharjah", label: "HVAC Contractor Sharjah" },
-  { href: "/hvac-contractor-ajman", label: "HVAC Contractor Ajman" },
-  { href: "/hvac-contractor-abu-dhabi", label: "HVAC Contractor Abu Dhabi" },
   { href: "/projects", label: "Projects" },
   { href: "/blog", label: "Insights" },
   { href: "/contact", label: "Contact" },
@@ -110,8 +107,21 @@ export function Footer() {
             ))}
           </nav>
           {publishedCommunities().length > 0 && (
-            <nav aria-label="Areas we cover" className="flex flex-col gap-1">
-              <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-text">Areas</p>
+            <nav aria-label="Areas we serve" className="flex flex-col gap-1">
+              <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-text">Areas we serve</p>
+              {[
+                { href: "/hvac-contractor-sharjah", label: "HVAC contractor Sharjah" },
+                { href: "/hvac-contractor-ajman", label: "HVAC contractor Ajman" },
+                { href: "/hvac-contractor-abu-dhabi", label: "HVAC contractor Abu Dhabi" },
+              ].map((e) => (
+                <Link prefetch={false}
+                  key={e.href}
+                  href={e.href}
+                  className="inline-flex min-h-[32px] items-center text-sm text-text-muted hover:text-text transition-colors"
+                >
+                  {e.label}
+                </Link>
+              ))}
               {publishedCommunities().map((a) => (
                 <Link prefetch={false}
                   key={a.slug}

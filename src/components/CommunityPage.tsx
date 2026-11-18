@@ -53,19 +53,8 @@ export function CommunityPage({ community: raw }: { community: Community }) {
       name: `${c.name}, Dubai`,
       containedInPlace: { "@type": "City", name: "Dubai" },
     },
-    provider: {
-      "@type": "HVACBusiness",
-      name: business.name,
-      telephone: business.phone.e164,
-      email: business.email,
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: business.address.line,
-        addressLocality: business.address.locality,
-        addressCountry: business.address.countryCode,
-      },
-      url: business.url,
-    },
+    // One LocalBusiness per page: the site-wide block in SiteSchema (@id #business) is referenced here.
+    provider: { "@id": `${business.url}/#business` },
   };
 
 

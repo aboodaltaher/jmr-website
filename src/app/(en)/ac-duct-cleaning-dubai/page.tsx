@@ -143,19 +143,8 @@ const serviceSchema = {
   url: `${SITE_URL}${ROUTE}`,
   ...(offersFor(prices.ductCleaning).length ? { offers: offersFor(prices.ductCleaning) } : {}),
   areaServed: { "@type": "Country", name: "United Arab Emirates" },
-  provider: {
-    "@type": "HVACBusiness",
-    name: business.name,
-    telephone: business.phone.e164,
-    email: business.email,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: business.address.line,
-      addressLocality: business.address.locality,
-      addressCountry: business.address.countryCode,
-    },
-    url: SITE_URL,
-  },
+  // One LocalBusiness per page: the site-wide block in SiteSchema (@id #business) is referenced here.
+  provider: { "@id": `${SITE_URL}/#business` },
 };
 
 
