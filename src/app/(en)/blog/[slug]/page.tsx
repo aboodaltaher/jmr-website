@@ -159,29 +159,6 @@ export default async function ArticlePage({
 
   const relatedPosts = relatedPostsFor(slug);
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: post.title,
-    description: post.description,
-    datePublished: post.date,
-    dateModified: post.updated || post.date,
-    image: `${SITE_URL}${post.image}`,
-    author: {
-      "@type": "Person",
-      name: FOUNDER,
-      url: `${SITE_URL}/about`,
-    },
-    publisher: {
-      "@type": "Organization",
-      name: business.name,
-      logo: {
-        "@type": "ImageObject",
-        url: `${SITE_URL}/agec-logo.png`,
-      },
-    },
-  };
-
   const blogPostingLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -213,10 +190,6 @@ export default async function ArticlePage({
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingLd) }}
