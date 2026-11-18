@@ -1,2 +1,7 @@
-referring_domain,linking_url,target_url,anchor_text,follow,first_seen,sources,category,toxic_flag,notes
-dubaitop10.ae,unknown (graph data is host-level),unknown (agec.ae),unknown,unknown,unknown,CommonCrawl cc-main-2026-aug-sep-oct (domain graph); CommonCrawl cc-main-2026-aug-sep-oct (host graph),directory,not assessed,inferred from domain name only (page not reviewed)
+referring_domain,linking_url,target_url,anchor_text,follow,first_seen,sources,category,toxic_flag,gsc_linking_pages,notes
+all-url.info,unknown (graph data is host-level),unknown (agec.ae),unknown,unknown,unknown,GSC export received 2026-11-18:agec.ae-Top-linking-sites.csv,other,not assessed,1,not classified: page content not reviewed
+dubaitop10.ae,unknown (graph data is host-level),unknown (agec.ae),unknown,unknown,unknown,CommonCrawl cc-main-2026-aug-sep-oct (domain graph); CommonCrawl cc-main-2026-aug-sep-oct (host graph); GSC export received 2026-11-18:agec.ae-Top-linking-sites.csv,directory,not assessed,2,inferred from domain name only (page not reviewed)
+hvac1001.ae,unknown (graph data is host-level),unknown (agec.ae),unknown,unknown,unknown,GSC export received 2026-11-18:agec.ae-Top-linking-sites.csv,other,not assessed,6,not classified: page content not reviewed
+leadralia.com,unknown (graph data is host-level),unknown (agec.ae),unknown,unknown,unknown,GSC export received 2026-11-18:agec.ae-Top-linking-sites.csv,other,not assessed,1,not classified: page content not reviewed
+newomniyatcleaning.ae,unknown (graph data is host-level),unknown (agec.ae),unknown,unknown,unknown,GSC export received 2026-11-18:agec.ae-Top-linking-sites.csv,other,not assessed,2,not classified: page content not reviewed
+yalqa.com,unknown (graph data is host-level),unknown (agec.ae),unknown,unknown,unknown,GSC export received 2026-11-18:agec.ae-Top-linking-sites.csv,other,not assessed,2,not classified: page content not reviewed

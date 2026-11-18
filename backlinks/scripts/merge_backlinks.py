@@ -7,7 +7,7 @@ import csv, glob, json, os, collections
 from urllib.parse import urlparse
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 RAW = f"{ROOT}/raw"
-FIELDS = ["referring_domain","linking_url","target_url","anchor_text","follow","first_seen","sources","category","toxic_flag","notes"]
+FIELDS = ["referring_domain","linking_url","target_url","anchor_text","follow","first_seen","sources","category","toxic_flag","gsc_linking_pages","notes"]
 rows = {}  # key: referring domain
 
 def dom(x):
@@ -49,7 +49,10 @@ def pick(row, *names):
 for f in glob.glob(f"{ROOT}/gsc/*.csv"):
     for row in csv.DictReader(open(f, encoding="utf-8-sig")):
         site = pick(row, "site", "top linking sites", "linking site", "referring domain")
-        if site: add(site, "GSC:" + os.path.basename(f))
+        if site:
+            add(site, "GSC export received 2026-11-18:" + os.path.basename(f))
+            n = pick(row, "linking pages")
+            if n: rows[dom(site)]["gsc_linking_pages"] = n
 # 3. Bing Webmaster backlinks export
 for f in glob.glob(f"{ROOT}/bing/*.csv"):
     for row in csv.DictReader(open(f, encoding="utf-8-sig")):
@@ -66,11 +69,12 @@ for d, r in sorted(rows.items()):
     r["first_seen"] = r["first_seen"] or "unknown"
     r["target_url"] = r["target_url"] or "unknown (agec.ae)"
     r["toxic_flag"] = "not assessed"
+    r["gsc_linking_pages"] = r["gsc_linking_pages"] or "n/a"
     out.append(r)
 with open(f"{ROOT}/backlinks_agec.csv", "w", newline="") as fh:
     w = csv.DictWriter(fh, FIELDS); w.writeheader(); w.writerows(out)
 srcs = collections.Counter(s.split(":")[0].split(" ")[0] for r in out for s in r["sources"].split("; "))
 summary = {"referring_domains": len(out), "links_known": sum(1 for r in out if r["linking_url"].startswith("http")) or None,
            "sources_present": sorted(srcs), "gsc_present": bool(glob.glob(f"{ROOT}/gsc/*.csv")), "bing_present": bool(glob.glob(f"{ROOT}/bing/*.csv")),
-           "commoncrawl_release": rel, "categories": dict(collections.Counter(r["category"] for r in out))}
+           "commoncrawl_release": rel, "gsc_links_total": sum(int(r["gsc_linking_pages"]) for r in out if r["gsc_linking_pages"].isdigit()), "categories": dict(collections.Counter(r["category"] for r in out))}
 json.dump(summary, open(f"{ROOT}/raw/summary.json", "w"), indent=1); print(json.dumps(summary, indent=1))

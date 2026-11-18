@@ -1,13 +1,16 @@
 {
- "referring_domains": 1,
+ "referring_domains": 6,
  "links_known": null,
  "sources_present": [
-  "CommonCrawl"
+  "CommonCrawl",
+  "GSC"
  ],
- "gsc_present": false,
+ "gsc_present": true,
  "bing_present": false,
  "commoncrawl_release": "cc-main-2026-aug-sep-oct",
+ "gsc_links_total": 14,
  "categories": {
+  "other": 5,
   "directory": 1
  }
 }
