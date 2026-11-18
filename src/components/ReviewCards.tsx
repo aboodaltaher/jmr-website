@@ -24,7 +24,7 @@ export function ReviewCards({ reviews, lang = "en" }: { reviews: GoogleReview[];
           key={r.name}
           className="mb-7 flex break-inside-avoid flex-col rounded-xl border border-border bg-bg-soft p-7"
         >
-          <div className="flex gap-0.5 text-primary" aria-label="5 out of 5 stars">
+          <div className="flex gap-0.5 text-primary" role="img" aria-label="5 out of 5 stars">
             {Array.from({ length: 5 }).map((_, i) => (
               <Star key={i} className="h-4 w-4 fill-current" aria-hidden="true" />
             ))}
