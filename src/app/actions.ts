@@ -3,51 +3,71 @@
 import { Resend } from "resend";
 import { z } from "zod";
 import { business } from "@/data/business";
+import { row, wrap } from "@/lib/lead-email";
+import { isLikelyBot } from "@/lib/spam-guard";
 
-// Form notifications go to the CONTACT_EMAIL environment variable if it is set, otherwise to the
-// public address in src/data/business.ts (the single source for the site email).
+// Environment variables (names only; values live in Vercel):
+//   RESEND_API_KEY        Resend API key (required for any email to be sent)
+//   CONTACT_EMAIL         lead inbox; falls back to the public address in src/data/business.ts
+//   RESEND_FROM           sender; falls back to Resend's shared test sender until agec.ae is verified
+//                         in Resend. Do not point this at an agec.ae address before that.
+//   CONTACT_EMAIL_BACKUP  optional extra inbox. Inactive unless set. Sent as a SEPARATE email so
+//                         that a rejected backup can never make the main lead email fail.
 const CONTACT_EMAIL = process.env.CONTACT_EMAIL || business.email;
-const FROM = "AGEC Website <onboarding@resend.dev>";
+const CONTACT_EMAIL_BACKUP = process.env.CONTACT_EMAIL_BACKUP || "";
+const FROM = process.env.RESEND_FROM || "AGEC Website <onboarding@resend.dev>";
+
+/** Short random reference for one submission. Logged and shown in the email, never tied to personal data in logs. */
+function newLeadId(): string {
+  return crypto.randomUUID().slice(0, 8);
+}
 
 /**
- * Email one form submission to CONTACT_EMAIL. Returns true only when Resend accepted it.
- * The Resend SDK does not throw on API errors (for example "you can only send testing emails to
- * your own address"); it returns { error }, so the result must be checked or failures are silent.
+ * Email one form submission to CONTACT_EMAIL (and, if set, a separate copy to CONTACT_EMAIL_BACKUP).
+ * Returns true only when Resend accepted the MAIN email. The Resend SDK does not throw on API
+ * errors (for example "you can only send testing emails to your own address"); it returns
+ * { error }, so the result must be checked or failures are silent.
+ * Logs carry the lead ID and the error type only: never names, phones, emails or messages.
  */
 async function sendEmail(
   kind: string,
   mail: { subject: string; html: string; replyTo?: string },
 ): Promise<boolean> {
+  const leadId = newLeadId();
+  const message = {
+    from: FROM,
+    ...mail,
+    subject: `${mail.subject} [ref ${leadId}]`,
+  };
+  let sent = false;
   try {
     const resend = new Resend(process.env.RESEND_API_KEY);
-    const { error } = await resend.emails.send({ from: FROM, to: CONTACT_EMAIL, ...mail });
+    const { error } = await resend.emails.send({ ...message, to: CONTACT_EMAIL });
     if (error) {
-      console.error(`Resend rejected the ${kind} email (to ${CONTACT_EMAIL}):`, error);
-      return false;
+      console.error(`[lead ${leadId}] ${kind}: main email rejected by Resend (${error.name})`);
+    } else {
+      sent = true;
+      console.info(`[lead ${leadId}] ${kind}: main email accepted`);
     }
-    return true;
+    if (CONTACT_EMAIL_BACKUP) {
+      const backup = await resend.emails.send({ ...message, to: CONTACT_EMAIL_BACKUP });
+      if (backup.error) console.error(`[lead ${leadId}] ${kind}: backup email rejected by Resend (${backup.error.name})`);
+    }
   } catch (err) {
-    console.error(`Failed to send ${kind} email:`, err);
-    return false;
+    console.error(`[lead ${leadId}] ${kind}: email send threw (${err instanceof Error ? err.name : "unknown"})`);
   }
+  return sent;
 }
 
-function timestamp() {
-  return new Date().toLocaleString("en-AE", { timeZone: "Asia/Dubai" });
-}
 
-function row(label: string, value: string | undefined) {
-  if (!value) return "";
-  return `<tr><td style="padding:6px 12px 6px 0;color:#6B7280;vertical-align:top">${label}</td><td style="padding:6px 0">${value}</td></tr>`;
-}
-
-function wrap(heading: string, rows: string) {
-  return `
-    <div style="font-family:sans-serif;max-width:600px;margin:0 auto">
-      <h2 style="color:#1A1A1A;border-bottom:2px solid #FF6B1A;padding-bottom:8px">${heading}</h2>
-      <table style="width:100%;border-collapse:collapse;font-size:14px;color:#1A1A1A">${rows}</table>
-      <p style="margin-top:24px;font-size:12px;color:#6B7280">Submitted ${timestamp()} via agec.ae contact form</p>
-    </div>`;
+/**
+ * Honeypot / too-fast check (src/lib/spam-guard.ts). A bot gets the same { success: true } a person
+ * gets, so it learns nothing, but no email is sent. Logged without any form content.
+ */
+function droppedAsBot(kind: string, data: Record<string, unknown>): boolean {
+  if (!isLikelyBot(data)) return false;
+  console.info(`[spam] ${kind}: submission dropped`);
+  return true;
 }
 
 // ── Unified Request (quote / service booking) ──
@@ -62,6 +82,7 @@ const requestSchema = z.object({
 });
 
 export async function submitRequest(data: Record<string, unknown>) {
+  if (droppedAsBot("request", data)) return { success: true };
   const parsed = requestSchema.safeParse(data);
   if (!parsed.success) return { success: false, error: "Invalid form data" };
   const d = parsed.data;
@@ -92,6 +113,7 @@ const contactSchema = z.object({
 });
 
 export async function submitContactForm(data: Record<string, unknown>) {
+  if (droppedAsBot("contact", data)) return { success: true };
   const parsed = contactSchema.safeParse(data);
   if (!parsed.success) return { success: false, error: "Invalid form data" };
   const { name, email, phone, subject, message } = parsed.data;
@@ -126,6 +148,7 @@ const quoteSchema = z.object({
 });
 
 export async function submitQuoteRequest(data: Record<string, unknown>) {
+  if (droppedAsBot("quote", data)) return { success: true };
   const parsed = quoteSchema.safeParse(data);
   if (!parsed.success) return { success: false, error: "Invalid form data" };
   const d = parsed.data;
@@ -164,6 +187,7 @@ const bookSchema = z.object({
 });
 
 export async function submitBooking(data: Record<string, unknown>) {
+  if (droppedAsBot("booking", data)) return { success: true };
   const parsed = bookSchema.safeParse(data);
   if (!parsed.success) return { success: false, error: "Invalid form data" };
   const d = parsed.data;
@@ -199,6 +223,7 @@ const amcSchema = z.object({
 });
 
 export async function submitAmcRequest(data: Record<string, unknown>) {
+  if (droppedAsBot("amc", data)) return { success: true };
   const parsed = amcSchema.safeParse(data);
   if (!parsed.success) return { success: false, error: "Invalid form data" };
   const d = parsed.data;
@@ -234,6 +259,7 @@ const balancingSchema = z.object({
 });
 
 export async function submitBalancingRequest(data: Record<string, unknown>) {
+  if (droppedAsBot("balancing", data)) return { success: true };
   const parsed = balancingSchema.safeParse(data);
   if (!parsed.success) return { success: false, error: "Invalid form data" };
   const d = parsed.data;
@@ -265,6 +291,7 @@ const repairSchema = z.object({
 });
 
 export async function submitRepairRequest(data: Record<string, unknown>) {
+  if (droppedAsBot("repair", data)) return { success: true };
   const parsed = repairSchema.safeParse(data);
   if (!parsed.success) return { success: false, error: "Invalid form data" };
   const d = parsed.data;

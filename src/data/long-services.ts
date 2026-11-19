@@ -6,6 +6,8 @@
 // "[TO CONFIRM: …]" and listed by `npm run to-confirm`. General engineering
 // explanation (what a duct standard is, how a leakage test works) is fine.
 
+import { isPublished } from "./new-pages";
+
 export interface LongSection {
   h2: string;
   paragraphs: string[];
@@ -156,6 +158,7 @@ export const DUCTING: LongService = {
     { href: "/services/ventilation-fresh-air", label: "Ventilation & fresh air" },
     { href: "/services/tab-testing-adjusting-balancing-dubai", label: "Testing, adjusting & balancing" },
     { href: "/ac-duct-cleaning-dubai", label: "AC duct cleaning" },
+    ...(isPublished("mep") ? [{ href: "/mep-contractors-dubai", label: "HVAC for MEP projects" }] : []),
   ],
   ctaHeading: "Get a quote for ductwork",
   ctaText: "Send us the drawings or a few photos of the space and the system.",
@@ -164,15 +167,17 @@ export const DUCTING: LongService = {
 export const MEP: LongService = {
   key: "mep",
   path: "/mep-contractors-dubai",
-  metaTitle: "HVAC Contractor for MEP Projects in Dubai | AGEC",
+  // MEP-specific wording on purpose: the homepage targets "HVAC contractor Dubai", this page the MEP
+  // (HVAC package) intent. Honest scope: AGEC delivers the HVAC package only, not the other MEP trades.
+  metaTitle: "HVAC Package for MEP Projects in Dubai | AGEC",
   metaDescription:
-    "HVAC contractor for MEP projects in Dubai: air conditioning, ventilation and air filtration — design, installation, shop drawings, commissioning. Get a quote.",
-  h1: "HVAC Contractor for MEP Projects in Dubai",
+    "MEP projects in Dubai: AGEC delivers the HVAC package (design, shop drawings, installation, commissioning) and coordinates it with the other MEP trades.",
+  h1: "The HVAC Package for MEP Projects in Dubai",
   kicker: "MEP projects · HVAC scope · Coordination",
   serviceType: "HVAC contracting for MEP projects",
   ctaService: "HVAC package for an MEP project",
   intro: [
-    "On most buildings the HVAC package is the largest and most space-hungry part of the MEP scope: big ducts, chilled-water or refrigerant pipework, plant on the roof and risers through every floor. It is also the package that clashes with everyone else. AGEC is an HVAC contractor. Our trade licence covers air-conditioning, ventilation and air-filtration systems, installation and maintenance, and on an MEP project that is the package we take.",
+    "On most buildings the HVAC package is the largest and most space-hungry part of the MEP scope: big ducts, chilled-water or refrigerant pipework, plant on the roof and risers through every floor. It is also the package that clashes with everyone else. AGEC is an HVAC contractor. Our scope is air-conditioning, ventilation and air-filtration systems, installation and maintenance, and on an MEP project that is the package we take.",
     "This page is deliberately specific. We deliver the HVAC package with our own teams and coordinate its interfaces with the electrical, plumbing, fire-protection and controls contractors, who are appointed separately. We do not offer those trades ourselves.",
   ],
   sections: [
@@ -193,7 +198,7 @@ export const MEP: LongService = {
     {
       h2: "Other trades: coordinated, not delivered by us",
       paragraphs: [
-        "A building also needs electrical, plumbing and drainage, fire fighting, fire alarm and controls. Those are carried out by their own licensed contractors, appointed by the client or the main contractor, and they are outside our scope. Our role is to make sure the HVAC design and installation fit with their work, and that the interfaces between them are settled before they reach site.",
+        "A building also needs electrical, plumbing and drainage, fire fighting, fire alarm and controls. Those are carried out by their own specialist contractors, appointed by the client or the main contractor, and they are outside our scope. Our role is to make sure the HVAC design and installation fit with their work, and that the interfaces between them are settled before they reach site.",
         "Interfaces that always need an owner are the power supply and isolators for HVAC equipment, condensate drainage routes, the points where our ductwork meets fire dampers and the fire alarm, and the link to the building controls. We supply and connect our own HVAC equipment only. For every other item, we agree in writing at the start of the project which contractor is responsible, so nothing is left without an owner.",
       ],
     },
@@ -242,7 +247,7 @@ export const MEP: LongService = {
   faqs: [
     {
       q: "Do you do the whole MEP package or only HVAC?",
-      a: "HVAC only. Our trade licence covers air-conditioning, ventilation and air-filtration systems, installation and maintenance. Electrical, plumbing, fire fighting, fire alarm and controls are delivered by their own contractors, and we coordinate the HVAC interfaces with them.",
+      a: "HVAC only. Our scope is air-conditioning, ventilation and air-filtration systems, installation and maintenance. Electrical, plumbing, fire fighting, fire alarm and controls are delivered by their own contractors, and we coordinate the HVAC interfaces with them.",
     },
     {
       q: "Can you work under a main contractor or consultant?",
@@ -277,27 +282,24 @@ export const MEP: LongService = {
 };
 
 // Kitchen exhaust & hood cleaning. Published (see NEW_PAGES.kitchenExhaust). Every claim
-// here is one the owner confirmed: Dubai Municipality approval for hood and grease-duct
-// cleaning; own trained staff (not subcontracted); schedule set by the client's insurer or
-// landlord requirements; scheduled around opening hours incl. after closing; before/after
-// photos and a service report after every clean. Do NOT add: NFPA 96 or any Dubai
-// Municipality frequency, specific equipment or waste-handling methods, or a certificate /
-// hood sticker — none of those were confirmed.
-// TODO(owner): add the Dubai Municipality approval number or certificate reference, and the exact Dubai
-// Civil Defence requirement you want quoted, once confirmed. Until then the page states only the approval
-// and says the requirement depends on the premises.
+// here is one the owner confirmed: own trained staff (not subcontracted); schedule set by the
+// client's insurer or landlord requirements; scheduled around opening hours incl. after closing;
+// before/after photos and a service report after every clean. AGEC holds NO authority approval
+// or licence claim (owner, Nov 2026: docs/business-facts.md). Do NOT add: any approval, NFPA 96
+// or any authority frequency, specific equipment or waste-handling methods, or a certificate /
+// hood sticker.
 export const KITCHEN_EXHAUST: LongService = {
   key: "kitchen-exhaust",
   path: "/kitchen-exhaust-cleaning-dubai",
   metaTitle: "Kitchen Exhaust & Hood Cleaning Dubai | AGEC",
   metaDescription:
-    "Kitchen exhaust, hood and grease duct cleaning for Dubai restaurants and kitchens by Dubai Municipality-approved AGEC, with photos and a service report.",
+    "Kitchen exhaust, hood and grease duct cleaning for Dubai restaurants and kitchens by AGEC's own trained team, with photos and a service report.",
   h1: "Kitchen Exhaust & Hood Cleaning in Dubai",
   kicker: "Kitchen exhaust · Hood cleaning · Grease duct",
   serviceType: "Kitchen exhaust and hood cleaning",
   intro: [
     "Grease is the fuel in a commercial kitchen fire. It builds up on the hood, in the filters and along the exhaust duct above the cooking line, and a flare-up on the grill can carry fire straight into the duct. Regular, documented cleaning of the whole exhaust path is the practical way to keep that risk down. It is also what landlords and insurers ask to see.",
-    "AGEC is approved by Dubai Municipality for kitchen hood and grease-duct cleaning. The work is carried out by our own trained staff, not subcontracted, and scheduled around your opening hours.",
+    "The work is carried out by AGEC's own trained staff, not subcontracted, and scheduled around your opening hours.",
   ],
   sections: [
     {
@@ -356,9 +358,9 @@ export const KITCHEN_EXHAUST: LongService = {
       ],
     },
     {
-      h2: "Compliance: Dubai Municipality and Civil Defence",
+      h2: "Compliance: what your landlord or insurer will ask for",
       paragraphs: [
-        "AGEC is approved by Dubai Municipality for kitchen hood and grease-duct cleaning. Commercial kitchens are also subject to fire-safety requirements set by the authorities, including Dubai Civil Defence, and an inspection, your landlord or your insurer may ask to see evidence that the exhaust is cleaned.",
+        "Commercial kitchens are subject to fire-safety requirements set by the authorities, and an inspection, your landlord or your insurer may ask to see evidence that the exhaust is cleaned.",
         "The exact requirement for your premises depends on the type of kitchen and the building, so confirm it with your landlord or the authority. What we provide is the evidence: dated before-and-after photographs and a service report for each visit, which you keep on file. For a kitchen in a hotel, mall or restaurant group, we can schedule recurring visits under a [maintenance contract](/ac-amc-dubai).",
       ],
     },
@@ -389,8 +391,8 @@ export const KITCHEN_EXHAUST: LongService = {
       a: "Grease collects in the hood, filters and duct and can ignite from a flare-up at the cooking line. Cleaning the full exhaust path removes that fuel.",
     },
     {
-      q: "Are you approved to do this work in Dubai?",
-      a: "Yes. AGEC is approved by Dubai Municipality for kitchen hood and grease-duct cleaning.",
+      q: "Who carries out the cleaning?",
+      a: "AGEC's own trained staff. The work is not subcontracted, and it is scheduled around your opening hours, including after closing.",
     },
     {
       q: "How often should a kitchen exhaust be cleaned?",
@@ -425,7 +427,6 @@ export const KITCHEN_EXHAUST: LongService = {
 
 // ---------------------------------------------------------------------------------------------
 // VRF maintenance and air balancing (built 2026-11-15; unpublished until the owner approves).
-// {{LICENCE}} is filled from business.ts by LongServicePage, so the number is never typed here.
 // ---------------------------------------------------------------------------------------------
 
 export const VRF_MAINTENANCE: LongService = {
@@ -439,7 +440,7 @@ export const VRF_MAINTENANCE: LongService = {
   "ctaService": "VRF maintenance",
   "intro": [
     "A VRF (or VRV) system cools many zones from one refrigerant circuit. That makes it efficient and flexible, but it also means one neglected outdoor unit, one blocked drain or one communication fault can take a whole floor out of comfort. Planned maintenance is how you find those problems before the summer does.",
-    "AGEC Technical Services provides VRF maintenance in Dubai as an engineer-led HVAC contractor ({{LICENCE}}). We maintain VRF/VRV systems of all types for commercial and residential buildings in Dubai, Sharjah, Ajman, Abu Dhabi, Umm Al Quwain, Ras Al Khaimah and Fujairah, including Daikin VRV, Trane, O General, Midea and LG Multi V. This page covers maintenance, contracts and breakdown support. Planning a new system? See our [VRF/VRV installation service](/services/vrf-vrv-systems)."
+    "AGEC Technical Services provides VRF maintenance in Dubai as an engineer-led HVAC contractor. We maintain VRF/VRV systems of all types for commercial and residential buildings in Dubai, Sharjah, Ajman, Abu Dhabi, Umm Al Quwain, Ras Al Khaimah and Fujairah, including Daikin VRV, Trane, O General, Midea and LG Multi V. This page covers maintenance, contracts and breakdown support. Planning a new system? See our [VRF/VRV installation service](/services/vrf-vrv-systems)."
   ],
   "sections": [
     {
@@ -556,7 +557,7 @@ export const VRF_MAINTENANCE: LongService = {
       "h2": "Why AGEC for VRF maintenance",
       "paragraphs": [],
       "bullets": [
-        "Engineer-led service under a licensed HVAC contractor ({{LICENCE}}), established 2022",
+        "Engineer-led HVAC contractor, established 2022",
         "33 completed projects across the UAE, including VRF systems such as 224 TR at Basil Mall, Ajman and 109 TR at a villa in Al Mamzar; see our [projects](/projects)",
         "A service report with photos after every visit, so you keep a maintenance history for each unit",
         "If a repair changes airflow or refrigerant conditions, we can re-test and rebalance through our [testing, adjusting and balancing](/services/tab-testing-adjusting-balancing-dubai) service"
@@ -661,7 +662,7 @@ export const AIR_BALANCING: LongService = {
   "ctaService": "air balancing",
   "intro": [
     "Air balancing measures how much air each diffuser, grille, coil and fan is actually moving, then adjusts the system until it matches the design airflow on the consultant's drawings. Until that is done, an air conditioning system is only installed, not proven: some rooms stay warm, others run cold and noisy, and the plant works harder than it should.",
-    "AGEC Technical Services provides air balancing in Dubai as a service in its own right, and in Sharjah, Ajman, Abu Dhabi, Umm Al Quwain, Ras Al Khaimah and Fujairah. We are an engineer-led HVAC contractor ({{LICENCE}}), established 2022. If you also need water-side balancing, commissioning and functional tests, see our full [testing and commissioning (TAB) service](/services/tab-testing-adjusting-balancing-dubai)."
+    "AGEC Technical Services provides air balancing in Dubai as a service in its own right, and in Sharjah, Ajman, Abu Dhabi, Umm Al Quwain, Ras Al Khaimah and Fujairah. We are an engineer-led HVAC contractor, established 2022. If you also need water-side balancing, commissioning and functional tests, see our full [testing and commissioning (TAB) service](/services/tab-testing-adjusting-balancing-dubai)."
   ],
   "sections": [
     {

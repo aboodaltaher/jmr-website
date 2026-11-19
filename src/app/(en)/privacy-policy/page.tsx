@@ -2,11 +2,12 @@ import { buildMetadata } from "@/lib/metadata";
 import { LegalDraftBanner } from "@/components/LegalDraftBanner";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import {
-  COMPANY_LEGAL,
+  COMPANY_NAME,
   EMAIL,
   PHONE_DISPLAY,
   ADDRESS_FULL,
   LICENCE_NO,
+  MAPS_URL,
 } from "@/lib/company";
 
 // NOTE(owner): this is a standard, good-faith privacy policy drafted for the
@@ -42,7 +43,7 @@ export default function PrivacyPolicyPage() {
         <p className="mt-4 text-sm text-text-muted">Last updated: {UPDATED}</p>
 
         <p className="mt-6 text-text-muted">
-          {COMPANY_LEGAL} (&ldquo;AGEC&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) operates the website
+          {COMPANY_NAME} (&ldquo;AGEC&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) operates the website
           at agec.ae. This policy explains what information we collect when you use the
           site or contact us, how we use it, and the choices you have. We handle your
           personal information in line with the UAE Personal Data Protection Law
@@ -152,9 +153,9 @@ export default function PrivacyPolicyPage() {
 
         <Section title="Contact us">
           <p>
-            {COMPANY_LEGAL}
+            {COMPANY_NAME}
             <br />
-            {ADDRESS_FULL}
+            <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" dir="ltr" className="hover:underline">{ADDRESS_FULL}</a>
             <br />
             Commercial Licence No. {LICENCE_NO}
             <br />

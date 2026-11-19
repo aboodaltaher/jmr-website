@@ -98,7 +98,7 @@ export default function Contact() {
                     />
                     <div>
                       <p className="text-sm font-medium">Location</p>
-                      <p className="text-sm text-text-muted">{ADDRESS_FULL}</p>
+                      <p className="text-sm text-text-muted"><a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="hover:text-text hover:underline">{ADDRESS_FULL}</a></p>
                     </div>
                   </div>
                   <div className="flex gap-4">

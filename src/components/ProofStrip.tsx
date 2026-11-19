@@ -3,7 +3,7 @@ import { proofStats, proofLogos, PROOF_LICENCE } from "@/data/proof";
 
 /**
  * Project-proof strip shown directly under the hero: 4 stats + a "trusted on
- * projects for" logo row + the Dubai licence line. Server component — the live
+ * projects for" logo row row. Server component — the live
  * Google rating/count are passed in from the homepage so the review figure
  * matches the rest of the site.
  *

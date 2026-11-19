@@ -9,11 +9,13 @@
 export const business = {
   /** Public business name — matches the Google Business Profile. */
   name: "AGEC Technical Services",
-  legalName: "AGEC Technical Services L.L.C.",
+  /** Other names the business is known by (schema.org alternateName). No legal name is published. */
+  alternateNames: ["AGEC", "Altaher Ghabboun Engineering Contracting"],
   /** Short brand used in body copy and the " | AGEC" title suffix. */
   brand: "AGEC",
   url: "https://agec.ae",
 
+  // Real and current (owner confirmed again 19 Nov 2026). Shown as a licence line only; no approval claims.
   licence: {
     number: "1221573",
     label: "Dubai Commercial Licence No. 1221573",
@@ -28,11 +30,11 @@ export const business = {
   email: "a.altaher@agec.ae",
 
   address: {
-    /** Street line as it appears on the Google Business Profile. */
-    line: "AlMasraf Building, Sheikh Zayed Road, Al Quoz Industrial Area 1",
+    /** Address exactly as on the Google Business Profile (docs/business-facts.md). */
+    line: "AlMasraf Sheikh Zayed branch",
     locality: "Dubai",
     region: "Dubai",
-    country: "UAE",
+    country: "United Arab Emirates",
     countryCode: "AE",
   },
 
@@ -66,16 +68,17 @@ export const business = {
   // self-served LocalBusiness review markup, and a stale count hurts trust), so the schema can never
   // disagree with the visible text.
   reviews: {
-    // TODO(owner): confirm the current Google rating (shown as 5.0 until you do).
+    // Verified 19 Nov 2026 against the Google Business Profile: 5.0 from 42 reviews (all-time).
+    // This is the ONE value behind every "5.0 ★ from 42 Google reviews" on the site.
     rating: 5.0,
     count: 42,
-    updated: "2026-11",
+    updated: "2026-11-19",
   },
 
   links: {
     // Google Maps CID URL for the business profile (used for "View on Google
     // Maps", schema hasMap and sameAs).
-    mapsView: "https://maps.google.com/?cid=14934329653680563760",
+    mapsView: "https://maps.google.com/maps?cid=14934329653680563760",
     // Opens the Google review composer. Used by every "Leave a review" link and
     // by the /review redirect (which the printed QR codes point at).
     reviewLeave: "https://g.page/r/CTBmNs6xZUHPEBM/review",
@@ -87,7 +90,7 @@ export const business = {
   },
 } as const;
 
-/** "AlMasraf Building, …, Al Quoz Industrial Area 1, Dubai, UAE" */
+/** "AlMasraf Sheikh Zayed branch, Dubai, United Arab Emirates" — exactly as on the Business Profile. */
 export const addressFull = `${business.address.line}, ${business.address.locality}, ${business.address.country}`;
 
 /** Non-empty entity profile URLs for schema.org `sameAs`. */

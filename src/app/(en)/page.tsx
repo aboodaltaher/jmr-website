@@ -1,7 +1,9 @@
 import { buildMetadata } from "@/lib/metadata";
 import Image from "next/image";
 import Link from "next/link";
+import { isPublished } from "@/data/new-pages";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
+import { ReviewCards, RatingLink } from "@/components/ReviewCards";
 import { CallOrWhatsApp } from "@/components/CallOrWhatsApp";
 import { EmergencyStrip } from "@/components/EmergencyStrip";
 import { ServiceAreas } from "@/components/ServiceAreas";
@@ -24,7 +26,6 @@ import {
   MapPin,
   Sparkles,
   Layers,
-  Star,
   Building2,
 } from "lucide-react";
 import { PHONE, PHONE_DISPLAY } from "@/lib/contact";
@@ -41,7 +42,7 @@ const WHY_AGEC_IMAGE = "/projects/agec-stone-villa-hvac-dubai-elevation.jpg";
 export const metadata = buildMetadata({
   title: "Engineer-Led HVAC Contractor in Dubai & the UAE | AGEC",
   description:
-    `Engineer-led HVAC contractor in Dubai — installation, maintenance, AMC, testing and commissioning. Licensed since 2022, ${GOOGLE_RATING}★ from ${GOOGLE_REVIEW_COUNT} Google reviews.`,
+    `Engineer-led HVAC contractor in Dubai — installation, maintenance, AMC, testing and commissioning. Established 2022, ${GOOGLE_RATING}★ from ${GOOGLE_REVIEW_COUNT} Google reviews.`,
   path: "",
   languages: {
     "en-AE": "https://agec.ae/",
@@ -68,7 +69,7 @@ const services = [
     image: "/projects/fresh-air-handling-unit-fahu-dubai-agec.jpg",
     alt: "Fresh Air Handling Unit (FAHU) installation by AGEC in Dubai commercial project",
     description:
-      "Mechanical ventilation and fresh air systems designed to meet Dubai Municipality air quality standards.",
+      "Mechanical ventilation and fresh air systems designed to ASHRAE 62.1 for healthy indoor air.",
   },
   {
     icon: ClipboardCheck,
@@ -115,6 +116,19 @@ const services = [
     description:
       "Direct expansion split and packaged units for targeted cooling in offices, retail, and server rooms.",
   },
+  ...(isPublished("mep")
+    ? [
+        {
+          icon: Building2,
+          name: "HVAC for MEP Projects",
+          href: "/mep-contractors-dubai",
+          image: "/projects/insulated-rooftop-ductwork-hvac-dubai.jpg",
+          alt: "Insulated rooftop ductwork installed by AGEC on a Dubai project",
+          description:
+            "The HVAC package on MEP projects: design, shop drawings, installation and commissioning, coordinated with the other trades.",
+        },
+      ]
+    : []),
 ];
 
 const reasons = [
@@ -134,7 +148,7 @@ const reasons = [
     icon: ShieldCheck,
     name: "Quality Equipment Partners",
     description:
-      "Approved brands, manufacturer-rated equipment, and proper warranties on every system we install.",
+      "Leading brands, manufacturer-rated equipment, and proper warranties on every system we install.",
   },
   {
     icon: Target,
@@ -527,41 +541,9 @@ export default async function Home() {
             <h2 className="mt-3 font-heading text-3xl font-bold md:text-5xl">
               Rated {GOOGLE_RATING}★ by Dubai clients
             </h2>
-            <p className="mt-5 inline-flex items-center gap-2 rounded-full border border-border bg-bg-soft px-5 py-2.5 text-sm font-semibold text-text shadow-sm">
-              <span className="flex gap-0.5 text-primary">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-current" />
-                ))}
-              </span>
-              {GOOGLE_RATING} · {GOOGLE_REVIEW_COUNT} verified Google reviews
-            </p>
+            <RatingLink className="mt-5" />
           </div>
-          <div className="mt-12 grid gap-7 md:grid-cols-3">
-            {GOOGLE_REVIEWS.map((r) => (
-              <figure
-                key={r.name}
-                className="flex flex-col rounded-xl border border-border bg-bg-soft p-7"
-              >
-                <div className="flex gap-0.5 text-primary">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-current" />
-                  ))}
-                </div>
-                <blockquote className="mt-4 flex-1 text-text">
-                  {r.text}
-                </blockquote>
-                <figcaption className="mt-5 flex items-center gap-3">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#13212E] font-heading font-bold text-white">
-                    {r.initials}
-                  </span>
-                  <span>
-                    <b className="block text-sm">{r.name}</b>
-                    <span className="text-xs text-text-muted">{r.role}</span>
-                  </span>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
+          <ReviewCards reviews={GOOGLE_REVIEWS} />
           <p className="mt-8 text-center text-sm text-text-muted">
             Genuine reviews from our verified Google Business Profile.{" "}
             <a

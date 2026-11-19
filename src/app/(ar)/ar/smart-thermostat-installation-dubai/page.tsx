@@ -73,7 +73,7 @@ export default function ArabicSmartThermostat() {
           icon: ShieldCheck,
           name: "تركيب بإشراف هندسي",
           description:
-            "تركيب على يد فنيّين مدرّبين وفق معايير ASHRAE وبلدية دبي — لا عمّال عموميّون.",
+            "تركيب على يد فنيّين مدرّبين بإشراف مهندس تكييف ووفق معايير ASHRAE — لا عمّال عموميّون.",
         },
         {
           icon: BadgeCheck,

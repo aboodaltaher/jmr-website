@@ -2,11 +2,12 @@ import { buildMetadata } from "@/lib/metadata";
 import { LegalDraftBanner } from "@/components/LegalDraftBanner";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import {
-  COMPANY_LEGAL,
+  COMPANY_NAME,
   EMAIL,
   PHONE_DISPLAY,
   ADDRESS_FULL,
   LICENCE_NO,
+  MAPS_URL,
 } from "@/lib/company";
 
 // Arabic translation of /privacy-policy. Faithful to the English copy.
@@ -42,7 +43,7 @@ export default function ArabicPrivacyPolicyPage() {
         <p className="mt-4 text-sm text-text-muted">آخر تحديث: {UPDATED}</p>
 
         <p className="mt-6 text-text-muted">
-          تُشغّل {COMPANY_LEGAL} (&laquo;AGEC&raquo;، &laquo;نحن&raquo;) الموقع agec.ae.
+          تُشغّل {COMPANY_NAME} (&laquo;AGEC&raquo;، &laquo;نحن&raquo;) الموقع agec.ae.
           توضّح هذه السياسة البيانات التي نجمعها عند استخدامك للموقع أو تواصلك معنا،
           وكيفية استخدامها، وخياراتك بشأنها. نتعامل مع بياناتك الشخصية وفقاً لقانون
           حماية البيانات الشخصية في دولة الإمارات (المرسوم بقانون اتحادي رقم 45 لسنة 2021)
@@ -147,9 +148,9 @@ export default function ArabicPrivacyPolicyPage() {
 
         <Section title="تواصل معنا">
           <p>
-            {COMPANY_LEGAL}
+            {COMPANY_NAME}
             <br />
-            {ADDRESS_FULL}
+            <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" dir="ltr" className="hover:underline">{ADDRESS_FULL}</a>
             <br />
             رقم الرخصة التجارية {LICENCE_NO}
             <br />

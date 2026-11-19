@@ -2,11 +2,12 @@ import { buildMetadata } from "@/lib/metadata";
 import { LegalDraftBanner } from "@/components/LegalDraftBanner";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import {
-  COMPANY_LEGAL,
+  COMPANY_NAME,
   EMAIL,
   PHONE_DISPLAY,
   ADDRESS_FULL,
   LICENCE_NO,
+  MAPS_URL,
 } from "@/lib/company";
 
 // Arabic translation of /terms. Faithful to the English copy.
@@ -43,7 +44,7 @@ export default function ArabicTermsPage() {
 
         <p className="mt-6 text-text-muted">
           تسري هذه الشروط على استخدامك للموقع agec.ae (&laquo;الموقع&raquo;) الذي تُشغّله
-          {" "}{COMPANY_LEGAL} (&laquo;AGEC&raquo;، &laquo;نحن&raquo;). باستخدامك الموقع أو
+          {" "}{COMPANY_NAME} (&laquo;AGEC&raquo;، &laquo;نحن&raquo;). باستخدامك الموقع أو
           إرسال استفسار، فإنك توافق على هذه الشروط. وإن لم توافق عليها، فيُرجى عدم استخدام
           الموقع.
         </p>
@@ -130,9 +131,9 @@ export default function ArabicTermsPage() {
 
         <Section title="تواصل معنا">
           <p>
-            {COMPANY_LEGAL}
+            {COMPANY_NAME}
             <br />
-            {ADDRESS_FULL}
+            <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" dir="ltr" className="hover:underline">{ADDRESS_FULL}</a>
             <br />
             رقم الرخصة التجارية {LICENCE_NO}
             <br />

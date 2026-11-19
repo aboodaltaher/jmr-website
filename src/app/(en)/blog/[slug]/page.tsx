@@ -159,29 +159,6 @@ export default async function ArticlePage({
 
   const relatedPosts = relatedPostsFor(slug);
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: post.title,
-    description: post.description,
-    datePublished: post.date,
-    dateModified: post.updated || post.date,
-    image: `${SITE_URL}${post.image}`,
-    author: {
-      "@type": "Person",
-      name: FOUNDER,
-      url: `${SITE_URL}/about`,
-    },
-    publisher: {
-      "@type": "Organization",
-      name: business.name,
-      logo: {
-        "@type": "ImageObject",
-        url: `${SITE_URL}/agec-logo.png`,
-      },
-    },
-  };
-
   const blogPostingLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -213,10 +190,6 @@ export default async function ArticlePage({
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingLd) }}
@@ -317,7 +290,7 @@ export default async function ArticlePage({
               <div className="mt-6 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm text-text-muted">
                 <GoogleReviewsBadge className="text-text" />
                 <span className="text-border">|</span>
-                <span>Available across the UAE</span>
+                <span>Serving all 7 emirates</span>
                 <span className="text-border">|</span>
                 <span>24/7 call or WhatsApp</span>
               </div>

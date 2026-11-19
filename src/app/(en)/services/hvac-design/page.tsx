@@ -42,8 +42,7 @@ export default function HvacDesign() {
             specification, duct and piping layout, controls design, and
             construction documentation. We work on projects ranging from single
             villas to multi-floor commercial fit-outs, delivering design packages
-            that meet consultant requirements and municipality approval
-            standards.
+            that meet consultant requirements and the project specification.
           </p>
           <p>
             Our design approach starts with accurate load calculations — not
@@ -110,14 +109,14 @@ export default function HvacDesign() {
           icon: ClipboardCheck,
           name: "Code Compliance Review",
           description:
-            "Verification against ASHRAE standards, Dubai Municipality requirements, and Green Building regulations including Al Sa'fat compliance where required.",
+            "Verification against ASHRAE standards, the project specification, and the green-building requirements that apply to the project.",
         },
       ]}
       whyAgec={[
         `Design based on calculated loads with documented assumptions — ${PROJECTS_DELIVERED} projects designed and delivered across the UAE`,
         "Engineers who also install and commission systems, bringing practical construction knowledge into the design phase",
         "ASHRAE 111, SMACNA, and CIBSE compliant design documentation",
-        "Design packages formatted for consultant approval, Dubai Municipality submission, and contractor tendering",
+        "Design packages formatted for consultant review, authority submissions made by the consultant, and contractor tendering",
       ]}
     />
   );

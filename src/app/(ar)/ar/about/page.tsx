@@ -1,6 +1,6 @@
 import { buildMetadata } from "@/lib/metadata";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { FOUNDER, PROJECTS_DELIVERED, LARGEST_PROJECT_TR, LICENCE_NO, COMPANY_LEGAL } from "@/lib/company";
+import { FOUNDER, PROJECTS_DELIVERED, LARGEST_PROJECT_TR, COMPANY_NAME, LICENCE_NO } from "@/lib/company";
 import { business } from "@/data/business";
 import Image from "next/image";
 import Link from "next/link";
@@ -20,7 +20,7 @@ const eyebrow = "text-sm font-semibold uppercase tracking-widest text-primary";
 
 const values = [
   { icon: Award, name: "صرامة هندسية", description: "حسابات حمل حراري وتصميم أنظمة وتشغيل تجريبي على يد مهندسين مؤهّلين بخبرة ميدانية في الإمارات." },
-  { icon: ShieldCheck, name: "التزام بمواصفات المصنّع", description: "قطع غيار أصلية وإجراءات صيانة معتمدة، ومعدّات بتصنيف المصنّع وضمانات صحيحة." },
+  { icon: ShieldCheck, name: "التزام بمواصفات المصنّع", description: "قطع غيار أصلية وإجراءات الصيانة التي يوصي بها المصنّع، ومعدّات بتصنيف المصنّع وضمانات صحيحة." },
   { icon: PhoneCall, name: "دعم 24/7", description: "دعم طوارئ للأعطال عبر الإمارات." },
   { icon: TrendingUp, name: "سجلّ مُثبَت", description: `${PROJECTS_DELIVERED} مشروع تكييف منجز، من الفلل إلى مراكز البيانات والمنشآت الثقافية.` },
 ];
@@ -99,10 +99,8 @@ export default function ArabicAbout() {
                   التزامنا واحد: الدقّة والالتزام بالمواعيد وأنظمة تعمل على المدى الطويل.
                 </p>
                 <p>
-                  AGEC هو الاسم التجاري لشركة {COMPANY_LEGAL}، الشركة
-                  المرخّصة صاحبة هذا الموقع. وتحمل الشركة رخصة تجارية دبي رقم {LICENCE_NO}،
-                  صادرة عن دائرة الاقتصاد والسياحة بدبي، تشمل تركيب وصيانة أنظمة التكييف
-                  والتهوية وترشيح الهواء.
+                  تُعرف <span dir="ltr">{COMPANY_NAME}</span> أيضاً باسم Altaher Ghabboun Engineering
+                  Contracting، واختصاراً AGEC. ونحمل رخصة تجارية دبي رقم <span dir="ltr">{LICENCE_NO}</span>، صادرة عن دائرة الاقتصاد والسياحة بدبي. نصمّم ونركّب ونصون أنظمة التكييف والتهوية وترشيح الهواء.
                 </p>
               </div>
             </div>

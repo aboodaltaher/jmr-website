@@ -2,7 +2,7 @@ import { MidPageCta } from "@/components/MidPageCta";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { buildMetadata } from "@/lib/metadata";
 import { BreadcrumbBand } from "@/components/Breadcrumbs";
-import { Phone, MessageCircle, Check, ShieldCheck, BadgeCheck, Clock, FileText, Gauge, CalendarClock } from "lucide-react";
+import { Phone, MessageCircle, ShieldCheck, BadgeCheck, Clock, FileText, Gauge, CalendarClock } from "lucide-react";
 import { PHONE, PHONE_DISPLAY, whatsappUrl } from "@/lib/contact";
 
 const SITE_URL = "https://agec.ae";
@@ -24,7 +24,7 @@ export const metadata = buildMetadata({
 const eyebrow = "text-sm font-semibold tracking-widest text-primary";
 
 const whyCards = [
-  { icon: ShieldCheck, title: "إشراف هندسي", desc: "فنيّون مدرّبون يعملون وفق معايير ASHRAE وبلدية دبي — لا عمالة غير مؤهلة." },
+  { icon: ShieldCheck, title: "إشراف هندسي", desc: "فنيّون مدرّبون بإشراف مهندس تكييف يعملون وفق معايير ASHRAE — لا عمالة غير مؤهلة." },
   { icon: BadgeCheck, title: "جميع العلامات والأنواع", desc: "سبليت، مخفي، كاسيت، VRF/VRV، تشيلر ووحدات مجمّعة — دايكن، أوجنرال، كاريير، جري، ميديا، إل جي والمزيد." },
   { icon: Clock, title: "خدمة في نفس اليوم وطوارئ 24/7", desc: "استجابة سريعة في دبي والإمارات، مع دعم طوارئ عند تعطّل المكيف في ذروة الصيف." },
   { icon: FileText, title: "تقارير موثّقة", desc: "كل زيارة مسجّلة بالحالة قبل وبعد والعمل المنفّذ والقطع المستخدمة — سجل صيانة كامل." },

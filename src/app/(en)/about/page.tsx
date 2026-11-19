@@ -1,6 +1,6 @@
 import { buildMetadata } from "@/lib/metadata";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { FOUNDER, PROJECTS_DELIVERED, LARGEST_PROJECT_TR, COMPANY_NAME, COMPANY_LEGAL } from "@/lib/company";
+import { FOUNDER, PROJECTS_DELIVERED, LARGEST_PROJECT_TR, COMPANY_NAME, LICENCE_LABEL } from "@/lib/company";
 import { business } from "@/data/business";
 import { isPublished } from "@/data/new-pages";
 import Image from "next/image";
@@ -30,7 +30,7 @@ const values = [
     icon: ShieldCheck,
     name: "OEM Compliance",
     description:
-      "Genuine spare parts and approved maintenance procedures. Manufacturer-rated equipment with proper warranties.",
+      "Genuine spare parts and manufacturer-recommended maintenance procedures. Manufacturer-rated equipment with proper warranties.",
   },
   {
     icon: PhoneCall,
@@ -152,11 +152,11 @@ export default function About() {
                   </p>
                 )}
                 <p>
-                  AGEC is the trading name of {COMPANY_LEGAL}, the licensed
-                  company behind this website. {COMPANY_LEGAL} holds{" "}
-                  {business.licence.label}, issued by the
-                  Dubai Department of Economy and Tourism, covering air-conditioning,
-                  ventilation and air filtration systems installation and maintenance.
+                  {COMPANY_NAME} is also known as Altaher Ghabboun Engineering
+                  Contracting, and as AGEC for short. We hold{" "}
+                  {LICENCE_LABEL}, issued by the Dubai Department of Economy and
+                  Tourism. We design, install and maintain air-conditioning,
+                  ventilation and air filtration systems.
                 </p>
               </div>
             </div>
@@ -290,7 +290,6 @@ export default function About() {
           </Link>
         </div>
       </section>
-      {/* TODO: add trade licence number */}
     </>
   );
 }

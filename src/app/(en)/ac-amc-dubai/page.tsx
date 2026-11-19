@@ -6,6 +6,8 @@ import Link from "next/link";
 import { RelatedServices } from "@/components/RelatedServices";
 import { Check, Phone, MessageCircle } from "lucide-react";
 import { GoogleReviewsBadge } from "@/components/GoogleReviewsBadge";
+import { ReviewsSection } from "@/components/ReviewCards";
+import { GOOGLE_REVIEWS, reviewsAbout } from "@/lib/reviews";
 import { AmcForm } from "@/components/AmcForm";
 import { BreadcrumbBand } from "@/components/Breadcrumbs";
 import { PHONE, whatsappUrl } from "@/lib/contact";
@@ -111,7 +113,7 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: "Do you cover my emirate?",
-    a: `We've delivered projects in Dubai, Sharjah, Ajman and Abu Dhabi, and are available across the UAE. Call or WhatsApp ${PHONE_DISPLAY}.`,
+    a: `Yes. We serve all 7 emirates: Abu Dhabi, Dubai, Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah and Fujairah. Our completed projects so far are in Dubai, Sharjah, Ajman and Abu Dhabi. Call or WhatsApp ${PHONE_DISPLAY}.`,
   },
 ];
 
@@ -208,7 +210,7 @@ export default function AcAmcPage() {
           <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-white/80">
             <GoogleReviewsBadge className="text-white/90" />
             <span className="text-white/30">|</span>
-            <span>Available across the UAE</span>
+            <span>Serving all 7 emirates</span>
             <span className="text-white/30">|</span>
             <span>24/7 call or WhatsApp</span>
           </div>
@@ -659,6 +661,8 @@ export default function AcAmcPage() {
           </p>
         </div>
       </section>
+
+      <ReviewsSection title="What contract customers say" reviews={[...reviewsAbout("amc"), ...GOOGLE_REVIEWS.filter((r) => r.name === "Khalid Abdo")]} />
 
       {/* FAQ */}
       <section className="bg-bg-soft py-16 md:py-20">

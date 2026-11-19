@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { isPublished } from "@/data/new-pages";
 
 const ALL_SERVICES = [
   { href: "/services/hvac-installation-dubai", label: "HVAC Installation", desc: "New builds & fit-outs, design to handover" },
@@ -15,6 +16,9 @@ const ALL_SERVICES = [
   { href: "/services/ventilation-fresh-air", label: "Ventilation & Fresh Air", desc: "Airflow & CO₂ testing" },
   { href: "/services/hvac-design", label: "HVAC Design", desc: "Heat loads, duct sizing & coordination" },
   { href: "/services/dx-units", label: "DX Units & Splits", desc: "Sized & installed from heat loads" },
+  ...(isPublished("mep")
+    ? [{ href: "/mep-contractors-dubai", label: "HVAC for MEP Projects", desc: "The HVAC package, coordinated with the other trades" }]
+    : []),
 ];
 
 /**

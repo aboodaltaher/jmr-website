@@ -6,7 +6,6 @@ import { business } from "@/data/business";
 import { publishedCommunities, communityPath } from "@/data/community-index";
 import {
   COMPANY_NAME,
-  COMPANY_LEGAL,
   PHONE_DISPLAY,
   EMAIL,
   ADDRESS_FULL,
@@ -66,14 +65,12 @@ export function Footer() {
             <div className="mt-4 space-y-1 text-sm text-text-muted">
               <p>{PHONE_DISPLAY}</p>
               <p><a href={`mailto:${EMAIL}`} className="hover:text-text">{EMAIL}</a></p>
-              <p>{ADDRESS_FULL}</p>
+              <p><a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="hover:text-text">{ADDRESS_FULL}</a></p>
             </div>
             <p className="mt-4 text-xs text-text-muted">
               {business.hours.label} · {PHONE_DISPLAY}
             </p>
-            <p className="mt-1 text-xs text-text-muted">
-              {COMPANY_LEGAL} · {business.licence.label}
-            </p>
+            <p className="mt-1 text-xs text-text-muted">{business.licence.label}</p>
             <div className="mt-4 flex items-center gap-4">
               <a
                 href={INSTAGRAM_URL}

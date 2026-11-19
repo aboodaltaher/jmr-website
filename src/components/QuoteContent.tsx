@@ -23,7 +23,7 @@ export function QuoteContent() {
           </h1>
           <p className="mt-4 max-w-2xl text-xl text-text-muted">
             One short form — a quote for a new project, or AC service, repair or
-            maintenance. We reply on call and WhatsApp 24/7, available across the UAE.
+            maintenance. We reply on call and WhatsApp 24/7, serving all 7 emirates.
           </p>
         </div>
       </section>

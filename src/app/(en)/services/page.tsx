@@ -102,7 +102,7 @@ if (isPublished("kitchenExhaust")) {
     name: "Kitchen Exhaust & Hood Cleaning",
     href: "/kitchen-exhaust-cleaning-dubai",
     description:
-      "Hood, filter and grease-duct cleaning for restaurants and commercial kitchens, by Dubai Municipality-approved AGEC, with before-and-after photos and a service report.",
+      "Hood, filter and grease-duct cleaning for restaurants and commercial kitchens, by AGEC's own trained team, with before-and-after photos and a service report.",
   });
 }
 if (isPublished("ducting")) {
@@ -145,7 +145,7 @@ if (isPublished("mep")) {
 const steps = [
   { number: "01", name: "Consultation", description: "Understand the project scope and requirements" },
   { number: "02", name: "Design & Quote", description: "Heat load calculations, system design, transparent quote" },
-  { number: "03", name: "Procurement", description: "Source approved equipment with proper warranties" },
+  { number: "03", name: "Procurement", description: "Source manufacturer-rated equipment with proper warranties" },
   { number: "04", name: "Installation", description: "Qualified technicians, on schedule, to specification" },
   { number: "05", name: "Commissioning & Handover", description: "Tested, balanced, documented, and ready" },
 ];

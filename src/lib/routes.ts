@@ -50,7 +50,7 @@ export const staticRoutes: RouteEntry[] = [
   ...(isPublished("ducting") ? [{ path: "/ac-ducting-installation-dubai", updatedAt: "2026-11-15" }] : []),
   ...(isPublished("vrfMaintenance") ? [{ path: "/vrf-maintenance-dubai", updatedAt: "2026-11-15" }] : []),
   ...(isPublished("airBalancing") ? [{ path: "/air-balancing-dubai", updatedAt: "2026-11-15" }] : []),
-  ...(isPublished("mep") ? [{ path: "/mep-contractors-dubai", updatedAt: "2026-11-14" }] : []),
+  ...(isPublished("mep") ? [{ path: "/mep-contractors-dubai", updatedAt: "2026-11-19" }] : []),
   // Location / emirate landing pages
   { path: "/areas", updatedAt: "2026-11-15" },
   { path: "/hvac-contractor-sharjah", updatedAt: "2026-11-18" },
@@ -90,6 +90,7 @@ export const arabicRoutes: RouteEntry[] = [
   { path: "/ar/services/dx-units", updatedAt: "2026-11-15" },
   { path: "/ar/services/hvac-design", updatedAt: "2026-11-02" },
   { path: "/ar/ac-ducting-installation-dubai", updatedAt: "2026-11-15" },
+  { path: "/ar/mep-contractors-dubai", updatedAt: "2026-11-19" },
   { path: "/ar/privacy-policy", updatedAt: "2026-11-14" },
   { path: "/ar/terms", updatedAt: "2026-11-14" },
 ];

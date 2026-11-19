@@ -127,4 +127,4 @@ A clean coil lets the system cool with less effort, which usually lowers energy 
 If you have several units and want them checked on a schedule before summer, an AMC is usually easier and more predictable than calling for repairs one at a time.
 
 **Do you cover my emirate?**
-We've delivered projects in Dubai, Sharjah, Ajman and Abu Dhabi, and are available across the UAE. Call or WhatsApp {{PHONE}}.
+Yes. We serve all 7 emirates: Abu Dhabi, Dubai, Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah and Fujairah. Our completed projects so far are in Dubai, Sharjah, Ajman and Abu Dhabi. Call or WhatsApp {{PHONE}}.

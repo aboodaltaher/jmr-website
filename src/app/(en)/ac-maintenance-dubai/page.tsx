@@ -9,7 +9,8 @@ import { publishedCommunities, communityPath } from "@/data/community-index";
 import { getProjectBySlug } from "@/data/projects";
 import { InlineLeadForm } from "@/components/InlineLeadForm";
 import { BreadcrumbBand } from "@/components/Breadcrumbs";
-import { GOOGLE_REVIEWS, MAPS_URL, reviewStats } from "@/lib/reviews";
+import { MAPS_URL, reviewStats, reviewsAbout } from "@/lib/reviews";
+import { ReviewCards, RatingLink } from "@/components/ReviewCards";
 import {
   ShieldCheck,
   BadgeCheck,
@@ -26,15 +27,12 @@ import {
   Phone,
   MessageCircle,
   Check,
-  Star,
-  ExternalLink,
   type LucideIcon,
 } from "lucide-react";
 
 import { PriceTable } from "@/components/PriceTable";
 import { prices, visibleRows, offersFor, money } from "@/data/prices";
 import { PHONE, PHONE_DISPLAY } from "@/lib/company";
-import { business } from "@/data/business";
 import { whatsappUrl } from "@/lib/contact";
 const WA = whatsappUrl("/ac-maintenance-dubai");
 const CANONICAL = "/ac-maintenance-dubai";
@@ -62,7 +60,7 @@ const trustBadges = [
 ];
 
 const whyCards: { icon: LucideIcon; title: string; desc: string }[] = [
-  { icon: ShieldCheck, title: "Engineer-Led Service", desc: `Real, trained technicians working to ASHRAE and Dubai Municipality standards, under a licensed HVAC contractor (${business.licence.label}) — not unqualified handymen.` },
+  { icon: ShieldCheck, title: "Engineer-Led Service", desc: `Real, trained technicians led by an HVAC engineer and working to ASHRAE standards — not unqualified handymen.` },
   { icon: BadgeCheck, title: "Every AC Brand & Type", desc: "Split, ducted, cassette, VRF/VRV, chillers and package units — Daikin, O General, Carrier, Gree, Midea, LG and more." },
   { icon: Clock, title: "Same-Day & 24/7 Emergency", desc: "Fast response across Dubai and the UAE, with emergency breakdown support when your AC fails in peak summer." },
   { icon: FileText, title: "Documented Reports", desc: "Every visit is logged with before/after condition, work performed and parts used — a full maintenance history for your records." },
@@ -157,13 +155,14 @@ const faqs: { q: string; a: string }[] = [
   { q: "Can regular maintenance lower my electricity bill?", a: "Yes. A clean, well-charged, properly running AC uses noticeably less energy than a neglected one — efficiency can drop 20–30% within two years without maintenance, and that shows up on your DEWA bill." },
   { q: "Do you maintain AC for villas and apartments?", a: "Both, as one-off services or annual contracts. A one-off service has a minimum of 3 units. If you have fewer than 3 units, send us the details on WhatsApp and we will tell you the options." },
   { q: "Do you handle commercial AC maintenance?", a: "Yes. We provide AMC and reactive maintenance for offices, shops, restaurants, hotels and buildings — including chillers, AHUs, FCUs and VRF systems, with 24/7 response options." },
-  { q: "Are your technicians qualified?", a: `Yes. AGEC is a licensed HVAC contractor (${business.licence.label}). Our work is engineer-led, and our technicians are trained to work to ASHRAE and Dubai Municipality standards.` },
-  { q: "Which areas do you cover?", a: "We've delivered projects in Dubai, Sharjah, Ajman and Abu Dhabi, and are available for AC maintenance across the UAE." },
+  { q: "Are your technicians qualified?", a: `Yes. Our work is engineer-led, and our technicians are trained to work to ASHRAE standards.` },
+  { q: "Which areas do you cover?", a: "We serve all 7 emirates: Abu Dhabi, Dubai, Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah and Fujairah. Our completed projects so far are in Dubai, Sharjah, Ajman and Abu Dhabi." },
   { q: "Can you take over maintenance from my previous contractor?", a: "Yes. We can take over an existing system with a full audit and baseline report, so you have a clear record and a fresh maintenance schedule." },
   { q: "While you're here, can you also upgrade my thermostat?", a: "Yes — many customers add a smart thermostat during a service visit. See our smart thermostat installation page for Google Nest and ecobee options." },
 ];
 
-const reviews = GOOGLE_REVIEWS;
+// Reviews about maintenance, leaks, smells and repairs (verbatim from Google).
+const reviews = reviewsAbout("maintenance", "leak", "smell", "repair");
 
 /* ------------------------------ JSON-LD ------------------------------ */
 
@@ -276,7 +275,7 @@ export default async function AcMaintenancePage() {
             <p className={eyebrow}>Why Choose AGEC</p>
             <h2 className="mt-3 font-heading text-3xl font-bold md:text-5xl">Dubai&apos;s Reliable AC Maintenance Company</h2>
             <p className="mt-5 text-lg text-text-muted">
-              We&apos;re a licensed HVAC contractor (air conditioning, ventilation and air filtration) — the same engineers who design and install
+              We&apos;re an HVAC contractor (air conditioning, ventilation and air filtration) — the same engineers who design and install
               major cooling systems also keep your AC running at its best.
             </p>
           </div>
@@ -463,24 +462,9 @@ export default async function AcMaintenancePage() {
           <div className="mx-auto max-w-2xl text-center">
             <p className={eyebrow}>Customer Reviews</p>
             <h2 className="mt-3 font-heading text-3xl font-bold md:text-5xl">Rated {GOOGLE_RATING}★ by Our Customers</h2>
-            <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center gap-2 rounded-full border border-border bg-bg-soft px-5 py-2.5 text-sm font-semibold text-text shadow-sm transition-colors hover:border-primary">
-              <span className="flex gap-0.5 text-primary">{Array.from({ length: 5 }).map((_, i) => (<Star key={i} className="h-4 w-4 fill-current" />))}</span>
-              {GOOGLE_RATING} · {GOOGLE_REVIEW_COUNT} verified Google reviews
-              <ExternalLink className="h-3.5 w-3.5 text-text-muted" />
-            </a>
+            <RatingLink className="mt-5" />
           </div>
-          <div className="mt-12 grid gap-7 md:grid-cols-3">
-            {reviews.map((r) => (
-              <figure key={r.name} className="flex flex-col rounded-xl border border-border bg-bg-soft p-7">
-                <div className="flex gap-0.5 text-primary">{Array.from({ length: 5 }).map((_, i) => (<Star key={i} className="h-4 w-4 fill-current" />))}</div>
-                <blockquote className="mt-4 flex-1 text-text">{r.text}</blockquote>
-                <figcaption className="mt-5 flex items-center gap-3">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#13212E] font-heading font-bold text-white">{r.initials}</span>
-                  <span><b className="block text-sm">{r.name}</b><span className="text-xs text-text-muted">{r.role}</span></span>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
+          <ReviewCards reviews={reviews} />
           <p className="mt-8 text-center text-sm text-text-muted">
             Genuine reviews from our verified Google Business Profile.{" "}
             <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline">Read all {GOOGLE_REVIEW_COUNT} on Google →</a>

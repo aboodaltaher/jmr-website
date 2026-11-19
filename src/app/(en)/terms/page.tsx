@@ -2,11 +2,12 @@ import { buildMetadata } from "@/lib/metadata";
 import { LegalDraftBanner } from "@/components/LegalDraftBanner";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import {
-  COMPANY_LEGAL,
+  COMPANY_NAME,
   EMAIL,
   PHONE_DISPLAY,
   ADDRESS_FULL,
   LICENCE_NO,
+  MAPS_URL,
 } from "@/lib/company";
 
 // NOTE(owner): this is a standard, good-faith set of website terms drafted for
@@ -43,7 +44,7 @@ export default function TermsPage() {
 
         <p className="mt-6 text-text-muted">
           These terms apply to your use of the website at agec.ae (the &ldquo;site&rdquo;),
-          operated by {COMPANY_LEGAL} (&ldquo;AGEC&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;). By using
+          operated by {COMPANY_NAME} (&ldquo;AGEC&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;). By using
           the site or submitting an enquiry, you agree to these terms. If you do not agree,
           please do not use the site.
         </p>
@@ -138,9 +139,9 @@ export default function TermsPage() {
 
         <Section title="Contact us">
           <p>
-            {COMPANY_LEGAL}
+            {COMPANY_NAME}
             <br />
-            {ADDRESS_FULL}
+            <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" dir="ltr" className="hover:underline">{ADDRESS_FULL}</a>
             <br />
             Commercial Licence No. {LICENCE_NO}
             <br />

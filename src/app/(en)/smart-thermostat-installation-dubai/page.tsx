@@ -1,12 +1,12 @@
 import { buildMetadata } from "@/lib/metadata";
-import { business } from "@/data/business";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
 import Image from "next/image";
 import Link from "next/link";
 import { RelatedServices } from "@/components/RelatedServices";
 import { InlineLeadForm } from "@/components/InlineLeadForm";
 import { BreadcrumbBand } from "@/components/Breadcrumbs";
-import { MAPS_URL, reviewStats } from "@/lib/reviews";
+import { GOOGLE_REVIEWS, MAPS_URL, reviewStats } from "@/lib/reviews";
+import { ReviewCards, RatingLink } from "@/components/ReviewCards";
 import { THERMOSTAT_SAVINGS, EMAIL, PHONE, PHONE_DISPLAY } from "@/lib/company";
 import { whatsappUrl } from "@/lib/contact";
 import {
@@ -38,8 +38,6 @@ import {
   MessageCircle,
   Check,
   Cpu,
-  Star,
-  ExternalLink,
   type LucideIcon,
 } from "lucide-react";
 
@@ -67,7 +65,7 @@ const whyCards: { icon: LucideIcon; title: string; desc: string }[] = [
   {
     icon: ShieldCheck,
     title: "Engineer-Led Installation",
-    desc: `Installations by trained technicians following ASHRAE and Dubai Municipality standards, under a licensed HVAC contractor (${business.licence.label}) — not general handymen.`,
+    desc: `Installations by trained technicians led by an HVAC engineer and following ASHRAE standards — not general handymen.`,
   },
   {
     icon: BadgeCheck,
@@ -231,7 +229,7 @@ const steps: { title: string; desc: string }[] = [
   { title: "Contact Us", desc: "Call, WhatsApp or request a callback. Tell us your property type and AC system." },
   { title: "Free Compatibility Check", desc: "We verify your wiring and control system and confirm the right thermostat for you." },
   { title: "Schedule Visit", desc: "Pick a convenient slot — same-day and weekend appointments available." },
-  { title: "Professional Installation", desc: "Licensed technicians mount and wire your thermostat cleanly and safely." },
+  { title: "Professional Installation", desc: "Trained technicians mount and wire your thermostat cleanly and safely." },
   { title: "Testing", desc: "We test heating/cooling calls, fan and modes to confirm flawless operation." },
   { title: "Wi-Fi Setup", desc: "Your thermostat is connected to your home network and cloud account." },
   { title: "App Configuration", desc: "We set up the Nest/ecobee app, schedules, geofencing and eco modes." },
@@ -253,33 +251,13 @@ const benefits: { icon: LucideIcon; title: string; desc: string }[] = [
 
 const areas = ["Dubai", "Abu Dhabi", "Sharjah", "Ajman", "Ras Al Khaimah", "Umm Al Quwain", "Fujairah"];
 
-// Real reviews from the verified Google Business Profile (AGEC Technical Services).
-
-const reviews = [
-  {
-    name: "Malek Boos",
-    role: "Google review · translated from Arabic",
-    initials: "MB",
-    text: "Honestly, incredible service and truly professional work — and above all, they are honest and conscientious. From the very first visit they solved a problem I had struggled with for a long time, after bad experiences with other companies. I recommend anyone who needs anything AC-related to deal with them. Five stars isn't enough — you deserve 100.",
-  },
-  {
-    name: "Mays Masri",
-    role: "Google review · translated from Arabic",
-    initials: "MM",
-    text: "I'm really happy with what they did, and their price is excellent. They installed a split unit at my home even though the wiring wasn't right — they sorted it out with an excellent electrician, left the whole house clean, and paid attention to the smallest details. Thank you.",
-  },
-  {
-    name: "Tareq Almasri",
-    role: "Local Guide · Google review · translated from Arabic",
-    initials: "TA",
-    text: "I searched a long time to find work and cleanliness like this. Even the clean-up after they finished made me certain they deserve five stars — from management to staff. Thank you for the service, the kind treatment, and the honesty.",
-  },
-];
+// Real Google reviews (verbatim; none mention thermostats, so general service reviews are shown).
+const reviews = GOOGLE_REVIEWS.filter((r) => ["Khalid Abdo", "Nima Amini", "Mohammad Al ashek"].includes(r.name));
 
 const faqs: { q: string; a: string }[] = [
   { q: "Is the Google Nest Thermostat compatible with my AC in Dubai?", a: "Most Dubai homes use 24V ducted or ducted-split HVAC systems, which are compatible with Google Nest. Compatibility ultimately depends on your existing wiring and control system, so we provide a free compatibility check before installation and advise on any wiring modifications, such as adding a C-wire." },
   { q: "What if my AC isn't compatible or runs on 220V?", a: "No problem — even if your system doesn't use standard 24V control, including 220V/240V split and inverter units, we have a solution. Our engineers fit a safe interface module that lets your Google Nest or ecobee control the AC without modifying or damaging the machine, and without depending on or cutting into its internal PCB control board. Your unit keeps working exactly as the manufacturer designed it, with smart control simply added on top." },
-  { q: "Can you install a C-wire if my system doesn't have one?", a: "Yes — C-wire (common wire) installation is one of our core services. If your thermostat needs continuous power, our licensed technicians run a proper C-wire or fit a compatible power extender kit safely and cleanly." },
+  { q: "Can you install a C-wire if my system doesn't have one?", a: "Yes — C-wire (common wire) installation is one of our core services. If your thermostat needs continuous power, our trained technicians run a proper C-wire or fit a compatible power extender kit safely and cleanly." },
   { q: "How much does smart thermostat installation cost in Dubai?", a: "Standard installation is quoted upfront after your free compatibility check. Final cost depends on your HVAC type, whether a C-wire or wiring modification is needed, and the number of zones. You always receive a transparent, no-obligation quote before any work begins." },
   { q: "Can a smart thermostat really save electricity in the UAE?", a: "Yes. Scheduling, geofencing, AI learning and eco modes all cut wasted cooling — ecobee reports up to ~26% annual HVAC savings with its eco+ features. Actual savings depend on your home, usage and settings, but the potential is significant given the UAE's long, hot cooling season and DEWA tariffs." },
   { q: "Which is better — Google Nest or ecobee?", a: "Both are excellent. Nest offers AI auto-scheduling and a premium minimalist design; ecobee Premium adds built-in Alexa, a room sensor and air-quality monitoring. We recommend the best fit after reviewing your home and HVAC setup." },
@@ -465,7 +443,7 @@ export default async function SmartThermostatPage() {
               Dubai&apos;s Trusted Smart Thermostat Specialists
             </h2>
             <p className="mt-5 text-lg text-text-muted">
-              As a licensed HVAC contractor (air conditioning, ventilation and air filtration), we understand UAE cooling
+              As an HVAC contractor (air conditioning, ventilation and air filtration), we understand UAE cooling
               systems from the ductwork up — so your Nest or ecobee is installed right, first time.
             </p>
           </div>
@@ -823,42 +801,9 @@ export default async function SmartThermostatPage() {
             <h2 className="mt-3 font-heading text-3xl font-bold md:text-5xl">
               Rated {GOOGLE_RATING}★ by Our Customers
             </h2>
-            <a
-              href={MAPS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-5 inline-flex items-center gap-2 rounded-full border border-border bg-bg-soft px-5 py-2.5 text-sm font-semibold text-text shadow-sm transition-colors hover:border-primary"
-            >
-              <span className="flex gap-0.5 text-primary">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-current" />
-                ))}
-              </span>
-              {GOOGLE_RATING} · {GOOGLE_REVIEW_COUNT} verified Google reviews
-              <ExternalLink className="h-3.5 w-3.5 text-text-muted" />
-            </a>
+            <RatingLink className="mt-5" />
           </div>
-          <div className="mt-12 grid gap-7 md:grid-cols-3">
-            {reviews.map((r) => (
-              <figure key={r.name} className="flex flex-col rounded-xl border border-border bg-bg-soft p-7">
-                <div className="flex gap-0.5 text-primary">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-current" />
-                  ))}
-                </div>
-                <blockquote className="mt-4 flex-1 text-text">{r.text}</blockquote>
-                <figcaption className="mt-5 flex items-center gap-3">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#13212E] font-heading font-bold text-white">
-                    {r.initials}
-                  </span>
-                  <span>
-                    <b className="block text-sm">{r.name}</b>
-                    <span className="text-xs text-text-muted">{r.role}</span>
-                  </span>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
+          <ReviewCards reviews={reviews} />
           <p className="mt-8 text-center text-sm text-text-muted">
             Genuine reviews from our verified Google Business Profile.{" "}
             <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline">
