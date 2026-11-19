@@ -31,7 +31,7 @@ export const business = {
 
   address: {
     /** Address exactly as on the Google Business Profile (docs/business-facts.md). */
-    line: "AlMasraf Sheikh Zayed branch",
+    line: "AlMasraf Building, Sheikh Zayed Road, Al Quoz Industrial Area 1",
     locality: "Dubai",
     region: "Dubai",
     country: "United Arab Emirates",
@@ -91,7 +91,7 @@ export const business = {
   },
 } as const;
 
-/** "AlMasraf Sheikh Zayed branch, Dubai, United Arab Emirates" — exactly as on the Business Profile. */
+/** "AlMasraf Building, Sheikh Zayed Road, Al Quoz Industrial Area 1, Dubai, United Arab Emirates" — exactly as on the Business Profile. */
 export const addressFull = `${business.address.line}, ${business.address.locality}, ${business.address.country}`;
 
 /** Non-empty entity profile URLs for schema.org `sameAs`. */
