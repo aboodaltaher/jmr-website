@@ -10,7 +10,7 @@ const SERVICES = [
   { href: "/ac-installation-dubai", label: "AC installation in Dubai" },
   { href: "/ac-duct-cleaning-dubai", label: "AC duct cleaning in Dubai" },
   { href: "/kitchen-exhaust-cleaning-dubai", label: "Kitchen exhaust and hood cleaning in Dubai" },
-  { href: "/vrf-maintenance-dubai", label: "VRF and VRV maintenance in Dubai" },
+  { href: "/vrf-maintenance-dubai", label: "VRF maintenance" },
   { href: "/air-balancing-dubai", label: "Air balancing and airflow testing in Dubai" },
   { href: "/services/chiller-maintenance-dubai", label: "Chiller installation and maintenance" },
   { href: "/smart-thermostat-installation-dubai", label: "Smart thermostat installation in Dubai" },

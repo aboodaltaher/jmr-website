@@ -150,6 +150,13 @@ export function CommunityPage({ community: raw }: { community: Community }) {
                   ))}
                 </ul>
               )}
+              {s.link && (
+                <p>
+                  <Link href={s.link.href} className="font-semibold text-primary hover:underline">
+                    {s.link.label} &rarr;
+                  </Link>
+                </p>
+              )}
             </div>
           </div>
         </section>

@@ -67,6 +67,11 @@ const faq = [
 export default function TestingCommissioningBalancing() {
   return (
     <ServiceDetailLayout
+      relatedProjectSlugs={[
+        "pure-gym-al-barsha",
+        "ave-restaurant-business-bay",
+        "cultural-center-al-barsha",
+      ]}
       slug="services/tab-testing-adjusting-balancing-dubai"
       heroImage="/projects/trane-hvac-controls-commissioning-dubai.jpg"
       heroImageAlt="Trane wired controller at a Dubai project during commissioning, showing set temperature and status"
