@@ -117,10 +117,23 @@ export default function ArabicQuote() {
           </div>
 
           <div>
+            <h2 className="font-heading text-2xl font-bold text-text">أسئلة شائعة عن طلب عرض السعر</h2>
+            <h3 className="mt-4 font-semibold text-text">متى يصلني عرض السعر؟</h3>
+            <p className="mt-2">
+              نرسل عرض السعر المكتوب خلال 24 ساعة، ونرد على رسائل الواتساب خلال ساعة في أي وقت.
+            </p>
+            <h3 className="mt-4 font-semibold text-text">هل يمكنني طلب أكثر من خدمة في الطلب نفسه؟</h3>
+            <p className="mt-2">
+              نعم. اختر نوع الطلب الأقرب لما تحتاجه، واكتب باقي التفاصيل في خانة الملاحظات، ونرد عليك بعرض
+              يشمل كل ما ذكرته.
+            </p>
+          </div>
+
+          <div>
             <h2 className="font-heading text-2xl font-bold text-text">تفضّل التواصل المباشر؟</h2>
             <p className="mt-4">
               اتصل بنا أو راسلنا على الواتساب في أي وقت، 24/7، على الرقم{" "}
-              <a href={`tel:${PHONE}`} dir="ltr" className="font-semibold text-primary hover:underline">{PHONE_DISPLAY}</a>.{" "}
+              <a href={`tel:${PHONE}`} dir="ltr" className="whitespace-nowrap font-semibold text-primary hover:underline">{PHONE_DISPLAY}</a>.{" "}
               <a href={wa} target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline">
                 راسلنا على واتساب
               </a>

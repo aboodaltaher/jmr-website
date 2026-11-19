@@ -126,7 +126,7 @@ export default function ArabicContact() {
               <li>
                 <strong className="text-text">الهاتف:</strong> الأنسب للأعطال العاجلة، مثل توقّف المكيّف أو
                 تسريب الماء. اتصل على{" "}
-                <a href={`tel:${PHONE}`} dir="ltr" className="font-semibold text-primary hover:underline">{PHONE_DISPLAY}</a>{" "}
+                <a href={`tel:${PHONE}`} dir="ltr" className="whitespace-nowrap font-semibold text-primary hover:underline">{PHONE_DISPLAY}</a>{" "}
                 في أي وقت.
               </li>
               <li>
@@ -179,6 +179,15 @@ export default function ArabicContact() {
             <p className="mt-2">
               يكفي اسمك ورقم هاتفك لنتواصل معك. ويساعدنا أن تذكر نوع العقار والإمارة والمنطقة ووصفاً قصيراً
               لما تحتاجه، حتى يكون ردّنا الأول مفيداً من البداية.
+            </p>
+            <h3 className="mt-4 font-semibold text-text">هل تعملون مع الفلل والشركات معاً؟</h3>
+            <p className="mt-2">
+              نعم. نعمل للفلل والشقق، وللمكاتب والمحلات والمطاعم والمباني التجارية، من الصيانة والإصلاح إلى
+              تركيب أنظمة كاملة وعقود الصيانة السنوية.
+            </p>
+            <h3 className="mt-4 font-semibold text-text">أين مكتبكم؟</h3>
+            <p className="mt-2">
+              مكتبنا في دبي، وتجد العنوان والموقع على خرائط Google في أسفل هذه الصفحة.
             </p>
           </div>
         </div>
