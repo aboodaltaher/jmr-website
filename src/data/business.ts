@@ -81,7 +81,8 @@ export const business = {
     mapsView: "https://maps.google.com/maps?cid=14934329653680563760",
     // Opens the Google review composer. Used by every "Leave a review" link and
     // by the /review redirect (which the printed QR codes point at).
-    reviewLeave: "https://g.page/r/CTBmNs6xZUHPEBM/review",
+    // Google Place ID ChIJM6xf7KBDXz4RMGY2zrFlQc8 (owner-supplied, 19 Nov 2026).
+    reviewLeave: "https://search.google.com/local/writereview?placeid=ChIJM6xf7KBDXz4RMGY2zrFlQc8",
     instagram: "https://www.instagram.com/agec_contracting",
     // None provided yet. Fill any that exist; empty ones are never output.
     linkedin: "",
