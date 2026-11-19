@@ -1,29 +1,26 @@
 import Script from "next/script";
+import { GA4_ID } from "@/lib/gtag";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
 
 /**
- * GA4 + Google Tag Manager, each loaded only when its env var is set.
- * Renders nothing when the vars are empty, so dev/preview stay clean and
- * no real IDs are hardcoded in the repo.
+ * Optional extras on top of the site's single Google tag (RootDocument + GoogleTag load gtag.js
+ * ONCE and configure GA4 + Google Ads). Renders nothing when the vars are empty.
+ *  - NEXT_PUBLIC_GA_ID: an ADDITIONAL GA4 property only. It is configured on the existing gtag.js
+ *    (no second gtag.js), and ignored if it equals the built-in GA4 ID, so nothing double-counts.
+ *  - NEXT_PUBLIC_GTM_ID: a GTM container. Don't add GA4/Ads tags inside it (they would duplicate).
  */
 export function Analytics() {
+  const extraGa = GA_ID && GA_ID !== GA4_ID ? GA_ID : null;
   return (
     <>
-      {GA_ID ? (
-        <>
-          <Script
-            src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-            strategy="afterInteractive"
-          />
-          <Script id="ga4-init" strategy="afterInteractive">
-            {`window.dataLayer = window.dataLayer || [];
+      {extraGa ? (
+        <Script id="ga4-extra-config" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', '${GA_ID}');`}
-          </Script>
-        </>
+gtag('config', '${extraGa}');`}
+        </Script>
       ) : null}
 
       {GTM_ID ? (

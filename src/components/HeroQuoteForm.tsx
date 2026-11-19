@@ -56,7 +56,7 @@ export function HeroQuoteForm() {
     if (result.success) {
       // Google Ads form conversion (unchanged) + GA4 form_submit_quote with
       // { page_path, service, form_location: "home_hero" }.
-      trackFormSubmit("quote", "quote", "home_hero");
+      trackFormSubmit("quote", "quote", "home_hero", { ref: "ref" in result ? result.ref : undefined, phone: data.phone });
       setSubmitted(true);
     } else {
       setFailed(true);

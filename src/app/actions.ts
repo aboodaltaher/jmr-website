@@ -24,7 +24,8 @@ function newLeadId(): string {
 
 /**
  * Email one form submission to CONTACT_EMAIL (and, if set, a separate copy to CONTACT_EMAIL_BACKUP).
- * Returns true only when Resend accepted the MAIN email. The Resend SDK does not throw on API
+ * Returns the lead reference only when Resend accepted the MAIN email (null otherwise). The
+ * reference is also the Google Ads transaction_id, so a conversion matches its email [ref]. The Resend SDK does not throw on API
  * errors (for example "you can only send testing emails to your own address"); it returns
  * { error }, so the result must be checked or failures are silent.
  * Logs carry the lead ID and the error type only: never names, phones, emails or messages.
@@ -32,7 +33,7 @@ function newLeadId(): string {
 async function sendEmail(
   kind: string,
   mail: { subject: string; html: string; replyTo?: string },
-): Promise<boolean> {
+): Promise<string | null> {
   const leadId = newLeadId();
   const message = {
     from: FROM,
@@ -56,7 +57,7 @@ async function sendEmail(
   } catch (err) {
     console.error(`[lead ${leadId}] ${kind}: email send threw (${err instanceof Error ? err.name : "unknown"})`);
   }
-  return sent;
+  return sent ? leadId : null;
 }
 
 
@@ -97,8 +98,8 @@ export async function submitRequest(data: Record<string, unknown>) {
       row("Details", d.details),
   );
 
-  const sent = await sendEmail("request", { subject: `Website Request (${d.requestType}) - ${d.name}`, replyTo: d.email || undefined, html });
-  return sent ? { success: true } : { success: false, error: "send_failed" };
+  const ref = await sendEmail("request", { subject: `Website Request (${d.requestType}) - ${d.name}`, replyTo: d.email || undefined, html });
+  return ref ? { success: true, ref } : { success: false, error: "send_failed" };
 }
 
 // ── Contact Form ──
@@ -127,8 +128,8 @@ export async function submitContactForm(data: Record<string, unknown>) {
       row("Message", message),
   );
 
-  const sent = await sendEmail("contact", { subject: `New Contact Form Submission - ${name}`, replyTo: email || undefined, html });
-  return sent ? { success: true } : { success: false, error: "send_failed" };
+  const ref = await sendEmail("contact", { subject: `New Contact Form Submission - ${name}`, replyTo: email || undefined, html });
+  return ref ? { success: true, ref } : { success: false, error: "send_failed" };
 }
 
 // ── Quote Request ──
@@ -168,8 +169,8 @@ export async function submitQuoteRequest(data: Record<string, unknown>) {
       row("Details", d.details),
   );
 
-  const sent = await sendEmail("quote", { subject: `Quote Request - ${d.name} - ${d.projectType}`, replyTo: d.email, html });
-  return sent ? { success: true } : { success: false, error: "send_failed" };
+  const ref = await sendEmail("quote", { subject: `Quote Request - ${d.name} - ${d.projectType}`, replyTo: d.email, html });
+  return ref ? { success: true, ref } : { success: false, error: "send_failed" };
 }
 
 // ── Service Booking ──
@@ -205,8 +206,8 @@ export async function submitBooking(data: Record<string, unknown>) {
       row("Preferred Time", d.preferredTime),
   );
 
-  const sent = await sendEmail("booking", { subject: `Service Booking Request - ${d.name}`, replyTo: d.email || undefined, html });
-  return sent ? { success: true } : { success: false, error: "send_failed" };
+  const ref = await sendEmail("booking", { subject: `Service Booking Request - ${d.name}`, replyTo: d.email || undefined, html });
+  return ref ? { success: true, ref } : { success: false, error: "send_failed" };
 }
 
 // ── AMC Enquiry ──
@@ -240,8 +241,8 @@ export async function submitAmcRequest(data: Record<string, unknown>) {
       row("Notes", d.notes),
   );
 
-  const sent = await sendEmail("AMC", { subject: `AMC Enquiry - ${d.name}`, replyTo: d.email || undefined, html });
-  return sent ? { success: true } : { success: false, error: "send_failed" };
+  const ref = await sendEmail("AMC", { subject: `AMC Enquiry - ${d.name}`, replyTo: d.email || undefined, html });
+  return ref ? { success: true, ref } : { success: false, error: "send_failed" };
 }
 
 // ── Air Balancing / Technical Assessment ──
@@ -277,8 +278,8 @@ export async function submitBalancingRequest(data: Record<string, unknown>) {
       row("Notes", d.notes),
   );
 
-  const sent = await sendEmail("balancing", { subject: `Technical Assessment Request - ${d.name}`, replyTo: d.email || undefined, html });
-  return sent ? { success: true } : { success: false, error: "send_failed" };
+  const ref = await sendEmail("balancing", { subject: `Technical Assessment Request - ${d.name}`, replyTo: d.email || undefined, html });
+  return ref ? { success: true, ref } : { success: false, error: "send_failed" };
 }
 
 // ── Urgent AC Repair ──
@@ -304,6 +305,6 @@ export async function submitRepairRequest(data: Record<string, unknown>) {
       row("Issue", d.issue),
   );
 
-  const sent = await sendEmail("repair", { subject: `Urgent AC Repair - ${d.name}`, html });
-  return sent ? { success: true } : { success: false, error: "send_failed" };
+  const ref = await sendEmail("repair", { subject: `Urgent AC Repair - ${d.name}`, html });
+  return ref ? { success: true, ref } : { success: false, error: "send_failed" };
 }

@@ -42,7 +42,7 @@ export function BalancingForm({ whatsappHref }: { whatsappHref: string }) {
     if (result.success) {
       setSendFailed(false);
       setSubmitted(true);
-      trackFormSubmit("balancing", "quote", "balancing_page");
+      trackFormSubmit("balancing", "quote", "balancing_page", { ref: "ref" in result ? result.ref : undefined, phone: data.phone, email: data.email });
     } else {
       setSendFailed(true);
     }

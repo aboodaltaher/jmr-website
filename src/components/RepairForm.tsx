@@ -38,7 +38,7 @@ export function RepairForm({ whatsappHref }: { whatsappHref: string }) {
     if (result.success) {
       setSendFailed(false);
       setSubmitted(true);
-      trackFormSubmit("repair", "quote", "repair_page");
+      trackFormSubmit("repair", "quote", "repair_page", { ref: "ref" in result ? result.ref : undefined, phone: data.phone });
     } else {
       setSendFailed(true);
     }

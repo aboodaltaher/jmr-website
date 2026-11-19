@@ -47,7 +47,7 @@ export function AmcForm({
     if (result.success) {
       setSendFailed(false);
       setSubmitted(true);
-      trackFormSubmit("amc", "amc", "amc_page");
+      trackFormSubmit("amc", "amc", "amc_page", { ref: "ref" in result ? result.ref : undefined, phone: data.phone, email: data.email });
     } else {
       setSendFailed(true);
     }
