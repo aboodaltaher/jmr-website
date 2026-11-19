@@ -1,4 +1,5 @@
 import { buildMetadata } from "@/lib/metadata";
+import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Phone, Mail, MapPin, Clock, MessageCircle, Star, ExternalLink } from "lucide-react";
 import { whatsappUrl } from "@/lib/contact";
@@ -102,6 +103,83 @@ export default function ArabicContact() {
             <div className="lg:col-span-3">
               <ContactForm lang="ar" />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How we handle your message: faithful to the English pages (response within 1 hour, 24/7,
+          written quote within 24 hours, all 7 emirates). No new claims. */}
+      <section className="pb-16 md:pb-20">
+        <div className="mx-auto max-w-3xl space-y-10 px-6 leading-relaxed text-text-muted">
+          <div>
+            <h2 className="font-heading text-2xl font-bold text-text">كيف نتعامل مع رسالتك</h2>
+            <p className="mt-4">
+              تصل رسالتك مباشرة إلى فريقنا، ونتواصل معك عبر الهاتف أو الواتساب. نحن متاحون في أي وقت،
+              على مدار الساعة طوال أيام الأسبوع، ونرد خلال ساعة. وإذا كان سؤالك فنياً — عن نظام تكييف
+              قائم، أو عقد صيانة، أو مشروع جديد — يجيبك فريقنا الهندسي.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-heading text-2xl font-bold text-text">اختر طريقة التواصل المناسبة</h2>
+            <ul className="mt-4 space-y-3">
+              <li>
+                <strong className="text-text">الهاتف:</strong> الأنسب للأعطال العاجلة، مثل توقّف المكيّف أو
+                تسريب الماء. اتصل على{" "}
+                <a href={`tel:${PHONE}`} dir="ltr" className="font-semibold text-primary hover:underline">{PHONE_DISPLAY}</a>{" "}
+                في أي وقت.
+              </li>
+              <li>
+                <strong className="text-text">الواتساب:</strong> مناسب لإرسال صور الوحدة أو المشكلة أو مخططات
+                المشروع مع رسالتك، ونرد خلال ساعة.{" "}
+                <a href={wa} target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline">
+                  راسلنا على واتساب
+                </a>
+              </li>
+              <li>
+                <strong className="text-text">البريد الإلكتروني:</strong> للمستندات والمخططات والطلبات
+                الرسمية، على{" "}
+                <a href={`mailto:${EMAIL}`} dir="ltr" className="font-semibold text-primary hover:underline">{EMAIL}</a>.
+              </li>
+              <li>
+                <strong className="text-text">نموذج التواصل في هذه الصفحة:</strong> لأي سؤال أو طلب. اكتب
+                اسمك ورقمك ورسالتك، ونعاود التواصل معك.
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="font-heading text-2xl font-bold text-text">هل تحتاج إلى عرض سعر؟</h2>
+            <p className="mt-4">
+              إذا كنت تعرف الخدمة التي تحتاجها — تركيب أو صيانة أو إصلاح أو عقد صيانة سنوي — فاستخدم{" "}
+              <Link href="/ar/quote" className="font-semibold text-primary hover:underline">صفحة طلب عرض السعر</Link>:
+              نموذج واحد قصير لعرض سعر لمشروع جديد أو لحجز خدمة أو إصلاح أو صيانة للمكيّف، ونرسل لك عرض
+              السعر المكتوب خلال 24 ساعة.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-heading text-2xl font-bold text-text">المناطق التي نغطيها</h2>
+            <p className="mt-4">
+              نعمل في الإمارات السبع — أبوظبي ودبي والشارقة وعجمان وأم القيوين ورأس الخيمة والفجيرة —
+              للفلل والشقق والمكاتب والمباني التجارية. مقرّنا في دبي، ومشاريعنا المنجزة حتى الآن في دبي
+              والشارقة وعجمان وأبوظبي. يمكنك الاطلاع على بعضها في{" "}
+              <Link href="/projects" className="font-semibold text-primary hover:underline">صفحة المشاريع</Link>.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-heading text-2xl font-bold text-text">أسئلة شائعة عن التواصل</h2>
+            <h3 className="mt-4 font-semibold text-text">هل تعملون في عطلة نهاية الأسبوع والليل؟</h3>
+            <p className="mt-2">
+              نعم. نرد على الاتصالات ورسائل الواتساب على مدار الساعة طوال أيام الأسبوع، بما في ذلك عطلة
+              نهاية الأسبوع.
+            </p>
+            <h3 className="mt-4 font-semibold text-text">ما المعلومات التي أكتبها في رسالتي؟</h3>
+            <p className="mt-2">
+              يكفي اسمك ورقم هاتفك لنتواصل معك. ويساعدنا أن تذكر نوع العقار والإمارة والمنطقة ووصفاً قصيراً
+              لما تحتاجه، حتى يكون ردّنا الأول مفيداً من البداية.
+            </p>
           </div>
         </div>
       </section>
