@@ -57,7 +57,7 @@ export interface Community {
 const alBarsha: Community = {
   slug: "al-barsha",
   name: "Al Barsha",
-  updatedAt: "2026-11-14",
+  updatedAt: "2026-11-19",
   metaTitle: "AC Maintenance Al Barsha, Dubai — Villas & Commercial | AGEC",
   metaDescription:
     "AC maintenance in Al Barsha, Dubai for ducted villas and commercial units: dust-driven faults, drain and coil care, AMC. Call or WhatsApp us for a booking.",
@@ -150,7 +150,7 @@ const alBarsha: Community = {
 const businessBay: Community = {
   slug: "business-bay",
   name: "Business Bay",
-  updatedAt: "2026-11-15",
+  updatedAt: "2026-11-19",
   metaTitle: "AC Maintenance Business Bay, Dubai — Offices & F&B | AGEC",
   metaDescription:
     "AC and FCU maintenance in Business Bay, Dubai for offices and restaurants on district cooling: leaks, weak cooling, rebalancing and AMC. Call or WhatsApp.",

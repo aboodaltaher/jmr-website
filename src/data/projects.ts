@@ -153,7 +153,7 @@ const base: BaseProject[] = [
     systemSummary: "HVAC Installation & Commissioning, 224 Ton VRF System",
     location: { emirate: "Ajman", label: "Ajman, UAE" },
     draft: false,
-    updatedAt: "2026-11-04",
+    updatedAt: "2026-11-19",
     publishedAt: "2026-11-04",
     metaTitle: "Basil Mall Ajman — 224 TR VRF HVAC Case Study | AGEC",
     metaDescription:
@@ -176,7 +176,7 @@ const base: BaseProject[] = [
     systemSummary: "HVAC Full Installation, 148 Ton DX System",
     location: { emirate: "Dubai", label: "Dubai, UAE" },
     draft: false,
-    updatedAt: "2026-11-04",
+    updatedAt: "2026-11-19",
     publishedAt: "2026-11-04",
     metaTitle: "Private G+4 Building Dubai — 148 TR HVAC Case Study | AGEC",
     metaDescription:
@@ -199,7 +199,7 @@ const base: BaseProject[] = [
     systemSummary: "HVAC Installation & Commissioning, 60 Ton DX System",
     location: { emirate: "Sharjah", label: "Sharjah, UAE" },
     draft: false,
-    updatedAt: "2026-11-04",
+    updatedAt: "2026-11-19",
     publishedAt: "2026-11-04",
     metaTitle: "Double Twin Villa Sharjah — 60 TR DX HVAC Case Study | AGEC",
     metaDescription:
@@ -222,7 +222,7 @@ const base: BaseProject[] = [
     systemSummary: "HVAC Installation & Commissioning, 45 Ton DX System",
     location: { emirate: "Dubai", label: "Dubai, UAE" },
     draft: false,
-    updatedAt: "2026-11-04",
+    updatedAt: "2026-11-19",
     publishedAt: "2026-11-04",
     metaTitle: "G+1+R Villa Dubai — 45 TR DX HVAC Case Study | AGEC",
     metaDescription:
@@ -245,7 +245,7 @@ const base: BaseProject[] = [
     systemSummary: "HVAC Installation, 140 Ton DX System",
     location: { area: "Al Barsha", emirate: "Dubai", label: "Dubai, UAE" },
     draft: false,
-    updatedAt: "2026-11-04",
+    updatedAt: "2026-11-19",
     publishedAt: "2026-11-04",
     metaTitle: "B+G+1+R Villa Al Barsha — 140 TR DX HVAC Case Study | AGEC",
     metaDescription:
@@ -268,7 +268,7 @@ const base: BaseProject[] = [
     systemSummary: "Full HVAC works across 18 G+1 villas",
     location: { area: "Al Rgebah / Al Seyouh", label: "Al Rgebah / Al Seyouh" },
     draft: false,
-    updatedAt: "2026-11-04",
+    updatedAt: "2026-11-19",
     publishedAt: "2026-11-04",
     metaTitle: "18 Villas Al Rgebah / Al Seyouh — HVAC Case Study | AGEC",
     metaDescription:
@@ -291,7 +291,7 @@ const base: BaseProject[] = [
     systemSummary: "Premium HVAC system, flagship residential project",
     location: { emirate: "Sharjah", label: "Sharjah, UAE" },
     draft: false,
-    updatedAt: "2026-11-04",
+    updatedAt: "2026-11-19",
     publishedAt: "2026-11-04",
     metaTitle: "B+G+1 Private Villa Sharjah — Premium HVAC Case Study | AGEC",
     metaDescription:
@@ -314,7 +314,7 @@ const base: BaseProject[] = [
     systemSummary: "Precision cooling for AI server infrastructure",
     location: { area: "Masdar City", emirate: "Abu Dhabi", label: "Masdar City, Abu Dhabi" },
     draft: false,
-    updatedAt: "2026-11-04",
+    updatedAt: "2026-11-19",
     publishedAt: "2026-11-04",
     metaTitle: "MBZ-AI Server Room Masdar City — Cooling Case Study | AGEC",
     metaDescription:
@@ -337,7 +337,7 @@ const base: BaseProject[] = [
     systemSummary: "HVAC installation and ventilation system",
     location: { area: "Al Barsha", emirate: "Dubai", label: "Al Barsha, Dubai" },
     draft: false,
-    updatedAt: "2026-11-04",
+    updatedAt: "2026-11-19",
     publishedAt: "2026-11-04",
     metaTitle: "Pure Gym Al Barsha — HVAC & Ventilation Case Study | AGEC",
     metaDescription:
@@ -360,7 +360,7 @@ const base: BaseProject[] = [
     systemSummary: "Kitchen ventilation and dining area cooling",
     location: { area: "Business Bay", emirate: "Dubai", label: "Business Bay, Dubai" },
     draft: false,
-    updatedAt: "2026-11-04",
+    updatedAt: "2026-11-19",
     publishedAt: "2026-11-04",
     metaTitle: "AVE Restaurant Business Bay — Ventilation Case Study | AGEC",
     metaDescription:
@@ -383,7 +383,7 @@ const base: BaseProject[] = [
     systemSummary: "Precision cooling and ventilation",
     location: { area: "Musaffah", emirate: "Abu Dhabi", label: "Musaffah, Abu Dhabi" },
     draft: false,
-    updatedAt: "2026-11-04",
+    updatedAt: "2026-11-19",
     publishedAt: "2026-11-04",
     metaTitle: "Zain Solution Data Center Musaffah — HVAC Case Study | AGEC",
     metaDescription:
@@ -406,7 +406,7 @@ const base: BaseProject[] = [
     systemSummary: "HVAC works for public cultural facility",
     location: { area: "Al Barsha", emirate: "Dubai", label: "Al Barsha, Dubai" },
     draft: false,
-    updatedAt: "2026-11-04",
+    updatedAt: "2026-11-19",
     publishedAt: "2026-11-04",
     metaTitle: "Cultural Center Al Barsha — HVAC Case Study | AGEC",
     metaDescription:

@@ -27,7 +27,7 @@ import { isPublished } from "@/data/new-pages";
 //  - /quote/thank-you → noindex utility page; /review → 302 to Google reviews
 //  - dynamic blog/project pages → appended from data in sitemap.ts
 export const staticRoutes: RouteEntry[] = [
-  { path: "/", updatedAt: "2026-11-18" },
+  { path: "/", updatedAt: "2026-11-19" },
   { path: "/about", updatedAt: "2026-11-15" },
   { path: "/services", updatedAt: "2026-11-14" },
   // Landing pages
@@ -39,17 +39,17 @@ export const staticRoutes: RouteEntry[] = [
   { path: "/smart-thermostat-installation-dubai", updatedAt: "2026-11-15" },
   // Service detail pages
   { path: "/services/hvac-installation-dubai", updatedAt: "2026-11-15" },
-  { path: "/services/tab-testing-adjusting-balancing-dubai", updatedAt: "2026-11-15" },
+  { path: "/services/tab-testing-adjusting-balancing-dubai", updatedAt: "2026-11-19" },
   { path: "/services/chiller-maintenance-dubai", updatedAt: "2026-11-15" },
   { path: "/services/vrf-vrv-systems", updatedAt: "2026-11-15" },
   { path: "/services/dx-units", updatedAt: "2026-11-15" },
   { path: "/services/ventilation-fresh-air", updatedAt: "2026-11-15" },
-  { path: "/services/hvac-design", updatedAt: "2026-11-02" },
+  { path: "/services/hvac-design", updatedAt: "2026-11-19" },
   // Gated: in the sitemap only once published (src/data/new-pages.ts)
   ...(isPublished("kitchenExhaust") ? [{ path: "/kitchen-exhaust-cleaning-dubai", updatedAt: "2026-11-18" }] : []),
-  ...(isPublished("ducting") ? [{ path: "/ac-ducting-installation-dubai", updatedAt: "2026-11-15" }] : []),
-  ...(isPublished("vrfMaintenance") ? [{ path: "/vrf-maintenance-dubai", updatedAt: "2026-11-15" }] : []),
-  ...(isPublished("airBalancing") ? [{ path: "/air-balancing-dubai", updatedAt: "2026-11-15" }] : []),
+  ...(isPublished("ducting") ? [{ path: "/ac-ducting-installation-dubai", updatedAt: "2026-11-19" }] : []),
+  ...(isPublished("vrfMaintenance") ? [{ path: "/vrf-maintenance-dubai", updatedAt: "2026-11-19" }] : []),
+  ...(isPublished("airBalancing") ? [{ path: "/air-balancing-dubai", updatedAt: "2026-11-19" }] : []),
   ...(isPublished("mep") ? [{ path: "/mep-contractors-dubai", updatedAt: "2026-11-19" }] : []),
   // Location / emirate landing pages
   { path: "/areas", updatedAt: "2026-11-15" },
@@ -57,7 +57,7 @@ export const staticRoutes: RouteEntry[] = [
   { path: "/hvac-contractor-ajman", updatedAt: "2026-11-18" },
   { path: "/hvac-contractor-abu-dhabi", updatedAt: "2026-11-18" },
   // Index & conversion pages
-  { path: "/projects", updatedAt: "2026-11-13" },
+  { path: "/projects", updatedAt: "2026-11-19" },
   { path: "/blog", updatedAt: "2026-11-02" },
   { path: "/quote", updatedAt: "2026-11-05" },
   { path: "/contact", updatedAt: "2026-11-13" },
@@ -79,8 +79,8 @@ export const arabicRoutes: RouteEntry[] = [
   { path: "/ar/ac-amc-dubai", updatedAt: "2026-11-15" },
   { path: "/ar/services", updatedAt: "2026-11-14" },
   { path: "/ar/about", updatedAt: "2026-11-15" },
-  { path: "/ar/quote", updatedAt: "2026-11-05" },
-  { path: "/ar/contact", updatedAt: "2026-11-13" },
+  { path: "/ar/quote", updatedAt: "2026-11-19" },
+  { path: "/ar/contact", updatedAt: "2026-11-19" },
   { path: "/ar/services/hvac-installation-dubai", updatedAt: "2026-11-15" },
   { path: "/ar/services/tab-testing-adjusting-balancing-dubai", updatedAt: "2026-11-14" },
   { path: "/ar/services/chiller-maintenance-dubai", updatedAt: "2026-11-15" },
