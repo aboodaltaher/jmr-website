@@ -6,18 +6,40 @@
 // terms for the known system type — no invented metrics, dates, named challenges
 // or results.
 //
-// Everything else a case study needs (client type, challenge, design decisions,
-// commissioning results, timeline, client quote) is NOT known yet. It is filled
-// with "[TO CONFIRM: …]" placeholders by withCaseDefaults() below. On the live
-// production site (VERCEL_ENV=production) placeholders and any section left empty
-// by them are hidden; on previews/local they show highlighted. Replace a
-// placeholder with the real fact and it goes live automatically.
-// `npm run to-confirm` lists every placeholder still open.
+// Owner-supplied specifics live in the optional `facts` object (CaseStudyFacts).
+// Every field is optional and a section renders ONLY when its field is filled.
+// Never fill a field with anything the owner has not confirmed. The fill-in sheet
+// for all 13 case studies is docs/case-study-facts-template.md.
 //
-// Photos are not stored here: drop 6–10 images into public/projects/{slug}/ and
-// the case-study page picks them up (see src/lib/project-photos.ts).
+// Photos: either list them in facts.photos (src under /public + alt text), or drop
+// images into public/projects/{slug}/ and the page picks them up
+// (src/lib/project-photos.ts). With no photos the gallery is not shown.
 
 export type ProjectCategory = "Residential" | "Commercial" | "Data Center";
+
+/** Owner-supplied case-study facts. Leave a field out until the owner confirms it. */
+export interface CaseStudyFacts {
+  /** Year completed, e.g. "2025". */
+  year?: string;
+  /** Overrides the published system type when the owner gives a more exact one, e.g. "Daikin VRV IV". */
+  systemType?: string;
+  /** Installed capacity with unit, e.g. "109 TR" or "350 kW". */
+  capacity?: string;
+  /** e.g. "12 outdoor units, 48 indoor units". */
+  unitsInstalled?: string;
+  /** The owner's own scope description (shown above the general scope list). */
+  scope?: string;
+  /** The main site or design challenge. */
+  challenge?: string;
+  /** How it was solved: key design and installation decisions. */
+  solution?: string;
+  /** A measured result, e.g. commissioning figures. Only real measurements. */
+  measuredResult?: string;
+  /** Owned photos with permission: src under /public and descriptive alt text. */
+  photos?: { src: string; alt: string }[];
+  /** e.g. "Private villa", "Retail mall". */
+  clientType?: string;
+}
 
 export interface Project {
   slug: string;
@@ -51,32 +73,14 @@ export interface Project {
   /** Scope of work (general for the system type). */
   scope?: string[];
 
-  // ----- Owner-supplied specifics (placeholders until provided — never invented) -----
-  /** Client type, e.g. "Private villa". */
-  clientType: string;
-  /** Installed capacity, e.g. "109 TR". */
-  tonnage: string;
-  challenge: string;
-  /** Key design / installation decisions. */
-  decisions: string[];
-  /** Commissioning results. */
-  results: { label: string; value: string }[];
-  timeline: { label: string; value: string }[];
-  /** Only with the client's permission. */
-  quote: { text: string; attribution: string };
+  /** Owner-supplied facts. All optional; each renders only when filled. */
+  facts: CaseStudyFacts;
   /** Related service pages (links). */
   relatedServices: { name: string; href: string }[];
 }
 
-type CaseFields = Pick<
-  Project,
-  | "clientType" | "tonnage" | "challenge" | "decisions" | "results"
-  | "timeline" | "quote" | "relatedServices"
->;
-/** A record below provides the published facts; the case-study fields are optional. */
-type BaseProject = Omit<Project, keyof CaseFields> & Partial<CaseFields>;
-
-const tbc = (what: string) => `[TO CONFIRM: ${what}]`;
+/** A record below provides the published facts; facts and relatedServices are filled in by withDefaults. */
+type BaseProject = Omit<Project, "facts" | "relatedServices"> & Partial<Pick<Project, "facts" | "relatedServices">>;
 
 const SVC = {
   vrf: { name: "VRF / VRV systems", href: "/services/vrf-vrv-systems" },
@@ -88,43 +92,33 @@ const SVC = {
   amc: { name: "AC maintenance contracts", href: "/ac-amc-dubai" },
 };
 
-/** Per-slug facts that ARE known from information already published on the site. */
-const known: Record<string, Partial<CaseFields>> = {
-  "vrf-villa-al-mamzar-dubai": { clientType: "Private villa", tonnage: "109 TR", relatedServices: [SVC.vrf, SVC.install, SVC.amc] },
-  "basil-mall-ajman": { clientType: "Commercial — retail mall", tonnage: "224 TR", relatedServices: [SVC.vrf, SVC.install, SVC.amc] },
-  "private-g4-building-dubai": { clientType: "Private residential building", tonnage: "148 TR", relatedServices: [SVC.dx, SVC.install, SVC.amc] },
-  "double-twin-villa-sharjah": { clientType: "Villa development", tonnage: "60 TR", relatedServices: [SVC.dx, SVC.install, SVC.amc] },
-  "g1r-villa-dubai": { tonnage: "45 TR", relatedServices: [SVC.dx, SVC.install, SVC.amc] },
-  "villa-al-barsha-dubai": { tonnage: "140 TR", relatedServices: [SVC.dx, SVC.install, SVC.amc] },
-  "18-villas-community": { clientType: "Community development", relatedServices: [SVC.install, SVC.dx, SVC.amc] },
-  "private-villa-sharjah-flagship": { clientType: "Private villa", relatedServices: [SVC.design, SVC.install, SVC.amc] },
-  "mbz-ai-server-room-abu-dhabi": { clientType: "AI server room", relatedServices: [SVC.design, SVC.install, SVC.amc] },
-  "pure-gym-al-barsha": { clientType: "Commercial — fitness", relatedServices: [SVC.vent, SVC.install, SVC.tab] },
-  "ave-restaurant-business-bay": { clientType: "Commercial — restaurant", relatedServices: [SVC.vent, SVC.install, SVC.tab] },
-  "zain-solution-data-center-abu-dhabi": { clientType: "Data centre", relatedServices: [SVC.design, SVC.vent, SVC.amc] },
-  "cultural-center-al-barsha": { clientType: "Public cultural facility", relatedServices: [SVC.install, SVC.vent, SVC.tab] },
+/**
+ * Per-slug facts ALREADY published on the site (client type, capacity) and the matching
+ * service pages. Nothing else is filled: the remaining CaseStudyFacts fields stay empty until
+ * the owner supplies them.
+ */
+const known: Record<string, { facts?: CaseStudyFacts; relatedServices: Project["relatedServices"] }> = {
+  "vrf-villa-al-mamzar-dubai": { facts: { clientType: "Private villa", capacity: "109 TR" }, relatedServices: [SVC.vrf, SVC.install, SVC.amc] },
+  "basil-mall-ajman": { facts: { clientType: "Commercial — retail mall", capacity: "224 TR" }, relatedServices: [SVC.vrf, SVC.install, SVC.amc] },
+  "private-g4-building-dubai": { facts: { clientType: "Private residential building", capacity: "148 TR" }, relatedServices: [SVC.dx, SVC.install, SVC.amc] },
+  "double-twin-villa-sharjah": { facts: { clientType: "Villa development", capacity: "60 TR" }, relatedServices: [SVC.dx, SVC.install, SVC.amc] },
+  "g1r-villa-dubai": { facts: { capacity: "45 TR" }, relatedServices: [SVC.dx, SVC.install, SVC.amc] },
+  "villa-al-barsha-dubai": { facts: { capacity: "140 TR" }, relatedServices: [SVC.dx, SVC.install, SVC.amc] },
+  "18-villas-community": { facts: { clientType: "Community development" }, relatedServices: [SVC.install, SVC.dx, SVC.amc] },
+  "private-villa-sharjah-flagship": { facts: { clientType: "Private villa" }, relatedServices: [SVC.design, SVC.install, SVC.amc] },
+  "mbz-ai-server-room-abu-dhabi": { facts: { clientType: "AI server room" }, relatedServices: [SVC.design, SVC.install, SVC.amc] },
+  "pure-gym-al-barsha": { facts: { clientType: "Commercial — fitness" }, relatedServices: [SVC.vent, SVC.install, SVC.tab] },
+  "ave-restaurant-business-bay": { facts: { clientType: "Commercial — restaurant" }, relatedServices: [SVC.vent, SVC.install, SVC.tab] },
+  "zain-solution-data-center-abu-dhabi": { facts: { clientType: "Data centre" }, relatedServices: [SVC.design, SVC.vent, SVC.amc] },
+  "cultural-center-al-barsha": { facts: { clientType: "Public cultural facility" }, relatedServices: [SVC.install, SVC.vent, SVC.tab] },
 };
 
-function withCaseDefaults(p: BaseProject): Project {
+function withDefaults(p: BaseProject): Project {
+  const k = known[p.slug];
   return {
-    clientType: tbc("client type"),
-    tonnage: tbc("installed capacity in TR"),
-    challenge: tbc("the main site or design challenge on this project"),
-    decisions: [tbc("key design and installation decisions: equipment selection, pipework/duct routing, zoning")],
-    results: [
-      { label: "Airflow", value: tbc("measured vs design airflow") },
-      { label: "Supply air temperature", value: tbc("measured supply air temperature") },
-      { label: "Efficiency", value: tbc("measured kW/TR") },
-    ],
-    timeline: [
-      { label: "Start", value: tbc("start date") },
-      { label: "Handover", value: tbc("handover date") },
-      { label: "Duration", value: tbc("programme length") },
-    ],
-    quote: { text: tbc("client quote — only with the client's permission"), attribution: tbc("who said it") },
-    relatedServices: [SVC.install, SVC.amc],
-    ...known[p.slug],
     ...p,
+    facts: { ...k?.facts, ...p.facts },
+    relatedServices: p.relatedServices ?? k?.relatedServices ?? [SVC.install, SVC.amc],
   };
 }
 
@@ -430,7 +424,7 @@ const base: BaseProject[] = [
   },
 ];
 
-export const projects: Project[] = base.map(withCaseDefaults);
+export const projects: Project[] = base.map(withDefaults);
 
 export const publishedProjects = projects.filter((p) => !p.draft);
 

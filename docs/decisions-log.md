@@ -27,3 +27,10 @@ Decisions taken without the owner, using the overnight rules: keep every URL and
 | 21 | E MEP | Copy kept as it was: it already listed only HVAC scope, explicitly excluded electrical, plumbing, fire and controls, and named no projects, clients, figures or approvals. | Nothing invented to remove. Whether AGEC offers any other MEP trade is listed under Needs owner. |
 | 22 | E MEP | Internal links: homepage services grid (new card using an existing AGEC photo, `insulated-rooftop-ductwork-hvac-dubai.jpg`), the ducting page's related links, and the shared RelatedServices list. The services hub, HVAC design, About pages and mega-menu already linked it behind the publish switch. | Every link is behind `isPublished("mep")`, so switching it off again removes them all. |
 | 23 | Licence (19 Nov, owner answer) | Licence 1221573 is real: restored as a licence line only (footer, AR copyright, legal pages EN/AR, About EN/AR, homepage proof strip). Did NOT `git revert 3a78a36`. | A revert would conflict with later commits on the same lines and would also bring back the removed "Dubai Municipality standards" and "licensed contractor" wording. Approval claims stay removed. |
+
+## Phase 2 (indexing), 19 Nov 2026
+
+| # | Area | Decision | Why |
+|---|---|---|---|
+| P2-1 | Case studies | The old placeholder fields (challenge, decisions, results, timeline, client quote) were replaced by one optional `facts` object with the 10 requested fields. Only already-published client type and capacity are pre-filled. The client-quote field was dropped (not in the requested list, never supplied). | One clean model where a section exists only when the owner filled it; no `[TO CONFIRM]` markers on case studies. Production output is unchanged (those placeholders were already hidden there). |
+| P2-2 | Case studies | The "Site photos for this project are coming soon" box was removed; the gallery now renders only when photos exist. | An empty field must not render (Task 1 rule). |

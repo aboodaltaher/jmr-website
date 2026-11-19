@@ -112,7 +112,7 @@ export default function VrfVrvSystems() {
         },
       ]}
       whyAgec={[
-        `Engineers experienced with Daikin, Mitsubishi Electric and Carrier VRF/VRV — including a ${getProjectBySlug("basil-mall-ajman")?.tonnage ?? "224 TR"} VRF system at Basil Mall, Ajman`,
+        `Engineers experienced with Daikin, Mitsubishi Electric and Carrier VRF/VRV — including a ${getProjectBySlug("basil-mall-ajman")?.facts.capacity ?? "224 TR"} VRF system at Basil Mall, Ajman`,
         `${PROJECTS_DELIVERED} HVAC projects delivered across Dubai, Sharjah, Ajman and Abu Dhabi`,
         "ASHRAE 111 and SMACNA compliant installation and commissioning practices",
         "Proper refrigerant piping: nitrogen-purged brazing, standing vacuum tests, and electronic leak detection on every joint",
@@ -156,7 +156,7 @@ export default function VrfVrvSystems() {
                       {mamzar.name}
                     </Link>{" "}
                     — a private villa in {mamzar.location.emirate}: HVAC
-                    installation and commissioning with a {mamzar.tonnage} VRF
+                    installation and commissioning with a {mamzar.facts.capacity} VRF
                     system.
                   </li>
                 )}
@@ -165,7 +165,7 @@ export default function VrfVrvSystems() {
                     <Link href={`/projects/${basil.slug}`} className={linkClass}>
                       {basil.name}
                     </Link>{" "}
-                    — a {basil.tonnage} VRF installation for a commercial mall in{" "}
+                    — a {basil.facts.capacity} VRF installation for a commercial mall in{" "}
                     {basil.location.emirate}, UAE.
                   </li>
                 )}
