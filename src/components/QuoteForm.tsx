@@ -95,7 +95,7 @@ export function QuoteForm({ lang = "en" }: { lang?: Lang }) {
     const result = await submitRequest({ ...data, ...spam.values() });
     if (result.success) {
       setSendFailed(false);
-      trackFormSubmit("quote", "quote", "quote_page");
+      trackFormSubmit("quote", "quote", "quote_page", { ref: "ref" in result ? result.ref : undefined, phone: data.phone, email: data.email });
       // English flows to the dedicated thank-you page (conversion tracking);
       // Arabic has no thank-you route, so confirm inline.
       if (lang === "ar") setSubmitted(true);

@@ -68,7 +68,7 @@ export function ContactForm({ lang = "en" }: { lang?: Lang }) {
     if (result.success) {
       setSendFailed(false);
       setSubmitted(true);
-      trackFormSubmit("contact", "contact", "contact_page");
+      trackFormSubmit("contact", "contact", "contact_page", { ref: "ref" in result ? result.ref : undefined, phone: data.phone, email: data.email });
     } else {
       setSendFailed(true);
     }

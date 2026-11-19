@@ -55,7 +55,7 @@ export function InlineLeadFormImpl({
     if (result.success) {
       setSendFailed(false);
       setSubmitted(true);
-      trackFormSubmit(formName, "inline", "inline");
+      trackFormSubmit(formName, "inline", "inline", { ref: "ref" in result ? result.ref : undefined, phone: data.phone });
     } else {
       setSendFailed(true);
     }

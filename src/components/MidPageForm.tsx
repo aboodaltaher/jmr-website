@@ -66,7 +66,7 @@ export default function MidPageForm({ service, lang = "en" }: { service: string;
     });
     if (result.success) {
       setSubmitted(true);
-      trackFormSubmit("quote", "inline", "mid_page");
+      trackFormSubmit("quote", "inline", "mid_page", { ref: "ref" in result ? result.ref : undefined, phone: data.phone });
     } else {
       setFailed(true);
     }
