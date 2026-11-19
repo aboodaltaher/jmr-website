@@ -3,8 +3,8 @@ import assert from "node:assert/strict";
 import { normaliseEmail, normalisePhone } from "./user-data.ts";
 
 test("UAE phone formats become E.164", () => {
-  for (const v of ["058 557 5987", "0585575987", "58 557 5987", "+971 58 557 5987", "971585575987", "00971585575987", "+971-58-557-5987"]) {
-    assert.equal(normalisePhone(v), "+971585575987", v);
+  for (const v of ["050 123 4567", "0501234567", "50 123 4567", "+971 50 123 4567", "971501234567", "00971501234567", "+971-50-123-4567"]) {
+    assert.equal(normalisePhone(v), "+971501234567", v);
   }
 });
 
