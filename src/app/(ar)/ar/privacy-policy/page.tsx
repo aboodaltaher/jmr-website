@@ -6,6 +6,7 @@ import {
   EMAIL,
   PHONE_DISPLAY,
   ADDRESS_FULL,
+  LICENCE_NO,
   MAPS_URL,
 } from "@/lib/company";
 
@@ -150,6 +151,8 @@ export default function ArabicPrivacyPolicyPage() {
             {COMPANY_NAME}
             <br />
             <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" dir="ltr" className="hover:underline">{ADDRESS_FULL}</a>
+            <br />
+            رقم الرخصة التجارية {LICENCE_NO}
             <br />
             البريد الإلكتروني:{" "}
             <a href={`mailto:${EMAIL}`} className="font-medium text-primary hover:underline">

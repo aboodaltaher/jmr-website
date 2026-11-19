@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { proofStats, proofLogos } from "@/data/proof";
+import { proofStats, proofLogos, PROOF_LICENCE } from "@/data/proof";
 
 /**
  * Project-proof strip shown directly under the hero: 4 stats + a "trusted on
@@ -51,6 +51,7 @@ export function ProofStrip({ rating, count }: { rating: string; count: number })
           </div>
         </div>
 
+        <p className="mt-6 text-xs text-text-muted">{PROOF_LICENCE}</p>
       </div>
     </section>
   );

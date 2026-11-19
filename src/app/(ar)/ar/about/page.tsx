@@ -1,6 +1,6 @@
 import { buildMetadata } from "@/lib/metadata";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { FOUNDER, PROJECTS_DELIVERED, LARGEST_PROJECT_TR, COMPANY_NAME } from "@/lib/company";
+import { FOUNDER, PROJECTS_DELIVERED, LARGEST_PROJECT_TR, COMPANY_NAME, LICENCE_NO } from "@/lib/company";
 import { business } from "@/data/business";
 import Image from "next/image";
 import Link from "next/link";
@@ -100,7 +100,7 @@ export default function ArabicAbout() {
                 </p>
                 <p>
                   تُعرف <span dir="ltr">{COMPANY_NAME}</span> أيضاً باسم Altaher Ghabboun Engineering
-                  Contracting، واختصاراً AGEC. نصمّم ونركّب ونصون أنظمة التكييف والتهوية وترشيح الهواء.
+                  Contracting، واختصاراً AGEC. ونحمل رخصة تجارية دبي رقم <span dir="ltr">{LICENCE_NO}</span>، صادرة عن دائرة الاقتصاد والسياحة بدبي. نصمّم ونركّب ونصون أنظمة التكييف والتهوية وترشيح الهواء.
                 </p>
               </div>
             </div>

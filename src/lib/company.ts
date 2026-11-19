@@ -22,6 +22,8 @@ export const ADDRESS_COUNTRY = business.address.country;
 export const ADDRESS_FULL = addressFull;
 
 export const COMPANY_NAME = business.name;
+export const LICENCE_NO = business.licence.number;
+export const LICENCE_LABEL = business.licence.label;
 
 // Founder (surname spelling confirmed by owner: "Ghabboun").
 export const FOUNDER = "Mohannad Ghabboun";

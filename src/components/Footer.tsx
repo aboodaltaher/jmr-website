@@ -70,6 +70,7 @@ export function Footer() {
             <p className="mt-4 text-xs text-text-muted">
               {business.hours.label} · {PHONE_DISPLAY}
             </p>
+            <p className="mt-1 text-xs text-text-muted">{business.licence.label}</p>
             <div className="mt-4 flex items-center gap-4">
               <a
                 href={INSTAGRAM_URL}

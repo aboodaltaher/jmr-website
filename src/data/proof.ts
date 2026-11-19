@@ -7,7 +7,7 @@
 // (src/data/business.ts) so the homepage always shows the same count as the
 // reviews section, contact and quote pages.
 
-import { PROJECTS_DELIVERED, LARGEST_PROJECT_TR } from "@/lib/company";
+import { PROJECTS_DELIVERED, LARGEST_PROJECT_TR, LICENCE_LABEL } from "@/lib/company";
 
 export interface ProofStat {
   value: string;
@@ -42,3 +42,4 @@ export const proofLogos: ProofLogo[] = [
   { name: "AVE Restaurant, Business Bay", href: "/projects/ave-restaurant-business-bay" },
 ];
 
+export const PROOF_LICENCE = LICENCE_LABEL;

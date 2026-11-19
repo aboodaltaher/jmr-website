@@ -1,6 +1,6 @@
 import { buildMetadata } from "@/lib/metadata";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { FOUNDER, PROJECTS_DELIVERED, LARGEST_PROJECT_TR, COMPANY_NAME } from "@/lib/company";
+import { FOUNDER, PROJECTS_DELIVERED, LARGEST_PROJECT_TR, COMPANY_NAME, LICENCE_LABEL } from "@/lib/company";
 import { business } from "@/data/business";
 import { isPublished } from "@/data/new-pages";
 import Image from "next/image";
@@ -153,7 +153,9 @@ export default function About() {
                 )}
                 <p>
                   {COMPANY_NAME} is also known as Altaher Ghabboun Engineering
-                  Contracting, and as AGEC for short. We design, install and maintain air-conditioning,
+                  Contracting, and as AGEC for short. We hold{" "}
+                  {LICENCE_LABEL}, issued by the Dubai Department of Economy and
+                  Tourism. We design, install and maintain air-conditioning,
                   ventilation and air filtration systems.
                 </p>
               </div>

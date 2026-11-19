@@ -15,6 +15,12 @@ export const business = {
   brand: "AGEC",
   url: "https://agec.ae",
 
+  // Real and current (owner confirmed again 19 Nov 2026). Shown as a licence line only; no approval claims.
+  licence: {
+    number: "1221573",
+    label: "Dubai Commercial Licence No. 1221573",
+  },
+
   phone: {
     e164: "+971585575987",
     display: "+971 58 557 5987",
