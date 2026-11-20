@@ -193,7 +193,7 @@ export default function Projects() {
               <ul className="mt-3 space-y-2 text-sm">
                 <li>
                   <Link href="/projects/villa-al-barsha-dubai" className="text-primary hover:underline">
-                    B+G+1+R Villa, Al Barsha — 140-ton DX
+                    Villa, Al Barsha — 140-ton DX
                   </Link>
                 </li>
                 <li>
