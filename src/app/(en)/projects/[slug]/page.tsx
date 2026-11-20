@@ -73,7 +73,7 @@ export default async function ProjectCaseStudy({
   const projectSchema = {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
-    name: project.displayName ?? project.name,
+    name: project.name,
     headline: project.metaTitle,
     description: project.systemSummary,
     url: `${SITE_URL}/projects/${project.slug}`,
@@ -216,7 +216,7 @@ export default async function ProjectCaseStudy({
             className="mb-6"
             items={[
               { name: "Projects", href: "/projects" },
-              { name: project.displayName ?? project.name, href: `/projects/${project.slug}` },
+              { name: project.name, href: `/projects/${project.slug}` },
             ]}
           />
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">

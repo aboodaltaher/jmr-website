@@ -84,8 +84,6 @@ export interface Project {
   publishedAt: string;
   /** Optional H1 for the case-study page; defaults to `name`. */
   h1?: string;
-  /** Optional name for the case-study page itself (breadcrumb and schema); defaults to `name`. */
-  displayName?: string;
   /** <title> and og:title for the case-study page (max 60 chars; keeps the location). */
   metaTitle: string;
   /** Meta + og description for the case-study page (aim 140–155 chars). */
@@ -155,20 +153,20 @@ function withDefaults(p: BaseProject): Project {
 const base: BaseProject[] = [
   {
     slug: "vrf-villa-al-mamzar-dubai",
-    name: "B+G+1+R Villa, Al Mamzar",
+    name: "Villa, Al Mamzar",
     category: "Residential",
     systemSummary: "HVAC Installation & Commissioning, 109 Ton VRF System",
     location: { area: "Al Mamzar", emirate: "Dubai", label: "Al Mamzar, Dubai" },
     draft: false,
     updatedAt: "2026-11-13",
     publishedAt: "2026-11-13",
-    metaTitle: "B+G+1+R Villa Al Mamzar — 109 TR VRF HVAC Case Study | AGEC",
+    metaTitle: "Villa Al Mamzar — 109 TR VRF HVAC Case Study | AGEC",
     metaDescription:
-      "109 TR VRF HVAC installation for a B+G+1+R villa in Al Mamzar, Dubai — zoned controls, commissioned to design conditions. Get a quote for a similar job.",
+      "109 TR VRF HVAC installation for a villa in Al Mamzar, Dubai — zoned controls, commissioned to design conditions. Get a quote for a similar job.",
     projectType: "Residential HVAC installation",
     systemType: "109 TR VRF",
     overview:
-      "HVAC installation and commissioning of a 109-ton VRF system for a B+G+1+R private villa in Al Mamzar, Dubai. A VRF system suits a large multi-level villa, giving each room and floor independent, efficient temperature control from a shared system.",
+      "HVAC installation and commissioning of a 109-ton VRF system for a private villa in Al Mamzar, Dubai. A VRF system suits a large multi-level villa, giving each room and floor independent, efficient temperature control from a shared system.",
     scope: [
       "VRF outdoor and indoor unit installation",
       "Refrigerant pipework and branch selectors",
@@ -178,9 +176,8 @@ const base: BaseProject[] = [
   },
   {
     slug: "basil-mall-ajman",
-    name: "B+G+1+R Basil Mall",
+    name: "Basil Mall, Ajman",
     h1: "Basil Mall, Ajman: 224 TR LG VRF Installation",
-    displayName: "Basil Mall, Ajman",
     category: "Commercial",
     systemSummary: "HVAC Installation & Commissioning, 224 Ton VRF System",
     location: { emirate: "Ajman", label: "Ajman, UAE" },
@@ -194,9 +191,8 @@ const base: BaseProject[] = [
     systemType: "224 TR VRF",
     scope: [
       "VRF outdoor and indoor unit installation",
-      "Refrigerant pipework and branch selectors",
-      "Zoning and controls setup",
-      "Testing and commissioning to design conditions",
+      "Refrigerant pipework and Refnet installation",
+      "Testing and commissioning",
     ],
     // Facts below are the owner's (20 Nov 2026). Year, unit counts and photos were NOT provided: leave them out.
     facts: {
@@ -314,20 +310,20 @@ const base: BaseProject[] = [
   },
   {
     slug: "villa-al-barsha-dubai",
-    name: "B+G+1+R Villa, Al Barsha",
+    name: "Villa, Al Barsha",
     category: "Residential",
     systemSummary: "HVAC Installation, 140 Ton DX System",
     location: { area: "Al Barsha", emirate: "Dubai", label: "Dubai, UAE" },
     draft: false,
     updatedAt: "2026-11-19",
     publishedAt: "2026-11-04",
-    metaTitle: "B+G+1+R Villa Al Barsha — 140 TR DX HVAC Case Study | AGEC",
+    metaTitle: "Villa Al Barsha — 140 TR DX HVAC Case Study | AGEC",
     metaDescription:
-      "140 TR DX HVAC installation for a B+G+1+R villa in Al Barsha, Dubai — a large single-home system sized to the villa's cooling load. Get a quote.",
+      "140 TR DX HVAC installation for a villa in Al Barsha, Dubai — a large single-home system sized to the villa's cooling load. Get a quote.",
     projectType: "Residential HVAC installation",
     systemType: "140 TR DX",
     overview:
-      "HVAC installation of a 140-ton DX system for a B+G+1+R villa in Al Barsha, Dubai — a large single-home system installed to the villa's cooling load.",
+      "HVAC installation of a 140-ton DX system for a villa in Al Barsha, Dubai — a large single-home system installed to the villa's cooling load.",
     scope: [
       "Condensing units and ducted indoor units",
       "Ductwork and air distribution",
