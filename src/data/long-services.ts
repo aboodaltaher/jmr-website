@@ -159,6 +159,8 @@ export const DUCTING: LongService = {
     { href: "/services/tab-testing-adjusting-balancing-dubai", label: "Testing, adjusting & balancing" },
     { href: "/ac-duct-cleaning-dubai", label: "AC duct cleaning" },
     ...(isPublished("mep") ? [{ href: "/mep-contractors-dubai", label: "HVAC for MEP projects" }] : []),
+    { href: "/projects/double-twin-villa-sharjah", label: "Case study: ductwork for a double twin villa, Sharjah" },
+    { href: "/projects/private-villa-sharjah-flagship", label: "Case study: concealed ductwork, private villa, Sharjah" },
   ],
   ctaHeading: "Get a quote for ductwork",
   ctaText: "Send us the drawings or a few photos of the space and the system.",
@@ -606,6 +608,14 @@ export const VRF_MAINTENANCE: LongService = {
     {
       "href": "/services/tab-testing-adjusting-balancing-dubai",
       "label": "Testing, commissioning and balancing"
+    },
+    {
+      "href": "/projects/vrf-villa-al-mamzar-dubai",
+      "label": "Case study: 109 TR VRF villa, Al Mamzar"
+    },
+    {
+      "href": "/projects/basil-mall-ajman",
+      "label": "Case study: 224 TR VRF, Basil Mall Ajman"
     }
   ],
   "ctaHeading": "Book a VRF service",
@@ -824,6 +834,14 @@ export const AIR_BALANCING: LongService = {
     {
       "href": "/services/hvac-design",
       "label": "HVAC design and consultancy"
+    },
+    {
+      "href": "/projects/pure-gym-al-barsha",
+      "label": "Case study: Pure Gym, Al Barsha (ventilation and balancing)"
+    },
+    {
+      "href": "/projects/ave-restaurant-business-bay",
+      "label": "Case study: AVE Restaurant (kitchen and dining air balancing)"
     }
   ],
   "ctaHeading": "Book air balancing",

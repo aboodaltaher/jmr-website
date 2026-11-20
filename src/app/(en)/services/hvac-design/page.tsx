@@ -22,6 +22,11 @@ export const metadata = buildMetadata({
 export default function HvacDesign() {
   return (
     <ServiceDetailLayout
+      relatedProjectSlugs={[
+        "mbz-ai-server-room-abu-dhabi",
+        "zain-solution-data-center-abu-dhabi",
+        "private-villa-sharjah-flagship",
+      ]}
       slug="services/hvac-design"
       title="HVAC Design & Consultancy"
       heroImage="/projects/multiple-ahu-installation-hvac-design-dubai.jpg"

@@ -7,7 +7,7 @@ In code, these facts live in `src/data/business.ts`; this document is the human-
 |---|---|
 | Display name (matches Google Business Profile) | **AGEC Technical Services** |
 | Alternate names | AGEC; Altaher Ghabboun Engineering Contracting |
-| Legal name | Not published (no `legalName` in schema) |
+| Name on the trade licence | **AGEC Technical Services** (owner, 19 Nov 2026) — identical to the display name, so no separate legal name is needed |
 | Address (exactly as on the Business Profile) | **AlMasraf Building, Sheikh Zayed Road, Al Quoz Industrial Area 1, Dubai, United Arab Emirates** |
 | Maps | https://maps.google.com/maps?cid=14934329653680563760 |
 | Phone and WhatsApp | **+971 58 557 5987** (the only number; no landline) |

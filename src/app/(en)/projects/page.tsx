@@ -2,7 +2,9 @@ import { buildMetadata } from "@/lib/metadata";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import Image from "next/image";
 import Link from "next/link";
-import { ProjectGrid } from "@/components/ProjectGrid";
+import { MapPin } from "lucide-react";
+import { publishedProjects, type Project } from "@/data/projects";
+import { PROJECTS_DELIVERED, EMIRATES_WITH_PROJECTS_LABEL } from "@/lib/company";
 
 const gallery = [
   {
@@ -38,6 +40,42 @@ export const metadata = buildMetadata({
   path: "/projects",
 });
 
+// Listing groups, derived from the existing data (category + published client type).
+const GROUPS: { id: string; title: string; match: (p: Project) => boolean }[] = [
+  { id: "villas", title: "Villas and residential buildings", match: (p) => p.category === "Residential" },
+  { id: "retail-fb", title: "Retail and food & beverage", match: (p) => p.category === "Commercial" && /retail|restaurant/i.test(p.facts.clientType ?? "") },
+  { id: "commercial", title: "Commercial and public buildings", match: (p) => p.category === "Commercial" && !/retail|restaurant/i.test(p.facts.clientType ?? "") },
+  { id: "data-rooms", title: "Data centres and server rooms", match: (p) => p.category === "Data Center" },
+];
+
+function ProjectCard({ project }: { project: Project }) {
+  const service = project.relatedServices[0];
+  return (
+    <li className="flex flex-col rounded-lg border border-border bg-white p-6">
+      <h3 className="font-heading text-lg font-bold">
+        <Link href={`/projects/${project.slug}`} className="hover:text-primary">
+          {project.name}
+        </Link>
+      </h3>
+      <p className="mt-1 text-sm text-text-muted">{project.systemSummary}</p>
+      <p className="mt-3 flex items-center gap-1.5 text-xs text-text-muted">
+        <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
+        {project.location.label}
+      </p>
+      <div className="mt-auto flex flex-wrap gap-x-4 gap-y-2 pt-4 text-sm font-medium">
+        <Link href={`/projects/${project.slug}`} className="text-primary hover:underline">
+          Read the case study &rarr;
+        </Link>
+        {service && (
+          <Link href={service.href} className="text-text-muted hover:text-primary hover:underline">
+            {service.name}
+          </Link>
+        )}
+      </div>
+    </li>
+  );
+}
+
 export default function Projects() {
   return (
     <>
@@ -58,7 +96,56 @@ export default function Projects() {
         </div>
       </section>
 
-      <ProjectGrid />
+      {/* Intro: built only from what the service pages already state */}
+      <section className="py-12 md:py-16">
+        <div className="mx-auto max-w-3xl space-y-4 px-6 text-lg leading-relaxed text-text-muted">
+          <p>
+            AGEC is an engineer-led HVAC contractor, and this page collects the projects we can
+            show in detail: villas and residential buildings, commercial and public buildings,
+            retail and food-and-beverage spaces, and data centres and server rooms. Together with
+            work not listed here, they are part of the {PROJECTS_DELIVERED} projects we have
+            completed since 2022.
+          </p>
+          <p>
+            Most of our residential work is in large villas, where we install VRF/VRV systems or
+            ducted DX split systems sized from a room-by-room heat load, with concealed ductwork
+            and zoned controls. In commercial buildings the cooling has to follow changing
+            occupancy, so gyms, malls, restaurants and public spaces get cooling and fresh-air
+            ventilation designed together, including kitchen exhaust and make-up air where food is
+            cooked. Server rooms and data centres need precision, close-control cooling that runs
+            around the clock.
+          </p>
+          <p>
+            On these projects our team handles the design, the installation, and the testing and
+            commissioning, and we can keep the system running afterwards under an{" "}
+            <Link href="/ac-amc-dubai" className="font-medium text-primary hover:underline">
+              annual maintenance contract
+            </Link>
+            . The projects below are in {EMIRATES_WITH_PROJECTS_LABEL}; we work across all 7
+            emirates. Open a project to read its case study, or the service it used.
+          </p>
+        </div>
+      </section>
+
+      {/* Projects grouped by type; every card links to its case study and its service page */}
+      <section className="pb-16 md:pb-20">
+        <div className="mx-auto max-w-7xl space-y-12 px-6">
+          {GROUPS.map((g) => {
+            const items = publishedProjects.filter(g.match);
+            if (items.length === 0) return null;
+            return (
+              <div key={g.id} id={g.id}>
+                <h2 className="font-heading text-2xl font-bold md:text-3xl">{g.title}</h2>
+                <ul className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                  {items.map((p) => (
+                    <ProjectCard key={p.slug} project={p} />
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
+        </div>
+      </section>
 
       {/* Real project photo gallery */}
       <section className="pb-16 md:pb-20">

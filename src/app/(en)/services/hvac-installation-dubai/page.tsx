@@ -340,7 +340,7 @@ export default function HvacInstallation() {
                         </td>
                         <td className="py-3 pr-4 text-text-muted">{p.location.label}</td>
                         <td className="py-3 pr-4 text-text-muted">{p.systemSummary}</td>
-                        <td className="py-3 text-right font-semibold">{p.tonnage}</td>
+                        <td className="py-3 text-right font-semibold">{p.facts.capacity}</td>
                       </tr>
                     ))}
                   </tbody>

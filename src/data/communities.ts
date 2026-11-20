@@ -14,6 +14,8 @@ export interface CommunitySection {
   h2: string;
   paragraphs: string[];
   bullets?: string[];
+  /** Optional contextual link shown under the section. */
+  link?: { href: string; label: string };
 }
 
 export interface CommunityFaq {
@@ -55,7 +57,7 @@ export interface Community {
 const alBarsha: Community = {
   slug: "al-barsha",
   name: "Al Barsha",
-  updatedAt: "2026-11-14",
+  updatedAt: "2026-11-19",
   metaTitle: "AC Maintenance Al Barsha, Dubai — Villas & Commercial | AGEC",
   metaDescription:
     "AC maintenance in Al Barsha, Dubai for ducted villas and commercial units: dust-driven faults, drain and coil care, AMC. Call or WhatsApp us for a booking.",
@@ -101,6 +103,14 @@ const alBarsha: Community = {
         "Commercial premises in Al Barsha, from gyms to shops, are covered by the same engineers on reactive calls or annual contracts.",
       ],
     },
+    {
+      h2: "AC repair in Al Barsha",
+      paragraphs: [
+        "Not every call from Al Barsha is routine maintenance. When a villa unit stops cooling, leaks water into the ceiling or starts to smell, it needs a repair visit rather than a service. An engineer diagnoses the root cause first, and you get the price before any work starts.",
+        "Repairs cover split, ducted, cassette and VRF units. How a repair visit runs, the most common faults and our repair prices are on the AC repair page.",
+      ],
+      link: { href: "/ac-repair-dubai", label: "AC repair in Dubai: how a repair visit works" },
+    },
   ],
   projectsHeading: "Our work in Al Barsha",
   projectsIntro:
@@ -140,7 +150,7 @@ const alBarsha: Community = {
 const businessBay: Community = {
   slug: "business-bay",
   name: "Business Bay",
-  updatedAt: "2026-11-15",
+  updatedAt: "2026-11-19",
   metaTitle: "AC Maintenance Business Bay, Dubai — Offices & F&B | AGEC",
   metaDescription:
     "AC and FCU maintenance in Business Bay, Dubai for offices and restaurants on district cooling: leaks, weak cooling, rebalancing and AMC. Call or WhatsApp.",
@@ -177,6 +187,14 @@ const businessBay: Community = {
         "A scheduled FCU service covers the filter and coil clean, a drain flush, a check of the valve, actuator and thermostat, and a performance test, with a written report. For tenants with several floors or many units, an AMC schedules those visits and gives priority response when something fails.",
         "If you are unhappy with your current contractor, we can take over an existing system after a full audit and a baseline report, so you start with a clear record and a fresh schedule. We provide AMC and reactive maintenance for offices, shops, restaurants and buildings, including FCUs, AHUs, chillers and VRF systems.",
       ],
+    },
+    {
+      h2: "AC repair in Business Bay",
+      paragraphs: [
+        "In Business Bay offices, shops and restaurants, a breakdown is usually an FCU that has stopped cooling, a drain overflowing into the ceiling void, or a noisy fan. These need a repair visit rather than a service: an engineer diagnoses the root cause first, and you get the price before any work starts.",
+        "How a repair visit runs, the most common faults and our repair prices are on the AC repair page.",
+      ],
+      link: { href: "/ac-repair-dubai", label: "AC repair in Dubai: how a repair visit works" },
     },
   ],
   projectsHeading: "Our work in Business Bay",
