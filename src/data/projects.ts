@@ -39,6 +39,30 @@ export interface CaseStudyFacts {
   photos?: { src: string; alt: string }[];
   /** e.g. "Private villa", "Retail mall". */
   clientType?: string;
+
+  // ----- Richer, reusable sections. Optional: each renders only when filled. Any project can use them. -----
+  /** Short intro paragraphs shown under "Project overview" (replaces the general `overview` text). */
+  intro?: string[];
+  /** Static stat cards, e.g. { value: "224 TR", label: "Connected indoor capacity" }. No counters or animation. */
+  highlights?: { value: string; label: string }[];
+  /**
+   * A side-by-side comparison, e.g. an electrical requirement against the available supply.
+   * `items` are the compared figures; `difference` is the gap between them; `note` explains how to read it.
+   */
+  comparison?: {
+    title: string;
+    items: { label: string; value: string }[];
+    difference: { label: string; value: string };
+    note?: string;
+  };
+  /** Challenge cards: a title and the confirmed facts behind it. */
+  challenges?: { title: string; points: string[] }[];
+  /** What was done about them, as a list. */
+  solutions?: string[];
+  /** The confirmed outcome in words (use `measuredResult` instead when there is a real measurement). */
+  outcome?: string;
+  /** Replaces the closing call to action (heading + button) and adds a WhatsApp button. */
+  cta?: { heading: string; label: string; href: string };
 }
 
 export interface Project {
@@ -58,6 +82,10 @@ export interface Project {
   updatedAt: string;
   /** Date the case-study page was first published, YYYY-MM-DD. Feeds JSON-LD datePublished. NOT the project date. */
   publishedAt: string;
+  /** Optional H1 for the case-study page; defaults to `name`. */
+  h1?: string;
+  /** Optional name for the case-study page itself (breadcrumb and schema); defaults to `name`. */
+  displayName?: string;
   /** <title> and og:title for the case-study page (max 60 chars; keeps the location). */
   metaTitle: string;
   /** Meta + og description for the case-study page (aim 140–155 chars). */
@@ -88,6 +116,8 @@ const SVC = {
   install: { name: "HVAC installation", href: "/services/hvac-installation-dubai" },
   design: { name: "HVAC design & consultancy", href: "/services/hvac-design" },
   tab: { name: "Testing, adjusting & balancing", href: "/services/tab-testing-adjusting-balancing-dubai" },
+  commissioning: { name: "Testing & commissioning", href: "/services/tab-testing-adjusting-balancing-dubai" },
+  ajman: { name: "HVAC contractor in Ajman", href: "/hvac-contractor-ajman" },
   vent: { name: "Ventilation & fresh air", href: "/services/ventilation-fresh-air" },
   amc: { name: "AC maintenance contracts", href: "/ac-amc-dubai" },
 };
@@ -99,7 +129,7 @@ const SVC = {
  */
 const known: Record<string, { facts?: CaseStudyFacts; relatedServices: Project["relatedServices"] }> = {
   "vrf-villa-al-mamzar-dubai": { facts: { clientType: "Private villa", capacity: "109 TR" }, relatedServices: [SVC.vrf, SVC.install, SVC.amc] },
-  "basil-mall-ajman": { facts: { clientType: "Commercial — retail mall", capacity: "224 TR" }, relatedServices: [SVC.vrf, SVC.install, SVC.amc] },
+  "basil-mall-ajman": { facts: { clientType: "Commercial — retail mall", capacity: "224 TR" }, relatedServices: [SVC.vrf, SVC.design, SVC.commissioning, SVC.ajman] },
   "private-g4-building-dubai": { facts: { clientType: "Private residential building", capacity: "148 TR" }, relatedServices: [SVC.dx, SVC.install, SVC.amc] },
   "double-twin-villa-sharjah": { facts: { clientType: "Villa development", capacity: "60 TR" }, relatedServices: [SVC.dx, SVC.install, SVC.amc] },
   "g1r-villa-dubai": { facts: { capacity: "45 TR" }, relatedServices: [SVC.dx, SVC.install, SVC.amc] },
@@ -149,25 +179,69 @@ const base: BaseProject[] = [
   {
     slug: "basil-mall-ajman",
     name: "B+G+1+R Basil Mall",
+    h1: "Basil Mall, Ajman: 224 TR LG VRF Installation",
+    displayName: "Basil Mall, Ajman",
     category: "Commercial",
     systemSummary: "HVAC Installation & Commissioning, 224 Ton VRF System",
     location: { emirate: "Ajman", label: "Ajman, UAE" },
     draft: false,
-    updatedAt: "2026-11-19",
+    updatedAt: "2026-11-20",
     publishedAt: "2026-11-04",
-    metaTitle: "Basil Mall Ajman — 224 TR VRF HVAC Case Study | AGEC",
+    metaTitle: "Basil Mall Ajman | 224 TR LG VRF Project – AGEC",
     metaDescription:
-      "224 TR VRF HVAC installation for Basil Mall, a B+G+1+R commercial mall in Ajman — independent zoning for shops and common areas. Get a quote.",
+      "How AGEC delivered a 224 TR LG VRF system at Basil Mall, Ajman — 135% manufacturer-approved combination, 75 m piping, operating within a 200 kW supply.",
     projectType: "Commercial HVAC installation & commissioning",
     systemType: "224 TR VRF",
-    overview:
-      "AGEC delivered the HVAC installation and commissioning of a 224-ton VRF system for a B+G+1+R commercial mall in Ajman. VRF suits a multi-zone retail building, where shops, common areas and back-of-house all need independent, efficient temperature control from a shared system.",
     scope: [
       "VRF outdoor and indoor unit installation",
       "Refrigerant pipework and branch selectors",
       "Zoning and controls setup",
       "Testing and commissioning to design conditions",
     ],
+    // Facts below are the owner's (20 Nov 2026). Year, unit counts and photos were NOT provided: leave them out.
+    facts: {
+      systemType: "LG VRF",
+      intro: [
+        "AGEC delivered the LG VRF installation at Basil Mall, a commercial retail mall in Ajman, UAE. The system has 224 TR of connected indoor capacity and approx. 166 TR of outdoor capacity.",
+        "A 135% combination ratio means the connected indoor units total 224 TR on approx. 166 TR of outdoor capacity — sized for real diversity in a mall, where not every zone needs full cooling at the same time. LG reviewed and approved the 135% ratio.",
+        "The tight point was the electrical supply: 200 kW was available, against 260 kW at 100% combination. The system was commissioned and operates within the 200 kW electrical allocation.",
+      ],
+      // TODO(owner): the outdoor capacity is DERIVED (224 TR / 135% = approx. 166 TR). Confirm the exact outdoor model
+      // capacity and replace "approx. 166 TR" (here, in the intro and in the first challenge) with the real figure.
+      highlights: [
+        { value: "224 TR", label: "Connected indoor capacity" },
+        { value: "approx. 166 TR", label: "Outdoor capacity" },
+        { value: "135%", label: "Combination ratio (manufacturer-approved)" },
+        { value: "75 m", label: "Longest piping route" },
+        { value: "200 kW", label: "Available electrical supply" },
+        { value: "LG VRF", label: "System" },
+      ],
+      comparison: {
+        title: "Electrical comparison",
+        items: [
+          { label: "Requirement at 100% combination", value: "260 kW" },
+          { label: "Available electrical capacity", value: "200 kW" },
+        ],
+        difference: { label: "Gap", value: "60 kW" },
+        note: "The 60 kW is the difference between the reference requirement and the available allocation, not a measured reduction in operating consumption.",
+      },
+      challenges: [
+        { title: "Limited electrical capacity", points: ["200 kW available, against 260 kW required at 100% combination."] },
+        { title: "High combination ratio", points: ["135% indoor to outdoor: 224 TR of indoor capacity on approx. 166 TR of outdoor capacity."] },
+        { title: "Extended refrigerant piping", points: ["The longest refrigerant piping route is 75 m."] },
+        { title: "Restricted Refnet positions", points: ["Refnet positions on site were restricted."] },
+      ],
+      solutions: [
+        "Optimised the VRF equipment configuration.",
+        "Coordinated the 135% combination ratio with LG and obtained their approval.",
+        "Evaluated the piping design for the 75 m refrigerant route.",
+        "Optimised Refnet positions to suit site conditions.",
+        "Coordinated the system configuration against the 200 kW electrical supply.",
+        "Achieved operation within the 200 kW electrical allocation.",
+      ],
+      outcome: "The system was commissioned and is operating within the 200 kW electrical allocation.",
+      cta: { heading: "Have a similar HVAC project? Contact AGEC", label: "Contact AGEC", href: "/contact" },
+    },
   },
   {
     slug: "private-g4-building-dubai",
