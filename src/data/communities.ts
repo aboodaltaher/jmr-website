@@ -8,7 +8,7 @@
 // and the same item is listed in `toConfirm` so nothing is forgotten. The only
 // prices quoted are the ones already on /ac-maintenance-dubai.
 
-import { money, prices } from "./prices.ts";
+import { money, prices, maintenanceRows, ONE_OFF_SUMMARY } from "./prices.ts";
 
 export interface CommunitySection {
   h2: string;
@@ -98,7 +98,7 @@ const alBarsha: Community = {
     {
       h2: "Services that fit Al Barsha homes and businesses",
       paragraphs: [
-        "For villas we recommend servicing every three to four months, with the visits placed before and during the summer peak; that is what the dust load in this area justifies. A one-off service starts from AED 350 per machine, with a minimum of three units, and the exact cost depends on the number and type of units.",
+        `For villas we recommend servicing every three to four months, with the visits placed before and during the summer peak; that is what the dust load in this area justifies. A one-off service is ${ONE_OFF_SUMMARY}, and the exact cost depends on the number and type of units.`,
         "If a unit is already failing, our AC repair service diagnoses the root cause first, and our duct cleaning service clears the coils, drains and ductwork when airflow or smells are the problem. Villas with several units are usually better served by an annual maintenance contract, which schedules the visits and gives priority response for breakdowns.",
         "Commercial premises in Al Barsha, from gyms to shops, are covered by the same engineers on reactive calls or annual contracts.",
       ],
@@ -139,7 +139,7 @@ const alBarsha: Community = {
     },
     {
       q: "What does a one-off AC service cost in Al Barsha?",
-      a: "From AED 350 per machine, with a minimum of three units. The exact cost depends on the number and type of units, and we confirm the price before we start.",
+      a: `A one-off service is ${ONE_OFF_SUMMARY}. The exact cost depends on the number and type of units, and we confirm the price before we start.`,
     },
   ],
   toConfirm: [
@@ -375,7 +375,7 @@ const arabianRanches: Community = {
     },
     {
       q: "What does a one-off service cost for a Ranches villa?",
-      a: "From AED 350 per machine, with a minimum of three units, which most villas exceed. The exact cost depends on the number and type of units, and we confirm it before we start.",
+      a: `A one-off service is ${ONE_OFF_SUMMARY}. Most villas have 3 or more units. The exact cost depends on the number and type of units, and we confirm it before we start.`,
     },
   ],
   toConfirm: [
@@ -395,8 +395,7 @@ const amc = prices.amcPlans;
 const amcFrom = money(Math.min(...amc.map((p) => p.from)));
 const warranty =
   "The manufacturer gives a 5-year warranty on the compressor. AGEC gives a 1-year warranty on the indoor unit and on our installation work.";
-const oneOffFrom = money(prices.maintenance[0].from as number);
-const ductedServicePrice = money(prices.maintenance[1].from as number);
+const ductedServicePrice = money(maintenanceRows.ducted.from);
 // The service checklist published on /ac-maintenance-dubai.
 const serviceChecklist = [
   "Filters cleaned",
@@ -547,7 +546,7 @@ const miraOasis: Community = {
       h2: "AC maintenance in Mira Oasis",
       paragraphs: [
         "AGEC also maintains AC in Mira Oasis, including the ducted systems we install. We recommend servicing every 3 to 4 months, with the most important visits before and during the summer peak.",
-        `A ducted unit service is AED ${ductedServicePrice} per machine, and a one-off service is from AED ${oneOffFrom} per machine with a minimum of 3 units. We confirm the price in writing before work starts. Every visit covers:`,
+        `A ducted unit service is AED ${ductedServicePrice} per machine, and a one-off service is ${ONE_OFF_SUMMARY}. We confirm the price in writing before work starts. Every visit covers:`,
       ],
       bullets: serviceChecklist,
       link: maintenanceLink,
@@ -576,7 +575,7 @@ const miraOasis: Community = {
     },
     {
       q: "How much does AC maintenance cost in Mira Oasis?",
-      a: `A ducted unit service is AED ${ductedServicePrice} per machine. A one-off service is from AED ${oneOffFrom} per machine, with a minimum of 3 units. We confirm the exact price in writing before work starts.`,
+      a: `A ducted unit service is AED ${ductedServicePrice} per machine. A one-off service is ${ONE_OFF_SUMMARY}. We confirm the exact price in writing before work starts.`,
     },
     {
       q: "How often should I service my AC in Mira Oasis?",
@@ -650,7 +649,7 @@ const dubaiHills: Community = {
       h2: "AC maintenance in Dubai Hills",
       paragraphs: [
         "AGEC also maintains AC in Dubai Hills, for the units we install and for other units. We recommend servicing every 3 to 4 months, with the most important visits before and during the summer peak.",
-        `A one-off service is from AED ${oneOffFrom} per machine with a minimum of 3 units. With fewer than 3 units, send us the details on WhatsApp and we tell you the options. Every visit covers:`,
+        `A one-off service is ${ONE_OFF_SUMMARY}. We confirm the price in writing before work starts. Every visit covers:`,
       ],
       bullets: serviceChecklist,
       link: maintenanceLink,
@@ -679,7 +678,7 @@ const dubaiHills: Community = {
     },
     {
       q: "How much does AC maintenance cost in Dubai Hills?",
-      a: `A one-off service is from AED ${oneOffFrom} per machine, with a minimum of 3 units, and a ducted unit service is AED ${ductedServicePrice} per machine. We confirm the exact price in writing before work starts.`,
+      a: `A one-off service is ${ONE_OFF_SUMMARY}, and a ducted unit service is AED ${ductedServicePrice} per machine. We confirm the exact price in writing before work starts.`,
     },
     {
       q: "Do you maintain the AC after installing or replacing it?",
@@ -746,7 +745,7 @@ const alWasl: Community = {
     {
       h2: "One-off service instead",
       paragraphs: [
-        `If you would rather not sign a contract, a one-off service is from AED ${money(prices.maintenance[0].from as number)} per machine, with a minimum of 3 units. A contract works out lower per visit.`,
+        `If you would rather not sign a contract, a one-off service is ${ONE_OFF_SUMMARY}. A contract works out lower per visit.`,
       ],
     },
     {
@@ -835,7 +834,7 @@ const sustainableCity: Community = {
       h2: "AC maintenance in The Sustainable City",
       paragraphs: [
         "AGEC also services and maintains AC in The Sustainable City. A blocked drain line is a common cause of water at an indoor unit, and a service clears the drainage line and checks the refrigerant pressure. We recommend servicing every 3 to 4 months, with the most important visits before and during the summer peak.",
-        `A one-off service is from AED ${oneOffFrom} per machine with a minimum of 3 units, and a ducted unit service is AED ${ductedServicePrice} per machine. We confirm the price in writing before work starts. Every visit covers:`,
+        `A one-off service is ${ONE_OFF_SUMMARY}, and a ducted unit service is AED ${ductedServicePrice} per machine. We confirm the price in writing before work starts. Every visit covers:`,
       ],
       bullets: serviceChecklist,
       link: maintenanceLink,
@@ -868,7 +867,7 @@ const sustainableCity: Community = {
     },
     {
       q: "How much does AC maintenance cost in The Sustainable City?",
-      a: `A one-off service is from AED ${oneOffFrom} per machine, with a minimum of 3 units, and a ducted unit service is AED ${ductedServicePrice} per machine. An annual maintenance contract is from AED ${amcFrom} per machine per visit excluding VAT. We confirm the exact price in writing.`,
+      a: `A one-off service is ${ONE_OFF_SUMMARY}, and a ducted unit service is AED ${ductedServicePrice} per machine. An annual maintenance contract is from AED ${amcFrom} per machine per visit excluding VAT. We confirm the exact price in writing.`,
     },
     {
       q: "Can regular maintenance prevent AC leaks?",

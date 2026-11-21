@@ -41,6 +41,6 @@ Homes with pets, heavy dust exposure or allergy sufferers benefit from the more 
 
 If you're managing several units, an Annual Maintenance Contract (AMC) schedules these visits automatically, keeps a documented history for each unit, and puts your repairs first in line during the summer rush — usually at a lower per-visit cost than one-off calls. [See our AC AMC plans](/ac-amc-dubai).
 
-Prefer to book as you go? A [one-off AC service](/ac-maintenance-dubai) starts from AED 350 per machine (minimum 3 units), with a transparent price confirmed before we start.
+Prefer to book as you go? A [one-off AC service](/ac-maintenance-dubai) is AED 199 for 1 split unit, AED 349 for 2 units, and from AED 350 per visit for 3 or more units (minimum charge; written quote by number of units; all excl. VAT), with the price confirmed in writing before we start.
 
 The rule of thumb: in Dubai, an AC that's serviced on schedule is cheaper to run and far less likely to fail when you need it most.

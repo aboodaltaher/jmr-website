@@ -31,7 +31,7 @@ import {
 } from "lucide-react";
 
 import { PriceTable } from "@/components/PriceTable";
-import { prices, visibleRows, offersFor, money } from "@/data/prices";
+import { prices, maintenanceRows, ONE_OFF_SUMMARY, GAS_RANGE, visibleRows, offersFor } from "@/data/prices";
 import { PHONE, PHONE_DISPLAY } from "@/lib/company";
 import { whatsappUrl } from "@/lib/contact";
 const WA = whatsappUrl("/ac-maintenance-dubai");
@@ -40,7 +40,7 @@ const CANONICAL = "/ac-maintenance-dubai";
 export const metadata = buildMetadata({
   title: "AC Maintenance Dubai — Engineer-Led, Same-Day | AGEC",
   description:
-    `AC maintenance in Dubai for villas and apartments: servicing, repair, gas top-up and AMC plans. One-off service from AED ${prices.maintenance[0].from}. Call ${PHONE_DISPLAY}.`,
+    `AC maintenance in Dubai for villas and apartments: servicing, repair, gas top-up and AMC plans. One-off service from AED ${maintenanceRows.apartment1.from}. Call ${PHONE_DISPLAY}.`,
   path: CANONICAL,
   languages: {
     "en-AE": `https://agec.ae${CANONICAL}`,
@@ -96,7 +96,7 @@ const signs: { icon: LucideIcon; title: string; desc: string }[] = [
 
 const villaFaqs: { q: string; a: string }[] = [
   { q: "How often should a villa's AC be serviced?", a: "Every 3–4 months, three or four times a year, with the most important visits before and during the summer peak. A villa has several units, so it helps to service them together." },
-  { q: "How much does villa AC maintenance cost?", a: `A one-off service starts from AED ${prices.maintenance[0].from} per machine with a minimum of 3 units, which most villas meet. An AMC is priced per machine per visit from AED ${prices.amcPlans[0].from} (excluding VAT) and sets the visits for you.` },
+  { q: "How much does villa AC maintenance cost?", a: `A one-off service for 3 or more units starts from AED ${maintenanceRows.oneOff.from} per visit (minimum charge; written quote by number of units), which most villas meet. An AMC is priced per machine per visit from AED ${prices.amcPlans[0].from} (excluding VAT) and sets the visits for you.` },
   { q: "Do you service ducted and concealed units in a villa?", a: "Yes. We service ducted, cassette and concealed units as well as split units and VRF/VRV systems, and we confirm the price once we know the system type and the number of units." },
   { q: "Can I put the whole villa on a yearly contract?", a: "Yes. An AMC schedules the visits for every unit in the villa, with a service report with photos after every visit." },
 ];
@@ -123,7 +123,7 @@ const propertyTypes: { type: string; system: string; focus: string; fit: string 
     type: "Apartment",
     system: "One to a few split or ducted units.",
     focus: "Filters, coils and drain line, the usual causes of weak cooling and leaks.",
-    fit: "A one-off service (minimum 3 units) or an AMC.",
+    fit: `A one-off service (AED ${maintenanceRows.apartment1.from} for 1 unit, AED ${maintenanceRows.apartment2.from} for 2) or an AMC.`,
   },
   {
     type: "Office",
@@ -139,12 +139,11 @@ const caseStudySlugs = ["vrf-villa-al-mamzar-dubai", "villa-al-barsha-dubai", "g
 const areas = ["Dubai", "Abu Dhabi", "Sharjah", "Ajman", "Ras Al Khaimah", "Umm Al Quwain", "Fujairah"];
 
 // TODO(owner): "How long does an AC service take?" gives no minutes per unit; add the typical time if you want it stated.
-// TODO(owner): confirm the gas top-up price is per machine and is separate from the one-off service price (assumed from the price table).
 const faqs: { q: string; a: string }[] = [
   { q: "How often should I service my AC in Dubai?", a: "Because AC runs almost year-round in the UAE, we recommend servicing every 3–4 months (3–4 times a year), or at minimum before and during the summer peak. Homes with heavy use, pets or dust exposure benefit from more frequent visits. An AMC schedules this automatically." },
-  { q: "How much does AC maintenance cost in Dubai?", a: `A one-off service starts from AED ${prices.maintenance[0].from} per machine, with a minimum of 3 units. The exact cost depends on the number and type of units and whether it's a one-off service or an annual contract. We confirm a transparent fixed price upfront after understanding your system — with no hidden charges. Prices exclude 5% VAT. AMC plans reduce the per-visit cost.` },
+  { q: "How much does AC maintenance cost in Dubai?", a: `A one-off service is ${ONE_OFF_SUMMARY}. The exact cost depends on the number and type of units and whether it's a one-off service or an annual contract. We confirm a transparent fixed price upfront after understanding your system — with no hidden charges. Prices exclude 5% VAT. AMC plans reduce the per-visit cost.` },
   { q: "How long does an AC service take?", a: "It depends on the number and type of units. We confirm the expected time when we quote, once we know your system." },
-  { q: "Is gas included in an AC service?", a: `A service includes checking the refrigerant pressure. A gas top-up is priced separately, at AED ${money(prices.maintenance[2].from as number)} per machine. Refrigerant runs in a sealed loop, so low gas means a leak: we find it and give you the price for any repair before work starts.` },
+  { q: "Is gas included in an AC service?", a: `A service includes checking the refrigerant pressure. Gas top-up is not part of a standard service and is priced per machine, at ${GAS_RANGE} depending on tonnage and gas type (R410A or R32), excl. VAT. If a unit needs gas, it has a leak, so we check for leaks first and tell you before topping up.` },
   { q: "Do you service VRF and ducted AC?", a: "Yes. We service ducted, cassette and VRF/VRV systems as well as split units, and we confirm the price once we know the system type and the number of units." },
   { q: "Do you service all AC brands?", a: "Yes. We service every major brand and system type — split, ducted, cassette, VRF/VRV, chillers and package units — including Daikin, O General, Carrier, Gree, Midea, LG, Mitsubishi, Trane and more." },
   { q: "Do you offer same-day or emergency AC repair?", a: "Yes. We provide same-day service where possible and 24/7 emergency breakdown support across Dubai and the UAE — important when your AC fails during peak summer." },
@@ -153,7 +152,7 @@ const faqs: { q: string; a: string }[] = [
   { q: "My AC isn't cooling — do I just need a gas top-up?", a: "Not always. Low cooling can be low refrigerant, but it can also be a dirty coil, a failing compressor or airflow problems. We diagnose the real cause first — topping up gas without fixing a leak is a temporary and wasteful fix." },
   { q: "Do you do AC coil and duct cleaning?", a: "Yes. We deep-clean coils, drainage and ductwork to restore airflow, remove odours and improve indoor air quality — often a big factor in weak cooling and high bills." },
   { q: "Can regular maintenance lower my electricity bill?", a: "Yes. A clean, well-charged, properly running AC uses noticeably less energy than a neglected one — efficiency can drop 20–30% within two years without maintenance, and that shows up on your DEWA bill." },
-  { q: "Do you maintain AC for villas and apartments?", a: "Both, as one-off services or annual contracts. A one-off service has a minimum of 3 units. If you have fewer than 3 units, send us the details on WhatsApp and we will tell you the options." },
+  { q: "Do you maintain AC for villas and apartments?", a: `Both, as one-off services or annual contracts. A one-off service is ${ONE_OFF_SUMMARY}, excl. VAT.` },
   { q: "Do you handle commercial AC maintenance?", a: "Yes. We provide AMC and reactive maintenance for offices, shops, restaurants, hotels and buildings — including chillers, AHUs, FCUs and VRF systems, with 24/7 response options." },
   { q: "Are your technicians qualified?", a: `Yes. Our work is engineer-led, and our technicians are trained to work to ASHRAE standards.` },
   { q: "Which areas do you cover?", a: "We serve all 7 emirates: Abu Dhabi, Dubai, Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah and Fujairah. Our completed projects so far are in Dubai, Sharjah, Ajman and Abu Dhabi." },

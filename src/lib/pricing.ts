@@ -7,7 +7,7 @@
 // compatibility check. Not emitted in Service JSON-LD offers (the "from" +
 // adaptor split makes a single structured price imprecise). Edit a figure here
 // and it updates the visible page copy everywhere it's used. (AC servicing
-// "from AED 350/unit, min 3" stays in the maintenance page copy.)
+// maintenance prices live in src/data/prices.ts.)
 
 /** Google Nest device, supply only (AED). */
 export const PRICE_NEST_SUPPLY = "850";

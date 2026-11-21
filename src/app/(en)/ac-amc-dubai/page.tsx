@@ -11,7 +11,7 @@ import { GOOGLE_REVIEWS, reviewsAbout } from "@/lib/reviews";
 import { AmcForm } from "@/components/AmcForm";
 import { BreadcrumbBand } from "@/components/Breadcrumbs";
 import { PHONE, whatsappUrl } from "@/lib/contact";
-import { prices, visibleTiers, PRICE_FOOTNOTE, isConfirmed } from "@/data/prices";
+import { prices, maintenanceRows, GAS_RANGE, visibleTiers, PRICE_FOOTNOTE, isConfirmed } from "@/data/prices";
 
 import { PHONE_DISPLAY } from "@/lib/company";
 const SITE_URL = "https://agec.ae";
@@ -487,9 +487,9 @@ export default function AcAmcPage() {
                 The <strong>Basic</strong> plan&apos;s 2 visits suit low-use or
                 single-split homes; for year-round villa and office use we
                 recommend every 3 months (4 visits a year). AMC visits
-                are AED {Math.min(...prices.amcPlans.map((p) => p.from))}–{Math.max(...prices.amcPlans.map((p) => p.from))} per machine depending on plan, which is below our
-                one-off service rate of AED {prices.maintenance[0].from} per machine (minimum 3 units),
-                because the visits are scheduled for the year.
+                are AED {Math.min(...prices.amcPlans.map((p) => p.from))}–{Math.max(...prices.amcPlans.map((p) => p.from))} per machine depending on plan,
+                because the visits are scheduled for the year. A one-off service for 3 or more units is from
+                AED {maintenanceRows.oneOff.from} per visit (minimum charge; written quote by number of units).
               </p>
             </>
           )}
@@ -524,7 +524,7 @@ export default function AcAmcPage() {
                       {
                         label: "Gas top-up",
                         cells: amcConfig.plans.map(
-                          () => `Not included. AED ${prices.maintenance[2].from} per machine, quoted before work`,
+                          () => `Not included. ${GAS_RANGE}, excl. VAT, quoted before work`,
                         ),
                       },
                       {
