@@ -4,6 +4,7 @@ import { buildMetadata } from "@/lib/metadata";
 import { BreadcrumbBand } from "@/components/Breadcrumbs";
 import { Phone, MessageCircle, Check } from "lucide-react";
 import { PHONE, PHONE_DISPLAY, whatsappUrl } from "@/lib/contact";
+import { AR_CALLOUT_FAQ_ANSWER, AR_PARTS_FAQ_ANSWER, AR_COMPRESSOR_FAQ_ANSWER } from "@/data/prices-ar";
 
 const SITE_URL = "https://agec.ae";
 const ROUTE = "/ar/ac-repair-dubai";
@@ -52,8 +53,20 @@ const faqs: { q: string; a: string }[] = [
     a: "فقط إذا كان الفريون منخفضاً فعلاً ولا يوجد تسرّب. الفريون يدور في دائرة مغلقة، فإذا كان منخفضاً فهناك تسرّب. نجد التسرّب ونصلحه بدل الاكتفاء بالتعبئة حتى لا يعود العطل سريعاً.",
   },
   {
+    q: "ما رسوم الحضور والتشخيص؟",
+    a: AR_CALLOUT_FAQ_ANSWER,
+  },
+  {
     q: "ما مدى سرعة وصولكم؟",
     a: "نرد خلال ساعة في أي وقت. اتصل أو راسلنا على واتساب مع ذكر المنطقة والمشكلة، وسنؤكد أقرب موعد للوصول إليك.",
+  },
+  {
+    q: "هل لديكم قطع غيار جاهزة؟",
+    a: AR_PARTS_FAQ_ANSWER,
+  },
+  {
+    q: "كم يستغرق استبدال الكمبروسر؟",
+    a: AR_COMPRESSOR_FAQ_ANSWER,
   },
   {
     q: "هل تصلحون المكيفات السبليت والمخفية و VRF؟",

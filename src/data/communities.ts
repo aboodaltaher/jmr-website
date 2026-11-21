@@ -474,7 +474,7 @@ const villanova: Community = {
     },
     {
       q: "Should I repair my AC or replace it?",
-      a: `It depends on the fault and the age of the unit. An engineer can diagnose it for a call-out fee of AED ${callout}, waived if you go ahead with the repair, and tell you whether repair or replacement makes sense.`,
+      a: `It depends on the fault and the age of the unit. An engineer can diagnose it for a call-out fee of AED ${callout} excl. VAT, deducted from the repair bill if you go ahead with the repair, and tell you whether repair or replacement makes sense.`,
     },
   ],
   toConfirm: [
@@ -778,7 +778,7 @@ const alWasl: Community = {
     },
     {
       q: "Can you fix a drain that a previous contractor connected badly?",
-      a: `Yes. We have corrected a condensate drain connection in Al Wasl after a previous contractor's installation. Diagnosis is AED ${callout}, waived if you go ahead with the repair, and the exact repair price is quoted after diagnosis.`,
+      a: `Yes. We have corrected a condensate drain connection in Al Wasl after a previous contractor's installation. Diagnosis is AED ${callout} excl. VAT, deducted from the repair bill if you go ahead with the repair, and the exact repair price is quoted after diagnosis.`,
     },
   ],
   toConfirm: [],
@@ -802,7 +802,7 @@ const sustainableCity: Community = {
   ],
   intro: [
     "AGEC finds and fixes AC leaks in The Sustainable City, and replaces compressors. The photo below shows worn twin scroll compressors in an outdoor unit in The Sustainable City before the compressors were replaced.",
-    `Diagnosis costs AED ${callout}, waived if you go ahead with the repair. The exact repair price is quoted after diagnosis, in writing, before any work starts.`,
+    `Diagnosis costs AED ${callout} excl. VAT, deducted from the repair bill if you go ahead with the repair. The exact repair price is quoted after diagnosis, in writing, before any work starts.`,
     "The Sustainable City is a community of villas, townhouses and apartments. Whether a home is cooled by split units or a ducted system, a leak usually shows up as a stain on a ceiling, water at an indoor unit, or a unit that stops cooling. We start by finding which of those it is, and where the leak comes from.",
   ],
   sections: [
@@ -847,7 +847,7 @@ const sustainableCity: Community = {
   faqs: [
     {
       q: "How much does an AC leak repair cost?",
-      a: `Diagnosis is AED ${callout}, waived if you go ahead with the repair. The exact repair price depends on the leak and is quoted in writing after diagnosis.`,
+      a: `Diagnosis is AED ${callout} excl. VAT, deducted from the repair bill if you go ahead with the repair. The exact repair price depends on the leak and is quoted in writing after diagnosis.`,
     },
     {
       q: "Why is my AC leaking water?",
