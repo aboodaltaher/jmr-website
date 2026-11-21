@@ -15,7 +15,7 @@ export function PriceTable({ rows, caption }: { rows: PriceRow[]; caption: strin
           <thead className="bg-primary text-left text-white">
             <tr>
               <th scope="col" className="border border-border px-4 py-3 font-semibold">Service</th>
-              <th scope="col" className="border border-border px-4 py-3 font-semibold">Price (AED)</th>
+              <th scope="col" className="border border-border px-4 py-3 font-semibold">Price (AED, excl. VAT)</th>
             </tr>
           </thead>
           <tbody className="bg-white">

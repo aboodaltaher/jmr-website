@@ -103,7 +103,6 @@ const steps = [
   "We send a short report with what we measured.",
 ];
 
-// TODO(owner): FAQ "Do you warranty repairs?" — no repair warranty wording exists on the site; give the period and what it covers.
 // TODO(owner): parts FAQ: confirm which parts you stock and typical lead time for others.
 const callout = money(prices.repair[0].from as number);
 const faqs: { q: string; a: string }[] = [
@@ -130,6 +129,10 @@ const faqs: { q: string; a: string }[] = [
   {
     q: "How fast can you come?",
     a: "We respond within an hour, any time of day. Call or WhatsApp us with your area and the problem, and we will confirm the soonest we can reach you.",
+  },
+  {
+    q: "Do you warranty repairs?",
+    a: "Yes. Every repair carries a 90-day workmanship warranty. If the same fault comes back within 90 days because of our work, we return and fix it free of charge. New parts we fit also carry the manufacturer's warranty, usually 3 to 12 months depending on the part. The warranty doesn't cover new faults, power surges, misuse, or work done by others after our visit.",
   },
   {
     q: "Do you have spare parts on hand?",
@@ -308,6 +311,11 @@ export default function AcRepairPage() {
               </li>
             ))}
           </ol>
+          <p className="mt-6 text-text-muted">
+            Every repair carries a 90-day workmanship warranty. If the same fault comes back within 90 days because of
+            our work, we return and fix it free of charge. See the warranty terms in the{" "}
+            <Link href="#faqs" className="font-semibold text-primary hover:underline">FAQs below</Link>.
+          </p>
         </div>
       </section>
 
@@ -409,7 +417,7 @@ export default function AcRepairPage() {
       <ReviewsSection title="What customers say after a repair" reviews={reviewsAbout("repair")} />
 
       {/* FAQ */}
-      <section className="py-16 md:py-20">
+      <section id="faqs" className="py-16 md:py-20">
         <div className="mx-auto max-w-4xl px-6">
           <p className={eyebrow}>FAQ</p>
           <h2 className="mt-3 font-heading text-3xl font-bold md:text-4xl">
