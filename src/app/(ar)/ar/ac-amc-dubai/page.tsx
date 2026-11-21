@@ -6,6 +6,7 @@ import { BreadcrumbBand } from "@/components/Breadcrumbs";
 import { Phone, MessageCircle, Check } from "lucide-react";
 import { PHONE, PHONE_DISPLAY, whatsappUrl } from "@/lib/contact";
 import { prices } from "@/data/prices";
+import { AR_ONE_OFF_SENTENCE } from "@/data/prices-ar";
 
 const SITE_URL = "https://agec.ae";
 const ROUTE = "/ar/ac-amc-dubai";
@@ -158,7 +159,7 @@ export default function ArabicAmc() {
           <p className="mt-6 max-w-2xl text-lg text-white/70">
             عقد صيانة المكيفات السنوي (AMC) في دبي يُبقي مكيفك تحت صيانة مجدولة:
             مهندس مخصّص، وتقرير خدمة مع صور بعد كل زيارة، وأولوية في الاستجابة عند
-            أي عطل. تبدأ خدمة الوحدة لمرة واحدة من 350 درهماً (بحد أدنى 3 وحدات).
+            أي عطل. {AR_ONE_OFF_SENTENCE}
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a href={`tel:${PHONE}`} className="inline-flex items-center gap-2 rounded-md bg-primary px-7 py-4 font-semibold text-white hover:bg-primary-dark transition-colors">
