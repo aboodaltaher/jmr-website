@@ -146,6 +146,18 @@ const steps = [
   "Service report with photos after every visit.",
 ];
 
+// Owner-confirmed PPM frequencies and tasks for building plant.
+const ppmSchedule: { plant: string; visits: string; tasks: string }[] = [
+  { plant: "Split and ducted DX", visits: "Quarterly", tasks: "Filters, coils, drains, electrical and a performance check." },
+  { plant: "FCUs (chilled water)", visits: "Quarterly, with filters monthly", tasks: "Filters, coils, drain pans, valves and motors." },
+  { plant: "AHUs and FAHUs", visits: "Monthly", tasks: "Filters, belts, bearings, coils, dampers and drain." },
+  { plant: "VRF", visits: "Quarterly", tasks: "Per the VRF maintenance checklist." },
+  { plant: "Package units", visits: "Quarterly", tasks: "Coils, compressors, fans, electrical and refrigerant." },
+  { plant: "Chillers", visits: "Monthly, plus an annual major service", tasks: "Log readings, condenser and evaporator checks, oil and refrigerant analysis, and annual tube cleaning." },
+  { plant: "Exhaust and ventilation fans", visits: "Quarterly", tasks: "Belts, bearings, motor amps and cleaning." },
+  { plant: "Chilled-water pumps", visits: "Monthly", tasks: "Seals, vibration, amps and strainers." },
+];
+
 export default function AcAmcPage() {
   const waHref = whatsappUrl(ROUTE);
 
@@ -312,51 +324,37 @@ export default function AcAmcPage() {
           <p className="mt-3 text-text-muted">
             Planned preventive maintenance (PPM) visits by type of plant.
           </p>
-          <div className="mt-4 overflow-x-auto">
-            <table className="w-full min-w-[32rem] text-left text-sm">
+          <div className="mt-4 overflow-x-auto" tabIndex={0} role="region" aria-label="PPM schedule by plant type">
+            <table className="w-full min-w-[36rem] text-left text-sm">
               <thead>
                 <tr className="border-b border-border text-xs uppercase tracking-wider text-text-muted">
                   <th className="py-3 pr-4 font-semibold">Plant</th>
-                  <th className="py-3 font-semibold">PPM visits</th>
+                  <th className="py-3 pr-4 font-semibold">Visits</th>
+                  <th className="py-3 font-semibold">Each visit covers</th>
                 </tr>
               </thead>
               <tbody className="align-top">
-                <tr className="border-b border-border">
-                  <th scope="row" className="py-3 pr-4 font-medium">Split and ducted units</th>
-                  <td className="py-3 text-text-muted">
-                    {amcConfig.visitsPerYear}. Each visit: filter and coil
-                    cleaning, drain flushing, refrigerant pressure check,
-                    electrical and control check, performance test, and a service
-                    report with photos.
-                  </td>
-                </tr>
-                <tr className="border-b border-border">
-                  <th scope="row" className="py-3 pr-4 font-medium">
-                    VRF/VRV, AHUs, FCUs and ventilation
-                  </th>
-                  <td className="py-3 text-text-muted">
-                    Filter cleaning on FCUs and indoor units: quarterly. Other
-                    visits are set per site after the survey, based on the number
-                    and type of units.
-                  </td>
-                </tr>
-                <tr className="border-b border-border">
-                  <th scope="row" className="py-3 pr-4 font-medium">Chillers</th>
-                  <td className="py-3 text-text-muted">
-                    A dedicated schedule — see{" "}
-                    <Link
-                      href="/services/chiller-maintenance-dubai"
-                      className="font-semibold text-primary hover:underline"
-                    >
-                      chiller installation &amp; maintenance
-                    </Link>
-                    .
-                  </td>
-                </tr>
+                {ppmSchedule.map((row) => (
+                  <tr key={row.plant} className="border-b border-border">
+                    <th scope="row" className="py-3 pr-4 font-medium">{row.plant}</th>
+                    <td className="py-3 pr-4 text-text-muted">{row.visits}</td>
+                    <td className="py-3 text-text-muted">{row.tasks}</td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
-          {/* TODO(owner): PPM visit frequency and task list per plant type for buildings (VRF/VRV outdoor units, AHUs, ventilation, chillers). Only the residential visit counts, the task list stated on this page and the quarterly FCU / indoor-unit filter cleaning are shown; the rest says "set per site". */}
+          <p className="mt-3 text-text-muted">
+            VRF visits follow the{" "}
+            <Link href="/vrf-maintenance-dubai" className="font-semibold text-primary hover:underline">
+              VRF maintenance checklist
+            </Link>
+            ; chillers have a dedicated schedule on{" "}
+            <Link href="/services/chiller-maintenance-dubai" className="font-semibold text-primary hover:underline">
+              chiller installation &amp; maintenance
+            </Link>
+            .
+          </p>
 
           <h3 className="mt-10 font-heading text-2xl font-bold">SLA response tiers</h3>
           <div className="mt-4 overflow-x-auto">
@@ -528,7 +526,11 @@ export default function AcAmcPage() {
                         ),
                       },
                       {
-                        label: "VRF, chiller and DX plant",
+                        label: "VRF systems (villa)",
+                        cells: amcConfig.plans.map(() => "Villa system plan, priced on outdoor capacity (HP) and the number of indoor units, not per machine"),
+                      },
+                      {
+                        label: "Chiller and DX plant",
                         cells: amcConfig.plans.map(() => "Not priced per machine. Quoted after a site survey"),
                       },
                     ].map((row) => (
@@ -554,7 +556,7 @@ export default function AcAmcPage() {
                 <Link href="/hvac-contractor-ajman" className="font-semibold text-primary hover:underline">Ajman</Link> and{" "}
                 <Link href="/hvac-contractor-abu-dhabi" className="font-semibold text-primary hover:underline">Abu Dhabi</Link>.
               </p>
-              {/* TODO(owner): confirm whether a villa VRF/VRV system can be on a per-machine residential plan; until then VRF, chiller and DX are shown as quoted after a site survey. Also confirm gas top-up is never part of an AMC visit. */}
+              {/* TODO(owner): confirm gas top-up is never part of an AMC visit. */}
             </div>
           )}
 

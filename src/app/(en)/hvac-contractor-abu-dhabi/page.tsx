@@ -61,13 +61,27 @@ export default function HvacContractorAbuDhabi() {
               {
                       "h2": "Critical and commercial facilities in Abu Dhabi",
                       "paragraphs": [
-                              "Abu Dhabi's demanding cooling work is often in buildings where stable temperature is a business requirement. The main types, and how we approach each:"
+                              "Abu Dhabi's demanding cooling work is often in buildings where stable temperature is a business requirement. The main types, and how we approach each:",
+                              "Typical systems in Abu Dhabi are VRF and ducted DX in villas, FCUs on district cooling in towers, and fresh air units."
                       ],
                       "bullets": [
                               "Data centres and server rooms: close-control (precision) cooling, airflow management and containment, designed for continuous running. This is our delivered work in Masdar City and Musaffah, shown above.",
                               "Commercial offices and towers: chilled-water or VRF systems with treated fresh air, commissioned to the design before handover.",
                               "Industrial and logistics buildings: ventilation and packaged cooling sized for the heat load of the activity and the building.",
-                              "Villas and residential compounds: ducted or concealed split systems sized room by room."
+                              "Apartment towers: in areas such as Al Reem and Al Raha, many towers run on district cooling, so the in-flat equipment is usually fan coil units (FCUs) fed from the district cooling supply.",
+                              "Villas: in areas such as Khalifa City, Al Reef, Yas and Saadiyat, usually VRF or ducted DX systems sized room by room."
+                      ]
+              },
+              {
+                      "h2": "Utility, approvals and NOCs in Abu Dhabi",
+                      "paragraphs": [
+                              "Which approvals apply depends on the building and the work. The utility is TAQA Distribution (formerly ADDC), which merged with AADC in January 2025. Authority approvals are submitted by the project consultant, and AGEC supplies the HVAC drawings, calculations and documents they need. Authority and NOC fees are paid by the client at cost and listed separately on the quote, with no mark-up. Approval requirements change from time to time. We confirm the current requirements for your specific building at the survey stage."
+                      ],
+                      "bullets": [
+                              "Department of Municipalities and Transport and the municipality: building permits.",
+                              "Abu Dhabi Civil Defence: fire and smoke systems.",
+                              "Estidama requirements: apply to new builds.",
+                              "Master developer NOC: for communities from developers such as Aldar."
                       ]
               },
               {
@@ -117,6 +131,10 @@ export default function HvacContractorAbuDhabi() {
         {
           q: "Are you based in Abu Dhabi?",
           a: `No — AGEC is based in Dubai (${ADDRESS_LINE}) and delivers projects in Abu Dhabi from there. You deal with the same Dubai engineering team; we do not run a separate Abu Dhabi branch or local number.`,
+        },
+        {
+          q: "Do I need an approval or NOC for AC work in Abu Dhabi?",
+          a: "It depends on the building and the work. Building permits go through the Department of Municipalities and Transport or the municipality, fire and smoke systems involve Abu Dhabi Civil Defence, and new builds must meet Estidama requirements. Communities from master developers such as Aldar need a developer NOC, and electrical connections go through TAQA Distribution (formerly ADDC). Authority approvals are submitted by the project consultant, and AGEC supplies the HVAC drawings, calculations and documents they need. Authority and NOC fees are paid by the client at cost and listed separately on the quote, with no mark-up. Approval requirements change from time to time. We confirm the current requirements for your specific building at the survey stage.",
         },
         {
           q: "How do I get a quote for an Abu Dhabi project?",

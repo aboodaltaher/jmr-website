@@ -55,13 +55,26 @@ export default function HvacContractorAjman() {
               {
                       "h2": "Commercial and residential buildings in Ajman",
                       "paragraphs": [
-                              "Ajman's buildings range from malls and mixed-use developments to residential towers and smaller commercial units. What suits each one:"
+                              "Ajman's buildings range from malls and mixed-use developments to residential towers and smaller commercial units. What suits each one:",
+                              "For homes and smaller buildings in Ajman, typical systems are split and ducted DX and package units, with ventilation for warehouses and workshops."
                       ],
                       "bullets": [
                               "Malls and retail buildings: VRF or VRV, where shops, corridors and back-of-house each need independent temperature control from shared outdoor units, as on our Basil Mall project above.",
-                              "Residential towers and mixed-use blocks: split or VRF systems per apartment or floor, with outdoor units placed so they get enough airflow and can be reached for service.",
+                              "Apartment towers: towers in areas such as Al Nuaimiya, Al Rashidiya and Emirates City usually run split or ducted DX, or VRF per apartment or floor, with outdoor units placed so they get enough airflow and can be reached for service.",
+                              "Villas: in communities such as Al Zorah, Al Yasmeen and Al Helio, usually ducted or concealed split or DX systems sized room by room.",
                               "Offices and clinics: ducted or cassette units, with fresh air provided so occupants are not breathing recirculated air all day.",
-                              "Workshops and light-industrial units: packaged or ducted units with ventilation sized for the heat the work produces."
+                              "Industrial units: packaged or ducted units with warehouse and workshop ventilation sized for the heat the work produces."
+                      ]
+              },
+              {
+                      "h2": "Utility, approvals and NOCs in Ajman",
+                      "paragraphs": [
+                              "Which approvals apply depends on the building and the work. The utility is Etihad Water & Electricity (EtihadWE, formerly FEWA). Authority approvals are submitted by the project consultant, and AGEC supplies the HVAC drawings, calculations and documents they need. Authority and NOC fees are paid by the client at cost and listed separately on the quote, with no mark-up. Approval requirements change from time to time. We confirm the current requirements for your specific building at the survey stage."
+                      ],
+                      "bullets": [
+                              "Ajman Municipality and Planning Department: building permits and modifications.",
+                              "Ajman Civil Defence: fire and smoke systems and kitchen exhaust.",
+                              "Building management NOC: apartments, for any change to AC units or outdoor unit location."
                       ]
               },
               {
@@ -106,6 +119,10 @@ export default function HvacContractorAjman() {
         {
           q: "Do you handle VRF systems for malls and commercial buildings?",
           a: "Yes. VRF/VRV is well suited to multi-zone commercial buildings, and we design, install and commission it — as on the 224-ton VRF system at Basil Mall in Ajman — then maintain it under a contract.",
+        },
+        {
+          q: "Do I need an approval or NOC for AC work in Ajman?",
+          a: "It depends on the building and the work. Apartments usually need a building management NOC, and larger modifications can need Ajman Municipality and Planning Department approval. Fire and smoke systems involve Ajman Civil Defence, and electrical load increases go through Etihad Water & Electricity (EtihadWE, formerly FEWA). Authority approvals are submitted by the project consultant, and AGEC supplies the HVAC drawings, calculations and documents they need. Authority and NOC fees are paid by the client at cost and listed separately on the quote, with no mark-up. Approval requirements change from time to time. We confirm the current requirements for your specific building at the survey stage.",
         },
         {
           q: "How do I get a quote for an Ajman project?",

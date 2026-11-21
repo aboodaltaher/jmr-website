@@ -144,6 +144,7 @@ const faqs: { q: string; a: string }[] = [
   { q: "How much does AC maintenance cost in Dubai?", a: `A one-off service is ${ONE_OFF_SUMMARY}. The exact cost depends on the number and type of units and whether it's a one-off service or an annual contract. We confirm a transparent fixed price upfront after understanding your system — with no hidden charges. Prices exclude 5% VAT. AMC plans reduce the per-visit cost.` },
   { q: "How long does an AC service take?", a: "It depends on the number and type of units. We confirm the expected time when we quote, once we know your system." },
   { q: "Is gas included in an AC service?", a: `A service includes checking the refrigerant pressure. Gas top-up is not part of a standard service and is priced per machine, at ${GAS_RANGE} depending on tonnage and gas type (R410A or R32), excl. VAT. If a unit needs gas, it has a leak, so we check for leaks first and tell you before topping up.` },
+  { q: "What does a full AC overhaul include?", a: "A full overhaul includes removing and chemically washing the indoor coil, blower and drain pan; washing the outdoor coil; testing and replacing worn electrical parts (capacitors, contactors); leak testing; correcting the refrigerant charge; checking insulation and the drain line; and running a final performance test (supply air temperature, amps, pressures) with a written report." },
   { q: "Do you service VRF and ducted AC?", a: "Yes. We service ducted, cassette and VRF/VRV systems as well as split units, and we confirm the price once we know the system type and the number of units." },
   { q: "Do you service all AC brands?", a: "Yes. We service every major brand and system type — split, ducted, cassette, VRF/VRV, chillers and package units — including Daikin, O General, Carrier, Gree, Midea, LG, Mitsubishi, Trane and more." },
   { q: "Do you offer same-day or emergency AC repair?", a: "Yes. We provide same-day service where possible and 24/7 emergency breakdown support across Dubai and the UAE — important when your AC fails during peak summer." },
@@ -409,6 +410,11 @@ export default async function AcMaintenancePage() {
               </li>
             ))}
           </ul>
+
+          <h3 className="mt-12 font-heading text-2xl font-bold">Full AC overhaul</h3>
+          <p className="mt-3 max-w-3xl text-text-muted">
+            A full overhaul includes removing and chemically washing the indoor coil, blower and drain pan; washing the outdoor coil; testing and replacing worn electrical parts (capacitors, contactors); leak testing; correcting the refrigerant charge; checking insulation and the drain line; and running a final performance test (supply air temperature, amps, pressures) with a written report.
+          </p>
         </div>
       </section>
 

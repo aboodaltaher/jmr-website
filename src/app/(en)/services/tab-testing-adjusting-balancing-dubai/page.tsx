@@ -50,7 +50,11 @@ const faq = [
   },
   {
     q: "What do I receive at the end?",
-    a: "A signed report showing measured against design values, the adjustments made, functional test results and any deficiencies, set out for consultant, landlord or authority review. Calibration certificates for the instruments used are attached to every final report.",
+    a: "A signed PDF report with a summary page, a system schematic and a data sheet for each AHU, FCU, fan and diffuser: design against measured airflow, static pressure, temperatures, amps and percentage of design, following NEBB and AABC-style procedures. It includes photos of instrument readings, key dampers and equipment nameplates, the functional test results and any deficiencies, set out for consultant, landlord or authority review. Calibrated instruments are used, and their certificates are attached to every final report.",
+  },
+  {
+    q: "How long does the report take?",
+    a: "A draft report comes within 3 to 5 working days of finishing site work. The final report follows within 2 days of receiving comments.",
   },
   {
     q: "Can you balance air only?",
@@ -286,11 +290,29 @@ export default function TestingCommissioningBalancing() {
               <h2 className={h2Class}>Reports and handover</h2>
               <div className={bodyClass}>
                 <p>
-                  The deliverable is a documented report: measured against design values by area and system,
+                  The deliverable is a documented PDF report: measured against design values by area and system,
                   the adjustments made, FPT results, the deficiency log and any shortfall that points to a
                   sizing, leakage or equipment problem rather than a balancing one. It is signed and set out
                   for consultant, landlord and authority review.
                 </p>
+                <ul className="list-disc space-y-2 pl-5">
+                  <li>
+                    <strong className="text-text">Format:</strong> a summary page, a system schematic, and a data sheet
+                    for each AHU, FCU, fan and diffuser showing design against measured airflow, static pressure,
+                    temperatures, amps and percentage of design. Procedures follow NEBB and AABC-style methods.
+                  </li>
+                  <li>
+                    <strong className="text-text">Photos:</strong> instrument readings, key dampers and equipment
+                    nameplates.
+                  </li>
+                  <li>
+                    <strong className="text-text">Instruments:</strong> calibrated, with certificates attached.
+                  </li>
+                  <li>
+                    <strong className="text-text">Delivery:</strong> a draft within 3 to 5 working days of finishing site
+                    work, and the final report within 2 days of receiving comments.
+                  </li>
+                </ul>
                 <p>
                   We scope the job after a look at the drawings or a site visit, and give you a clear timeline
                   before starting. If you are installing a system, see our{" "}

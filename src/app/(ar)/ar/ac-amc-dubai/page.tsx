@@ -128,6 +128,18 @@ const serviceSchema = {
   provider: { "@id": `${SITE_URL}/#business` },
 };
 
+// Owner-confirmed PPM frequencies and tasks for building plant (Arabic wording; same facts as the English page).
+const ppmSchedule: { plant: string; visits: string; tasks: string }[] = [
+  { plant: "سبليت ومجاري (DX)", visits: "كل 3 أشهر", tasks: "الفلاتر والملفات والتصريف والأجزاء الكهربائية وفحص الأداء." },
+  { plant: "وحدات ملف المروحة (FCU) بالماء المثلج", visits: "كل 3 أشهر، مع تنظيف الفلاتر شهرياً", tasks: "الفلاتر والملفات وصواني التصريف والصمامات والمحركات." },
+  { plant: "وحدات مناولة الهواء (AHU) ووحدات الهواء الطازج (FAHU)", visits: "شهرياً", tasks: "الفلاتر والسيور والمحامل والملفات والدامبرات والتصريف." },
+  { plant: "VRF", visits: "كل 3 أشهر", tasks: "وفق قائمة فحص صيانة VRF." },
+  { plant: "الوحدات المجمّعة (Package)", visits: "كل 3 أشهر", tasks: "الملفات والكمبروسرات والمراوح والأجزاء الكهربائية والفريون." },
+  { plant: "التشيلرات", visits: "شهرياً، مع صيانة كبرى سنوية", tasks: "تسجيل القراءات، وفحص المكثّف والمبخّر، وتحليل الزيت والفريون، وتنظيف الأنابيب سنوياً." },
+  { plant: "مراوح الشفط والتهوية", visits: "كل 3 أشهر", tasks: "السيور والمحامل وأمبير المحرك والتنظيف." },
+  { plant: "مضخات المياه المثلجة", visits: "شهرياً", tasks: "الأختام والاهتزاز والأمبير والمصافي." },
+];
+
 export default function ArabicAmc() {
   const wa = whatsappUrl(ROUTE);
 
@@ -282,43 +294,33 @@ export default function ArabicAmc() {
 
           <h3 className="mt-10 font-heading text-2xl font-bold">جدول الصيانة الدورية (PPM)</h3>
           <p className="mt-3 text-text-muted">زيارات الصيانة الدورية حسب نوع المعدات.</p>
-          <div className="mt-4 overflow-x-auto">
-            <table className="w-full min-w-[32rem] text-start text-sm">
+          <div className="mt-4 overflow-x-auto" tabIndex={0} role="region" aria-label="جدول الصيانة الدورية حسب نوع المعدات">
+            <table className="w-full min-w-[36rem] text-start text-sm">
               <thead>
                 <tr className="border-b border-border text-xs tracking-wider text-text-muted">
                   <th className="py-3 pe-4 text-start font-semibold">المعدات</th>
-                  <th className="py-3 text-start font-semibold">زيارات الصيانة الدورية</th>
+                  <th className="py-3 pe-4 text-start font-semibold">الزيارات</th>
+                  <th className="py-3 text-start font-semibold">ما تشمله كل زيارة</th>
                 </tr>
               </thead>
               <tbody className="align-top">
-                <tr className="border-b border-border">
-                  <th scope="row" className="py-3 pe-4 text-start font-medium">وحدات السبليت والمجاري</th>
-                  <td className="py-3 text-text-muted">
-                    {visitsPerYear}. في كل زيارة: تنظيف الفلاتر والملفات، وتنظيف خط التصريف، وفحص ضغط الفريون، وفحص الأجزاء الكهربائية والتحكم، واختبار الأداء، وتقرير خدمة مع صور.
-                  </td>
-                </tr>
-                <tr className="border-b border-border">
-                  <th scope="row" className="py-3 pe-4 text-start font-medium">
-                    VRF/VRV، ووحدات مناولة الهواء، ووحدات ملف المروحة، والتهوية
-                  </th>
-                  <td className="py-3 text-text-muted">
-                    تنظيف فلاتر وحدات ملف المروحة والوحدات الداخلية: كل 3 أشهر. باقي الزيارات تُحدَّد لكل موقع بعد المعاينة، بحسب عدد المعدات وأنواعها.
-                  </td>
-                </tr>
-                <tr className="border-b border-border">
-                  <th scope="row" className="py-3 pe-4 text-start font-medium">التشيلرات</th>
-                  <td className="py-3 text-text-muted">
-                    جدول مخصّص — راجع{" "}
-                    <Link href="/ar/services/chiller-maintenance-dubai" className="font-semibold text-primary hover:underline">
-                      صيانة التشيلر
-                    </Link>
-                    .
-                  </td>
-                </tr>
+                {ppmSchedule.map((row) => (
+                  <tr key={row.plant} className="border-b border-border">
+                    <th scope="row" className="py-3 pe-4 text-start font-medium">{row.plant}</th>
+                    <td className="py-3 pe-4 text-text-muted">{row.visits}</td>
+                    <td className="py-3 text-text-muted">{row.tasks}</td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
-          {/* TODO(owner): PPM visit frequency and task list per plant type for buildings (VRF/VRV outdoor units, AHUs, ventilation, chillers), as on the English page. */}
+          <p className="mt-3 text-text-muted">
+            زيارات VRF تتبع قائمة فحص صيانة VRF؛ وللتشيلرات جدول مخصّص في{" "}
+            <Link href="/ar/services/chiller-maintenance-dubai" className="font-semibold text-primary hover:underline">
+              صيانة التشيلر
+            </Link>
+            .
+          </p>
 
           <h3 className="mt-10 font-heading text-2xl font-bold">مستويات الاستجابة (SLA)</h3>
           <div className="mt-4 overflow-x-auto">
