@@ -2,6 +2,7 @@ import { buildMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { Phone, MessageCircle, Clock, ShieldCheck, MapPin, Award, Wrench, CalendarCheck } from "lucide-react";
 import { PHONE, PHONE_DISPLAY, whatsappUrl } from "@/lib/contact";
+import { AR_ONE_OFF_FROM } from "@/data/prices-ar";
 
 const SITE_URL = "https://agec.ae";
 
@@ -32,7 +33,7 @@ const services = [
     icon: CalendarCheck,
     href: "/ar/ac-amc-dubai",
     title: "الصيانة وعقود الصيانة السنوية",
-    desc: "خطط صيانة سنوية بزيارات مجدولة وتقارير موثّقة وأولوية في الاستجابة. تبدأ خدمة الوحدة من 350 درهماً.",
+    desc: `خطط صيانة سنوية بزيارات مجدولة وتقارير موثّقة وأولوية في الاستجابة. ${AR_ONE_OFF_FROM}.`,
   },
 ];
 

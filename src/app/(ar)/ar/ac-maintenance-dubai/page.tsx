@@ -4,14 +4,15 @@ import { buildMetadata } from "@/lib/metadata";
 import { BreadcrumbBand } from "@/components/Breadcrumbs";
 import { Phone, MessageCircle, ShieldCheck, BadgeCheck, Clock, FileText, Gauge, CalendarClock } from "lucide-react";
 import { PHONE, PHONE_DISPLAY, whatsappUrl } from "@/lib/contact";
+import { maintenanceRows, offersFor, visibleRows, prices } from "@/data/prices";
+import { AR_MAINTENANCE_ROWS, AR_PRICES_VAT_NOTE, AR_ONE_OFF_FROM, AR_PRICE_FAQ_ANSWER } from "@/data/prices-ar";
 
 const SITE_URL = "https://agec.ae";
 const ROUTE = "/ar/ac-maintenance-dubai";
 
 export const metadata = buildMetadata({
   title: "صيانة مكيفات دبي — بإشراف مهندسين وفي نفس اليوم | AGEC",
-  description:
-    "صيانة مكيفات في دبي بإشراف مهندسين: خدمة وإصلاح وتنظيف وتعبئة غاز وعقود سنوية. الخدمة لمرة واحدة من 350 درهماً للوحدة. اتصل أو راسلنا على واتساب.",
+  description: `صيانة المكيفات في دبي للفلل والشقق: خدمة لمرة واحدة من ${maintenanceRows.apartment1.from} درهم، وتعبئة غاز وعقود صيانة سنوية. اتصل على \u200e${PHONE_DISPLAY}.`,
   path: ROUTE,
   locale: "ar_AE",
   languages: {
@@ -43,7 +44,7 @@ const steps = [
 const faqs: { q: string; a: string }[] = [
   {
     q: "كم تكلفة صيانة المكيفات في دبي؟",
-    a: "تبدأ الخدمة لمرة واحدة من 350 درهماً للوحدة، بحد أدنى 3 وحدات. تعتمد التكلفة الدقيقة على عدد الوحدات ونوعها وما إذا كانت خدمة لمرة واحدة أو عقداً سنوياً. نؤكد سعراً ثابتاً وشفافاً مقدماً بعد فهم نظامك — دون رسوم خفية. وتقلّل خطط العقود من تكلفة الزيارة.",
+    a: AR_PRICE_FAQ_ANSWER,
   },
   {
     q: "كم مرة يجب صيانة المكيف في دبي؟",
@@ -78,6 +79,8 @@ const serviceSchema = {
   areaServed: { "@type": "Country", name: "United Arab Emirates" },
   // One LocalBusiness per page: the site-wide block in SiteSchema (@id #business) is referenced here.
   provider: { "@id": `${SITE_URL}/#business` },
+  // Same rows and numbers as the English page (src/data/prices.ts); only the names are Arabic.
+  offers: offersFor(AR_MAINTENANCE_ROWS.map((r) => ({ ...maintenanceRows[r.key], label: r.label }))),
 };
 
 export default function ArabicAcMaintenance() {
@@ -114,8 +117,7 @@ export default function ArabicAcMaintenance() {
             مكيفك يبرّد بكفاءة ويستهلك كهرباء أقل — في الفلل والشقق والمكاتب.
           </p>
           <p className="mt-5 inline-flex flex-wrap items-baseline gap-2 rounded-lg bg-white/10 px-4 py-2.5 text-base font-semibold text-white">
-            خدمة لمرة واحدة من 350 درهماً للوحدة
-            <span className="text-sm font-normal text-white/70">· بحد أدنى 3 وحدات</span>
+            {AR_ONE_OFF_FROM}
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a href={`tel:${PHONE}`} className="inline-flex items-center gap-2 rounded-md bg-primary px-7 py-4 font-semibold text-white hover:bg-primary-dark transition-colors">
@@ -144,6 +146,35 @@ export default function ArabicAcMaintenance() {
           </div>
         </div>
       </section>
+
+      {/* PRICES: same rows as the English page */}
+      {visibleRows(prices.maintenance).length > 0 && (
+        <section id="prices" className="bg-bg-soft py-16 md:py-20">
+          <div className="mx-auto max-w-4xl px-6">
+            <h2 className="font-heading text-3xl font-bold md:text-4xl">أسعار صيانة المكيفات في دبي</h2>
+            <div className="mt-8 overflow-x-auto" tabIndex={0} role="region" aria-label="أسعار صيانة المكيفات">
+              <table className="w-full border-collapse text-sm">
+                <caption className="sr-only">أسعار صيانة المكيفات</caption>
+                <thead className="bg-primary text-white">
+                  <tr>
+                    <th scope="col" className="border border-border px-4 py-3 text-start font-semibold">الخدمة</th>
+                    <th scope="col" className="border border-border px-4 py-3 text-start font-semibold">السعر</th>
+                  </tr>
+                </thead>
+                <tbody className="bg-white">
+                  {AR_MAINTENANCE_ROWS.map((r) => (
+                    <tr key={r.key}>
+                      <th scope="row" className="border border-border px-4 py-3 text-start font-semibold">{r.label}</th>
+                      <td className="border border-border px-4 py-3">{r.price}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="mt-3 text-sm text-text-muted">{AR_PRICES_VAT_NOTE}</p>
+          </div>
+        </section>
+      )}
 
       {/* Mid-page lead block, directly after the first proof section */}
       <MidPageCta service="صيانة المكيفات" path="/ar/ac-maintenance-dubai" lang="ar" />
