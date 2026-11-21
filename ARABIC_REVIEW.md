@@ -481,7 +481,9 @@ Removed «التاهر غبون للمقاولات الهندسية» from:
 
 ## Repair FAQs added Nov 2026 — `src/data/prices-ar.ts`, `src/app/(ar)/ar/ac-repair-dubai/page.tsx`
 
+**Status: REVIEWED AND APPROVED by the supervisor on the preview (call-out fee, parts and compressor answers).**
+
 Translations of the owner's English answers (call-out fee AED 100 excl. VAT / AED 105 incl. VAT, deducted from the
 repair bill; parts carried on the van; parts and compressor lead times). Numbers are read from `repairRows`.
-Please check the terms for capacitor (مكثّف التشغيل), contactor (كونتاكتور), PCB fuse (فيوز اللوحة الإلكترونية)
-and compressor (كمبروسر), and whether «سيارتنا» reads naturally for "on the van".
+Reviewed terms: capacitor (مكثّف التشغيل), contactor (كونتاكتور), PCB fuse (فيوز اللوحة الإلكترونية), compressor
+(كمبروسر) and «سيارتنا» for "on the van".
