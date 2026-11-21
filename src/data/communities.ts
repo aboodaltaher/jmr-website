@@ -518,15 +518,6 @@ const miraOasis: Community = {
       ],
     },
     {
-      h2: "AC maintenance in Mira Oasis",
-      paragraphs: [
-        "AGEC also maintains AC in Mira Oasis, including the ducted systems we install. We recommend servicing every 3 to 4 months, with the most important visits before and during the summer peak.",
-        `A ducted unit service is AED ${ductedServicePrice} per machine, and a one-off service is from AED ${oneOffFrom} per machine with a minimum of 3 units. We confirm the price in writing before work starts. Every visit covers:`,
-      ],
-      bullets: serviceChecklist,
-      link: maintenanceLink,
-    },
-    {
       h2: "What is included in the price",
       paragraphs: ["The ducted installation price covers the whole job, not just the unit:"],
       bullets: [
@@ -551,6 +542,15 @@ const miraOasis: Community = {
     {
       h2: "Brands we install and repair",
       paragraphs: ["Daikin, Trane, O General, Mitsubishi, LG, Carrier and York."],
+    },
+    {
+      h2: "AC maintenance in Mira Oasis",
+      paragraphs: [
+        "AGEC also maintains AC in Mira Oasis, including the ducted systems we install. We recommend servicing every 3 to 4 months, with the most important visits before and during the summer peak.",
+        `A ducted unit service is AED ${ductedServicePrice} per machine, and a one-off service is from AED ${oneOffFrom} per machine with a minimum of 3 units. We confirm the price in writing before work starts. Every visit covers:`,
+      ],
+      bullets: serviceChecklist,
+      link: maintenanceLink,
     },
   ],
   projectsHeading: "Ducted installation in Mira Oasis",
@@ -624,15 +624,6 @@ const dubaiHills: Community = {
       ],
     },
     {
-      h2: "AC maintenance in Dubai Hills",
-      paragraphs: [
-        "AGEC also maintains AC in Dubai Hills, for the units we install and for other units. We recommend servicing every 3 to 4 months, with the most important visits before and during the summer peak.",
-        `A one-off service is from AED ${oneOffFrom} per machine with a minimum of 3 units. With fewer than 3 units, send us the details on WhatsApp and we tell you the options. Every visit covers:`,
-      ],
-      bullets: serviceChecklist,
-      link: maintenanceLink,
-    },
-    {
       h2: "Replacing one machine or several",
       paragraphs: [
         "If one unit has failed and the others are fine, we replace that one and match it to the system you have. If several units are old, it can make sense to replace them together, so the home is cooled evenly and you are not calling us for the next failure a month later. We give you the price per unit so you can decide.",
@@ -654,6 +645,15 @@ const dubaiHills: Community = {
     {
       h2: "Brands we install and repair",
       paragraphs: ["Daikin, Trane, O General, Mitsubishi, LG, Carrier and York."],
+    },
+    {
+      h2: "AC maintenance in Dubai Hills",
+      paragraphs: [
+        "AGEC also maintains AC in Dubai Hills, for the units we install and for other units. We recommend servicing every 3 to 4 months, with the most important visits before and during the summer peak.",
+        `A one-off service is from AED ${oneOffFrom} per machine with a minimum of 3 units. With fewer than 3 units, send us the details on WhatsApp and we tell you the options. Every visit covers:`,
+      ],
+      bullets: serviceChecklist,
+      link: maintenanceLink,
     },
   ],
   projectsHeading: "Installation work in Dubai Hills",
@@ -814,15 +814,6 @@ const sustainableCity: Community = {
       ],
     },
     {
-      h2: "AC maintenance in The Sustainable City",
-      paragraphs: [
-        "AGEC also services and maintains AC in The Sustainable City. A blocked drain line is a common cause of water at an indoor unit, and a service clears the drainage line and checks the refrigerant pressure. We recommend servicing every 3 to 4 months, with the most important visits before and during the summer peak.",
-        `A one-off service is from AED ${oneOffFrom} per machine with a minimum of 3 units, and a ducted unit service is AED ${ductedServicePrice} per machine. We confirm the price in writing before work starts. Every visit covers:`,
-      ],
-      bullets: serviceChecklist,
-      link: maintenanceLink,
-    },
-    {
       h2: "Refrigerant leaks",
       paragraphs: [
         "Refrigerant runs in a sealed loop and is not used up, so a system that is low on gas has a leak. Topping up without fixing the leak hides the problem and the cooling fades again. We find the leak, repair it and then recharge to the correct level, so the repair lasts.",
@@ -839,6 +830,15 @@ const sustainableCity: Community = {
       paragraphs: [
         "We inspect the unit and measure the system to find the source of the problem. We tell you the price in writing before any work starts. We carry out the repair and send a short report with what we measured.",
       ],
+    },
+    {
+      h2: "AC maintenance in The Sustainable City",
+      paragraphs: [
+        "AGEC also services and maintains AC in The Sustainable City. A blocked drain line is a common cause of water at an indoor unit, and a service clears the drainage line and checks the refrigerant pressure. We recommend servicing every 3 to 4 months, with the most important visits before and during the summer peak.",
+        `A one-off service is from AED ${oneOffFrom} per machine with a minimum of 3 units, and a ducted unit service is AED ${ductedServicePrice} per machine. We confirm the price in writing before work starts. Every visit covers:`,
+      ],
+      bullets: serviceChecklist,
+      link: maintenanceLink,
     },
   ],
   projectsHeading: "Repairs in The Sustainable City",
