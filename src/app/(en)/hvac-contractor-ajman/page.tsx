@@ -28,7 +28,7 @@ export default function HvacContractorAjman() {
           <p>
             Our delivered work in Ajman includes the{" "}
             <Link href="/projects/basil-mall-ajman" className="font-semibold text-primary hover:underline">
-              B+G+1+R Basil Mall
+              Basil Mall
             </Link>
             , where we handled the HVAC installation and commissioning of a 224-ton VRF
             system. A VRF system suits a multi-zone retail building like a mall, where
@@ -82,7 +82,7 @@ export default function HvacContractorAjman() {
       projects={[
         {
           slug: "basil-mall-ajman",
-          name: "B+G+1+R Basil Mall",
+          name: "Basil Mall, Ajman",
           note: "HVAC installation & commissioning of a 224-ton VRF system for a multi-zone commercial mall.",
         },
       ]}
@@ -97,7 +97,7 @@ export default function HvacContractorAjman() {
       faq={[
         {
           q: "What kind of HVAC projects do you do in Ajman?",
-          a: "Our delivered Ajman work is commercial: the B+G+1+R Basil Mall, where we installed and commissioned a 224-ton VRF system. We handle VRF/ducted installation, commissioning and maintenance for commercial and residential buildings in Ajman.",
+          a: "Our delivered Ajman work is commercial: Basil Mall, where we installed and commissioned a 224-ton VRF system. We handle VRF/ducted installation, commissioning and maintenance for commercial and residential buildings in Ajman.",
         },
         {
           q: "Are you based in Ajman?",
