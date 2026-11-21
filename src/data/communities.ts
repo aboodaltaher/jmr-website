@@ -395,6 +395,19 @@ const amc = prices.amcPlans;
 const amcFrom = money(Math.min(...amc.map((p) => p.from)));
 const warranty =
   "The manufacturer gives a 5-year warranty on the compressor. AGEC gives a 1-year warranty on the indoor unit and on our installation work.";
+const oneOffFrom = money(prices.maintenance[0].from as number);
+const ductedServicePrice = money(prices.maintenance[1].from as number);
+// The service checklist published on /ac-maintenance-dubai.
+const serviceChecklist = [
+  "Filters cleaned",
+  "Coils cleaned",
+  "Drainage line cleared",
+  "Refrigerant pressure checked",
+  "Electrical connections and controls inspected",
+  "Cooling performance tested",
+  "Service report handed over",
+];
+const maintenanceLink = { href: "/ac-maintenance-dubai", label: "AC maintenance in Dubai: prices and what a visit includes" };
 const installLink = { href: "/ac-installation-dubai", label: "AC installation in Dubai" };
 const repairLink = { href: "/ac-repair-dubai", label: "AC repair in Dubai" };
 const amcLink = { href: "/ac-amc-dubai", label: "AC annual maintenance contracts (AMC)" };
@@ -473,10 +486,10 @@ const villanova: Community = {
 const miraOasis: Community = {
   slug: "mira-oasis",
   name: "Mira Oasis",
-  updatedAt: "2026-11-15",
-  metaTitle: "Ducted AC Installation Mira Oasis Dubai | AGEC",
-  metaDescription: `Ducted AC installation in Mira Oasis, Dubai: unit above the ceiling, insulated ducts, new unit included, from AED ${ductedPrice} per ton. Call or WhatsApp AGEC.`,
-  h1: "Ducted AC Installation in Mira Oasis, Dubai",
+  updatedAt: "2026-11-21",
+  metaTitle: "AC Installation & Maintenance, Mira Oasis Dubai | AGEC",
+  metaDescription: `Ducted AC installation and AC maintenance in Mira Oasis, Dubai: new unit included from AED ${ductedPrice} per ton, plus servicing and AMC. Call AGEC.`,
+  h1: "AC Installation and Maintenance in Mira Oasis, Dubai",
   job: { name: "ducted AC installation", links: [installLink] },
   photos: [
     {
@@ -530,6 +543,15 @@ const miraOasis: Community = {
       h2: "Brands we install and repair",
       paragraphs: ["Daikin, Trane, O General, Mitsubishi, LG, Carrier and York."],
     },
+    {
+      h2: "AC maintenance in Mira Oasis",
+      paragraphs: [
+        "AGEC also maintains AC in Mira Oasis, including the ducted systems we install. We recommend servicing every 3 to 4 months, with the most important visits before and during the summer peak.",
+        `A ducted unit service is AED ${ductedServicePrice} per machine, and a one-off service is from AED ${oneOffFrom} per machine with a minimum of 3 units. We confirm the price in writing before work starts. Every visit covers:`,
+      ],
+      bullets: serviceChecklist,
+      link: maintenanceLink,
+    },
   ],
   projectsHeading: "Ducted installation in Mira Oasis",
   projectsIntro:
@@ -552,6 +574,14 @@ const miraOasis: Community = {
       q: "What warranty do I get?",
       a: warranty,
     },
+    {
+      q: "How much does AC maintenance cost in Mira Oasis?",
+      a: `A ducted unit service is AED ${ductedServicePrice} per machine. A one-off service is from AED ${oneOffFrom} per machine, with a minimum of 3 units. We confirm the exact price in writing before work starts.`,
+    },
+    {
+      q: "How often should I service my AC in Mira Oasis?",
+      a: `Every 3 to 4 months, with the most important visits before and during the summer peak. An annual maintenance contract schedules the visits for you: 2, 4 or 6 a year, from AED ${amcFrom} per machine per visit excluding VAT.`,
+    },
   ],
   toConfirm: [],
 };
@@ -559,10 +589,10 @@ const miraOasis: Community = {
 const dubaiHills: Community = {
   slug: "dubai-hills",
   name: "Dubai Hills",
-  updatedAt: "2026-11-15",
-  metaTitle: "AC Installation & Replacement Dubai Hills | AGEC",
-  metaDescription: `AC installation and machine replacement in Dubai Hills: split, cassette, ducted or VRF, new unit included, from AED ${replacePrice} per unit. Call or WhatsApp AGEC.`,
-  h1: "AC Installation and Machine Replacement in Dubai Hills",
+  updatedAt: "2026-11-21",
+  metaTitle: "AC Installation & Maintenance, Dubai Hills | AGEC",
+  metaDescription: `AC installation, machine replacement and AC maintenance in Dubai Hills: new unit included, replacement from AED ${replacePrice} per unit. Call AGEC.`,
+  h1: "AC Installation and Maintenance in Dubai Hills",
   job: { name: "AC installation and replacement", links: [installLink] },
   // The linear-diffuser photo (dubai-hills-ac-installation-linear-diffuser.jpg) was never received.
   // When it arrives, add it here with the ALT: "AGEC technician fitting a linear slot diffuser during
@@ -616,6 +646,15 @@ const dubaiHills: Community = {
       h2: "Brands we install and repair",
       paragraphs: ["Daikin, Trane, O General, Mitsubishi, LG, Carrier and York."],
     },
+    {
+      h2: "AC maintenance in Dubai Hills",
+      paragraphs: [
+        "AGEC also maintains AC in Dubai Hills, for the units we install and for other units. We recommend servicing every 3 to 4 months, with the most important visits before and during the summer peak.",
+        `A one-off service is from AED ${oneOffFrom} per machine with a minimum of 3 units. With fewer than 3 units, send us the details on WhatsApp and we tell you the options. Every visit covers:`,
+      ],
+      bullets: serviceChecklist,
+      link: maintenanceLink,
+    },
   ],
   projectsHeading: "Installation work in Dubai Hills",
   projectsIntro:
@@ -637,6 +676,14 @@ const dubaiHills: Community = {
     {
       q: "What warranty do I get on the new machine?",
       a: warranty,
+    },
+    {
+      q: "How much does AC maintenance cost in Dubai Hills?",
+      a: `A one-off service is from AED ${oneOffFrom} per machine, with a minimum of 3 units, and a ducted unit service is AED ${ductedServicePrice} per machine. We confirm the exact price in writing before work starts.`,
+    },
+    {
+      q: "Do you maintain the AC after installing or replacing it?",
+      a: `Yes. We do AC maintenance and repair for the units we install, and for other units. An annual maintenance contract schedules the visits: 2, 4 or 6 a year, from AED ${amcFrom} per machine per visit excluding VAT.`,
     },
   ],
   toConfirm: [],
@@ -741,10 +788,10 @@ const alWasl: Community = {
 const sustainableCity: Community = {
   slug: "sustainable-city",
   name: "Sustainable City",
-  updatedAt: "2026-11-15",
-  metaTitle: "AC Leak Repair & Compressor Replacement | AGEC",
-  metaDescription: `AC leak repairs and compressor replacement in The Sustainable City, Dubai. Diagnosis AED ${callout}, waived if you go ahead. Call or WhatsApp AGEC.`,
-  h1: "AC Leak Repairs and Compressor Replacement in The Sustainable City, Dubai",
+  updatedAt: "2026-11-21",
+  metaTitle: "AC Repair & Maintenance, The Sustainable City | AGEC",
+  metaDescription: `AC leak repair, compressor replacement and AC maintenance in The Sustainable City, Dubai. AMC from AED ${amcFrom} per machine per visit. Call AGEC.`,
+  h1: "AC Repair and Maintenance in The Sustainable City, Dubai",
   job: { name: "AC leak repair and compressor replacement", links: [repairLink] },
   photos: [
     {
@@ -784,6 +831,15 @@ const sustainableCity: Community = {
         "We inspect the unit and measure the system to find the source of the problem. We tell you the price in writing before any work starts. We carry out the repair and send a short report with what we measured.",
       ],
     },
+    {
+      h2: "AC maintenance in The Sustainable City",
+      paragraphs: [
+        "AGEC also services and maintains AC in The Sustainable City. A blocked drain line is a common cause of water at an indoor unit, and a service clears the drainage line and checks the refrigerant pressure. We recommend servicing every 3 to 4 months, with the most important visits before and during the summer peak.",
+        `A one-off service is from AED ${oneOffFrom} per machine with a minimum of 3 units, and a ducted unit service is AED ${ductedServicePrice} per machine. We confirm the price in writing before work starts. Every visit covers:`,
+      ],
+      bullets: serviceChecklist,
+      link: maintenanceLink,
+    },
   ],
   projectsHeading: "Repairs in The Sustainable City",
   projectsIntro:
@@ -809,6 +865,14 @@ const sustainableCity: Community = {
     {
       q: "Can you come urgently?",
       a: "We respond within an hour, at any time of day. Call or WhatsApp us with your location and what the unit is doing.",
+    },
+    {
+      q: "How much does AC maintenance cost in The Sustainable City?",
+      a: `A one-off service is from AED ${oneOffFrom} per machine, with a minimum of 3 units, and a ducted unit service is AED ${ductedServicePrice} per machine. An annual maintenance contract is from AED ${amcFrom} per machine per visit excluding VAT. We confirm the exact price in writing.`,
+    },
+    {
+      q: "Can regular maintenance prevent AC leaks?",
+      a: "It helps. Every visit clears the drainage line and checks the refrigerant pressure, which are two common sources of leaks. A leak that is already there needs diagnosis first: see the repair answers above.",
     },
   ],
   toConfirm: [],
