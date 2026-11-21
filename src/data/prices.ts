@@ -30,6 +30,10 @@ export interface PriceRow {
   note?: string;
 }
 
+export const VAT_RATE = 0.05;
+/** 100 → 105. */
+export const withVat = (n: number): number => Math.round(n * (1 + VAT_RATE) * 100) / 100;
+
 export const PRICE_FOOTNOTE =
   "All prices exclude 5% VAT. Every written quote shows VAT on a separate line.";
 
@@ -63,6 +67,19 @@ export const ONE_OFF_SUMMARY = `AED ${maintenanceRows.apartment1.from} for 1 spl
 
 /** "AED 250–400 per split unit". */
 export const GAS_RANGE = `AED ${maintenanceRows.gas.from}–${maintenanceRows.gas.to} per split unit`;
+
+/**
+ * Repair rows (owner answer, Nov 2026): the AED 100 call-out fee excludes VAT (AED 105 with 5% VAT) and is
+ * deducted from the repair bill if the customer goes ahead. Every written quote shows VAT on a separate line.
+ */
+export const repairRows = {
+  callout: {
+    label: "Call-out and diagnosis",
+    from: 100,
+    exact: true,
+    note: "AED 105 including 5% VAT. Deducted from the repair bill if you go ahead.",
+  },
+} satisfies Record<string, PriceRow>;
 
 export const prices = {
   vat: "excluded" as "excluded" | "included",
@@ -111,9 +128,7 @@ export const prices = {
    * /ac-repair-dubai — call-out / diagnosis fee only. There are no fixed repair ranges: the exact
    * repair price is quoted after diagnosis, so there are deliberately no minor/mid/major rows.
    */
-  repair: [
-    { label: "Call-out and diagnosis", from: 100, exact: true, note: "Waived if you go ahead with the repair." },
-  ] as PriceRow[],
+  repair: [repairRows.callout] as PriceRow[],
 };
 
 /** Rows whose price is confirmed (the only ones ever shown or marked up). */

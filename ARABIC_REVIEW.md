@@ -475,3 +475,15 @@ Removed «التاهر غبون للمقاولات الهندسية» from:
 - `/ar` hero: «شركة AGEC تقدّم حلول التكييف والتهوية…»
 - `/ar/about` meta: «AGEC مقاول تكييف وكهروميكانيك وصيانة في دبي…»
 - `/ar/about` intro: «تأسّست في دبي عام 2022 على يد {FOUNDER}، وAGEC شركة مقاولات تكييف…»
+
+
+---
+
+## Repair FAQs added Nov 2026 — `src/data/prices-ar.ts`, `src/app/(ar)/ar/ac-repair-dubai/page.tsx`
+
+**Status: REVIEWED AND APPROVED by the supervisor on the preview (call-out fee, parts and compressor answers).**
+
+Translations of the owner's English answers (call-out fee AED 100 excl. VAT / AED 105 incl. VAT, deducted from the
+repair bill; parts carried on the van; parts and compressor lead times). Numbers are read from `repairRows`.
+Reviewed terms: capacitor (مكثّف التشغيل), contactor (كونتاكتور), PCB fuse (فيوز اللوحة الإلكترونية), compressor
+(كمبروسر) and «سيارتنا» for "on the van".

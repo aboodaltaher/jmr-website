@@ -12,7 +12,7 @@ import { reviewsAbout } from "@/lib/reviews";
 import { RepairForm } from "@/components/RepairForm";
 import { PHONE, whatsappUrl } from "@/lib/contact";
 import { PriceTable } from "@/components/PriceTable";
-import { prices, offersFor, money } from "@/data/prices";
+import { prices, repairRows, withVat, offersFor, money } from "@/data/prices";
 
 const SITE_URL = "https://agec.ae";
 const ROUTE = "/ac-repair-dubai";
@@ -103,16 +103,16 @@ const steps = [
   "We send a short report with what we measured.",
 ];
 
-// TODO(owner): parts FAQ: confirm which parts you stock and typical lead time for others.
-const callout = money(prices.repair[0].from as number);
+const callout = money(repairRows.callout.from);
+const calloutWithVat = money(withVat(repairRows.callout.from));
 const faqs: { q: string; a: string }[] = [
   {
     q: "What is the call-out fee?",
-    a: `Call-out and diagnosis is AED ${callout}. If you go ahead with the repair, we waive it. After diagnosis we give you the exact repair price in writing, before any work starts.`,
+    a: `Call-out and diagnosis is AED ${callout} excl. VAT (AED ${calloutWithVat} including 5% VAT). If you go ahead with the repair, we deduct it from the repair bill. After diagnosis we give you the exact repair price in writing, before any work starts, with VAT on a separate line.`,
   },
   {
     q: "How much does AC repair cost in Dubai?",
-    a: `It depends on the fault, so we do not quote a price range over the phone. An engineer diagnoses the unit for AED ${callout}, waived if you go ahead with the repair, and then quotes the exact repair price in writing before starting.`,
+    a: `It depends on the fault, so we do not quote a price range over the phone. An engineer diagnoses the unit for AED ${callout} excl. VAT, deducted from the repair bill if you go ahead with the repair, and then quotes the exact repair price in writing before starting. Every written quote shows VAT on a separate line.`,
   },
   {
     q: "My AC runs but does not cool: why?",
@@ -136,7 +136,11 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: "Do you have spare parts on hand?",
-    a: "We carry common parts on hand. If a repair needs a part we do not have, we tell you before the work starts, in the written quote.",
+    a: "Yes. We carry common parts on the van: capacitors, contactors, fan motors, thermostats, drain pumps, PCB fuses and refrigerant (R410A and R32). Most repairs finish on the first visit. Model-specific parts such as PCBs, sensors and expansion valves usually arrive in 1 to 3 working days. If a repair needs a part we do not have, we tell you in the written quote before work starts.",
+  },
+  {
+    q: "How long does a compressor replacement take?",
+    a: "The compressor arrives in 2 to 5 working days for common split and ducted models, and in 1 to 3 weeks for VRF or less common brands. Once it arrives, installation takes half a day to a full day.",
   },
   {
     q: "Do you repair split, ducted and VRF?",
@@ -336,7 +340,6 @@ export default function AcRepairPage() {
       </section>
 
       {/* REPLACEMENT */}
-      {/* TODO(owner): compressor replacement lead times and any repair warranty. Not stated on the site. */}
       <section className="bg-bg-soft py-16 md:py-20">
         <div className="mx-auto max-w-4xl px-6">
           <p className={eyebrow}>Repair or Replace</p>
@@ -354,6 +357,10 @@ export default function AcRepairPage() {
               AC installation in Dubai
             </Link>
             .
+          </p>
+          <p className="mt-4 text-lg leading-relaxed text-text-muted">
+            Compressor lead time: 2 to 5 working days for common split and ducted models, and 1 to 3 weeks for VRF or
+            less common brands. Once the compressor arrives, installation takes half a day to a full day.
           </p>
           <JobPhoto
             className="mt-6"
@@ -382,9 +389,13 @@ export default function AcRepairPage() {
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-text-muted">
             Every repair starts with a diagnosis, charged at the call-out fee
-            below. If you go ahead with the repair, we waive it. The exact repair
-            price is quoted after diagnosis, in writing, before any work begins,
-            so you approve the cost before we start.
+            below. If you go ahead with the repair, we deduct it from the repair
+            bill. The exact repair price is quoted after diagnosis, in writing,
+            before any work begins, so you approve the cost before we start.
+          </p>
+          <p className="mt-4 text-text-muted">
+            All prices exclude 5% VAT, so the AED {callout} call-out fee becomes AED {calloutWithVat} with VAT.
+            Every written quote shows VAT on a separate line.
           </p>
           <PriceTable rows={prices.repair} caption="AC repair call-out and diagnosis fee" />
         </div>
