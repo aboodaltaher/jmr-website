@@ -96,7 +96,7 @@ const signs: { icon: LucideIcon; title: string; desc: string }[] = [
 
 const villaFaqs: { q: string; a: string }[] = [
   { q: "How often should a villa's AC be serviced?", a: "Every 3–4 months, three or four times a year, with the most important visits before and during the summer peak. A villa has several units, so it helps to service them together." },
-  { q: "How much does villa AC maintenance cost?", a: `A one-off service for 3 or more units starts from AED ${maintenanceRows.oneOff.from} per machine, which most villas meet. An AMC is priced per machine per visit from AED ${prices.amcPlans[0].from} (excluding VAT) and sets the visits for you.` },
+  { q: "How much does villa AC maintenance cost?", a: `A one-off service for 3 or more units starts from AED ${maintenanceRows.oneOff.from} per visit (minimum charge; written quote by number of units), which most villas meet. An AMC is priced per machine per visit from AED ${prices.amcPlans[0].from} (excluding VAT) and sets the visits for you.` },
   { q: "Do you service ducted and concealed units in a villa?", a: "Yes. We service ducted, cassette and concealed units as well as split units and VRF/VRV systems, and we confirm the price once we know the system type and the number of units." },
   { q: "Can I put the whole villa on a yearly contract?", a: "Yes. An AMC schedules the visits for every unit in the villa, with a service report with photos after every visit." },
 ];

@@ -23,6 +23,8 @@ export interface PriceRow {
   to?: Money;
   /** True when `from` is the exact price (shown as "AED 2,500", not "From AED 2,500"). */
   exact?: boolean;
+  /** True when `from` is a minimum charge, not a unit price: schema.org gets minPrice instead of price. */
+  minimum?: boolean;
   /** Shown after the price, e.g. "per machine". */
   unit?: string;
   note?: string;
@@ -33,13 +35,19 @@ export const PRICE_FOOTNOTE =
 
 /**
  * Maintenance rows, named so no page depends on array positions. Owner answers (Nov 2026), all excl. VAT:
- * apartment visits AED 199 (1 split unit) and AED 349 (2 units); AED 350 per machine is the minimum price for
- * 3 or more units; gas top-up AED 250-400 per split unit depending on tonnage and gas type (R410A / R32).
+ * apartment visits AED 199 (1 split unit) and AED 349 (2 units); AED 350 is the MINIMUM CHARGE FOR THE WHOLE VISIT
+ * for 3 or more units (owner, 22 Nov 2026; not a per-machine price, and no per-unit price for 4+ units was given); gas top-up AED 250-400 per split unit depending on tonnage and gas type (R410A / R32).
  */
 export const maintenanceRows = {
   apartment1: { label: "Standard split AC service, 1 unit", from: 199, exact: true, note: "Apartment visit." },
   apartment2: { label: "Standard split AC service, 2 units", from: 349, exact: true, note: "Apartment visit." },
-  oneOff: { label: "One-off AC service, 3 or more units", from: 350, unit: "per machine" },
+  oneOff: {
+    label: "One-off AC service, 3 or more units",
+    from: 350,
+    unit: "per visit",
+    minimum: true,
+    note: "Minimum charge; written quote by number of units.",
+  },
   ducted: { label: "Ducted unit service", from: 250, exact: true, unit: "per machine" },
   gas: {
     label: "Gas top-up (R410A / R32)",
@@ -50,8 +58,8 @@ export const maintenanceRows = {
   },
 } satisfies Record<string, PriceRow>;
 
-/** "AED 199 for 1 split unit, AED 349 for 2 units, and from AED 350 per machine for 3 or more units". */
-export const ONE_OFF_SUMMARY = `AED ${maintenanceRows.apartment1.from} for 1 split unit, AED ${maintenanceRows.apartment2.from} for 2 units, and from AED ${maintenanceRows.oneOff.from} per machine for 3 or more units`;
+/** "AED 199 for 1 split unit, AED 349 for 2 units, and from AED 350 per visit for 3 or more units (minimum charge; written quote by number of units)". */
+export const ONE_OFF_SUMMARY = `AED ${maintenanceRows.apartment1.from} for 1 split unit, AED ${maintenanceRows.apartment2.from} for 2 units, and from AED ${maintenanceRows.oneOff.from} per visit for 3 or more units (minimum charge; written quote by number of units)`;
 
 /** "AED 250–400 per split unit". */
 export const GAS_RANGE = `AED ${maintenanceRows.gas.from}–${maintenanceRows.gas.to} per split unit`;
@@ -131,7 +139,7 @@ export function offersFor(rows: PriceRow[]) {
   return visibleRows(rows).map((r) => {
     const from = r.from as number;
     const unitText = r.unit ? { unitText: r.unit.replace(/^per /, "") } : {};
-    if (isConfirmed(r.to)) {
+    if (isConfirmed(r.to) || r.minimum) {
       return {
         "@type": "Offer",
         name: r.label,
@@ -139,7 +147,7 @@ export function offersFor(rows: PriceRow[]) {
         priceSpecification: {
           "@type": "PriceSpecification",
           minPrice: String(from),
-          maxPrice: String(r.to),
+          ...(isConfirmed(r.to) ? { maxPrice: String(r.to) } : {}),
           priceCurrency: "AED",
           valueAddedTaxIncluded: false,
           ...unitText,

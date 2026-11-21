@@ -487,9 +487,9 @@ export default function AcAmcPage() {
                 The <strong>Basic</strong> plan&apos;s 2 visits suit low-use or
                 single-split homes; for year-round villa and office use we
                 recommend every 3 months (4 visits a year). AMC visits
-                are AED {Math.min(...prices.amcPlans.map((p) => p.from))}–{Math.max(...prices.amcPlans.map((p) => p.from))} per machine depending on plan, which is below our
-                one-off service rate of AED {maintenanceRows.oneOff.from} per machine for 3 or more units,
-                because the visits are scheduled for the year.
+                are AED {Math.min(...prices.amcPlans.map((p) => p.from))}–{Math.max(...prices.amcPlans.map((p) => p.from))} per machine depending on plan,
+                because the visits are scheduled for the year. A one-off service for 3 or more units is from
+                AED {maintenanceRows.oneOff.from} per visit (minimum charge; written quote by number of units).
               </p>
             </>
           )}
