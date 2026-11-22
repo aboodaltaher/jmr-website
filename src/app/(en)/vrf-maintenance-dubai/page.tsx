@@ -1,10 +1,12 @@
 import { notFound } from "next/navigation";
 import { isProductionSite } from "@/lib/draft";
 import { buildMetadata } from "@/lib/metadata";
+import Image from "next/image";
 import Link from "next/link";
 import { LongServicePage } from "@/components/LongServicePage";
 import { VRF_MAINTENANCE } from "@/data/long-services";
 import { isPublished } from "@/data/new-pages";
+import { getProjectBySlug } from "@/data/projects";
 import { vrfAmc, offersFor, VRF_AMC_LINE } from "@/data/prices";
 
 // Unpublished → noindex until the owner has reviewed it and flips the switch in
@@ -28,6 +30,12 @@ const service = {
       : f,
   ),
 };
+
+// Two photos from the Al Safa case study, with the case study's own alt text and captions (one source: src/data/projects.ts).
+const CASE_STUDY_PATH = "/projects/vrv-diagnosis-villa-al-safa-dubai";
+const caseStudyPhotos = (getProjectBySlug("vrv-diagnosis-villa-al-safa-dubai")?.facts.photos ?? []).filter((p) =>
+  /burnt-fan-pcb|nameplate-rxytq12t7yf/.test(p.src),
+);
 
 export default function Page() {
   // 404 on the live site until published; local and Vercel preview builds still render it for review.
@@ -72,6 +80,28 @@ export default function Page() {
                 <p className="mt-3 text-sm text-text-muted">
                   Codes vary by brand and model; we read the full fault history on site before recommending any repair.
                 </p>
+                {caseStudyPhotos.length > 0 && (
+                  <div className="mt-6 grid items-start gap-6 sm:grid-cols-2">
+                    {caseStudyPhotos.map((ph) => (
+                      <figure key={ph.src} className="overflow-hidden rounded-xl border border-border">
+                        <Image
+                          src={ph.src}
+                          alt={ph.alt}
+                          width={ph.src.includes("nameplate") ? 900 : 1200}
+                          height={ph.src.includes("nameplate") ? 1406 : 540}
+                          loading="lazy"
+                          sizes="(max-width: 640px) 100vw, 400px"
+                          className="h-auto w-full"
+                        />
+                        <figcaption className="px-4 py-3 text-sm text-text-muted">
+                          <Link href={CASE_STUDY_PATH} className="font-semibold text-primary hover:underline">
+                            {ph.caption}
+                          </Link>
+                        </figcaption>
+                      </figure>
+                    ))}
+                  </div>
+                )}
                 <p className="mt-3 text-text-muted">
                   Read the full case study:{" "}
                   <Link href="/projects/vrv-diagnosis-villa-al-safa-dubai" className="font-semibold text-primary hover:underline">

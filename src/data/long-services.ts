@@ -230,7 +230,7 @@ export const MEP: LongService = {
       h2: "Authority approvals",
       paragraphs: [
         "Mechanical and ventilation works in Dubai involve authority requirements for the installation itself. Fire and life-safety systems, including smoke control and pressurisation, are designed and approved by the fire-protection designer and contractor, not by us. Where our HVAC system interfaces with them, for example a fire damper in our ductwork or shutdown of air handling units on alarm, we coordinate that interface and document our side of it.",
-        "The consultant submits authority approvals and NOCs; AGEC prepares and supplies the HVAC drawings, calculations and documents for submission.",
+        "We prepare the drawings and submit and follow up on approvals for you.",
       ],
     },
     {
@@ -263,7 +263,7 @@ export const MEP: LongService = {
     },
     {
       q: "Do you handle authority approvals?",
-      a: "The consultant submits authority approvals and NOCs. AGEC prepares and supplies the HVAC drawings, calculations and documents for submission.",
+      a: "We prepare the drawings and submit and follow up on approvals for you.",
     },
     {
       q: "Do you provide commissioning and handover documents?",
