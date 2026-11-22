@@ -52,6 +52,10 @@ for pair in "${PAIRS[@]}"; do
   check "$old/" "$target"
 done
 
+echo "---- retired sample PDFs (file URLs: no trailing-slash variant) ----"
+check "/sample-tab-report.pdf" "/downloads/agec-sample-tab-report-fcu-air-balance.pdf"
+check "/sample-air-balancing-report.pdf" "/downloads/agec-sample-tab-report-fcu-air-balance.pdf"
+
 echo "---- query-string preservation ----"
 qs="/services/chillers?utm_source=test&x=1"
 loc=$(curl -s -o /dev/null -w "%{redirect_url}" "$BASE$qs")

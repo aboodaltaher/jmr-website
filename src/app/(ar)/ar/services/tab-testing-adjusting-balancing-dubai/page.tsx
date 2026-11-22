@@ -7,6 +7,7 @@ import {
   Target,
   FileText,
 } from "lucide-react";
+import { Download } from "lucide-react";
 import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
 import { ratingValue, reviewCount } from "@/lib/siteStats";
 
@@ -19,6 +20,9 @@ export const metadata = buildMetadata({
   path: "/ar/services/tab-testing-adjusting-balancing-dubai",
   locale: "ar_AE",
 });
+
+// Same sample PDF as the English page (supervisor-approved Arabic labels, 22 Nov 2026).
+const SAMPLE_PDF = "/downloads/agec-sample-tab-report-fcu-air-balance.pdf";
 
 export default function ArabicTestingCommissioningBalancing() {
   return (
@@ -43,8 +47,9 @@ export default function ArabicTestingCommissioningBalancing() {
             المراوح والمضخّات، وتعيد القياس حتى يطابق الهواء والماء التصميم. أما{" "}
             <strong className="text-text">التشغيل التجريبي</strong> فهو العملية
             الأوسع لإدخال النظام بأكمله في تشغيل مُثبَت — فحص نقطة بنقطة للتحكّم ونظام
-            إدارة المبنى (BMS)، والتحقّق من أداء المعدّات، واختبار السلامة — وفق دليل
-            ASHRAE Guideline 0 وكود CIBSE للتشغيل التجريبي. تبرز أهميتها أكثر عند
+            إدارة المبنى (BMS)، والتحقّق من أداء المعدّات، واختبار السلامة — وفق مواصفات
+            المشروع، وحيثما تشير إليها نتبع دليل ASHRAE Guideline 0 وكود CIBSE للتشغيل
+            التجريبي. تبرز أهميتها أكثر عند
             تسليم مبنى جديد، أو بعد تجهيز داخلي أو تعديل، أو حين يشكو الشاغلون من
             تفاوت الراحة رغم عمل الوحدات باستمرار.
           </p>
@@ -109,10 +114,34 @@ export default function ArabicTestingCommissioningBalancing() {
       whyAgec={[
         "قراءات بأجهزة معايَرة قابلة للتتبّع وتقارير صادقة — المقاس مقابل المصمَّم سواء نجح أم لا",
         "نطاق تسليم كامل بفريق واحد: موازنة الهواء والماء، وفحص التحكّم ونظام BMS، واختبار أداء المعدّات والتشغيل التجريبي",
-        "منهجية وفق ASHRAE 111 وSMACNA وكود CIBSE للتشغيل التجريبي / ASHRAE Guideline 0 مع توثيق منهجي",
+        "منهجية وفق مواصفات المشروع، تتبع ASHRAE 111 وSMACNA وكود CIBSE للتشغيل التجريبي / ASHRAE Guideline 0 حيثما تُحدَّد، مع توثيق منهجي",
         `مقيّم ${ratingValue}★ من ${reviewCount} مراجعة على Google`,
         "تقرير يمكنك تسليمه لاستشاري أو مالك أو جهة كإثبات للأداء",
       ]}
+      extraSection={
+        <section id="sample-report" className="py-14 md:py-20">
+          <div className="mx-auto max-w-4xl px-6">
+            <div id="real-result" className="rounded-xl border border-primary/40 bg-white p-6">
+              <p className="leading-relaxed text-text">
+                نتيجة حقيقية: وحدة ملف مروحة (FCU) بقدرة 5 طن مع 3 فتحات تغذية. التدفق التصميمي 2,074 CFM والمقاس 1,972
+                CFM، أي 96% من التصميم وضمن حدود التفاوت.
+              </p>
+            </div>
+            <p id="instruments" className="mt-6 leading-relaxed text-text-muted">
+              نمتلك 27 جهاز قياس لأعمال الاختبار والموازنة، جميعها معايَرة لدى مختبر معتمد بشهادات قابلة للتتبّع، وتُقدَّم
+              الشهادات مع بيان طريقة العمل والتقرير النهائي.
+            </p>
+            <a
+              href={SAMPLE_PDF}
+              download
+              className="mt-6 inline-flex items-center gap-2 rounded-md bg-primary px-7 py-4 font-semibold text-white transition-colors hover:bg-primary-dark"
+            >
+              <Download className="h-4 w-4 shrink-0" aria-hidden="true" />
+              نموذج تقرير اختبار وموازنة (TAB) من مشروع حقيقي، بعد إزالة بيانات العميل — PDF
+            </a>
+          </div>
+        </section>
+      }
       faq={[
         {
           q: "ما الفرق بين الاختبار والتشغيل التجريبي والموازنة؟",
@@ -148,7 +177,7 @@ export default function ArabicTestingCommissioningBalancing() {
         },
         {
           q: "ما المعايير التي تتبعونها؟",
-          a: "تتبع منهجيتنا في الاختبار والموازنة والتشغيل التجريبي معايير ASHRAE 111 وSMACNA للموازنة، وكود CIBSE للتشغيل التجريبي / ASHRAE Guideline 0، بأجهزة معايَرة قابلة للتتبّع وتوثيق منهجي.",
+          a: "نعمل وفق مواصفات المشروع أولاً. وحيثما تشير إليها المواصفات، تتبع منهجيتنا في الاختبار والموازنة والتشغيل التجريبي معايير ASHRAE 111 وSMACNA للموازنة، وكود CIBSE للتشغيل التجريبي / ASHRAE Guideline 0، بأجهزة معايَرة قابلة للتتبّع وتوثيق منهجي.",
         },
       ]}
     />
