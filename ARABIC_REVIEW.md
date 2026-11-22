@@ -551,10 +551,19 @@ There is no Arabic twin of `/vrf-maintenance-dubai`, so the VRF price (AED 250 p
 
 Not translated (English only): the 27-row instruments table and the consultant FAQ.
 
-### Standards wording softened (`claude/tab-proof`, 22 Nov 2026) — AWAITING SUPERVISOR REVIEW
+### Standards wording softened (`claude/tab-proof`, 22 Nov 2026) — REVIEWED AND APPROVED by the supervisor
 
-Written by Claude to match the English change («where the specification refers to them»); not yet seen by the supervisor.
+Written to match the English change («where the specification refers to them»); the three changes below are approved.
 
 - **Overview paragraph:** «— وفق مواصفات المشروع، وحيثما تشير إليها نتبع دليل ASHRAE Guideline 0 وكود CIBSE للتشغيل التجريبي.» (was «— وفق دليل ASHRAE Guideline 0 وكود CIBSE للتشغيل التجريبي.»)
 - **Why-AGEC bullet:** «منهجية وفق مواصفات المشروع، تتبع ASHRAE 111 وSMACNA وكود CIBSE للتشغيل التجريبي / ASHRAE Guideline 0 حيثما تُحدَّد، مع توثيق منهجي» (was «منهجية وفق ASHRAE 111 وSMACNA وكود CIBSE للتشغيل التجريبي / ASHRAE Guideline 0 مع توثيق منهجي»)
 - **FAQ «ما المعايير التي تتبعونها؟»:** now starts «نعمل وفق مواصفات المشروع أولاً. وحيثما تشير إليها المواصفات، تتبع منهجيتنا…» (was «تتبع منهجيتنا…»)
+
+---
+
+## HVAC-for-MEP page: standards wording softened (`fix/mep-standards-softening`, 22 Nov 2026) — AWAITING SUPERVISOR REVIEW
+
+Same softening as the TAB page, written with the approved phrasing «نعمل وفق مواصفات المشروع أولاً، وحيثما تشير إليها…» (`MEP_AR` in `src/data/long-services-ar.ts`). English: "We work to the project specification first. Where it refers to them, we follow ASHRAE 111, SMACNA and CIBSE…".
+
+- **Testing and commissioning paragraph:** «…وتُسجَّل النتائج. نعمل وفق مواصفات المشروع أولاً، وحيثما تشير إليها نتّبع إرشادات ASHRAE 111 وSMACNA وCIBSE ونسلّم القيم المقاسة، لا شهادة إنجاز فقط.» (was «…وتُسجَّل النتائج. نتّبع إرشادات ASHRAE 111 وSMACNA وCIBSE ونسلّم…»)
+- **FAQ «هل تقدّمون وثائق التشغيل التجريبي والتسليم؟» (commissioning and handover), answer:** «نعم. تُختبر أنظمة التكييف وتُوازن وتُشغَّل تجريبياً، وتُسجَّل قيم التدفّق والإعدادات المقاسة وتُسلَّم. نعمل وفق مواصفات المشروع أولاً، وحيثما تشير إليها نتّبع إرشادات ASHRAE 111 وSMACNA وCIBSE.» (was «…وتُسلَّم، وفق إرشادات ASHRAE 111 وSMACNA وCIBSE.»)
