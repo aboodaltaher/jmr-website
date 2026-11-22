@@ -92,7 +92,7 @@ export function LongServicePage({
   published,
   related,
   offers,
-  afterSection,
+  afterSections,
 }: {
   service: LongService;
   lang?: "en" | "ar";
@@ -103,8 +103,8 @@ export function LongServicePage({
   related: { href: string; label: string }[];
   /** Optional schema.org Offers (confirmed prices only) added to the Service JSON-LD. */
   offers?: object[];
-  /** Optional block rendered straight after the section with this h2. */
-  afterSection?: { h2: string; node: React.ReactNode };
+  /** Optional blocks, each rendered straight after the section with that h2. */
+  afterSections?: { h2: string; node: React.ReactNode }[];
 }) {
   const t = UI[lang];
   // On the live site markers are stripped, so drop anything left empty (and any FAQ with no answer).
@@ -278,7 +278,7 @@ export function LongServicePage({
               )}
           </div>
         </section>
-        {afterSection?.h2 === s.h2 && afterSection.node}
+        {afterSections?.filter((a) => a.h2 === s.h2).map((a) => <Fragment key={a.h2}>{a.node}</Fragment>)}
         {/* Mid-page lead block, directly after the first checklist section */}
         {i === ctaAfter && <MidPageCta service={c.ctaService ?? c.serviceType} path={path} lang={lang} />}
         </Fragment>
