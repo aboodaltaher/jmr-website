@@ -39,17 +39,17 @@ const ductedPrice = money(ducted.from as number);
 const vrfPrice = money(vrf.from as number);
 const replacePrice = money(replacement.from as number);
 
-// Confirmed by the owner: copper piping, insulation, drain and electrical connection.
-// TODO(owner): confirm the last three items (vacuum and pressure test, commissioning readings, handover) are part of every install.
+// Confirmed by the owner: every item below is part of EVERY install, from a single split to a full VRF villa.
 const included = [
   "The new AC unit, supplied by us",
   "Copper piping",
   "Pipe insulation",
   "Drain connection",
   "Electrical connection",
-  "Vacuum and pressure test of the refrigerant pipework",
-  "Commissioning readings, recorded",
-  "Handover and a walk-through of the controls",
+  "Nitrogen pressure test of the refrigerant piping (held for 24 hours on ducted and VRF jobs)",
+  "Vacuum to below 500 microns before the system is charged",
+  "Commissioning readings (supply and return air temperatures, pressures, amps and voltage), recorded on a commissioning sheet",
+  "Handover: a walk-through with you, controller operation, warranty documents and the commissioning sheet",
 ];
 
 const brands = ["Daikin", "Trane", "O General", "Mitsubishi", "LG", "Carrier", "York"];
@@ -86,7 +86,7 @@ const steps = [
   { t: "We size it", d: "An engineer checks the room, how it is used and the heat coming in, and recommends the unit type and tonnage." },
   { t: "You get a written price", d: "The price covers the unit and the installation, so there is nothing to add for piping, insulation, drain or the electrical connection." },
   { t: "We install", d: "About 3 hours for a single split unit and about 7 hours for a ducted unit including the ducting." },
-  { t: "We test and hand over", d: "We test the system, record the readings and show you how to use it." },
+  { t: "We test and hand over", d: "We pressure-test and vacuum the pipework, commission the system and record the readings on a commissioning sheet. Then we walk you through the controls and give you the warranty documents and the commissioning sheet." },
 ];
 
 const faqs: { q: string; a: string }[] = [
@@ -96,11 +96,11 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: "How long does AC installation take?",
-    a: "About 3 hours for a single split unit, and about 7 hours for a ducted unit including the ducting. Larger jobs with several units take longer, and we tell you the time when we quote.",
+    a: "About 3 hours for a single split unit, and about 7 hours for a ducted unit including the ducting, so a split is usually done the same day. A whole-villa job takes longer: typically 2 to 4 weeks for a ducted villa and 3 to 6 weeks for a VRF villa, excluding approvals. We tell you the time when we quote. The HVAC installation page lists the typical duration of each stage.",
   },
   {
     q: "What is included in the installation price?",
-    a: "The new unit, copper piping, pipe insulation, the drain connection and the electrical connection. The price is for supply and installation together, not the installation alone.",
+    a: "The new unit, copper piping, pipe insulation, the drain connection and the electrical connection, plus the pressure test, vacuum, commissioning readings and handover on every install. The price is for supply and installation together, not the installation alone.",
   },
   {
     q: "What warranty do I get?",
@@ -121,6 +121,10 @@ const faqs: { q: string; a: string }[] = [
   {
     q: "Which type of AC is best for a villa?",
     a: "It depends on the layout. Split units suit single rooms, cassettes suit larger open rooms, a ducted split suits a whole floor with a clean ceiling, and VRF suits larger villas that need separate control in each room. Send us your floor plan or photos and we will recommend one.",
+  },
+  {
+    q: "Do I need an NOC to install or replace an AC?",
+    a: "Often yes. In an apartment or office you need your building management or landlord NOC for any change to AC units or the outdoor unit location. In a villa inside a community such as Emaar, Nakheel, Dubai Properties or Meraas, you need the master developer's NOC. Authority and NOC fees are paid by the client at cost and listed separately on the quote, with no mark-up.",
   },
   {
     q: "Do you also service the AC after installing it?",
@@ -364,6 +368,14 @@ export default function AcInstallationPage() {
               </li>
             ))}
           </ol>
+          <p className="mt-6 text-text-muted">
+            Installing a whole villa or a building? See the typical duration of each stage, and the approvals and NOCs
+            that may apply, on{" "}
+            <Link href="/services/hvac-installation-dubai#process-timeline" className="font-semibold text-primary hover:underline">
+              HVAC installation in Dubai
+            </Link>
+            .
+          </p>
         </div>
       </section>
 

@@ -61,13 +61,26 @@ export default function HvacContractorSharjah() {
               {
                       "h2": "Buildings we are typically asked about in Sharjah",
                       "paragraphs": [
-                              "Sharjah has a varied building stock, and the right cooling system depends on which kind of building you have. This is guidance on what usually suits each type, not a list of clients."
+                              "Sharjah has a varied building stock, and the right cooling system depends on which kind of building you have. This is guidance on what usually suits each type, not a list of clients.",
+                              "Typical systems in Sharjah are split and ducted DX, package units, chilled-water FCUs in towers, and ventilation for warehouses."
                       ],
                       "bullets": [
                               "Private villas and townhouses: usually a ducted or concealed split or DX system, sized room by room, so the ceiling stays clean and each zone has its own control. This is the kind of work in our two Sharjah villa projects above.",
-                              "Residential buildings and mixed-use blocks: split or VRF systems sized per apartment or per floor, with drainage and condensate routes planned before the ceilings are closed.",
+                              "Apartment towers: older and mid-rise towers in areas such as Al Nahda, Al Majaz, Al Khan and Al Taawun usually run split or ducted DX, and the larger towers often use chilled-water fan coil units (FCUs). Systems are sized per apartment or per floor, with drainage and condensate routes planned before the ceilings are closed.",
+                              "New master-planned communities: villas and townhouses where the developer sets the rules, so the outdoor unit position and the NOC are settled before any equipment is ordered.",
                               "Shops, offices and showrooms: cassette or ducted units chosen around the ceiling void and the opening hours, with fresh air treated so the space does not feel stuffy.",
-                              "Warehouses and workshops: packaged or ducted units with ventilation matched to the heat from equipment and stored goods. This is a different design from a home, and we size it from the actual load."
+                              "Warehouses and workshops in the industrial areas: packaged or ducted units with ventilation matched to the heat from equipment and stored goods. This is a different design from a home, and we size it from the actual load."
+                      ]
+              },
+              {
+                      "h2": "Utility, approvals and NOCs in Sharjah",
+                      "paragraphs": [
+                              "Which approvals apply depends on the building and the work. For new connections and load increases, the utility is SEWA (Sharjah Electricity, Water and Gas Authority). We prepare the drawings and submit and follow up on approvals for you. Authority and NOC fees are paid by the client at cost and listed separately on the quote, with no mark-up. Approval requirements change from time to time. We confirm the current requirements for your specific building at the survey stage."
+                      ],
+                      "bullets": [
+                              "Sharjah Municipality: building permits and modifications.",
+                              "Sharjah Civil Defence: fire, smoke and kitchen exhaust systems.",
+                              "Building management or developer NOC: apartments and gated communities, for example Aljada and Tilal City."
                       ]
               },
               {
@@ -117,6 +130,10 @@ export default function HvacContractorSharjah() {
         {
           q: "What HVAC services do you offer in Sharjah?",
           a: "New installation and commissioning, AC maintenance and repair, coil and duct cleaning, annual maintenance contracts, and HVAC design and heat-load calculations — for villas and residential buildings.",
+        },
+        {
+          q: "Do I need an approval or NOC for AC work in Sharjah?",
+          a: "It depends on the building and the work. Apartments and gated communities usually need a building management or developer NOC, and larger modifications can need a Sharjah Municipality permit. New connections or load increases go through SEWA, and fire, smoke or kitchen exhaust systems involve Sharjah Civil Defence. We prepare the drawings and submit and follow up on approvals for you. Authority and NOC fees are paid by the client at cost and listed separately on the quote, with no mark-up. Approval requirements change from time to time. We confirm the current requirements for your specific building at the survey stage.",
         },
         {
           q: "How do I get a quote for a Sharjah project?",

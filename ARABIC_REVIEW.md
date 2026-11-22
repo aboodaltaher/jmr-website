@@ -487,3 +487,25 @@ Translations of the owner's English answers (call-out fee AED 100 excl. VAT / AE
 repair bill; parts carried on the van; parts and compressor lead times). Numbers are read from `repairRows`.
 Reviewed terms: capacitor (مكثّف التشغيل), contactor (كونتاكتور), PCB fuse (فيوز اللوحة الإلكترونية), compressor
 (كمبروسر) and «سيارتنا» for "on the van".
+
+
+---
+
+## Owner answers, services (PR B, Nov 2026)
+
+**Status: REVIEWED AND APPROVED by the supervisor (22 Nov 2026), with the ducted wording below applied.** Translations of the English owner answers. The English is the source of truth; every fact below appears in both languages.
+
+### `/ar/ac-repair-dubai`: 90-day repair warranty (translated from the English FAQ that went live in #89)
+
+- FAQ «هل تقدّمون ضماناً على الإصلاحات؟» and the one-line note under the steps («كل إصلاح يأتي مع ضمان على الصنعة لمدة 90 يوماً…», linking to `#faqs`).
+- Approved terms: ضمان على الصنعة (workmanship warranty), ضمان الشركة المصنّعة (manufacturer's warranty), ارتفاع الجهد الكهربائي المفاجئ (power surge).
+
+### Other Arabic changes in this PR
+
+- Ducted wording follows `prices-ar.ts` («وحدة مخفية (دكت)»): «سبليت ومخفي (دكت) – DX» (AMC table), «وحدة مخفية (دكت)» and «فيلا بنظام الدكت» (installation durations), «أنظمة الدكت وVRF» (pressure-test line).
+- `/ar/ac-installation-dubai`: included list (pressure test with nitrogen, vacuum below 500 microns, commissioning sheet, handover), the "test and hand over" step, duration FAQ (split same day; ducted villa 2–4 weeks, VRF villa 3–6 weeks, excluding approvals), included-in-price FAQ, new NOC FAQ.
+- `/ar/ac-amc-dubai`: building PPM schedule table (eight plant types). Terms: وحدات مناولة الهواء (AHU), الهواء الطازج (FAHU), الوحدات المجمّعة (Package), مضخات المياه المثلجة (chilled-water pumps).
+- `/ar/ac-maintenance-dubai`: FAQ on what a full AC overhaul includes.
+- `/ar/ac-duct-cleaning-dubai`: report FAQ now mentions before and after photos.
+- `/ar/services/tab-testing-adjusting-balancing-dubai`: "what do I receive" FAQ (PDF format, photos, calibrated instruments) and a new report-timing FAQ (draft 3–5 working days, final within 2 days of comments).
+- `/ar/services/hvac-installation-dubai`: handover FAQ (walk-through, controller operation, warranty documents, commissioning sheet).

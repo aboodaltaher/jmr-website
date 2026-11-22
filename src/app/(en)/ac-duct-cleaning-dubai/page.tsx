@@ -108,10 +108,12 @@ const reportItems = [
   "What was cleaned: grilles, ducts, coils, blower, drain and cavity",
   "The condition of the system before and after cleaning",
   "The disinfection treatment used",
+  "Before and after photos",
   "Recommendations for follow-up work",
 ];
 
-// TODO(owner): report format (PDF?), whether it includes photos, delivery time, and a sample report to link or show.
+// TODO(owner): a sample before/after photo pair to show on this page (none supplied yet, so none is shown).
+// Left out on purpose (conflicts with docs/business-facts.md, no approval or certification claims): the "cleaning certificate" wording, the Dubai Municipality FAQ and the 2 to 3 year frequency (main says once a year) — owner to decide.
 const faqs: { q: string; a: string }[] = [
   {
     q: "How often should ducts be cleaned?",
@@ -127,7 +129,7 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: "What does the report show?",
-    a: "You get a written completion report listing what was cleaned, the condition before and after, the disinfection used, and any recommendations — useful for landlords, handovers and your own records.",
+    a: "You get a written completion report listing what was cleaned, the condition before and after, the disinfection used and any recommendations, with before and after photos. It is useful for landlords, handovers and your own records.",
   },
 ];
 

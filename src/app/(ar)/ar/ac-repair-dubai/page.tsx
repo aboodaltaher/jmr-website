@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { MidPageCta } from "@/components/MidPageCta";
 import { FaqJsonLd } from "@/components/FaqJsonLd";
 import { buildMetadata } from "@/lib/metadata";
@@ -59,6 +60,10 @@ const faqs: { q: string; a: string }[] = [
   {
     q: "ما مدى سرعة وصولكم؟",
     a: "نرد خلال ساعة في أي وقت. اتصل أو راسلنا على واتساب مع ذكر المنطقة والمشكلة، وسنؤكد أقرب موعد للوصول إليك.",
+  },
+  {
+    q: "هل تقدّمون ضماناً على الإصلاحات؟",
+    a: "نعم. كل إصلاح يأتي مع ضمان على الصنعة لمدة 90 يوماً. إذا عاد العطل نفسه خلال 90 يوماً بسبب عملنا، نعود ونصلحه مجاناً. كما أن القطع الجديدة التي نركّبها لها ضمان الشركة المصنّعة، وعادةً من 3 إلى 12 شهراً حسب القطعة. لا يشمل الضمان الأعطال الجديدة، أو ارتفاع الجهد الكهربائي المفاجئ، أو سوء الاستخدام، أو أي أعمال ينفّذها الآخرون بعد زيارتنا.",
   },
   {
     q: "هل لديكم قطع غيار جاهزة؟",
@@ -164,6 +169,11 @@ export default function ArabicAcRepair() {
               </li>
             ))}
           </ol>
+          <p className="mt-6 text-text-muted">
+            كل إصلاح يأتي مع ضمان على الصنعة لمدة 90 يوماً. إذا عاد العطل نفسه خلال 90 يوماً بسبب عملنا، نعود
+            ونصلحه مجاناً. راجع شروط الضمان في{" "}
+            <Link href="#faqs" className="font-semibold text-primary hover:underline">الأسئلة الشائعة أدناه</Link>.
+          </p>
         </div>
       </section>
 
@@ -180,7 +190,7 @@ export default function ArabicAcRepair() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-bg-soft py-16 md:py-20">
+      <section id="faqs" className="bg-bg-soft py-16 md:py-20">
         <div className="mx-auto max-w-3xl px-6">
           <h2 className="font-heading text-3xl font-bold md:text-4xl">أسئلة شائعة</h2>
           <div className="mt-8 space-y-6">

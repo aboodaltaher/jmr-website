@@ -25,14 +25,22 @@ export const metadata = buildMetadata({
 const linkClass = "text-primary underline underline-offset-2 hover:text-primary-dark";
 const h2Class = "font-heading text-3xl font-bold md:text-4xl";
 
-// Steps are the ones this page and the service already describe; no durations are stated.
-const timeline = [
-  "Review the drawings and the room-by-room heat load.",
-  "First fix: the concealed work — duct runs, piping, drainage and containment — before ceilings close.",
-  "Second fix: equipment, grilles, diffusers and thermostats.",
-  "Pressure-test and evacuate the pipework, then charge the system.",
-  "Commission: airflow, temperatures and controls checked against the design.",
-  "Handover: commissioning readings, equipment details and as-built information.",
+// Typical durations confirmed by the owner. Totals exclude approvals.
+const timeline: { stage: string; detail: string; duration: string }[] = [
+  { stage: "Site survey and heat load", detail: "Review the drawings and the room-by-room heat load.", duration: "1–2 days" },
+  { stage: "Design, drawings and quotation", detail: "Equipment selection, duct and pipe drawings, and a written quote.", duration: "2–5 working days" },
+  { stage: "Approvals and NOCs (where needed)", detail: "We prepare the drawings and submit and follow up on approvals.", duration: "1–4 weeks, depending on the authority" },
+  { stage: "First fix", detail: "The concealed work: ducting, refrigerant piping, drain and cabling, before ceilings close.", duration: "Split unit 3–5 hours; ducted villa 1–2 weeks; VRF villa 2–3 weeks" },
+  { stage: "Second fix", detail: "Indoor and outdoor units, grilles and controllers.", duration: "2–5 days" },
+  { stage: "Pressure test and vacuum", detail: "Nitrogen pressure test of the refrigerant piping, then vacuum to below 500 microns before charging.", duration: "1–2 days, including the 24-hour hold" },
+  { stage: "Commissioning and balancing", detail: "Airflow, temperatures, pressures, amps and controls checked against the design.", duration: "1–2 days" },
+  { stage: "Handover", detail: "Walk-through, controller operation, warranty documents and the commissioning sheet.", duration: "Same day" },
+];
+
+const timelineTotals = [
+  ["Split unit", "Same day"],
+  ["Ducted villa", "2–4 weeks"],
+  ["VRF villa", "3–6 weeks"],
 ];
 
 const faq = [
@@ -50,11 +58,15 @@ const faq = [
   },
   {
     q: "Who handles the authority approvals?",
-    a: "The project consultant submits the approvals and obtains the NOCs. AGEC prepares and supplies the HVAC drawings, calculations and documents the consultant needs for those submissions.",
+    a: "We prepare the drawings and submit and follow up on approvals for you. Which approvals apply depends on the project: a building management or landlord NOC for apartments and offices, a master developer NOC for villa communities, a Dubai Municipality building permit for new builds and major modifications, DEWA for new connections or a higher electrical load, and Dubai Civil Defence for kitchen exhaust, smoke management, fire dampers and fresh air systems in commercial buildings. Authority and NOC fees are paid by the client at cost and listed separately on the quote, with no mark-up.",
+  },
+  {
+    q: "How long does an HVAC installation take?",
+    a: "A split unit is usually done the same day. A ducted villa typically takes 2 to 4 weeks and a VRF villa 3 to 6 weeks, excluding approvals, which take 1 to 4 weeks depending on the authority. The first fix is the longest stage: 1 to 2 weeks for a ducted villa and 2 to 3 weeks for a VRF villa.",
   },
   {
     q: "What do I receive at handover?",
-    a: "A commissioned system plus the record of it: commissioning readings, equipment details and as-built information. This is what lets you, a consultant or a future maintainer understand exactly what was installed.",
+    a: "A commissioned system plus the record of it: a walk-through with you, controller operation, the warranty documents and the commissioning sheet (supply and return air temperatures, pressures, amps and voltage), together with equipment details and as-built information. This is what lets you, a consultant or a future maintainer understand exactly what was installed.",
   },
   {
     q: "Can you work alongside our main contractor?",
@@ -278,36 +290,71 @@ export default function HvacInstallation() {
           </section>
 
           {/* AUTHORITY APPROVALS */}
-          <section className="py-16 md:py-20">
+          <section id="approvals" className="py-16 md:py-20">
             <div className="mx-auto max-w-7xl px-6">
-              <h2 className={h2Class}>Authority approvals</h2>
+              <h2 className={h2Class}>Approvals and NOCs for HVAC work in Dubai</h2>
               <div className="mt-6 max-w-3xl space-y-4 leading-relaxed text-text-muted">
                 <p>
-                  Authority approvals are submitted by the project consultant, who also obtains
-                  the NOCs. AGEC prepares and supplies the HVAC drawings,
-                  calculations and documents the consultant needs for those
-                  submissions, and installs to the approved drawings.
+                  Which approvals apply depends on the project. We prepare the drawings and submit
+                  and follow up on approvals for you.
                 </p>
-                {/* TODO(owner): which approvals and NOCs usually apply to an HVAC package, and who pays the authority fees, if you want that stated here. */}
+                <ul className="list-disc space-y-2 pl-5">
+                  <li>
+                    <strong className="text-text">Building management or landlord NOC:</strong> apartments and offices,
+                    for any change to AC units or outdoor unit location.
+                  </li>
+                  <li>
+                    <strong className="text-text">Master developer or community NOC:</strong> villas in communities such
+                    as Emaar, Nakheel, Dubai Properties and Meraas.
+                  </li>
+                  <li>
+                    <strong className="text-text">Dubai Municipality building permit:</strong> new builds, extensions
+                    and major HVAC modifications.
+                  </li>
+                  <li>
+                    <strong className="text-text">DEWA:</strong> new connections or an increased electrical load.
+                  </li>
+                  <li>
+                    <strong className="text-text">Dubai Civil Defence:</strong> kitchen exhaust, smoke management, fire
+                    dampers and fresh air systems in commercial buildings.
+                  </li>
+                  <li>
+                    <strong className="text-text">Trakhees or DDA:</strong> projects inside their jurisdictions, for
+                    example Jebel Ali and free zone areas.
+                  </li>
+                </ul>
+                <p>
+                  Authority and NOC fees are paid by the client at cost and listed separately on the quote, with no
+                  mark-up.
+                </p>
               </div>
             </div>
           </section>
 
           {/* PROCESS TIMELINE */}
-          <section className="bg-bg-soft py-16 md:py-20">
+          <section id="process-timeline" className="bg-bg-soft py-16 md:py-20">
             <div className="mx-auto max-w-7xl px-6">
-              <h2 className={h2Class}>Process timeline</h2>
+              <h2 className={h2Class}>Process timeline: typical duration of each stage</h2>
               <ol className="mt-8 max-w-3xl space-y-4">
                 {timeline.map((step, i) => (
-                  <li key={step} className="flex gap-4 text-text-muted">
+                  <li key={step.stage} className="flex gap-4 text-text-muted">
                     <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
                       {i + 1}
                     </span>
-                    <span className="pt-1">{step}</span>
+                    <span className="pt-1">
+                      <strong className="text-text">{step.stage}</strong>: {step.duration}. {step.detail}
+                    </span>
                   </li>
                 ))}
               </ol>
-              {/* TODO(owner): typical duration of each stage (or a range per project size) — none is stated on the site, so none is shown. */}
+              <h3 className="mt-10 font-heading text-xl font-semibold">Typical totals, excluding approvals</h3>
+              <ul className="mt-3 max-w-3xl space-y-1 text-text-muted">
+                {timelineTotals.map(([k, v]) => (
+                  <li key={k}>
+                    <strong className="text-text">{k}:</strong> {v}
+                  </li>
+                ))}
+              </ul>
             </div>
           </section>
 

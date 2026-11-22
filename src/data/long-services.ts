@@ -452,6 +452,20 @@ export const VRF_MAINTENANCE: LongService = {
       ],
       "subsections": [
         {
+          "h3": "The checklist for every visit",
+          "bullets": [
+            "Read the error log and operating data with the service checker or BMS",
+            "Check refrigerant pressures and temperatures against design",
+            "Wash the outdoor unit coils and check the fans and fan motors",
+            "Check compressor amps, oil level and return, and crankcase heaters",
+            "Clean indoor unit filters, coils and drain pans, and test the drain pumps",
+            "Check refrigerant piping, insulation and branch kits for leaks",
+            "Inspect controllers, communication wiring and addressing",
+            "Inspect electrical panels and tighten terminals",
+            "Issue a written report with readings and recommendations"
+          ]
+        },
+        {
           "h3": "Outdoor units",
           "bullets": [
             "Condenser coil and fins inspected and cleaned to restore heat rejection",
@@ -528,7 +542,7 @@ export const VRF_MAINTENANCE: LongService = {
       "h2": "VRF AMC options",
       "paragraphs": [
         "A maintenance contract (AMC) puts the visits on a schedule instead of waiting for a breakdown. For VRF and other building plant, our commercial AMC starts with a baseline audit of your units, then agrees the scope, visit frequency and response targets with you in writing.",
-        "Commercial cover is priced after a site survey, based on the systems, the number of units and the visit frequency, not a fixed per-machine rate. We can also take over from your current contractor with a full audit and baseline report. See the [commercial AMC options](/ac-amc-dubai#commercial-amc)."
+        "Commercial cover is priced after a site survey, based on the systems, the number of units and the visit frequency, not a fixed per-machine rate. In a villa, a VRF system is covered under a villa system plan priced on outdoor capacity (HP) and the number of indoor units, not per machine. We can also take over from your current contractor with a full audit and baseline report. See the [commercial AMC options](/ac-amc-dubai#commercial-amc)."
       ],
       "bullets": [
         "Response tiers: emergency within 4 hours, urgent same day, routine within 48 hours",
@@ -804,6 +818,10 @@ export const AIR_BALANCING: LongService = {
     {
       "q": "What instruments do you use?",
       "a": "An airflow capture hood (balometer), an anemometer, a digital manometer or static pressure gauge and a tachometer. Calibration certificates are attached to the final report."
+    },
+    {
+      "q": "How long does the balancing report take?",
+      "a": "A draft report comes within 3 to 5 working days of finishing site work. The final report follows within 2 days of receiving comments. It is a PDF with a summary page, a system schematic and a data sheet for each AHU, FCU, fan and diffuser, with photos of instrument readings, key dampers and equipment nameplates."
     },
     {
       "q": "Do you work to the consultant's design?",
