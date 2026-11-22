@@ -130,7 +130,7 @@ const serviceSchema = {
 
 // Owner-confirmed PPM frequencies and tasks for building plant (Arabic wording; same facts as the English page).
 const ppmSchedule: { plant: string; visits: string; tasks: string }[] = [
-  { plant: "سبليت ومجاري (DX)", visits: "كل 3 أشهر", tasks: "الفلاتر والملفات والتصريف والأجزاء الكهربائية وفحص الأداء." },
+  { plant: "سبليت ومخفي (دكت) – DX", visits: "كل 3 أشهر", tasks: "الفلاتر والملفات والتصريف والأجزاء الكهربائية وفحص الأداء." },
   { plant: "وحدات ملف المروحة (FCU) بالماء المثلج", visits: "كل 3 أشهر، مع تنظيف الفلاتر شهرياً", tasks: "الفلاتر والملفات وصواني التصريف والصمامات والمحركات." },
   { plant: "وحدات مناولة الهواء (AHU) ووحدات الهواء الطازج (FAHU)", visits: "شهرياً", tasks: "الفلاتر والسيور والمحامل والملفات والدامبرات والتصريف." },
   { plant: "VRF", visits: "كل 3 أشهر", tasks: "وفق قائمة فحص صيانة VRF." },

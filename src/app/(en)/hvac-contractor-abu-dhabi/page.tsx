@@ -75,7 +75,7 @@ export default function HvacContractorAbuDhabi() {
               {
                       "h2": "Utility, approvals and NOCs in Abu Dhabi",
                       "paragraphs": [
-                              "Which approvals apply depends on the building and the work. The utility is TAQA Distribution (formerly ADDC), which merged with AADC in January 2025. Authority approvals are submitted by the project consultant, and AGEC supplies the HVAC drawings, calculations and documents they need. Authority and NOC fees are paid by the client at cost and listed separately on the quote, with no mark-up. Approval requirements change from time to time. We confirm the current requirements for your specific building at the survey stage."
+                              "Which approvals apply depends on the building and the work. The utility is TAQA Distribution (formerly ADDC), which merged with AADC in January 2025. We prepare the drawings and submit and follow up on approvals for you. Authority and NOC fees are paid by the client at cost and listed separately on the quote, with no mark-up. Approval requirements change from time to time. We confirm the current requirements for your specific building at the survey stage."
                       ],
                       "bullets": [
                               "Department of Municipalities and Transport and the municipality: building permits.",
@@ -134,7 +134,7 @@ export default function HvacContractorAbuDhabi() {
         },
         {
           q: "Do I need an approval or NOC for AC work in Abu Dhabi?",
-          a: "It depends on the building and the work. Building permits go through the Department of Municipalities and Transport or the municipality, fire and smoke systems involve Abu Dhabi Civil Defence, and new builds must meet Estidama requirements. Communities from master developers such as Aldar need a developer NOC, and electrical connections go through TAQA Distribution (formerly ADDC). Authority approvals are submitted by the project consultant, and AGEC supplies the HVAC drawings, calculations and documents they need. Authority and NOC fees are paid by the client at cost and listed separately on the quote, with no mark-up. Approval requirements change from time to time. We confirm the current requirements for your specific building at the survey stage.",
+          a: "It depends on the building and the work. Building permits go through the Department of Municipalities and Transport or the municipality, fire and smoke systems involve Abu Dhabi Civil Defence, and new builds must meet Estidama requirements. Communities from master developers such as Aldar need a developer NOC, and electrical connections go through TAQA Distribution (formerly ADDC). We prepare the drawings and submit and follow up on approvals for you. Authority and NOC fees are paid by the client at cost and listed separately on the quote, with no mark-up. Approval requirements change from time to time. We confirm the current requirements for your specific building at the survey stage.",
         },
         {
           q: "How do I get a quote for an Abu Dhabi project?",

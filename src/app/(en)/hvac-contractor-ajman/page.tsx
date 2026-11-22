@@ -69,7 +69,7 @@ export default function HvacContractorAjman() {
               {
                       "h2": "Utility, approvals and NOCs in Ajman",
                       "paragraphs": [
-                              "Which approvals apply depends on the building and the work. The utility is Etihad Water & Electricity (EtihadWE, formerly FEWA). Authority approvals are submitted by the project consultant, and AGEC supplies the HVAC drawings, calculations and documents they need. Authority and NOC fees are paid by the client at cost and listed separately on the quote, with no mark-up. Approval requirements change from time to time. We confirm the current requirements for your specific building at the survey stage."
+                              "Which approvals apply depends on the building and the work. The utility is Etihad Water & Electricity (EtihadWE, formerly FEWA). We prepare the drawings and submit and follow up on approvals for you. Authority and NOC fees are paid by the client at cost and listed separately on the quote, with no mark-up. Approval requirements change from time to time. We confirm the current requirements for your specific building at the survey stage."
                       ],
                       "bullets": [
                               "Ajman Municipality and Planning Department: building permits and modifications.",
@@ -122,7 +122,7 @@ export default function HvacContractorAjman() {
         },
         {
           q: "Do I need an approval or NOC for AC work in Ajman?",
-          a: "It depends on the building and the work. Apartments usually need a building management NOC, and larger modifications can need Ajman Municipality and Planning Department approval. Fire and smoke systems involve Ajman Civil Defence, and electrical load increases go through Etihad Water & Electricity (EtihadWE, formerly FEWA). Authority approvals are submitted by the project consultant, and AGEC supplies the HVAC drawings, calculations and documents they need. Authority and NOC fees are paid by the client at cost and listed separately on the quote, with no mark-up. Approval requirements change from time to time. We confirm the current requirements for your specific building at the survey stage.",
+          a: "It depends on the building and the work. Apartments usually need a building management NOC, and larger modifications can need Ajman Municipality and Planning Department approval. Fire and smoke systems involve Ajman Civil Defence, and electrical load increases go through Etihad Water & Electricity (EtihadWE, formerly FEWA). We prepare the drawings and submit and follow up on approvals for you. Authority and NOC fees are paid by the client at cost and listed separately on the quote, with no mark-up. Approval requirements change from time to time. We confirm the current requirements for your specific building at the survey stage.",
         },
         {
           q: "How do I get a quote for an Ajman project?",

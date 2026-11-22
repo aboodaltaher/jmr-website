@@ -29,7 +29,7 @@ const h2Class = "font-heading text-3xl font-bold md:text-4xl";
 const timeline: { stage: string; detail: string; duration: string }[] = [
   { stage: "Site survey and heat load", detail: "Review the drawings and the room-by-room heat load.", duration: "1–2 days" },
   { stage: "Design, drawings and quotation", detail: "Equipment selection, duct and pipe drawings, and a written quote.", duration: "2–5 working days" },
-  { stage: "Approvals and NOCs (where needed)", detail: "Submitted by the project consultant; we supply the drawings and documents.", duration: "1–4 weeks, depending on the authority" },
+  { stage: "Approvals and NOCs (where needed)", detail: "We prepare the drawings and submit and follow up on approvals.", duration: "1–4 weeks, depending on the authority" },
   { stage: "First fix", detail: "The concealed work: ducting, refrigerant piping, drain and cabling, before ceilings close.", duration: "Split unit 3–5 hours; ducted villa 1–2 weeks; VRF villa 2–3 weeks" },
   { stage: "Second fix", detail: "Indoor and outdoor units, grilles and controllers.", duration: "2–5 days" },
   { stage: "Pressure test and vacuum", detail: "Nitrogen pressure test of the refrigerant piping, then vacuum to below 500 microns before charging.", duration: "1–2 days, including the 24-hour hold" },
@@ -58,7 +58,7 @@ const faq = [
   },
   {
     q: "Who handles the authority approvals?",
-    a: "The project consultant submits the approvals and obtains the NOCs. AGEC prepares and supplies the HVAC drawings, calculations and documents the consultant needs for those submissions. Which approvals apply depends on the project: a building management or landlord NOC for apartments and offices, a master developer NOC for villa communities, a Dubai Municipality building permit for new builds and major modifications, DEWA for new connections or a higher electrical load, and Dubai Civil Defence for kitchen exhaust, smoke management, fire dampers and fresh air systems in commercial buildings. Authority and NOC fees are paid by the client at cost and listed separately on the quote, with no mark-up.",
+    a: "We prepare the drawings and submit and follow up on approvals for you. Which approvals apply depends on the project: a building management or landlord NOC for apartments and offices, a master developer NOC for villa communities, a Dubai Municipality building permit for new builds and major modifications, DEWA for new connections or a higher electrical load, and Dubai Civil Defence for kitchen exhaust, smoke management, fire dampers and fresh air systems in commercial buildings. Authority and NOC fees are paid by the client at cost and listed separately on the quote, with no mark-up.",
   },
   {
     q: "How long does an HVAC installation take?",
@@ -295,10 +295,8 @@ export default function HvacInstallation() {
               <h2 className={h2Class}>Approvals and NOCs for HVAC work in Dubai</h2>
               <div className="mt-6 max-w-3xl space-y-4 leading-relaxed text-text-muted">
                 <p>
-                  Authority approvals are submitted by the project consultant, who also obtains
-                  the NOCs. AGEC prepares and supplies the HVAC drawings,
-                  calculations and documents the consultant needs for those
-                  submissions, and installs to the approved drawings. Which approvals apply depends on the project:
+                  Which approvals apply depends on the project. We prepare the drawings and submit
+                  and follow up on approvals for you.
                 </p>
                 <ul className="list-disc space-y-2 pl-5">
                   <li>

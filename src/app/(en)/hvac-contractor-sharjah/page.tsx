@@ -75,7 +75,7 @@ export default function HvacContractorSharjah() {
               {
                       "h2": "Utility, approvals and NOCs in Sharjah",
                       "paragraphs": [
-                              "Which approvals apply depends on the building and the work. For new connections and load increases, the utility is SEWA (Sharjah Electricity, Water and Gas Authority). Authority approvals are submitted by the project consultant, and AGEC supplies the HVAC drawings, calculations and documents they need. Authority and NOC fees are paid by the client at cost and listed separately on the quote, with no mark-up. Approval requirements change from time to time. We confirm the current requirements for your specific building at the survey stage."
+                              "Which approvals apply depends on the building and the work. For new connections and load increases, the utility is SEWA (Sharjah Electricity, Water and Gas Authority). We prepare the drawings and submit and follow up on approvals for you. Authority and NOC fees are paid by the client at cost and listed separately on the quote, with no mark-up. Approval requirements change from time to time. We confirm the current requirements for your specific building at the survey stage."
                       ],
                       "bullets": [
                               "Sharjah Municipality: building permits and modifications.",
@@ -133,7 +133,7 @@ export default function HvacContractorSharjah() {
         },
         {
           q: "Do I need an approval or NOC for AC work in Sharjah?",
-          a: "It depends on the building and the work. Apartments and gated communities usually need a building management or developer NOC, and larger modifications can need a Sharjah Municipality permit. New connections or load increases go through SEWA, and fire, smoke or kitchen exhaust systems involve Sharjah Civil Defence. Authority approvals are submitted by the project consultant, and AGEC supplies the HVAC drawings, calculations and documents they need. Authority and NOC fees are paid by the client at cost and listed separately on the quote, with no mark-up. Approval requirements change from time to time. We confirm the current requirements for your specific building at the survey stage.",
+          a: "It depends on the building and the work. Apartments and gated communities usually need a building management or developer NOC, and larger modifications can need a Sharjah Municipality permit. New connections or load increases go through SEWA, and fire, smoke or kitchen exhaust systems involve Sharjah Civil Defence. We prepare the drawings and submit and follow up on approvals for you. Authority and NOC fees are paid by the client at cost and listed separately on the quote, with no mark-up. Approval requirements change from time to time. We confirm the current requirements for your specific building at the survey stage.",
         },
         {
           q: "How do I get a quote for a Sharjah project?",
