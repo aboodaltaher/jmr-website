@@ -81,6 +81,16 @@ export const repairRows = {
   },
 } satisfies Record<string, PriceRow>;
 
+/**
+ * VRF maintenance (owner, 22 Nov 2026): AED 250 per indoor unit, per visit, excl. VAT. Shown on /vrf-maintenance-dubai.
+ * The split-AC AMC plans (`prices.amcPlans`) are separate and unchanged.
+ */
+export const vrfAmc = {
+  label: "VRF maintenance",
+  from: 250,
+  unit: "per indoor unit, per visit",
+} satisfies PriceRow;
+
 export const prices = {
   vat: "excluded" as "excluded" | "included",
 

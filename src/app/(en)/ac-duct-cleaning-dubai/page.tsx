@@ -255,7 +255,12 @@ export default function AcDuctCleaningPage() {
             The work is done from the ceiling with floors protected throughout.
           </p>
           <div className="mt-8">
-            <DeepCleanVideo />
+            <DeepCleanVideo
+              videoId="iKbH5yohkNw"
+              title="AC Deep Cleaning in Dubai: What We Found Inside the Unit"
+              alt="Preview of an AC deep clean in a Dubai home"
+              playLabel="Play video: a real AC deep clean"
+            />
           </div>
           <div className="mt-8">
             <Link

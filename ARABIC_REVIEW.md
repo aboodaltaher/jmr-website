@@ -509,3 +509,18 @@ Reviewed terms: capacitor (مكثّف التشغيل), contactor (كونتاكت
 - `/ar/ac-duct-cleaning-dubai`: report FAQ now mentions before and after photos.
 - `/ar/services/tab-testing-adjusting-balancing-dubai`: "what do I receive" FAQ (PDF format, photos, calibrated instruments) and a new report-timing FAQ (draft 3–5 working days, final within 2 days of comments).
 - `/ar/services/hvac-installation-dubai`: handover FAQ (walk-through, controller operation, warranty documents, commissioning sheet).
+
+## Smart thermostat: video, photo, price table, H2 (keyword-plan PR, Nov 2026)
+
+**Status: AWAITING SUPERVISOR REVIEW.** `/ar/smart-thermostat-installation-dubai` gained a Google Nest section (`id="google-nest"`).
+
+- **H2:** «تركيب منظم حرارة Google Nest في دبي»
+- **Photo alt:** «منظم حرارة Google Nest Learning مع حساس الحرارة، توريد وتركيب AGEC في دبي»
+- **Video:** the owner's YouTube Short (the video's own title stays in English: "Google Nest Thermostat Installation in Dubai – Stop Cooling an Empty Home").
+  - Thumbnail alt: «معاينة فيديو عن تركيب ثرموستات Google Nest في دبي»
+  - Play button label: «تشغيل الفيديو: تركيب ثرموستات Google Nest في دبي»
+  - VideoObject description (Arabic): «كيف يستخدم ثرموستات Google Nest الذي تركّبه AGEC في دبي روتين المنزل والخروج وتحديد الموقع حتى لا تبرّد منزلاً فارغاً.»
+- **Price table** (numbers read from `src/lib/pricing.ts`, not typed): heading «أسعار الثرموستات الذكي»; rows «Google Nest: توريد الجهاز فقط», «ecobee: توريد الجهاز فقط», «التركيب لكل ثرموستات», «محوّل Drop-air (لأنظمة VRF/VRV أو حيثما يلزم)», «Google Nest: توريد وتركيب», «ecobee: توريد وتركيب» («من» before the two bundles).
+- **Price notes:** «يؤكَّد السعر النهائي بعد فحص توافق مجاني. يُضاف محوّل Drop-air (750 درهماً) فقط حيثما يحتاجه نظامك، مثل VRF/VRV.» and the VAT line «جميع الأسعار لا تشمل ضريبة القيمة المضافة 5%.»
+
+There is no Arabic twin of `/vrf-maintenance-dubai`, so the VRF price (AED 250 per indoor unit, per visit) has no Arabic text yet.
