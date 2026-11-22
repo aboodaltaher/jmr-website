@@ -221,8 +221,9 @@ export default function TestingCommissioningBalancing() {
           <p>
             AGEC carries out testing, adjusting and balancing (TAB) and commissioning for HVAC systems
             in Dubai and across the UAE. We are an engineer-led HVAC contractor,
-            established 2022, with {PROJECTS_DELIVERED} completed projects. Our methodology follows ASHRAE
-            111 and SMACNA for TAB and the CIBSE Commissioning Code and ASHRAE Guideline 0 for commissioning.
+            established 2022, with {PROJECTS_DELIVERED} completed projects. We work to the project specification
+            first. Where it refers to them, our methodology follows ASHRAE 111 and SMACNA for TAB, and the CIBSE
+            Commissioning Code and ASHRAE Guideline 0 for commissioning.
           </p>
         </>
       }
@@ -276,7 +277,7 @@ export default function TestingCommissioningBalancing() {
         "Readings taken with calibrated, traceable instruments, with calibration certificates attached to every final report",
         "Results reported honestly: measured versus design, whether it passes or not",
         "Full handover scope under one team: air and water balancing, controls and BMS checkout, equipment performance testing and commissioning",
-        "Methodology to ASHRAE 111, SMACNA and the CIBSE Commissioning Code / ASHRAE Guideline 0, with systematic documentation",
+        "Methodology to the project specification, following ASHRAE 111, SMACNA and the CIBSE Commissioning Code / ASHRAE Guideline 0 where specified, with systematic documentation",
         `Rated ${ratingValue}★ by ${reviewCount} Google reviewers`,
       ]}
       faq={faq}
@@ -402,8 +403,9 @@ export default function TestingCommissioningBalancing() {
               <h2 className={h2Class}>Standards and instruments</h2>
               <div className={bodyClass}>
                 <p>
-                  Our methodology follows ASHRAE 111 and SMACNA for TAB and the CIBSE Commissioning Code and
-                  ASHRAE Guideline 0 for commissioning. Readings are taken with calibrated, traceable
+                  We work to the project specification first. Where it refers to them, our methodology follows
+                  ASHRAE 111 and SMACNA for TAB, and the CIBSE Commissioning Code and ASHRAE Guideline 0 for
+                  commissioning. Readings are taken with calibrated, traceable
                   instruments and recorded area by area, so each figure in the report can be traced back to a
                   measurement. Calibration certificates are attached to every final report. We work to the
                   design figures on the approved drawings and specification, and we report what we measure

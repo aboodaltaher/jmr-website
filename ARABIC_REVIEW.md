@@ -550,3 +550,11 @@ There is no Arabic twin of `/vrf-maintenance-dubai`, so the VRF price (AED 250 p
 - **Instruments line:** «نمتلك 27 جهاز قياس لأعمال الاختبار والموازنة، جميعها معايَرة لدى مختبر معتمد بشهادات قابلة للتتبّع، وتُقدَّم الشهادات مع بيان طريقة العمل والتقرير النهائي.»
 
 Not translated (English only): the 27-row instruments table and the consultant FAQ.
+
+### Standards wording softened (`claude/tab-proof`, 22 Nov 2026) — AWAITING SUPERVISOR REVIEW
+
+Written by Claude to match the English change («where the specification refers to them»); not yet seen by the supervisor.
+
+- **Overview paragraph:** «— وفق مواصفات المشروع، وحيثما تشير إليها نتبع دليل ASHRAE Guideline 0 وكود CIBSE للتشغيل التجريبي.» (was «— وفق دليل ASHRAE Guideline 0 وكود CIBSE للتشغيل التجريبي.»)
+- **Why-AGEC bullet:** «منهجية وفق مواصفات المشروع، تتبع ASHRAE 111 وSMACNA وكود CIBSE للتشغيل التجريبي / ASHRAE Guideline 0 حيثما تُحدَّد، مع توثيق منهجي» (was «منهجية وفق ASHRAE 111 وSMACNA وكود CIBSE للتشغيل التجريبي / ASHRAE Guideline 0 مع توثيق منهجي»)
+- **FAQ «ما المعايير التي تتبعونها؟»:** now starts «نعمل وفق مواصفات المشروع أولاً. وحيثما تشير إليها المواصفات، تتبع منهجيتنا…» (was «تتبع منهجيتنا…»)
