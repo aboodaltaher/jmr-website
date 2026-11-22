@@ -7,7 +7,19 @@ import {
   Wifi,
   BarChart3,
 } from "lucide-react";
+import Image from "next/image";
 import { ServiceDetailLayout } from "@/components/ServiceDetailLayout";
+import { DeepCleanVideo } from "@/components/DeepCleanVideo";
+import { NEST_VIDEO, nestVideoSchema } from "@/data/nest-video";
+import { AR_PRICES_VAT_NOTE } from "@/data/prices-ar";
+import {
+  PRICE_NEST_SUPPLY,
+  PRICE_ECOBEE_SUPPLY,
+  PRICE_INSTALLATION,
+  PRICE_DROP_AIR_ADAPTOR,
+  PRICE_NEST_SUPPLY_INSTALL,
+  PRICE_ECOBEE_SUPPLY_INSTALL,
+} from "@/lib/pricing";
 import { THERMOSTAT_SAVINGS, EMAIL, PHONE_DISPLAY } from "@/lib/company";
 import { ratingValue, reviewCount } from "@/lib/siteStats";
 
@@ -20,6 +32,20 @@ export const metadata = buildMetadata({
   path: "/ar/smart-thermostat-installation-dubai",
   locale: "ar_AE",
 });
+
+// Same constants as the English page (src/lib/pricing.ts); only the labels are Arabic.
+const priceRows: { label: string; price: string }[] = [
+  { label: "Google Nest: توريد الجهاز فقط", price: `${PRICE_NEST_SUPPLY} درهم` },
+  { label: "ecobee: توريد الجهاز فقط", price: `${PRICE_ECOBEE_SUPPLY} درهم` },
+  { label: "التركيب لكل ثرموستات", price: `${PRICE_INSTALLATION} درهم` },
+  { label: "محوّل Drop-air (لأنظمة VRF/VRV أو حيثما يلزم)", price: `${PRICE_DROP_AIR_ADAPTOR} درهم` },
+  { label: "Google Nest: توريد وتركيب", price: `من ${PRICE_NEST_SUPPLY_INSTALL} درهم` },
+  { label: "ecobee: توريد وتركيب", price: `من ${PRICE_ECOBEE_SUPPLY_INSTALL} درهم` },
+];
+
+const videoSchema = nestVideoSchema(
+  "كيف يستخدم ثرموستات Google Nest الذي تركّبه AGEC في دبي روتين المنزل والخروج وتحديد الموقع حتى لا تبرّد منزلاً فارغاً.",
+);
 
 export default function ArabicSmartThermostat() {
   return (
@@ -59,6 +85,51 @@ export default function ArabicSmartThermostat() {
             الحاجة.
           </p>
         </>
+      }
+      extraSection={
+        <section id="google-nest" className="scroll-mt-24 py-14 md:py-20">
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }} />
+          <div className="mx-auto max-w-4xl px-6">
+            <h2 className="font-heading text-3xl font-bold md:text-4xl">تركيب منظم حرارة Google Nest في دبي</h2>
+            <div className="mt-8 grid items-start gap-8 sm:grid-cols-2">
+              <div className="mx-auto w-full max-w-[280px]">
+                <Image
+                  src="/photos/thermostat/google-nest-learning-thermostat-dubai.jpg"
+                  alt="منظم حرارة Google Nest Learning مع حساس الحرارة، توريد وتركيب AGEC في دبي"
+                  width={900}
+                  height={1600}
+                  sizes="(max-width: 640px) 70vw, 280px"
+                  loading="lazy"
+                  className="h-auto w-full rounded-xl border border-border"
+                />
+              </div>
+              <DeepCleanVideo
+                videoId={NEST_VIDEO.id}
+                title={NEST_VIDEO.title}
+                alt="معاينة فيديو عن تركيب ثرموستات Google Nest في دبي"
+                playLabel="تشغيل الفيديو: تركيب ثرموستات Google Nest في دبي"
+              />
+            </div>
+
+            <h3 className="mt-12 font-heading text-2xl font-bold">أسعار الثرموستات الذكي</h3>
+            <div className="mt-4 overflow-x-auto" tabIndex={0} role="region" aria-label="أسعار الثرموستات الذكي">
+              <table className="w-full min-w-[20rem] text-start text-sm">
+                <tbody>
+                  {priceRows.map((row) => (
+                    <tr key={row.label} className="border-b border-border">
+                      <th scope="row" className="py-3 pe-4 text-start font-medium">{row.label}</th>
+                      <td className="py-3 text-start font-semibold text-primary">{row.price}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="mt-3 text-sm text-text-muted">
+              يؤكَّد السعر النهائي بعد فحص توافق مجاني. يُضاف محوّل Drop-air ({PRICE_DROP_AIR_ADAPTOR} درهماً) فقط حيثما يحتاجه نظامك، مثل VRF/VRV.
+            </p>
+            <p className="mt-2 text-sm text-text-muted">{AR_PRICES_VAT_NOTE}</p>
+          </div>
+        </section>
       }
       whenYouNeedIt={[
         "خفض فاتورة الكهرباء — أوقف تبريد الغرف الفارغة بالجدولة والأوضاع الاقتصادية",

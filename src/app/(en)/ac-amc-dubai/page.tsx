@@ -11,7 +11,7 @@ import { GOOGLE_REVIEWS, reviewsAbout } from "@/lib/reviews";
 import { AmcForm } from "@/components/AmcForm";
 import { BreadcrumbBand } from "@/components/Breadcrumbs";
 import { PHONE, whatsappUrl } from "@/lib/contact";
-import { prices, maintenanceRows, GAS_RANGE, visibleTiers, PRICE_FOOTNOTE, isConfirmed } from "@/data/prices";
+import { prices, maintenanceRows, GAS_RANGE, visibleTiers, PRICE_FOOTNOTE, isConfirmed, VRF_AMC_LINE } from "@/data/prices";
 
 import { PHONE_DISPLAY } from "@/lib/company";
 const SITE_URL = "https://agec.ae";
@@ -526,8 +526,8 @@ export default function AcAmcPage() {
                         ),
                       },
                       {
-                        label: "VRF systems (villa)",
-                        cells: amcConfig.plans.map(() => "Villa system plan, priced on outdoor capacity (HP) and the number of indoor units, not per machine"),
+                        label: "VRF systems",
+                        cells: amcConfig.plans.map(() => VRF_AMC_LINE),
                       },
                       {
                         label: "Chiller and DX plant",

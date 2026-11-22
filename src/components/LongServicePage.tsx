@@ -91,6 +91,8 @@ export function LongServicePage({
   path,
   published,
   related,
+  offers,
+  afterSection,
 }: {
   service: LongService;
   lang?: "en" | "ar";
@@ -99,6 +101,10 @@ export function LongServicePage({
   published: boolean;
   /** Related links to show (already localised). */
   related: { href: string; label: string }[];
+  /** Optional schema.org Offers (confirmed prices only) added to the Service JSON-LD. */
+  offers?: object[];
+  /** Optional block rendered straight after the section with this h2. */
+  afterSection?: { h2: string; node: React.ReactNode };
 }) {
   const t = UI[lang];
   // On the live site markers are stripped, so drop anything left empty (and any FAQ with no answer).
@@ -147,6 +153,7 @@ export function LongServicePage({
           },
         }
       : {}),
+    ...(offers?.length ? { offers } : {}),
     // One LocalBusiness per page: the site-wide block in SiteSchema (@id #business) is referenced here.
     provider: { "@id": `${business.url}/#business` },
   };
@@ -207,7 +214,7 @@ export function LongServicePage({
 
       {c.sections.map((s, i) => (
         <Fragment key={s.h2}>
-        <section className={i % 2 === 0 ? "py-14 md:py-16" : "bg-bg-soft py-14 md:py-16"}>
+        <section id={s.id} className={(i % 2 === 0 ? "py-14 md:py-16" : "bg-bg-soft py-14 md:py-16") + (s.id ? " scroll-mt-24" : "")}>
           <div className="mx-auto max-w-4xl px-6">
             <h2 className="font-heading text-3xl font-bold md:text-4xl">{s.h2}</h2>
             <div className="mt-5 space-y-4 leading-relaxed text-text-muted">
@@ -271,6 +278,7 @@ export function LongServicePage({
               )}
           </div>
         </section>
+        {afterSection?.h2 === s.h2 && afterSection.node}
         {/* Mid-page lead block, directly after the first checklist section */}
         {i === ctaAfter && <MidPageCta service={c.ctaService ?? c.serviceType} path={path} lang={lang} />}
         </Fragment>

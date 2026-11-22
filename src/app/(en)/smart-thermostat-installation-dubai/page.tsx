@@ -3,6 +3,9 @@ import { FaqJsonLd } from "@/components/FaqJsonLd";
 import Image from "next/image";
 import Link from "next/link";
 import { RelatedServices } from "@/components/RelatedServices";
+import { DeepCleanVideo } from "@/components/DeepCleanVideo";
+import { PRICE_FOOTNOTE } from "@/data/prices";
+import { NEST_VIDEO, nestVideoSchema } from "@/data/nest-video";
 import { InlineLeadForm } from "@/components/InlineLeadForm";
 import { BreadcrumbBand } from "@/components/Breadcrumbs";
 import { GOOGLE_REVIEWS, MAPS_URL, reviewStats } from "@/lib/reviews";
@@ -314,6 +317,10 @@ const ecobeeFaqs: { q: string; a: string }[] = [
 // Google Nest / ecobee sections.
 const allFaqs = [...faqs, ...nestFaqs, ...ecobeeFaqs];
 
+const videoSchema = nestVideoSchema(
+  "How a Google Nest thermostat installed by AGEC in Dubai uses Home/Away routines and geofencing so you stop cooling an empty home.",
+);
+
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -348,6 +355,7 @@ export default async function SmartThermostatPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }} />
       <FaqJsonLd items={allFaqs} />
 
       {/* Breadcrumb (single trail + BreadcrumbList JSON-LD) */}
@@ -535,7 +543,25 @@ export default async function SmartThermostatPage() {
       <section id="google-nest" className="scroll-mt-24 bg-bg-soft py-16 md:py-24">
         <div className="mx-auto max-w-5xl px-6">
           <p className={eyebrow}>Brand guide</p>
-          <h2 className="mt-3 font-heading text-3xl font-bold md:text-5xl">Google Nest Thermostat Installation</h2>
+          <h2 className="mt-3 font-heading text-3xl font-bold md:text-5xl">Google Nest installation in Dubai</h2>
+          <div className="mt-8 grid items-start gap-8 sm:grid-cols-2">
+            <div className="mx-auto w-full max-w-[280px]">
+              <Image
+                src="/photos/thermostat/google-nest-learning-thermostat-dubai.jpg"
+                alt="Google Nest Learning Thermostat with Nest Temperature Sensor, supplied and installed by AGEC in Dubai"
+                width={900}
+                height={1600}
+                sizes="(max-width: 640px) 70vw, 280px"
+                loading="lazy"
+                className="h-auto w-full rounded-xl border border-border"
+              />
+            </div>
+            <DeepCleanVideo
+              videoId={NEST_VIDEO.id}
+              title={NEST_VIDEO.title}
+              alt="Preview of a video about Google Nest thermostat installation in Dubai"
+            />
+          </div>
           <div className="mt-8 grid gap-10 md:grid-cols-2">
             <div>
               <h3 className="font-heading text-xl font-semibold">What we do for Google Nest</h3>
@@ -656,6 +682,7 @@ export default async function SmartThermostatPage() {
             </div>
           </div>
           <p className="mt-6 text-center text-sm text-text-muted">*{PRICE_NOTE}</p>
+          <p className="mt-2 text-center text-sm text-text-muted">{PRICE_FOOTNOTE}</p>
           <div className="mt-8 text-center">
             <Link href="/quote" className="inline-block rounded-md bg-primary px-7 py-4 font-semibold text-white hover:bg-primary-dark transition-colors">
               Get My Fixed Quote

@@ -8,7 +8,21 @@ import { Play } from "lucide-react";
  * click does it load the privacy-enhanced (youtube-nocookie) iframe. No
  * autoplay on page load.
  */
-export function DeepCleanVideo() {
+export function DeepCleanVideo({
+  videoId,
+  title,
+  alt,
+  playLabel = `Play video: ${title}`,
+}: {
+  /** YouTube video id (no URL). */
+  videoId: string;
+  /** iframe title. */
+  title: string;
+  /** Alt text of the thumbnail. */
+  alt: string;
+  /** aria-label of the play button. Defaults to "Play video: {title}". */
+  playLabel?: string;
+}) {
   const [playing, setPlaying] = useState(false);
 
   return (
@@ -16,8 +30,8 @@ export function DeepCleanVideo() {
       <div className="relative aspect-[9/16] overflow-hidden rounded-xl border border-border bg-black">
         {playing ? (
           <iframe
-            src="https://www.youtube-nocookie.com/embed/iKbH5yohkNw?autoplay=1&rel=0"
-            title="AC Deep Cleaning in Dubai: What We Found Inside the Unit"
+            src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`}
+            title={title}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
             className="absolute inset-0 h-full w-full"
@@ -26,13 +40,13 @@ export function DeepCleanVideo() {
           <button
             type="button"
             onClick={() => setPlaying(true)}
-            aria-label="Play video: a real AC deep clean"
+            aria-label={playLabel}
             className="group absolute inset-0 h-full w-full"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="https://i.ytimg.com/vi/iKbH5yohkNw/hqdefault.jpg"
-              alt="Preview of an AC deep clean in a Dubai home"
+              src={`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`}
+              alt={alt}
               loading="lazy"
               className="h-full w-full object-cover"
             />

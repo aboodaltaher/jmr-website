@@ -9,6 +9,8 @@
 import { isPublished } from "./new-pages";
 
 export interface LongSection {
+  /** Optional anchor id for the section. */
+  id?: string;
   h2: string;
   paragraphs: string[];
   bullets?: string[];
@@ -503,6 +505,22 @@ export const VRF_MAINTENANCE: LongService = {
       ]
     },
     {
+      "id": "fcu-maintenance",
+      "h2": "FCU (fan coil unit) maintenance",
+      "paragraphs": [
+        "A fan coil unit (FCU) is the indoor unit that cools air with chilled water from a central plant. Each FCU is checked the same way every visit:"
+      ],
+      "bullets": [
+        "Clean or replace the air filters",
+        "Clean the cooling coil",
+        "Clean the drain pan and flush the drain line",
+        "Check the fan motor and bearings",
+        "Check the control valve and the thermostat"
+      ]
+    },
+    // TODO(owner): a table of brand error codes (Daikin, LG, etc.) — owner to supply; none is shown. Also owner to supply:
+    // real VRF case photos (none exist yet), so none are shown on this page.
+    {
       "h2": "Error code diagnostics",
       "paragraphs": [
         "VRF systems report faults as codes on the controller or on the outdoor unit display. A code names a circuit, sensor or component; it does not always name the cause. A pressure-sensor code, for example, can come from a refrigerant fault, a failed sensor or a wiring problem.",
@@ -542,7 +560,7 @@ export const VRF_MAINTENANCE: LongService = {
       "h2": "VRF AMC options",
       "paragraphs": [
         "A maintenance contract (AMC) puts the visits on a schedule instead of waiting for a breakdown. For VRF and other building plant, our commercial AMC starts with a baseline audit of your units, then agrees the scope, visit frequency and response targets with you in writing.",
-        "Commercial cover is priced after a site survey, based on the systems, the number of units and the visit frequency, not a fixed per-machine rate. In a villa, a VRF system is covered under a villa system plan priced on outdoor capacity (HP) and the number of indoor units, not per machine. We can also take over from your current contractor with a full audit and baseline report. See the [commercial AMC options](/ac-amc-dubai#commercial-amc)."
+        "VRF visits are priced per indoor unit, per visit, for villas and buildings alike; the price is shown below. Commercial systems are quoted after a site visit, based on the systems, the number of units and the visit frequency. We can also take over from your current contractor with a full audit and baseline report. See the [commercial AMC options](/ac-amc-dubai#commercial-amc)."
       ],
       "bullets": [
         "Response tiers: emergency within 4 hours, urgent same day, routine within 48 hours",
