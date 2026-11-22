@@ -537,3 +537,16 @@ There is no Arabic twin of `/vrf-maintenance-dubai`, so the VRF price (AED 250 p
 - **Section «موافقات الجهات المختصة», last paragraph:** «نُعِدّ المخططات ونقدّم طلبات الموافقات ونتابعها نيابةً عنك.»
 - **FAQ «هل تتولّون موافقات الجهات المختصة؟», answer:** «نعم. نُعِدّ المخططات ونقدّم طلبات الموافقات ونتابعها نيابةً عنك.»
 - Matches the English MEP page: "We prepare the drawings and submit and follow up on approvals for you."
+
+
+---
+
+## TAB page: real sample report, real result, instruments (`claude/tab-proof`, 22 Nov 2026)
+
+**Status: WRITTEN AND APPROVED by the supervisor.** `/ar/services/tab-testing-adjusting-balancing-dubai` gained a section (`extraSection`) with three strings. The PDF behind the link is the English sample report.
+
+- **Sample link:** «نموذج تقرير اختبار وموازنة (TAB) من مشروع حقيقي، بعد إزالة بيانات العميل — PDF»
+- **Real result:** «نتيجة حقيقية: وحدة ملف مروحة (FCU) بقدرة 5 طن مع 3 فتحات تغذية. التدفق التصميمي 2,074 CFM والمقاس 1,972 CFM، أي 96% من التصميم وضمن حدود التفاوت.»
+- **Instruments line:** «نمتلك 27 جهاز قياس لأعمال الاختبار والموازنة، جميعها معايَرة لدى مختبر معتمد بشهادات قابلة للتتبّع، وتُقدَّم الشهادات مع بيان طريقة العمل والتقرير النهائي.»
+
+Not translated (English only): the 27-row instruments table and the consultant FAQ.

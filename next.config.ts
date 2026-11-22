@@ -72,7 +72,14 @@ const nextConfig: NextConfig = {
       { source: `${source}/`, destination, statusCode: 301 as const },
     ]);
 
-    return [...acCleaning, ...merges, ...legal];
+    // The two old sample PDFs (illustrative values) are replaced by one real, redacted AGEC sample report.
+    const samplePdfs = ["/sample-tab-report.pdf", "/sample-air-balancing-report.pdf"].map((source) => ({
+      source,
+      destination: "/downloads/agec-sample-tab-report-fcu-air-balance.pdf",
+      statusCode: 301 as const,
+    }));
+
+    return [...acCleaning, ...merges, ...legal, ...samplePdfs];
   },
 };
 

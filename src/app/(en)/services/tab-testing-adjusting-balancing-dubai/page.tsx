@@ -28,7 +28,8 @@ const bodyClass = "mt-5 max-w-3xl space-y-4 leading-relaxed text-text-muted";
 const linkClass = "font-semibold text-primary underline underline-offset-2 hover:text-primary-dark";
 
 // The sample report section only renders once the PDF exists in /public (see "Sample TAB report" in the PR).
-const SAMPLE_PDF = "/sample-tab-report.pdf";
+const SAMPLE_PDF = "/downloads/agec-sample-tab-report-fcu-air-balance.pdf";
+const FAQ_PDF = "/downloads/agec-tab-faq-for-consultants.pdf";
 const sampleReportExists = fs.existsSync(path.join(process.cwd(), "public", SAMPLE_PDF));
 
 const faq = [
@@ -65,6 +66,132 @@ const faq = [
   {
     q: "Can you test and commission an existing building?",
     a: "Yes. As well as new-build handover, we re-commission and re-balance existing buildings to restore performance, fix comfort complaints and reduce wasted fan and pump energy.",
+  },
+];
+
+// The 27 instruments in AGEC's TAB Instrument Register (owner, 22 Nov 2026), grouped as in the register.
+const instrumentGroups: { category: string; rows: [string, string][] }[] = [
+  {
+    category: "Airside",
+    rows: [
+      ["Capture hood / balometer (with interchangeable hoods)", "Direct airflow (CFM / L/s) at supply, return & exhaust diffusers and grilles"],
+      ["Digital micromanometer", "Duct static, velocity & differential pressure; pitot traverse readings"],
+      ["Pitot-static tubes (various lengths)", "Duct velocity traverses for main ducts and AHU / FCU total airflow"],
+      ["Thermal (hot-wire) anemometer", "Low-velocity measurement at grilles, openings and fume hoods"],
+      ["Rotating vane anemometer", "Face velocity at coils, filters, louvres and large openings"],
+      ["Differential pressure gauge / room pressure monitor", "Room-to-room pressurisation and filter pressure drop"],
+      ["Smoke pencil / smoke generator", "Air pattern visualisation and leak detection"],
+      ["Duct leakage test rig (fan + calibrated orifice)", "Ductwork leakage testing to SMACNA / DW/143 test pressure class"],
+    ],
+  },
+  {
+    category: "Waterside / hydronic",
+    rows: [
+      ["Hydronic balancing instrument (differential pressure / flow)", "Flow measurement across balancing valves (chilled & condenser water)"],
+      ["Clamp-on ultrasonic flow meter", "Non-intrusive water flow measurement on pipes"],
+      ["Digital pressure gauges", "Pump, chiller and coil pressure readings"],
+    ],
+  },
+  {
+    category: "Thermal & psychrometric",
+    rows: [
+      ["Digital thermometer with surface / immersion / air probes", "Supply & return air, chilled water and pipe surface temperatures"],
+      ["Thermo-hygrometer (temperature & RH)", "Room conditions, on/off-coil dry bulb and humidity"],
+      ["Infrared thermometer", "Quick non-contact surface temperature checks"],
+      ["Temperature / RH data loggers", "Trend logging of room conditions during performance verification"],
+    ],
+  },
+  {
+    category: "Refrigerant (DX / VRF)",
+    rows: [
+      ["Digital refrigerant manifold with temperature clamps", "Suction / discharge pressures, superheat & subcooling"],
+      ["Electronic refrigerant leak detector", "Leak detection on DX and VRF refrigerant piping"],
+      ["Vacuum gauge (micron)", "Evacuation verification before charging"],
+    ],
+  },
+  {
+    category: "Electrical & mechanical",
+    rows: [
+      ["True-RMS clamp meter", "Motor running current, voltage and power checks"],
+      ["Digital multimeter", "Voltage, continuity and control circuit checks"],
+      ["Insulation resistance tester", "Motor and cable insulation testing"],
+      ["Phase rotation indicator", "Motor rotation and phase sequence verification"],
+      ["Digital tachometer (contact / optical)", "Fan and motor RPM, pulley and belt drive checks"],
+    ],
+  },
+  {
+    category: "Sound, vibration & IAQ",
+    rows: [
+      ["Sound level meter with octave band analysis", "Room noise levels (dB(A), NC / NR)"],
+      ["Vibration meter", "Fan, pump and AHU vibration readings"],
+      ["CO2 / indoor air quality meter", "Fresh air adequacy and IAQ verification"],
+    ],
+  },
+  {
+    category: "General",
+    rows: [["Laser distance meter & measuring tape", "Duct, grille and room dimensions for area / volume calculations"]],
+  },
+];
+const INSTRUMENT_COUNT = instrumentGroups.reduce((n, g) => n + g.rows.length, 0);
+
+// "TAB FAQ for consultants" (owner's PDF, 22 Nov 2026), lightly shortened. Left out because the page already answers them:
+// what the final report contains, how quickly it is issued (the page keeps its 3 to 5 day wording), and which instruments are used (see the table).
+const consultantFaq: { q: string; a: string }[] = [
+  {
+    q: "What does AGEC's testing, adjusting and balancing (TAB) service cover?",
+    a: "We test, adjust and balance airside and waterside HVAC systems: VRF/VRV, DX split and ducted units, fan coil units, AHUs and FAHUs, chilled water systems and ventilation / exhaust fans. The scope covers pre-commissioning checks, air and water balancing, performance testing, duct leakage testing and the final TAB report.",
+  },
+  {
+    q: "Do you only balance systems you installed?",
+    a: "No. We take on TAB as an independent scope for systems installed by other contractors, as well as for our own installations. We can also re-balance existing buildings after fit-out changes or complaints.",
+  },
+  {
+    q: "Which project types do you work on?",
+    a: "Residential villas and apartments, commercial offices, retail shops and fit-outs, and mixed-use buildings across Dubai and the UAE.",
+  },
+  {
+    q: "Which standards do you follow?",
+    a: "We work to the project specification first. Where the specification refers to them, our procedures follow recognised references such as ASHRAE 111, AABC/NEBB procedural standards, CIBSE Commissioning Codes A, B and W, and SMACNA/DW/143 for duct leakage. We also follow local authority requirements that apply to the project.",
+  },
+  {
+    q: "What tolerance do you balance to?",
+    a: "We balance to the tolerance in the project specification. Where none is given, we usually propose ±10% of design airflow at terminals and -5% / +10% on the total system airflow, and agree this with the consultant in the method statement before testing starts.",
+  },
+  {
+    q: "How are readings shown in the report?",
+    a: "Each terminal shows design flow, measured flow, final flow after adjustment and the percentage of design. The system total, motor data (design against measured voltage, current and fan speed) and the instrument used are recorded on the same sheet.",
+  },
+  {
+    q: "Are the instruments calibrated?",
+    a: "Yes. All instruments are calibrated by an accredited laboratory, with certificates traceable to national / international standards. Valid certificates are submitted with the method statement and attached to the final report. The instruments are listed in the table on this page.",
+  },
+  {
+    q: "What do you submit for approval before testing?",
+    a: "A TAB method statement, the list of instruments with calibration certificates, sample test sheets, and a testing programme. Testing starts once the consultant has approved these.",
+  },
+  {
+    q: "What must be complete before balancing can start?",
+    a: "The system must be installed per the approved drawings. Ductwork and pipework must be complete, and duct leakage tests passed where specified. Dampers and balancing valves must be installed and accessible, with clean filters fitted. The electrical supply and controls must be live, ceilings must have access panels, and the space must be closed off from outside conditions. We record all of these on a pre-commissioning checklist before testing.",
+  },
+  {
+    q: "What happens if a system is not ready?",
+    a: "We record the open items on the pre-commissioning checklist and send it to the contractor and consultant. Balancing restarts once the items are closed, so readings are not taken on an incomplete system.",
+  },
+  {
+    q: "Can the consultant witness the tests?",
+    a: "Yes, and we encourage it. We give advance notice of witness dates. Witnessed readings are recorded in the witnessed-flow column of the test sheet and signed by the witnessing party. Spot checks of any terminal can be repeated in front of the consultant.",
+  },
+  {
+    q: "What if a system cannot reach design flow?",
+    a: "We do not adjust readings to fit. We record the actual result and investigate likely causes, such as fan speed setting, duct restrictions, closed dampers, dirty filters, undersized ductwork or wrong unit selection. We then send the consultant a clear technical note with our recommendations.",
+  },
+  {
+    q: "Do you re-test after corrective work?",
+    a: "Yes. Once the corrective work is done, the affected system is re-tested and the report is updated with the final readings.",
+  },
+  {
+    q: "Can you help at design stage?",
+    a: "Yes. Our in-house HVAC design team handles heat load calculations, duct sizing and system selection. We can review designs for balance-ability, such as damper and valve locations and test points, before installation.",
   },
 ];
 
@@ -153,6 +280,7 @@ export default function TestingCommissioningBalancing() {
         `Rated ${ratingValue}★ by ${reviewCount} Google reviewers`,
       ]}
       faq={faq}
+      schemaFaq={consultantFaq}
       extraSection={
         <>
           <section className="py-16 md:py-20">
@@ -323,28 +451,101 @@ export default function TestingCommissioningBalancing() {
             </div>
           </section>
 
+          <section id="instruments" className="py-16 md:py-20">
+            <div className="mx-auto max-w-7xl px-6">
+              <h2 className={h2Class}>TAB instruments: {INSTRUMENT_COUNT} calibrated instruments</h2>
+              <div className={bodyClass}>
+                <p>
+                  AGEC holds {INSTRUMENT_COUNT} instruments for testing, adjusting, balancing and commissioning HVAC
+                  systems, listed in its TAB Instrument Register.
+                </p>
+              </div>
+              <div className="mt-8 max-w-5xl">
+                <table className="w-full table-fixed text-left text-xs sm:text-sm">
+                  <thead>
+                    <tr className="border-b border-border text-xs uppercase tracking-wider text-text-muted">
+                      <th scope="col" className="w-[28%] py-3 pr-3 font-semibold sm:pr-4">Category</th>
+                      <th scope="col" className="w-[33%] py-3 pr-3 font-semibold sm:pr-4">Instrument</th>
+                      <th scope="col" className="w-[39%] py-3 font-semibold">Used for</th>
+                    </tr>
+                  </thead>
+                  {instrumentGroups.map((g) => (
+                    <tbody key={g.category} className="align-top text-text-muted">
+                      {g.rows.map(([name, use], i) => (
+                        <tr key={name} className={i === g.rows.length - 1 ? "border-b border-border" : "border-b border-border/50"}>
+                          {i === 0 && (
+                            <th scope="rowgroup" rowSpan={g.rows.length} className="break-words py-3 pr-3 font-semibold text-text [overflow-wrap:anywhere] sm:pr-4">
+                              {g.category}
+                            </th>
+                          )}
+                          <td className="py-3 pr-3 sm:pr-4">{name}</td>
+                          <td className="py-3">{use}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  ))}
+                </table>
+              </div>
+              <p className="mt-6 max-w-3xl leading-relaxed text-text-muted">
+                All instruments are calibrated by an accredited calibration laboratory with certificates traceable to
+                national/international standards. Copies are submitted with the TAB method statement and the final
+                report. Instruments are re-calibrated at the manufacturer&apos;s or specification interval (normally every 12
+                months) and checked before use. Make, model and serial number are recorded on every test sheet.
+              </p>
+            </div>
+          </section>
+
           {sampleReportExists && (
             <section id="sample-report" className="bg-bg-soft py-16 md:py-20">
               <div className="mx-auto max-w-7xl px-6">
                 <h2 className={h2Class}>Download a sample TAB report</h2>
                 <div className={bodyClass}>
                   <p>
-                    See how we document a testing and commissioning job before you ask us to quote one. The
-                    sample shows the layout of an AGEC TAB report: the checklists, the measured-against-design
-                    tables, the functional test sheets and the sign-off. All project names and values are
-                    illustrative and do not describe a real job.
+                    See how we document a testing and commissioning job before you ask us to quote one. The sample
+                    comes from a real AGEC job with the client, project and location details removed. It has the
+                    commissioning certificate, the pre-commissioning checklist and the performance test record.
+                  </p>
+                </div>
+                <div id="real-result" className="mt-8 max-w-3xl rounded-xl border border-primary/40 bg-white p-6">
+                  <p className="text-sm font-semibold uppercase tracking-widest text-primary">Real result</p>
+                  <p className="mt-2 leading-relaxed text-text">
+                    FCU air balancing, retail fit-out, Dubai (Sept 2026): 5 TR fan coil unit, 3 supply diffusers.
+                    Design 2,074 CFM, measured 1,972 CFM: 96% of design, within tolerance.
+                  </p>
+                  <p className="mt-2 leading-relaxed text-text-muted">
+                    Terminals: 1,031 / 576 / 385 CFM against 1,074 / 600 / 400 CFM design.
                   </p>
                 </div>
                 <a
                   href={SAMPLE_PDF}
                   download
-                  className="mt-6 inline-flex items-center gap-2 rounded-md bg-primary px-7 py-4 font-semibold text-white transition-colors hover:bg-primary-dark"
+                  className="mt-6 inline-flex items-center gap-2 rounded-md bg-primary px-7 py-4 text-left font-semibold text-white transition-colors hover:bg-primary-dark"
                 >
-                  <Download className="h-4 w-4" aria-hidden="true" /> Download Sample TAB Report (PDF)
+                  <Download className="h-4 w-4 shrink-0" aria-hidden="true" /> Sample TAB report (real AGEC job, client details removed) — PDF
                 </a>
               </div>
             </section>
           )}
+
+          <section id="consultant-faq" className="py-16 md:py-20">
+            <div className="mx-auto max-w-7xl px-6">
+              <h2 className={h2Class}>TAB FAQ for consultants</h2>
+              <div className={bodyClass}>
+                <p>
+                  The questions consultants most often ask about our TAB and commissioning work.{" "}
+                  <a href={FAQ_PDF} className={linkClass}>Download the TAB FAQ for consultants (PDF)</a>
+                </p>
+              </div>
+              <div className="mt-8 max-w-3xl space-y-6">
+                {consultantFaq.map((f) => (
+                  <div key={f.q}>
+                    <h3 className="font-heading text-lg font-semibold">{f.q}</h3>
+                    <p className="mt-2 leading-relaxed text-text-muted">{f.a}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
         </>
       }
     />

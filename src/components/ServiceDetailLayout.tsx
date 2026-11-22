@@ -36,6 +36,8 @@ interface ServiceDetailLayoutProps {
   whatWeDo: Capability[];
   whyAgec: string[];
   faq?: FaqItem[];
+  /** Extra Q&As shown elsewhere on the page: added to the FAQPage JSON-LD only (duplicate questions are dropped). */
+  schemaFaq?: FaqItem[];
   /** Path after the domain, e.g. "services/vrf-vrv-systems" — enables Service + BreadcrumbList schema. */
   slug?: string;
   /**
@@ -119,6 +121,7 @@ export function ServiceDetailLayout({
   whatWeDo,
   whyAgec,
   faq,
+  schemaFaq,
   slug,
   ctaBar,
   relatedProjectSlugs,
@@ -146,7 +149,15 @@ export function ServiceDetailLayout({
 
   return (
     <>
-      {faq && <FaqJsonLd items={faq} inLanguage={lang === "ar" ? "ar" : undefined} />}
+      {faq && (
+        <FaqJsonLd
+          items={[
+            ...faq,
+            ...(schemaFaq ?? []).filter((x) => !faq.some((f) => f.q.trim().toLowerCase() === x.q.trim().toLowerCase())),
+          ]}
+          inLanguage={lang === "ar" ? "ar" : undefined}
+        />
+      )}
       {serviceSchema && (
         <script
           type="application/ld+json"

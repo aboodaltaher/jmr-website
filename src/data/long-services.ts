@@ -797,7 +797,7 @@ export const AIR_BALANCING: LongService = {
     {
       "h2": "What you receive",
       "paragraphs": [
-        "You receive a balancing report, signed by the engineer who carried out the work, that your consultant can review and approve. Acceptance tolerance is ±10% of design airflow at terminals, unless the project specification or consultant requires a tighter tolerance. See the [sample report format (PDF)](/sample-air-balancing-report.pdf); the values in it are illustrative only. The report includes:"
+        "You receive a balancing report, signed by the engineer who carried out the work, that your consultant can review and approve. Acceptance tolerance is ±10% of design airflow at terminals, unless the project specification or consultant requires a tighter tolerance. A real example: [Sample TAB report (real AGEC job, client details removed) — PDF](/downloads/agec-sample-tab-report-fcu-air-balance.pdf). The report includes:"
       ],
       "bullets": [
         "Project details, drawing reference and system tested",
@@ -914,9 +914,9 @@ export const AIR_BALANCING: LongService = {
     },
     {
       "afterSection": 7,
-      "src": "/images/sample-air-balancing-report-page-1.png",
-      "alt": "Sample AGEC air balancing report showing design, initial and final airflow for each terminal",
-      "caption": "Page 1 of the sample report. All values are illustrative.",
+      "src": "/images/agec-sample-fcu-air-balancing-test-record.png",
+      "alt": "Sample AGEC FCU air-balancing test record, client details removed",
+      "caption": "Performance test record (page 3 of the sample TAB report) from a real AGEC job, client details removed.",
       "fit": "contain"
     }
   ]
