@@ -36,7 +36,7 @@ export interface CaseStudyFacts {
   /** A measured result, e.g. commissioning figures. Only real measurements. */
   measuredResult?: string;
   /** Owned photos with permission: src under /public and descriptive alt text. */
-  photos?: { src: string; alt: string }[];
+  photos?: { src: string; alt: string; /** Shown under the photo. */ caption?: string; /** "contain" shows the whole photo (portrait nameplates, instrument readings). Default "cover". */ fit?: "cover" | "contain" }[];
   /** e.g. "Private villa", "Retail mall". */
   clientType?: string;
 
@@ -61,8 +61,13 @@ export interface CaseStudyFacts {
   solutions?: string[];
   /** The confirmed outcome in words (use `measuredResult` instead when there is a real measurement). */
   outcome?: string;
-  /** Replaces the closing call to action (heading + button) and adds a WhatsApp button. */
-  cta?: { heading: string; label: string; href: string };
+  /**
+   * Extra narrative sections with their own headings, shown after the challenge: a heading, optional
+   * paragraphs, and optional titled groups of bullet points.
+   */
+  sections?: { heading: string; paragraphs?: string[]; groups?: { title: string; points: string[] }[] }[];
+  /** Replaces the closing call to action (heading + button) and adds a WhatsApp button. `relatedNote` is the line under "Related services". */
+  cta?: { heading: string; label: string; href: string; relatedNote?: string };
 }
 
 export interface Project {
@@ -236,7 +241,12 @@ const base: BaseProject[] = [
         "Achieved operation within the 200 kW electrical allocation.",
       ],
       outcome: "The system was commissioned and is operating within the 200 kW electrical allocation.",
-      cta: { heading: "Have a similar HVAC project? Contact AGEC", label: "Contact AGEC", href: "/contact" },
+      cta: {
+        heading: "Have a similar HVAC project? Contact AGEC",
+        label: "Contact AGEC",
+        href: "/contact",
+        relatedNote: "AGEC installs and commissions VRF systems for commercial buildings in Ajman and across the UAE.",
+      },
     },
   },
   {
@@ -491,6 +501,121 @@ const base: BaseProject[] = [
       "Controls and zoning",
       "Commissioning",
     ],
+  },
+  {
+    slug: "vrv-diagnosis-villa-al-safa-dubai",
+    name: "Villa in Al Safa, Dubai",
+    h1: "Daikin VRV Fault Diagnosis – Villa in Al Safa, Dubai",
+    category: "Residential",
+    systemSummary: "Daikin VRV fault diagnosis, 2 systems (U7 and LC25 errors)",
+    location: { area: "Al Safa", emirate: "Dubai", label: "Al Safa, Dubai" },
+    draft: false,
+    updatedAt: "2026-11-22",
+    publishedAt: "2026-11-22",
+    metaTitle: "Daikin VRV U7 & LC Fault Diagnosis, Al Safa | AGEC",
+    metaDescription:
+      "Two Daikin VRV systems in a villa in Al Safa, Dubai: a U7 error and an LC25 fault diagnosed on site, healthy modules kept running, repairs recommended.",
+    projectType: "Residential VRV fault diagnosis",
+    systemType: "Daikin VRV",
+    relatedServices: [
+      { name: "VRF maintenance in Dubai", href: "/vrf-maintenance-dubai" },
+      { name: "AC repair in Dubai", href: "/ac-repair-dubai" },
+    ],
+    // Facts below come from AGEC's own site visit of 16 April 2026 (owner, 22 Nov 2026). The visit recorded a diagnosis and
+    // recommendations only: NEVER state that parts were replaced or that the system was repaired. "LC25" is recorded exactly as
+    // written on site: do not add a manufacturer definition. Never add the customer's name, the street or villa number, the ticket
+    // number or the technician's name, and never publish the service report.
+    facts: {
+      clientType: "Villa",
+      systemType: "Daikin VRV (2 outdoor systems)",
+      intro: [
+        "On 16 April 2026 AGEC visited a villa in Al Safa, Dubai for a VRV unit inspection. The villa is cooled by two Daikin VRV outdoor systems: model RXYTQ14T7YF (System 1) and model RXYTQ12T7YF (System 2). Each system has a master and a slave outdoor module.",
+        "This is a diagnosis case study: it records what we found and what we recommended, not a completed repair.",
+      ],
+      highlights: [
+        { value: "2", label: "Daikin VRV systems in fault" },
+        { value: "U7 and LC25", label: "Error codes (LC25 as recorded on site)" },
+        { value: "397 V", label: "Supply, measured with a clamp meter" },
+        { value: "39 V", label: "Earth to neutral, measured with a clamp meter" },
+      ],
+      challenge:
+        "Two Daikin VRV systems in one villa were in fault at the same time. System 1 showed a U7 error on the controller, and System 2 showed LC25 (as recorded on site). The job was to trace each code to the outdoor module behind it and keep the healthy modules running.",
+      sections: [
+        {
+          heading: "What we found",
+          groups: [
+            {
+              title: "System 1: RXYTQ14T7YF, U7 error",
+              points: ["The controller showed a U7 error.", "On checking the outdoor units, slave module (1) had no power."],
+            },
+            {
+              title: "System 2: RXYTQ12T7YF, LC25 (as recorded on site)",
+              points: [
+                "The controller showed LC25, as recorded on site.",
+                "On the outdoor unit, slave (1) fan PCB (1) and (2) were burnt, and fan motor (1) was defective.",
+              ],
+            },
+            {
+              title: "Electrical readings",
+              points: ["Supply: 397 V.", "Earth to neutral: 39 V.", "Both were measured on site with a clamp meter."],
+            },
+          ],
+        },
+        {
+          heading: "How we kept the villa cooling",
+          paragraphs: ["In both systems we isolated the faulty slave module and ran the healthy modules."],
+          groups: [
+            { title: "System 1", points: ["Isolated slave (1) and ran the master unit, so the system kept cooling."] },
+            { title: "System 2", points: ["Isolated slave (1) and ran the master and slave (2)."] },
+          ],
+        },
+        {
+          heading: "Our recommendation",
+          groups: [
+            { title: "System 1", points: ["The electrical team to check the supply to slave (1)."] },
+            { title: "System 2", points: ["Replace fan PCB (1) and (2) and fan motor (1)."] },
+            { title: "Both systems", points: ["The electrical team to check the power supply and the earth/neutral connection."] },
+          ],
+        },
+      ],
+      photos: [
+        {
+          src: "/photos/projects/vrv-al-safa/daikin-vrv-burnt-fan-pcb.jpg",
+          alt: "Burnt fan PCB found in the slave outdoor module of a Daikin VRV system",
+          caption: "Burnt fan PCB found in the slave outdoor module (System 2)",
+        },
+        {
+          src: "/photos/projects/vrv-al-safa/daikin-vrv-nameplate-rxytq14t7yf.jpg",
+          alt: "Nameplate of a Daikin RXYTQ14T7YF VRV outdoor unit, System 1, with the serial number pixelated",
+          caption: "System 1: Daikin RXYTQ14T7YF nameplate (serial number blurred)",
+          fit: "contain",
+        },
+        {
+          src: "/photos/projects/vrv-al-safa/daikin-vrv-nameplate-rxytq12t7yf.jpg",
+          alt: "Nameplate of a Daikin RXYTQ12T7YF VRV outdoor unit, System 2, with the serial number pixelated",
+          caption: "System 2: Daikin RXYTQ12T7YF nameplate (serial number blurred)",
+          fit: "contain",
+        },
+        {
+          src: "/photos/projects/vrv-al-safa/clamp-meter-supply-397v.jpg",
+          alt: "AC clamp meter display showing a supply reading of 397 V",
+          caption: "Supply: 397 V on the clamp meter",
+          fit: "contain",
+        },
+        {
+          src: "/photos/projects/vrv-al-safa/clamp-meter-earth-neutral-39v.jpg",
+          alt: "AC clamp meter display showing an earth-to-neutral reading of 39 V",
+          caption: "Earth to neutral: 39 V on the clamp meter",
+          fit: "contain",
+        },
+      ],
+      cta: {
+        heading: "VRV error code or a system in fault? Contact AGEC",
+        label: "Contact AGEC",
+        href: "/contact",
+        relatedNote: "Faults like these are what our VRF maintenance and AC repair services deal with.",
+      },
+    },
   },
 ];
 

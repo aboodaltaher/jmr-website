@@ -150,6 +150,28 @@ export default async function ProjectCaseStudy({
         </div>
       )}
 
+      {f.sections?.map((sec) => (
+        <div key={sec.heading} className="mt-10">
+          <h2 className={heading}>{sec.heading}</h2>
+          {sec.paragraphs?.map((para) => (
+            <p key={para} className="mt-4 leading-relaxed text-text-muted">{para}</p>
+          ))}
+          {sec.groups?.map((g) => (
+            <div key={g.title} className="mt-5">
+              <h3 className="font-heading text-lg font-bold">{g.title}</h3>
+              <ul className="mt-3 space-y-3">
+                {g.points.map((pt) => (
+                  <li key={pt} className="flex gap-3 text-text-muted">
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                    {pt}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      ))}
+
       {project.scope && project.scope.length > 0 && (
         <div className={hasWide && !f.challenge ? "" : "mt-10"}>
           <h2 className={heading}>Scope of work</h2>
@@ -322,11 +344,7 @@ export default async function ProjectCaseStudy({
         <section className="pb-16 md:pb-20">
           <div className="mx-auto max-w-3xl px-6">
             <h2 className={heading}>Related services</h2>
-            {f.cta && (
-              <p className="mt-3 text-text-muted">
-                AGEC installs and commissions VRF systems for commercial buildings in Ajman and across the UAE.
-              </p>
-            )}
+            {f.cta?.relatedNote && <p className="mt-3 text-text-muted">{f.cta.relatedNote}</p>}
             <ul className="mt-4 flex flex-wrap gap-3">
               {project.relatedServices.map((s) => (
                 <li key={s.href}>
