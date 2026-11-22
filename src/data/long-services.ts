@@ -236,7 +236,7 @@ export const MEP: LongService = {
     {
       h2: "Testing, commissioning and handover",
       paragraphs: [
-        "An HVAC package is not finished when the equipment is on the roof. Systems are tested, balanced and commissioned: airflows measured and adjusted, water or refrigerant circuits verified, controls tested against the sequence of operation, and results recorded. We follow ASHRAE 111, SMACNA and CIBSE commissioning guidance and hand over the measured figures, not just a completion certificate.",
+        "An HVAC package is not finished when the equipment is on the roof. Systems are tested, balanced and commissioned: airflows measured and adjusted, water or refrigerant circuits verified, controls tested against the sequence of operation, and results recorded. We work to the project specification first. Where it refers to them, we follow ASHRAE 111, SMACNA and CIBSE commissioning guidance and hand over the measured figures, not just a completion certificate.",
         "After handover we keep the system running through annual maintenance contracts, so the people who built the system are the ones looking after it.",
       ],
     },
@@ -267,7 +267,7 @@ export const MEP: LongService = {
     },
     {
       q: "Do you provide commissioning and handover documents?",
-      a: "Yes. HVAC systems are tested, balanced and commissioned, with measured airflows and settings recorded and handed over, following ASHRAE 111, SMACNA and CIBSE guidance.",
+      a: "Yes. HVAC systems are tested, balanced and commissioned, with measured airflows and settings recorded and handed over. We work to the project specification first. Where it refers to them, we follow ASHRAE 111, SMACNA and CIBSE guidance.",
     },
     {
       q: "Do you maintain the systems after handover?",
