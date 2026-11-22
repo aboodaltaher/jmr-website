@@ -510,9 +510,11 @@ Reviewed terms: capacitor (مكثّف التشغيل), contactor (كونتاكت
 - `/ar/services/tab-testing-adjusting-balancing-dubai`: "what do I receive" FAQ (PDF format, photos, calibrated instruments) and a new report-timing FAQ (draft 3–5 working days, final within 2 days of comments).
 - `/ar/services/hvac-installation-dubai`: handover FAQ (walk-through, controller operation, warranty documents, commissioning sheet).
 
+---
+
 ## Smart thermostat: video, photo, price table, H2 (keyword-plan PR, Nov 2026)
 
-**Status: AWAITING SUPERVISOR REVIEW.** `/ar/smart-thermostat-installation-dubai` gained a Google Nest section (`id="google-nest"`).
+**Status: REVIEWED AND APPROVED by the supervisor (22 Nov 2026).** `/ar/smart-thermostat-installation-dubai` gained a Google Nest section (`id="google-nest"`).
 
 - **H2:** «تركيب منظم حرارة Google Nest في دبي»
 - **Photo alt:** «منظم حرارة Google Nest Learning مع حساس الحرارة، توريد وتركيب AGEC في دبي»

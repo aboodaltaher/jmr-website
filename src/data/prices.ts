@@ -156,6 +156,9 @@ export function formatPrice(r: PriceRow): string | null {
   return r.unit ? `${range} ${r.unit}` : range;
 }
 
+/** "From AED 250 per indoor unit, per visit, excl. VAT" — the one VRF price line used on every page that mentions it. */
+export const VRF_AMC_LINE = `${formatPrice(vrfAmc)}, excl. VAT`;
+
 /** Property-tier rows with a confirmed price. */
 export const visibleTiers = () => prices.amcTiers.filter((t) => isConfirmed(t.from));
 
