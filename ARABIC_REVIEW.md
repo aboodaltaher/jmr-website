@@ -526,3 +526,14 @@ Reviewed terms: capacitor (مكثّف التشغيل), contactor (كونتاكت
 - **Price notes:** «يؤكَّد السعر النهائي بعد فحص توافق مجاني. يُضاف محوّل Drop-air (750 درهماً) فقط حيثما يحتاجه نظامك، مثل VRF/VRV.» and the VAT line «جميع الأسعار لا تشمل ضريبة القيمة المضافة 5%.»
 
 There is no Arabic twin of `/vrf-maintenance-dubai`, so the VRF price (AED 250 per indoor unit, per visit) has no Arabic text yet.
+
+
+---
+
+## HVAC-for-MEP approvals wording (`fix/ar-mep-approvals`, 22 Nov 2026)
+
+**Status: WRITTEN AND APPROVED by the supervisor.** Owner decision: AGEC prepares the drawings and submits and follows up the approvals. This replaces the earlier «يقدّم الاستشاري طلبات موافقات الجهات المختصة…» wording on `/ar/mep-contractors-dubai` (`MEP_AR` in `src/data/long-services-ar.ts`).
+
+- **Section «موافقات الجهات المختصة», last paragraph:** «نُعِدّ المخططات ونقدّم طلبات الموافقات ونتابعها نيابةً عنك.»
+- **FAQ «هل تتولّون موافقات الجهات المختصة؟», answer:** «نعم. نُعِدّ المخططات ونقدّم طلبات الموافقات ونتابعها نيابةً عنك.»
+- Matches the English MEP page: "We prepare the drawings and submit and follow up on approvals for you."
