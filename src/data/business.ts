@@ -6,6 +6,8 @@
 // To update: edit this file only. `scripts/check-nap.sh` fails if a phone
 // number, address or review figure is hard-coded anywhere else.
 
+import googleReviews from "./google-reviews.json";
+
 export const business = {
   /** Public business name — matches the Google Business Profile. */
   name: "AGEC Technical Services",
@@ -68,11 +70,12 @@ export const business = {
   // self-served LocalBusiness review markup, and a stale count hurts trust), so the schema can never
   // disagree with the visible text.
   reviews: {
-    // Verified 19 Nov 2026 against the Google Business Profile: 5.0 from 42 reviews (all-time).
-    // This is the ONE value behind every "5.0 ★ from 42 Google reviews" on the site.
-    rating: 5.0,
-    count: 42,
-    updated: "2026-11-19",
+    // Synced from the Google Business Profile before every build (scripts/sync-google-reviews.mjs, daily
+    // via the cron in vercel.json) and stored in google-reviews.json. Last verified by hand 27 Nov 2026: 5.0 from 47.
+    // This is the ONE value behind every "5.0 ★ from N Google reviews" on the site. See docs/review-sync.md.
+    rating: googleReviews.rating,
+    count: googleReviews.count,
+    updated: googleReviews.fetchedAt,
   },
 
   links: {

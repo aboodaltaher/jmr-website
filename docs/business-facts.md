@@ -14,7 +14,7 @@ In code, these facts live in `src/data/business.ts`; this document is the human-
 | Service area | All 7 emirates: Abu Dhabi, Dubai, Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah, Fujairah |
 | Trade licence | **Dubai Commercial Licence No. 1221573** — real and current (owner, 19 Nov 2026). Shown as a licence line (footer, legal pages, About, proof strip) |
 | Approvals / certifications | **NONE.** No Dubai Municipality, DEWA, Civil Defence, Trakhees or ISO approval/certification claims anywhere |
-| Google rating | **5.0 from 42 reviews** (all-time) — verified 19 Nov 2026 |
+| Google rating | **5.0 from 47 reviews** (all-time) — verified 27 Nov 2026 |
 | Hours | Open 24/7, reply within 1 hour — confirmed true (owner, 19 Nov 2026) |
 | Case studies | 13 exist. No new details: do not invent results, years or photos |
 
