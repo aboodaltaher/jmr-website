@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "prebuild": "node scripts/sync-google-reviews.mjs",
-    "build": "next build && FORCE_MARKER_CHECK=1 node scripts/check-markers.mjs",
+    "build": "next build && node scripts/check-markers.mjs",
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
