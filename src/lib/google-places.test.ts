@@ -3,7 +3,7 @@ import test from "node:test";
 import { fetchPlaceReviewStats, isPlausible, placeIdFromReviewLink, roundRating } from "./google-places.mjs";
 
 test("placeIdFromReviewLink reads the Place ID from the review link", () => {
-  assert.equal(placeIdFromReviewLink("https://search.google.com/local/writereview?placeid=ChIJabc123"), "ChIJabc123");
+  assert.equal(placeIdFromReviewLink("https://example.com/review?placeid=ChIJabc123"), "ChIJabc123");
   assert.equal(placeIdFromReviewLink("https://example.com/none"), null);
   assert.equal(placeIdFromReviewLink(undefined), null);
 });
