@@ -1,48 +1,32 @@
-// TEMPORARY diagnostic (removed before the PR is finished): where does the build leave the prerendered pages?
-import { existsSync, readdirSync, statSync, lstatSync, realpathSync } from "node:fs";
-import { join, extname } from "node:path";
-
+// TEMPORARY diagnostic (removed before the PR is finished): layout of .next/server/route-cache and .next/output.
+import { existsSync, readdirSync, lstatSync, readFileSync } from "node:fs";
+import { join, extname, relative } from "node:path";
 const cwd = process.cwd();
-console.log(`DIAG cwd=${cwd} VERCEL=${process.env.VERCEL ?? ""} VERCEL_ENV=${process.env.VERCEL_ENV ?? ""}`);
-
-function walk(dir, depth, out) {
-  let names;
-  try { names = readdirSync(dir); } catch { return; }
-  for (const n of names) {
-    const p = join(dir, n);
-    let st; try { st = lstatSync(p); } catch { continue; }
-    if (st.isDirectory() && depth > 0) walk(p, depth - 1, out);
-    out.push({ p, dir: st.isDirectory(), link: st.isSymbolicLink(), ext: extname(n) });
-  }
+console.log(`DIAG2 cwd=${cwd} VERCEL_ENV=${process.env.VERCEL_ENV ?? ""}`);
+function walk(dir, out = []) {
+  let names; try { names = readdirSync(dir); } catch { return out; }
+  for (const n of names) { const p = join(dir, n); let st; try { st = lstatSync(p); } catch { continue; } if (st.isDirectory()) walk(p, out); else out.push(p); }
+  return out;
 }
-
-const candidates = [
-  ".next/server/app",
-  ".next/server",
-  ".next/static",
-  ".next",
-  ".vercel/output",
-  ".vercel/output/static",
-  ".vercel/output/functions",
-  "/vercel/output",
-  "/vercel/output/static",
-  "/vercel/output/functions",
-];
-for (const c of candidates) {
-  const abs = c.startsWith("/") ? c : join(cwd, c);
-  if (!existsSync(abs)) { console.log(`DIAG ${c}: MISSING`); continue; }
-  let real = abs; try { real = realpathSync(abs); } catch {}
-  const all = []; walk(abs, 6, all);
-  const byExt = {};
-  for (const f of all) if (!f.dir) byExt[f.ext || "(none)"] = (byExt[f.ext || "(none)"] ?? 0) + 1;
-  const top = readdirSync(abs).slice(0, 25).join(", ");
-  console.log(`DIAG ${c}: exists (real=${real}) files=${all.filter((f) => !f.dir).length} byExt=${JSON.stringify(byExt)}`);
-  console.log(`DIAG   top: ${top}`);
+for (const rel of [".next/server/route-cache", ".next/output/functions", ".next/output/static", ".next/output"]) {
+  const root = join(cwd, rel);
+  if (!existsSync(root)) { console.log(`DIAG2 ${rel}: MISSING`); continue; }
+  const files = walk(root);
+  const byExt = {}; for (const f of files) { const e = f.endsWith(".prerender-fallback.html") ? ".prerender-fallback.html" : extname(f) || "(none)"; byExt[e] = (byExt[e] ?? 0) + 1; }
+  console.log(`DIAG2 ${rel}: files=${files.length} byExt=${JSON.stringify(byExt)}`);
+  console.log(`DIAG2   top: ${readdirSync(root).slice(0, 30).join(", ")}`);
+  const html = files.filter((f) => f.endsWith(".html"));
+  console.log(`DIAG2   html files=${html.length}; first 12:`);
+  for (const f of html.slice(0, 12)) console.log(`DIAG2     ${relative(root, f)}`);
+  const sm = files.filter((f) => /sitemap\.xml/.test(f));
+  console.log(`DIAG2   sitemap files: ${sm.map((f) => relative(root, f)).join(" | ") || "none"}`);
+  const meta = files.filter((f) => f.endsWith(".meta"))[0];
+  if (meta) console.log(`DIAG2   sample meta ${relative(root, meta)}: ${readFileSync(meta, "utf8").slice(0, 160)}`);
+  const pc = files.filter((f) => f.endsWith("about.prerender-config.json") || f.endsWith("/about.prerender-config.json"))[0];
+  if (pc) console.log(`DIAG2   sample prerender-config ${relative(root, pc)}: ${readFileSync(pc, "utf8").slice(0, 200)}`);
 }
-// Where is the about page and the sitemap, wherever they are?
-for (const root of [cwd, "/vercel/output"]) {
-  const all = []; walk(root, 8, all);
-  const hits = all.filter((f) => !f.dir && /(^|\/)about(\.html|\.prerender|\/index\.html|\.rsc|\.meta)|sitemap\.xml(\.body)?$|prerender-config|prerender-fallback/i.test(f.p) && !f.p.includes("node_modules"));
-  console.log(`DIAG hits under ${root}: ${hits.length}`);
-  for (const h of hits.slice(0, 20)) console.log(`DIAG   ${h.p}`);
+// 404 pages: which html in route-cache are notFound shells?
+const rc = join(cwd, ".next/server/route-cache");
+if (existsSync(rc)) {
+  for (const f of walk(rc).filter((f) => f.endsWith(".meta")).filter((f) => /villanova|dubai-marina|arabian-ranches/.test(f))) console.log(`DIAG2 404-meta ${relative(rc, f)}: ${readFileSync(f, "utf8").slice(0, 120)}`);
 }
